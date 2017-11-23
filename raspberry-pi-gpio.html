@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    树莓派 GPIO 入门
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-23T18:05:00+08:00" pubdate>
+                            一, 23  5 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/raspberry-pi-gpio.html" rel="bookmark"><h1>树莓派 GPIO 入门</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。</p>
+<p>比较常用的第三方函数库有：</p>
+<ol class="arabic simple">
+<li>Python GPIO</li>
+<li>wiringPi</li>
+<li>BCM2835 C Library</li>
+<li>Shell</li>
+</ol>
+<div class="section" id="model-b-40-pin-gpio">
+<h2>树莓派 3 Model B 的 40 Pin GPIO 编号</h2>
+<img alt="树莓派 3 Model B 的 40 Pin GPIO" src="https://www.element14.com/community/servlet/JiveServlet/previewBody/73950-102-10-339300/pi3_gpio.png" />
+</div>
+<div class="section" id="gpio-led">
+<h2>使用 GPIO 接口控制 LED 闪烁</h2>
+<div class="section" id="id1">
+<h3>硬件清单</h3>
+<ol class="arabic simple">
+<li>树莓派 3 Model B x1。本人机子出自 Element14，GPIO 请参考上图。</li>
+<li>LED 发光二极管 x1。</li>
+<li>母头杜邦线 x2。这些材料在国内很容易买到的。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>原理说明</h3>
+<p>LED 发光二极管有一长一短两根针脚。长的针脚接正极（GPIO 有 3.3V 或 5V 的高电平针脚输出），较短的针脚接 GND 形成电位差产生电流流动从而点亮 LED。
+本示例没有直接连接正极端，而是连接到一个 GPIO 针脚上。最后通过程序控制 GPIO 口的电位高低状态即可控制LED的亮（GPIO口设置为高电平）或灭（GPIO口设置为低电平）。</p>
+</div>
+<div class="section" id="id3">
+<h3>硬件连接</h3>
+<ul>
+<li><p class="first">面包版图</p>
+<img alt="Use Raspberry pi 3 GPIO control LED to blink" src="images/raspberry_pi_3_gpio_led_bb.png" />
+</li>
+<li><p class="first">PCB 连接图：</p>
+<img alt="PCB diag" src="images/raspberry_pi_3_gpio_led_pcb.png" />
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>代码示例</h3>
+<pre class="code python literal-block">
+<span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># 指定 GPIO 口的选定模式为 GPIO 引脚编号模式（而非主板编号模式）</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+
+<span class="c1"># 指定 GPIO15（就是 LED 长针连接的 GPIO 针脚）的模式为输出模式</span>
+<span class="c1"># 如果上面 GPIO 口的选定模式指定为主板模式的话，这里就应该指定8号而不是15号</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+
+<span class="c1"># 循环10次</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 最后清理 GPIO 口</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</pre>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/hardware.html">Hardware</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/gpio.html">GPIO</a>, <a href="https://magicalboy.com/note/tag/raspberrypi.html">RaspberryPi</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

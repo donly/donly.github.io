@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Gentoo 2015
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/gentoo.html" rel="bookmark"><h1>Gentoo 2015</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="section" id="gentoo">
+<h2>为什么选择 Gentoo</h2>
+<p>完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。</p>
+<p>同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。</p>
+<p>另外附 Gentoo 排名情况：  <a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo">DistroWatch</a> 。</p>
+</div>
+<div class="section" id="id1">
+<h2>安装过程</h2>
+<p>整个安装过程主要参考 <a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64">Handbook 手册</a>，利用业余时间两个晚上搞定。</p>
+<div class="highlight"><pre><span></span><span class="c1"># uname -a</span>
+Linux don <span class="m">4</span>.0.5-gentoo <span class="c1">#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz GenuineIntel GNU/Linux</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>桌面选择</h2>
+<p>首先纠结的是选择。既然如此，回到出发点思考，为什么要安装桌面环境。一是个人 Linux 基础问题。再加上多年不用，没有能力在 Shell 环境搞定 WIFI 和 蓝牙等的驱动。</p>
+<p>基于大学时代玩过 Ubuntu 和 Fedora，对 GNOME 和 KDE 有所了解，所以主要还是从这两个中选择，虽然 Ubuntu 已经不用 GNOME 改用 Unity，但 GNOME 3 看起来还是比较现代化，就它吧！</p>
+<p>不过在安装 GNOME 之前，我们先了解一下X11，即 X Window 系统。</p>
+</div>
+<div class="section" id="x11">
+<h2>X11</h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X 窗口系统</a> 还是很 NB 的，出生比我早。GNOME 和 KDE 都是基于 X11 系统为基础实现的。<a class="reference external" href="https://zh.wikipedia.org/wiki/XQuartz">XQuartz</a> 是苹果公司的 OS X 的实现，Apple X11。</p>
+<p>Gentoo Linux 上的 X11 实现是 <a class="reference external" href="https://en.wikipedia.org/wiki/X.Org_Server">XOrg</a>。</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)">Wayland</a> 是一个比较新的显示服务器与客户端通信方式的协议，而 GNOME 从 3.10 开始支持 Wayland。</p>
+</div>
+<div class="section" id="init-system">
+<h2>Init System</h2>
+<p>在 Gentoo，可以用以下命令查看当前系统运行的 Init 系统是什么：</p>
+<div class="highlight"><pre><span></span><span class="c1"># ps u -p 1</span>
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         <span class="m">1</span>  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">4164</span>  <span class="m">1420</span> ?        Ss   Sep08   <span class="m">0</span>:01 init <span class="o">[</span><span class="m">3</span><span class="o">]</span>
+</pre></div>
+<p>如果是显示的是 init，那么 init 系统是 OpenRC，如果显示 systemd，则是 init system 是 systemd (via from <a class="reference external" href="http://unix.stackexchange.com/a/114619">Detect init system using the shell</a>)。</p>
+</div>
+<div class="section" id="gnome-3">
+<h2>GNOME 3</h2>
+<p><a class="reference external" href="https://www.gnome.org/gnome-3/">GNOME 3</a> 的目标是简单易用，与 Python 的 Zen 核心思想很接近。</p>
+<img alt="GNOME 3 overview" src="https://www.gnome.org/wp-content/uploads/2015/03/activities-overview-3.16-940x529.png" />
+<p>准备安装的时候，在网上找到这个`贴子 &lt;<a class="reference external" href="https://forums.gentoo.org/viewtopic-p-7696198.html">https://forums.gentoo.org/viewtopic-p-7696198.html</a>&gt;`_：</p>
+<blockquote>
+systemd is now a mandatory dependency of Gnome3. Normally, if you want to use Gnome3,  systemd must be installed.</blockquote>
+<p>有没有桌面环境可以不更换现在的 Init System 呢，继续查找资料，然后在 <a class="reference external" href="https://wiki.gentoo.org/wiki/Recommended_applications#Desktop_environment">Desktop environment</a> 发现了 <a class="reference external" href="https://wiki.gentoo.org/wiki/Xfce">Xfce</a>。</p>
+</div>
+<div class="section" id="id4">
+<h2>Xfce</h2>
+<p>Xfce 是个轻量级的类 Unix 桌面环境，It aims to be fast and low on system resources。</p>
+</div>
+<div class="section" id="x-window">
+<h2>安装 X Window</h2>
+<p>主要参考：<a class="reference external" href="https://wiki.gentoo.org/wiki/Xorg/Guide">https://wiki.gentoo.org/wiki/Xorg/Guide</a></p>
+<p>查看显卡信息，可以得到：</p>
+<div class="highlight"><pre><span></span><span class="c1"># emerge --ask sys-apps/pciutils</span>
+<span class="c1"># lspci | grep VGA</span>
+<span class="c1"># lspci | grep VGA</span>
+<span class="m">01</span>:00.0 VGA compatible controller: Advanced Micro Devices, Inc. <span class="o">[</span>AMD/ATI<span class="o">]</span> Oland <span class="o">[</span>Radeon HD <span class="m">8570</span> / R7 <span class="m">240</span> OEM<span class="o">]</span>
+<span class="c1"># emerge --sync</span>
+<span class="c1"># emerge --ask x11-drivers/radeon-ucode</span>
+</pre></div>
+<p>配置 Linux 内核，输入以下命令：</p>
+<div class="highlight"><pre><span></span><span class="c1"># cd /usr/src/linux</span>
+<span class="c1"># make menuconfig</span>
+</pre></div>
+<p>修改 make.config 配置， /etc/portage/make.conf：</p>
+<div class="highlight"><pre><span></span><span class="c1"># (For mouse, keyboard, and Synaptics touchpad support)</span>
+<span class="nv">INPUT_DEVICES</span><span class="o">=</span><span class="s2">&quot;evdev synaptics&quot;</span>
+<span class="c1"># (For AMD/ATI cards)</span>
+<span class="nv">VIDEO_CARDS</span><span class="o">=</span><span class="s2">&quot;radeon&quot;</span>
+</pre></div>
+<p>然后执行：emerge --ask --verbose x11-base/xorg-drivers</p>
+<p>安装 Xorg：emerge --ask x11-base/xorg-server
+安装完成后，更新环境：env-update &amp;&amp; source /etc/profile
+然后重启系统。
+登入，启动 startx，成功了：</p>
+<img alt="" src="images/Gentoo_Xfce_Desktop.jpg" />
+</div>
+<div class="section" id="portage-sync">
+<h2>Portage/Sync 配置</h2>
+<p>在日常更新维护的时候遇到这样的警告：</p>
+<div class="highlight"><pre><span></span>!!! SYNC setting found in make.conf.
+This setting is Deprecated and no longer used.  Please ensure your <span class="s1">&#39;sync-type&#39;</span> and <span class="s1">&#39;sync-uri&#39;</span> are <span class="nb">set</span> correctly in /etc/portage/repos.conf/gentoo.conf
+</pre></div>
+<p>解决方法主要参考 <a class="reference external" href="https://wiki.gentoo.org/wiki/Project:Portage/Sync">Portage/Sync</a>：</p>
+<div class="highlight"><pre><span></span>mkdir /etc/portage/repos.conf
+cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
+mirrorselect -i -r -o &gt;&gt; /etc/portage/repos.conf/gentoo.conf <span class="c1"># 选择一个国内镜像</span>
+vi /etc/portage/make.conf <span class="c1"># 将 SYNC 设置删除</span>
+</pre></div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/linux.html">Linux</a>, <a href="https://magicalboy.com/note/tag/gentoo.html">Gentoo</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

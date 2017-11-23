@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Xcode
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/xcode.html" rel="bookmark"><h1>Xcode</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Xcode 目前最新版本 <a class="reference external" href="http://magicalboy.com/xcode-5-0/">Xcode 5.0</a> ，支持 iPhone 5s, iOS 7 开发。</p>
+<div class="section" id="what-s-new">
+<h2>What's New</h2>
+<p>各个版本的 Xcode 新增功能说明。</p>
+<div class="section" id="xcode-5-0-x">
+<h3>Xcode 5.0.x</h3>
+<p>Help you design an app that looks gorgeous on iOS 7 or OS X Mavericks.</p>
+<p>WWDC地址：<a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400">What’s New in Xcode 5</a></p>
+<ul class="simple">
+<li>素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets，只能在 Xcode 5 中打开使用。通过它可以创建和使用每个图片的所有版本，而不需管理单独的文件，或不需要单独的文件命名约定。素材目录还可以创建图片的切片，使得图片可以在用户界面上动态拉伸过程中保持文件大小。可惜这个功能是 iOS7 才支持。</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ios">
+<h2>支持 iOS 情况</h2>
+<div class="section" id="id1">
+<h3>Xcode 5.0.x</h3>
+<p>最低支持 iOS 4.3，但生成的 xib 在之前版本的 Xcode 中打不开。解决方法见：<a class="reference external" href="http://stackoverflow.com/questions/17281073/cant-open-project-in-xcode-4-6-after-opening-in-5-0">Can't Open Project in Xcode 4.6 After Opening in 5.0</a> 。</p>
+</div>
+<div class="section" id="xcode-4-4-x">
+<h3>Xcode 4.4.x</h3>
+<p>虽然可以支持到iOS 3.0，但不支持 nib，只能用代码实现 UI 编写。只有 Xcode 4.2.x 版本及以下才支持 nib。</p>
+</div>
+<div class="section" id="xcode-4-5-x">
+<h3>Xcode 4.5.x</h3>
+<p>不再支持 iOS 4.3 以下版本开发，即不再支持 armv 6。</p>
+<ul class="simple">
+<li>相关连接：<a class="reference external" href="http://stackoverflow.com/questions/9961631/build-universal-app-for-ios-3-0-using-xcode-4-3-x-nskeyedunarchiver-exception">Build universal app for iOS 3.0 using Xcode 4.3.x - NSKeyedUnarchiver Exception - Stack Overflow</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="linker-flags">
+<h2>Linker Flags</h2>
+<ul class="simple">
+<li>-all_load Loads all members of static archive libraries.</li>
+<li>-ObjC Loads all members of static archive libraries that implement an Objective-C class or category.</li>
+<li>-force_load (path_to_archive) Loads all members of the specified static archive library. Note: -all_load forces all members of all archives to be loaded. This option allows you to target a specific archive.</li>
+</ul>
+<p>具体请参考苹果Q&amp;A文档：<a class="reference external" href="https://developer.apple.com/library/mac/#qa/qa2006/qa1490.html">Building Objective-C static libraries with categories</a></p>
+<p>StackOverflow：<a class="reference external" href="http://stackoverflow.com/a/8179905">Objective-C categories in static library</a></p>
+</div>
+<div class="section" id="id2">
+<h2>启用 Xcode 编译版本自增功能</h2>
+<p>使用苹果自带的 agvtool 工具，方法见 <a class="reference external" href="https://developer.apple.com/library/ios/qa/qa1827/_index.html">Automating Version and Build Numbers Using agvtool</a>。</p>
+<p>在 Xcode 项目中选中 Target，在Build Phases中新增一个 Run Script：</p>
+<pre class="code shell literal-block">
+agvtool next-version -all
+</pre>
+<p>之后每 Build 一次 Bundle version 的号码就会自增一次。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/ios.html">iOS</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/ios.html">iOS</a>, <a href="https://magicalboy.com/note/tag/xcode.html">Xcode</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

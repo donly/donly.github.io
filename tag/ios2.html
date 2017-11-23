@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - iOS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/ios-thread.html" rel="bookmark"><h1>iOS 多线程学习</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id9">基础知识</a></li>
+<li><a class="reference internal" href="#nsthread" id="id10">NSThread</a><ul>
+<li><a class="reference internal" href="#id3" id="id11">创建和启动</a></li>
+<li><a class="reference internal" href="#id4" id="id12">线程同步</a></li>
+<li><a class="reference internal" href="#id5" id="id13">线程交互</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nsoperation" id="id14">NSOperation</a><ul>
+<li><a class="reference internal" href="#id6" id="id15">并发执行</a></li>
+<li><a class="reference internal" href="#id7" id="id16">非并发执行</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gcd" id="id17">GCD</a></li>
+<li><a class="reference internal" href="#id8" id="id18">线程概念</a><ul>
+<li><a class="reference internal" href="#run-loops" id="id19">Run Loops</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">基础知识</a></h2>
+<p>并发和并行。从技术角度来看，并发是程序的属性，而并行运作是机器的属性。并行和并发是两种分开的概念。作为程序员，你不能保证你的代码会在能并行执行你的代码的机器上运行。然而，你可以设计你的代码，让它使用并发操作。</p>
+<p>主要术语：</p>
+<ul class="simple">
+<li><strong>任务</strong>：一项需要完成的，简单，单一的任务。</li>
+<li><strong>线程</strong>：一种由操作系统提供的机制，允许多条指令在一个单独的程序中同时执行。</li>
+<li><strong>进程</strong>：一段可执行的代码，它可以由几个线程组成。</li>
+</ul>
+<p>进程，线程和任务之间的关系：</p>
+<img alt="进程，线程和任务" src="images/Process_Thread_Task.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>注意：</p>
+<blockquote>
+<p>在iPhone和Mac中，线程功能是由POSIX Threads API（或者pthreads）提供的，它是操作系统的一部分。这是相当底层的东西，你会发现很容易犯错；也许线程最坏的地方就是那些极难被发现的错误吧！</p>
+<p>Foundation 框架包含了一个叫做NSThread的类 …</p></blockquote></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/uiimage.html" rel="bookmark"><h1>UIImage 使用</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html">UIImage Class Reference</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Inherits from</td>
+<td>NSObject</td>
+</tr>
+<tr><td>Framework</td>
+<td>/System/Library/Frameworks/UIKit.framework</td>
+</tr>
+<tr><td>Availability</td>
+<td>Available in iOS 2.0 and later.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="stretch">
+<h2>Stretch</h2>
+<p>将</p>
+<img alt="" src="http://i.stack.imgur.com/IPNUm.png" />
+<p>拉伸为</p>
+<img alt="" src="http://i.stack.imgur.com/1skMj.png" />
+<p>代码：</p>
+<div class="highlight"><pre><span></span><span class="bp">UIImage</span> <span class="o">*</span><span class="n">originalImage</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIImage</span> <span class="nl">imageNamed</span><span class="p">:</span><span class="s">@&quot;myImage.png&quot;</span><span class="p">];</span>
+<span class="bp">UIImage</span> <span class="o">*</span><span class="n">newImage</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">([</span><span class="n">originalImage</span> <span class="nl">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">resizableImageWithCapInsets</span><span class="p">:)])</span> <span class="p">{</span>
+    <span class="c1">// iOS 5 and obove.</span>
+    <span class="n">newImage</span> <span class="o">=</span> <span class="p">[</span><span class="n">originalImage</span> <span class="nl">resizableImageWithCapInsets</span><span class="p">:(</span><span class="bp">UIEdgeInsets</span><span class="p">){</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5 …</span></pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/xcode.html" rel="bookmark"><h1>Xcode</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Xcode 目前最新版本 <a class="reference external" href="http://magicalboy.com/xcode-5-0/">Xcode 5.0</a> ，支持 iPhone 5s, iOS 7 开发。</p>
+<div class="section" id="what-s-new">
+<h2>What's New</h2>
+<p>各个版本的 Xcode 新增功能说明。</p>
+<div class="section" id="xcode-5-0-x">
+<h3>Xcode 5.0.x</h3>
+<p>Help you design an app that looks gorgeous on iOS 7 or OS X Mavericks.</p>
+<p>WWDC地址：<a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400">What’s New in Xcode 5</a></p>
+<ul class="simple">
+<li>素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets …</li></ul></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/xcode-remove-working-copies.html" rel="bookmark"><h1>Xcode 7 清除多余的 Woking copies</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Xcode 版本：Version 7.1 (7B91b)</p>
+<p><strong>问题描述：</strong>
+由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。</p>
+<p><strong>解决方法：</strong>
+删除 <em>ProjectName.xcworkspace &gt; xcshareddata &gt; ProjectName.xcscmblueprint</em>，重启 Xcode。</p>
+<p>参考链接：<a class="reference external" href="http://stackoverflow.com/a/27535601">http://stackoverflow.com/a/27535601</a></p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="https://magicalboy.com/note/tag/ios.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 2 / 2
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

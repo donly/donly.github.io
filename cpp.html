@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    C++ 学习笔记
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/cpp.html" rel="bookmark"><h1>C++ 学习笔记</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id13">概述</a></li>
+<li><a class="reference internal" href="#id3" id="id14">语法</a><ul>
+<li><a class="reference internal" href="#id4" id="id15">注释</a></li>
+<li><a class="reference internal" href="#id5" id="id16">编译预处理指令</a></li>
+<li><a class="reference internal" href="#namespace" id="id17">命名空间 Namespace</a></li>
+<li><a class="reference internal" href="#main" id="id18">main 函数</a></li>
+<li><a class="reference internal" href="#id6" id="id19">语句</a></li>
+<li><a class="reference internal" href="#id7" id="id20">标识符</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8" id="id21">数据类型</a><ul>
+<li><a class="reference internal" href="#id9" id="id22">系统指定的数据类型</a></li>
+<li><a class="reference internal" href="#id10" id="id23">变量</a></li>
+<li><a class="reference internal" href="#id11" id="id24">常量</a></li>
+<li><a class="reference internal" href="#id12" id="id25">表达式</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id13">概述</a></h2>
+<p>C++是20世纪80年代中期（发行于1983）由AT&amp;T贝尔实验室的 Bjarne Stroustrup 开发的。</p>
+<p>属于面向对象语言，它包含 C 语言全部属性。</p>
+<p>使用很广泛，不得不学。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id14">语法</a></h2>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id15">注释</a></h3>
+<div class="highlight"><pre><span></span><span class="c1">// 这是单行注释</span>
+<span class="cm">/**</span>
+<span class="cm"> * 这是</span>
+<span class="cm"> * 多行的注释</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id16">编译预处理指令</a></h3>
+<p>编译器对 source code 编译之前做的事。用 &quot;#&quot; 开头的命令行来表示。</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;filename&gt; // 尖括号表示包含的是 C++ 标准库的头文件</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;book.h&quot;   // 包含的是用户自己的头文件</span><span class="cp"></span>
+</pre></div>
+</div>
+<div class="section" id="namespace">
+<h3><a class="toc-backref" href="#id17">命名空间 Namespace</a></h3>
+<div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</pre></div>
+<p>是 C++ 编译系统为各种命名对象（即标识符）所指定的有效范围。std (Standard 的缩写) 表示 C++ 标准库的所有命名对象，使用分号结束。</p>
+</div>
+<div class="section" id="main">
+<h3><a class="toc-backref" href="#id18">main 函数</a></h3>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>  <span class="c1">// 程序执行入口</span>
+</pre></div>
+<p>int 返回值给 OS。</p>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id19">语句</a></h3>
+<p>函数体内包括两类语句：
+- 声明语句：告诉编译系统本函数使用哪些数据。
+- 可执行语句：导致某些动作发生，在翻译成机器语言指令后执行。包括赋值语句，return语句等。</p>
+<div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">miles</span><span class="p">;</span>            <span class="c1">// 声明语句</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">miles</span><span class="p">;</span>           <span class="c1">// 输入语句</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">miles</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// 输出语句</span>
+</pre></div>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id20">标识符</a></h3>
+<p>标识符用来给程序中的各种数据元素和对象命名的。</p>
+<p>保留字，即关键字属于 C++ 的特殊标识符。比如：const, float, include, int, namespace, retrun 等。程序员自定义的标识符，如上例中的 miles。</p>
+<p>标识符语法规则：</p>
+<ul class="simple">
+<li>必须以字母或下划线开头。</li>
+<li>标识符中只能包含字母，数字或下划线。（上一条说了不能使用数字开头）</li>
+<li>不能使用 C++ 保留字。</li>
+<li>大小定敏感。</li>
+</ul>
+<p>命名规则：</p>
+<ul class="simple">
+<li>最好取有意义的名称，见名知义。</li>
+<li>建议使用 “匈牙利符号” 的命名规则，即非首单词的第一个字母大写。比如：dollarsPerHour.</li>
+<li>不管使用什么命名规则，一定要保持命名规则的一致性。</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id21">数据类型</a></h2>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id22">系统指定的数据类型</a></h3>
+<ul class="simple">
+<li>整型 int</li>
+<li>实型 float</li>
+<li>布尔类型 bool (George Boole）</li>
+<li>字符型 char (1 byte)</li>
+</ul>
+<p>TODO</p>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id23">变量</a></h3>
+</div>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id24">常量</a></h3>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id25">表达式</a></h3>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/programing-language.html">Programing Language</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/c.html">C++</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

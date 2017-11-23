@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    启用 OS X Web 服务器
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-06-01T14:12:00+08:00" pubdate>
+                            三, 01  6 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/enable-osx-webserver.html" rel="bookmark"><h1>启用 OS X Web 服务器</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>OS X 有内置 <code>Apache</code> 服务器应用，早期版本可以在网络共享中打开，目前的 OS Ｘ 版本已经取消。</p>
+<p>本文 OS X 版本是 <em>OS X El Capitan 10.11.5</em>，Apache 版本：</p>
+<pre class="code shell literal-block">
+$ apachectl -v
+Server version: Apache/2.4.18 <span class="o">(</span>Unix<span class="o">)</span>
+</pre>
+<div class="section" id="apache">
+<h2>Apache 使用</h2>
+<ul>
+<li><p class="first">即使在未配置之前也可以打开 Apache 服务：</p>
+<pre class="code shell literal-block">
+$ sudo apachectl start
+</pre>
+</li>
+<li><p class="first">然后输入本机地址进行测试：<a class="reference external" href="http://localhost/">http://localhost/</a> 或 <a class="reference external" href="http://127.0.0.1">http://127.0.0.1</a></p>
+</li>
+<li><p class="first">测试完毕后，停止服务：</p>
+<pre class="code shell literal-block">
+$ sudo apachectl stop
+</pre>
+</li>
+<li><p class="first">如果更改了配置，刚使用以下命令重启：</p>
+<pre class="code shell literal-block">
+$ sudo apachectl -k restart
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Apache 配置</h2>
+<ul>
+<li><p class="first">编辑 Apache 的配置文件，路径：<em>/etc/apache2/httpd.conf</em>。</p>
+</li>
+<li><p class="first">修改 <em>Document Root</em>。</p>
+<p>默认的 <em>Document Root</em> 是 <em>/Library/WebServer/Documents</em>，这个路径下面就是默认的 <em>It works!</em> 页面文件。</p>
+<p>一般需要修改为用户目录下的 <em>Sites</em> 目录：<em>DocumentRoot &quot;/Users/[username]/Sites&quot;</em>。注意这里的路径必须写完整的路径，用户目录不能使用 <em>~</em> 代替。</p>
+</li>
+<li><p class="first">然后修改站点目录：</p>
+<pre class="code shell literal-block">
+&lt;Directory <span class="s2">&quot;Users/[username]/Sites&quot;</span>&gt;
+    Options FollowSymLinks Multiviews
+    MultiviewsMatch Any
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+</pre>
+<p>需要注意的是，<em>AllowOverride</em> 值改为 <em>All</em>。</p>
+</li>
+<li><p class="first">修改用户和用户组：</p>
+<pre class="code shell literal-block">
+User yaokan
+Group staff
+</pre>
+</li>
+<li><p class="first">创建站点目录</p>
+<p>在 Home 根目录下创建 <em>Sites</em> 目录，然后创建一个测试页面 <em>index.html</em>：</p>
+<pre class="code shell literal-block">
+$ mkdir ~/Sites
+$ <span class="nb">echo</span> <span class="s2">&quot;Hello World!&quot;</span> &gt; ~/Sites/index.html
+</pre>
+</li>
+<li><p class="first">重启服务器</p>
+<pre class="code shell literal-block">
+sudo apachectl restart
+</pre>
+<p>打开网址 <a class="reference external" href="http://localhost">http://localhost</a> 即可看到刚刚所创建的 <em>Hello World</em> 页面。</p>
+</li>
+</ul>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/web.html">web</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/web.html">web</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

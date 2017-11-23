@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    iOS 设计模式: Model View Controller
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/ios-design-patterns-model-view-controller.html" rel="bookmark"><h1>iOS 设计模式: Model View Controller</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>MVC 设计模式的主要目的是可重用性，能够在不同的视图中使用重用同一个模型。</p>
+<img alt="Model View Controller (MVC) Design Pattern" src="static/images/mvc.jpg" />
+<div class="section" id="model">
+<h2>模型 Model</h2>
+<p>模型包含了数据。例如，一个 Book 对象包含有关书的信息：标题和作者。此外，Book 对象能够被其它对象关联，建立一对一或一对多的关系。例如 Category 对象可包含多个 Book 对象。模型中的数据可以来源于本地数据库或文件，也可以从网络请求回来。</p>
+<p>模型不应该直接和视图打交道，应该在需要的时候访问通过控制器来访问。</p>
+<p>在 iOS 中，模型通常是 NSObject 或 NSManagedObject的子类。任何模型对象包括一些实例变量和对应的 getter/setter 方法。大多数面向对象编程语言都有提供封装的机制。在 iOS 中使用 &#64;property 封装，和可选的 &#64;synthesize 自动生成 getter/setter 方法。以 Book 模型为例：</p>
+<div class="highlight"><pre><span></span><span class="cp">#import &lt;Foundation/Foundation.h&gt;</span>
+
+<span class="k">@interface</span> <span class="nc">Book</span> : <span class="bp">NSObject</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">copy</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">title</span><span class="p">;</span>    <span class="c1">// 会自动生成 _title 实例变量</span>
+<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">copy</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">author</span><span class="p">;</span>   <span class="c1">// 会自动生成 _author 实例变量</span>
+
+<span class="k">@end</span>
+</pre></div>
+</div>
+<div class="section" id="view">
+<h2>视图 View</h2>
+<p>视图显示模型的一些信息。例如，视图能够显示书本列表。尽管视图不会直接从模型中获取信息，而是使用控制器来协调什么时候该显示什么。</p>
+<p>在 iOS 中，大多数视图继承自 UIView，UIView 能够捕捉触摸事件和绘图显示。UIKit 框架包括各种绘制系统标准界面元素的类，如表格，按钮，输入框，滑动条等。以下是一个书的列表：</p>
+<img alt="a list of books" src="static/images/book_list_table.jpg" />
+</div>
+<div class="section" id="controller">
+<h2>控制器 Controller</h2>
+<p>控制器能够访问模型的数据，然后将它们显示到视图。同一个控制器可以作为几个视图和模型之间的中间体。控制器监控着视图上的用户交互，并将产生的变化与模型通信。反过来，也可将由控制器观察到模型中的更改，呈现到视图上。</p>
+<p>控制器是多数应用所依赖的。在 iOS 中，控制器作为 UIViewController 的子类管理着视图。它也负责 委托（delegate） 消息和 目标－动作（target-action）消息的响应。以下是 UITableViewController （ UIViewController 的子类）如何管理 UITableView 的图解：</p>
+<img alt="UITableViewController manages a UITableView" src="static/images/tableviewcontroller_using_mvc.jpg" />
+<p>参考链接：<a class="reference external" href="http://blog.teamtreehouse.com/ios-design-patterns-model-view-controller-part-3">iOS Design Patterns: Model View Controller</a></p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/ios.html">iOS</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/ios.html">iOS</a>, <a href="https://magicalboy.com/note/tag/design-pattern.html">design pattern</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

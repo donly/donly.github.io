@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    iOS 多线程学习
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/ios-thread.html" rel="bookmark"><h1>iOS 多线程学习</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id9">基础知识</a></li>
+<li><a class="reference internal" href="#nsthread" id="id10">NSThread</a><ul>
+<li><a class="reference internal" href="#id3" id="id11">创建和启动</a></li>
+<li><a class="reference internal" href="#id4" id="id12">线程同步</a></li>
+<li><a class="reference internal" href="#id5" id="id13">线程交互</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nsoperation" id="id14">NSOperation</a><ul>
+<li><a class="reference internal" href="#id6" id="id15">并发执行</a></li>
+<li><a class="reference internal" href="#id7" id="id16">非并发执行</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gcd" id="id17">GCD</a></li>
+<li><a class="reference internal" href="#id8" id="id18">线程概念</a><ul>
+<li><a class="reference internal" href="#run-loops" id="id19">Run Loops</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">基础知识</a></h2>
+<p>并发和并行。从技术角度来看，并发是程序的属性，而并行运作是机器的属性。并行和并发是两种分开的概念。作为程序员，你不能保证你的代码会在能并行执行你的代码的机器上运行。然而，你可以设计你的代码，让它使用并发操作。</p>
+<p>主要术语：</p>
+<ul class="simple">
+<li><strong>任务</strong>：一项需要完成的，简单，单一的任务。</li>
+<li><strong>线程</strong>：一种由操作系统提供的机制，允许多条指令在一个单独的程序中同时执行。</li>
+<li><strong>进程</strong>：一段可执行的代码，它可以由几个线程组成。</li>
+</ul>
+<p>进程，线程和任务之间的关系：</p>
+<img alt="进程，线程和任务" src="images/Process_Thread_Task.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>注意：</p>
+<blockquote>
+<p>在iPhone和Mac中，线程功能是由POSIX Threads API（或者pthreads）提供的，它是操作系统的一部分。这是相当底层的东西，你会发现很容易犯错；也许线程最坏的地方就是那些极难被发现的错误吧！</p>
+<p>Foundation 框架包含了一个叫做NSThread的类，他更容易处理，但是使用NSThread管理多个线程仍然是件令人头疼的事情。NSOperation和NSOperationQueue是更高级别的类，他们大大简化了处理多个线程的过程。</p>
+</blockquote>
+</div>
+<div class="section" id="nsthread">
+<h2><a class="toc-backref" href="#id10">NSThread</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id11">创建和启动</a></h3>
+<p>看文档可以了解到，创建一个线程主要有两个方法：</p>
+<div class="highlight"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span><span class="p">;</span> <span class="c1">// designated initializer</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithTarget:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">target</span> <span class="nf">selector:</span><span class="p">(</span><span class="kt">SEL</span><span class="p">)</span><span class="nv">selector</span> <span class="nf">object:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">argument</span><span class="p">;</span>
+</pre></div>
+<p>使用以上两种方法创建的线程需要手动启动：</p>
+<div class="highlight"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">start</span><span class="p">;</span>
+</pre></div>
+<p>另外还有一种比较特殊，就是使用所谓的 convenient method，这个方法可以直接生成一个线程并启动它，而且无需为线程的清理负责。</p>
+<div class="highlight"><pre><span></span><span class="p">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">detachNewThreadSelector:</span><span class="p">(</span><span class="kt">SEL</span><span class="p">)</span><span class="nv">selector</span> <span class="nf">toTarget:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">target</span> <span class="nf">withObject:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">argument</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id12">线程同步</a></h3>
+<p>想一下多个窗口同时售票的售票系统。</p>
+<div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">//  AppDelegate.h</span>
+<span class="c1">//  SellTicket</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Chan Donly on 13-1-6.</span>
+<span class="c1">//  Copyright (c) 2013年 Diaoser. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &lt;UIKit/UIKit.h&gt;</span>
+
+
+<span class="k">@interface</span> <span class="nc">AppDelegate</span> : <span class="bp">UIResponder</span> <span class="o">&lt;</span><span class="bp">UIApplicationDelegate</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">tickets</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+
+    <span class="bp">NSThread</span> <span class="o">*</span><span class="n">ticketsThreadone</span><span class="p">;</span>
+    <span class="bp">NSThread</span> <span class="o">*</span><span class="n">ticketsThreadtwo</span><span class="p">;</span>
+
+    <span class="bp">NSCondition</span> <span class="o">*</span><span class="n">ticketsCondition</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="k">strong</span><span class="p">,</span> <span class="k">nonatomic</span><span class="p">)</span> <span class="bp">UIWindow</span> <span class="o">*</span><span class="n">window</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</pre></div>
+<p>类的实现：</p>
+<div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">//  AppDelegate.m</span>
+<span class="c1">//  SellTicket</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Chan Donly on 13-1-6.</span>
+<span class="c1">//  Copyright (c) 2013年 Diaoser. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &quot;AppDelegate.h&quot;</span>
+
+<span class="k">@implementation</span> <span class="nc">AppDelegate</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">dealloc</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">ticketsThreadone</span> <span class="k">release</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">ticketsThreadtwo</span> <span class="k">release</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">ticketsCondition</span> <span class="k">release</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="n">_window</span> <span class="k">release</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="nb">super</span> <span class="n">dealloc</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+<span class="p">{</span>
+    <span class="nb">self</span><span class="p">.</span><span class="n">window</span> <span class="o">=</span> <span class="p">[[[</span><span class="bp">UIWindow</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFrame</span><span class="p">:[[</span><span class="bp">UIScreen</span> <span class="n">mainScreen</span><span class="p">]</span> <span class="n">bounds</span><span class="p">]]</span> <span class="n">autorelease</span><span class="p">];</span>
+    <span class="c1">// Override point for customization after application launch.</span>
+
+    <span class="n">tickets</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// 锁对象</span>
+    <span class="n">ticketsCondition</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSCondition</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
+    <span class="n">ticketsThreadone</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSThread</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithTarget</span><span class="p">:</span><span class="nb">self</span> <span class="nl">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="nl">object</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">ticketsThreadone</span> <span class="nl">setName</span><span class="p">:</span><span class="s">@&quot;Thread-1&quot;</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">ticketsThreadone</span> <span class="n">start</span><span class="p">];</span>
+
+    <span class="n">ticketsThreadtwo</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSThread</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithTarget</span><span class="p">:</span><span class="nb">self</span> <span class="nl">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="nl">object</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">ticketsThreadtwo</span> <span class="nl">setName</span><span class="p">:</span><span class="s">@&quot;Thread-2&quot;</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">ticketsThreadtwo</span> <span class="n">start</span><span class="p">];</span>
+
+    <span class="c1">//[NSThread detachNewThreadSelector:@selector(run) toTarget:self withObject:nil];</span>
+
+    <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">window</span> <span class="n">makeKeyAndVisible</span><span class="p">];</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">run</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">TRUE</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 上锁</span>
+        <span class="p">[</span><span class="n">ticketsCondition</span> <span class="n">lock</span><span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">tickets</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">[</span><span class="bp">NSThread</span> <span class="nl">sleepForTimeInterval</span><span class="p">:</span><span class="mf">0.2</span><span class="p">];</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">tickets</span><span class="p">;</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;当前票数是:%d,售出:%d,线程名:%@&quot;</span><span class="p">,</span> <span class="n">tickets</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="p">[[</span><span class="bp">NSThread</span> <span class="n">currentThread</span><span class="p">]</span> <span class="n">name</span><span class="p">]);</span>
+            <span class="n">tickets</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// [ticketsCondition signal];</span>
+        <span class="c1">// 解除锁</span>
+        <span class="p">[</span><span class="n">ticketsCondition</span> <span class="n">unlock</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+<p>运行结果：</p>
+<div class="highlight"><pre><span></span>当前票数是:100,售出:0,线程名:Thread-1
+当前票数是:99,售出:1,线程名:Thread-2
+当前票数是:98,售出:2,线程名:Thread-1
+当前票数是:97,售出:3,线程名:Thread-2
+...
+</pre></div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id13">线程交互</a></h3>
+<p>如在主线程中修改界面。</p>
+<div class="highlight"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">performSelectorOnMainThread:</span><span class="p">(</span><span class="kt">SEL</span><span class="p">)</span><span class="nv">aSelector</span> <span class="nf">withObject:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">arg</span> <span class="nf">waitUntilDone:</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nv">wait</span>
+</pre></div>
+<p>在本过程中，可能需要释放一些资源，则需要使用NSAutoreleasePool来进行管理。</p>
+<div class="highlight"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">startTheBackgroundJob</span> <span class="p">{</span>
+    <span class="bp">NSAutoreleasePool</span> <span class="o">*</span><span class="n">pool</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSAutoreleasePool</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
+    <span class="c1">// to do something in your thread job</span>
+
+    <span class="p">...</span>
+
+    <span class="p">[</span><span class="nb">self</span> <span class="nl">performSelectorOnMainThread</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">makeMyProgressBarMoving</span><span class="p">)</span> <span class="nl">withObject</span><span class="p">:</span><span class="nb">nil</span> <span class="nl">waitUntilDone</span><span class="p">:</span><span class="nb">NO</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="n">pool</span> <span class="k">release</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+<p><strong>如果某个ViewController里运行了一个Thread，Thread还没结束的时候，这个ViewController被Release了，结果会如何？</strong></p>
+<p style="color:red;">经过的的测试，Thread 不结束，ViewController 一直保留，不会执行 dealloc 方法。</p></div>
+</div>
+<div class="section" id="nsoperation">
+<h2><a class="toc-backref" href="#id14">NSOperation</a></h2>
+<p>NSoperation也是多线程的一种，NSopertaion有2种形式</p>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id15">并发执行</a></h3>
+<p>并发执行你需要重载如下4个方法</p>
+<div class="highlight"><pre><span></span><span class="c1">//执行任务主函数，线程运行的入口函数</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">start</span> <span class="p">{}</span>
+
+<span class="c1">//是否允许并发，返回YES，允许并发，返回NO不允许。默认返回NO</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">isConcurrent</span> <span class="p">{}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">isExecuting</span> <span class="p">{}</span>
+
+<span class="c1">//是否已经完成，这个必须要重载，不然放在放在NSOperationQueue里的NSOpertaion不能正常释放。</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">isFinished</span> <span class="p">{}</span>
+</pre></div>
+<p>比如一个 TestNSOperation:NSoperaion 对象 testOperation 重载上述的4个方法，</p>
+<div class="highlight"><pre><span></span><span class="bp">NSOperationQueue</span> <span class="o">*</span><span class="n">queue</span> <span class="o">=</span> <span class="p">[[[</span><span class="bp">NSOperationQueue</span> <span class="n">alloc</span> <span class="p">]</span> <span class="n">init</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">];</span>
+<span class="p">[</span><span class="n">queue</span> <span class="nl">addOperation</span><span class="p">:</span><span class="n">testOperation</span><span class="p">];</span>
+</pre></div>
+<p>会自动调用 testOperation 里的 start 函数，如果需要多个 NSOperation, 你需要设置 queue 的一些属性，如果多个 NSOperation 之间又依赖关系，也可以设置，具体可以参考 <a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/NSOperation_class/Reference/Reference.html">API</a> 文档。</p>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id16">非并发执行</a></h3>
+<p>只需要重载这个 main 方法就可以了。</p>
+<div class="highlight"><pre><span></span><span class="p">-(</span><span class="kt">void</span><span class="p">)</span><span class="nf">main</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gcd">
+<h2><a class="toc-backref" href="#id17">GCD</a></h2>
+<p>iOS 4.0+ 才支持。</p>
+<p>TODO</p>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id18">线程概念</a></h2>
+<div class="section" id="run-loops">
+<h3><a class="toc-backref" href="#id19">Run Loops</a></h3>
+<p>一个 run loop 就是一个事件处理的循环，用来不停的调度工作以及处理输入事件。使用 run loop 的目的是让你的线程在有工作的时候忙于工作，而没工作的时候处于休眠状态。</p>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/ios.html">iOS</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/ios.html">iOS</a>, <a href="https://magicalboy.com/note/tag/thread.html">thread</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

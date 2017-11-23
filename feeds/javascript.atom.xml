@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - JavaScript</title><link href="https://magicalboy.com/note/" rel="alternate"></link><link href="https://magicalboy.com/note/feeds/javascript.atom.xml" rel="self"></link><id>https://magicalboy.com/note/</id><updated>2017-10-26T22:30:00+08:00</updated><entry><title>wepy 框架</title><link href="https://magicalboy.com/note/wepy.html" rel="alternate"></link><published>2017-10-26T22:30:00+08:00</published><updated>2017-10-26T22:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-10-26:/note/wepy.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://wepyjs.github.io/wepy"&gt;小程序组件化开发框架&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;WePY项目的创建与使用&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;环境介绍：macOS Sierra 10.12.6 (16G29)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ npm --version
+&lt;span class="m"&gt;5&lt;/span&gt;.4.2
+
+$ node -v
+v8.8.1
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;全局安装或更新WePY命令行工具&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ npm install wepy-cli -g
+/usr/local/bin/wepy -&amp;gt; /usr/local/lib/node_modules/wepy-cli/bin/wepy.js
+
+&amp;gt; fsevents&amp;#64;1.1.2 install /usr/local/lib/node_modules/wepy-cli/node_modules/fsevents
+&amp;gt; node install …&lt;/pre&gt;&lt;/blockquote&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="https://wepyjs.github.io/wepy"&gt;小程序组件化开发框架&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;WePY项目的创建与使用&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;环境介绍：macOS Sierra 10.12.6 (16G29)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ npm --version
+&lt;span class="m"&gt;5&lt;/span&gt;.4.2
+
+$ node -v
+v8.8.1
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;全局安装或更新WePY命令行工具&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ npm install wepy-cli -g
+/usr/local/bin/wepy -&amp;gt; /usr/local/lib/node_modules/wepy-cli/bin/wepy.js
+
+&amp;gt; fsevents&amp;#64;1.1.2 install /usr/local/lib/node_modules/wepy-cli/node_modules/fsevents
+&amp;gt; node install
+
+&lt;span class="o"&gt;[&lt;/span&gt;fsevents&lt;span class="o"&gt;]&lt;/span&gt; Success: &lt;span class="s2"&gt;&amp;quot;/usr/local/lib/node_modules/wepy-cli/node_modules/fsevents/lib/binding/Release/node-v57-darwin-x64/fse.node&amp;quot;&lt;/span&gt; already installed
+Pass --update-binary to reinstall or --build-from-source to recompile
++ wepy-cli&amp;#64;1.5.9
+added &lt;span class="m"&gt;255&lt;/span&gt; packages in &lt;span class="m"&gt;27&lt;/span&gt;.108s
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;在开发目录中生成Demo开发项目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ wepy new wxapp2
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;创建&lt;span class="o"&gt;]&lt;/span&gt; 目录：wxapp2
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; 配置: package.json
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: .editorconfig
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: .eslintignore
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: .eslintrc.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: .wepyignore
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/app.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/components/counter.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/components/group.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/components/groupitem.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/components/list.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/components/panel.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/index.template.html
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/mixins/test.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: src/pages/index.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 文件: wepy.config.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;执行&lt;span class="o"&gt;]&lt;/span&gt; 执行命令: npm install --save wepy wepy-com-toast wepy-async-function
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;执行&lt;span class="o"&gt;]&lt;/span&gt; 执行命令: npm install --save-dev wepy-compiler-babel babel-plugin-transform-decorators-legacy babel-plugin-syntax-export-extensions babel-plugin-transform-export-extensions babel-plugin-transform-class-properties babel-preset-env wepy-compiler-less cross-env eslint&amp;#64;3.18.0 babel-eslint&amp;#64;7.2.1 eslint-config-standard&amp;#64;7.1.0 eslint-friendly-formatter&amp;#64;2.0.7 eslint-plugin-html&amp;#64;2.0.1 eslint-plugin-promise&amp;#64;3.5.0 eslint-plugin-standard&amp;#64;2.0.1 wepy-eslint
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:16:49&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;信息&lt;span class="o"&gt;]&lt;/span&gt; 可能需要几分钟, 请耐心等待...
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN wxapp2&amp;#64;1.2.8 No description
+npm WARN wxapp2&amp;#64;1.2.8 No repository field.
+
++ wepy-async-function&amp;#64;1.4.4
++ wepy&amp;#64;1.6.0
++ wepy-com-toast&amp;#64;1.0.2
+added &lt;span class="m"&gt;5&lt;/span&gt; packages in &lt;span class="m"&gt;3&lt;/span&gt;.299s
+npm WARN wxapp2&amp;#64;1.2.8 No description
+npm WARN wxapp2&amp;#64;1.2.8 No repository field.
+
++ babel-eslint&amp;#64;7.2.1
++ eslint&amp;#64;3.18.0
++ eslint-friendly-formatter&amp;#64;2.0.7
++ eslint-plugin-promise&amp;#64;3.5.0
++ eslint-plugin-html&amp;#64;2.0.1
++ babel-plugin-transform-decorators-legacy&amp;#64;1.3.4
++ eslint-config-standard&amp;#64;7.1.0
++ eslint-plugin-standard&amp;#64;2.0.1
++ babel-plugin-syntax-export-extensions&amp;#64;6.13.0
++ babel-plugin-transform-class-properties&amp;#64;6.24.1
++ babel-plugin-transform-export-extensions&amp;#64;6.22.0
++ wepy-compiler-babel&amp;#64;1.5.1
++ babel-preset-env&amp;#64;1.6.1
++ wepy-compiler-less&amp;#64;1.3.10
++ cross-env&amp;#64;5.1.0
++ wepy-eslint&amp;#64;1.5.2
+added &lt;span class="m"&gt;308&lt;/span&gt; packages in &lt;span class="m"&gt;40&lt;/span&gt;.672s
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:34&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;完成&lt;span class="o"&gt;]&lt;/span&gt; 安装依赖完成
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:34&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;执行&lt;span class="o"&gt;]&lt;/span&gt; 执行命令: wepy build
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:34&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;信息&lt;span class="o"&gt;]&lt;/span&gt; 可能需要几分钟, 请耐心等待...
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:35&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 入口: src/app.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:35&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JSON: dist/app.json
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:35&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/counter.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/group.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/groupitem.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/list.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/panel.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; HTML: src/index.template.html
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 页面: src/pages/index.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JSON: dist/pages/index.json
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/wepy.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy-async-function/index.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/app.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/counter.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/group.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/groupitem.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/list.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/panel.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/mixins/test.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXML: dist/pages/index.wxml
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy-com-toast/toast.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/pages/index.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/app.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/page.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/component.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/event.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/base.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/util.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/mixin.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/wepy.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy-async-function/global.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/promise-polyfill/promise.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/regenerator-runtime/runtime.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy-async-function/index.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; Other: node_modules/wepy-com-toast/toast.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; 依赖: dist/npm/wepy/lib/native.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/app.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/page.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/component.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/event.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/base.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/util.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/mixin.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy-async-function/global.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/promise-polyfill/promise.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/regenerator-runtime/runtime.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXML: dist/npm/wepy-com-toast/toast.wxml
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy-com-toast/toast.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/app.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/npm/wepy/lib/native.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/counter.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/group.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/groupitem.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/list.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/panel.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/pages/index.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:36&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/npm/wepy-com-toast/toast.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:37&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;完成&lt;span class="o"&gt;]&lt;/span&gt; 代码编译完成
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;:17:37&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;完成&lt;span class="o"&gt;]&lt;/span&gt; 项目初始化完成, 可以开始使用小程序。
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;切换至项目目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; wxapp2
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;开启实时编译&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ wepy build --watch
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:22&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 入口: src/app.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:22&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JSON: dist/app.json
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; DS_STORE: src/.DS_Store
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/counter.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/group.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/groupitem.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/list.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 组件: src/components/panel.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;拷贝&lt;span class="o"&gt;]&lt;/span&gt; HTML: src/index.template.html
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;编译&lt;span class="o"&gt;]&lt;/span&gt; 页面: src/pages/index.wpy
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JSON: dist/pages/index.json
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/app.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/counter.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/group.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/groupitem.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/list.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/components/panel.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/mixins/test.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXML: dist/pages/index.wxml
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; JS  : dist/pages/index.js
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/app.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/counter.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/group.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/groupitem.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/list.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/components/panel.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;写入&lt;span class="o"&gt;]&lt;/span&gt; WXSS: dist/pages/index.wxss
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;:01:23&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;信息&lt;span class="o"&gt;]&lt;/span&gt; 开始监听文件改动。
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic simple" start="6"&gt;
+&lt;li&gt;接下来直接参考 &lt;a class="reference external" href="https://wepyjs.github.io/wepy/#/"&gt;https://wepyjs.github.io/wepy/#/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</content><category term="js"></category></entry></feed>

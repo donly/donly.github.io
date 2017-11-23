@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - Linux</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-03-23T10:25:00+08:00" pubdate>
+                            四, 23  3 2017
+                        </time>
+                        <a href="https://magicalboy.com/note/reset-raspberry-root-password.html" rel="bookmark"><h1>重置树莓派 Root 密码</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。</p>
+<p>如果还有模糊印象，可以通过 <code>passwd pi</code> 进行尝试。需要注意的是 <code>pi</code> 用户的初始密码是：</p>
+<div class="highlight"><pre><span></span>raspberry
+</pre></div>
+<div class="section" id="id1">
+<h2>找回密码</h2>
+<ol class="arabic simple">
+<li>关机取出内存卡，插到另一台电脑，Windows, Linux 或 macOS 都支持。</li>
+<li>编辑 <code>cmdline.txt</code> 文件
+在 <code>boot</code> 分区下找到此文件，修改之前的内容为：</li>
+</ol>
+<blockquote>
+<div class="highlight"><pre><span></span>dwc_otg.lpm_enable<span class="o">=</span><span class="m">0</span> <span class="nv">console</span><span class="o">=</span>serial0,115200 <span class="nv">console</span><span class="o">=</span>tty1 <span class="nv">root</span><span class="o">=</span>/dev/mmcblk0p7 <span class="nv">rootfstype</span><span class="o">=</span>ext4 <span class="nv">elevator</span><span class="o">=</span>deadline fsck.repair<span class="o">=</span>yes rootwait …</pre></div></blockquote></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-31T14:22:00+08:00" pubdate>
+                            二, 31  5 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/install-amp-on-raspberry-pi.html" rel="bookmark"><h1>在树莓派上安装 AMP</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。</p>
+<ul class="simple">
+<li>Apache 是一个非常流行的 Web 服务器软件</li>
+<li>MySQL 是一个关系型数据库管理系统</li>
+<li>PHP 是一种通用开源脚本语言，主要适用于 Web 开发领域</li>
+</ul>
+<div class="section" id="apache">
+<h2>安装 Apache</h2>
+<ul class="simple">
+<li>Apache 可以用下面的命令来安装：<em>sudo apt-get install apache2</em></li>
+<li>Raspbian Jessie 版本的默认站点路径是 <em>/var/www/html</em></li>
+<li>配置文件路径为 <em>/etc/apache2/</em></li>
+<li>修改监听端口号 <em>sudo vi /etc/apache2/ports.conf</em></li>
+<li>重启服务 <em>sudo service apache2 restart</em></li>
+<li>修改权限 …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-17T10:25:00+08:00" pubdate>
+                            二, 17  5 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/bash-shell.html" rel="bookmark"><h1>bash shell 学习</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：</p>
+<ul class="simple">
+<li><a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell">什么是 shell？</a></li>
+<li><a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言">脚本语言</a></li>
+</ul>
+<p>简单来说， shell 是可以接受用户输入命令的程序，比如 Windows 下的命令行。</p>
+<p>而脚本语言可以理解为不需要编译，直接解释运行的语言。</p>
+<div class="section" id="id2">
+<h2>换行与注释</h2>
+<p>1. bash 在解析字符的时候，对待“;”跟看见回车是一样的
+1. 注释符号为 “#”</p>
+</div>
+<div class="section" id="id3">
+<h2>设计哲学</h2>
+<p>一切皆表达式。</p>
+<p>根据表达式的定义，任何表达式都必须有一个值。而 shell 在执行任何东西（不仅是命令）的时候都会有一个返回值。</p>
+<ul class="simple">
+<li>在 bash 编程中，返回值取值范围：<em>0-255</em></li>
+<li>跟 C 语言含义相反， bash 中 0 为真 …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-16T14:40:00+08:00" pubdate>
+                            一, 16  5 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/raspbian-exfat-support.html" rel="bookmark"><h1>exFAT 文件格式支持</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。</p>
+<p>基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。</p>
+<div class="section" id="id1">
+<h2>为什么要使用 exFAT</h2>
+<ul class="simple">
+<li>支持拷贝文件大于 4 GB</li>
+<li>兼容性好，方便在不同设备上插拔拷贝数据</li>
+<li>部分大容量内存卡购买回来默认使用的就是这种格式</li>
+</ul>
+<p>如何让部分操作系统支持 exFAT？</p>
+</div>
+<div class="section" id="raspberry-pi-raspbian">
+<h2>Raspberry Pi (RASPBIAN)</h2>
+<div class="highlight"><pre><span></span>sudo apt-get install exfat-fuse
+</pre></div>
+<p>安装完成后，重新插拔内存卡即可自动加载出来。</p>
+</div>
+<div class="section" id="android">
+<h2>Android</h2>
+<p>暂无</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/flash-openwrt-from-tftp.html" rel="bookmark"><h1>WHR-G300N V2 刷机</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="openwrt">
+<h2>OpenWrt 介绍</h2>
+<blockquote>
+<a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt">OpenWrt</a>  是用于嵌入式设备的一个 Linux 发行版本。</blockquote>
+<p>所有最新的固件下载地址：<a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/">https://downloads.openwrt.org/chaos_calmer/15.05/</a></p>
+<p>类似的还有 DD-WRT，比较偏向实用，Web 配置比较强大，但较难定制。</p>
+</div>
+<div class="section" id="id2">
+<h2>WHR-G300N V2</h2>
+<ul class="simple">
+<li>产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。</li>
+<li>购买链接：<a class="reference external" href="http://www.amazon.cn/BUFFALO">http://www.amazon.cn/BUFFALO</a>-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC</li>
+<li>官网地址：<a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router">http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router</a></li>
+<li>OpenWrt Wiki …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/gentoo.html" rel="bookmark"><h1>Gentoo 2015</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="gentoo">
+<h2>为什么选择 Gentoo</h2>
+<p>完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。</p>
+<p>同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。</p>
+<p>另外附 Gentoo 排名情况：  <a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo">DistroWatch</a> 。</p>
+</div>
+<div class="section" id="id1">
+<h2>安装过程</h2>
+<p>整个安装过程主要参考 <a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64">Handbook 手册</a>，利用业余时间两个晚上搞定。</p>
+<div class="highlight"><pre><span></span><span class="c1"># uname -a</span>
+Linux don <span class="m">4</span>.0.5-gentoo <span class="c1">#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel …</span></pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/gentoo-locale.html" rel="bookmark"><h1>Gentoo 本地化配置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>未配置之前会有类似这样的提示：<em>man: can't set the locale; make sure $LC_</em> and $LANG are correct*。</p>
+<ol class="arabic simple">
+<li>查看当前本地化配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># locale -a</span>
+locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_COLLATE to default locale: No such file …</pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/gentoo-partition.html" rel="bookmark"><h1>Gentoo 分区</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。</p>
+<p>使用环境：</p>
+<ul class="simple">
+<li>系统：Gentoo 3.4.103</li>
+<li>存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10</li>
+</ul>
+<p>第一步：查看与新建分区</p>
+<ol class="arabic simple">
+<li>分区前系统盘分区：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># df -h</span>
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       <span class="m">3</span>.4G  <span class="m">1</span>.7G  <span class="m">1</span>.6G  <span class="m">52</span>% /
+devtmpfs        438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev
+tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/gentoo-portage.html" rel="bookmark"><h1>Gentoo Portage</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>修改更新源地址</h2>
+<ol class="arabic simple">
+<li><em>2.2.16</em> 版本之前的配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="nv">SYNC</span><span class="o">=</span><span class="s2">&quot;rsync://rsync.cn.gentoo.org/gentoo-portage/&quot;</span>
+</pre></div>
+<ol class="arabic simple" start="2">
+<li>新版本若没有配置会提示：</li>
+</ol>
+<div class="highlight"><pre><span></span>!!! SYNC setting found in make.conf.
+    This setting is Deprecated and no longer used.  Please ensure your <span class="s1">&#39;sync-type&#39;</span> and <span class="s1">&#39;sync-uri&#39;</span> are <span class="nb">set</span> correctly in /etc/portage/repos.conf/gentoo.conf
+</pre></div>
+<ol class="arabic simple" start="3">
+<li>新版本配置，编辑 <em>/etc/portage/make.conf</em> 删除原来的 …</li></ol></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/gentoo-samba.html" rel="bookmark"><h1>Samba 配置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。</p>
+<p>其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。</p>
+<p>Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。</p>
+<p>Samba 现在最新版本是 4.x，但在我的树莓派上面 <em>emerge --ask net-fs/samba</em> 出来的还是 3.6.2。</p>
+<p>官网上的 <a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba">net-fs/samba</a> package 4.x 以上的版本不支持 arm 或被 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+            Page 1 / 2
+                <a href="https://magicalboy.com/note/tag/linux2.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

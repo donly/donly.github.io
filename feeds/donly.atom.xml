@@ -1,0 +1,2128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="https://magicalboy.com/note/" rel="alternate"></link><link href="https://magicalboy.com/note/feeds/donly.atom.xml" rel="self"></link><id>https://magicalboy.com/note/</id><updated>2016-01-14T13:55:11+08:00</updated><entry><title>Objective C</title><link href="https://magicalboy.com/note/Objective-C.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/Objective-C.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id17"&gt;介绍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id3" id="id18"&gt;类&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id4" id="id19"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id5" id="id20"&gt;实现&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id21"&gt;属性&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id7" id="id22"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id8" id="id23"&gt;方法&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id9" id="id24"&gt;类方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#block" id="id25"&gt;Block 块&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#protocol" id="id26"&gt;Protocol 协议&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id10" id="id27"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id11" id="id28"&gt;使用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#category" id="id29"&gt;Category 分类&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id12" id="id30"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id13" id="id31"&gt;Objective C 类型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id14" id="id32"&gt;类型和字面常量&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id15" id="id33"&gt;编译器指令&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id16" id="id34"&gt;其它&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id17"&gt;介绍&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Objective-C 作为 C 程序设计语言的超集，支持与 C 相同的基本语法。您会看到所有熟悉的元素，例如基本类型（&lt;tt class="docutils literal"&gt;int&lt;/tt&gt;、&lt;tt class="docutils literal"&gt;float&lt;/tt&gt; 等）、结构、函数、指针，以及流程控制结构，如 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;if...else&lt;/span&gt;&lt;/tt&gt; 语句和 &lt;tt class="docutils literal"&gt;for&lt;/tt&gt; 语句。还可以直接使用 C 标准库，例如 stdlib.h 和 stdio.h。&lt;/p&gt;
+&lt;p&gt;Objective-C 为 ANSI C 添加了下述语法和功能：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;定义新的类&lt;/li&gt;
+&lt;li&gt;类和实例方法&lt;/li&gt;
+&lt;li&gt;方法调用（称为发消息）&lt;/li&gt;
+&lt;li&gt;属性声明（以及通过它们自动合成存取方法）&lt;/li&gt;
+&lt;li&gt;静态和动态类型化&lt;/li&gt;
+&lt;li&gt;块 (block)，已封装的、可在任何时候执行的多段代码&lt;/li&gt;
+&lt;li&gt;基本语言的扩展，例如协议和类别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id18"&gt;类&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;如同其他大多数面向对象语言那样，Objective-C 中的类，支持数据的封装，并定义对这些数据执行的操作。对象是类的运行时实例。它包含自己的实例变量（由其类声明）的内存副本，以及类方法的指针。您可以采用两步法（称为分配和初始化）创建对象。&lt;/p&gt;
+&lt;p&gt;Objective-C 中某个类包括两个不同的部分：接口和实现。接口部分包含类声明，并定义该类的公共接口。如同 C 代码那样，您定义头文件和源代码文件，将公共声明与代码的实现细节分开。如果是私有的，将它们放在实现文件中。这些文件的文件扩展名，列在下表中。&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="5%" /&gt;
+&lt;col width="95%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;扩展名&lt;/th&gt;
+&lt;th class="head"&gt;源类型&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;.h&lt;/td&gt;
+&lt;td&gt;头文件。头文件包含类、类型、函数和常量声明。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;.m&lt;/td&gt;
+&lt;td&gt;实现文件。可以同时包含 Objective-C 代码和 C 代码。有时也称为源文件。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;.mm&lt;/td&gt;
+&lt;td&gt;实现文件。除了包含 Objective-C 代码和 C 代码以外，还可以包含 C++ 代码。仅当您实际引用您的 Objective-C 代码中的 C++ 类或功能时，才使用此扩展名。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id19"&gt;声明&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;如下图中的语法声明名为 MyClass 的类，它是从基础类（或根类）NSObject 继承而来的。（根类是供其他类直接或间接继承的类。）类声明以编译器指令 &amp;#64;interface 开始，以 &amp;#64;end 指令结束。类名称后面（以冒号分隔），是父类的名称。在 Objective-C 中，一个类只能有一个父类。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="类的声明" class="align-center" src="http://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOSCh/chapters/WriteObjective-CCode/Art/class_decl_2x.png" style="width: 496px; height: 208px;" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在 &amp;#64;interface 指令和 &amp;#64;end 指令之间，编写属性和方法的声明。这些声明组成了类的公共接口。公共接口相关的自定函数、常量或数据类型的声明放在 &amp;#64;interface ...&amp;#64;end 块之外。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id20"&gt;实现&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;类实现的语法和声明相似。以 &amp;#64;implementation 编译器指令开始（接着是该类的名称），以 &amp;#64;end 指令结束。中间是方法实现。（函数实现应在 &amp;#64;implementation ...&amp;#64;end 块之外。）一个实现应该总是将导入它的接口文件作为代码的第一行。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#import &amp;quot;MyClass.h&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;@implementation&lt;/span&gt; &lt;span class="bp"&gt;MyClass&lt;/span&gt;
+
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;initWithString:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;aName&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// code goes here&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;MyClass&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;myClassWithString:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;aName&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// code goes here&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当您想要在源代码中包括头文件时，请在头文件或源文件的前几行之中，指定一个导入 (#import) 指令，#import 指令类似于 C 的 #include 指令，不过前者确保同一文件只被包括一次。如果您要导入框架的大部分或所有头文件，请导入框架的包罗头文件 (umbrella header file)，它具有与框架相同的名称。导入（假设的）QuartzCore 框架的头文件的语法是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#import &amp;lt;QuartzCore/QuartzCore.h&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id21"&gt;属性&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;属性通常是指某些由对象封装或储存的数据。它可以是标志（如名称或颜色），也可以是与一个或多个其他对象的关系。一个对象的类定义一个接口，该接口使其对象的用户能获取并设定所封装属性的值。执行这些操作的方法，称为 &lt;strong&gt;存取方法&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;存取方法有两种类型，命名约定：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;“getter” 存取方法返回属性的值，且名称与属性相同。&lt;/li&gt;
+&lt;li&gt;“setter” 存取方法设定属性的新值，且形式为 setPropertyName:，其中属性名称的第一个字母大写。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;正确命名的存取方法是 Cocoa 和 Cocoa Touch 框架的多种技术的关键元素，如 &lt;strong&gt;键－值编码&lt;/strong&gt;  (KVC)，它的机制是，通过对象的名称间接访问对象的属性。&lt;/p&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id22"&gt;声明&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Objective-C 提供属性声明(&amp;#64;property)编译器指令作为一种方便的写法，用于存取方法的声明和实现。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@property&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;nonatomic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;userName&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使用属性声明，指定您想要的行为。编译器接着可以根据该声明，创建或合成实际的 getter 和 setter 方法。已声明的属性减少了您必须编写的样板文件代码量，因此使代码更简洁、更少机会出错。&lt;/p&gt;
+&lt;p&gt;编译器自动合成所声明的属性。在合成属性时，它创建自己的存取方法，以及“支持”该属性的专有实例变量。实例变量的名称与属性的名称相同，但具有下划线前缀 (_)。只有在对象初始化和取消分配的方法中，您的应用程序应该直接访问实例变量（而不是其属性）。&lt;/p&gt;
+&lt;p&gt;注意：在 Xcode4.4 之后不需要 &lt;tt class="docutils literal"&gt;&amp;#64;synthesize property&lt;/tt&gt;，会自动生成 &lt;tt class="docutils literal"&gt;&amp;#64;synthesize property = _property&lt;/tt&gt;。&lt;/p&gt;
+&lt;p&gt;如果您想要让实例变量采用不同名称，可以绕过自动合成，并明确地合成属性。在类实现中使用 &amp;#64;synthesize 编译器指令，让编译器产生存取方法，以及进行特殊命名的实例变量。例如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@synthesize&lt;/span&gt; &lt;span class="n"&gt;enabled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_isEnabled&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;同时，在声明属性时，您可以指定存取方法的自定名称，通常是使 Boolean 属性的 getter 方法遵循约定形式，如下所示：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@property&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;assign&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;getter&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;isEnabled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kt"&gt;BOOL&lt;/span&gt; &lt;span class="n"&gt;enabled&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// Assign new value, change name of getter method&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;对于包含对象的变量，Objective-C 既支持动态类型化，也支持静态类型化。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;静态变量：静态类型化的变量，要在变量类型声明中包括类名称。&lt;/li&gt;
+&lt;li&gt;动态变量：动态类型化的变量，则要给对象使用类型 id。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="bp"&gt;MyClass&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;myObject1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// Static typing&lt;/span&gt;
+&lt;span class="kt"&gt;id&lt;/span&gt;       &lt;span class="n"&gt;myObject2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// Dynamic typing&lt;/span&gt;
+&lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;userName&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// From Your First iOS App (static typing)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;请注意第一个声明中的星号 (*)。在 Objective-C 中，执行对象引用的只能是指针。不能完全理解也不用担心，并非一定要成为指针专家才能开始 Objective-C 编程。码农只需要记住，在静态类型化的对象的声明中，变量的名称前面应放置一个星号。id 类型意味着一个指针。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id8"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id23"&gt;方法&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Objective-C 中有两种类型的方法：实例方法和类方法。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;实例方法&lt;/strong&gt;，由类的实例来执行。换言之，在调用实例方法之前，必须先创建该类的实例。实例方法是最常见的方法类型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;类方法&lt;/strong&gt;，可由它所在的类直接执行。它不需要对象的实例作为消息的接收者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;方法声明包含方法类型标识符、返回类型、一个或多个签名关键词，以及参数类型和名称信息。以下是 insertObject:atIndex: 实例方法的声明。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="方法声明语法" class="align-center" src="http://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOSCh/chapters/WriteObjective-CCode/Art/method_decl_2x.png" style="width: 492px; height: 252px;" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;对于实例方法，声明前面是减号 (-)；对于类方法，对应指示器是加号 (+)。
+一个方法的实际名称 (insertObject:atIndex:) 由方法签名关键词组成，之间用冒号字符分隔。冒号字符表明有参数存在。在上述示例中，该方法采用两个参数。如果方法没有参数，则省略第一个签名关键词后面的冒号。&lt;/p&gt;
+&lt;p&gt;当您想要调用一个方法时，通过给实现该方法的对象发送一则消息来实现。消息包含方法名称，以及方法所需的参数信息（类型要匹配）。您发送到一个对象的所有消息，都被动态地分派，这样使 Objective-C 类的多态行为更加容易。（多态性是指不同类型的对象响应同一消息的能力。）有时被调用的方法，是由接收消息对象的类之超类来实现。&lt;/p&gt;
+&lt;p&gt;要发消息，需要一个消息表达式。&lt;strong&gt;消息表达式&lt;/strong&gt; 使用方括号（[ 和 ]）将消息本身（以及任何所需参数）括起来，同时将接收消息的对象放在最左边方括号右侧。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;myArray&lt;/span&gt; &lt;span class="nl"&gt;insertObject&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;anObject&lt;/span&gt; &lt;span class="nl"&gt;atIndex&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;为避免声明大量局部变量来储存临时结果，Objective-C 让您嵌套消息表达式。每个嵌套表达式的返回值，都用作另一个消息的一个参数或接收对象。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;myAppObject&lt;/span&gt; &lt;span class="n"&gt;theArray&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="nl"&gt;insertObject&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="n"&gt;myAppObject&lt;/span&gt; &lt;span class="n"&gt;objectToInsert&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="nl"&gt;atIndex&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Objective-C (2.0) 还提供用于调用存取方法的点记法语法。&lt;strong&gt;存取方法&lt;/strong&gt; 获取并设定对象的状态，因此对于封装很重要，是所有对象的重要功能。对象隐藏或封装其状态，并显示接口，该接口是访问该状态的所有实例都通用的。使用点记法语法，您可以将上个示例重新编写为如下形式：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;myAppObject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;theArray&lt;/span&gt; &lt;span class="nl"&gt;insertObject&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;myAppObject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objectToInsert&lt;/span&gt; &lt;span class="nl"&gt;atIndex&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使用点记法语法进行赋值：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;myAppObject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;theArray&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;aNewArray&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;// 相当于&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;myAppObject&lt;/span&gt; &lt;span class="nl"&gt;setTheArray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;aNewArray&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在点记法表达式中，您不能使用对动态类型化的对象（类型为 id 的对象）的引用。&lt;/p&gt;
+&lt;p&gt;TODO: 介绍方法属性&lt;/p&gt;
+&lt;div class="section" id="id9"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id24"&gt;类方法&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Objective C 的类方法，类似于 C++ 中的静态类方法。&lt;/p&gt;
+&lt;p&gt;一般将类方法用作工厂方法创建类的新实例，或，访问与该类关联的一些共享信息。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="bp"&gt;NSMutableArray&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;myArray&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// nil is essentially the same as NULL&lt;/span&gt;
+
+&lt;span class="c1"&gt;// Create a new array and assign it to the myArray variable.&lt;/span&gt;
+&lt;span class="n"&gt;myArray&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;NSMutableArray&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="block"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id25"&gt;Block 块&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;块是封装工作单元的对象，即可在任何时间执行的代码段。它们在本质上是可移植的匿名函数，可作为方法和函数的参数传入，或可从方法和函数中返回。块本身具有一个已类型化的参数列表，且可能具有推断或声明的返回类型。您还可以将块赋值给变量，然后像调用函数一样调用它。&lt;/p&gt;
+&lt;p&gt;插入符号 (^) 是用作块的语法标记。块的参数、返回值和正文（即执行的代码）存在其他类似的语法约定。下图解释了该语法，尤其是在将块赋值给变量时。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="Block 声明语法" class="align-center" src="http://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOSCh/chapters/WriteObjective-CCode/Art/blocks_2x.png" style="width: 570px; height: 210px;" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;您接着可以调用块变量，就像它是一个函数一样：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myBlock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// result is 28&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Block 可以在低版本 iOS 中使用，它只需要编译器 Xcode 支持。&lt;/p&gt;
+&lt;p&gt;TODO: 深入&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="protocol"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id26"&gt;Protocol 协议&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;协议是一组尚未实现的方法列表，任何的类均可采纳该协议并给出方法的具体实现。&lt;/p&gt;
+&lt;p&gt;协议经常应用于委托及事件触发。&lt;/p&gt;
+&lt;p&gt;Objective-C中协议的概念与Java中接口的概念并不完全相同。&lt;/p&gt;
+&lt;div class="section" id="id10"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id27"&gt;声明&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;类似于接口的声明，但没有父类，并且不能定义实例变量，尽管可以声明属性。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@protocol&lt;/span&gt; &lt;span class="nc"&gt;MyProtocol&lt;/span&gt;
+
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;myProtocolMethod&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;另外，Protocol 也可以在声明时继承别的 Protocol。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 注意此处的 NSObject 是一个 Protocol&lt;/span&gt;
+&lt;span class="k"&gt;@protocol&lt;/span&gt; &lt;span class="nc"&gt;MyProtocol&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="bp"&gt;NSObject&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;myProtocolMethod&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id11"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id28"&gt;使用&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;将该协议的名称放在尖括号 (&amp;lt;...&amp;gt;) 中，并且放在它继承的类的名称后面：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@interface&lt;/span&gt; &lt;span class="nc"&gt;SomeClass&lt;/span&gt; : &lt;span class="nc"&gt;SomeSuperClass&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;MyProtocol&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="category"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id29"&gt;Category 分类&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个分类可以将方法的实现分解进一系列分离的文件。可让扩展类的接口而无需要对类进行实例化。&lt;/p&gt;
+&lt;p&gt;Objective-C借用并扩展了Smalltalk实现中的“分类”概念。&lt;/p&gt;
+&lt;p&gt;将类别用作一种手段，来对头文件内的相关方法声明进行分组。甚至还可以将不同的类别声明放在不同的头文件中。框架在其所有头文件中使用这些技巧，来达到清晰明确。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="系统框架中的类别" src="static/images/category.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Objective C 中的 Category 仅允许增加方法，不允许增加成员变量。&lt;/p&gt;
+&lt;div class="section" id="id12"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id30"&gt;声明&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;声明类别语法，是使用圆括号将类别名称括起来。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@interface&lt;/span&gt; &lt;span class="bp"&gt;NSArray&lt;/span&gt; &lt;span class="nl"&gt;(NSExtendedArray)&lt;/span&gt;
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;NSArray&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;arrayByAddingObject:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;anObject&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;类扩展匿名类别，在实现 (.m) 文件中声明专有属性和专有方法。类扩展看起来类似于类别，只是圆括号之间没有文本。在高版本的Xcode自动生成的 UIViewController 子类实现中可以看到：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@interface&lt;/span&gt; &lt;span class="nc"&gt;MyAppDelegate&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;@property&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;MyDataObject&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在运行时，分类中的方法与类原有的方法并无区别，其代码可以访问包括私有类成员变量在内的所有成员变量。虽然分类可以访问类的私有成员，但通常利用属性的访问方法来访问是一种更好的做法，可以使得分类与原有类更加独立。&lt;/p&gt;
+&lt;p&gt;若分类声明了与类中原有方法同名的函数，则分类中的方法会被调用。因此分类不仅可以增加类的方法，也可以代替原有的方法。这个特性可以用于修正原有代码中的错误，更可以从根本上改变程序中原有类的行为。若两个分类中的方法同名，则被调用的方法是不可预测的。&lt;/p&gt;
+&lt;p&gt;允许动态的、按需的加载分类；若不需要某一分类提供的功能，可以简单的不编译之。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id13"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id31"&gt;Objective C 类型&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Objective-C 有几个不能用作变量名称的术语，保留用于特殊用途。其中包括已定义的类型以及与这些类型相配的字面常量，和以 &amp;#64; 符号为前缀的编译器指令。&lt;/p&gt;
+&lt;div class="section" id="id14"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id32"&gt;类型和字面常量&lt;/a&gt;&lt;/h3&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="7%" /&gt;
+&lt;col width="93%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;类型&lt;/th&gt;
+&lt;th class="head"&gt;字面常量及描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;动态对象&lt;/strong&gt; 类型。动态类型化的对象和静态类型化的对象的否定字面常量，都是 nil。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Class&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;动态类&lt;/strong&gt; 类型。其否定字面常量是 Nil。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SEL&lt;/td&gt;
+&lt;td&gt;选择器的数据类型 (typedef)；此数据类型表示运行时的方法签名。其否定字面常量是 NULL。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;BOOL&lt;/td&gt;
+&lt;td&gt;Boolean 类型。字面常量值是 YES 和 NO。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;在某些情况下，这些类型和字面常量替换 ANSI C 相应的类型和字面常量。将消息发送到 nil，完全没有影响。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id15"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id33"&gt;编译器指令&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&amp;#64;interface&lt;/li&gt;
+&lt;li&gt;&amp;#64;end&lt;/li&gt;
+&lt;li&gt;&amp;#64;implementation&lt;/li&gt;
+&lt;li&gt;&amp;#64;protocol&lt;/li&gt;
+&lt;li&gt;&amp;#64;property&lt;/li&gt;
+&lt;li&gt;&amp;#64;synthesize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id16"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id34"&gt;其它&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;self : 引用当前对象；它等同于 C++ 中的 this。&lt;/li&gt;
+&lt;li&gt;super : 引用超类对象；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果您将消息发送到 self，运行时先在当前对象的类中查找方法实现；如果在那里找不到方法，则在其超类中查找（依此类推）。如果您将消息发送到 super，运行时先在超类中查找方法实现。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="Objective-C"></category></entry><entry><title>ADB 使用</title><link href="https://magicalboy.com/note/adb.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/adb.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#adb-mac-os" id="id2"&gt;adb 找不到设备（Mac OS）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="adb-mac-os"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;adb 找不到设备（Mac OS）&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;主要针对国内一些小厂商（杂牌机），&lt;a class="reference external" href="https://developer.android.com/tools/device.html#VendorIds"&gt;Google USB Vendor IDs&lt;/a&gt; 列表上没有的设备。&lt;/p&gt;
+&lt;p&gt;简单来说，就是将 Vendor ID 添加到 ~/.android/adb_usb.ini，然后重启 adb：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;配置好 adb 环境，开启手机上的 USB Debug 模式。&lt;/li&gt;
+&lt;li&gt;将手机通过USB连接到Mac。&lt;/li&gt;
+&lt;li&gt;打开系统信息（点击左上的苹果，按住Option会显示），找到如图所示的手机设备，复制厂商ID。&lt;/li&gt;
+&lt;li&gt;在终端输入 $ echo 0x1782 &amp;gt;&amp;gt; ~/.android/adb_usb.ini。&lt;/li&gt;
+&lt;li&gt;重启 adb：$ ./adb kill-server ; ./adb devices。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="厂商ID" src="images/usb_vender_id.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./adb kill-server &lt;span class="p"&gt;;&lt;/span&gt; ./adb devices
+* daemon not running. starting it now on port &lt;span class="m"&gt;5037&lt;/span&gt; *
+* daemon started successfully *
+List of devices attached
+&lt;span class="m"&gt;19761202&lt;/span&gt;    device
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;参考连接：&lt;a class="reference external" href="https://stackoverflow.com/questions/7135999/adb-not-finding-my-device-phone-macos-x/7136003#7136003"&gt;https://stackoverflow.com/questions/7135999/adb-not-finding-my-device-phone-macos-x/7136003#7136003&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Android"></category></entry><entry><title>Android Wear</title><link href="https://magicalboy.com/note/android_wear.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/android_wear.html</id><summary type="html">&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
+&lt;p&gt;可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Android Wear&lt;/h2&gt;
+&lt;p&gt;2014年3月19日，Google 发布了可穿戴设备 SDK 的开发者预览版（&lt;a class="reference external" href="https://developer.android.com/wear/index.html"&gt;https://developer.android.com/wear/index.html&lt;/a&gt;），率先打开可穿戴智能设备平台这个大门。所以，我们可以通过更新 SDK 获取 Android Wear 模拟器来尝个新鲜。&lt;/p&gt;
+&lt;p&gt;Android Wear 开发平台搭建步骤：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Sign Up for the Developer Preview：&lt;a class="reference external" href="https://developer.android.com/wear/preview/signup.html"&gt;https://developer.android.com/wear/preview/signup.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Sign Up for the Developer Preview" src="images/sign_up_google_developer_preview.png" /&gt;
+&lt;p&gt;在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail 邮箱。&lt;/p&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;打开 Android SDK Manager 更新 Android SDK Tools 至最新版本（22.6.1)。安装更新后便可以见到 Android 4.4 下有 Android Wear ARM EABI v7a System Image，选择并安装它。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Android Wear ARM EABI v7a System Image" src="images/android_wear_image.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;收到注册确认邮件，可选成为 Google Play 商店提供的 Android Wear Preview app 测试者。下载附件 Preview Support library and samples（AndroidWearPreview.zip）。&lt;/li&gt;
+&lt;li&gt;升级 ADT（当前最新 &lt;a class="reference external" href="http://dl.google.com/android/ADT-22.6.1.zip"&gt;22.6.1&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;打开 Eclipse 为 Wear 创建新的 Android Virtual Device (AVD)。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="android_wear_avd" src="images/android_wear_avd.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol class="arabic simple" start="6"&gt;
+&lt;li&gt;运行刚刚创建的 Wear AVD，显示的是时间和未连接的手机图标，表示 wear 未与 Android 设备匹配上。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="未匹配的 Android Wear" src="images/android_wear_no_pair.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="Android Wear 提示信息" src="images/android_wear_round.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Android Wear 的特色是通知方式和界面都很 Cool。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;参考资料：&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://developer.android.com/wear/preview/start.html"&gt;Get Started with the Developer Preview | Android Developers&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Wear"></category><category term="Android"></category></entry><entry><title>Bluetooth</title><link href="https://magicalboy.com/note/bluetooth.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/bluetooth.html</id><summary type="html">&lt;div class="section" id="ios"&gt;
+&lt;h2&gt;iOS&lt;/h2&gt;
+&lt;p&gt;Bluetooth access on the ios is very limited. As a matter of fact you can only access it through the GameKit.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="bluetooth"></category></entry><entry><title>Brew</title><link href="https://magicalboy.com/note/brew.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/brew.html</id><summary type="html">&lt;div class="section" id="homebrew"&gt;
+&lt;h2&gt;Homebrew&lt;/h2&gt;
+&lt;p&gt;OS X 或缺的软件包管理器，使用 Ruby 语言实现。官网：&lt;a class="reference external" href="http://brew.sh/index_zh-cn.html"&gt;http://brew.sh/index_zh-cn.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安装日志&lt;/h2&gt;
+&lt;p&gt;在 OS X 10.9.2，Xcode 5.1 下安装 Brew 0.9.5 的日志：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ruby -e &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.github.com/mxcl/homebrew/go/install&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; This script will install:
+/usr/local/bin/brew
+/usr/local/Library/...
+/usr/local/share/man/man1/brew.1
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; The following directories will be made group writable:
+/usr/local/.
+/usr/local/include
+/usr/local/lib
+/usr/local/share
+/usr/local/share/locale
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; The following directories will have their group &lt;span class="nb"&gt;set&lt;/span&gt; to admin:
+/usr/local/.
+/usr/local/include
+/usr/local/lib
+/usr/local/share
+/usr/local/share/locale
+
+Press RETURN to &lt;span class="k"&gt;continue&lt;/span&gt; or any other key to &lt;span class="nv"&gt;abort&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/. /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/locale
+Password:
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/. /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/locale
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing the Command Line Tools &lt;span class="o"&gt;(&lt;/span&gt;expect a GUI popup&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; /usr/bin/sudo /usr/bin/xcode-select --install
+xcode-select: note: install requested &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;command&lt;/span&gt; line developer tools
+Press any key when the installation has completed.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading and installing Homebrew...
+remote: Counting objects: 156977, &lt;span class="k"&gt;done&lt;/span&gt;.
+remote: Compressing objects: 100% &lt;span class="o"&gt;(&lt;/span&gt;44923/44923&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="k"&gt;done&lt;/span&gt;.
+remote: Total &lt;span class="m"&gt;156977&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;delta 110948&lt;span class="o"&gt;)&lt;/span&gt;, reused &lt;span class="m"&gt;156977&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;delta 110948&lt;span class="o"&gt;)&lt;/span&gt;
+Receiving objects: 100% &lt;span class="o"&gt;(&lt;/span&gt;156977/156977&lt;span class="o"&gt;)&lt;/span&gt;, 29.38 MiB &lt;span class="p"&gt;|&lt;/span&gt; 368.00 KiB/s, &lt;span class="k"&gt;done&lt;/span&gt;.
+Resolving deltas: 100% &lt;span class="o"&gt;(&lt;/span&gt;110948/110948&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="k"&gt;done&lt;/span&gt;.
+From https://github.com/Homebrew/homebrew
+ * &lt;span class="o"&gt;[&lt;/span&gt;new branch&lt;span class="o"&gt;]&lt;/span&gt;      master     -&amp;gt; origin/master
+HEAD is now at 6a3b2d2 brew-unpack: remove obsoleted bottle &lt;span class="nv"&gt;workaround&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installation successful!
+You should run &lt;span class="sb"&gt;`&lt;/span&gt;brew doctor&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; *before* you install anything.
+Now type: brew &lt;span class="nb"&gt;help&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Cocoa Auto Layout</title><link href="https://magicalboy.com/note/cocoa-auto-layout.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/cocoa-auto-layout.html</id><summary type="html">&lt;p&gt;Auto Layout 是 iOS 6.0 和 Xcode 4.5 的新特性。&lt;/p&gt;
+&lt;p&gt;使用 Cocoa Auto Layout 系统为用户界面元素定义布局约束，其中约束（Constraints）表示用户界面控件之间的关系，比如 “这些视图从头至尾排列”。&lt;/p&gt;
+&lt;p&gt;Cocoa Auto Layout 让用户来定义界面元素的布局规则。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;视图之间的约束表示&lt;/h2&gt;
+&lt;/div&gt;
+</summary><category term="cocoa"></category><category term="iOS"></category><category term="auto layout"></category></entry><entry><title>C++ 学习笔记</title><link href="https://magicalboy.com/note/cpp.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/cpp.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id13"&gt;概述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id3" id="id14"&gt;语法&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id4" id="id15"&gt;注释&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id5" id="id16"&gt;编译预处理指令&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#namespace" id="id17"&gt;命名空间 Namespace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#main" id="id18"&gt;main 函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id19"&gt;语句&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id7" id="id20"&gt;标识符&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id8" id="id21"&gt;数据类型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id9" id="id22"&gt;系统指定的数据类型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id10" id="id23"&gt;变量&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id11" id="id24"&gt;常量&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id12" id="id25"&gt;表达式&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id13"&gt;概述&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C++是20世纪80年代中期（发行于1983）由AT&amp;amp;T贝尔实验室的 Bjarne Stroustrup 开发的。&lt;/p&gt;
+&lt;p&gt;属于面向对象语言，它包含 C 语言全部属性。&lt;/p&gt;
+&lt;p&gt;使用很广泛，不得不学。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id14"&gt;语法&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id15"&gt;注释&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 这是单行注释&lt;/span&gt;
+&lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt; * 这是&lt;/span&gt;
+&lt;span class="cm"&gt; * 多行的注释&lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id16"&gt;编译预处理指令&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;编译器对 source code 编译之前做的事。用 &amp;quot;#&amp;quot; 开头的命令行来表示。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;filename&amp;gt; // 尖括号表示包含的是 C++ 标准库的头文件&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;quot;book.h&amp;quot;   // 包含的是用户自己的头文件&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="namespace"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id17"&gt;命名空间 Namespace&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;是 C++ 编译系统为各种命名对象（即标识符）所指定的有效范围。std (Standard 的缩写) 表示 C++ 标准库的所有命名对象，使用分号结束。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="main"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id18"&gt;main 函数&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  &lt;span class="c1"&gt;// 程序执行入口&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;int 返回值给 OS。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id19"&gt;语句&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;函数体内包括两类语句：
+- 声明语句：告诉编译系统本函数使用哪些数据。
+- 可执行语句：导致某些动作发生，在翻译成机器语言指令后执行。包括赋值语句，return语句等。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;miles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;            &lt;span class="c1"&gt;// 声明语句&lt;/span&gt;
+&lt;span class="n"&gt;cin&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;miles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;           &lt;span class="c1"&gt;// 输入语句&lt;/span&gt;
+&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;miles&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// 输出语句&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id20"&gt;标识符&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;标识符用来给程序中的各种数据元素和对象命名的。&lt;/p&gt;
+&lt;p&gt;保留字，即关键字属于 C++ 的特殊标识符。比如：const, float, include, int, namespace, retrun 等。程序员自定义的标识符，如上例中的 miles。&lt;/p&gt;
+&lt;p&gt;标识符语法规则：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;必须以字母或下划线开头。&lt;/li&gt;
+&lt;li&gt;标识符中只能包含字母，数字或下划线。（上一条说了不能使用数字开头）&lt;/li&gt;
+&lt;li&gt;不能使用 C++ 保留字。&lt;/li&gt;
+&lt;li&gt;大小定敏感。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;命名规则：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;最好取有意义的名称，见名知义。&lt;/li&gt;
+&lt;li&gt;建议使用 “匈牙利符号” 的命名规则，即非首单词的第一个字母大写。比如：dollarsPerHour.&lt;/li&gt;
+&lt;li&gt;不管使用什么命名规则，一定要保持命名规则的一致性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id8"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id21"&gt;数据类型&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="id9"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id22"&gt;系统指定的数据类型&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;整型 int&lt;/li&gt;
+&lt;li&gt;实型 float&lt;/li&gt;
+&lt;li&gt;布尔类型 bool (George Boole）&lt;/li&gt;
+&lt;li&gt;字符型 char (1 byte)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id10"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id23"&gt;变量&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id11"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id24"&gt;常量&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id12"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id25"&gt;表达式&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="C++"></category></entry><entry><title>Epub 电子书</title><link href="https://magicalboy.com/note/epub.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/epub.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;ePub 中文乱码处理&lt;/h2&gt;
+&lt;p&gt;修改字体集：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;@font-face&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;font-family&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;zw&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="nd"&gt;:url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;sony&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;ebook&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;FONT&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;Data&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;FONT&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;sony&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;ebook&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;FONT&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;tt0011m_&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;ttf&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///../../&lt;/span&gt;&lt;span class="nt"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;mmcblk0p1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;DK_System&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;font&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;abook&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;sdcard&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;sdcard&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;DroidSansFallback&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+    &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="nc"&gt;.ttf&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;以上代码支持SONY、DR800SG、NOOK、翰林V3+等各机型。&lt;/p&gt;
+&lt;p&gt;更具体操作，请参考：&lt;a class="reference external" href="http://www.by-smart.com/forum.php?mod=viewthread&amp;amp;tid=2000"&gt;http://www.by-smart.com/forum.php?mod=viewthread&amp;amp;tid=2000&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="epub"></category><category term="ebook"></category></entry><entry><title>在 OS X 上给 Android 刷机</title><link href="https://magicalboy.com/note/flash-android-on-mac.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/flash-android-on-mac.html</id><summary type="html">&lt;p&gt;Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;下载&lt;/h2&gt;
+&lt;p&gt;可以在 &lt;a class="reference external" href="https://developer.android.com/index.html"&gt;Android 开发者&lt;/a&gt; 下载，如果看不到入口，请检查语言并选择英语。或者直接进入 &lt;a class="reference external" href="https://developer.android.com/preview/download.html"&gt;下载页面&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果下载遇到问题，可以考虑从国内网盘找，下载完成后验证一下。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;解压之后，配置好 PATH，并按照 &lt;a class="reference external" href="https://developers.google.com/android/nexus/images#instructions"&gt;官网的安装方法&lt;/a&gt;，执行 flash-all 时出现了如下错误：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; ./flash-all.sh
+ERROR: could not get pipe properties
+target reported max download size of &lt;span class="m"&gt;536870912&lt;/span&gt; bytes
+sending &lt;span class="s1"&gt;&amp;#39;bootloader&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3807&lt;/span&gt; KB&lt;span class="o"&gt;)&lt;/span&gt;...
+
+...
+
+target reported max download size of &lt;span class="m"&gt;536870912&lt;/span&gt; bytes
+archive does not contain &lt;span class="s1"&gt;&amp;#39;boot.sig&amp;#39;&lt;/span&gt;
+archive does not contain &lt;span class="s1"&gt;&amp;#39;recovery.sig&amp;#39;&lt;/span&gt;
+fastboot&lt;span class="o"&gt;(&lt;/span&gt;17343,0xa08e91d4&lt;span class="o"&gt;)&lt;/span&gt; malloc: *** mach_vm_map&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1981542400&lt;span class="o"&gt;)&lt;/span&gt; failed &lt;span class="o"&gt;(&lt;/span&gt;error &lt;span class="nv"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;3&lt;span class="o"&gt;)&lt;/span&gt;
+*** error: can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t allocate region
+*** &lt;span class="nb"&gt;set&lt;/span&gt; a breakpoint in malloc_error_break to debug
+failed to allocate &lt;span class="m"&gt;1979559444&lt;/span&gt; bytes
+error: update package missing system.img
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;根据日志猜测，出现这个问题可能是因为镜像文件太大的原因，于是将 flash-all.sh 脚本里面最后一条 fastboot -w update image-shamu-MPZ44Q.zip 手动安装：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fastboot flash bootloader bootloader-shamu-moto-apq8084-71.11.img
+fastboot reboot-bootloader
+fastboot flash radio radio-shamu-D4.01-9625-05.16+FSG-9625-02.94.img
+fastboot reboot-bootloader
+fastboot flash system system.img
+fastboot flash userdata userdata.img
+fastboot flash boot boot.img
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;重新启动大约 1 分钟，可以看到新的引导流程，眼前一新：&lt;/p&gt;
+&lt;img alt="Android M Preview" src="images/AndroidMP.png" /&gt;
+&lt;p&gt;再附一张应用的权限管理：&lt;/p&gt;
+&lt;img alt="国内很多APP无法启动" src="images/android_wecat_per.png" /&gt;
+&lt;p&gt;EOF&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Android"></category></entry><entry><title>WHR-G300N V2 刷机</title><link href="https://magicalboy.com/note/flash-openwrt-from-tftp.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/flash-openwrt-from-tftp.html</id><summary type="html">&lt;div class="section" id="openwrt"&gt;
+&lt;h2&gt;OpenWrt 介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt"&gt;OpenWrt&lt;/a&gt;  是用于嵌入式设备的一个 Linux 发行版本。&lt;/blockquote&gt;
+&lt;p&gt;所有最新的固件下载地址：&lt;a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/"&gt;https://downloads.openwrt.org/chaos_calmer/15.05/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;类似的还有 DD-WRT，比较偏向实用，Web 配置比较强大，但较难定制。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;WHR-G300N V2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。&lt;/li&gt;
+&lt;li&gt;购买链接：&lt;a class="reference external" href="http://www.amazon.cn/BUFFALO"&gt;http://www.amazon.cn/BUFFALO&lt;/a&gt;-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC&lt;/li&gt;
+&lt;li&gt;官网地址：&lt;a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router"&gt;http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OpenWrt Wiki：&lt;a class="reference external" href="http://wiki.openwrt.org/toh/buffalo/whr-g300nv2"&gt;http://wiki.openwrt.org/toh/buffalo/whr-g300nv2&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;刷机教程参考：&lt;a class="reference external" href="http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2"&gt;http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tftp"&gt;
+&lt;h2&gt;砖头复活记：tftp 刷机教程&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;刷机环境：OS X El Capitan&lt;/li&gt;
+&lt;li&gt;tftp 固件：&lt;a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin"&gt;https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1. 用网线连接路由器，打开电源，用 ifconfig 查看网络接口，比如 en0；
+修改本机 IP：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo ifconfig en0 192.168.11.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;配置网络，将 192.168.11.1 跟路由器的 MAC 地址关联起来：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo arp -s 192.168.11.1 xx:xx:xx:xx:xx:xx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;MAC 地址见背后标签上的 SSID。&lt;/p&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;这个时候可以断开路由器电源了，接着 cd 到固件所在目录，执行 tftp：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Set verbose mode on &lt;span class="o"&gt;(&lt;/span&gt;so we know what&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;s going on&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; verbose
+Verbose mode on.
+Binary mode on &lt;span class="o"&gt;(&lt;/span&gt;because we are uploading a binary file&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; binary
+mode &lt;span class="nb"&gt;set&lt;/span&gt; to octet
+Trace on &lt;span class="o"&gt;(&lt;/span&gt;so we get feedback on our commands&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; trace
+Packet tracing on.
+Rexmt &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;to retry the upload on failure every &lt;span class="m"&gt;1&lt;/span&gt; second&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; rexmt 1
+And timeout to &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;repeatedly retry the upload &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;60&lt;/span&gt; seconds before giving up&lt;span class="o"&gt;)&lt;/span&gt;
+tftp&amp;gt; timeout 60
+tftp&amp;gt; connect 192.168.11.1
+尽管路由器是关的
+tftp&amp;gt; status
+查看当前的配置状态
+tftp&amp;gt; put tftp.bin
+tftp.bin 就是下载回来的 openwrt-tftp版本的固件，已经被重命名。
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;将路由器的电源接上，同时重复执行以上的 put 指令，直到有以下反应：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tftp&amp;gt; put tftp.bin
+putting tftp.bin to 192.168.11.1:tftp.bin &lt;span class="o"&gt;[&lt;/span&gt;octet&lt;span class="o"&gt;]&lt;/span&gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0&amp;gt;
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1, &lt;span class="m"&gt;512&lt;/span&gt; bytes&amp;gt;
+...
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;6529, &lt;span class="m"&gt;36&lt;/span&gt; bytes&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;6529&amp;gt;
+Sent &lt;span class="m"&gt;3342372&lt;/span&gt; bytes in 2.7 seconds &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9903324&lt;/span&gt; bits/sec&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;此时上传完毕，可以输入 quit 退出。&lt;/p&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;路由器红色的灯会有不同的反应，几分钟后会自动重启。此致，成功复活！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>Fragment</title><link href="https://magicalboy.com/note/fragment.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/fragment.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;Fragment 定义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#fragment-demo" id="id4"&gt;Fragment Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;Fragment 定义&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;为了让界面可以在平板上更好地展示，Android在3.0版本引入了Fragment(碎片)功能，它非常类似于Activity，可以像Activity一样包含布局。Fragment通常是嵌套在Activity中使用的。&lt;/p&gt;
+&lt;img alt="Fragments" src="images/fragments.png" /&gt;
+&lt;p&gt;可以看出，使用Fragment可以让我们更加充分地利用平板的屏幕空间。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fragment-demo"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Fragment Demo&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.csdn.net/guolin_blog/article/details/8881711"&gt;http://blog.csdn.net/guolin_blog/article/details/8881711&lt;/a&gt;
+&lt;a class="reference external" href="https://developer.android.com/guide/components/fragments.html"&gt;https://developer.android.com/guide/components/fragments.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Android"></category></entry><entry><title>Geeks vs Nerds</title><link href="https://magicalboy.com/note/geeks-vs-nerds.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/geeks-vs-nerds.html</id><summary type="html">&lt;a class="reference external image-reference" href="http://www.mastersinit.org/geeks-vs-nerds/"&gt;&lt;img alt="Geeks vs Nerds" src="http://www.mastersinit.org/geeks-vs-nerds/geek-nerd.jpg" /&gt;&lt;/a&gt;
+</summary><category term="geek"></category><category term="nerd"></category></entry><entry><title>Gentoo 2015</title><link href="https://magicalboy.com/note/gentoo.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/gentoo.html</id><summary type="html">&lt;div class="section" id="gentoo"&gt;
+&lt;h2&gt;为什么选择 Gentoo&lt;/h2&gt;
+&lt;p&gt;完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。&lt;/p&gt;
+&lt;p&gt;同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。&lt;/p&gt;
+&lt;p&gt;另外附 Gentoo 排名情况：  &lt;a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo"&gt;DistroWatch&lt;/a&gt; 。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安装过程&lt;/h2&gt;
+&lt;p&gt;整个安装过程主要参考 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64"&gt;Handbook 手册&lt;/a&gt;，利用业余时间两个晚上搞定。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# uname -a&lt;/span&gt;
+Linux don 4.0.5-gentoo &lt;span class="c1"&gt;#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz GenuineIntel GNU/Linux&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;桌面选择&lt;/h2&gt;
+&lt;p&gt;首先纠结的是选择。既然如此，回到出发点思考，为什么要安装桌面环境。一是个人 Linux 基础问题。再加上多年不用，没有能力在 Shell 环境搞定 WIFI 和 蓝牙等的驱动。&lt;/p&gt;
+&lt;p&gt;基于大学时代玩过 Ubuntu 和 Fedora，对 GNOME 和 KDE 有所了解，所以主要还是从这两个中选择，虽然 Ubuntu 已经不用 GNOME 改用 Unity，但 GNOME 3 看起来还是比较现代化，就它吧！&lt;/p&gt;
+&lt;p&gt;不过在安装 GNOME 之前，我们先了解一下X11，即 X Window 系统。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x11"&gt;
+&lt;h2&gt;X11&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System"&gt;X 窗口系统&lt;/a&gt; 还是很 NB 的，出生比我早。GNOME 和 KDE 都是基于 X11 系统为基础实现的。&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/XQuartz"&gt;XQuartz&lt;/a&gt; 是苹果公司的 OS X 的实现，Apple X11。&lt;/p&gt;
+&lt;p&gt;Gentoo Linux 上的 X11 实现是 &lt;a class="reference external" href="https://en.wikipedia.org/wiki/X.Org_Server"&gt;XOrg&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)"&gt;Wayland&lt;/a&gt; 是一个比较新的显示服务器与客户端通信方式的协议，而 GNOME 从 3.10 开始支持 Wayland。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="init-system"&gt;
+&lt;h2&gt;Init System&lt;/h2&gt;
+&lt;p&gt;在 Gentoo，可以用以下命令查看当前系统运行的 Init 系统是什么：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# ps u -p 1&lt;/span&gt;
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         &lt;span class="m"&gt;1&lt;/span&gt;  0.0  0.0   &lt;span class="m"&gt;4164&lt;/span&gt;  &lt;span class="m"&gt;1420&lt;/span&gt; ?        Ss   Sep08   0:01 init &lt;span class="o"&gt;[&lt;/span&gt;3&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果是显示的是 init，那么 init 系统是 OpenRC，如果显示 systemd，则是 init system 是 systemd (via from &lt;a class="reference external" href="http://unix.stackexchange.com/a/114619"&gt;Detect init system using the shell&lt;/a&gt;)。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gnome-3"&gt;
+&lt;h2&gt;GNOME 3&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://www.gnome.org/gnome-3/"&gt;GNOME 3&lt;/a&gt; 的目标是简单易用，与 Python 的 Zen 核心思想很接近。&lt;/p&gt;
+&lt;img alt="GNOME 3 overview" src="https://www.gnome.org/wp-content/uploads/2015/03/activities-overview-3.16-940x529.png" /&gt;
+&lt;p&gt;准备安装的时候，在网上找到这个`贴子 &amp;lt;&lt;a class="reference external" href="https://forums.gentoo.org/viewtopic-p-7696198.html"&gt;https://forums.gentoo.org/viewtopic-p-7696198.html&lt;/a&gt;&amp;gt;`_：&lt;/p&gt;
+&lt;blockquote&gt;
+systemd is now a mandatory dependency of Gnome3. Normally, if you want to use Gnome3,  systemd must be installed.&lt;/blockquote&gt;
+&lt;p&gt;有没有桌面环境可以不更换现在的 Init System 呢，继续查找资料，然后在 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Recommended_applications#Desktop_environment"&gt;Desktop environment&lt;/a&gt; 发现了 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Xfce"&gt;Xfce&lt;/a&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;Xfce&lt;/h2&gt;
+&lt;p&gt;Xfce 是个轻量级的类 Unix 桌面环境，It aims to be fast and low on system resources。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x-window"&gt;
+&lt;h2&gt;安装 X Window&lt;/h2&gt;
+&lt;p&gt;主要参考：&lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Xorg/Guide"&gt;https://wiki.gentoo.org/wiki/Xorg/Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;查看显卡信息，可以得到：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# emerge --ask sys-apps/pciutils&lt;/span&gt;
+&lt;span class="c1"&gt;# lspci | grep VGA&lt;/span&gt;
+&lt;span class="c1"&gt;# lspci | grep VGA&lt;/span&gt;
+01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. &lt;span class="o"&gt;[&lt;/span&gt;AMD/ATI&lt;span class="o"&gt;]&lt;/span&gt; Oland &lt;span class="o"&gt;[&lt;/span&gt;Radeon HD &lt;span class="m"&gt;8570&lt;/span&gt; / R7 &lt;span class="m"&gt;240&lt;/span&gt; OEM&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;# emerge --sync&lt;/span&gt;
+&lt;span class="c1"&gt;# emerge --ask x11-drivers/radeon-ucode&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;配置 Linux 内核，输入以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# cd /usr/src/linux&lt;/span&gt;
+&lt;span class="c1"&gt;# make menuconfig&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;修改 make.config 配置， /etc/portage/make.conf：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# (For mouse, keyboard, and Synaptics touchpad support)&lt;/span&gt;
+&lt;span class="nv"&gt;INPUT_DEVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;evdev synaptics&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# (For AMD/ATI cards)&lt;/span&gt;
+&lt;span class="nv"&gt;VIDEO_CARDS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;radeon&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后执行：emerge --ask --verbose x11-base/xorg-drivers&lt;/p&gt;
+&lt;p&gt;安装 Xorg：emerge --ask x11-base/xorg-server
+安装完成后，更新环境：env-update &amp;amp;&amp;amp; source /etc/profile
+然后重启系统。
+登入，启动 startx，成功了：&lt;/p&gt;
+&lt;img alt="" src="images/Gentoo_Xfce_Desktop.jpg" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="portage-sync"&gt;
+&lt;h2&gt;Portage/Sync 配置&lt;/h2&gt;
+&lt;p&gt;在日常更新维护的时候遇到这样的警告：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;!!! SYNC setting found in make.conf.
+This setting is Deprecated and no longer used.  Please ensure your &lt;span class="s1"&gt;&amp;#39;sync-type&amp;#39;&lt;/span&gt; and &lt;span class="s1"&gt;&amp;#39;sync-uri&amp;#39;&lt;/span&gt; are &lt;span class="nb"&gt;set&lt;/span&gt; correctly in /etc/portage/repos.conf/gentoo.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;解决方法主要参考 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Project:Portage/Sync"&gt;Portage/Sync&lt;/a&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /etc/portage/repos.conf
+cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
+mirrorselect -i -r -o &amp;gt;&amp;gt; /etc/portage/repos.conf/gentoo.conf &lt;span class="c1"&gt;# 选择一个国内镜像&lt;/span&gt;
+vi /etc/portage/make.conf &lt;span class="c1"&gt;# 将 SYNC 设置删除&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 本地化配置</title><link href="https://magicalboy.com/note/gentoo-locale.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/gentoo-locale.html</id><summary type="html">&lt;p&gt;未配置之前会有类似这样的提示：&lt;em&gt;man: can't set the locale; make sure $LC_&lt;/em&gt; and $LANG are correct*。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;查看当前本地化配置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# locale -a&lt;/span&gt;
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_CTYPE to default locale: No such file or directory
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_MESSAGES to default locale: No such file or directory
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_COLLATE to default locale: No such file or directory
+C
+POSIX
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;修改 &lt;em&gt;/etc/locale.gen&lt;/em&gt;，去掉 &lt;em&gt;#en_US.UTF-8 UTF-8&lt;/em&gt; 前面的 &lt;em&gt;#&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;执行 &lt;em&gt;locale-gen&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;查看当前系统可用的本地化设置：&lt;em&gt;eselect locale list&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;设置本地化：&lt;em&gt;eselect locale set 3&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;执行更新：&lt;em&gt;env-update &amp;amp;&amp;amp; source /etc/profile&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;最后的环境：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# eselect locale list&lt;/span&gt;
+Available targets &lt;span class="k"&gt;for&lt;/span&gt; the LANG variable:
+  &lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;   C
+  &lt;span class="o"&gt;[&lt;/span&gt;2&lt;span class="o"&gt;]&lt;/span&gt;   en_US.utf8 *
+  &lt;span class="o"&gt;[&lt;/span&gt;3&lt;span class="o"&gt;]&lt;/span&gt;   POSIX
+  &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;   &lt;span class="o"&gt;(&lt;/span&gt;free form&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;参考连接：&lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Localization/Guide"&gt;https://wiki.gentoo.org/wiki/Localization/Guide&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 分区</title><link href="https://magicalboy.com/note/gentoo-partition.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/gentoo-partition.html</id><summary type="html">&lt;p&gt;由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。&lt;/p&gt;
+&lt;p&gt;使用环境：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;系统：Gentoo 3.4.103&lt;/li&gt;
+&lt;li&gt;存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第一步：查看与新建分区&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;分区前系统盘分区：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# df -h&lt;/span&gt;
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       3.4G  1.7G  1.6G  52% /
+devtmpfs        438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   0% /dev
+tmpfs            88M  244K   88M   1% /run
+shm             438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   0% /dev/shm
+cgroup_root      10M     &lt;span class="m"&gt;0&lt;/span&gt;   10M   0% /sys/fs/cgroup
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;当前盘信息：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# fdisk -l&lt;/span&gt;
+
+Disk /dev/mmcblk0: 59.5 GiB, &lt;span class="m"&gt;63879249920&lt;/span&gt; bytes, &lt;span class="m"&gt;124764160&lt;/span&gt; sectors
+Units: sectors of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Disklabel type: dos
+Disk identifier: 0x7dea4524
+
+Device         Boot     Start       End   Blocks  Id System
+/dev/mmcblk0p1           &lt;span class="m"&gt;2048&lt;/span&gt;     &lt;span class="m"&gt;43007&lt;/span&gt;    &lt;span class="m"&gt;20480&lt;/span&gt;  &lt;span class="m"&gt;83&lt;/span&gt; Linux
+/dev/mmcblk0p2          &lt;span class="m"&gt;43008&lt;/span&gt;   &lt;span class="m"&gt;7167999&lt;/span&gt;  &lt;span class="m"&gt;3562496&lt;/span&gt;  &lt;span class="m"&gt;83&lt;/span&gt; Linux
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;使用 &lt;em&gt;cfdisk /dev/mmcblk0&lt;/em&gt; 将未使用的空间 &lt;em&gt;New&lt;/em&gt; 一个分区出来&lt;/li&gt;
+&lt;li&gt;分区成功后 &lt;em&gt;Write&lt;/em&gt; 保存，然后 &lt;em&gt;Quit&lt;/em&gt; 退出。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注：cfdisk 最多只能分 4 个主分区，fdisk 支持硬盘最大尺寸为 2TB，更详情说明请参考 man 手册。&lt;/p&gt;
+&lt;p&gt;第二步：格式化分区&lt;/p&gt;
+&lt;p&gt;对新建分区 mmcblk0p3 进行格式化：&lt;em&gt;mkfs.ext4 /dev/mmcblk0p3&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;第三步：加载分区&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;创建分区挂接目录：&lt;em&gt;mkdir /user&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;编辑 &lt;em&gt;/etc/fstab&lt;/em&gt;，将分区信息写进去。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/dev/mmcblk0p3          /user           ext4            defaults        &lt;span class="m"&gt;0&lt;/span&gt; 0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;加载新建的分区：&lt;em&gt;mount -a&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;最终系统分区：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       3.4G  1.7G  1.6G  52% /
+devtmpfs        438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   0% /dev
+tmpfs            88M  244K   88M   1% /run
+shm             438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   0% /dev/shm
+cgroup_root      10M     &lt;span class="m"&gt;0&lt;/span&gt;   10M   0% /sys/fs/cgroup
+/dev/mmcblk0p3   56G  180M   53G   1% /user
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo Portage</title><link href="https://magicalboy.com/note/gentoo-portage.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/gentoo-portage.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;修改更新源地址&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;em&gt;2.2.16&lt;/em&gt; 版本之前的配置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;SYNC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;rsync://rsync.cn.gentoo.org/gentoo-portage/&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;新版本若没有配置会提示：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;!!! SYNC setting found in make.conf.
+    This setting is Deprecated and no longer used.  Please ensure your &lt;span class="s1"&gt;&amp;#39;sync-type&amp;#39;&lt;/span&gt; and &lt;span class="s1"&gt;&amp;#39;sync-uri&amp;#39;&lt;/span&gt; are &lt;span class="nb"&gt;set&lt;/span&gt; correctly in /etc/portage/repos.conf/gentoo.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;新版本配置，编辑 &lt;em&gt;/etc/portage/make.conf&lt;/em&gt; 删除原来的 &lt;em&gt;SYNC=&amp;quot;....&amp;quot;&lt;/em&gt; 这行，然后执行以下命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /etc/portage/repos.conf
+cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
+vi /etc/portage/repos.conf/gentoo.conf
+&lt;span class="c1"&gt;# 增加上面的镜像地址&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;参考链接：&lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Project:Portage/Sync"&gt;https://wiki.gentoo.org/wiki/Project:Portage/Sync&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="portdir"&gt;
+&lt;h2&gt;修改 PORTDIR&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;修改 &lt;em&gt;/etc/portage/make.conf&lt;/em&gt;：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;PORTDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/user/portage&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;创建新位置目录：&lt;em&gt;mkdir /user/portage&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;修改用户和用户组属性：&lt;em&gt;chown portage:portage /user/portage&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;迁移数据：&lt;em&gt;mv -p /usr/portage/* /user/portage/&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;更新：&lt;em&gt;emerge --sync&lt;/em&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果 &lt;em&gt;make.conf&lt;/em&gt; 丢失，查看 &lt;em&gt;eselect profile list&lt;/em&gt;，并选择 &lt;em&gt;[28]  default/linux/arm/13.0/armv7a&lt;/em&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;eselect profile &lt;span class="nb"&gt;set&lt;/span&gt; 28
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="portage"&gt;
+&lt;h2&gt;更新 Portage&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;查看当前版本：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# emerge -V&lt;/span&gt;
+Portage 2.2.8-r2 &lt;span class="o"&gt;(&lt;/span&gt;default/linux/arm/13.0/armv7a, gcc-4.8.3, glibc-2.19-r1, 3.4.103 armv7l&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;更新版本使用：&lt;em&gt;emerge --oneshot portage&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;更新后版本：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# emerge -V&lt;/span&gt;
+Portage 2.2.20.1 &lt;span class="o"&gt;(&lt;/span&gt;python 2.7.7-final-0, default/linux/arm/13.0/armv7a, gcc-4.8.3, glibc-2.19-r1, 3.4.103 armv7l&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Samba 配置</title><link href="https://magicalboy.com/note/gentoo-samba.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/gentoo-samba.html</id><summary type="html">&lt;p&gt;Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。&lt;/p&gt;
+&lt;p&gt;其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。&lt;/p&gt;
+&lt;p&gt;Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。&lt;/p&gt;
+&lt;p&gt;Samba 现在最新版本是 4.x，但在我的树莓派上面 &lt;em&gt;emerge --ask net-fs/samba&lt;/em&gt; 出来的还是 3.6.2。&lt;/p&gt;
+&lt;p&gt;官网上的 &lt;a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba"&gt;net-fs/samba&lt;/a&gt; package 4.x 以上的版本不支持 arm 或被 mask。&lt;/p&gt;
+&lt;p&gt;开始安装 ；)&lt;/p&gt;
+&lt;p&gt;emerge --ask net-fs/sambar&lt;/p&gt;
+&lt;p&gt;# qlop -Hgvt samba
+samba-3.6.25: Tue Oct 27 23:56:50 2015: 43 minutes, 41 seconds
+samba: 1 times&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Git使用</title><link href="https://magicalboy.com/note/git.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/git.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://openshift.redhat.com/community/kb/kb-e1035-git-push-throws-error-rpc-failed-result22-http-code-411"&gt;error: RPC failed; result=22, HTTP code = 411&lt;/a&gt;&lt;/p&gt;
+</summary></entry><entry><title>GTD学习</title><link href="https://magicalboy.com/note/gtd.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/gtd.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;GTD 流程图&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="Getting Things Done - Workflow diagram" src="images/gtd1.jpg" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="GTD"></category></entry><entry><title>iOS 设计模式: Model View Controller</title><link href="https://magicalboy.com/note/ios-design-patterns-model-view-controller.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/ios-design-patterns-model-view-controller.html</id><summary type="html">&lt;p&gt;MVC 设计模式的主要目的是可重用性，能够在不同的视图中使用重用同一个模型。&lt;/p&gt;
+&lt;img alt="Model View Controller (MVC) Design Pattern" src="static/images/mvc.jpg" /&gt;
+&lt;div class="section" id="model"&gt;
+&lt;h2&gt;模型 Model&lt;/h2&gt;
+&lt;p&gt;模型包含了数据。例如，一个 Book 对象包含有关书的信息：标题和作者。此外，Book 对象能够被其它对象关联，建立一对一或一对多的关系。例如 Category 对象可包含多个 Book 对象。模型中的数据可以来源于本地数据库或文件，也可以从网络请求回来。&lt;/p&gt;
+&lt;p&gt;模型不应该直接和视图打交道，应该在需要的时候访问通过控制器来访问。&lt;/p&gt;
+&lt;p&gt;在 iOS 中，模型通常是 NSObject 或 NSManagedObject的子类。任何模型对象包括一些实例变量和对应的 getter/setter 方法。大多数面向对象编程语言都有提供封装的机制。在 iOS 中使用 &amp;#64;property 封装，和可选的 &amp;#64;synthesize 自动生成 getter/setter 方法。以 Book 模型为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;@interface&lt;/span&gt; &lt;span class="nc"&gt;Book&lt;/span&gt; : &lt;span class="bp"&gt;NSObject&lt;/span&gt;
+
+&lt;span class="k"&gt;@property&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;nonatomic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    &lt;span class="c1"&gt;// 会自动生成 _title 实例变量&lt;/span&gt;
+&lt;span class="k"&gt;@property&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;nonatomic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;   &lt;span class="c1"&gt;// 会自动生成 _author 实例变量&lt;/span&gt;
+
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="view"&gt;
+&lt;h2&gt;视图 View&lt;/h2&gt;
+&lt;p&gt;视图显示模型的一些信息。例如，视图能够显示书本列表。尽管视图不会直接从模型中获取信息，而是使用控制器来协调什么时候该显示什么。&lt;/p&gt;
+&lt;p&gt;在 iOS 中，大多数视图继承自 UIView，UIView 能够捕捉触摸事件和绘图显示。UIKit 框架包括各种绘制系统标准界面元素的类，如表格，按钮，输入框，滑动条等。以下是一个书的列表：&lt;/p&gt;
+&lt;img alt="a list of books" src="static/images/book_list_table.jpg" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="controller"&gt;
+&lt;h2&gt;控制器 Controller&lt;/h2&gt;
+&lt;p&gt;控制器能够访问模型的数据，然后将它们显示到视图。同一个控制器可以作为几个视图和模型之间的中间体。控制器监控着视图上的用户交互，并将产生的变化与模型通信。反过来，也可将由控制器观察到模型中的更改，呈现到视图上。&lt;/p&gt;
+&lt;p&gt;控制器是多数应用所依赖的。在 iOS 中，控制器作为 UIViewController 的子类管理着视图。它也负责 委托（delegate） 消息和 目标－动作（target-action）消息的响应。以下是 UITableViewController （ UIViewController 的子类）如何管理 UITableView 的图解：&lt;/p&gt;
+&lt;img alt="UITableViewController manages a UITableView" src="static/images/tableviewcontroller_using_mvc.jpg" /&gt;
+&lt;p&gt;参考链接：&lt;a class="reference external" href="http://blog.teamtreehouse.com/ios-design-patterns-model-view-controller-part-3"&gt;iOS Design Patterns: Model View Controller&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="iOS"></category><category term="design pattern"></category></entry><entry><title>iOS Frameworks</title><link href="https://magicalboy.com/note/ios-frameworks.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/ios-frameworks.html</id><summary type="html">&lt;div class="section" id="ios"&gt;
+&lt;h2&gt;iOS 的架构是分层的&lt;/h2&gt;
+&lt;img alt="Layers of iOS" class="align-left" src="http://developer.apple.com/library/ios/documentation/miscellaneous/conceptual/iphoneostechoverview/Art/SystemLayers_2x.png" style="width: 366px; height: 202px;" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="frameworks"&gt;
+&lt;h2&gt;Frameworks&lt;/h2&gt;
+&lt;p&gt;iOS 提供了一套框架，将 iOS 应用程序的技术，服务和功能结合了起来。&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="iOS"></category></entry><entry><title>iOS 国际化/本地化</title><link href="https://magicalboy.com/note/ios-i18n.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/ios-i18n.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;获取首选语言&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 获取首选语言&lt;/span&gt;
+&lt;span class="n"&gt;NSLog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;preferredLanguages:%@&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;NSLocale&lt;/span&gt; &lt;span class="n"&gt;preferredLanguages&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+&lt;span class="c1"&gt;// 另一种方式&lt;/span&gt;
+&lt;span class="bp"&gt;NSArray&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;languages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="bp"&gt;NSUserDefaults&lt;/span&gt; &lt;span class="n"&gt;standardUserDefaults&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="nl"&gt;objectForKey&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;AppleLanguages&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="n"&gt;NSLog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;languages:%@&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;languages&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;输出结果是一样的，都是数组：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;zh-Hans&amp;quot;&lt;/span&gt;,
+en,
+fr,
+de,
+ja,
+...
+&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;数组中第一个就是当前选择的语言，名称符合 ISO 639-1 代码表。同时需要注意区域和语言是独立不同的。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;两者有什么不同，请看这：&lt;a class="reference external" href="http://stackoverflow.com/questions/7872356/what-is-the-difference-between-nslocale-preferredlanguages-and-nsuserdefault"&gt;Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;苹果开发者官网专题：&lt;a class="reference external" href="http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPInternational/Articles/ChoosingLocalizations.html"&gt;Internationalization Programming Topics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;获取当前地区&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="bp"&gt;NSLocale&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;locale&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;NSLocale&lt;/span&gt; &lt;span class="n"&gt;currentLocale&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;localeName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;locale&lt;/span&gt; &lt;span class="nl"&gt;displayNameForKey&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;NSLocaleIdentifier&lt;/span&gt;
+                                         &lt;span class="nl"&gt;value&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="n"&gt;locale&lt;/span&gt; &lt;span class="n"&gt;localeIdentifier&lt;/span&gt;&lt;span class="p"&gt;]];&lt;/span&gt;
+&lt;span class="n"&gt;NSLog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;localeName:%@&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;localeName&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="iOS"></category><category term="i18n"></category></entry><entry><title>iOS 支持矩阵</title><link href="https://magicalboy.com/note/ios-support-matrix.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/ios-support-matrix.html</id><summary type="html">&lt;img alt="iOS Support Matrix" src="images/ios_support_matrix.png" /&gt;
+</summary><category term="iOS"></category><category term="support"></category></entry><entry><title>iOS 多线程学习</title><link href="https://magicalboy.com/note/ios-thread.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/ios-thread.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id9"&gt;基础知识&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#nsthread" id="id10"&gt;NSThread&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id3" id="id11"&gt;创建和启动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id4" id="id12"&gt;线程同步&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id5" id="id13"&gt;线程交互&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#nsoperation" id="id14"&gt;NSOperation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id15"&gt;并发执行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id7" id="id16"&gt;非并发执行&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#gcd" id="id17"&gt;GCD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id8" id="id18"&gt;线程概念&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#run-loops" id="id19"&gt;Run Loops&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;基础知识&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;并发和并行。从技术角度来看，并发是程序的属性，而并行运作是机器的属性。并行和并发是两种分开的概念。作为程序员，你不能保证你的代码会在能并行执行你的代码的机器上运行。然而，你可以设计你的代码，让它使用并发操作。&lt;/p&gt;
+&lt;p&gt;主要术语：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;任务&lt;/strong&gt;：一项需要完成的，简单，单一的任务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;线程&lt;/strong&gt;：一种由操作系统提供的机制，允许多条指令在一个单独的程序中同时执行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进程&lt;/strong&gt;：一段可执行的代码，它可以由几个线程组成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进程，线程和任务之间的关系：&lt;/p&gt;
+&lt;img alt="进程，线程和任务" src="images/Process_Thread_Task.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在iPhone和Mac中，线程功能是由POSIX Threads API（或者pthreads）提供的，它是操作系统的一部分。这是相当底层的东西，你会发现很容易犯错；也许线程最坏的地方就是那些极难被发现的错误吧！&lt;/p&gt;
+&lt;p&gt;Foundation 框架包含了一个叫做NSThread的类，他更容易处理，但是使用NSThread管理多个线程仍然是件令人头疼的事情。NSOperation和NSOperationQueue是更高级别的类，他们大大简化了处理多个线程的过程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nsthread"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;NSThread&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id11"&gt;创建和启动&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;看文档可以了解到，创建一个线程主要有两个方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;init&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// designated initializer&lt;/span&gt;
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;initWithTarget:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;target&lt;/span&gt; &lt;span class="nf"&gt;selector:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;SEL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;selector&lt;/span&gt; &lt;span class="nf"&gt;object:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使用以上两种方法创建的线程需要手动启动：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;start&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;另外还有一种比较特殊，就是使用所谓的 convenient method，这个方法可以直接生成一个线程并启动它，而且无需为线程的清理负责。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;detachNewThreadSelector:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;SEL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;selector&lt;/span&gt; &lt;span class="nf"&gt;toTarget:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;target&lt;/span&gt; &lt;span class="nf"&gt;withObject:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id12"&gt;线程同步&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;想一下多个窗口同时售票的售票系统。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//  AppDelegate.h&lt;/span&gt;
+&lt;span class="c1"&gt;//  SellTicket&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//  Created by Chan Donly on 13-1-6.&lt;/span&gt;
+&lt;span class="c1"&gt;//  Copyright (c) 2013年 Diaoser. All rights reserved.&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+
+&lt;span class="cp"&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;&lt;/span&gt;
+
+
+&lt;span class="k"&gt;@interface&lt;/span&gt; &lt;span class="nc"&gt;AppDelegate&lt;/span&gt; : &lt;span class="bp"&gt;UIResponder&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="bp"&gt;UIApplicationDelegate&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickets&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="bp"&gt;NSThread&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadone&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="bp"&gt;NSThread&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadtwo&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="bp"&gt;NSCondition&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;ticketsCondition&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;@property&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;nonatomic&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="bp"&gt;UIWindow&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;类的实现：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//  AppDelegate.m&lt;/span&gt;
+&lt;span class="c1"&gt;//  SellTicket&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//  Created by Chan Donly on 13-1-6.&lt;/span&gt;
+&lt;span class="c1"&gt;//  Copyright (c) 2013年 Diaoser. All rights reserved.&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+
+&lt;span class="cp"&gt;#import &amp;quot;AppDelegate.h&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;@implementation&lt;/span&gt; &lt;span class="nc"&gt;AppDelegate&lt;/span&gt;
+
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;dealloc&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadone&lt;/span&gt; &lt;span class="k"&gt;release&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadtwo&lt;/span&gt; &lt;span class="k"&gt;release&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsCondition&lt;/span&gt; &lt;span class="k"&gt;release&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;_window&lt;/span&gt; &lt;span class="k"&gt;release&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;super&lt;/span&gt; &lt;span class="n"&gt;dealloc&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;BOOL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;application:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;UIApplication&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;application&lt;/span&gt; &lt;span class="nf"&gt;didFinishLaunchingWithOptions:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;NSDictionary&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;launchOptions&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[[&lt;/span&gt;&lt;span class="bp"&gt;UIWindow&lt;/span&gt; &lt;span class="n"&gt;alloc&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="nl"&gt;initWithFrame&lt;/span&gt;&lt;span class="p"&gt;:[[&lt;/span&gt;&lt;span class="bp"&gt;UIScreen&lt;/span&gt; &lt;span class="n"&gt;mainScreen&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;bounds&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="n"&gt;autorelease&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="c1"&gt;// Override point for customization after application launch.&lt;/span&gt;
+
+    &lt;span class="n"&gt;tickets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// 锁对象&lt;/span&gt;
+    &lt;span class="n"&gt;ticketsCondition&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="bp"&gt;NSCondition&lt;/span&gt; &lt;span class="n"&gt;alloc&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="n"&gt;ticketsThreadone&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="bp"&gt;NSThread&lt;/span&gt; &lt;span class="n"&gt;alloc&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="nl"&gt;initWithTarget&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;self&lt;/span&gt; &lt;span class="nl"&gt;selector&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;@selector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nl"&gt;object&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadone&lt;/span&gt; &lt;span class="nl"&gt;setName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;Thread-1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadone&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="n"&gt;ticketsThreadtwo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="bp"&gt;NSThread&lt;/span&gt; &lt;span class="n"&gt;alloc&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="nl"&gt;initWithTarget&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;self&lt;/span&gt; &lt;span class="nl"&gt;selector&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;@selector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nl"&gt;object&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadtwo&lt;/span&gt; &lt;span class="nl"&gt;setName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;Thread-2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsThreadtwo&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="c1"&gt;//[NSThread detachNewThreadSelector:@selector(run) toTarget:self withObject:nil];&lt;/span&gt;
+
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt; &lt;span class="n"&gt;makeKeyAndVisible&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;YES&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;run&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// 上锁&lt;/span&gt;
+        &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsCondition&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tickets&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;NSThread&lt;/span&gt; &lt;span class="nl"&gt;sleepForTimeInterval&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+            &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;tickets&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="n"&gt;NSLog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;当前票数是:%d,售出:%d,线程名:%@&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tickets&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="bp"&gt;NSThread&lt;/span&gt; &lt;span class="n"&gt;currentThread&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+            &lt;span class="n"&gt;tickets&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+
+        &lt;span class="c1"&gt;// [ticketsCondition signal];&lt;/span&gt;
+        &lt;span class="c1"&gt;// 解除锁&lt;/span&gt;
+        &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ticketsCondition&lt;/span&gt; &lt;span class="n"&gt;unlock&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;当前票数是:100,售出:0,线程名:Thread-1
+当前票数是:99,售出:1,线程名:Thread-2
+当前票数是:98,售出:2,线程名:Thread-1
+当前票数是:97,售出:3,线程名:Thread-2
+...
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id13"&gt;线程交互&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;如在主线程中修改界面。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;performSelectorOnMainThread:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;SEL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;aSelector&lt;/span&gt; &lt;span class="nf"&gt;withObject:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;arg&lt;/span&gt; &lt;span class="nf"&gt;waitUntilDone:&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;BOOL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;wait&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在本过程中，可能需要释放一些资源，则需要使用NSAutoreleasePool来进行管理。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;startTheBackgroundJob&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="bp"&gt;NSAutoreleasePool&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;pool&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="bp"&gt;NSAutoreleasePool&lt;/span&gt; &lt;span class="n"&gt;alloc&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// to do something in your thread job&lt;/span&gt;
+
+    &lt;span class="p"&gt;...&lt;/span&gt;
+
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;self&lt;/span&gt; &lt;span class="nl"&gt;performSelectorOnMainThread&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;@selector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;makeMyProgressBarMoving&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nl"&gt;withObject&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;nil&lt;/span&gt; &lt;span class="nl"&gt;waitUntilDone&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;NO&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;pool&lt;/span&gt; &lt;span class="k"&gt;release&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;如果某个ViewController里运行了一个Thread，Thread还没结束的时候，这个ViewController被Release了，结果会如何？&lt;/strong&gt;&lt;/p&gt;
+&lt;p style="color:red;"&gt;经过的的测试，Thread 不结束，ViewController 一直保留，不会执行 dealloc 方法。&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nsoperation"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id14"&gt;NSOperation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;NSoperation也是多线程的一种，NSopertaion有2种形式&lt;/p&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id15"&gt;并发执行&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;并发执行你需要重载如下4个方法&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//执行任务主函数，线程运行的入口函数&lt;/span&gt;
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;start&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+
+&lt;span class="c1"&gt;//是否允许并发，返回YES，允许并发，返回NO不允许。默认返回NO&lt;/span&gt;
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;BOOL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;isConcurrent&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;BOOL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;isExecuting&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+
+&lt;span class="c1"&gt;//是否已经完成，这个必须要重载，不然放在放在NSOperationQueue里的NSOpertaion不能正常释放。&lt;/span&gt;
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;BOOL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;isFinished&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;比如一个 TestNSOperation:NSoperaion 对象 testOperation 重载上述的4个方法，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="bp"&gt;NSOperationQueue&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;queue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[[&lt;/span&gt;&lt;span class="bp"&gt;NSOperationQueue&lt;/span&gt; &lt;span class="n"&gt;alloc&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;autorelease&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;queue&lt;/span&gt; &lt;span class="nl"&gt;addOperation&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;testOperation&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;会自动调用 testOperation 里的 start 函数，如果需要多个 NSOperation, 你需要设置 queue 的一些属性，如果多个 NSOperation 之间又依赖关系，也可以设置，具体可以参考 &lt;a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/NSOperation_class/Reference/Reference.html"&gt;API&lt;/a&gt; 文档。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id16"&gt;非并发执行&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;只需要重载这个 main 方法就可以了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;-(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gcd"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id17"&gt;GCD&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;iOS 4.0+ 才支持。&lt;/p&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id8"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id18"&gt;线程概念&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="run-loops"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id19"&gt;Run Loops&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;一个 run loop 就是一个事件处理的循环，用来不停的调度工作以及处理输入事件。使用 run loop 的目的是让你的线程在有工作的时候忙于工作，而没工作的时候处于休眠状态。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="iOS"></category><category term="thread"></category></entry><entry><title>解决 OpenWrt Bad Address 问题</title><link href="https://magicalboy.com/note/openwrt-bad-address.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/openwrt-bad-address.html</id><summary type="html">&lt;p&gt;自升级 CC 后，一切都正常。&lt;/p&gt;
+&lt;p&gt;突然有一天发现 DDNS 出了问题，LuCI 的服务界面都刷不完整。&lt;/p&gt;
+&lt;p&gt;opkg update 失败。&lt;/p&gt;
+&lt;p&gt;ping 所有网址都是 bad address，ping ip 地址正常。&lt;/p&gt;
+&lt;p&gt;nslookup 只到 localhost 卡住。&lt;/p&gt;
+&lt;p&gt;检查 DNS 配置 &lt;em&gt;vi /etc/config/dhcp&lt;/em&gt; 正常，网络配置 &lt;em&gt;/etc/config/network&lt;/em&gt; 正常。&lt;/p&gt;
+&lt;p&gt;找了Ｎ久才发现 &lt;em&gt;/etc/resolv.conf&lt;/em&gt; 文件被修改，解决方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 删除 /etc/resolv.conf&lt;/span&gt;
+vi /etc/resolv.conf
+&lt;span class="c1"&gt;# 加入以下&lt;/span&gt;
+
+nameserver 114.114.114.114
+nameserver 114.114.114.115
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+&lt;span class="c1"&gt;# reboot&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;问题解决&lt;/p&gt;
+</summary><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt DDNS 配置</title><link href="https://magicalboy.com/note/openwrt-ddns.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/openwrt-ddns.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;环境&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OpenWrt CC (LuCI)&lt;/li&gt;
+&lt;li&gt;电信光纤 100M&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="luci-app-ddns"&gt;
+&lt;h2&gt;一、安装 luci-app-ddns&lt;/h2&gt;
+&lt;p&gt;登录路由器，进入 System -&amp;gt; Software，点击 Update lists 更新软件库。&lt;/p&gt;
+&lt;p&gt;在 Filter 中输入关键字 ddns, 点击 Find package，然后在 Available packages 列表中找到 luci-i18n-ddns-en，OpenWrt 会自动分析依赖关系安装好 DDNS。&lt;/p&gt;
+&lt;p&gt;安装完成后，在 System 和 Network 中间会多出一项 Services（假设之前没有安装过其他服务），里面有 Dynamic DNS 一项，点击进入配置界面。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ddns"&gt;
+&lt;h2&gt;二、配置 DDNS&lt;/h2&gt;
+&lt;p&gt;DDNS 服务提供商选择列表中没有花生壳服务，使用 SSH 登录路由器修改：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;＃ vi /usr/lib/ddns/services
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;按 G 跳到最后一行，加入&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;oray.com&amp;quot;&lt;/span&gt;      &lt;span class="s2"&gt;&amp;quot;http://[USERNAME]:[PASSWORD]@ddns.oray.com/ph/update?hostname=[DOMAIN]&amp;amp;myip=[IP]&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后再刷新页面，选择 Oray.com 服务，填写相关信息提交后马上就可以看到绑定的 IP 了。&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="OpenWrt"></category><category term="ddns"></category></entry><entry><title>OpenWrt Luci</title><link href="https://magicalboy.com/note/openwrt-luci.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/openwrt-luci.html</id><summary type="html">&lt;ol class="arabic simple"&gt;
+&lt;li&gt;路由 Luci Web 界面访问不了问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+解决方法：重启 Luci&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/uhttpd restart
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt WDS 连接设置</title><link href="https://magicalboy.com/note/openwrt-wds.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/openwrt-wds.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+算了不想写了&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="whr-g300n-v2"&gt;
+&lt;h2&gt;WHR-G300N V2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。&lt;/li&gt;
+&lt;li&gt;购买链接：&lt;a class="reference external" href="http://www.amazon.cn/BUFFALO"&gt;http://www.amazon.cn/BUFFALO&lt;/a&gt;-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC&lt;/li&gt;
+&lt;li&gt;官网地址：&lt;a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router"&gt;http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OpenWrt Wiki：&lt;a class="reference external" href="http://wiki.openwrt.org/toh/buffalo/whr-g300nv2"&gt;http://wiki.openwrt.org/toh/buffalo/whr-g300nv2&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;刷机教程参考：&lt;a class="reference external" href="http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2"&gt;http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tftp"&gt;
+&lt;h2&gt;砖头复活记：tftp 刷机教程&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;刷机环境：OS X El Capitan&lt;/li&gt;
+&lt;li&gt;tftp 固件：&lt;a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin"&gt;https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1. 用网线连接路由器，打开电源，用 ifconfig 查看网络接口，比如 en0；
+修改本机 IP：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo ifconfig en0 192.168.11.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;配置网络，将 192.168.11.1 跟路由器的 MAC 地址关联起来：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo arp -s 192.168.11.1 xx:xx:xx:xx:xx:xx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;MAC 地址见背后标签上的 SSID。&lt;/p&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;这个时候可以断开路由器电源了，接着 cd 到固件所在目录，执行 tftp：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Set verbose mode on &lt;span class="o"&gt;(&lt;/span&gt;so we know what&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;s going on&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; verbose
+Verbose mode on.
+Binary mode on &lt;span class="o"&gt;(&lt;/span&gt;because we are uploading a binary file&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; binary
+mode &lt;span class="nb"&gt;set&lt;/span&gt; to octet
+Trace on &lt;span class="o"&gt;(&lt;/span&gt;so we get feedback on our commands&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; trace
+Packet tracing on.
+Rexmt &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;to retry the upload on failure every &lt;span class="m"&gt;1&lt;/span&gt; second&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; rexmt 1
+And timeout to &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;repeatedly retry the upload &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;60&lt;/span&gt; seconds before giving up&lt;span class="o"&gt;)&lt;/span&gt;
+tftp&amp;gt; timeout 60
+tftp&amp;gt; connect 192.168.11.1
+尽管路由器是关的
+tftp&amp;gt; status
+查看当前的配置状态
+tftp&amp;gt; put tftp.bin
+tftp.bin 就是下载回来的 openwrt-tftp版本的固件，已经被重命名。
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;将路由器的电源接上，同时重复执行以上的 put 指令，直到有以下反应：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tftp&amp;gt; put tftp.bin
+putting tftp.bin to 192.168.11.1:tftp.bin &lt;span class="o"&gt;[&lt;/span&gt;octet&lt;span class="o"&gt;]&lt;/span&gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0&amp;gt;
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1, &lt;span class="m"&gt;512&lt;/span&gt; bytes&amp;gt;
+...
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;6529, &lt;span class="m"&gt;36&lt;/span&gt; bytes&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;6529&amp;gt;
+Sent &lt;span class="m"&gt;3342372&lt;/span&gt; bytes in 2.7 seconds &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9903324&lt;/span&gt; bits/sec&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;此时上传完毕，可以输入 quit 退出。&lt;/p&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;路由器红色的灯会有不同的反应，几分钟后会自动重启。此致，成功复活！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>Pelican</title><link href="https://magicalboy.com/note/pelican.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/pelican.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="pelican logo" src="http://docs.getpelican.com/en/3.2/_static/pelican.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.2/"&gt;Pelican&lt;/a&gt; is a static site generator, written in &lt;a class="reference external" href="http://www.python.org/"&gt;Python&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;目前最新版本为 &lt;a class="reference external" href="http://docs.getpelican.com/en/3.2/changelog.html#id1"&gt;3.2 (2013-04-24)&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;写作流程&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;开启 virtualenv&lt;/li&gt;
+&lt;li&gt;进入工作目录&lt;/li&gt;
+&lt;li&gt;$ make devserver&lt;/li&gt;
+&lt;li&gt;./develop_server.sh stop&lt;/li&gt;
+&lt;li&gt;发布直接使用配置好的 &lt;tt class="docutils literal"&gt;git comit &amp;amp; push&lt;/tt&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;更多详细流程见 &lt;a class="reference external" href="http://docs.getpelican.com/en/3.2/getting_started.html"&gt;Getting started — Pelican 3 documentation&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Photoshop 学习笔记</title><link href="https://magicalboy.com/note/photoshop.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/photoshop.html</id><summary type="html">&lt;p&gt;Photoshop 是设计作图的必备工具，如果码农也会使用Photoshop来设计UI的话。。。唉，无论结果怎么样，求人不如求己。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Photoshop 简介&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="photoshop icon" src="static/images/Adobe_Photoshop_CS6_icon.svg.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="Photoshop CS 5.1" class="align-left" src="static/images/photoshop.jpg" style="width: 800px;" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Adobe Photoshop，简称“PS”（其程序图标便是“PS”）是一个由Adobe Systems开发和发行的图像处理软件。
+目前稳定版本 为 &lt;a class="reference external" href="http://www.adobe.com/support/downloads/product.jsp?product=39&amp;amp;platform=Windows%7Caccessdate=2012-04-23}"&gt;CS6 (13.0)&lt;/a&gt; 2012年4月23日。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;Photoshop 基础&lt;/h2&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;图层、蒙板、模式和样式&lt;/h3&gt;
+&lt;p&gt;经常看到美工MM设计好的PS文件都是由很多 &lt;strong&gt;图层（Layer）&lt;/strong&gt; 组成的，就像一个平铺好的三文治。图层面板实际上就是一幅动态的堆栈图表。屏幕中显示的图像就是它们的俯视图。&lt;/p&gt;
+&lt;p&gt;堆栈由几种不同类型的图层组成：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;背景（Background）图层，在堆栈的最下方，完全由像素填充而成。&lt;/li&gt;
+&lt;li&gt;一般图层，也由像素组成。不同的是可以包含完全透明或半透明的区域，可以透过透明区域看到下层图层。&lt;/li&gt;
+&lt;li&gt;调整图层（Adjustment Layer），不包含任何像素，它所包含的指令可以调整其下方图层的颜色与色调。&lt;/li&gt;
+&lt;li&gt;文本图层（Type Layer），存放文字的图层，可以编辑调整颜色等。&lt;/li&gt;
+&lt;li&gt;填充图层和形状图层，颜色像素及对应的指令，如渐变或图案等。&lt;/li&gt;
+&lt;li&gt;智能对象（Smart Object），是元素的集合体。先理解为很牛Ｘ的东西就了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;蒙板&lt;/strong&gt;，除背景图层外其它图层都可以包含两种蒙板：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;图层蒙板，基于像素。&lt;/li&gt;
+&lt;li&gt;失量蒙板，基于指令。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它们的作用是遮盖其下方的部分图层来显示。其它显示模式有 &lt;strong&gt;不透明度&lt;/strong&gt;、&lt;strong&gt;混合模式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;图层样式&lt;/strong&gt;，除背景图层外，其它图层都可以包含图层样式。样式是一种指令集，可以创建投影、发光和斜面等特效，或者模拟带有半透明、光照、色彩和图案的材质。双击某一普通图层可以打开选项。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;像素与指令&lt;/h3&gt;
+&lt;p&gt;像素与指令的区别：简单说，基于像素的图像是位图，基于指令的图像为矢量图。&lt;/p&gt;
+&lt;p&gt;基于指令的素材都可以还原到初始状态。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;栅格化&lt;/strong&gt; 指的是将指令转换为像素。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;Photoshop 界面&lt;/h3&gt;
+&lt;p&gt;什么工作区、导航就不写了，自己熟悉一下。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;高效工作&lt;/h3&gt;
+&lt;p&gt;使用调整图层，保护像素，保存选区，使用图层样式，复制图层，合并复制等概念。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>程序语言历史</title><link href="https://magicalboy.com/note/programming-history.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/programming-history.html</id><summary type="html">&lt;a class="reference external image-reference" href="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/history.html"&gt;&lt;img alt="programming history" src="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/images/programminghistory.jpg" style="width: 1024px;" /&gt;&lt;/a&gt;
+</summary><category term="programming"></category><category term="programming language"></category><category term="history"></category></entry><entry><title>反编译 APK</title><link href="https://magicalboy.com/note/reverse-engineering-apk.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/reverse-engineering-apk.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#apktool" id="id3"&gt;apktool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#dex2jar" id="id4"&gt;dex2jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="apktool"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;apktool&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://ibotpeaches.github.io/Apktool/"&gt;apktool1.5.2&lt;/a&gt; 使用示范，直接运行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Apktool v1.5.2 - a tool &lt;span class="k"&gt;for&lt;/span&gt; reengineering Android apk files
+Copyright &lt;span class="m"&gt;2010&lt;/span&gt; Ryszard Wi?niewski &amp;lt;brut.alll@gmail.com&amp;gt;
+with smali v1.4.1, and baksmali v1.4.1
+Updated by @iBotPeaches &amp;lt;connor.tumbleson@gmail.com&amp;gt;
+Apache License 2.0 &lt;span class="o"&gt;(&lt;/span&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;span class="o"&gt;)&lt;/span&gt;
+
+Usage: apktool &lt;span class="o"&gt;[&lt;/span&gt;-q&lt;span class="p"&gt;|&lt;/span&gt;--quiet OR -v&lt;span class="p"&gt;|&lt;/span&gt;--verbose&lt;span class="o"&gt;]&lt;/span&gt; COMMAND &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+
+COMMANDs are:
+
+    d&lt;span class="o"&gt;[&lt;/span&gt;ecode&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;OPTS&lt;span class="o"&gt;]&lt;/span&gt; &amp;lt;file.apk&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;dir&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt;
+        Decode &amp;lt;file.apk&amp;gt; to &amp;lt;dir&amp;gt;.
+
+        OPTS:
+
+        -s, --no-src
+            Do not decode sources.
+        -r, --no-res
+            Do not decode resources.
+        -d, --debug
+            Decode in debug mode. Check project page &lt;span class="k"&gt;for&lt;/span&gt; more info.
+        -b, --no-debug-info
+            Baksmali -- don&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t write out debug info &lt;span class="o"&gt;(&lt;/span&gt;.local, .param, .line, etc.&lt;span class="o"&gt;)&lt;/span&gt;
+        -f, --force
+            Force delete destination directory.
+        -t &amp;lt;tag&amp;gt;, --frame-tag &amp;lt;tag&amp;gt;
+            Try to use framework files tagged by &amp;lt;tag&amp;gt;.
+        --frame-path &amp;lt;dir&amp;gt;
+            Use the specified directory &lt;span class="k"&gt;for&lt;/span&gt; framework files
+        --keep-broken-res
+            Use &lt;span class="k"&gt;if&lt;/span&gt; there was an error and some resources were dropped, e.g.:
+            &lt;span class="s2"&gt;&amp;quot;Invalid config flags detected. Dropping resources&amp;quot;&lt;/span&gt;, but you
+            want to decode them anyway, even with errors. You will have to
+            fix them manually before building.
+
+    b&lt;span class="o"&gt;[&lt;/span&gt;uild&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;OPTS&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;app_path&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;out_file&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt;
+        Build an apk from already decoded application located in &amp;lt;app_path&amp;gt;.
+
+        It will automatically detect, whether files was changed and perform
+        needed steps only.
+
+        If you omit &amp;lt;app_path&amp;gt; &lt;span class="k"&gt;then&lt;/span&gt; current directory will be used.
+        If you omit &amp;lt;out_file&amp;gt; &lt;span class="k"&gt;then&lt;/span&gt; &amp;lt;app_path&amp;gt;/dist/&amp;lt;name_of_original.apk&amp;gt;
+        will be used.
+
+        OPTS:
+
+        -f, --force-all
+            Skip changes detection and build all files.
+        -d, --debug
+            Build in debug mode. Check project page &lt;span class="k"&gt;for&lt;/span&gt; more info.
+        -a, --aapt
+            Loads aapt from specified location.
+
+    &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;install-framework &amp;lt;framework.apk&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;tag&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt; --frame-path &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;location&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt;
+        Install framework file to your system.
+
+For additional info, see: http://code.google.com/p/android-apktool/
+For smali/baksmali info, see: http://code.google.com/p/smali/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用示例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ java -jar /Users/Don/Development/apktool1.5.2/apktool.jar d /Users/Don/Downloads/controls.apk
+
+I: Baksmaling...
+I: Loading resource table...
+I: Loaded.
+I: Decoding AndroidManifest.xml with resources...
+I: Loading resource table from file: /Users/Don/Library/apktool/framework/1.apk
+I: Loaded.
+I: Regular manifest package...
+I: Decoding file-resources...
+I: Decoding values */* XMLs...
+I: Done.
+I: Copying assets and libs...
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;成功后会在当前目录找到反编译好的目录，目录与apk文件同名。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="dex2jar"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;dex2jar&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/dex2jar/"&gt;dex2jar&lt;/a&gt; - Tools to work with android .dex and java .class files&lt;/p&gt;
+&lt;p&gt;将 apk 转换为 jar 的方法：将 apk 文件命名解压出来，然后复制解压到的 classes.dex 文件到 dex2jar 目录，执行 dex2jar 命令（以 OS X 为例）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./dex2jar.sh classes.dex
+
+this cmd is deprecated, use the d2j-dex2jar &lt;span class="k"&gt;if&lt;/span&gt; possible
+dex2jar version: translator-0.0.9.15
+dex2jar classes.dex -&amp;gt; classes_dex2jar.jar
+Done.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;成功后会得到相应的 jar 文件，接着可以拖到 &lt;a class="reference external" href="http://jd.benow.ca/"&gt;http://jd.benow.ca/&lt;/a&gt; 上面直接看结果，或者下载相应平台的客户端等。&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Android"></category></entry><entry><title>码农必备</title><link href="https://magicalboy.com/note/skill-framework.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/skill-framework.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="码农的求生技能" src="images/skills.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>SVN 使用</title><link href="https://magicalboy.com/note/svn.html" rel="alternate"></link><published>2015-05-28T11:50:00+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/svn.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;创建分支&lt;/h2&gt;
+&lt;p&gt;建立分支非常的简单—使用svn copy命令给你的工程做个拷贝。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ svn copy http://svn.example.com/repos/calc/trunk &lt;span class="se"&gt;\&lt;/span&gt;
+           http://svn.example.com/repos/calc/branches/my-calc-branch &lt;span class="se"&gt;\&lt;/span&gt;
+      -m &lt;span class="s2"&gt;&amp;quot;Creating a private branch of /calc/trunk.&amp;quot;&lt;/span&gt;
+
+Committed revision 341.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;在分支上工作&lt;/h2&gt;
+&lt;p&gt;现在你已经在项目里建立分支了，你可以取出一个新的工作拷贝来开始使用：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ svn checkout http://svn.example.com/repos/calc/branches/my-calc-branch
+A  my-calc-branch/Makefile
+A  my-calc-branch/integer.c
+A  my-calc-branch/button.c
+Checked out revision 341.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="xcode-svnignore"&gt;
+&lt;h2&gt;为 Xcode 项目增加 .svnignore&lt;/h2&gt;
+&lt;p&gt;在 SVN 中没有类似于 git 的 ignore 那样，只要添加就能自动过滤，而是需要手动设定，下面经常使用的 .svnignore template：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.DS_Store
+xcuserdata
+build
+*.mode1v3
+*.pbxuser
+*.xcworkspace
+*.moved-aside
+DerivedData
+
+&lt;span class="c1"&gt;# If you are using CocoaPods&lt;/span&gt;
+Pods
+Podfile.lock
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ svn propset svn:ignore -R -F .svnignore .
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;参考连接&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.subversion.org.cn/svnbook/nightly/svn.branchmerge.using.html"&gt;http://www.subversion.org.cn/svnbook/nightly/svn.branchmerge.using.html&lt;/a&gt;
+&lt;a class="reference external" href="http://blog.kumaya.co/2014/09/25/using-svn-ignore-with-xcode/"&gt;http://blog.kumaya.co/2014/09/25/using-svn-ignore-with-xcode/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>纯文本编辑器</title><link href="https://magicalboy.com/note/text_editor.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/text_editor.html</id><summary type="html">&lt;div class="section" id="retext"&gt;
+&lt;h2&gt;ReText&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://sourceforge.net/projects/retext/"&gt;ReText&lt;/a&gt; is a simple editor that reads your text with MarkDown or HTML markup and saves it as plain text, HTML or PDF.&lt;/p&gt;
+&lt;p&gt;It is written in Python using Qt libraries.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;It's a cross platform program.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="section" id="mac-os-x-yosemite"&gt;
+&lt;h3&gt;Mac OS X Yosemite 上安装&lt;/h3&gt;
+&lt;p&gt;使用 brew 安装：&lt;a class="reference external" href="http://sourceforge.net/p/retext/wiki/Home/"&gt;http://sourceforge.net/p/retext/wiki/Home/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下是部分安装日志：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ brew tap homebrew/python
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Tapping Homebrew/python
+Cloning into &lt;span class="s1"&gt;&amp;#39;/usr/local/Library/Taps/homebrew/homebrew-python&amp;#39;&lt;/span&gt;...
+remote: Counting objects: 16, &lt;span class="k"&gt;done&lt;/span&gt;.
+remote: Compressing objects: 100% &lt;span class="o"&gt;(&lt;/span&gt;16/16&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="k"&gt;done&lt;/span&gt;.
+remote: Total &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;delta 1&lt;span class="o"&gt;)&lt;/span&gt;, reused &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;delta 0&lt;span class="o"&gt;)&lt;/span&gt;, pack-reused 0
+Unpacking objects: 100% &lt;span class="o"&gt;(&lt;/span&gt;16/16&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="k"&gt;done&lt;/span&gt;.
+Checking connectivity... &lt;span class="k"&gt;done&lt;/span&gt;.
+Tapped &lt;span class="m"&gt;13&lt;/span&gt; formulae &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;51&lt;/span&gt; files, 216K&lt;span class="o"&gt;)&lt;/span&gt;
+
+$ brew install &lt;span class="nv"&gt;retext&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing retext from homebrew/homebrew-python
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing dependencies &lt;span class="k"&gt;for&lt;/span&gt; retext: xz, pkg-config, readline, sqlite,
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing retext dependency: &lt;span class="nv"&gt;xz&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading https://homebrew.bintray.com/bottles/xz-5.2.1.yosemite.bottle.ta
+&lt;span class="c1"&gt;######################################################################## 100.0%&lt;/span&gt;
+...
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装编译完成后，直接调用 &lt;em&gt;retext&lt;/em&gt; 命令即可打开带图形界面的编辑器。That's all，就这么简单。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mac-os-x-10-9-2"&gt;
+&lt;h3&gt;Mac OS X（10.9.2） 上安装&lt;/h3&gt;
+&lt;p&gt;使用 brew 安装：&lt;a class="reference external" href="http://sourceforge.net/p/retext/wiki/Home/"&gt;http://sourceforge.net/p/retext/wiki/Home/&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew tap samueljohn/python
+brew install enchant
+pip install pyenchant
+pip install markups
+pip install markdown
+pip install docutils
+
+$ brew install retext
+Warning: It appears you have MacPorts or Fink installed.
+Software installed with other package managers causes known problems &lt;span class="k"&gt;for&lt;/span&gt;
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing dependencies &lt;span class="k"&gt;for&lt;/span&gt; retext: qt, sip, &lt;span class="nv"&gt;pyqt&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing retext dependency: &lt;span class="nv"&gt;qt&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/qt-4.8.5.mavericks.bottle.4.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装时遇到的问题：&lt;/p&gt;
+&lt;p&gt;Q1: Could not link glib&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ brew link glib
+Linking /usr/local/Cellar/glib/2.38.2... Warning: Could not link glib. Unlinking...
+
+Error: Could not symlink file: /usr/local/Cellar/glib/2.38.2/share/locale/hr/LC_MESSAGES/glib20.mo
+/usr/local/share/locale/hr/LC_MESSAGES is not writable. You should change its permissions.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo chown -R &lt;span class="k"&gt;$(&lt;/span&gt;whoami&lt;span class="k"&gt;)&lt;/span&gt;:admin /usr/local
+$ brew link glib
+Linking /usr/local/Cellar/glib/2.38.2... &lt;span class="m"&gt;136&lt;/span&gt; symlinks created
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Q2: install enchant error&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ brew install enchant
+Warning: It appears you have MacPorts or Fink installed.
+Software installed with other package managers causes known problems &lt;span class="k"&gt;for&lt;/span&gt;
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing enchant dependency: &lt;span class="nv"&gt;aspell&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading http://ftpmirror.gnu.org/aspell/aspell-0.60.6.1.tar.gz
+Already downloaded: /Library/Caches/Homebrew/aspell-0.60.6.1.tar.gz
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/aspell/0.60.6.1
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; make install
+&lt;span class="m"&gt;20&lt;/span&gt; errors generated.
+make&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;: *** &lt;span class="o"&gt;[&lt;/span&gt;prog/checker_string.o&lt;span class="o"&gt;]&lt;/span&gt; Error 1
+&lt;span class="m"&gt;20&lt;/span&gt; errors generated.
+make&lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;: *** &lt;span class="o"&gt;[&lt;/span&gt;prog/aspell.o&lt;span class="o"&gt;]&lt;/span&gt; Error 1
+make: *** &lt;span class="o"&gt;[&lt;/span&gt;install-recursive&lt;span class="o"&gt;]&lt;/span&gt; Error 1
+
+READ THIS: https://github.com/Homebrew/homebrew/wiki/troubleshooting
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ brew update
+$ brew doctor
+$ brew install enchant
+Warning: It appears you have MacPorts or Fink installed.
+Software installed with other package managers causes known problems &lt;span class="k"&gt;for&lt;/span&gt;
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing dependencies &lt;span class="k"&gt;for&lt;/span&gt; enchant: glib, &lt;span class="nv"&gt;aspell&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing enchant dependency: &lt;span class="nv"&gt;glib&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/glib-2.40.0.mavericks.bottle.tar.gz
+&lt;span class="c1"&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Pouring glib-2.40.0.mavericks.bottle.tar.gz
+  /usr/local/Cellar/glib/2.40.0: &lt;span class="m"&gt;410&lt;/span&gt; files, &lt;span class="nv"&gt;18M&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing enchant dependency: &lt;span class="nv"&gt;aspell&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading http://ftpmirror.gnu.org/aspell/aspell-0.60.6.1.tar.gz
+Already downloaded: /Library/Caches/Homebrew/aspell-0.60.6.1.tar.gz
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Patching
+patching file interfaces/cc/aspell.h
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/aspell/0.60.6.1
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; make &lt;span class="nv"&gt;install&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading http://ftpmirror.gnu.org/aspell/dict/en/aspell6-en-7.1-0.tar.bz2
+&lt;span class="c1"&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; ./configure --vars &lt;span class="nv"&gt;ASPELL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/aspell/0.60.6.1/bin/aspell &lt;span class="nv"&gt;PREZIP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/aspell/0.60.6.1/bin/prezip
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; make install
+  /usr/local/Cellar/aspell/0.60.6.1: &lt;span class="m"&gt;181&lt;/span&gt; files, 6.5M, built in &lt;span class="m"&gt;26&lt;/span&gt; &lt;span class="nv"&gt;seconds&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Installing &lt;span class="nv"&gt;enchant&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading http://www.abisource.com/downloads/enchant/1.6.0/enchant-1.6.0.tar.gz
+&lt;span class="c1"&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/enchant/1.6.0 --disable-ispell --disable-myspell
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; make &lt;span class="nv"&gt;install&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading https://pypi.python.org/packages/source/p/pyenchant/pyenchant-1.6.5.tar.gz
+&lt;span class="c1"&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; python setup.py install --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/enchant/1.6.0 --single-version-externally-managed --record&lt;span class="o"&gt;=&lt;/span&gt;installed.txt
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Caveats
+If you need Python to find the installed site-packages:
+  mkdir -p ~/Library/Python/2.7/lib/python/site-packages
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/usr/local/lib/python2.7/site-packages&amp;#39;&lt;/span&gt; &amp;gt; ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Summary
+  /usr/local/Cellar/enchant/1.6.0: &lt;span class="m"&gt;55&lt;/span&gt; files, 676K, built in &lt;span class="m"&gt;28&lt;/span&gt; seconds
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Q3: pip install pyenchant failed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install pyenchant
+Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+  File &lt;span class="s2"&gt;&amp;quot;/usr/local/bin/pip&amp;quot;&lt;/span&gt;, line 5, in &amp;lt;module&amp;gt;
+    from pkg_resources import load_entry_point
+  File &lt;span class="s2"&gt;&amp;quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&amp;quot;&lt;/span&gt;, line 2603, in &amp;lt;module&amp;gt;
+    working_set.require&lt;span class="o"&gt;(&lt;/span&gt;__requires__&lt;span class="o"&gt;)&lt;/span&gt;
+  File &lt;span class="s2"&gt;&amp;quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&amp;quot;&lt;/span&gt;, line 666, in require
+    &lt;span class="nv"&gt;needed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; self.resolve&lt;span class="o"&gt;(&lt;/span&gt;parse_requirements&lt;span class="o"&gt;(&lt;/span&gt;requirements&lt;span class="o"&gt;))&lt;/span&gt;
+  File &lt;span class="s2"&gt;&amp;quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&amp;quot;&lt;/span&gt;, line 565, in resolve
+    raise DistributionNotFound&lt;span class="o"&gt;(&lt;/span&gt;req&lt;span class="o"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# XXX put more info here&lt;/span&gt;
+pkg_resources.DistributionNotFound: &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1.4.1
+donlydeMacBook-Pro:Vizrt Sun-cam$ pip install markups
+Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+  File &lt;span class="s2"&gt;&amp;quot;/usr/local/bin/pip&amp;quot;&lt;/span&gt;, line 5, in &amp;lt;module&amp;gt;
+    from pkg_resources import load_entry_point
+  File &lt;span class="s2"&gt;&amp;quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&amp;quot;&lt;/span&gt;, line 2603, in &amp;lt;module&amp;gt;
+    working_set.require&lt;span class="o"&gt;(&lt;/span&gt;__requires__&lt;span class="o"&gt;)&lt;/span&gt;
+  File &lt;span class="s2"&gt;&amp;quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&amp;quot;&lt;/span&gt;, line 666, in require
+    &lt;span class="nv"&gt;needed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; self.resolve&lt;span class="o"&gt;(&lt;/span&gt;parse_requirements&lt;span class="o"&gt;(&lt;/span&gt;requirements&lt;span class="o"&gt;))&lt;/span&gt;
+  File &lt;span class="s2"&gt;&amp;quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&amp;quot;&lt;/span&gt;, line 565, in resolve
+    raise DistributionNotFound&lt;span class="o"&gt;(&lt;/span&gt;req&lt;span class="o"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# XXX put more info here&lt;/span&gt;
+pkg_resources.DistributionNotFound: &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1.4.1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;解决办法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo easy_install --upgrade pip
+Password:
+Searching &lt;span class="k"&gt;for&lt;/span&gt; pip
+Reading http://pypi.python.org/simple/pip/
+Best match: pip 1.5.4
+Downloading https://pypi.python.org/packages/source/p/pip/pip-1.5.4.tar.gz#md5&lt;span class="o"&gt;=&lt;/span&gt;834b2904f92d46aaa333267fb1c922bb
+Processing pip-1.5.4.tar.gz
+Running pip-1.5.4/setup.py -q bdist_egg --dist-dir /tmp/easy_install-hsbdrM/pip-1.5.4/egg-dist-tmp-c3ITXY
+warning: no files found matching &lt;span class="s1"&gt;&amp;#39;pip/cacert.pem&amp;#39;&lt;/span&gt;
+warning: no files found matching &lt;span class="s1"&gt;&amp;#39;*.html&amp;#39;&lt;/span&gt; under directory &lt;span class="s1"&gt;&amp;#39;docs&amp;#39;&lt;/span&gt;
+warning: no previously-included files matching &lt;span class="s1"&gt;&amp;#39;*.rst&amp;#39;&lt;/span&gt; found under directory &lt;span class="s1"&gt;&amp;#39;docs/_build&amp;#39;&lt;/span&gt;
+no previously-included directories found matching &lt;span class="s1"&gt;&amp;#39;docs/_build/_sources&amp;#39;&lt;/span&gt;
+Adding pip 1.5.4 to easy-install.pth file
+Installing pip script to /usr/local/bin
+Installing pip2.7 script to /usr/local/bin
+Installing pip2 script to /usr/local/bin
+
+Installed /Library/Python/2.7/site-packages/pip-1.5.4-py2.7.egg
+Processing dependencies &lt;span class="k"&gt;for&lt;/span&gt; pip
+Finished processing dependencies &lt;span class="k"&gt;for&lt;/span&gt; pip
+
+$ sudo pip install pyenchant
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Q4: Install retext&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ brew install retext
+Warning: It appears you have MacPorts or Fink installed.
+Software installed with other package managers causes known problems &lt;span class="k"&gt;for&lt;/span&gt;
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading https://downloads.sourceforge.net/project/retext/ReText-4.0/ReText-4.0.0.tar.gz
+Already downloaded: /Library/Caches/Homebrew/retext-4.0.0.tar.gz
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; python setup.py install --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/retext/4.0.0
+Warning: Formula#python is deprecated and will go away shortly.
+Error: undefined method &lt;span class="sb"&gt;`&lt;/span&gt;xy&lt;span class="s1"&gt;&amp;#39; for #&amp;lt;PythonDependency: &amp;quot;python&amp;quot; []&amp;gt;&lt;/span&gt;
+&lt;span class="s1"&gt;Please report this bug:&lt;/span&gt;
+&lt;span class="s1"&gt;    https://github.com/Homebrew/homebrew/wiki/troubleshooting&lt;/span&gt;
+&lt;span class="s1"&gt;/usr/local/Library/Taps/samueljohn-python/retext.rb:26:in `install&amp;#39;&lt;/span&gt;
+/usr/local/Library/Homebrew/build.rb:174:in &lt;span class="sb"&gt;`&lt;/span&gt;install&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s1"&gt;/usr/local/Library/Homebrew/formula.rb:267:in `brew&amp;#39;&lt;/span&gt;
+/usr/local/Library/Homebrew/formula.rb:592:in &lt;span class="sb"&gt;`&lt;/span&gt;stage&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s1"&gt;/usr/local/Library/Homebrew/resource.rb:62:in `unpack&amp;#39;&lt;/span&gt;
+/usr/local/Library/Homebrew/extend/fileutils.rb:21:in &lt;span class="sb"&gt;`&lt;/span&gt;mktemp&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s1"&gt;/usr/local/Library/Homebrew/resource.rb:59:in `unpack&amp;#39;&lt;/span&gt;
+/usr/local/Library/Homebrew/resource.rb:52:in &lt;span class="sb"&gt;`&lt;/span&gt;stage&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s1"&gt;/usr/local/Library/Homebrew/formula.rb:590:in `stage&amp;#39;&lt;/span&gt;
+/usr/local/Library/Homebrew/formula.rb:262:in &lt;span class="sb"&gt;`&lt;/span&gt;brew&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s1"&gt;/usr/local/Library/Homebrew/build.rb:151:in `install&amp;#39;&lt;/span&gt;
+/usr/local/Library/Homebrew/build.rb:45:in &lt;span class="sb"&gt;`&lt;/span&gt;main&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+/usr/local/Library/Homebrew/build.rb:12
+/usr/local/Library/Taps/samueljohn-python/retext.rb:33
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;p&gt;直接下载ReText源码，使用brew安装Python3，重新安装PyQt4 --with-python3，进入ReText-4.1.2，输入：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python3 setup.py install
+
+running install
+running build
+running build_py
+running build_scripts
+copying and adjusting retext.py -&amp;gt; build/scripts-3.4
+running install_lib
+copying build/lib/.DS_Store -&amp;gt; /usr/local/lib/python3.4/site-packages
+running install_scripts
+copying build/scripts-3.4/retext.py -&amp;gt; /usr/local/bin
+copying build/scripts-3.4/wpgen.py -&amp;gt; /usr/local/bin
+changing mode of /usr/local/bin/retext.py to 755
+changing mode of /usr/local/bin/wpgen.py to 755
+renaming /usr/local/bin/retext.py to /usr/local/bin/retext
+renaming /usr/local/bin/wpgen.py to /usr/local/bin/wpgen
+running install_data
+running install_egg_info
+Removing /usr/local/lib/python3.4/site-packages/ReText-4.1.2-py3.4.egg-info
+Writing /usr/local/lib/python3.4/site-packages/ReText-4.1.2-py3.4.egg-info
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下载资源文件：&lt;a class="reference external" href="https://downloads.sourceforge.net/project/retext/Icons/ReTextIcons_r3.tar.gz"&gt;https://downloads.sourceforge.net/project/retext/Icons/ReTextIcons_r3.tar.gz&lt;/a&gt;'
+复制到 /usr/local/lib/python3.4/site-packages/ReText/icons，修改 /usr/local/lib/python3.4/site-packages/ReText/__init__.py 中的 icon_path = &amp;quot;/usr/local/lib/python3.4/site-packages/ReText/icons/&amp;quot;&lt;/p&gt;
+&lt;p&gt;最终运行效果图：&lt;/p&gt;
+&lt;img alt="ReText 4.1.2" src="images/ReText4.1.2.jpg" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://sourceforge.net/p/retext/wiki/Home/"&gt;Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;更新日志&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;2015-05-17：增加 Mac OS X Yosemite 上安装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>UIImage 使用</title><link href="https://magicalboy.com/note/uiimage.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/uiimage.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html"&gt;UIImage Class Reference&lt;/a&gt;&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="25%" /&gt;
+&lt;col width="75%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Inherits from&lt;/td&gt;
+&lt;td&gt;NSObject&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Framework&lt;/td&gt;
+&lt;td&gt;/System/Library/Frameworks/UIKit.framework&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Availability&lt;/td&gt;
+&lt;td&gt;Available in iOS 2.0 and later.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="section" id="stretch"&gt;
+&lt;h2&gt;Stretch&lt;/h2&gt;
+&lt;p&gt;将&lt;/p&gt;
+&lt;img alt="" src="http://i.stack.imgur.com/IPNUm.png" /&gt;
+&lt;p&gt;拉伸为&lt;/p&gt;
+&lt;img alt="" src="http://i.stack.imgur.com/1skMj.png" /&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="bp"&gt;UIImage&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;originalImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;UIImage&lt;/span&gt; &lt;span class="nl"&gt;imageNamed&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;myImage.png&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="bp"&gt;UIImage&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;newImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;originalImage&lt;/span&gt; &lt;span class="nl"&gt;respondsToSelector&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;@selector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;resizableImageWithCapInsets&lt;/span&gt;&lt;span class="p"&gt;:)])&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// iOS 5 and obove.&lt;/span&gt;
+    &lt;span class="n"&gt;newImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;originalImage&lt;/span&gt; &lt;span class="nl"&gt;resizableImageWithCapInsets&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;&lt;span class="bp"&gt;UIEdgeInsets&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;}]&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;newImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;originalImage&lt;/span&gt; &lt;span class="nl"&gt;stretchableImageWithLeftCapWidth&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="nl"&gt;topCapHeight&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A stretchable image is divided into 9 parts, if both leftCapWidth and topCapHeight are nonzero.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;leftCapWidth&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;-----&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;+--------------+&lt;/span&gt; &lt;span class="o"&gt;^&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;A&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;B&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topCapHeight&lt;/span&gt;
+&lt;span class="o"&gt;|-----+&lt;/span&gt;&lt;span class="err"&gt;·&lt;/span&gt;&lt;span class="o"&gt;+------|&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;
+&lt;span class="o"&gt;|-----+&lt;/span&gt;&lt;span class="err"&gt;·&lt;/span&gt;&lt;span class="o"&gt;+------|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;C&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;D&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+--------------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The central parts are always 1 px in size, and this is the part that is stretched, for example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;leftCapWidth&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;&amp;lt;-----&amp;gt;&lt;/span&gt;
+  &lt;span class="o"&gt;+------------------+&lt;/span&gt; &lt;span class="o"&gt;^&lt;/span&gt;
+  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;A&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;B&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topCapHeight&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;|-----+&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;+------|&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="p"&gt;.&lt;/span&gt;     &lt;span class="p"&gt;.&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="p"&gt;.&lt;/span&gt;     &lt;span class="p"&gt;.&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;^&lt;/span&gt; &lt;span class="o"&gt;|-----+&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;+------|&lt;/span&gt;
+  &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;C&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;D&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="o"&gt;+------------------+&lt;/span&gt;
+        &lt;span class="o"&gt;&amp;gt;-----&amp;lt;&lt;/span&gt;
+    &lt;span class="n"&gt;stretched&lt;/span&gt; &lt;span class="n"&gt;region&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To create a &amp;quot;glass pill button&amp;quot;, you should fill the rounded border into the regions A, B, C and D above, and supply the radius of that pill into both the leftCapWidth and topCapHeight.&lt;/p&gt;
+&lt;p&gt;Also, a stretchable image is not shrinkable. If you try to use stretchable images bigger than the buttons (or whatever else) you want to apply it to, they may be rendered incorrectly (especially on older iOSes).&lt;/p&gt;
+&lt;p&gt;引用 &lt;a class="reference external" href="http://stackoverflow.com/questions/2924408/iphone-stretchableimagewithleftcapwidth-only-makes-ds"&gt;Stackoverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="UIImage"></category><category term="iOS"></category></entry><entry><title>单元测试</title><link href="https://magicalboy.com/note/unit_testing.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/unit_testing.html</id><summary type="html">&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;单元测试是什么&lt;/h2&gt;
+&lt;p&gt;即分模块测试，针对程序模块进行正确性检验的测试工作。单元测试可以在软件开发过程的早期及时发现问题，同时也利于未来对代码的重构。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ios"&gt;
+&lt;h2&gt;iOS 中的单元测试&lt;/h2&gt;
+&lt;p&gt;OCUnit，被官方集成进XCode 4.x版本中；GHUnit，被推荐最多的测试框架，带GUI界面。&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Xcode</title><link href="https://magicalboy.com/note/xcode.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/xcode.html</id><summary type="html">&lt;p&gt;Xcode 目前最新版本 &lt;a class="reference external" href="http://magicalboy.com/xcode-5-0/"&gt;Xcode 5.0&lt;/a&gt; ，支持 iPhone 5s, iOS 7 开发。&lt;/p&gt;
+&lt;div class="section" id="what-s-new"&gt;
+&lt;h2&gt;What's New&lt;/h2&gt;
+&lt;p&gt;各个版本的 Xcode 新增功能说明。&lt;/p&gt;
+&lt;div class="section" id="xcode-5-0-x"&gt;
+&lt;h3&gt;Xcode 5.0.x&lt;/h3&gt;
+&lt;p&gt;Help you design an app that looks gorgeous on iOS 7 or OS X Mavericks.&lt;/p&gt;
+&lt;p&gt;WWDC地址：&lt;a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400"&gt;What’s New in Xcode 5&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets，只能在 Xcode 5 中打开使用。通过它可以创建和使用每个图片的所有版本，而不需管理单独的文件，或不需要单独的文件命名约定。素材目录还可以创建图片的切片，使得图片可以在用户界面上动态拉伸过程中保持文件大小。可惜这个功能是 iOS7 才支持。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ios"&gt;
+&lt;h2&gt;支持 iOS 情况&lt;/h2&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;Xcode 5.0.x&lt;/h3&gt;
+&lt;p&gt;最低支持 iOS 4.3，但生成的 xib 在之前版本的 Xcode 中打不开。解决方法见：&lt;a class="reference external" href="http://stackoverflow.com/questions/17281073/cant-open-project-in-xcode-4-6-after-opening-in-5-0"&gt;Can't Open Project in Xcode 4.6 After Opening in 5.0&lt;/a&gt; 。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="xcode-4-4-x"&gt;
+&lt;h3&gt;Xcode 4.4.x&lt;/h3&gt;
+&lt;p&gt;虽然可以支持到iOS 3.0，但不支持 nib，只能用代码实现 UI 编写。只有 Xcode 4.2.x 版本及以下才支持 nib。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="xcode-4-5-x"&gt;
+&lt;h3&gt;Xcode 4.5.x&lt;/h3&gt;
+&lt;p&gt;不再支持 iOS 4.3 以下版本开发，即不再支持 armv 6。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;相关连接：&lt;a class="reference external" href="http://stackoverflow.com/questions/9961631/build-universal-app-for-ios-3-0-using-xcode-4-3-x-nskeyedunarchiver-exception"&gt;Build universal app for iOS 3.0 using Xcode 4.3.x - NSKeyedUnarchiver Exception - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="linker-flags"&gt;
+&lt;h2&gt;Linker Flags&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;-all_load Loads all members of static archive libraries.&lt;/li&gt;
+&lt;li&gt;-ObjC Loads all members of static archive libraries that implement an Objective-C class or category.&lt;/li&gt;
+&lt;li&gt;-force_load (path_to_archive) Loads all members of the specified static archive library. Note: -all_load forces all members of all archives to be loaded. This option allows you to target a specific archive.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;具体请参考苹果Q&amp;amp;A文档：&lt;a class="reference external" href="https://developer.apple.com/library/mac/#qa/qa2006/qa1490.html"&gt;Building Objective-C static libraries with categories&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;StackOverflow：&lt;a class="reference external" href="http://stackoverflow.com/a/8179905"&gt;Objective-C categories in static library&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;启用 Xcode 编译版本自增功能&lt;/h2&gt;
+&lt;p&gt;使用苹果自带的 agvtool 工具，方法见 &lt;a class="reference external" href="https://developer.apple.com/library/ios/qa/qa1827/_index.html"&gt;Automating Version and Build Numbers Using agvtool&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;在 Xcode 项目中选中 Target，在Build Phases中新增一个 Run Script：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+agvtool next-version -all
+&lt;/pre&gt;
+&lt;p&gt;之后每 Build 一次 Bundle version 的号码就会自增一次。&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>Xcode 7 清除多余的 Woking copies</title><link href="https://magicalboy.com/note/xcode-remove-working-copies.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2016-01-14:note/xcode-remove-working-copies.html</id><summary type="html">&lt;p&gt;Xcode 版本：Version 7.1 (7B91b)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;
+由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;
+删除 &lt;em&gt;ProjectName.xcworkspace &amp;gt; xcshareddata &amp;gt; ProjectName.xcscmblueprint&lt;/em&gt;，重启 Xcode。&lt;/p&gt;
+&lt;p&gt;参考链接：&lt;a class="reference external" href="http://stackoverflow.com/a/27535601"&gt;http://stackoverflow.com/a/27535601&lt;/a&gt;&lt;/p&gt;
+</summary><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>OpenWrt CC SS 配置</title><link href="https://magicalboy.com/note/openwrt-cc-ss.html" rel="alternate"></link><published>2016-01-09T21:40:00+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2015-12-01:note/openwrt-cc-ss.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OpenWRT 版本：Chaos Calmer 15.05&lt;/li&gt;
+&lt;li&gt;OpenWRT 内核：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# opkg files kernel&lt;/span&gt;
+Package kernel &lt;span class="o"&gt;(&lt;/span&gt;3.18.20-1-7bed08fa9c06eb8089e82c200340ec66&lt;span class="o"&gt;)&lt;/span&gt; is installed on root and has the following files:
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;使用 root 登录 ssh&lt;/li&gt;
+&lt;li&gt;下载合适的预编译 &lt;a class="reference external" href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.1-6f44d53/ar71xx/"&gt;安装包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;上传到 &lt;tt class="docutils literal"&gt;/tmp&lt;/tt&gt; 目录&lt;/li&gt;
+&lt;li&gt;执行安装命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cks-libev-spec &lt;span class="o"&gt;(&lt;/span&gt;2.4.1-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Installing ipset &lt;span class="o"&gt;(&lt;/span&gt;6.24-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/ipset_6.24-1_ar71xx.ipk.
+Installing kmod-ipt-ipset &lt;span class="o"&gt;(&lt;/span&gt;3.18.20-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-ipt-ipset_3.18.20-1_ar71xx.ipk.
+Installing kmod-nfnetlink &lt;span class="o"&gt;(&lt;/span&gt;3.18.20-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-nfnetlink_3.18.20-1_ar71xx.ipk.
+Installing libmnl &lt;span class="o"&gt;(&lt;/span&gt;1.0.3-2&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/libmnl_1.0.3-2_ar71xx.ipk.
+Installing iptables-mod-tproxy &lt;span class="o"&gt;(&lt;/span&gt;1.4.21-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/iptables-mod-tproxy_1.4.21-1_ar71xx.ipk.
+Installing kmod-ipt-tproxy &lt;span class="o"&gt;(&lt;/span&gt;3.18.20-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-ipt-tproxy_3.18.20-1_ar71xx.ipk.
+Configuring kmod-nfnetlink.
+Configuring kmod-ipt-ipset.
+Configuring libmnl.
+Configuring ipset.
+Configuring kmod-ipt-tproxy.
+failed to find a module named nf_tproxy_core
+Configuring iptables-mod-tproxy.
+Configuring shadowsocks-libev-spec.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;程序配置：/etc/init.d/shadowsocks&lt;/li&gt;
+&lt;li&gt;服务配置：/var/etc/shadowsocks.json，格式如下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="s2"&gt;&amp;quot;server&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;X.X.X.X&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;server_port&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;443&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;password&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;password&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;local_port&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;1080&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;method&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;rc4-md5&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>CocoaPods 使用</title><link href="https://magicalboy.com/note/cocoapods-usage.html" rel="alternate"></link><published>2015-05-30T10:02:00+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2015-05-30:note/cocoapods-usage.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cocoapods.org/"&gt;CocoaPods&lt;/a&gt; 是 Objective-C 和 Swift 项目的依赖管理平台，而且已经拥有庞大的库，帮助我们优雅地扩大项目规模。&lt;/p&gt;
+&lt;p&gt;后来又出了一个 &lt;a class="reference external" href="https://github.com/Carthage/Carthage"&gt;Carthage&lt;/a&gt;，使用 Swift 实现的一个更简单的 Cocoa 依赖管理工具。由于 Carthage 仅支持动态 framework，所以必须要求 iOS 8 以及以上才能够使用，所以，这个以后再了解。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="os-x-yosemite"&gt;
+&lt;h2&gt;OS X Yosemite 上安装&lt;/h2&gt;
+&lt;p&gt;使用 gem 安装：&lt;em&gt;$ sudo gem install cocoapods&lt;/em&gt;
+前提是你已经安装好了 Gem — 一个 &lt;strong&gt;复杂&lt;/strong&gt; 的 Ruby 语言包管理器。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="xcode"&gt;
+&lt;h2&gt;在 Xcode 项目中使用&lt;/h2&gt;
+&lt;p&gt;很简单，在项目根目录新建一个 &lt;em&gt;Podfile&lt;/em&gt; 的纯文本文件，加上自己需要的库（可以先查找，比如 &lt;em&gt;pod search AFNetworking&lt;/em&gt;）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;platform :ios, &lt;span class="s1"&gt;&amp;#39;8.0&amp;#39;&lt;/span&gt;
+use_frameworks!
+
+target &lt;span class="s1"&gt;&amp;#39;MyApp&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  pod &lt;span class="s1"&gt;&amp;#39;AFNetworking&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;~&amp;gt; 2.5&amp;#39;&lt;/span&gt;
+  pod &lt;span class="s1"&gt;&amp;#39;ORStackView&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;~&amp;gt; 2.0&amp;#39;&lt;/span&gt;
+  pod &lt;span class="s1"&gt;&amp;#39;SwiftyJSON&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;~&amp;gt; 2.1&amp;#39;&lt;/span&gt;
+end
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后执行 &lt;em&gt;$ pod install&lt;/em&gt;。
+安装完成后，注意打开的是项目的 workspace 文件：&lt;em&gt;$ open App.xcworkspace&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;最后，直接在代码里使用：&lt;em&gt;#import &amp;lt;Reachability/Reachability.h&amp;gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pod"&gt;
+&lt;h2&gt;创建自己的 Pod&lt;/h2&gt;
+&lt;p&gt;在实际项目中，我们会经常修改第三方框架的代码。或者直接共享自己的作品。方法也很简单：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pod spec create Peanut
+$ vi Peanut.podspec
+$ pod spec lint Peanut.podspec
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;CocoaPods 是基于 Github 开发的，实践上，我们一般将 Github 上第三方的库 fork 过来，然后修改测试，创建并提交自己的 Podspec：&lt;em&gt;pod trunk push NAME.podspec&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;最后在引入的项目中的 Podfile 更新版本，使用 &lt;em&gt;$ pod update --verbose&lt;/em&gt; 更新。&lt;/p&gt;
+&lt;p&gt;更详细的开发工作流请参考 &lt;a class="reference external" href="https://guides.cocoapods.org/contributing/contribute-to-cocoapods.html"&gt;The Development Workflow&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://guides.cocoapods.org/making/specs-and-specs-repo.html"&gt;Specs and the Specs Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Android 教程第一周</title><link href="https://magicalboy.com/note/android_coursera_part1_week1.html" rel="alternate"></link><published>2014-12-13T19:20:00+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2014-12-13:note/android_coursera_part1_week1.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#overview" id="id4"&gt;OverView（概述）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;简介&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Coursera 的课程： &lt;a class="reference external" href="https://class.coursera.org/androidpart1-011/lecture"&gt;Programming Mobile Applications for Android Handheld Systems: Part 1&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;讲师： &lt;em&gt;Dr. Adam Porter&lt;/em&gt; 教授。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="overview"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;OverView（概述）&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;课程主要内容：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;手持系统介绍，未来发展趋势分析，以及这门课程的由来。&lt;/li&gt;
+&lt;li&gt;自我介绍（很厉害的一个人物）。以及学习这门课程需要哪些准备。&lt;/li&gt;
+&lt;li&gt;课程组织。&lt;/li&gt;
+&lt;li&gt;课程主题。分两个部分，每部分为四周。&lt;/li&gt;
+&lt;li&gt;Amazone 合作的福利。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</summary><category term="Android"></category></entry><entry><title>Hello</title><link href="https://magicalboy.com/note/hello.html" rel="alternate"></link><published>2012-12-28T20:20:00+08:00</published><author><name>Donly</name></author><id>tag:magicalboy.com,2012-12-28:note/hello.html</id><summary type="html">&lt;p&gt;这是一篇测试文章，如果你看到这篇文章，说明我已经成功使用 Pelican 来写管理这个 Note 站点。&lt;/p&gt;
+&lt;p&gt;Just have a &lt;em&gt;good&lt;/em&gt; job!&lt;/p&gt;</summary><category term="hello"></category><category term="test"></category></entry></feed>

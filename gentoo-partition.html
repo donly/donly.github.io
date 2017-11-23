@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Gentoo 分区
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/gentoo-partition.html" rel="bookmark"><h1>Gentoo 分区</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。</p>
+<p>使用环境：</p>
+<ul class="simple">
+<li>系统：Gentoo 3.4.103</li>
+<li>存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10</li>
+</ul>
+<p>第一步：查看与新建分区</p>
+<ol class="arabic simple">
+<li>分区前系统盘分区：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># df -h</span>
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       <span class="m">3</span>.4G  <span class="m">1</span>.7G  <span class="m">1</span>.6G  <span class="m">52</span>% /
+devtmpfs        438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev
+tmpfs            88M  244K   88M   <span class="m">1</span>% /run
+shm             438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev/shm
+cgroup_root      10M     <span class="m">0</span>   10M   <span class="m">0</span>% /sys/fs/cgroup
+</pre></div>
+<ol class="arabic simple" start="2">
+<li>当前盘信息：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># fdisk -l</span>
+
+Disk /dev/mmcblk0: <span class="m">59</span>.5 GiB, <span class="m">63879249920</span> bytes, <span class="m">124764160</span> sectors
+Units: sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disklabel type: dos
+Disk identifier: 0x7dea4524
+
+Device         Boot     Start       End   Blocks  Id System
+/dev/mmcblk0p1           <span class="m">2048</span>     <span class="m">43007</span>    <span class="m">20480</span>  <span class="m">83</span> Linux
+/dev/mmcblk0p2          <span class="m">43008</span>   <span class="m">7167999</span>  <span class="m">3562496</span>  <span class="m">83</span> Linux
+</pre></div>
+<ol class="arabic simple" start="3">
+<li>使用 <em>cfdisk /dev/mmcblk0</em> 将未使用的空间 <em>New</em> 一个分区出来</li>
+<li>分区成功后 <em>Write</em> 保存，然后 <em>Quit</em> 退出。</li>
+</ol>
+<p>注：cfdisk 最多只能分 4 个主分区，fdisk 支持硬盘最大尺寸为 2TB，更详情说明请参考 man 手册。</p>
+<p>第二步：格式化分区</p>
+<p>对新建分区 mmcblk0p3 进行格式化：<em>mkfs.ext4 /dev/mmcblk0p3</em>。</p>
+<p>第三步：加载分区</p>
+<ol class="arabic simple">
+<li>创建分区挂接目录：<em>mkdir /user</em></li>
+<li>编辑 <em>/etc/fstab</em>，将分区信息写进去。</li>
+</ol>
+<div class="highlight"><pre><span></span>/dev/mmcblk0p3          /user           ext4            defaults        <span class="m">0</span> <span class="m">0</span>
+</pre></div>
+<ol class="arabic simple" start="3">
+<li>加载新建的分区：<em>mount -a</em></li>
+<li>最终系统分区：</li>
+</ol>
+<div class="highlight"><pre><span></span>df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       <span class="m">3</span>.4G  <span class="m">1</span>.7G  <span class="m">1</span>.6G  <span class="m">52</span>% /
+devtmpfs        438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev
+tmpfs            88M  244K   88M   <span class="m">1</span>% /run
+shm             438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev/shm
+cgroup_root      10M     <span class="m">0</span>   10M   <span class="m">0</span>% /sys/fs/cgroup
+/dev/mmcblk0p3   56G  180M   53G   <span class="m">1</span>% /user
+</pre></div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/linux.html">Linux</a>, <a href="https://magicalboy.com/note/tag/gentoo.html">Gentoo</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

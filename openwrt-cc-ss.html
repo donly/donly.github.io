@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    OpenWrt CC SS 配置
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-12-01T00:00:00+08:00" pubdate>
+                            二, 01 12 2015
+                        </time>
+                        <a href="https://magicalboy.com/note/openwrt-cc-ss.html" rel="bookmark"><h1>OpenWrt CC SS 配置</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>介绍</h2>
+<ul class="simple">
+<li>OpenWRT 版本：Chaos Calmer 15.05</li>
+<li>OpenWRT 内核：</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># opkg files kernel</span>
+Package kernel <span class="o">(</span><span class="m">3</span>.18.20-1-7bed08fa9c06eb8089e82c200340ec66<span class="o">)</span> is installed on root and has the following files:
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>安装</h2>
+<ol class="arabic simple">
+<li>使用 root 登录 ssh</li>
+<li>下载合适的预编译 <a class="reference external" href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.1-6f44d53/ar71xx/">安装包</a></li>
+<li>上传到 <tt class="docutils literal">/tmp</tt> 目录</li>
+<li>执行安装命令：</li>
+</ol>
+<div class="highlight"><pre><span></span>cks-libev-spec <span class="o">(</span><span class="m">2</span>.4.1-1<span class="o">)</span> to root...
+Installing ipset <span class="o">(</span><span class="m">6</span>.24-1<span class="o">)</span> to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/ipset_6.24-1_ar71xx.ipk.
+Installing kmod-ipt-ipset <span class="o">(</span><span class="m">3</span>.18.20-1<span class="o">)</span> to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-ipt-ipset_3.18.20-1_ar71xx.ipk.
+Installing kmod-nfnetlink <span class="o">(</span><span class="m">3</span>.18.20-1<span class="o">)</span> to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-nfnetlink_3.18.20-1_ar71xx.ipk.
+Installing libmnl <span class="o">(</span><span class="m">1</span>.0.3-2<span class="o">)</span> to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/libmnl_1.0.3-2_ar71xx.ipk.
+Installing iptables-mod-tproxy <span class="o">(</span><span class="m">1</span>.4.21-1<span class="o">)</span> to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/iptables-mod-tproxy_1.4.21-1_ar71xx.ipk.
+Installing kmod-ipt-tproxy <span class="o">(</span><span class="m">3</span>.18.20-1<span class="o">)</span> to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-ipt-tproxy_3.18.20-1_ar71xx.ipk.
+Configuring kmod-nfnetlink.
+Configuring kmod-ipt-ipset.
+Configuring libmnl.
+Configuring ipset.
+Configuring kmod-ipt-tproxy.
+failed to find a module named nf_tproxy_core
+Configuring iptables-mod-tproxy.
+Configuring shadowsocks-libev-spec.
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h2>配置</h2>
+<ol class="arabic simple">
+<li>程序配置：/etc/init.d/shadowsocks</li>
+<li>服务配置：/var/etc/shadowsocks.json，格式如下</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="o">{</span>
+      <span class="s2">&quot;server&quot;</span>: <span class="s2">&quot;X.X.X.X&quot;</span>,
+      <span class="s2">&quot;server_port&quot;</span>: <span class="s2">&quot;443&quot;</span>,
+      <span class="s2">&quot;password&quot;</span>: <span class="s2">&quot;password&quot;</span>,
+      <span class="s2">&quot;local_port&quot;</span>: <span class="s2">&quot;1080&quot;</span>,
+      <span class="s2">&quot;method&quot;</span>: <span class="s2">&quot;rc4-md5&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/linux.html">Linux</a>, <a href="https://magicalboy.com/note/tag/openwrt.html">OpenWrt</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

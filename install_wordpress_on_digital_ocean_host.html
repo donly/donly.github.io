@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    在 Digital Ocean 云主机搭建 Wordpress
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="/pages/about.html">关于</a></li>
+                <li><a href="/pages/site-log.html">网站日志</a></li>
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-12-13T00:00:00+08:00" pubdate>
+                            Tue, 13 Dec 2016
+                        </time>
+                        <a href="/install_wordpress_on_digital_ocean_host.html" rel="bookmark"><h1>在 Digital Ocean 云主机搭建 Wordpress</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p><a class="reference external" href="https://www.digitalocean.com/">DigitalOcean</a> 买的一台平板电视，关于微鲸这个新品牌请自行搜索。</p>
+<p>这台电视主要特点有：</p>
+<ul class="simple">
+<li>4K 分辨率</li>
+<li>价格不算贵，不到 1500 CNY</li>
+<li>LG 屏幕，尺寸 43 寸，适合出租屋，将来有自己房子之时也可以作为卧室电视使用</li>
+<li>普通 Android 定制系统，京东销售渠道非 YunOS</li>
+</ul>
+<p>缺点有：</p>
+<ul class="simple">
+<li>开机启动速度慢</li>
+<li>资源不够丰富（GITV 牌照）</li>
+<li>Android 5.0 不够新，建议更新到 6.0 ，有完整意义的权限管理</li>
+<li>系统不可靠，有与 YunOS 合作的版本</li>
+</ul>
+<div class="section" id="id1">
+<h2>安装失败，未知原因</h2>
+<p>这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决。</p>
+<p>由于这是一个定制的操作系统，这里使用 <a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.artchecker">ARTChecker</a> 和 <a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.dptest">DPInfo</a> 两件套查看结果（仅参考）。</p>
+<img alt="Whaley Android" class="align-left" src="images/whaley_android_spec.png" />
+</div>
+<div class="section" id="id2">
+<h2>黑屏问题</h2>
+<p>可能是第一批次产品良品率问题，运气不好刚好遇上，没用几天就黑屏了。</p>
+<img alt="Whaley Half of Black Screen" class="align-left" src="images/whaley_half_of_black_screen.jpg" />
+<p>后来通过售后服务，由厂家安装人员上门检测，拿到检测报告后京东直接上门换新，并收走有问题的商品。</p>
+</div>
+<div class="section" id="id3">
+<h2>总结</h2>
+<p>虽然国内的 OTT 平台有 <a class="reference external" href="http://www.digitaling.com/articles/11970.html">广电181号文件</a> 限制，如果将一个开放的 Android 系统做得太封闭未见是一件好事。</p>
+<p>目前国产电视已经大部分是互联网电视，集成 Android 系统并内置内容服务。</p>
+<p>因受阿里云 YunOS 的问题影响极大，个人更倾向于非 Android 系统的电视。</p>
+<p>电视的主要参数不应该为了让 Android 系统运行更快，解码能力更强而使用更强 CPU 和 GPU，而应该注重屏幕本身，提高显示质量。以及提升开机速度和响应速度。</p>
+<p>最近的量子显示技术和 LED 屏显示技术我还是比较感兴趣的，等技术成熟和价格降下来以后买一台享受一下。不多说了，搬砖赚钱提高生活质量 :D</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/misc.html">misc</a></p>
+                        <p>Tags: <a href="/tag/misc.html">misc</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

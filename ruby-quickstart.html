@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Ruby 快速入门
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-12-21T09:39:00+08:00" pubdate>
+                            三, 21 12 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/ruby-quickstart.html" rel="bookmark"><h1>Ruby 快速入门</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id16">Ruby</a></li>
+<li><a class="reference internal" href="#id4" id="id17">交互</a></li>
+<li><a class="reference internal" href="#puts" id="id18">puts</a></li>
+<li><a class="reference internal" href="#id5" id="id19">计算器功能</a></li>
+<li><a class="reference internal" href="#modules" id="id20">Modules</a></li>
+<li><a class="reference internal" href="#id6" id="id21">函数</a></li>
+<li><a class="reference internal" href="#id7" id="id22">在字符串中预留位置</a></li>
+<li><a class="reference internal" href="#id8" id="id23">类</a></li>
+<li><a class="reference internal" href="#id9" id="id24">面向对象</a></li>
+<li><a class="reference internal" href="#id10" id="id25">访问属性</a></li>
+<li><a class="reference internal" href="#id11" id="id26">注释</a></li>
+<li><a class="reference internal" href="#id12" id="id27">更强大的类</a></li>
+<li><a class="reference internal" href="#id13" id="id28">循环，迭代</a></li>
+<li><a class="reference internal" href="#id14" id="id29">代码块</a></li>
+<li><a class="reference internal" href="#id15" id="id30">让脚本跑起来</a></li>
+</ul>
+</div>
+<p>这是一个快速入门笔记，来自官网的 <a class="reference external" href="https://www.ruby-lang.org/zh_cn/documentation/quickstart/">Ruby in Twenty Minutes</a>。</p>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id16">Ruby</a></h2>
+<blockquote>
+A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</blockquote>
+<p><a class="reference external" href="https://www.ruby-lang.org">Ruby</a> 是一种开源的面向对象程序设计的服务器端脚本语言，在20 世纪90 年代中期由日本的松本行弘（まつもとゆきひろ/Yukihiro Matsumoto）设计并开发。</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id17">交互</a></h2>
+<p>跟 Python 一样有交互界面，在终端使用 <code>irb</code> 打开。</p>
+<div class="highlight"><pre><span></span>$ irb
+irb<span class="o">(</span>main<span class="o">)</span>:001:0&gt; <span class="s2">&quot;Hello World&quot;</span>
+<span class="o">=</span>&gt; <span class="s2">&quot;Hello World&quot;</span>
+irb<span class="o">(</span>main<span class="o">)</span>:002:0&gt;
+</pre></div>
+</div>
+<div class="section" id="puts">
+<h2><a class="toc-backref" href="#id18">puts</a></h2>
+<p><code>puts</code> 是一个基本的命令，用于打印字符串，返回结果为 <code>nil</code>。</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">002</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="nb">puts</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="no">Hello</span> <span class="no">World</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</pre></div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id19">计算器功能</a></h2>
+<p>IRB 就是一个基础计算器</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">003</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">6</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">004</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="mi">3</span><span class="o">**</span><span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">9</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">005</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="section" id="modules">
+<h2><a class="toc-backref" href="#id20">Modules</a></h2>
+<p>上面的 Math 是一个内置的数学 module。Modules 主要有两个角色，这里扮演的角度是是将功能相似的方法分组到同一名字下。</p>
+<p>接着是点运算符，用来告诉一个接收者它所要接受的信息。</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">006</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">9</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">007</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">16</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">00</span><span class="mi">8</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="mi">5</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id21">函数</a></h2>
+<p>定义函数的关键字是 <cite>def</cite> 函数体以 <cite>end</cite> 结束。</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">00</span><span class="mi">9</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="k">def</span> <span class="nf">h</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">010</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="nb">puts</span> <span class="s2">&quot;Hello World!&quot;</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">011</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">012</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">h</span>
+<span class="no">Hello</span> <span class="no">World</span><span class="o">!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">013</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">()</span>
+<span class="no">Hello</span> <span class="no">World</span><span class="o">!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">014</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span>
+</pre></div>
+<p>函数的周期简短而又频繁，定义一次，使用多次。函数调用的参数是可选的，如果没有参数，调用时括号可省略。</p>
+<p>让函数接收参数：</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">014</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">015</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="nb">puts</span> <span class="s2">&quot;Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">016</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">017</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="s2">&quot;Don&quot;</span><span class="p">)</span>
+<span class="no">Hello</span> <span class="no">Don</span><span class="o">!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</pre></div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id22">在字符串中预留位置</a></h2>
+<p><code>#{name}</code>，Ruby 中的在字符串中插入信息，有点类似 Swift 中的语法：print(&quot;(name)&quot;)。</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">01</span><span class="mi">8</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">01</span><span class="mi">9</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="nb">puts</span> <span class="s2">&quot;Hello </span><span class="si">#{</span><span class="nb">name</span><span class="o">.</span><span class="n">capitalize</span><span class="si">}</span><span class="s2">!&quot;</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">020</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">021</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">h</span>
+<span class="no">Hello</span> <span class="no">World</span><span class="o">!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">022</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">h</span> <span class="s2">&quot;chris&quot;</span>
+<span class="no">Hello</span> <span class="no">Chris</span><span class="o">!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</pre></div>
+<p>可以看到有参数的时候，函数的括号也是可以省略的。而且还可以定义函数的默认参数。</p>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id23">类</a></h2>
+<p>使用 <cite>class</cite> 关键字定义一个新的类。</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">023</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Greeter</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">024</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span>   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">025</span><span class="p">:</span><span class="mi">2</span><span class="o">&gt;</span>     <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">026</span><span class="p">:</span><span class="mi">2</span><span class="o">&gt;</span>   <span class="k">end</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">027</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span>   <span class="k">def</span> <span class="nf">say_hi</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">02</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="o">&gt;</span>     <span class="nb">puts</span> <span class="s2">&quot;Hi </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">!&quot;</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">02</span><span class="mi">9</span><span class="p">:</span><span class="mi">2</span><span class="o">&gt;</span>   <span class="k">end</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">030</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span>   <span class="k">def</span> <span class="nf">say_bye</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">031</span><span class="p">:</span><span class="mi">2</span><span class="o">&gt;</span>     <span class="nb">puts</span> <span class="s2">&quot;Bye </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">, come back soon.&quot;</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">032</span><span class="p">:</span><span class="mi">2</span><span class="o">&gt;</span>   <span class="k">end</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">033</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</pre></div>
+<p>需要注意的是，这里的 <code>&#64;name</code> 表示实例变量。</p>
+<p>既然定义了类，我们需要创建一个对象来使用它：</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">034</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="no">Greeter</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Pat&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Greeter:0x007fc113857a60 @name=&quot;Pat&quot;&gt;</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">035</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">say_hi</span>
+<span class="no">Hi</span> <span class="no">Pat</span><span class="o">!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">036</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">say_bye</span>
+<span class="no">Bye</span> <span class="no">Pat</span><span class="p">,</span> <span class="n">come</span> <span class="n">back</span> <span class="n">soon</span><span class="o">.</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</pre></div>
+<p>创建了对象 g 后，名字属性有了值 Pat，能不能通过对象直接访问呢？</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">037</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="vi">@name</span>
+<span class="ss">SyntaxError</span><span class="p">:</span> <span class="p">(</span><span class="n">irb</span><span class="p">):</span><span class="mi">37</span><span class="p">:</span> <span class="n">syntax</span> <span class="n">error</span><span class="p">,</span> <span class="n">unexpected</span> <span class="n">tIVAR</span><span class="p">,</span> <span class="n">expecting</span> <span class="s1">&#39;(&#39;</span>
+<span class="n">from</span> <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="ss">irb</span><span class="p">:</span><span class="mi">12</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;&#39;</span>
+<span class="sb">irb(main):038:0&gt; g.name</span>
+<span class="sb">NoMethodError: undefined method `</span><span class="nb">name</span><span class="s1">&#39; for #&lt;Greeter:0x007fc113857a60 @name=&quot;Pat&quot;&gt;</span>
+<span class="s1">from (irb):38</span>
+<span class="s1">from /usr/bin/irb:12:in `&lt;main&gt;&#39;</span>
+</pre></div>
+<p>很明显是不行的！</p>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id24">面向对象</a></h2>
+<p>实例变量是被隐藏起来的，符合面向对象的设计，将内部属性保护起来。</p>
+<p>但也并非完全隐藏起来，可以通过检查对象看到：</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">03</span><span class="mi">9</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Greeter</span><span class="o">.</span><span class="n">instance_methods</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:say_hi</span><span class="p">,</span> <span class="ss">:say_bye</span><span class="p">,</span> <span class="ss">:nil?</span><span class="p">,</span> <span class="ss">:===</span><span class="p">,</span> <span class="p">:</span><span class="o">=~</span><span class="p">,</span> <span class="p">:</span><span class="o">!~</span><span class="p">,</span> <span class="ss">:eql?</span><span class="p">,</span> <span class="ss">:hash</span><span class="p">,</span> <span class="ss">:&lt;=&gt;</span><span class="p">,</span> <span class="ss">:class</span><span class="p">,</span> <span class="ss">:singleton_class</span><span class="p">,</span> <span class="ss">:clone</span><span class="p">,</span> <span class="ss">:dup</span><span class="p">,</span> <span class="ss">:taint</span><span class="p">,</span> <span class="ss">:tainted?</span><span class="p">,</span> <span class="ss">:untaint</span><span class="p">,</span> <span class="ss">:untrust</span><span class="p">,</span> <span class="ss">:untrusted?</span><span class="p">,</span> <span class="ss">:trust</span><span class="p">,</span> <span class="ss">:freeze</span><span class="p">,</span> <span class="ss">:frozen?</span><span class="p">,</span> <span class="ss">:to_s</span><span class="p">,</span> <span class="ss">:inspect</span><span class="p">,</span> <span class="ss">:methods</span><span class="p">,</span> <span class="ss">:singleton_methods</span><span class="p">,</span> <span class="ss">:protected_methods</span><span class="p">,</span> <span class="ss">:private_methods</span><span class="p">,</span> <span class="ss">:public_methods</span><span class="p">,</span> <span class="ss">:instance_variables</span><span class="p">,</span> <span class="ss">:instance_variable_get</span><span class="p">,</span> <span class="ss">:instance_variable_set</span><span class="p">,</span> <span class="ss">:instance_variable_defined?</span><span class="p">,</span> <span class="ss">:remove_instance_variable</span><span class="p">,</span> <span class="ss">:instance_of?</span><span class="p">,</span> <span class="ss">:kind_of?</span><span class="p">,</span> <span class="ss">:is_a?</span><span class="p">,</span> <span class="ss">:tap</span><span class="p">,</span> <span class="ss">:send</span><span class="p">,</span> <span class="ss">:public_send</span><span class="p">,</span> <span class="ss">:respond_to?</span><span class="p">,</span> <span class="ss">:extend</span><span class="p">,</span> <span class="ss">:display</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:public_method</span><span class="p">,</span> <span class="ss">:define_singleton_method</span><span class="p">,</span> <span class="ss">:object_id</span><span class="p">,</span> <span class="ss">:to_enum</span><span class="p">,</span> <span class="ss">:enum_for</span><span class="p">,</span> <span class="ss">:==</span><span class="p">,</span> <span class="ss">:equal?</span><span class="p">,</span> <span class="p">:</span><span class="o">!</span><span class="p">,</span> <span class="p">:</span><span class="o">!=</span><span class="p">,</span> <span class="ss">:instance_eval</span><span class="p">,</span> <span class="ss">:instance_exec</span><span class="p">,</span> <span class="ss">:__send__</span><span class="p">,</span> <span class="ss">:__id__</span><span class="o">]</span>
+</pre></div>
+<p>我们定义的只有两个，这里列出的是 Greeter 对象所有的函数，即包括了它所继承的类的函数。</p>
+<p>可以通过 false 参数，列出不包括父类的函数。</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">040</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Greeter</span><span class="o">.</span><span class="n">instance_methods</span><span class="p">(</span><span class="kp">false</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:say_hi</span><span class="p">,</span> <span class="ss">:say_bye</span><span class="o">]</span>
+</pre></div>
+<p>接着使用父类的 <cite>respond_to</cite> 方法来测试 Greeter 对象 g 会对哪些函数作出回应：</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">041</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">042</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;say_hi&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">043</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;to_s&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div>
+<p>可见 <cite>name</cite> 还是隐藏的。</p>
+</div>
+<div class="section" id="id10">
+<h2><a class="toc-backref" href="#id25">访问属性</a></h2>
+<p>使用 <code>attr_accessor</code> 让属性变成可访问。实际会自动生成两个新函数，一个用于读取，一个用于赋值。</p>
+<div class="highlight"><pre><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">05</span><span class="mi">8</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Greeter</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">05</span><span class="mi">9</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span>   <span class="kp">attr_accessor</span> <span class="ss">:name</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">060</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">061</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="no">Greeter</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Andy&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Greeter:0x007fc116acf100 @name=&quot;Andy&quot;&gt;</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">062</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">063</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;name=&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">064</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Greeter</span><span class="o">.</span><span class="n">instance_methods</span><span class="p">(</span><span class="kp">false</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:say_hi</span><span class="p">,</span> <span class="ss">:say_bye</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:name</span><span class="o">=]</span>
+</pre></div>
+</div>
+<div class="section" id="id11">
+<h2><a class="toc-backref" href="#id26">注释</a></h2>
+<p>使用 <code>#</code> 号注释，当前行的 # 号后面的内容是注释内容。</p>
+</div>
+<div class="section" id="id12">
+<h2><a class="toc-backref" href="#id27">更强大的类</a></h2>
+<p>这次不再使用互动的 Ruby 解析器 IRB，而是将代码写到文件里。</p>
+<p>输入 <cite>exit</cite> 或 Control-D 退出 IRB。</p>
+<p>然后新那家一个文件 <code>MegaGreeter.rb</code>，输入以下内容：</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/ur/bin/env ruby</span>
+
+<span class="k">class</span> <span class="nc">MegaGreeter</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:names</span>
+
+  <span class="c1"># Create the object</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
+    <span class="vi">@names</span> <span class="o">=</span> <span class="n">names</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Say hi to everybody</span>
+  <span class="k">def</span> <span class="nf">say_hi</span>
+    <span class="k">if</span> <span class="vi">@names</span><span class="o">.</span><span class="n">nil?</span>
+      <span class="nb">puts</span> <span class="s2">&quot;...&quot;</span>
+    <span class="k">elsif</span> <span class="vi">@names</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;each&quot;</span><span class="p">)</span>
+      <span class="c1"># @names is a list of some kind, iterate!</span>
+      <span class="vi">@names</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+        <span class="nb">puts</span> <span class="s2">&quot;Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+      <span class="k">end</span>
+    <span class="k">else</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Hello </span><span class="si">#{</span><span class="vi">@names</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Say bye to everybody</span>
+  <span class="k">def</span> <span class="nf">say_bye</span>
+    <span class="k">if</span> <span class="vi">@names</span><span class="o">.</span><span class="n">nil?</span>
+      <span class="nb">puts</span> <span class="s2">&quot;...&quot;</span>
+    <span class="k">elsif</span> <span class="vi">@names</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">&quot;join&quot;</span><span class="p">)</span>
+      <span class="c1"># Join the list elements with commas</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Goodbye </span><span class="si">#{</span><span class="vi">@names</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span><span class="si">}</span><span class="s2">. Come back soon!&quot;</span>
+    <span class="k">else</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Goodbye </span><span class="si">#{</span><span class="vi">@names</span><span class="si">}</span><span class="s2">. Come back soon!&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+  <span class="n">mg</span> <span class="o">=</span> <span class="no">MegaGreeter</span><span class="o">.</span><span class="n">new</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_hi</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_bye</span>
+
+  <span class="c1"># Change name to be &quot;Zeke&quot;</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="s2">&quot;Zeke&quot;</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_hi</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_bye</span>
+
+  <span class="c1"># Change the name to an array of names</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;Albert&quot;</span><span class="p">,</span> <span class="s2">&quot;Brenda&quot;</span><span class="p">,</span> <span class="s2">&quot;Charles&quot;</span><span class="p">,</span> <span class="s2">&quot;Dave&quot;</span><span class="p">,</span> <span class="s2">&quot;Engelbert&quot;</span><span class="o">]</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_hi</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_bye</span>
+
+  <span class="c1"># Change to nil</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="kp">nil</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_hi</span>
+  <span class="n">mg</span><span class="o">.</span><span class="n">say_bye</span>
+<span class="k">end</span>
+</pre></div>
+<p>使用命令 <code>ruby MegaGreeter.rb</code> 运行：</p>
+<div class="highlight"><pre><span></span>$ ruby MegaGreeter.rb
+...
+...
+Hello Zeke!
+Goodbye Zeke. Come back soon!
+Hello Albert!
+Hello Brenda!
+Hello Charles!
+Hello Dave!
+Hello Engelbert!
+Goodbye Albert, Brenda, Charles, Dave, Engelbert. Come back soon!
+...
+...
+</pre></div>
+</div>
+<div class="section" id="id13">
+<h2><a class="toc-backref" href="#id28">循环，迭代</a></h2>
+<p>先判断 &#64;names 对象能否回应 <code>each</code> 函数，如果可以被迭代，使用 <code>do</code> 后面的代码块进行迭代处理。</p>
+<p>代码块定义在两个 <code>|</code> 符号之间。</p>
+</div>
+<div class="section" id="id14">
+<h2><a class="toc-backref" href="#id29">代码块</a></h2>
+<p>“如果它走起来像鸭子，叫起来像鸭子， 那它一定是鸭子”。</p>
+<blockquote>
+这种思想的好处就是不限制函数所支持的参数类别。 如果有人写了一个新的类，只要它像其他列表类一样回应 <code>join</code> 这个函数， 那它就可以被相应的其他函数所使用。</blockquote>
+</div>
+<div class="section" id="id15">
+<h2><a class="toc-backref" href="#id30">让脚本跑起来</a></h2>
+<p>调用这个类的小技术在于:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+</pre></div>
+<p><code>__FILE__</code> 是一个魔法值，它存有现在运行的脚本文件的名字。</p>
+<p>$0 是启动脚本的名字。</p>
+<p>这句代码的意思是 “如果这是启动脚本的话…”。这允许代码作为库调用的时候不运行启动代码，而在作为执行脚本的时候调用启动代码。</p>
+<p>EOF.</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/code.html">code</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/ruby.html">ruby</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

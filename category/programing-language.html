@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - Programing Language</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/Objective-C.html" rel="bookmark"><h1>Objective C</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id17">介绍</a></li>
+<li><a class="reference internal" href="#id3" id="id18">类</a><ul>
+<li><a class="reference internal" href="#id4" id="id19">声明</a></li>
+<li><a class="reference internal" href="#id5" id="id20">实现</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6" id="id21">属性</a><ul>
+<li><a class="reference internal" href="#id7" id="id22">声明</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8" id="id23">方法</a><ul>
+<li><a class="reference internal" href="#id9" id="id24">类方法</a></li>
+<li><a class="reference internal" href="#block" id="id25">Block 块</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#protocol" id="id26">Protocol 协议</a><ul>
+<li><a class="reference internal" href="#id10" id="id27">声明</a></li>
+<li><a class="reference internal" href="#id11" id="id28">使用</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#category" id="id29">Category 分类</a><ul>
+<li><a class="reference internal" href="#id12" id="id30">声明</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id13" id="id31">Objective C 类型</a><ul>
+<li><a class="reference internal" href="#id14" id="id32">类型和字面常量</a></li>
+<li><a class="reference internal" href="#id15" id="id33">编译器指令</a></li>
+<li><a class="reference internal" href="#id16" id="id34">其它</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id17">介绍</a></h2>
+<p>Objective-C 作为 C 程序设计语言的超集，支持与 C 相同的基本语法。您会看到所有熟悉的元素，例如基本类型（<tt class="docutils literal">int</tt>、<tt class="docutils literal">float</tt> 等）、结构、函数、指针，以及流程控制结构，如 <tt class="docutils literal"><span class="pre">if...else</span></tt> 语句和 <tt class="docutils literal">for</tt> 语句。还可以直接使用 C 标准库 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/cpp.html" rel="bookmark"><h1>C++ 学习笔记</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id13">概述</a></li>
+<li><a class="reference internal" href="#id3" id="id14">语法</a><ul>
+<li><a class="reference internal" href="#id4" id="id15">注释</a></li>
+<li><a class="reference internal" href="#id5" id="id16">编译预处理指令</a></li>
+<li><a class="reference internal" href="#namespace" id="id17">命名空间 Namespace</a></li>
+<li><a class="reference internal" href="#main" id="id18">main 函数</a></li>
+<li><a class="reference internal" href="#id6" id="id19">语句</a></li>
+<li><a class="reference internal" href="#id7" id="id20">标识符</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8" id="id21">数据类型</a><ul>
+<li><a class="reference internal" href="#id9" id="id22">系统指定的数据类型</a></li>
+<li><a class="reference internal" href="#id10" id="id23">变量</a></li>
+<li><a class="reference internal" href="#id11" id="id24">常量</a></li>
+<li><a class="reference internal" href="#id12" id="id25">表达式</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id13">概述</a></h2>
+<p>C++是20世纪80年代中期（发行于1983）由AT&amp;T贝尔实验室的 Bjarne Stroustrup 开发的。</p>
+<p>属于面向对象语言，它包含 C 语言全部属性。</p>
+<p>使用很广泛，不得不学。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id14">语法</a></h2>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id15">注释</a></h3>
+<div class="highlight"><pre><span></span><span class="c1">// 这是单行注释</span>
+<span class="cm">/**</span>
+<span class="cm"> * 这是</span>
+<span class="cm"> * 多行的注释</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id16">编译预处理指令</a></h3>
+<p>编译器对 source code 编译之前做的事。用 &quot;#&quot; 开头的命令行来表示。</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;filename&gt; // 尖括号表示包含的是 C++ 标准库的头文件</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;book …</span></pre></div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+            Page 1 / 1
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Linux</title><link href="https://magicalboy.com/note/" rel="alternate"></link><link href="https://magicalboy.com/note/feeds/linux.atom.xml" rel="self"></link><id>https://magicalboy.com/note/</id><updated>2017-03-23T10:25:00+08:00</updated><entry><title>重置树莓派 Root 密码</title><link href="https://magicalboy.com/note/reset-raspberry-root-password.html" rel="alternate"></link><published>2017-03-23T10:25:00+08:00</published><updated>2017-03-23T10:25:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-03-23:/note/reset-raspberry-root-password.html</id><summary type="html">&lt;p&gt;自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。&lt;/p&gt;
+&lt;p&gt;如果还有模糊印象，可以通过 &lt;code&gt;passwd pi&lt;/code&gt; 进行尝试。需要注意的是 &lt;code&gt;pi&lt;/code&gt; 用户的初始密码是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;raspberry
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;找回密码&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;关机取出内存卡，插到另一台电脑，Windows, Linux 或 macOS 都支持。&lt;/li&gt;
+&lt;li&gt;编辑 &lt;code&gt;cmdline.txt&lt;/code&gt; 文件
+在 &lt;code&gt;boot&lt;/code&gt; 分区下找到此文件，修改之前的内容为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dwc_otg.lpm_enable&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;serial0,115200 &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tty1 &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p7 &lt;span class="nv"&gt;rootfstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ext4 &lt;span class="nv"&gt;elevator&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;deadline fsck.repair&lt;span class="o"&gt;=&lt;/span&gt;yes rootwait …&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。&lt;/p&gt;
+&lt;p&gt;如果还有模糊印象，可以通过 &lt;code&gt;passwd pi&lt;/code&gt; 进行尝试。需要注意的是 &lt;code&gt;pi&lt;/code&gt; 用户的初始密码是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;raspberry
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;找回密码&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;关机取出内存卡，插到另一台电脑，Windows, Linux 或 macOS 都支持。&lt;/li&gt;
+&lt;li&gt;编辑 &lt;code&gt;cmdline.txt&lt;/code&gt; 文件
+在 &lt;code&gt;boot&lt;/code&gt; 分区下找到此文件，修改之前的内容为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dwc_otg.lpm_enable&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;serial0,115200 &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tty1 &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p7 &lt;span class="nv"&gt;rootfstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ext4 &lt;span class="nv"&gt;elevator&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;deadline fsck.repair&lt;span class="o"&gt;=&lt;/span&gt;yes rootwait
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;将 &lt;code&gt;init=/bin/sh&lt;/code&gt; 追加到内容后面：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dwc_otg.lpm_enable&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;serial0,115200 &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tty1 &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p7 &lt;span class="nv"&gt;rootfstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ext4 &lt;span class="nv"&gt;elevator&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;deadline fsck.repair&lt;span class="o"&gt;=&lt;/span&gt;yes rootwait &lt;span class="nv"&gt;init&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/bin/sh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;ol class="arabic" start="3"&gt;
+&lt;li&gt;&lt;p class="first"&gt;重置密码&lt;/p&gt;
+&lt;ol class="loweralpha"&gt;
+&lt;li&gt;&lt;p class="first"&gt;将内存卡取出，重新插到树莓派。注意树莓派必须有键盘鼠标连接。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;当出现一个闪动的光标的时候，输入命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -rw -o remount /
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;然后输入修改密码命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;passwd pi
+&lt;/pre&gt;&lt;/div&gt;
+&lt;img alt="reset password" class="align-left" src="https://github.com/donly/note/blob/master/images/reaspberry_reset_password.jpg?raw=true" style="width: 320px; height: 240px;" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;密码修改成功，然后输入以下命令完成启动：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sync
+&lt;span class="nb"&gt;exec&lt;/span&gt; /sbin/init
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;进入系统后可以确认密码修改是否成功，然后关机，关电源：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo halt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;继续取出内存卡，将步骤 2 的 &lt;code&gt;init=/bin/sh&lt;/code&gt; 删除，重新插回树莓派正常使用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.raspberrypi.org/forums/viewtopic.php?t=20397"&gt;Raspberry Pi • View topic - Reset OS password&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.raspberrypi-spy.co.uk/2014/08/how-to-reset-a-forgotten-raspberry-pi-password/"&gt;How To Reset A Forgotten Raspberry Pi Password&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="raspberry"></category></entry><entry><title>在树莓派上安装 AMP</title><link href="https://magicalboy.com/note/install-amp-on-raspberry-pi.html" rel="alternate"></link><published>2016-05-31T14:22:00+08:00</published><updated>2016-05-31T14:22:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-31:/note/install-amp-on-raspberry-pi.html</id><summary type="html">&lt;p&gt;AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Apache 是一个非常流行的 Web 服务器软件&lt;/li&gt;
+&lt;li&gt;MySQL 是一个关系型数据库管理系统&lt;/li&gt;
+&lt;li&gt;PHP 是一种通用开源脚本语言，主要适用于 Web 开发领域&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="apache"&gt;
+&lt;h2&gt;安装 Apache&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Apache 可以用下面的命令来安装：&lt;em&gt;sudo apt-get install apache2&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Raspbian Jessie 版本的默认站点路径是 &lt;em&gt;/var/www/html&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;配置文件路径为 &lt;em&gt;/etc/apache2/&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;修改监听端口号 &lt;em&gt;sudo vi /etc/apache2/ports.conf&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;重启服务 &lt;em&gt;sudo service apache2 restart&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;修改权限 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Apache 是一个非常流行的 Web 服务器软件&lt;/li&gt;
+&lt;li&gt;MySQL 是一个关系型数据库管理系统&lt;/li&gt;
+&lt;li&gt;PHP 是一种通用开源脚本语言，主要适用于 Web 开发领域&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="apache"&gt;
+&lt;h2&gt;安装 Apache&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Apache 可以用下面的命令来安装：&lt;em&gt;sudo apt-get install apache2&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Raspbian Jessie 版本的默认站点路径是 &lt;em&gt;/var/www/html&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;配置文件路径为 &lt;em&gt;/etc/apache2/&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;修改监听端口号 &lt;em&gt;sudo vi /etc/apache2/ports.conf&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;重启服务 &lt;em&gt;sudo service apache2 restart&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;修改权限 &lt;em&gt;sudo chown pi: index.html&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="php"&gt;
+&lt;h2&gt;安装 PHP&lt;/h2&gt;
+&lt;p&gt;安装 PHP 及其 Apache Module：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+sudo apt-get install php5 libapache2-mod-php5 -y
+&lt;/pre&gt;
+&lt;p&gt;测试页：index.php&lt;/p&gt;
+&lt;pre class="code php literal-block"&gt;
+&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nb"&gt;phpinfo&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;配置文件：&lt;em&gt;/etc/php5/cli/php.ini&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mysql"&gt;
+&lt;h2&gt;安装 MySQL&lt;/h2&gt;
+&lt;pre class="code shell literal-block"&gt;
+sudo apt-get install mysql-server php5-mysql
+&lt;/pre&gt;
+&lt;p&gt;安装过程中会让你输入 MySQL root 用户的密码。&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category></entry><entry><title>bash shell 学习</title><link href="https://magicalboy.com/note/bash-shell.html" rel="alternate"></link><published>2016-05-17T10:25:00+08:00</published><updated>2016-05-17T10:25:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-17:/note/bash-shell.html</id><summary type="html">&lt;p&gt;shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell"&gt;什么是 shell？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言"&gt;脚本语言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;简单来说， shell 是可以接受用户输入命令的程序，比如 Windows 下的命令行。&lt;/p&gt;
+&lt;p&gt;而脚本语言可以理解为不需要编译，直接解释运行的语言。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;换行与注释&lt;/h2&gt;
+&lt;p&gt;1. bash 在解析字符的时候，对待“;”跟看见回车是一样的
+1. 注释符号为 “#”&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;设计哲学&lt;/h2&gt;
+&lt;p&gt;一切皆表达式。&lt;/p&gt;
+&lt;p&gt;根据表达式的定义，任何表达式都必须有一个值。而 shell 在执行任何东西（不仅是命令）的时候都会有一个返回值。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;在 bash 编程中，返回值取值范围：&lt;em&gt;0-255&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;跟 C 语言含义相反， bash 中 0 为真 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell"&gt;什么是 shell？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言"&gt;脚本语言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;简单来说， shell 是可以接受用户输入命令的程序，比如 Windows 下的命令行。&lt;/p&gt;
+&lt;p&gt;而脚本语言可以理解为不需要编译，直接解释运行的语言。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;换行与注释&lt;/h2&gt;
+&lt;p&gt;1. bash 在解析字符的时候，对待“;”跟看见回车是一样的
+1. 注释符号为 “#”&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;设计哲学&lt;/h2&gt;
+&lt;p&gt;一切皆表达式。&lt;/p&gt;
+&lt;p&gt;根据表达式的定义，任何表达式都必须有一个值。而 shell 在执行任何东西（不仅是命令）的时候都会有一个返回值。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;在 bash 编程中，返回值取值范围：&lt;em&gt;0-255&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;跟 C 语言含义相反， bash 中 0 为真（true），非 0 为假（false）&lt;/li&gt;
+&lt;li&gt;使用关键字 $? 来查看上一个执行命令的返回值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bananapi@lemaker ~ $ ls
+Home
+bananapi@lemaker ~ $ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$?&lt;/span&gt;
+&lt;span class="m"&gt;0&lt;/span&gt;
+bananapi@lemaker ~ $ ls /don
+ls: cannot access /don: No such file or directory
+bananapi@lemaker ~ $ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$?&lt;/span&gt;
+&lt;span class="m"&gt;2&lt;/span&gt;
+bananapi@lemaker ~ $ don
+-bash: don: &lt;span class="nb"&gt;command&lt;/span&gt; not found
+bananapi@lemaker ~ $ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$?&lt;/span&gt;
+&lt;span class="m"&gt;127&lt;/span&gt;
+bananapi@lemaker ~ $ ls don&lt;span class="p"&gt;|&lt;/span&gt;wc -l
+ls: cannot access don: No such file or directory
+&lt;span class="m"&gt;0&lt;/span&gt;
+bananapi@lemaker ~ $ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$?&lt;/span&gt;
+&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="if"&gt;
+&lt;h2&gt;if 分支结构&lt;/h2&gt;
+&lt;p&gt;组成一个语言的必要两种语法结构是分支结构和循环结构。作为一个编程语言， bash 也给我们提供了分支结构，其中最常用的就是 &lt;em&gt;if&lt;/em&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; list&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt; list&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;elif&lt;/span&gt; list&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt; list&lt;span class="p"&gt;;&lt;/span&gt; ... &lt;span class="k"&gt;else&lt;/span&gt; list&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;if 语法中后面最常用的命令就是 []&lt;/strong&gt;，也是 bash 新手容易写错的地方：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#正确的写法&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$ret&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;
+＃错读的写法
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$ret&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="c1"&gt;#实际上 [] 是一个内建命令，等同于 test 命令&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$ret&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt;
+$ &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt; is a shell &lt;span class="nb"&gt;builtin&lt;/span&gt;
+bananapi@lemaker ~ $ &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="nb"&gt;test&lt;/span&gt;
+&lt;span class="nb"&gt;test&lt;/span&gt; is a shell &lt;span class="nb"&gt;builtin&lt;/span&gt;
+
+&lt;span class="c1"&gt;#所以上面的 if 语句也可以写成：&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$ret&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="while-until"&gt;
+&lt;h2&gt;while until 循环结构&lt;/h2&gt;
+&lt;p&gt;语法结构：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; list-1&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; list-2&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
+&lt;span class="k"&gt;until&lt;/span&gt; list-1&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; list-2&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;while&lt;/strong&gt; 实例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="c1"&gt;#注意变量声明时＝号左右不能有空格！&lt;/span&gt;
+&lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$count&lt;/span&gt; -le &lt;span class="m"&gt;100&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$count&lt;/span&gt;
+&lt;span class="c1"&gt;#这里的 $[] 里面没有空格分隔，因为它并不是个 shell 命令，而是特殊字符，$[] 可以得到一个算数运算的值&lt;/span&gt;
+&lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$count&lt;/span&gt;+1&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;until&lt;/strong&gt; 实例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+
+&lt;span class="k"&gt;until&lt;/span&gt; ! &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$count&lt;/span&gt; -le &lt;span class="m"&gt;100&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$count&lt;/span&gt;
+    &lt;span class="c1"&gt;#这个运算只支持整数&lt;/span&gt;
+    &lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$count&lt;/span&gt;+1&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="case"&gt;
+&lt;h2&gt;case 分支结构&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;case&lt;/strong&gt; 和 &lt;strong&gt;for&lt;/strong&gt; 它们所判断的不再是“表达式”是否为真，而是去匹配字符串。case 分支的语法结构：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt; word in &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="o"&gt;[(]&lt;/span&gt; pattern &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; pattern &lt;span class="o"&gt;]&lt;/span&gt; ... &lt;span class="o"&gt;)&lt;/span&gt; list &lt;span class="p"&gt;;;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; ... &lt;span class="k"&gt;esac&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;实例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="nv"&gt;$1&lt;/span&gt; in
+     don&lt;span class="p"&gt;|&lt;/span&gt;jerry&lt;span class="o"&gt;)&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;hello &lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;!&amp;quot;&lt;/span&gt;
+     &lt;span class="p"&gt;;;&lt;/span&gt;
+     *&lt;span class="o"&gt;)&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;get out!&amp;quot;&lt;/span&gt;
+     &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;span class="k"&gt;esac&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;程序保存到文件 &lt;strong&gt;case.sh&lt;/strong&gt; ，执行结果：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sh &lt;span class="k"&gt;case&lt;/span&gt;.sh
+get out!
+
+$ sh &lt;span class="k"&gt;case&lt;/span&gt;.sh don
+hello don!
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="for"&gt;
+&lt;h2&gt;for 循环结构&lt;/h2&gt;
+&lt;p&gt;暂无&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="bash"></category><category term="shell"></category></entry><entry><title>exFAT 文件格式支持</title><link href="https://magicalboy.com/note/raspbian-exfat-support.html" rel="alternate"></link><published>2016-05-16T14:40:00+08:00</published><updated>2016-05-16T14:40:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-16:/note/raspbian-exfat-support.html</id><summary type="html">&lt;p&gt;exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。&lt;/p&gt;
+&lt;p&gt;基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;为什么要使用 exFAT&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;支持拷贝文件大于 4 GB&lt;/li&gt;
+&lt;li&gt;兼容性好，方便在不同设备上插拔拷贝数据&lt;/li&gt;
+&lt;li&gt;部分大容量内存卡购买回来默认使用的就是这种格式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如何让部分操作系统支持 exFAT？&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="raspberry-pi-raspbian"&gt;
+&lt;h2&gt;Raspberry Pi (RASPBIAN)&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install exfat-fuse
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装完成后，重新插拔内存卡即可自动加载出来。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="android"&gt;
+&lt;h2&gt;Android&lt;/h2&gt;
+&lt;p&gt;暂无&lt;/p&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;p&gt;exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。&lt;/p&gt;
+&lt;p&gt;基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;为什么要使用 exFAT&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;支持拷贝文件大于 4 GB&lt;/li&gt;
+&lt;li&gt;兼容性好，方便在不同设备上插拔拷贝数据&lt;/li&gt;
+&lt;li&gt;部分大容量内存卡购买回来默认使用的就是这种格式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如何让部分操作系统支持 exFAT？&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="raspberry-pi-raspbian"&gt;
+&lt;h2&gt;Raspberry Pi (RASPBIAN)&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install exfat-fuse
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装完成后，重新插拔内存卡即可自动加载出来。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="android"&gt;
+&lt;h2&gt;Android&lt;/h2&gt;
+&lt;p&gt;暂无&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="Raspbian"></category><category term="exFAT"></category></entry><entry><title>WHR-G300N V2 刷机</title><link href="https://magicalboy.com/note/flash-openwrt-from-tftp.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/flash-openwrt-from-tftp.html</id><summary type="html">&lt;div class="section" id="openwrt"&gt;
+&lt;h2&gt;OpenWrt 介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt"&gt;OpenWrt&lt;/a&gt;  是用于嵌入式设备的一个 Linux 发行版本。&lt;/blockquote&gt;
+&lt;p&gt;所有最新的固件下载地址：&lt;a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/"&gt;https://downloads.openwrt.org/chaos_calmer/15.05/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;类似的还有 DD-WRT，比较偏向实用，Web 配置比较强大，但较难定制。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;WHR-G300N V2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。&lt;/li&gt;
+&lt;li&gt;购买链接：&lt;a class="reference external" href="http://www.amazon.cn/BUFFALO"&gt;http://www.amazon.cn/BUFFALO&lt;/a&gt;-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC&lt;/li&gt;
+&lt;li&gt;官网地址：&lt;a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router"&gt;http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OpenWrt Wiki …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="openwrt"&gt;
+&lt;h2&gt;OpenWrt 介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt"&gt;OpenWrt&lt;/a&gt;  是用于嵌入式设备的一个 Linux 发行版本。&lt;/blockquote&gt;
+&lt;p&gt;所有最新的固件下载地址：&lt;a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/"&gt;https://downloads.openwrt.org/chaos_calmer/15.05/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;类似的还有 DD-WRT，比较偏向实用，Web 配置比较强大，但较难定制。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;WHR-G300N V2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。&lt;/li&gt;
+&lt;li&gt;购买链接：&lt;a class="reference external" href="http://www.amazon.cn/BUFFALO"&gt;http://www.amazon.cn/BUFFALO&lt;/a&gt;-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC&lt;/li&gt;
+&lt;li&gt;官网地址：&lt;a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router"&gt;http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OpenWrt Wiki：&lt;a class="reference external" href="http://wiki.openwrt.org/toh/buffalo/whr-g300nv2"&gt;http://wiki.openwrt.org/toh/buffalo/whr-g300nv2&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;刷机教程参考：&lt;a class="reference external" href="http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2"&gt;http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tftp"&gt;
+&lt;h2&gt;砖头复活记：tftp 刷机教程&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;刷机环境：OS X El Capitan&lt;/li&gt;
+&lt;li&gt;tftp 固件：&lt;a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin"&gt;https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1. 用网线连接路由器，打开电源，用 ifconfig 查看网络接口，比如 en0；
+修改本机 IP：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo ifconfig en0 &lt;span class="m"&gt;192&lt;/span&gt;.168.11.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;配置网络，将 192.168.11.1 跟路由器的 MAC 地址关联起来：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo arp -s &lt;span class="m"&gt;192&lt;/span&gt;.168.11.1 xx:xx:xx:xx:xx:xx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;MAC 地址见背后标签上的 SSID。&lt;/p&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;这个时候可以断开路由器电源了，接着 cd 到固件所在目录，执行 tftp：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Set verbose mode on &lt;span class="o"&gt;(&lt;/span&gt;so we know what&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;s going on&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; verbose
+Verbose mode on.
+Binary mode on &lt;span class="o"&gt;(&lt;/span&gt;because we are uploading a binary file&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; binary
+mode &lt;span class="nb"&gt;set&lt;/span&gt; to octet
+Trace on &lt;span class="o"&gt;(&lt;/span&gt;so we get feedback on our commands&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; trace
+Packet tracing on.
+Rexmt &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;to retry the upload on failure every &lt;span class="m"&gt;1&lt;/span&gt; second&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; rexmt &lt;span class="m"&gt;1&lt;/span&gt;
+And timeout to &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;repeatedly retry the upload &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;60&lt;/span&gt; seconds before giving up&lt;span class="o"&gt;)&lt;/span&gt;
+tftp&amp;gt; timeout &lt;span class="m"&gt;60&lt;/span&gt;
+tftp&amp;gt; connect &lt;span class="m"&gt;192&lt;/span&gt;.168.11.1
+尽管路由器是关的
+tftp&amp;gt; status
+查看当前的配置状态
+tftp&amp;gt; put tftp.bin
+tftp.bin 就是下载回来的 openwrt-tftp版本的固件，已经被重命名。
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;将路由器的电源接上，同时重复执行以上的 put 指令，直到有以下反应：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tftp&amp;gt; put tftp.bin
+putting tftp.bin to &lt;span class="m"&gt;192&lt;/span&gt;.168.11.1:tftp.bin &lt;span class="o"&gt;[&lt;/span&gt;octet&lt;span class="o"&gt;]&lt;/span&gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&amp;gt;
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;, &lt;span class="m"&gt;512&lt;/span&gt; bytes&amp;gt;
+...
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;6529&lt;/span&gt;, &lt;span class="m"&gt;36&lt;/span&gt; bytes&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;6529&lt;/span&gt;&amp;gt;
+Sent &lt;span class="m"&gt;3342372&lt;/span&gt; bytes in &lt;span class="m"&gt;2&lt;/span&gt;.7 seconds &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9903324&lt;/span&gt; bits/sec&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;此时上传完毕，可以输入 quit 退出。&lt;/p&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;路由器红色的灯会有不同的反应，几分钟后会自动重启。此致，成功复活！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>Gentoo 2015</title><link href="https://magicalboy.com/note/gentoo.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/gentoo.html</id><summary type="html">&lt;div class="section" id="gentoo"&gt;
+&lt;h2&gt;为什么选择 Gentoo&lt;/h2&gt;
+&lt;p&gt;完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。&lt;/p&gt;
+&lt;p&gt;同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。&lt;/p&gt;
+&lt;p&gt;另外附 Gentoo 排名情况：  &lt;a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo"&gt;DistroWatch&lt;/a&gt; 。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安装过程&lt;/h2&gt;
+&lt;p&gt;整个安装过程主要参考 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64"&gt;Handbook 手册&lt;/a&gt;，利用业余时间两个晚上搞定。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# uname -a&lt;/span&gt;
+Linux don &lt;span class="m"&gt;4&lt;/span&gt;.0.5-gentoo &lt;span class="c1"&gt;#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="gentoo"&gt;
+&lt;h2&gt;为什么选择 Gentoo&lt;/h2&gt;
+&lt;p&gt;完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。&lt;/p&gt;
+&lt;p&gt;同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。&lt;/p&gt;
+&lt;p&gt;另外附 Gentoo 排名情况：  &lt;a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo"&gt;DistroWatch&lt;/a&gt; 。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安装过程&lt;/h2&gt;
+&lt;p&gt;整个安装过程主要参考 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64"&gt;Handbook 手册&lt;/a&gt;，利用业余时间两个晚上搞定。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# uname -a&lt;/span&gt;
+Linux don &lt;span class="m"&gt;4&lt;/span&gt;.0.5-gentoo &lt;span class="c1"&gt;#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz GenuineIntel GNU/Linux&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;桌面选择&lt;/h2&gt;
+&lt;p&gt;首先纠结的是选择。既然如此，回到出发点思考，为什么要安装桌面环境。一是个人 Linux 基础问题。再加上多年不用，没有能力在 Shell 环境搞定 WIFI 和 蓝牙等的驱动。&lt;/p&gt;
+&lt;p&gt;基于大学时代玩过 Ubuntu 和 Fedora，对 GNOME 和 KDE 有所了解，所以主要还是从这两个中选择，虽然 Ubuntu 已经不用 GNOME 改用 Unity，但 GNOME 3 看起来还是比较现代化，就它吧！&lt;/p&gt;
+&lt;p&gt;不过在安装 GNOME 之前，我们先了解一下X11，即 X Window 系统。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x11"&gt;
+&lt;h2&gt;X11&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System"&gt;X 窗口系统&lt;/a&gt; 还是很 NB 的，出生比我早。GNOME 和 KDE 都是基于 X11 系统为基础实现的。&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/XQuartz"&gt;XQuartz&lt;/a&gt; 是苹果公司的 OS X 的实现，Apple X11。&lt;/p&gt;
+&lt;p&gt;Gentoo Linux 上的 X11 实现是 &lt;a class="reference external" href="https://en.wikipedia.org/wiki/X.Org_Server"&gt;XOrg&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)"&gt;Wayland&lt;/a&gt; 是一个比较新的显示服务器与客户端通信方式的协议，而 GNOME 从 3.10 开始支持 Wayland。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="init-system"&gt;
+&lt;h2&gt;Init System&lt;/h2&gt;
+&lt;p&gt;在 Gentoo，可以用以下命令查看当前系统运行的 Init 系统是什么：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# ps u -p 1&lt;/span&gt;
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;0&lt;/span&gt;.0  &lt;span class="m"&gt;0&lt;/span&gt;.0   &lt;span class="m"&gt;4164&lt;/span&gt;  &lt;span class="m"&gt;1420&lt;/span&gt; ?        Ss   Sep08   &lt;span class="m"&gt;0&lt;/span&gt;:01 init &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果是显示的是 init，那么 init 系统是 OpenRC，如果显示 systemd，则是 init system 是 systemd (via from &lt;a class="reference external" href="http://unix.stackexchange.com/a/114619"&gt;Detect init system using the shell&lt;/a&gt;)。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gnome-3"&gt;
+&lt;h2&gt;GNOME 3&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://www.gnome.org/gnome-3/"&gt;GNOME 3&lt;/a&gt; 的目标是简单易用，与 Python 的 Zen 核心思想很接近。&lt;/p&gt;
+&lt;img alt="GNOME 3 overview" src="https://www.gnome.org/wp-content/uploads/2015/03/activities-overview-3.16-940x529.png" /&gt;
+&lt;p&gt;准备安装的时候，在网上找到这个`贴子 &amp;lt;&lt;a class="reference external" href="https://forums.gentoo.org/viewtopic-p-7696198.html"&gt;https://forums.gentoo.org/viewtopic-p-7696198.html&lt;/a&gt;&amp;gt;`_：&lt;/p&gt;
+&lt;blockquote&gt;
+systemd is now a mandatory dependency of Gnome3. Normally, if you want to use Gnome3,  systemd must be installed.&lt;/blockquote&gt;
+&lt;p&gt;有没有桌面环境可以不更换现在的 Init System 呢，继续查找资料，然后在 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Recommended_applications#Desktop_environment"&gt;Desktop environment&lt;/a&gt; 发现了 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Xfce"&gt;Xfce&lt;/a&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;Xfce&lt;/h2&gt;
+&lt;p&gt;Xfce 是个轻量级的类 Unix 桌面环境，It aims to be fast and low on system resources。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="x-window"&gt;
+&lt;h2&gt;安装 X Window&lt;/h2&gt;
+&lt;p&gt;主要参考：&lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Xorg/Guide"&gt;https://wiki.gentoo.org/wiki/Xorg/Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;查看显卡信息，可以得到：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# emerge --ask sys-apps/pciutils&lt;/span&gt;
+&lt;span class="c1"&gt;# lspci | grep VGA&lt;/span&gt;
+&lt;span class="c1"&gt;# lspci | grep VGA&lt;/span&gt;
+&lt;span class="m"&gt;01&lt;/span&gt;:00.0 VGA compatible controller: Advanced Micro Devices, Inc. &lt;span class="o"&gt;[&lt;/span&gt;AMD/ATI&lt;span class="o"&gt;]&lt;/span&gt; Oland &lt;span class="o"&gt;[&lt;/span&gt;Radeon HD &lt;span class="m"&gt;8570&lt;/span&gt; / R7 &lt;span class="m"&gt;240&lt;/span&gt; OEM&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;# emerge --sync&lt;/span&gt;
+&lt;span class="c1"&gt;# emerge --ask x11-drivers/radeon-ucode&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;配置 Linux 内核，输入以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# cd /usr/src/linux&lt;/span&gt;
+&lt;span class="c1"&gt;# make menuconfig&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;修改 make.config 配置， /etc/portage/make.conf：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# (For mouse, keyboard, and Synaptics touchpad support)&lt;/span&gt;
+&lt;span class="nv"&gt;INPUT_DEVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;evdev synaptics&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# (For AMD/ATI cards)&lt;/span&gt;
+&lt;span class="nv"&gt;VIDEO_CARDS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;radeon&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后执行：emerge --ask --verbose x11-base/xorg-drivers&lt;/p&gt;
+&lt;p&gt;安装 Xorg：emerge --ask x11-base/xorg-server
+安装完成后，更新环境：env-update &amp;amp;&amp;amp; source /etc/profile
+然后重启系统。
+登入，启动 startx，成功了：&lt;/p&gt;
+&lt;img alt="" src="images/Gentoo_Xfce_Desktop.jpg" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="portage-sync"&gt;
+&lt;h2&gt;Portage/Sync 配置&lt;/h2&gt;
+&lt;p&gt;在日常更新维护的时候遇到这样的警告：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;!!! SYNC setting found in make.conf.
+This setting is Deprecated and no longer used.  Please ensure your &lt;span class="s1"&gt;&amp;#39;sync-type&amp;#39;&lt;/span&gt; and &lt;span class="s1"&gt;&amp;#39;sync-uri&amp;#39;&lt;/span&gt; are &lt;span class="nb"&gt;set&lt;/span&gt; correctly in /etc/portage/repos.conf/gentoo.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;解决方法主要参考 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Project:Portage/Sync"&gt;Portage/Sync&lt;/a&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /etc/portage/repos.conf
+cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
+mirrorselect -i -r -o &amp;gt;&amp;gt; /etc/portage/repos.conf/gentoo.conf &lt;span class="c1"&gt;# 选择一个国内镜像&lt;/span&gt;
+vi /etc/portage/make.conf &lt;span class="c1"&gt;# 将 SYNC 设置删除&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 本地化配置</title><link href="https://magicalboy.com/note/gentoo-locale.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/gentoo-locale.html</id><summary type="html">&lt;p&gt;未配置之前会有类似这样的提示：&lt;em&gt;man: can't set the locale; make sure $LC_&lt;/em&gt; and $LANG are correct*。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;查看当前本地化配置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# locale -a&lt;/span&gt;
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_CTYPE to default locale: No such file or directory
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_MESSAGES to default locale: No such file or directory
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_COLLATE to default locale: No such file …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;未配置之前会有类似这样的提示：&lt;em&gt;man: can't set the locale; make sure $LC_&lt;/em&gt; and $LANG are correct*。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;查看当前本地化配置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# locale -a&lt;/span&gt;
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_CTYPE to default locale: No such file or directory
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_MESSAGES to default locale: No such file or directory
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_COLLATE to default locale: No such file or directory
+C
+POSIX
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;修改 &lt;em&gt;/etc/locale.gen&lt;/em&gt;，去掉 &lt;em&gt;#en_US.UTF-8 UTF-8&lt;/em&gt; 前面的 &lt;em&gt;#&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;执行 &lt;em&gt;locale-gen&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;查看当前系统可用的本地化设置：&lt;em&gt;eselect locale list&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;设置本地化：&lt;em&gt;eselect locale set 3&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;执行更新：&lt;em&gt;env-update &amp;amp;&amp;amp; source /etc/profile&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;最后的环境：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# eselect locale list&lt;/span&gt;
+Available targets &lt;span class="k"&gt;for&lt;/span&gt; the LANG variable:
+  &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;   C
+  &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;   en_US.utf8 *
+  &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;   POSIX
+  &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;   &lt;span class="o"&gt;(&lt;/span&gt;free form&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;参考连接：&lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Localization/Guide"&gt;https://wiki.gentoo.org/wiki/Localization/Guide&lt;/a&gt;&lt;/p&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 分区</title><link href="https://magicalboy.com/note/gentoo-partition.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/gentoo-partition.html</id><summary type="html">&lt;p&gt;由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。&lt;/p&gt;
+&lt;p&gt;使用环境：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;系统：Gentoo 3.4.103&lt;/li&gt;
+&lt;li&gt;存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第一步：查看与新建分区&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;分区前系统盘分区：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# df -h&lt;/span&gt;
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       &lt;span class="m"&gt;3&lt;/span&gt;.4G  &lt;span class="m"&gt;1&lt;/span&gt;.7G  &lt;span class="m"&gt;1&lt;/span&gt;.6G  &lt;span class="m"&gt;52&lt;/span&gt;% /
+devtmpfs        438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   &lt;span class="m"&gt;0&lt;/span&gt;% /dev
+tmpfs            88M  244K   88M   &lt;span class="m"&gt;1 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。&lt;/p&gt;
+&lt;p&gt;使用环境：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;系统：Gentoo 3.4.103&lt;/li&gt;
+&lt;li&gt;存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第一步：查看与新建分区&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;分区前系统盘分区：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# df -h&lt;/span&gt;
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       &lt;span class="m"&gt;3&lt;/span&gt;.4G  &lt;span class="m"&gt;1&lt;/span&gt;.7G  &lt;span class="m"&gt;1&lt;/span&gt;.6G  &lt;span class="m"&gt;52&lt;/span&gt;% /
+devtmpfs        438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   &lt;span class="m"&gt;0&lt;/span&gt;% /dev
+tmpfs            88M  244K   88M   &lt;span class="m"&gt;1&lt;/span&gt;% /run
+shm             438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   &lt;span class="m"&gt;0&lt;/span&gt;% /dev/shm
+cgroup_root      10M     &lt;span class="m"&gt;0&lt;/span&gt;   10M   &lt;span class="m"&gt;0&lt;/span&gt;% /sys/fs/cgroup
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;当前盘信息：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# fdisk -l&lt;/span&gt;
+
+Disk /dev/mmcblk0: &lt;span class="m"&gt;59&lt;/span&gt;.5 GiB, &lt;span class="m"&gt;63879249920&lt;/span&gt; bytes, &lt;span class="m"&gt;124764160&lt;/span&gt; sectors
+Units: sectors of &lt;span class="m"&gt;1&lt;/span&gt; * &lt;span class="nv"&gt;512&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Sector size &lt;span class="o"&gt;(&lt;/span&gt;logical/physical&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+I/O size &lt;span class="o"&gt;(&lt;/span&gt;minimum/optimal&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;512&lt;/span&gt; bytes / &lt;span class="m"&gt;512&lt;/span&gt; bytes
+Disklabel type: dos
+Disk identifier: 0x7dea4524
+
+Device         Boot     Start       End   Blocks  Id System
+/dev/mmcblk0p1           &lt;span class="m"&gt;2048&lt;/span&gt;     &lt;span class="m"&gt;43007&lt;/span&gt;    &lt;span class="m"&gt;20480&lt;/span&gt;  &lt;span class="m"&gt;83&lt;/span&gt; Linux
+/dev/mmcblk0p2          &lt;span class="m"&gt;43008&lt;/span&gt;   &lt;span class="m"&gt;7167999&lt;/span&gt;  &lt;span class="m"&gt;3562496&lt;/span&gt;  &lt;span class="m"&gt;83&lt;/span&gt; Linux
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;使用 &lt;em&gt;cfdisk /dev/mmcblk0&lt;/em&gt; 将未使用的空间 &lt;em&gt;New&lt;/em&gt; 一个分区出来&lt;/li&gt;
+&lt;li&gt;分区成功后 &lt;em&gt;Write&lt;/em&gt; 保存，然后 &lt;em&gt;Quit&lt;/em&gt; 退出。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注：cfdisk 最多只能分 4 个主分区，fdisk 支持硬盘最大尺寸为 2TB，更详情说明请参考 man 手册。&lt;/p&gt;
+&lt;p&gt;第二步：格式化分区&lt;/p&gt;
+&lt;p&gt;对新建分区 mmcblk0p3 进行格式化：&lt;em&gt;mkfs.ext4 /dev/mmcblk0p3&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;第三步：加载分区&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;创建分区挂接目录：&lt;em&gt;mkdir /user&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;编辑 &lt;em&gt;/etc/fstab&lt;/em&gt;，将分区信息写进去。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/dev/mmcblk0p3          /user           ext4            defaults        &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;加载新建的分区：&lt;em&gt;mount -a&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;最终系统分区：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       &lt;span class="m"&gt;3&lt;/span&gt;.4G  &lt;span class="m"&gt;1&lt;/span&gt;.7G  &lt;span class="m"&gt;1&lt;/span&gt;.6G  &lt;span class="m"&gt;52&lt;/span&gt;% /
+devtmpfs        438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   &lt;span class="m"&gt;0&lt;/span&gt;% /dev
+tmpfs            88M  244K   88M   &lt;span class="m"&gt;1&lt;/span&gt;% /run
+shm             438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   &lt;span class="m"&gt;0&lt;/span&gt;% /dev/shm
+cgroup_root      10M     &lt;span class="m"&gt;0&lt;/span&gt;   10M   &lt;span class="m"&gt;0&lt;/span&gt;% /sys/fs/cgroup
+/dev/mmcblk0p3   56G  180M   53G   &lt;span class="m"&gt;1&lt;/span&gt;% /user
+&lt;/pre&gt;&lt;/div&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo Portage</title><link href="https://magicalboy.com/note/gentoo-portage.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/gentoo-portage.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;修改更新源地址&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;em&gt;2.2.16&lt;/em&gt; 版本之前的配置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;SYNC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;rsync://rsync.cn.gentoo.org/gentoo-portage/&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;新版本若没有配置会提示：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;!!! SYNC setting found in make.conf.
+    This setting is Deprecated and no longer used.  Please ensure your &lt;span class="s1"&gt;&amp;#39;sync-type&amp;#39;&lt;/span&gt; and &lt;span class="s1"&gt;&amp;#39;sync-uri&amp;#39;&lt;/span&gt; are &lt;span class="nb"&gt;set&lt;/span&gt; correctly in /etc/portage/repos.conf/gentoo.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;新版本配置，编辑 &lt;em&gt;/etc/portage/make.conf&lt;/em&gt; 删除原来的 …&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;修改更新源地址&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;em&gt;2.2.16&lt;/em&gt; 版本之前的配置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;SYNC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;rsync://rsync.cn.gentoo.org/gentoo-portage/&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;新版本若没有配置会提示：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;!!! SYNC setting found in make.conf.
+    This setting is Deprecated and no longer used.  Please ensure your &lt;span class="s1"&gt;&amp;#39;sync-type&amp;#39;&lt;/span&gt; and &lt;span class="s1"&gt;&amp;#39;sync-uri&amp;#39;&lt;/span&gt; are &lt;span class="nb"&gt;set&lt;/span&gt; correctly in /etc/portage/repos.conf/gentoo.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;新版本配置，编辑 &lt;em&gt;/etc/portage/make.conf&lt;/em&gt; 删除原来的 &lt;em&gt;SYNC=&amp;quot;....&amp;quot;&lt;/em&gt; 这行，然后执行以下命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /etc/portage/repos.conf
+cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
+vi /etc/portage/repos.conf/gentoo.conf
+&lt;span class="c1"&gt;# 增加上面的镜像地址&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;参考链接：&lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Project:Portage/Sync"&gt;https://wiki.gentoo.org/wiki/Project:Portage/Sync&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="portdir"&gt;
+&lt;h2&gt;修改 PORTDIR&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;修改 &lt;em&gt;/etc/portage/make.conf&lt;/em&gt;：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;PORTDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/user/portage&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;创建新位置目录：&lt;em&gt;mkdir /user/portage&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;修改用户和用户组属性：&lt;em&gt;chown portage:portage /user/portage&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;迁移数据：&lt;em&gt;mv -p /usr/portage/* /user/portage/&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;更新：&lt;em&gt;emerge --sync&lt;/em&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果 &lt;em&gt;make.conf&lt;/em&gt; 丢失，查看 &lt;em&gt;eselect profile list&lt;/em&gt;，并选择 &lt;em&gt;[28]  default/linux/arm/13.0/armv7a&lt;/em&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;eselect profile &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="portage"&gt;
+&lt;h2&gt;更新 Portage&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;查看当前版本：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# emerge -V&lt;/span&gt;
+Portage &lt;span class="m"&gt;2&lt;/span&gt;.2.8-r2 &lt;span class="o"&gt;(&lt;/span&gt;default/linux/arm/13.0/armv7a, gcc-4.8.3, glibc-2.19-r1, &lt;span class="m"&gt;3&lt;/span&gt;.4.103 armv7l&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;更新版本使用：&lt;em&gt;emerge --oneshot portage&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;更新后版本：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# emerge -V&lt;/span&gt;
+Portage &lt;span class="m"&gt;2&lt;/span&gt;.2.20.1 &lt;span class="o"&gt;(&lt;/span&gt;python &lt;span class="m"&gt;2&lt;/span&gt;.7.7-final-0, default/linux/arm/13.0/armv7a, gcc-4.8.3, glibc-2.19-r1, &lt;span class="m"&gt;3&lt;/span&gt;.4.103 armv7l&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Samba 配置</title><link href="https://magicalboy.com/note/gentoo-samba.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/gentoo-samba.html</id><summary type="html">&lt;p&gt;Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。&lt;/p&gt;
+&lt;p&gt;其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。&lt;/p&gt;
+&lt;p&gt;Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。&lt;/p&gt;
+&lt;p&gt;Samba 现在最新版本是 4.x，但在我的树莓派上面 &lt;em&gt;emerge --ask net-fs/samba&lt;/em&gt; 出来的还是 3.6.2。&lt;/p&gt;
+&lt;p&gt;官网上的 &lt;a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba"&gt;net-fs/samba&lt;/a&gt; package 4.x 以上的版本不支持 arm 或被 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。&lt;/p&gt;
+&lt;p&gt;其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。&lt;/p&gt;
+&lt;p&gt;Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。&lt;/p&gt;
+&lt;p&gt;Samba 现在最新版本是 4.x，但在我的树莓派上面 &lt;em&gt;emerge --ask net-fs/samba&lt;/em&gt; 出来的还是 3.6.2。&lt;/p&gt;
+&lt;p&gt;官网上的 &lt;a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba"&gt;net-fs/samba&lt;/a&gt; package 4.x 以上的版本不支持 arm 或被 mask。&lt;/p&gt;
+&lt;p&gt;开始安装 ；)&lt;/p&gt;
+&lt;p&gt;emerge --ask net-fs/sambar&lt;/p&gt;
+&lt;p&gt;# qlop -Hgvt samba
+samba-3.6.25: Tue Oct 27 23:56:50 2015: 43 minutes, 41 seconds
+samba: 1 times&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>解决 OpenWrt Bad Address 问题</title><link href="https://magicalboy.com/note/openwrt-bad-address.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/openwrt-bad-address.html</id><summary type="html">&lt;p&gt;自升级 CC 后，一切都正常。&lt;/p&gt;
+&lt;p&gt;突然有一天发现 DDNS 出了问题，LuCI 的服务界面都刷不完整。&lt;/p&gt;
+&lt;p&gt;opkg update 失败。&lt;/p&gt;
+&lt;p&gt;ping 所有网址都是 bad address，ping ip 地址正常。&lt;/p&gt;
+&lt;p&gt;nslookup 只到 localhost 卡住。&lt;/p&gt;
+&lt;p&gt;检查 DNS 配置 &lt;em&gt;vi /etc/config/dhcp&lt;/em&gt; 正常，网络配置 &lt;em&gt;/etc/config/network&lt;/em&gt; 正常。&lt;/p&gt;
+&lt;p&gt;找了Ｎ久才发现 &lt;em&gt;/etc/resolv.conf&lt;/em&gt; 文件被修改，解决方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 删除 /etc/resolv.conf&lt;/span&gt;
+vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;自升级 CC 后，一切都正常。&lt;/p&gt;
+&lt;p&gt;突然有一天发现 DDNS 出了问题，LuCI 的服务界面都刷不完整。&lt;/p&gt;
+&lt;p&gt;opkg update 失败。&lt;/p&gt;
+&lt;p&gt;ping 所有网址都是 bad address，ping ip 地址正常。&lt;/p&gt;
+&lt;p&gt;nslookup 只到 localhost 卡住。&lt;/p&gt;
+&lt;p&gt;检查 DNS 配置 &lt;em&gt;vi /etc/config/dhcp&lt;/em&gt; 正常，网络配置 &lt;em&gt;/etc/config/network&lt;/em&gt; 正常。&lt;/p&gt;
+&lt;p&gt;找了Ｎ久才发现 &lt;em&gt;/etc/resolv.conf&lt;/em&gt; 文件被修改，解决方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 删除 /etc/resolv.conf&lt;/span&gt;
+vi /etc/resolv.conf
+&lt;span class="c1"&gt;# 加入以下&lt;/span&gt;
+
+nameserver &lt;span class="m"&gt;114&lt;/span&gt;.114.114.114
+nameserver &lt;span class="m"&gt;114&lt;/span&gt;.114.114.115
+nameserver &lt;span class="m"&gt;8&lt;/span&gt;.8.8.8
+nameserver &lt;span class="m"&gt;8&lt;/span&gt;.8.4.4
+
+&lt;span class="c1"&gt;# reboot&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;问题解决&lt;/p&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt DDNS 配置</title><link href="https://magicalboy.com/note/openwrt-ddns.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/openwrt-ddns.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;环境&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OpenWrt CC (LuCI)&lt;/li&gt;
+&lt;li&gt;电信光纤 100M&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="luci-app-ddns"&gt;
+&lt;h2&gt;一、安装 luci-app-ddns&lt;/h2&gt;
+&lt;p&gt;登录路由器，进入 System -&amp;gt; Software，点击 Update lists 更新软件库。&lt;/p&gt;
+&lt;p&gt;在 Filter 中输入关键字 ddns, 点击 Find package，然后在 Available packages 列表中找到 luci-i18n-ddns-en，OpenWrt 会自动分析依赖关系安装好 DDNS。&lt;/p&gt;
+&lt;p&gt;安装完成后，在 System 和 Network 中间会多出一项 Services（假设之前没有安装过其他服务），里面有 Dynamic DNS 一项，点击进入配置界面。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ddns"&gt;
+&lt;h2&gt;二、配置 DDNS&lt;/h2&gt;
+&lt;p&gt;DDNS 服务提供商选择列表中没有花生壳服务 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;环境&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OpenWrt CC (LuCI)&lt;/li&gt;
+&lt;li&gt;电信光纤 100M&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="luci-app-ddns"&gt;
+&lt;h2&gt;一、安装 luci-app-ddns&lt;/h2&gt;
+&lt;p&gt;登录路由器，进入 System -&amp;gt; Software，点击 Update lists 更新软件库。&lt;/p&gt;
+&lt;p&gt;在 Filter 中输入关键字 ddns, 点击 Find package，然后在 Available packages 列表中找到 luci-i18n-ddns-en，OpenWrt 会自动分析依赖关系安装好 DDNS。&lt;/p&gt;
+&lt;p&gt;安装完成后，在 System 和 Network 中间会多出一项 Services（假设之前没有安装过其他服务），里面有 Dynamic DNS 一项，点击进入配置界面。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ddns"&gt;
+&lt;h2&gt;二、配置 DDNS&lt;/h2&gt;
+&lt;p&gt;DDNS 服务提供商选择列表中没有花生壳服务，使用 SSH 登录路由器修改：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;＃ vi /usr/lib/ddns/services
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;按 G 跳到最后一行，加入&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;oray.com&amp;quot;&lt;/span&gt;      &lt;span class="s2"&gt;&amp;quot;http://[USERNAME]:[PASSWORD]@ddns.oray.com/ph/update?hostname=[DOMAIN]&amp;amp;myip=[IP]&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后再刷新页面，选择 Oray.com 服务，填写相关信息提交后马上就可以看到绑定的 IP 了。&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category><category term="ddns"></category></entry><entry><title>OpenWrt Luci</title><link href="https://magicalboy.com/note/openwrt-luci.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/openwrt-luci.html</id><summary type="html">&lt;ol class="arabic simple"&gt;
+&lt;li&gt;路由 Luci Web 界面访问不了问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+解决方法：重启 Luci&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/uhttpd restart
+&lt;/pre&gt;&lt;/div&gt;
+</summary><content type="html">&lt;ol class="arabic simple"&gt;
+&lt;li&gt;路由 Luci Web 界面访问不了问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+解决方法：重启 Luci&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/uhttpd restart
+&lt;/pre&gt;&lt;/div&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt WDS 连接设置</title><link href="https://magicalboy.com/note/openwrt-wds.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/openwrt-wds.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+算了不想写了&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="whr-g300n-v2"&gt;
+&lt;h2&gt;WHR-G300N V2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。&lt;/li&gt;
+&lt;li&gt;购买链接：&lt;a class="reference external" href="http://www.amazon.cn/BUFFALO"&gt;http://www.amazon.cn/BUFFALO&lt;/a&gt;-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC&lt;/li&gt;
+&lt;li&gt;官网地址：&lt;a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router"&gt;http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OpenWrt Wiki：&lt;a class="reference external" href="http://wiki.openwrt.org/toh/buffalo/whr-g300nv2"&gt;http://wiki.openwrt.org/toh/buffalo/whr-g300nv2&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;刷机教程参考：&lt;a class="reference external" href="http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2"&gt;http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tftp"&gt;
+&lt;h2&gt;砖头复活记：tftp …&lt;/h2&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+算了不想写了&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="whr-g300n-v2"&gt;
+&lt;h2&gt;WHR-G300N V2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。&lt;/li&gt;
+&lt;li&gt;购买链接：&lt;a class="reference external" href="http://www.amazon.cn/BUFFALO"&gt;http://www.amazon.cn/BUFFALO&lt;/a&gt;-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC&lt;/li&gt;
+&lt;li&gt;官网地址：&lt;a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router"&gt;http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OpenWrt Wiki：&lt;a class="reference external" href="http://wiki.openwrt.org/toh/buffalo/whr-g300nv2"&gt;http://wiki.openwrt.org/toh/buffalo/whr-g300nv2&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;刷机教程参考：&lt;a class="reference external" href="http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2"&gt;http://www.dd-wrt.com/wiki/index.php/WHR-G300N_V2&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tftp"&gt;
+&lt;h2&gt;砖头复活记：tftp 刷机教程&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;刷机环境：OS X El Capitan&lt;/li&gt;
+&lt;li&gt;tftp 固件：&lt;a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin"&gt;https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-whr-g301n-squashfs-tftp.bin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1. 用网线连接路由器，打开电源，用 ifconfig 查看网络接口，比如 en0；
+修改本机 IP：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo ifconfig en0 &lt;span class="m"&gt;192&lt;/span&gt;.168.11.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;配置网络，将 192.168.11.1 跟路由器的 MAC 地址关联起来：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo arp -s &lt;span class="m"&gt;192&lt;/span&gt;.168.11.1 xx:xx:xx:xx:xx:xx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;MAC 地址见背后标签上的 SSID。&lt;/p&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;这个时候可以断开路由器电源了，接着 cd 到固件所在目录，执行 tftp：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Set verbose mode on &lt;span class="o"&gt;(&lt;/span&gt;so we know what&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;s going on&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; verbose
+Verbose mode on.
+Binary mode on &lt;span class="o"&gt;(&lt;/span&gt;because we are uploading a binary file&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; binary
+mode &lt;span class="nb"&gt;set&lt;/span&gt; to octet
+Trace on &lt;span class="o"&gt;(&lt;/span&gt;so we get feedback on our commands&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; trace
+Packet tracing on.
+Rexmt &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;to retry the upload on failure every &lt;span class="m"&gt;1&lt;/span&gt; second&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+tftp&amp;gt; rexmt &lt;span class="m"&gt;1&lt;/span&gt;
+And timeout to &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;repeatedly retry the upload &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;60&lt;/span&gt; seconds before giving up&lt;span class="o"&gt;)&lt;/span&gt;
+tftp&amp;gt; timeout &lt;span class="m"&gt;60&lt;/span&gt;
+tftp&amp;gt; connect &lt;span class="m"&gt;192&lt;/span&gt;.168.11.1
+尽管路由器是关的
+tftp&amp;gt; status
+查看当前的配置状态
+tftp&amp;gt; put tftp.bin
+tftp.bin 就是下载回来的 openwrt-tftp版本的固件，已经被重命名。
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;将路由器的电源接上，同时重复执行以上的 put 指令，直到有以下反应：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tftp&amp;gt; put tftp.bin
+putting tftp.bin to &lt;span class="m"&gt;192&lt;/span&gt;.168.11.1:tftp.bin &lt;span class="o"&gt;[&lt;/span&gt;octet&lt;span class="o"&gt;]&lt;/span&gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+sent WRQ &amp;lt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tftp.bin, &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;octet&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&amp;gt;
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;, &lt;span class="m"&gt;512&lt;/span&gt; bytes&amp;gt;
+...
+sent DATA &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;6529&lt;/span&gt;, &lt;span class="m"&gt;36&lt;/span&gt; bytes&amp;gt;
+received ACK &amp;lt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;6529&lt;/span&gt;&amp;gt;
+Sent &lt;span class="m"&gt;3342372&lt;/span&gt; bytes in &lt;span class="m"&gt;2&lt;/span&gt;.7 seconds &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9903324&lt;/span&gt; bits/sec&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;此时上传完毕，可以输入 quit 退出。&lt;/p&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;路由器红色的灯会有不同的反应，几分钟后会自动重启。此致，成功复活！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt CC SS 配置</title><link href="https://magicalboy.com/note/openwrt-cc-ss.html" rel="alternate"></link><published>2015-12-01T00:00:00+08:00</published><updated>2016-01-09T21:40:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2015-12-01:/note/openwrt-cc-ss.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OpenWRT 版本：Chaos Calmer 15.05&lt;/li&gt;
+&lt;li&gt;OpenWRT 内核：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# opkg files kernel&lt;/span&gt;
+Package kernel &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.18.20-1-7bed08fa9c06eb8089e82c200340ec66&lt;span class="o"&gt;)&lt;/span&gt; is installed on root and has the following files:
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;使用 root 登录 ssh&lt;/li&gt;
+&lt;li&gt;下载合适的预编译 &lt;a class="reference external" href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.1-6f44d53/ar71xx/"&gt;安装包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;上传到 &lt;tt class="docutils literal"&gt;/tmp&lt;/tt&gt; 目录&lt;/li&gt;
+&lt;li&gt;执行安装命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cks-libev-spec &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.4.1-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Installing ipset &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;.24-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OpenWRT 版本：Chaos Calmer 15.05&lt;/li&gt;
+&lt;li&gt;OpenWRT 内核：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# opkg files kernel&lt;/span&gt;
+Package kernel &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.18.20-1-7bed08fa9c06eb8089e82c200340ec66&lt;span class="o"&gt;)&lt;/span&gt; is installed on root and has the following files:
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;使用 root 登录 ssh&lt;/li&gt;
+&lt;li&gt;下载合适的预编译 &lt;a class="reference external" href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.1-6f44d53/ar71xx/"&gt;安装包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;上传到 &lt;tt class="docutils literal"&gt;/tmp&lt;/tt&gt; 目录&lt;/li&gt;
+&lt;li&gt;执行安装命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cks-libev-spec &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.4.1-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Installing ipset &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;.24-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/ipset_6.24-1_ar71xx.ipk.
+Installing kmod-ipt-ipset &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.18.20-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-ipt-ipset_3.18.20-1_ar71xx.ipk.
+Installing kmod-nfnetlink &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.18.20-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-nfnetlink_3.18.20-1_ar71xx.ipk.
+Installing libmnl &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0.3-2&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/libmnl_1.0.3-2_ar71xx.ipk.
+Installing iptables-mod-tproxy &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.4.21-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/iptables-mod-tproxy_1.4.21-1_ar71xx.ipk.
+Installing kmod-ipt-tproxy &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.18.20-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
+Downloading http://mirrors.ustc.edu.cn/openwrt/chaos_calmer/15.05/ar71xx/generic/packages/base/kmod-ipt-tproxy_3.18.20-1_ar71xx.ipk.
+Configuring kmod-nfnetlink.
+Configuring kmod-ipt-ipset.
+Configuring libmnl.
+Configuring ipset.
+Configuring kmod-ipt-tproxy.
+failed to find a module named nf_tproxy_core
+Configuring iptables-mod-tproxy.
+Configuring shadowsocks-libev-spec.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;程序配置：/etc/init.d/shadowsocks&lt;/li&gt;
+&lt;li&gt;服务配置：/var/etc/shadowsocks.json，格式如下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="s2"&gt;&amp;quot;server&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;X.X.X.X&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;server_port&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;443&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;password&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;password&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;local_port&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;1080&amp;quot;&lt;/span&gt;,
+      &lt;span class="s2"&gt;&amp;quot;method&amp;quot;&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;rc4-md5&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry></feed>

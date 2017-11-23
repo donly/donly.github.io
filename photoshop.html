@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Photoshop 学习笔记
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/photoshop.html" rel="bookmark"><h1>Photoshop 学习笔记</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Photoshop 是设计作图的必备工具，如果码农也会使用Photoshop来设计UI的话。。。唉，无论结果怎么样，求人不如求己。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id1">
+<h2>Photoshop 简介</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="photoshop icon" src="static/images/Adobe_Photoshop_CS6_icon.svg.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="Photoshop CS 5.1" class="align-left" src="static/images/photoshop.jpg" style="width: 800px;" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Adobe Photoshop，简称“PS”（其程序图标便是“PS”）是一个由Adobe Systems开发和发行的图像处理软件。
+目前稳定版本 为 <a class="reference external" href="http://www.adobe.com/support/downloads/product.jsp?product=39&amp;platform=Windows%7Caccessdate=2012-04-23}">CS6 (13.0)</a> 2012年4月23日。</p>
+</div>
+<div class="section" id="id2">
+<h2>Photoshop 基础</h2>
+<div class="section" id="id3">
+<h3>图层、蒙板、模式和样式</h3>
+<p>经常看到美工MM设计好的PS文件都是由很多 <strong>图层（Layer）</strong> 组成的，就像一个平铺好的三文治。图层面板实际上就是一幅动态的堆栈图表。屏幕中显示的图像就是它们的俯视图。</p>
+<p>堆栈由几种不同类型的图层组成：</p>
+<ul class="simple">
+<li>背景（Background）图层，在堆栈的最下方，完全由像素填充而成。</li>
+<li>一般图层，也由像素组成。不同的是可以包含完全透明或半透明的区域，可以透过透明区域看到下层图层。</li>
+<li>调整图层（Adjustment Layer），不包含任何像素，它所包含的指令可以调整其下方图层的颜色与色调。</li>
+<li>文本图层（Type Layer），存放文字的图层，可以编辑调整颜色等。</li>
+<li>填充图层和形状图层，颜色像素及对应的指令，如渐变或图案等。</li>
+<li>智能对象（Smart Object），是元素的集合体。先理解为很牛Ｘ的东西就了。</li>
+</ul>
+<p><strong>蒙板</strong>，除背景图层外其它图层都可以包含两种蒙板：</p>
+<ul class="simple">
+<li>图层蒙板，基于像素。</li>
+<li>失量蒙板，基于指令。</li>
+</ul>
+<p>它们的作用是遮盖其下方的部分图层来显示。其它显示模式有 <strong>不透明度</strong>、<strong>混合模式</strong>。</p>
+<p><strong>图层样式</strong>，除背景图层外，其它图层都可以包含图层样式。样式是一种指令集，可以创建投影、发光和斜面等特效，或者模拟带有半透明、光照、色彩和图案的材质。双击某一普通图层可以打开选项。</p>
+</div>
+<div class="section" id="id4">
+<h3>像素与指令</h3>
+<p>像素与指令的区别：简单说，基于像素的图像是位图，基于指令的图像为矢量图。</p>
+<p>基于指令的素材都可以还原到初始状态。</p>
+<p><strong>栅格化</strong> 指的是将指令转换为像素。</p>
+</div>
+<div class="section" id="id5">
+<h3>Photoshop 界面</h3>
+<p>什么工作区、导航就不写了，自己熟悉一下。</p>
+</div>
+<div class="section" id="id6">
+<h3>高效工作</h3>
+<p>使用调整图层，保护像素，保存选区，使用图层样式，复制图层，合并复制等概念。</p>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/misc.html">misc</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

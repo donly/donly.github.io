@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Android</title><link href="https://magicalboy.com/note/" rel="alternate"></link><link href="https://magicalboy.com/note/feeds/android.atom.xml" rel="self"></link><id>https://magicalboy.com/note/</id><updated>2017-03-17T10:30:00+08:00</updated><entry><title>2017年3月 Android 安全补丁推送</title><link href="https://magicalboy.com/note/android-march-2017-upgrade.html" rel="alternate"></link><published>2017-03-17T10:30:00+08:00</published><updated>2017-03-17T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-03-17:/note/android-march-2017-upgrade.html</id><summary type="html">&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
+&lt;p&gt;对此我有两个疑问：&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？&lt;/p&gt;
+&lt;p&gt;根据 &lt;a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html"&gt;Welcoming Android 7.1.1 Nougat | Android Developers Blog&lt;/a&gt;，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
+&lt;p&gt;对此我有两个疑问：&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？&lt;/p&gt;
+&lt;p&gt;根据 &lt;a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html"&gt;Welcoming Android 7.1.1 Nougat | Android Developers Blog&lt;/a&gt;，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 FC？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="install on Nexus 6" class="align-left" src="https://github.com/donly/note/blob/master/images/android_20170317-082545.png?raw=true" style="width: 320px; height: 568px;" /&gt;
+&lt;p&gt;难道要重新刷机了吗，现在的系统虽然没有 Root，但也用不了 Android Pay，因为 bootloader 被解锁过。&lt;/p&gt;
+&lt;p&gt;生命果然在于折腾。&lt;/p&gt;
+</content><category term="Android"></category></entry><entry><title>微鲸电视，智能电视</title><link href="https://magicalboy.com/note/whaley_android_tv.html" rel="alternate"></link><published>2016-10-28T00:00:00+08:00</published><updated>2016-10-28T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-10-28:/note/whaley_android_tv.html</id><summary type="html">&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
+&lt;p&gt;这台电视主要特点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;4K 分辨率&lt;/li&gt;
+&lt;li&gt;价格不算贵，不到 1500 CNY&lt;/li&gt;
+&lt;li&gt;LG 屏幕，尺寸 43 寸，适合出租屋，将来有自己房子之时也可以作为卧室电视使用&lt;/li&gt;
+&lt;li&gt;普通 Android 定制系统，京东销售渠道非 YunOS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;开机启动速度慢&lt;/li&gt;
+&lt;li&gt;资源不够丰富（GITV 牌照）&lt;/li&gt;
+&lt;li&gt;Android 5.0 不够新，建议更新到 6.0 ，有完整意义的权限管理&lt;/li&gt;
+&lt;li&gt;系统不可靠，有与 YunOS 合作的版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装失败，未知原因&lt;/h2&gt;
+&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
+&lt;p&gt;这台电视主要特点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;4K 分辨率&lt;/li&gt;
+&lt;li&gt;价格不算贵，不到 1500 CNY&lt;/li&gt;
+&lt;li&gt;LG 屏幕，尺寸 43 寸，适合出租屋，将来有自己房子之时也可以作为卧室电视使用&lt;/li&gt;
+&lt;li&gt;普通 Android 定制系统，京东销售渠道非 YunOS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;开机启动速度慢&lt;/li&gt;
+&lt;li&gt;资源不够丰富（GITV 牌照）&lt;/li&gt;
+&lt;li&gt;Android 5.0 不够新，建议更新到 6.0 ，有完整意义的权限管理&lt;/li&gt;
+&lt;li&gt;系统不可靠，有与 YunOS 合作的版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装失败，未知原因&lt;/h2&gt;
+&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决。&lt;/p&gt;
+&lt;p&gt;由于这是一个定制的操作系统，这里使用 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.artchecker"&gt;ARTChecker&lt;/a&gt; 和 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.dptest"&gt;DPInfo&lt;/a&gt; 两件套查看结果（仅参考）。&lt;/p&gt;
+&lt;img alt="Whaley Android" class="align-left" src="images/whaley_android_spec.png" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;黑屏问题&lt;/h2&gt;
+&lt;p&gt;可能是第一批次产品良品率问题，运气不好刚好遇上，没用几天就黑屏了。&lt;/p&gt;
+&lt;img alt="Whaley Half of Black Screen" class="align-left" src="images/whaley_half_of_black_screen.jpg" /&gt;
+&lt;p&gt;后来通过售后服务，由厂家安装人员上门检测，拿到检测报告后京东直接上门换新，并收走有问题的商品。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;虽然国内的 OTT 平台有 &lt;a class="reference external" href="http://www.digitaling.com/articles/11970.html"&gt;广电181号文件&lt;/a&gt; 限制，如果将一个开放的 Android 系统做得太封闭未见是一件好事。&lt;/p&gt;
+&lt;p&gt;目前国产电视已经大部分是互联网电视，集成 Android 系统并内置内容服务。&lt;/p&gt;
+&lt;p&gt;因受阿里云 YunOS 的问题影响极大，个人更倾向于非 Android 系统的电视。&lt;/p&gt;
+&lt;p&gt;电视的主要参数不应该为了让 Android 系统运行更快，解码能力更强而使用更强 CPU 和 GPU，而应该注重屏幕本身，提高显示质量。以及提升开机速度和响应速度。&lt;/p&gt;
+&lt;p&gt;最近的量子显示技术和 LED 屏显示技术我还是比较感兴趣的，等技术成熟和价格降下来以后买一台享受一下。不多说了，搬砖赚钱提高生活质量 :D&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category></entry><entry><title>摩托罗拉(Motorola) MT620</title><link href="https://magicalboy.com/note/motorola_mt620.html" rel="alternate"></link><published>2016-10-20T12:20:00+08:00</published><updated>2016-10-20T12:20:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-10-20:/note/motorola_mt620.html</id><summary type="html">&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
+&lt;p&gt;这是一台老手机，2012 年购买于亚马逊：&lt;a class="reference external" href="https://www.amazon.cn/gp/product/B005HM1R62"&gt;摩托罗拉(Motorola)MT620 3G智能手机(简洁白 移动定制)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;购买价格是 470.00，在当时来说已经是令人心动了，虽然今天 299 元即可买到八核，4G 大屏手机。&lt;/p&gt;
+&lt;p&gt;主要亮点是：QWERTY 全功能键盘，全触屏，支持手写输入，摩托罗拉品牌且价格实惠。&lt;/p&gt;
+&lt;p&gt;所以买了一台给老爸使用，现在他在用 iPhone 5。:D&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;运行系统&lt;/h2&gt;
+&lt;img alt="OPhone" class="align-left" src="images/OPhone_20161020110900.png" /&gt;
+&lt;p&gt;采用以 Android 2.3.7 为基础的 &lt;a class="reference external" href="https://zh.wikipedia.org/wiki/OPhone#.E6.91.A9.E6.89.98.E7.BE.85.E6.8B.89MT620"&gt;OPhone&lt;/a&gt; 2.6 最新智能操作系统。&lt;/p&gt;
+&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
+&lt;p&gt;这是一台老手机，2012 年购买于亚马逊：&lt;a class="reference external" href="https://www.amazon.cn/gp/product/B005HM1R62"&gt;摩托罗拉(Motorola)MT620 3G智能手机(简洁白 移动定制)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;购买价格是 470.00，在当时来说已经是令人心动了，虽然今天 299 元即可买到八核，4G 大屏手机。&lt;/p&gt;
+&lt;p&gt;主要亮点是：QWERTY 全功能键盘，全触屏，支持手写输入，摩托罗拉品牌且价格实惠。&lt;/p&gt;
+&lt;p&gt;所以买了一台给老爸使用，现在他在用 iPhone 5。:D&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;运行系统&lt;/h2&gt;
+&lt;img alt="OPhone" class="align-left" src="images/OPhone_20161020110900.png" /&gt;
+&lt;p&gt;采用以 Android 2.3.7 为基础的 &lt;a class="reference external" href="https://zh.wikipedia.org/wiki/OPhone#.E6.91.A9.E6.89.98.E7.BE.85.E6.8B.89MT620"&gt;OPhone&lt;/a&gt; 2.6 最新智能操作系统。&lt;/p&gt;
+&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序（除了开机动画和声音），更意外的是自带了 Google Play 商店和 GTalk 应用。&lt;/p&gt;
+&lt;p&gt;这一点和维基百科上面说的不一致，不但有自带 Google 服务，而且没有中国移动的全家桶应用。&lt;/p&gt;
+&lt;p&gt;根据上图显示，OPhone 主要由 &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Borqs"&gt;Borqs&lt;/a&gt; 开发，中国移动只是定制了开机动画，以及手机外观加了一个 G3 标志。&lt;/p&gt;
+&lt;p&gt;后来本人手贱点了升级，导致 Google 服务消失，但一样没有中移动应用。幸运的是还可以手动刷回去。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="recovery"&gt;
+&lt;h2&gt;Recovery 模式&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;首先在关机状态下按住键盘 ALT 键，然后按开机键；&lt;/li&gt;
+&lt;li&gt;等出现移动 Logo 放开开机键，继续按着 ALT 不放，等屏幕出现一个盒子即可；&lt;/li&gt;
+&lt;li&gt;音量加减控制上下，空格键是选择。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;刷机方法：选择 “apply update from sdcard” 进入后找到 “SUPK_31I_MA_Fly.supk” 文件按空格键。
+需要注意的是，刷机包需要先解压缩。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mt620"&gt;
+&lt;h2&gt;MT620 相册&lt;/h2&gt;
+&lt;p&gt;MT620 有自带截图功能，方法是：按住菜单键（触摸按钮最左边一个）不放，接着按音量加键。&lt;/p&gt;
+&lt;p&gt;使用截图功能创建的相册：
+&lt;a class="reference external" href="https://goo.gl/photos/YhCsm3ADp3HSZua59"&gt;https://goo.gl/photos/YhCsm3ADp3HSZua59&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category><category term="Motorola"></category></entry><entry><title>Android Wear</title><link href="https://magicalboy.com/note/android_wear.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/android_wear.html</id><summary type="html">&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
+&lt;p&gt;可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Android Wear&lt;/h2&gt;
+&lt;p&gt;2014年3月19日，Google 发布了可穿戴设备 SDK 的开发者预览版（&lt;a class="reference external" href="https://developer.android.com/wear/index.html"&gt;https://developer.android.com/wear/index.html&lt;/a&gt;），率先打开可穿戴智能设备平台这个大门。所以，我们可以通过更新 SDK 获取 Android Wear 模拟器来尝个新鲜。&lt;/p&gt;
+&lt;p&gt;Android Wear 开发平台搭建步骤：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Sign Up for the Developer Preview：&lt;a class="reference external" href="https://developer.android.com/wear/preview/signup.html"&gt;https://developer.android.com/wear/preview/signup.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Sign Up for the Developer Preview" src="images/sign_up_google_developer_preview.png" /&gt;
+&lt;p&gt;在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
+&lt;p&gt;可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Android Wear&lt;/h2&gt;
+&lt;p&gt;2014年3月19日，Google 发布了可穿戴设备 SDK 的开发者预览版（&lt;a class="reference external" href="https://developer.android.com/wear/index.html"&gt;https://developer.android.com/wear/index.html&lt;/a&gt;），率先打开可穿戴智能设备平台这个大门。所以，我们可以通过更新 SDK 获取 Android Wear 模拟器来尝个新鲜。&lt;/p&gt;
+&lt;p&gt;Android Wear 开发平台搭建步骤：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Sign Up for the Developer Preview：&lt;a class="reference external" href="https://developer.android.com/wear/preview/signup.html"&gt;https://developer.android.com/wear/preview/signup.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Sign Up for the Developer Preview" src="images/sign_up_google_developer_preview.png" /&gt;
+&lt;p&gt;在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail 邮箱。&lt;/p&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;打开 Android SDK Manager 更新 Android SDK Tools 至最新版本（22.6.1)。安装更新后便可以见到 Android 4.4 下有 Android Wear ARM EABI v7a System Image，选择并安装它。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="Android Wear ARM EABI v7a System Image" src="images/android_wear_image.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;收到注册确认邮件，可选成为 Google Play 商店提供的 Android Wear Preview app 测试者。下载附件 Preview Support library and samples（AndroidWearPreview.zip）。&lt;/li&gt;
+&lt;li&gt;升级 ADT（当前最新 &lt;a class="reference external" href="http://dl.google.com/android/ADT-22.6.1.zip"&gt;22.6.1&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;打开 Eclipse 为 Wear 创建新的 Android Virtual Device (AVD)。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="android_wear_avd" src="images/android_wear_avd.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol class="arabic simple" start="6"&gt;
+&lt;li&gt;运行刚刚创建的 Wear AVD，显示的是时间和未连接的手机图标，表示 wear 未与 Android 设备匹配上。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="未匹配的 Android Wear" src="images/android_wear_no_pair.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="Android Wear 提示信息" src="images/android_wear_round.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Android Wear 的特色是通知方式和界面都很 Cool。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;参考资料：&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://developer.android.com/wear/preview/start.html"&gt;Get Started with the Developer Preview | Android Developers&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Wear"></category><category term="Android"></category></entry><entry><title>在 OS X 上给 Android 刷机</title><link href="https://magicalboy.com/note/flash-android-on-mac.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/flash-android-on-mac.html</id><summary type="html">&lt;p&gt;Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;下载&lt;/h2&gt;
+&lt;p&gt;可以在 &lt;a class="reference external" href="https://developer.android.com/index.html"&gt;Android 开发者&lt;/a&gt; 下载，如果看不到入口，请检查语言并选择英语。或者直接进入 &lt;a class="reference external" href="https://developer.android.com/preview/download.html"&gt;下载页面&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果下载遇到问题，可以考虑从国内网盘找，下载完成后验证一下。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;解压之后，配置好 PATH，并按照 &lt;a class="reference external" href="https://developers.google.com/android/nexus/images#instructions"&gt;官网的安装方法&lt;/a&gt;，执行 flash-all 时出现了如下错误：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; ./flash-all.sh
+ERROR: could not get pipe properties
+target reported max download size of &lt;span class="m"&gt;536870912 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;下载&lt;/h2&gt;
+&lt;p&gt;可以在 &lt;a class="reference external" href="https://developer.android.com/index.html"&gt;Android 开发者&lt;/a&gt; 下载，如果看不到入口，请检查语言并选择英语。或者直接进入 &lt;a class="reference external" href="https://developer.android.com/preview/download.html"&gt;下载页面&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果下载遇到问题，可以考虑从国内网盘找，下载完成后验证一下。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;解压之后，配置好 PATH，并按照 &lt;a class="reference external" href="https://developers.google.com/android/nexus/images#instructions"&gt;官网的安装方法&lt;/a&gt;，执行 flash-all 时出现了如下错误：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; ./flash-all.sh
+ERROR: could not get pipe properties
+target reported max download size of &lt;span class="m"&gt;536870912&lt;/span&gt; bytes
+sending &lt;span class="s1"&gt;&amp;#39;bootloader&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3807&lt;/span&gt; KB&lt;span class="o"&gt;)&lt;/span&gt;...
+
+...
+
+target reported max download size of &lt;span class="m"&gt;536870912&lt;/span&gt; bytes
+archive does not contain &lt;span class="s1"&gt;&amp;#39;boot.sig&amp;#39;&lt;/span&gt;
+archive does not contain &lt;span class="s1"&gt;&amp;#39;recovery.sig&amp;#39;&lt;/span&gt;
+fastboot&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;17343&lt;/span&gt;,0xa08e91d4&lt;span class="o"&gt;)&lt;/span&gt; malloc: *** mach_vm_map&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1981542400&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; failed &lt;span class="o"&gt;(&lt;/span&gt;error &lt;span class="nv"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+*** error: can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t allocate region
+*** &lt;span class="nb"&gt;set&lt;/span&gt; a breakpoint in malloc_error_break to debug
+failed to allocate &lt;span class="m"&gt;1979559444&lt;/span&gt; bytes
+error: update package missing system.img
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;根据日志猜测，出现这个问题可能是因为镜像文件太大的原因，于是将 flash-all.sh 脚本里面最后一条 fastboot -w update image-shamu-MPZ44Q.zip 手动安装：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fastboot flash bootloader bootloader-shamu-moto-apq8084-71.11.img
+fastboot reboot-bootloader
+fastboot flash radio radio-shamu-D4.01-9625-05.16+FSG-9625-02.94.img
+fastboot reboot-bootloader
+fastboot flash system system.img
+fastboot flash userdata userdata.img
+fastboot flash boot boot.img
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;重新启动大约 1 分钟，可以看到新的引导流程，眼前一新：&lt;/p&gt;
+&lt;img alt="Android M Preview" src="images/AndroidMP.png" /&gt;
+&lt;p&gt;再附一张应用的权限管理：&lt;/p&gt;
+&lt;img alt="国内很多APP无法启动" src="images/android_wecat_per.png" /&gt;
+&lt;p&gt;EOF&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category></entry><entry><title>Fragment</title><link href="https://magicalboy.com/note/fragment.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/fragment.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;Fragment 定义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#fragment-demo" id="id4"&gt;Fragment Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;Fragment 定义&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;为了让界面可以在平板上更好地展示，Android在3.0版本引入了Fragment(碎片)功能，它非常类似于Activity，可以像Activity一样包含布局。Fragment通常是嵌套在Activity中使用的。&lt;/p&gt;
+&lt;img alt="Fragments" src="images/fragments.png" /&gt;
+&lt;p&gt;可以看出，使用Fragment可以让我们更加充分地利用平板的屏幕空间。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fragment-demo"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Fragment Demo&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.csdn.net/guolin_blog/article/details/8881711"&gt;http://blog.csdn.net/guolin_blog/article/details/8881711&lt;/a&gt;
+&lt;a class="reference external" href="https://developer.android.com/guide/components/fragments.html"&gt;https://developer.android.com/guide/components/fragments.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;Fragment 定义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#fragment-demo" id="id4"&gt;Fragment Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;Fragment 定义&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;为了让界面可以在平板上更好地展示，Android在3.0版本引入了Fragment(碎片)功能，它非常类似于Activity，可以像Activity一样包含布局。Fragment通常是嵌套在Activity中使用的。&lt;/p&gt;
+&lt;img alt="Fragments" src="images/fragments.png" /&gt;
+&lt;p&gt;可以看出，使用Fragment可以让我们更加充分地利用平板的屏幕空间。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fragment-demo"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Fragment Demo&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.csdn.net/guolin_blog/article/details/8881711"&gt;http://blog.csdn.net/guolin_blog/article/details/8881711&lt;/a&gt;
+&lt;a class="reference external" href="https://developer.android.com/guide/components/fragments.html"&gt;https://developer.android.com/guide/components/fragments.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category></entry><entry><title>反编译 APK</title><link href="https://magicalboy.com/note/reverse-engineering-apk.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/reverse-engineering-apk.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#apktool" id="id3"&gt;apktool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#dex2jar" id="id4"&gt;dex2jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="apktool"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;apktool&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://ibotpeaches.github.io/Apktool/"&gt;apktool1.5.2&lt;/a&gt; 使用示范，直接运行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Apktool v1.5.2 - a tool &lt;span class="k"&gt;for&lt;/span&gt; reengineering Android apk files
+Copyright &lt;span class="m"&gt;2010&lt;/span&gt; Ryszard Wi?niewski &amp;lt;brut.alll@gmail.com&amp;gt;
+with smali v1.4.1, and baksmali v1.4.1
+Updated by @iBotPeaches &amp;lt;connor.tumbleson@gmail.com&amp;gt;
+Apache License &lt;span class="m"&gt;2&lt;/span&gt;.0 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#apktool" id="id3"&gt;apktool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#dex2jar" id="id4"&gt;dex2jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="apktool"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;apktool&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://ibotpeaches.github.io/Apktool/"&gt;apktool1.5.2&lt;/a&gt; 使用示范，直接运行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Apktool v1.5.2 - a tool &lt;span class="k"&gt;for&lt;/span&gt; reengineering Android apk files
+Copyright &lt;span class="m"&gt;2010&lt;/span&gt; Ryszard Wi?niewski &amp;lt;brut.alll@gmail.com&amp;gt;
+with smali v1.4.1, and baksmali v1.4.1
+Updated by @iBotPeaches &amp;lt;connor.tumbleson@gmail.com&amp;gt;
+Apache License &lt;span class="m"&gt;2&lt;/span&gt;.0 &lt;span class="o"&gt;(&lt;/span&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;span class="o"&gt;)&lt;/span&gt;
+
+Usage: apktool &lt;span class="o"&gt;[&lt;/span&gt;-q&lt;span class="p"&gt;|&lt;/span&gt;--quiet OR -v&lt;span class="p"&gt;|&lt;/span&gt;--verbose&lt;span class="o"&gt;]&lt;/span&gt; COMMAND &lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+
+COMMANDs are:
+
+    d&lt;span class="o"&gt;[&lt;/span&gt;ecode&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;OPTS&lt;span class="o"&gt;]&lt;/span&gt; &amp;lt;file.apk&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;dir&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt;
+        Decode &amp;lt;file.apk&amp;gt; to &amp;lt;dir&amp;gt;.
+
+        OPTS:
+
+        -s, --no-src
+            Do not decode sources.
+        -r, --no-res
+            Do not decode resources.
+        -d, --debug
+            Decode in debug mode. Check project page &lt;span class="k"&gt;for&lt;/span&gt; more info.
+        -b, --no-debug-info
+            Baksmali -- don&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t write out debug info &lt;span class="o"&gt;(&lt;/span&gt;.local, .param, .line, etc.&lt;span class="o"&gt;)&lt;/span&gt;
+        -f, --force
+            Force delete destination directory.
+        -t &amp;lt;tag&amp;gt;, --frame-tag &amp;lt;tag&amp;gt;
+            Try to use framework files tagged by &amp;lt;tag&amp;gt;.
+        --frame-path &amp;lt;dir&amp;gt;
+            Use the specified directory &lt;span class="k"&gt;for&lt;/span&gt; framework files
+        --keep-broken-res
+            Use &lt;span class="k"&gt;if&lt;/span&gt; there was an error and some resources were dropped, e.g.:
+            &lt;span class="s2"&gt;&amp;quot;Invalid config flags detected. Dropping resources&amp;quot;&lt;/span&gt;, but you
+            want to decode them anyway, even with errors. You will have to
+            fix them manually before building.
+
+    b&lt;span class="o"&gt;[&lt;/span&gt;uild&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;OPTS&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;app_path&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;out_file&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt;
+        Build an apk from already decoded application located in &amp;lt;app_path&amp;gt;.
+
+        It will automatically detect, whether files was changed and perform
+        needed steps only.
+
+        If you omit &amp;lt;app_path&amp;gt; &lt;span class="k"&gt;then&lt;/span&gt; current directory will be used.
+        If you omit &amp;lt;out_file&amp;gt; &lt;span class="k"&gt;then&lt;/span&gt; &amp;lt;app_path&amp;gt;/dist/&amp;lt;name_of_original.apk&amp;gt;
+        will be used.
+
+        OPTS:
+
+        -f, --force-all
+            Skip changes detection and build all files.
+        -d, --debug
+            Build in debug mode. Check project page &lt;span class="k"&gt;for&lt;/span&gt; more info.
+        -a, --aapt
+            Loads aapt from specified location.
+
+    &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;install-framework &amp;lt;framework.apk&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;tag&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt; --frame-path &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;location&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt;
+        Install framework file to your system.
+
+For additional info, see: http://code.google.com/p/android-apktool/
+For smali/baksmali info, see: http://code.google.com/p/smali/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用示例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ java -jar /Users/Don/Development/apktool1.5.2/apktool.jar d /Users/Don/Downloads/controls.apk
+
+I: Baksmaling...
+I: Loading resource table...
+I: Loaded.
+I: Decoding AndroidManifest.xml with resources...
+I: Loading resource table from file: /Users/Don/Library/apktool/framework/1.apk
+I: Loaded.
+I: Regular manifest package...
+I: Decoding file-resources...
+I: Decoding values */* XMLs...
+I: Done.
+I: Copying assets and libs...
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;成功后会在当前目录找到反编译好的目录，目录与apk文件同名。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="dex2jar"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;dex2jar&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/dex2jar/"&gt;dex2jar&lt;/a&gt; - Tools to work with android .dex and java .class files&lt;/p&gt;
+&lt;p&gt;将 apk 转换为 jar 的方法：将 apk 文件命名解压出来，然后复制解压到的 classes.dex 文件到 dex2jar 目录，执行 dex2jar 命令（以 OS X 为例）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./dex2jar.sh classes.dex
+
+this cmd is deprecated, use the d2j-dex2jar &lt;span class="k"&gt;if&lt;/span&gt; possible
+dex2jar version: translator-0.0.9.15
+dex2jar classes.dex -&amp;gt; classes_dex2jar.jar
+Done.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;成功后会得到相应的 jar 文件，接着可以拖到 &lt;a class="reference external" href="http://jd.benow.ca/"&gt;http://jd.benow.ca/&lt;/a&gt; 上面直接看结果，或者下载相应平台的客户端等。&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category></entry><entry><title>Android 教程第一周</title><link href="https://magicalboy.com/note/android_coursera_part1_week1.html" rel="alternate"></link><published>2014-12-13T19:20:00+08:00</published><updated>2014-12-13T19:20:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2014-12-13:/note/android_coursera_part1_week1.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#overview" id="id4"&gt;OverView（概述）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;简介&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Coursera 的课程： &lt;a class="reference external" href="https://class.coursera.org/androidpart1-011/lecture"&gt;Programming Mobile Applications for Android Handheld Systems: Part 1&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;讲师： &lt;em&gt;Dr. Adam Porter&lt;/em&gt; 教授。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="overview"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;OverView（概述）&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;课程主要内容：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;手持系统介绍，未来发展趋势分析，以及这门课程的由来。&lt;/li&gt;
+&lt;li&gt;自我介绍（很厉害的一个人物）。以及学习这门课程需要哪些准备。&lt;/li&gt;
+&lt;li&gt;课程组织。&lt;/li&gt;
+&lt;li&gt;课程主题。分两个部分，每部分为四周。&lt;/li&gt;
+&lt;li&gt;Amazone 合作的福利。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#overview" id="id4"&gt;OverView（概述）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;简介&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Coursera 的课程： &lt;a class="reference external" href="https://class.coursera.org/androidpart1-011/lecture"&gt;Programming Mobile Applications for Android Handheld Systems: Part 1&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;讲师： &lt;em&gt;Dr. Adam Porter&lt;/em&gt; 教授。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="overview"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;OverView（概述）&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;课程主要内容：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;手持系统介绍，未来发展趋势分析，以及这门课程的由来。&lt;/li&gt;
+&lt;li&gt;自我介绍（很厉害的一个人物）。以及学习这门课程需要哪些准备。&lt;/li&gt;
+&lt;li&gt;课程组织。&lt;/li&gt;
+&lt;li&gt;课程主题。分两个部分，每部分为四周。&lt;/li&gt;
+&lt;li&gt;Amazone 合作的福利。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</content><category term="Android"></category></entry><entry><title>ADB 使用</title><link href="https://magicalboy.com/note/adb.html" rel="alternate"></link><published>2014-01-08T00:00:00+08:00</published><updated>2016-09-20T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2014-01-08:/note/adb.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#adb-mac-os" id="id3"&gt;ADB 找不到设备（Mac OS）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#lg-vs450" id="id4"&gt;LG VS450&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id5"&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="adb-mac-os"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;ADB 找不到设备（Mac OS）&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;主要针对国内一些小厂商（杂牌机），&lt;a class="reference external" href="https://developer.android.com/tools/device.html#VendorIds"&gt;Google USB Vendor IDs&lt;/a&gt; 列表上没有的设备。&lt;/p&gt;
+&lt;p&gt;简单来说，就是将 Vendor ID 添加到 ~/.android/adb_usb.ini，然后重启 adb：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;配置好 adb 环境，开启手机上的 USB Debug 模式。&lt;/li&gt;
+&lt;li&gt;将手机通过USB连接到Mac。&lt;/li&gt;
+&lt;li&gt;打开系统信息（点击左上的苹果，按住Option会显示），找到如图所示的手机设备，复制厂商ID。&lt;/li&gt;
+&lt;li&gt;在终端输入 $ echo 0x1782 &amp;gt;&amp;gt; ~/.android/adb_usb.ini。&lt;/li&gt;
+&lt;li&gt;重启 adb …&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#adb-mac-os" id="id3"&gt;ADB 找不到设备（Mac OS）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#lg-vs450" id="id4"&gt;LG VS450&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id5"&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="adb-mac-os"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id3"&gt;ADB 找不到设备（Mac OS）&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;主要针对国内一些小厂商（杂牌机），&lt;a class="reference external" href="https://developer.android.com/tools/device.html#VendorIds"&gt;Google USB Vendor IDs&lt;/a&gt; 列表上没有的设备。&lt;/p&gt;
+&lt;p&gt;简单来说，就是将 Vendor ID 添加到 ~/.android/adb_usb.ini，然后重启 adb：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;配置好 adb 环境，开启手机上的 USB Debug 模式。&lt;/li&gt;
+&lt;li&gt;将手机通过USB连接到Mac。&lt;/li&gt;
+&lt;li&gt;打开系统信息（点击左上的苹果，按住Option会显示），找到如图所示的手机设备，复制厂商ID。&lt;/li&gt;
+&lt;li&gt;在终端输入 $ echo 0x1782 &amp;gt;&amp;gt; ~/.android/adb_usb.ini。&lt;/li&gt;
+&lt;li&gt;重启 adb：$ ./adb kill-server ; ./adb devices。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="厂商ID" src="images/usb_vender_id.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./adb kill-server &lt;span class="p"&gt;;&lt;/span&gt; ./adb devices
+* daemon not running. starting it now on port &lt;span class="m"&gt;5037&lt;/span&gt; *
+* daemon started successfully *
+List of devices attached
+&lt;span class="m"&gt;19761202&lt;/span&gt;    device
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lg-vs450"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;LG VS450&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;请选择 &lt;cite&gt;Internet connection via modeem&lt;/cite&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;参考&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://stackoverflow.com/questions/7135999/adb-not-finding-my-device-phone-macos-x/7136003#7136003"&gt;https://stackoverflow.com/questions/7135999/adb-not-finding-my-device-phone-macos-x/7136003#7136003&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/a/24317563"&gt;http://stackoverflow.com/a/24317563&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="Android"></category></entry></feed>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - Hardware</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-24T10:05:00+08:00" pubdate>
+                            二, 24  5 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/raspberry-pi-gpio-sim.html" rel="bookmark"><h1>树莓派 GPIO 模拟器：GPIOSim</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>GPIOSim 是一个树莓派 GPIO 模拟器，目前支持 Linux 和 OS X。它能够在 PC 上进行开发调试使用 RPi.GPIO 模块编写的树莓派应用。</p>
+<p>这是一个开源项目：</p>
+<ul class="simple">
+<li>Github：<a class="reference external" href="https://github.com/bobvann/GPIOSim">bobvann/GPIOSim: Raspberry Pi GPIO simulator</a></li>
+<li>博客主页：<a class="reference external" href="http://bobvann.noip.me/gpiosim-raspberry-pi-gpio-simulator-for-linux-os-x/">GPIOSim: Raspberry Pi GPIO Simulator for Linux / OS X - Bob Vann</a></li>
+</ul>
+<div class="section" id="os-x">
+<h2>在 OS X 上安装使用</h2>
+<p>运行环境：<strong>OS X 10.11.5，Python 3.5</strong>
+运行效果：</p>
+<img alt="run on OS X" src="images/raspberry_pi_gpiosim_run_on_osx.png" />
+<div class="section" id="id1">
+<h3>安装 …</h3></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-23T18:05:00+08:00" pubdate>
+                            一, 23  5 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/raspberry-pi-gpio.html" rel="bookmark"><h1>树莓派 GPIO 入门</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。</p>
+<p>比较常用的第三方函数库有：</p>
+<ol class="arabic simple">
+<li>Python GPIO</li>
+<li>wiringPi</li>
+<li>BCM2835 C Library</li>
+<li>Shell</li>
+</ol>
+<div class="section" id="model-b-40-pin-gpio">
+<h2>树莓派 3 Model B 的 40 Pin GPIO 编号</h2>
+<img alt="树莓派 3 Model B 的 40 Pin GPIO" src="https://www.element14.com/community/servlet/JiveServlet/previewBody/73950-102-10-339300/pi3_gpio.png" />
+</div>
+<div class="section" id="gpio-led">
+<h2>使用 GPIO 接口控制 LED 闪烁</h2>
+<div class="section" id="id1">
+<h3>硬件清单</h3>
+<ol class="arabic simple">
+<li>树莓派 3 Model B x1。本人机子出自 Element14，GPIO 请参考上图。</li>
+<li>LED 发光二极管 x1。</li>
+<li>母头杜邦线 x2。这些材料在国内很容易买到的。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>原理说明 …</h3></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+            Page 1 / 1
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - i18n</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/ios-i18n.html" rel="bookmark"><h1>iOS 国际化/本地化</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>获取首选语言</h2>
+<div class="highlight"><pre><span></span><span class="c1">// 获取首选语言</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;preferredLanguages:%@&quot;</span><span class="p">,</span> <span class="p">[</span><span class="bp">NSLocale</span> <span class="n">preferredLanguages</span><span class="p">]);</span>
+
+<span class="c1">// 另一种方式</span>
+<span class="bp">NSArray</span> <span class="o">*</span><span class="n">languages</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSUserDefaults</span> <span class="n">standardUserDefaults</span><span class="p">]</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;AppleLanguages&quot;</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;languages:%@&quot;</span><span class="p">,</span> <span class="n">languages</span><span class="p">);</span>
+</pre></div>
+<p>输出结果是一样的，都是数组：</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>
+<span class="s2">&quot;zh-Hans&quot;</span>,
+en,
+fr,
+de,
+ja,
+...
+<span class="o">)</span>
+</pre></div>
+<p>数组中第一个就是当前选择的语言，名称符合 ISO 639-1 代码表。同时需要注意区域和语言是独立不同的。</p>
+<ul class="simple">
+<li>两者有什么不同，请看这：<a class="reference external" href="http://stackoverflow.com/questions/7872356/what-is-the-difference-between-nslocale-preferredlanguages-and-nsuserdefault">Stack Overflow</a></li>
+<li>苹果开发者官网专题：<a class="reference external" href="http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPInternational/Articles/ChoosingLocalizations.html">Internationalization Programming Topics</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>获取当前地区</h2>
+<div class="highlight"><pre><span></span><span class="bp">NSLocale</span> <span class="o">*</span><span class="n">locale</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSLocale</span> <span class="n">currentLocale</span><span class="p">];</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">localeName</span> <span class="o">=</span> <span class="p">[</span><span class="n">locale</span> <span class="nl">displayNameForKey</span><span class="p">:</span><span class="n">NSLocaleIdentifier</span>
+                                         <span class="nl">value</span><span class="p">:[</span><span class="n">locale</span> <span class="n">localeIdentifier …</span></pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+            Page 1 / 1
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

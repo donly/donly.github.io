@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - web</title><link href="https://magicalboy.com/note/" rel="alternate"></link><link href="https://magicalboy.com/note/feeds/web.atom.xml" rel="self"></link><id>https://magicalboy.com/note/</id><updated>2016-09-13T16:30:00+08:00</updated><entry><title>使用 Let's Encrypt SSL</title><link href="https://magicalboy.com/note/use-lets-encrypt-ssl.html" rel="alternate"></link><published>2016-09-13T16:30:00+08:00</published><updated>2016-09-13T16:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-09-13:/note/use-lets-encrypt-ssl.html</id><summary type="html">&lt;p&gt;本站的 SSL 由 &lt;a class="reference external" href="https://letsencrypt.org"&gt;Let's Encrypt&lt;/a&gt; 提供。不再使用 StartSSL。&lt;/p&gt;
+&lt;p&gt;需要注意的是，Let's Encrypt 的免费证书有效期为三个月，注意过期之前更新或使用自动脚本更新。&lt;/p&gt;
+&lt;p&gt;附：&lt;a class="reference external" href="https://www.digicert.com/help/?host=magicalboy.com"&gt;SSL Certificate Checker&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;本站的 SSL 由 &lt;a class="reference external" href="https://letsencrypt.org"&gt;Let's Encrypt&lt;/a&gt; 提供。不再使用 StartSSL。&lt;/p&gt;
+&lt;p&gt;需要注意的是，Let's Encrypt 的免费证书有效期为三个月，注意过期之前更新或使用自动脚本更新。&lt;/p&gt;
+&lt;p&gt;附：&lt;a class="reference external" href="https://www.digicert.com/help/?host=magicalboy.com"&gt;SSL Certificate Checker&lt;/a&gt;&lt;/p&gt;
+</content><category term="web"></category><category term="ssl"></category></entry><entry><title>启用 OS X Web 服务器</title><link href="https://magicalboy.com/note/enable-osx-webserver.html" rel="alternate"></link><published>2016-06-01T14:12:00+08:00</published><updated>2016-06-01T14:12:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-06-01:/note/enable-osx-webserver.html</id><summary type="html">&lt;p&gt;OS X 有内置 &lt;code&gt;Apache&lt;/code&gt; 服务器应用，早期版本可以在网络共享中打开，目前的 OS Ｘ 版本已经取消。&lt;/p&gt;
+&lt;p&gt;本文 OS X 版本是 &lt;em&gt;OS X El Capitan 10.11.5&lt;/em&gt;，Apache 版本：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ apachectl -v
+Server version: Apache/2.4.18 &lt;span class="o"&gt;(&lt;/span&gt;Unix&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="section" id="apache"&gt;
+&lt;h2&gt;Apache 使用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;即使在未配置之前也可以打开 Apache 服务：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ sudo apachectl start
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;然后输入本机地址进行测试：&lt;a class="reference external" href="http://localhost/"&gt;http://localhost/&lt;/a&gt; 或 &lt;a class="reference external" href="http://127.0.0.1"&gt;http://127.0.0.1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;测试完毕后 …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;OS X 有内置 &lt;code&gt;Apache&lt;/code&gt; 服务器应用，早期版本可以在网络共享中打开，目前的 OS Ｘ 版本已经取消。&lt;/p&gt;
+&lt;p&gt;本文 OS X 版本是 &lt;em&gt;OS X El Capitan 10.11.5&lt;/em&gt;，Apache 版本：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ apachectl -v
+Server version: Apache/2.4.18 &lt;span class="o"&gt;(&lt;/span&gt;Unix&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="section" id="apache"&gt;
+&lt;h2&gt;Apache 使用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;即使在未配置之前也可以打开 Apache 服务：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ sudo apachectl start
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;然后输入本机地址进行测试：&lt;a class="reference external" href="http://localhost/"&gt;http://localhost/&lt;/a&gt; 或 &lt;a class="reference external" href="http://127.0.0.1"&gt;http://127.0.0.1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;测试完毕后，停止服务：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ sudo apachectl stop
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;如果更改了配置，刚使用以下命令重启：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ sudo apachectl -k restart
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Apache 配置&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;编辑 Apache 的配置文件，路径：&lt;em&gt;/etc/apache2/httpd.conf&lt;/em&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;修改 &lt;em&gt;Document Root&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;默认的 &lt;em&gt;Document Root&lt;/em&gt; 是 &lt;em&gt;/Library/WebServer/Documents&lt;/em&gt;，这个路径下面就是默认的 &lt;em&gt;It works!&lt;/em&gt; 页面文件。&lt;/p&gt;
+&lt;p&gt;一般需要修改为用户目录下的 &lt;em&gt;Sites&lt;/em&gt; 目录：&lt;em&gt;DocumentRoot &amp;quot;/Users/[username]/Sites&amp;quot;&lt;/em&gt;。注意这里的路径必须写完整的路径，用户目录不能使用 &lt;em&gt;~&lt;/em&gt; 代替。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;然后修改站点目录：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+&amp;lt;Directory &lt;span class="s2"&gt;&amp;quot;Users/[username]/Sites&amp;quot;&lt;/span&gt;&amp;gt;
+    Options FollowSymLinks Multiviews
+    MultiviewsMatch Any
+    AllowOverride All
+    Require all granted
+&amp;lt;/Directory&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;需要注意的是，&lt;em&gt;AllowOverride&lt;/em&gt; 值改为 &lt;em&gt;All&lt;/em&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;修改用户和用户组：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+User yaokan
+Group staff
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;创建站点目录&lt;/p&gt;
+&lt;p&gt;在 Home 根目录下创建 &lt;em&gt;Sites&lt;/em&gt; 目录，然后创建一个测试页面 &lt;em&gt;index.html&lt;/em&gt;：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ mkdir ~/Sites
+$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt; &amp;gt; ~/Sites/index.html
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;重启服务器&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+sudo apachectl restart
+&lt;/pre&gt;
+&lt;p&gt;打开网址 &lt;a class="reference external" href="http://localhost"&gt;http://localhost&lt;/a&gt; 即可看到刚刚所创建的 &lt;em&gt;Hello World&lt;/em&gt; 页面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="web"></category></entry><entry><title>安装 phpMyAdmin</title><link href="https://magicalboy.com/note/install-phpmyadmin.html" rel="alternate"></link><published>2016-05-28T10:32:00+08:00</published><updated>2016-05-28T10:32:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-28:/note/install-phpmyadmin.html</id><summary type="html">&lt;p&gt;phpMyAdmin 是管理 MySQL 最方便的 Web 应用，如果经常使用 MySQL ，phpMyAdmin 是必备工具。&lt;/p&gt;
+&lt;p&gt;本文主要参考资料：&lt;a class="reference external" href="https://docs.phpmyadmin.net/en/latest/setup.html"&gt;Installation — phpMyAdmin 4.7.0-dev documentation&lt;/a&gt;。&lt;/p&gt;
+&lt;div class="section" id="os-x"&gt;
+&lt;h2&gt;在 OS X 安装&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;去官网下载 &lt;a class="reference external" href="https://www.phpmyadmin.net/downloads/"&gt;最新的版本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解压到 &lt;em&gt;~/Sites/phpmyadmin&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;在 &lt;em&gt;phpMyAdmin&lt;/em&gt; 目录下创建一个可写的 &lt;em&gt;config&lt;/em&gt; 目录&lt;/li&gt;
+&lt;li&gt;打开 &lt;em&gt;http://localhost/~[username]/phpMyAdmin/setup&lt;/em&gt;，加载配置，修改并保存&lt;/li&gt;
+&lt;li&gt;将 &lt;em&gt;config&lt;/em&gt; 下生成的 &lt;em&gt;config.inc.php&lt;/em&gt; 移到 &lt;em&gt;phpmyadmin&lt;/em&gt; 根目录下&lt;/li&gt;
+&lt;li&gt;删除 &lt;em&gt;config …&lt;/em&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;phpMyAdmin 是管理 MySQL 最方便的 Web 应用，如果经常使用 MySQL ，phpMyAdmin 是必备工具。&lt;/p&gt;
+&lt;p&gt;本文主要参考资料：&lt;a class="reference external" href="https://docs.phpmyadmin.net/en/latest/setup.html"&gt;Installation — phpMyAdmin 4.7.0-dev documentation&lt;/a&gt;。&lt;/p&gt;
+&lt;div class="section" id="os-x"&gt;
+&lt;h2&gt;在 OS X 安装&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;去官网下载 &lt;a class="reference external" href="https://www.phpmyadmin.net/downloads/"&gt;最新的版本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解压到 &lt;em&gt;~/Sites/phpmyadmin&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;在 &lt;em&gt;phpMyAdmin&lt;/em&gt; 目录下创建一个可写的 &lt;em&gt;config&lt;/em&gt; 目录&lt;/li&gt;
+&lt;li&gt;打开 &lt;em&gt;http://localhost/~[username]/phpMyAdmin/setup&lt;/em&gt;，加载配置，修改并保存&lt;/li&gt;
+&lt;li&gt;将 &lt;em&gt;config&lt;/em&gt; 下生成的 &lt;em&gt;config.inc.php&lt;/em&gt; 移到 &lt;em&gt;phpmyadmin&lt;/em&gt; 根目录下&lt;/li&gt;
+&lt;li&gt;删除 &lt;em&gt;config&lt;/em&gt; 目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; /Users/&lt;span class="o"&gt;[&lt;/span&gt;username&lt;span class="o"&gt;]&lt;/span&gt;/Sites/phpMyAdmin
+$ mkdir config
+$ chmod o+rw config
+$ cp config.sample.inc.php config.inc.php
+$ vi config.inc.php &lt;span class="c1"&gt;# 按官网推荐的配置
+&lt;/span&gt;$ mv config.inc.php config
+$ chmod o+w config/config.inc.php
+$ mv config/config.inc.php .
+$ chmod o-rw config.inc.php
+$ rm -rf config
+&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;2002&lt;/em&gt; 错误， 找不到 &lt;em&gt;mysql.sock&lt;/em&gt; 的解决方法：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ sudo mkdir /var/mysql
+Password:
+$ sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
+&lt;/pre&gt;
+&lt;/div&gt;
+</content><category term="php"></category><category term="web"></category></entry></feed>

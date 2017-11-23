@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Brew
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
+                            四, 14  1 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/brew.html" rel="bookmark"><h1>Brew</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="section" id="homebrew">
+<h2>Homebrew</h2>
+<p>OS X 或缺的软件包管理器，使用 Ruby 语言实现。官网：<a class="reference external" href="http://brew.sh/index_zh-cn.html">http://brew.sh/index_zh-cn.html</a></p>
+</div>
+<div class="section" id="id1">
+<h2>安装日志</h2>
+<p>在 OS X 10.9.2，Xcode 5.1 下安装 Brew 0.9.5 的日志：</p>
+<div class="highlight"><pre><span></span>$ ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go/install<span class="k">)</span><span class="s2">&quot;</span>
+<span class="o">==</span>&gt; This script will install:
+/usr/local/bin/brew
+/usr/local/Library/...
+/usr/local/share/man/man1/brew.1
+<span class="o">==</span>&gt; The following directories will be made group writable:
+/usr/local/.
+/usr/local/include
+/usr/local/lib
+/usr/local/share
+/usr/local/share/locale
+<span class="o">==</span>&gt; The following directories will have their group <span class="nb">set</span> to admin:
+/usr/local/.
+/usr/local/include
+/usr/local/lib
+/usr/local/share
+/usr/local/share/locale
+
+Press RETURN to <span class="k">continue</span> or any other key to <span class="nv">abort</span>
+<span class="o">==</span>&gt; /usr/bin/sudo /bin/chmod g+rwx /usr/local/. /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/locale
+Password:
+<span class="o">==</span>&gt; /usr/bin/sudo /usr/bin/chgrp admin /usr/local/. /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/locale
+<span class="o">==</span>&gt; /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
+<span class="o">==</span>&gt; /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+<span class="o">==</span>&gt; Installing the Command Line Tools <span class="o">(</span>expect a GUI popup<span class="o">)</span>:
+<span class="o">==</span>&gt; /usr/bin/sudo /usr/bin/xcode-select --install
+xcode-select: note: install requested <span class="k">for</span> <span class="nb">command</span> line developer tools
+Press any key when the installation has completed.
+<span class="o">==</span>&gt; Downloading and installing Homebrew...
+remote: Counting objects: <span class="m">156977</span>, <span class="k">done</span>.
+remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">44923</span>/44923<span class="o">)</span>, <span class="k">done</span>.
+remote: Total <span class="m">156977</span> <span class="o">(</span>delta <span class="m">110948</span><span class="o">)</span>, reused <span class="m">156977</span> <span class="o">(</span>delta <span class="m">110948</span><span class="o">)</span>
+Receiving objects: <span class="m">100</span>% <span class="o">(</span><span class="m">156977</span>/156977<span class="o">)</span>, <span class="m">29</span>.38 MiB <span class="p">|</span> <span class="m">368</span>.00 KiB/s, <span class="k">done</span>.
+Resolving deltas: <span class="m">100</span>% <span class="o">(</span><span class="m">110948</span>/110948<span class="o">)</span>, <span class="k">done</span>.
+From https://github.com/Homebrew/homebrew
+ * <span class="o">[</span>new branch<span class="o">]</span>      master     -&gt; origin/master
+HEAD is now at 6a3b2d2 brew-unpack: remove obsoleted bottle <span class="nv">workaround</span>
+<span class="o">==</span>&gt; Installation successful!
+You should run <span class="sb">`</span>brew doctor<span class="err">&#39;</span> *before* you install anything.
+Now type: brew <span class="nb">help</span>
+</pre></div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/misc.html">misc</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>

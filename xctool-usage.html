@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    xctool 使用
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
+    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
+        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-07-06T10:30:00+08:00" pubdate>
+                            三, 06  7 2016
+                        </time>
+                        <a href="https://magicalboy.com/note/xctool-usage.html" rel="bookmark"><h1>xctool 使用</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>xctool 可以理解为 xcodebuild 的增强版，特别有利于可持续集成。xctool 由 Facebook 开发维护，项目地址 <a class="reference external" href="https://github.com/facebook/xctool">https://github.com/facebook/xctool</a>。</p>
+<div class="section" id="id1">
+<h2>安装 xctool</h2>
+<div class="highlight"><pre><span></span>$ brew install <span class="nv">xctool</span>
+<span class="o">==</span>&gt; Downloading https://homebrew.bintray.com/bottles/xctool-0.2.7.el_capitan.bottle.tar.gz
+<span class="c1">######################################################################## 100.0%</span>
+<span class="o">==</span>&gt; Pouring xctool-0.2.7.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/xctool/0.2.7: <span class="m">20</span> files, <span class="m">2</span>.2M
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>如果安装的不是最新版本，则升级</h2>
+<div class="highlight"><pre><span></span>$ brew update
+Updated Homebrew from c3096f39 to dde20cd8.
+<span class="o">==</span>&gt; Migrating Homebrew to v0.9.9
+...
+<span class="o">=</span>&gt; Cleaning up /Library/Caches/Homebrew...
+...
+Removing: /Library/Caches/Homebrew/xctool-0.2.7.el_capitan.bottle.tar.gz... <span class="o">(</span><span class="m">650</span>.4K<span class="o">)</span>
+
+$ brew upgrade <span class="nv">xctool</span>
+<span class="o">==</span>&gt; Upgrading <span class="m">1</span> outdated package, with result:
+xctool <span class="m">0</span>.2.9
+<span class="o">==</span>&gt; Upgrading <span class="nv">xctool</span>
+<span class="o">==</span>&gt; Downloading https://homebrew.bintray.com/bottles/xctool-0.2.9.el_capitan.bottle.tar.gz
+<span class="c1">######################################################################## 100.0%</span>
+<span class="o">==</span>&gt; Pouring xctool-0.2.9.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/xctool/0.2.9: <span class="m">21</span> files, <span class="m">2</span>.9M
+</pre></div>
+</div>
+<div class="section" id="id3">
+<h2>使用</h2>
+<p>xctool 的命令和参考选项大部分基于 xcodebuild，大多数情况下两者可以互换使用，但 xctool 会有更漂亮的输出。更多请查看帮助命令 <cite>$xctool -help</cite>。</p>
+<ul class="simple">
+<li>Test，对指定的 scheme 进行编译和运行测试</li>
+<li>Building Tests，只编译测试，不运行</li>
+<li>Running Tests，不需要再编译，直接运行测试</li>
+<li>Parallelizing Test Runs，并行地进行单元测试</li>
+</ul>
+<p>可见 xctool 比较侧重于测试，对于编译可能不会对未来的 Xcode 版本更新。编译项目建议使用 xcodebuild, xcpretty 或 xcbuild。</p>
+</div>
+<div class="section" id="faq">
+<h2>FAQ</h2>
+<ul class="simple">
+<li>DVTAssertions: ASSERTION FAILURE：
+原因是安装了旧版本，可见安装前 update 一下是个必须的好习惯。</li>
+<li>依然报错：NSInternalInconsistencyException', reason: 'Platform 'iphoneos' is not yet supported.
+解决：<a class="reference external" href="https://github.com/facebook/xctool/issues/692">https://github.com/facebook/xctool/issues/692</a></li>
+<li>Travis CI: Code Sign error:<ul>
+<li><a class="reference external" href="https://github.com/travis-ci/travis-ci/issues/3047">https://github.com/travis-ci/travis-ci/issues/3047</a></li>
+<li><a class="reference external" href="https://github.com/travis-ci/travis-ci/issues/3986">https://github.com/travis-ci/travis-ci/issues/3986</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/note/category/ios.html">iOS</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/note/tag/ios.html">iOS</a>, <a href="https://magicalboy.com/note/tag/ci.html">CI</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+    </body>
+</html>
