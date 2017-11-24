@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Linux</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/linux.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>WHR-G300N V2 刷机</title><link href="https://magicalboy.com/flash-openwrt-from-tftp.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/flash-openwrt-from-tftp.html</id><summary type="html">&lt;div class="section" id="openwrt"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Linux</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/linux.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2017-11-24T14:25:00+08:00</updated><entry><title>Docker on Raspberry Pi 3</title><link href="https://magicalboy.com/docker-on-raspberry-pi-3.html" rel="alternate"></link><published>2017-11-24T14:25:00+08:00</published><updated>2017-11-24T14:25:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-24:/docker-on-raspberry-pi-3.html</id><summary type="html">&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;本文环境&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Raspberry Pi 3, Raspbian stretch&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/helje5/dockSwiftOnARM"&gt;dockSwiftOnARM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Docker version 17.11.0-ce, build 1caf76c&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="docker"&gt;
+&lt;h2&gt;什么是 Docker?&lt;/h2&gt;
+&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;安装 Docker&lt;/h2&gt;
+&lt;p&gt;安装与结果部分日志：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -sSL https://get.docker.com &lt;span class="p"&gt;|&lt;/span&gt; sh
+
+Client:
+ Version:      &lt;span class="m"&gt;17&lt;/span&gt;.11.0-ce
+ API version:  &lt;span class="m"&gt;1&lt;/span&gt;.34
+ Go version:   go1.8.3
+ Git commit:   1caf76c
+ Built:        Mon Nov &lt;span class="m"&gt;20 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;本文环境&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Raspberry Pi 3, Raspbian stretch&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/helje5/dockSwiftOnARM"&gt;dockSwiftOnARM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Docker version 17.11.0-ce, build 1caf76c&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="docker"&gt;
+&lt;h2&gt;什么是 Docker?&lt;/h2&gt;
+&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;安装 Docker&lt;/h2&gt;
+&lt;p&gt;安装与结果部分日志：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -sSL https://get.docker.com &lt;span class="p"&gt;|&lt;/span&gt; sh
+
+Client:
+ Version:      &lt;span class="m"&gt;17&lt;/span&gt;.11.0-ce
+ API version:  &lt;span class="m"&gt;1&lt;/span&gt;.34
+ Go version:   go1.8.3
+ Git commit:   1caf76c
+ Built:        Mon Nov &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt;:01:07 &lt;span class="m"&gt;2017&lt;/span&gt;
+ OS/Arch:      linux/arm
+
+Server:
+ Version:      &lt;span class="m"&gt;17&lt;/span&gt;.11.0-ce
+ API version:  &lt;span class="m"&gt;1&lt;/span&gt;.34 &lt;span class="o"&gt;(&lt;/span&gt;minimum version &lt;span class="m"&gt;1&lt;/span&gt;.12&lt;span class="o"&gt;)&lt;/span&gt;
+ Go version:   go1.8.3
+ Git commit:   1caf76c
+ Built:        Mon Nov &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt;:54:12 &lt;span class="m"&gt;2017&lt;/span&gt;
+ OS/Arch:      linux/arm
+ Experimental: &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;配置 Docker&lt;/h2&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;开机自动启动&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; docker
+Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install &lt;span class="nb"&gt;enable&lt;/span&gt; docker
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;手动启动可以使用以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo systemctl start docker
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="docker-client"&gt;
+&lt;h3&gt;启动 Docker Client&lt;/h3&gt;
+&lt;p&gt;Client 只能在 &lt;cite&gt;root&lt;/cite&gt; 用户或在 &lt;cite&gt;docker&lt;/cite&gt; 组用户使用，将 &lt;cite&gt;pi&lt;/cite&gt; 用户添加到 &lt;cite&gt;docker&lt;/cite&gt; 组：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG docker pi
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果使用 &lt;cite&gt;ssh&lt;/cite&gt; 登录，需要重新连接以生效。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;使用 Docker&lt;/h2&gt;
+&lt;p&gt;运行你的第一个 ARM 镜像（image）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ docker run -ti arm32v6/alpine:3.5 /bin/sh
+Unable to find image &lt;span class="s1"&gt;&amp;#39;arm32v6/alpine:3.5&amp;#39;&lt;/span&gt; locally
+&lt;span class="m"&gt;3&lt;/span&gt;.5: Pulling from arm32v6/alpine
+355842f7aa77: Pull &lt;span class="nb"&gt;complete&lt;/span&gt;
+559bc1020041: Pull &lt;span class="nb"&gt;complete&lt;/span&gt;
+Digest: sha256:5fcf00d09906e2ab2df5f421d066d992b44dc7690702b0abea7fd0dc0e130f72
+Status: Downloaded newer image &lt;span class="k"&gt;for&lt;/span&gt; arm32v6/alpine:3.5
+/ &lt;span class="c1"&gt;# ls&lt;/span&gt;
+ls     lsmod  lsof   lspci  lsusb
+/ &lt;span class="c1"&gt;# cat /etc/os-release&lt;/span&gt;
+&lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Alpine Linux&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;alpine
+&lt;span class="nv"&gt;VERSION_ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.5.2
+&lt;span class="nv"&gt;PRETTY_NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Alpine Linux v3.5&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;HOME_URL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://alpinelinux.org&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;BUG_REPORT_URL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://bugs.alpinelinux.org&amp;quot;&lt;/span&gt;
+/ &lt;span class="c1"&gt;# echo &amp;quot;Hi, this is a tiny Linux distribution!&amp;quot; | base64&lt;/span&gt;
+SGksIHRoaXMgaXMgYSB0aW55IExpbnV4IGRpc3RyaWJ1dGlvbiEK
+/ &lt;span class="c1"&gt;# echo &amp;quot;SGksIHRoaXMgaXMgYSB0aW55IExpbnV4IGRpc3RyaWJ1dGlvbiEK&amp;quot; | base64 -d&lt;/span&gt;
+Hi, this is a tiny Linux distribution!
+/ &lt;span class="c1"&gt;# exit&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;本文参考&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/"&gt;Get Started with Docker 1.12 on Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="Linux"></category><category term="Docker"></category></entry><entry><title>WHR-G300N V2 刷机</title><link href="https://magicalboy.com/flash-openwrt-from-tftp.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/flash-openwrt-from-tftp.html</id><summary type="html">&lt;div class="section" id="openwrt"&gt;
 &lt;h2&gt;OpenWrt 介绍&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt"&gt;OpenWrt&lt;/a&gt;  是用于嵌入式设备的一个 Linux 发行版本。&lt;/blockquote&gt;

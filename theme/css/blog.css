@@ -87,7 +87,7 @@ body {
 		  font-size: 36px;
 		  width: 50px;
 		  display: inline-block; }
-		  
+
 #post-list {
   list-style: none; }
 
@@ -196,3 +196,8 @@ body {
 
   #site-info {
     font-size: 0.6em; } }
+
+.post-content img.align-right {
+  float: right;
+  padding-left: 20px;
+}

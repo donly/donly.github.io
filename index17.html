@@ -56,6 +56,39 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-21T13:47:00+08:00" pubdate>
+                            六, 21  8 2010
+                        </time>
+                        <a href="https://magicalboy.com/gae-appconfignotfounderror.html" rel="bookmark"><h1>GAE 使用入门：Python 遇到的 AppConfigNotFoundError 错误</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>自己之前有搭建过 GAE（<a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/whatisgoogleappengine.html">Google App
+Engine</a>）谷歌应用程序引擎开发环境，那时只是玩玩没有认真地去学习。这次在配置环境开发
+<a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/python/gettingstarted/helloworld.html">Hello
+world</a>
+时，遇上了 AppConfigNotFoundError 错误，看了N久都没发现是哪里引起的错误
+- -!</p>
+<div class="section" id="helloworld">
+<h2>helloworld</h2>
+<p>步骤一切像官方教程所说的那样，只不过没有使用 Ctrl-C/Ctrl-V
+大法，而是一步步手动敲代码。直到“测试应用程序”这一步，执行
+dev_appserver.py helloworld/
+后发现服务启动不了：google.appengine.tools.dev_appserver.AppConfigNotFoundError。</p>
+</div>
+<div class="section" id="id1">
+<h2>问题所在</h2>
+<div class="line-block">
+<div class="line">命令行中报错为
+AppConfigNotFoundError，那可能和应用程序配置文件有关。找不到应用配置错误，很有可能是应用程序路径不对或者是在创建配置文件
+app.yaml 时出错了。检查过路径无误，即定位到 /helloworld
+的上一级目录。再看看 app …</div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-08-20T07:03:00+08:00" pubdate>
                             五, 20  8 2010
                         </time>
@@ -315,34 +348,6 @@ $ <strong>sudo tasksel …</strong></p></li></ol>
                 </article>
             </li>
             <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-07-23T15:28:00+08:00" pubdate>
-                            五, 23  7 2010
-                        </time>
-                        <a href="https://magicalboy.com/c-array-pointer.html" rel="bookmark"><h1>学习 C 数组与指针小结</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="line-block">
-<div class="line">在 C
-语言中，数组其实是一种变相使用指针的形式。通过了解指针与数组之间的关系，可以使用指针方便地操作数组。以下是一些指针和数组之间的关系说明：</div>
-<div class="line"><tt class="docutils literal">... int * p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 定义一个整型指针 int arr[2] = {1, 2};&nbsp;&nbsp; // 定义一个整型数组</tt></div>
-</div>
-<div class="line-block">
-<div class="line">p = arr; // 把数组地址赋给指针</div>
-<div class="line">p == &amp;arr[0]; // 指针 p 指向数组 arr 首元素地址</div>
-<div class="line">arr == &amp;arr[0]; // 数组名同时代表数组首元素的地址</div>
-</div>
-<div class="line-block">
-<div class="line">p + 1 == &amp;arr[1]; // 对指针加 1 等于加上它所指向的对象的字节大小 (int
-一般为 4 字节)</div>
-<div class="line">p + 2 == &amp;arr[2]; // 相同的地址</div>
-<div class="line">*(p + 2) == arr …</div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
         </ol>
         <div class="paginator">
                     <a href="https://magicalboy.com/index16.html">
@@ -358,7 +363,7 @@ $ <strong>sudo tasksel …</strong></p></li></ol>
         </div>
 <footer id="site-info">
     <p>
-        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme base on <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
     </p>
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.

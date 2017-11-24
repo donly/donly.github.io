@@ -56,6 +56,31 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2014-09-05T11:19:00+08:00" pubdate>
+                            五, 05  9 2014
+                        </time>
+                        <a href="https://magicalboy.com/start-using-auto-layout.html" rel="bookmark"><h1>开始使用 Auto Layout</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>首先看看苹果官网提供的 iOS 设备版本使用统计情况。</p>
+<p>[caption id=&quot;attachment_43216&quot; align=&quot;aligncenter&quot;
+width=&quot;205&quot;]<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2014/09/chart-8-10-14.png"><img alt="2014年8月24日期间" class="wp-image-43216 size-full" src="http://magicalboy.com/wp-content/uploads/2014/09/chart-8-10-14.png" style="width: 205px; height: 220px;" /></a> 91% 的设备正在使用 iOS 7[/caption]</p>
+<p>苹果应用程序商店（App
+Store）7天内数据来测量结果：根据2014年8月24日期间测量的数据显示，91%
+的设备正在使用 iOS 7.</p>
+<p>Apple 将于9月9日发布新的 iPhone 设备和新的 iOS
+8。由于屏幕分辨率多样化，不能再像以前使用绝对布局。苹果的自动布局技术始于
+iOS 6， iOS 7 之后也有所改进。从这个统计数据中看到，iOS 6 只占不到
+1%，大家可以放心地将项目最低支持到 iOS 6
+了。对于开发者来说，幸福是不是来得太突然了啊。</p>
+<p>最新 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2014-01-08T00:00:00+08:00" pubdate>
                             三, 08  1 2014
                         </time>
@@ -310,36 +335,6 @@ ids=&quot;43113,43114,43115,43116,43117,43118,43119,43120,43121,43122,43123,4312
                 </article>
             </li>
             <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2013-05-09T13:33:00+08:00" pubdate>
-                            四, 09  5 2013
-                        </time>
-                        <a href="https://magicalboy.com/asihttprequest-gzip-decompression.html" rel="bookmark"><h1>ASIHTTPRequest 数据压缩使用</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="line-block">
-<div class="line">ASIHTTPRequest的官网上声称，其原作者已经不再对其进行维护和更新了，但
-ASIHTTPRequest 仍然是众多码农的首选 HTTP Request
-框架。ASI的特点有很多：容易使用，功能强大，文档齐全，整合了基于 REST
-(GET / POST / PUT / DELETE)
-服务，下载进度，断点续传，缓存机制等等。更多特性请参考
-<a class="reference external" href="http://allseeing-i.com/ASIHTTPRequest/">http://allseeing-i.com/ASIHTTPRequest/</a>。这篇文章主要介绍ASI的数据压缩使用。</div>
-</div>
-<div class="section" id="asihttprequestgzip">
-<h2>在ASIHTTPRequest中使用gzip</h2>
-<pre class="code shell literal-block">
-- <span class="o">(</span>IBAction<span class="o">)</span>grabURL:<span class="o">(</span>id<span class="o">)</span>sender
-<span class="o">{</span>
-  NSURL *url <span class="o">=</span> <span class="o">[</span>NSURL URLWithString:&#64;<span class="s2">&quot;http://www.diaoser.com&quot;</span><span class="o">]</span><span class="p">;</span>
-  ASIHTTPRequest *request <span class="o">=</span> <span class="o">[</span>ASIHTTPRequest requestWithURL:url<span class="o">]</span><span class="p">;</span>
-  // 默认为YES, 你可以设定它为NO来禁用gzip压缩
-  <span class="o">[</span>request setAllowCompressedResponse …</pre></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
         </ol>
         <div class="paginator">
                     <a href="https://magicalboy.com/index8.html">
@@ -355,7 +350,7 @@ ASIHTTPRequest 仍然是众多码农的首选 HTTP Request
         </div>
 <footer id="site-info">
     <p>
-        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme base on <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
     </p>
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.

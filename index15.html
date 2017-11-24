@@ -56,6 +56,37 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-12-07T02:47:00+08:00" pubdate>
+                            二, 07 12 2010
+                        </time>
+                        <a href="https://magicalboy.com/xib-and-nib.html" rel="bookmark"><h1>NIB 和 XIB 文件有什么不同</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line"><strong>nib</strong> 是<em>NeXT Interface Builder</em>的缩写。</div>
+<div class="line">xib 是 <strong>x</strong>ml n<strong>ib</strong> 文件，于2007年 Leopard (and Xcode 3.0)
+版本中更新。</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>以源码方式打开查看：</strong></div>
+<div class="line"><tt class="docutils literal">&lt; <span class="pre">?xml</span> <span class="pre">version=&quot;1.0&quot;</span> <span class="pre">encoding=&quot;UTF-8&quot;?&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 784&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10F2521&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ……</tt></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>相同点：</strong></div>
+<div class="line">NIB 和 XIB 都是 Interface Builder 的图形界面设计文档。Interface
+Builder 把窗口、菜单栏以及窗口上的各种控件的对象都“冻结”在了一个
+NIB文档里面了；程序运行时，这些对象将会“苏醒”。</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>不同点：</strong></div>
+<div class="line">NIB为二进制文件，XIB为纯文本文件 …</div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-11-17T03:25:00+08:00" pubdate>
                             三, 17 11 2010
                         </time>
@@ -320,32 +351,6 @@ EMACS 自学教材的方法很简单，只要键入 &quot;Ctrl-h t&quot; (help-w
                 </article>
             </li>
             <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-10-18T02:06:00+08:00" pubdate>
-                            一, 18 10 2010
-                        </time>
-                        <a href="https://magicalboy.com/byebye-java.html" rel="bookmark"><h1>Java 情结</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>自 3月17日 Java 被 Oracle 收购以来，我都没用过 Java
-来编程。那时也刚好转职去做 Python 的开发，诸多原因使我离 Java
-越来越远。。。</p>
-<div class="line-block">
-<div class="line">今天在更新 JRE 时看到的安装界面，Oracle 标志是多么的鲜红艳丽：</div>
-<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/10/Java_Install.jpg"><img alt="image0" class="alignnone size-full wp-image-867" src="http://magicalboy.com/wp-content/uploads/2010/10/Java_Install.jpg" style="width: 506px; height: 379px;" /></a></div>
-</div>
-<div class="section" id="bye-java">
-<h2>Bye Java</h2>
-<p><tt class="docutils literal">public class Bye{&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String[] args) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">System.out.println(&quot;Bye,</span> <span class="pre">java!&quot;);</span>&nbsp;&nbsp;&nbsp;&nbsp; } }</tt></p>
-<p><img alt="image1" class="alignnone" src="http://www.miamisburg.com/dukeTuxJavaOne2003TShirt.jpg" style="width: 768px; height: 576px;" /></p>
-</div>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
         </ol>
         <div class="paginator">
                     <a href="https://magicalboy.com/index14.html">
@@ -361,7 +366,7 @@ EMACS 自学教材的方法很简单，只要键入 &quot;Ctrl-h t&quot; (help-w
         </div>
 <footer id="site-info">
     <p>
-        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme base on <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
     </p>
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.

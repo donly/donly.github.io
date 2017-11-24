@@ -1,42 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>MAG's Note - Don</title><link>https://magicalboy.com/</link><description>关注移动应用开发</description><lastBuildDate>Thu, 23 Nov 2017 15:54:43 +0800</lastBuildDate><item><title>Objective C</title><link>https://magicalboy.com/Objective-C.html</link><description>&lt;div class="contents topic" id="id1"&gt;
-&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+<rss version="2.0"><channel><title>MAG's Note - Don</title><link>https://magicalboy.com/</link><description>关注移动应用开发</description><lastBuildDate>Fri, 24 Nov 2017 14:25:00 +0800</lastBuildDate><item><title>Docker on Raspberry Pi 3</title><link>https://magicalboy.com/docker-on-raspberry-pi-3.html</link><description>&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;本文环境&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id17"&gt;介绍&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id3" id="id18"&gt;类&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id4" id="id19"&gt;声明&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id5" id="id20"&gt;实现&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id21"&gt;属性&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id7" id="id22"&gt;声明&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id8" id="id23"&gt;方法&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id9" id="id24"&gt;类方法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#block" id="id25"&gt;Block 块&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#protocol" id="id26"&gt;Protocol 协议&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id10" id="id27"&gt;声明&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id11" id="id28"&gt;使用&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#category" id="id29"&gt;Category 分类&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id12" id="id30"&gt;声明&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id13" id="id31"&gt;Objective C 类型&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id14" id="id32"&gt;类型和字面常量&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id15" id="id33"&gt;编译器指令&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#id16" id="id34"&gt;其它&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 3, Raspbian stretch&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/helje5/dockSwiftOnARM"&gt;dockSwiftOnARM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Docker version 17.11.0-ce, build 1caf76c&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;div class="section" id="docker"&gt;
+&lt;h2&gt;什么是 Docker?&lt;/h2&gt;
+&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id17"&gt;介绍&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Objective-C 作为 C 程序设计语言的超集，支持与 C 相同的基本语法。您会看到所有熟悉的元素，例如基本类型（&lt;tt class="docutils literal"&gt;int&lt;/tt&gt;、&lt;tt class="docutils literal"&gt;float&lt;/tt&gt; 等）、结构、函数、指针，以及流程控制结构，如 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;if...else&lt;/span&gt;&lt;/tt&gt; 语句和 &lt;tt class="docutils literal"&gt;for&lt;/tt&gt; 语句。还可以直接使用 C 标准库 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/Objective-C.html</guid><category>Objective-C</category></item><item><title>Android Wear</title><link>https://magicalboy.com/android_wear.html</link><description>&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
+&lt;h2&gt;安装 Docker&lt;/h2&gt;
+&lt;p&gt;安装与结果部分日志：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -sSL https://get.docker.com &lt;span class="p"&gt;|&lt;/span&gt; sh
+
+Client:
+ Version:      &lt;span class="m"&gt;17&lt;/span&gt;.11.0-ce
+ API version:  &lt;span class="m"&gt;1&lt;/span&gt;.34
+ Go version:   go1.8.3
+ Git commit:   1caf76c
+ Built:        Mon Nov &lt;span class="m"&gt;20 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 24 Nov 2017 14:25:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-24:/docker-on-raspberry-pi-3.html</guid><category>Linux</category><category>Docker</category></item><item><title>Android Wear</title><link>https://magicalboy.com/android_wear.html</link><description>&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
 &lt;p&gt;可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Android Wear&lt;/h2&gt;
@@ -704,7 +690,44 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;li&gt;操作系统可选比较多，而且比较新，比如有 Ubuntu 16.04；&lt;/li&gt;
 &lt;li&gt;官方指导文档资料比较丰富，Support tickets 回复迅速，方便解决问题节省时间。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;不好的地方 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 13 Dec 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-12-13:/digital_ocean_host.html</guid><category>misc</category></item><item><title>Swift 中的 Lazy 初始化</title><link>https://magicalboy.com/lazy_load_with_swift.html</link><description>&lt;p&gt;Lazy 初始化技术早在 Objective C 时代经常被使用，是一种用来延时创建一些比较消耗资源的对象的技术。&lt;/p&gt;
+&lt;p&gt;不好的地方 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 13 Dec 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-12-13:/digital_ocean_host.html</guid><category>misc</category></item><item><title>Objective C</title><link>https://magicalboy.com/Objective-C.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id17"&gt;介绍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id3" id="id18"&gt;类&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id4" id="id19"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id5" id="id20"&gt;实现&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id21"&gt;属性&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id7" id="id22"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id8" id="id23"&gt;方法&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id9" id="id24"&gt;类方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#block" id="id25"&gt;Block 块&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#protocol" id="id26"&gt;Protocol 协议&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id10" id="id27"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id11" id="id28"&gt;使用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#category" id="id29"&gt;Category 分类&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id12" id="id30"&gt;声明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id13" id="id31"&gt;Objective C 类型&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id14" id="id32"&gt;类型和字面常量&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id15" id="id33"&gt;编译器指令&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id16" id="id34"&gt;其它&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id17"&gt;介绍&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Objective-C 作为 C 程序设计语言的超集，支持与 C 相同的基本语法。您会看到所有熟悉的元素，例如基本类型（&lt;tt class="docutils literal"&gt;int&lt;/tt&gt;、&lt;tt class="docutils literal"&gt;float&lt;/tt&gt; 等）、结构、函数、指针，以及流程控制结构，如 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;if...else&lt;/span&gt;&lt;/tt&gt; 语句和 &lt;tt class="docutils literal"&gt;for&lt;/tt&gt; 语句。还可以直接使用 C 标准库 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 24 Nov 2016 14:25:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-11-24:/Objective-C.html</guid><category>Objective-C</category></item><item><title>Swift 中的 Lazy 初始化</title><link>https://magicalboy.com/lazy_load_with_swift.html</link><description>&lt;p&gt;Lazy 初始化技术早在 Objective C 时代经常被使用，是一种用来延时创建一些比较消耗资源的对象的技术。&lt;/p&gt;
 &lt;p&gt;这种技术在 iOS 开发里面很有用，确保只有在需要使用某些资源的时候才开始分配内存。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;老的方式&lt;/h2&gt;

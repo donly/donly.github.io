@@ -56,6 +56,38 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2011-01-21T06:27:00+08:00" pubdate>
+                            五, 21  1 2011
+                        </time>
+                        <a href="https://magicalboy.com/iad-framework-not-found-solutions.html" rel="bookmark"><h1>找不到 iAd.framework 的解决办法</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在为项目添加iAD广告的时候，发现自己的SDK库没有iAd.framework。翻查了一下文档指定的路径
+/System/Library/Frameworks/iAd.framework，确实不存在，后来在官方文档iOS技术概述中对
+<a class="reference external" href="http://www.apple.com.cn/developer/iphone/library/documentation/iPhone/Conceptual/iOs_TechOverview/iPhoneOSTechnologies/iPhoneOSTechnologies.html#//apple_ref/doc/uid/TP40007898-CH3-SW13">iAd.framework</a>
+介绍：</p>
+<blockquote>
+<p>iOS 4.0引入了iAd框架
+(iAd.framework)。您可以通过该框架在应用程序中发布横幅广告。广告会被放入到标准视图，您可以将这些视图加入到用户界面，并在合适的时机向用户展现。这些视图和苹果的公告服务相互协作，自动处理广告内容的加载和展现，同时也可以响应用户对广告的点击。</p>
+<p>如需进一步了解如何在应用程序当中使用iAd，请查看<a class="reference external" href="http://developer.apple.com/iphone/library/documentation/UserExperience/Reference/iAd_ReferenceCollection/index.html#/apple_ref/doc/uid/TP40009705">iAd
+框架参考</a>。</p>
+</blockquote>
+<div class="section" id="id1">
+<h2>解决方法</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">由于我的SDK版本为3.1.3，要使用iAD.framework，只有升级SDK或者将高版本的程序向低版本兼容。后者方法如下：</div>
+</div>
+<p>在XCode左面的Groups &amp; Files中依次展开Targets..Link Binary With
+Libraries，选中他们的父节点“Link Binary With
+Libraries”，这时候 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2011-01-21T05:01:00+08:00" pubdate>
                             五, 21  1 2011
                         </time>
@@ -329,37 +361,6 @@ Apple …</a></li></ul>
                 </article>
             </li>
             <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-12-07T02:47:00+08:00" pubdate>
-                            二, 07 12 2010
-                        </time>
-                        <a href="https://magicalboy.com/xib-and-nib.html" rel="bookmark"><h1>NIB 和 XIB 文件有什么不同</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="line-block">
-<div class="line"><strong>nib</strong> 是<em>NeXT Interface Builder</em>的缩写。</div>
-<div class="line">xib 是 <strong>x</strong>ml n<strong>ib</strong> 文件，于2007年 Leopard (and Xcode 3.0)
-版本中更新。</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>以源码方式打开查看：</strong></div>
-<div class="line"><tt class="docutils literal">&lt; <span class="pre">?xml</span> <span class="pre">version=&quot;1.0&quot;</span> <span class="pre">encoding=&quot;UTF-8&quot;?&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 784&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10F2521&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ……</tt></div>
-</div>
-<div class="line-block">
-<div class="line"><strong>相同点：</strong></div>
-<div class="line">NIB 和 XIB 都是 Interface Builder 的图形界面设计文档。Interface
-Builder 把窗口、菜单栏以及窗口上的各种控件的对象都“冻结”在了一个
-NIB文档里面了；程序运行时，这些对象将会“苏醒”。</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>不同点：</strong></div>
-<div class="line">NIB为二进制文件，XIB为纯文本文件 …</div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
         </ol>
         <div class="paginator">
                     <a href="https://magicalboy.com/index13.html">
@@ -375,7 +376,7 @@ NIB文档里面了；程序运行时，这些对象将会“苏醒”。</div>
         </div>
 <footer id="site-info">
     <p>
-        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme base on <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
     </p>
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.

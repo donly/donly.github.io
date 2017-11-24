@@ -56,6 +56,29 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-14T11:46:00+08:00" pubdate>
+                            一, 14  6 2010
+                        </time>
+                        <a href="https://magicalboy.com/filezilla-or-ftp-command-to-see-hidden-files.html" rel="bookmark"><h1>使用 FileZilla 或 FTP 命令下载隐藏文件 .htaccess</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>由于服务器主机的 SSH 服务被关掉，只能被迫使用 FTP（File Transfer
+Protocol）来管理网站。这不刚好需要修改一个 .htaccess
+文件，刚好它是隐藏属性的，使用
+<a class="reference external" href="http://filezilla-project.org/">FileZilla</a> FTP 工具也查看不了。殊不知
+FileZilla 的“服务器”菜单项中有“强制显示隐藏文件”选项。</p>
+<p>启动“强制显示隐藏文件”会有确认信息，需要使用的是 FTP
+协议，同时需要服务器支持。</p>
+<p>如果手头上没有 FTP 软件，可以使用 Windows 自带的 FTP 命令，在 CMD
+命令行输入 ftp 即进入该模式：</p>
+<p><tt class="docutils literal"><span class="pre">C:&gt;ftp</span> ftp&gt; open yourdomain.com …</tt></p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-06-13T15:58:00+08:00" pubdate>
                             日, 13  6 2010
                         </time>
@@ -311,32 +334,6 @@ App两个版本，即使没有网络也可以通过下载桌面版的AIR程序�
                 </article>
             </li>
             <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-06-02T14:31:00+08:00" pubdate>
-                            三, 02  6 2010
-                        </time>
-                        <a href="https://magicalboy.com/c-print-a-long-string.html" rel="bookmark"><h1>C语言基础：打印长字符串</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="id1">
-<h2>前言</h2>
-<p>C语言重登王位，赶紧学好C混个铁饭碗才行了。确实，不管C语言有没有王者归来，它都是一门很强大的语言。Linux/Unix
-核心是用C写的，Java，Python等高级语言也是用C来实现，学习C简直是百益而无一害啊！</p>
-</div>
-<div class="section" id="id2">
-<h2>问题描述</h2>
-<p>好了好了，说回本次话题，打印长字符串在Java中直接使用重载的“+”运算符，即可在下一行断行继续输入，那么在C中要怎么写呢：</p>
-<p><tt class="docutils literal">/** * LongStrg.java <span class="pre">--</span> 打印长字符串 * &#64;author magicalboy */ public class LongStrg {</tt></p>
-<div class="line-block">
-<div class="line">public static void main(String[] args) {</div>
-<div class="line">System.out.println(&quot;Hello, Welcome to magicalboy's blog!n&quot; +</div>
-<div class="line">&quot;Any problems please contact <a class="reference external" href="mailto:admin&#64;magicalboy.com">admin&#64;magicalboy.com</a>. Thanks …</div></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
         </ol>
         <div class="paginator">
                     <a href="https://magicalboy.com/index18.html">
@@ -352,7 +349,7 @@ App两个版本，即使没有网络也可以通过下载桌面版的AIR程序�
         </div>
 <footer id="site-info">
     <p>
-        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme base on <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
     </p>
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
