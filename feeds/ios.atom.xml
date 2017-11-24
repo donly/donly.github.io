@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - iOS</title><link href="/" rel="alternate"></link><link href="/feeds/ios.atom.xml" rel="self"></link><id>/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>Cocoa Auto Layout</title><link href="/cocoa-auto-layout.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/cocoa-auto-layout.html</id><summary type="html">&lt;p&gt;Auto Layout 是 iOS 6.0 和 Xcode 4.5 的新特性。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - iOS</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/ios.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>Cocoa Auto Layout</title><link href="https://magicalboy.com/cocoa-auto-layout.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/cocoa-auto-layout.html</id><summary type="html">&lt;p&gt;Auto Layout 是 iOS 6.0 和 Xcode 4.5 的新特性。&lt;/p&gt;
 &lt;p&gt;使用 Cocoa Auto Layout 系统为用户界面元素定义布局约束，其中约束（Constraints）表示用户界面控件之间的关系，比如 “这些视图从头至尾排列”。&lt;/p&gt;
 &lt;p&gt;Cocoa Auto Layout 让用户来定义界面元素的布局规则。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
@@ -11,7 +11,7 @@
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;视图之间的约束表示&lt;/h2&gt;
 &lt;/div&gt;
-</content><category term="cocoa"></category><category term="iOS"></category><category term="auto layout"></category></entry><entry><title>iOS 设计模式: Model View Controller</title><link href="/ios-design-patterns-model-view-controller.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/ios-design-patterns-model-view-controller.html</id><summary type="html">&lt;p&gt;MVC 设计模式的主要目的是可重用性，能够在不同的视图中使用重用同一个模型。&lt;/p&gt;
+</content><category term="cocoa"></category><category term="iOS"></category><category term="auto layout"></category></entry><entry><title>iOS 设计模式: Model View Controller</title><link href="https://magicalboy.com/ios-design-patterns-model-view-controller.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/ios-design-patterns-model-view-controller.html</id><summary type="html">&lt;p&gt;MVC 设计模式的主要目的是可重用性，能够在不同的视图中使用重用同一个模型。&lt;/p&gt;
 &lt;img alt="Model View Controller (MVC) Design Pattern" src="static/images/mvc.jpg" /&gt;
 &lt;div class="section" id="model"&gt;
 &lt;h2&gt;模型 Model&lt;/h2&gt;
@@ -47,7 +47,7 @@
 &lt;img alt="UITableViewController manages a UITableView" src="static/images/tableviewcontroller_using_mvc.jpg" /&gt;
 &lt;p&gt;参考链接：&lt;a class="reference external" href="http://blog.teamtreehouse.com/ios-design-patterns-model-view-controller-part-3"&gt;iOS Design Patterns: Model View Controller&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="design pattern"></category></entry><entry><title>iOS Frameworks</title><link href="/ios-frameworks.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/ios-frameworks.html</id><summary type="html">&lt;div class="section" id="ios"&gt;
+</content><category term="iOS"></category><category term="design pattern"></category></entry><entry><title>iOS Frameworks</title><link href="https://magicalboy.com/ios-frameworks.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/ios-frameworks.html</id><summary type="html">&lt;div class="section" id="ios"&gt;
 &lt;h2&gt;iOS 的架构是分层的&lt;/h2&gt;
 &lt;img alt="Layers of iOS" class="align-left" src="http://developer.apple.com/library/ios/documentation/miscellaneous/conceptual/iphoneostechoverview/Art/SystemLayers_2x.png" style="width: 366px; height: 202px;" /&gt;
 &lt;div class="line-block"&gt;
@@ -69,7 +69,7 @@
 &lt;h2&gt;Frameworks&lt;/h2&gt;
 &lt;p&gt;iOS 提供了一套框架，将 iOS 应用程序的技术，服务和功能结合了起来。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category></entry><entry><title>iOS 国际化/本地化</title><link href="/ios-i18n.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/ios-i18n.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content><category term="iOS"></category></entry><entry><title>iOS 国际化/本地化</title><link href="https://magicalboy.com/ios-i18n.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/ios-i18n.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;获取首选语言&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 获取首选语言&lt;/span&gt;
 &lt;span class="n"&gt;NSLog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;preferredLanguages:%@&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;NSLocale&lt;/span&gt; &lt;span class="n"&gt;preferredLanguages&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
@@ -132,9 +132,9 @@ ja,
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;TODO&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="i18n"></category></entry><entry><title>iOS 支持矩阵</title><link href="/ios-support-matrix.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/ios-support-matrix.html</id><summary type="html">&lt;img alt="iOS Support Matrix" src="images/ios_support_matrix.png" /&gt;
+</content><category term="iOS"></category><category term="i18n"></category></entry><entry><title>iOS 支持矩阵</title><link href="https://magicalboy.com/ios-support-matrix.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/ios-support-matrix.html</id><summary type="html">&lt;img alt="iOS Support Matrix" src="images/ios_support_matrix.png" /&gt;
 </summary><content type="html">&lt;img alt="iOS Support Matrix" src="images/ios_support_matrix.png" /&gt;
-</content><category term="iOS"></category><category term="support"></category></entry><entry><title>iOS 多线程学习</title><link href="/ios-thread.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/ios-thread.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+</content><category term="iOS"></category><category term="support"></category></entry><entry><title>iOS 多线程学习</title><link href="https://magicalboy.com/ios-thread.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/ios-thread.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id9"&gt;基础知识&lt;/a&gt;&lt;/li&gt;
@@ -402,7 +402,7 @@ ja,
 &lt;p&gt;一个 run loop 就是一个事件处理的循环，用来不停的调度工作以及处理输入事件。使用 run loop 的目的是让你的线程在有工作的时候忙于工作，而没工作的时候处于休眠状态。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="thread"></category></entry><entry><title>UIImage 使用</title><link href="/uiimage.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/uiimage.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html"&gt;UIImage Class Reference&lt;/a&gt;&lt;/p&gt;
+</content><category term="iOS"></category><category term="thread"></category></entry><entry><title>UIImage 使用</title><link href="https://magicalboy.com/uiimage.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/uiimage.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html"&gt;UIImage Class Reference&lt;/a&gt;&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
 &lt;colgroup&gt;
 &lt;col width="25%" /&gt;
@@ -500,7 +500,7 @@ ja,
 &lt;p&gt;Also, a stretchable image is not shrinkable. If you try to use stretchable images bigger than the buttons (or whatever else) you want to apply it to, they may be rendered incorrectly (especially on older iOSes).&lt;/p&gt;
 &lt;p&gt;引用 &lt;a class="reference external" href="http://stackoverflow.com/questions/2924408/iphone-stretchableimagewithleftcapwidth-only-makes-ds"&gt;Stackoverflow&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="UIImage"></category><category term="iOS"></category></entry><entry><title>Xcode</title><link href="/xcode.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/xcode.html</id><summary type="html">&lt;p&gt;Xcode 目前最新版本 &lt;a class="reference external" href="http://magicalboy.com/xcode-5-0/"&gt;Xcode 5.0&lt;/a&gt; ，支持 iPhone 5s, iOS 7 开发。&lt;/p&gt;
+</content><category term="UIImage"></category><category term="iOS"></category></entry><entry><title>Xcode</title><link href="https://magicalboy.com/xcode.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/xcode.html</id><summary type="html">&lt;p&gt;Xcode 目前最新版本 &lt;a class="reference external" href="http://magicalboy.com/xcode-5-0/"&gt;Xcode 5.0&lt;/a&gt; ，支持 iPhone 5s, iOS 7 开发。&lt;/p&gt;
 &lt;div class="section" id="what-s-new"&gt;
 &lt;h2&gt;What's New&lt;/h2&gt;
 &lt;p&gt;各个版本的 Xcode 新增功能说明。&lt;/p&gt;
@@ -559,7 +559,7 @@ agvtool next-version -all
 &lt;/pre&gt;
 &lt;p&gt;之后每 Build 一次 Bundle version 的号码就会自增一次。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>Xcode 7 清除多余的 Woking copies</title><link href="/xcode-remove-working-copies.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/xcode-remove-working-copies.html</id><summary type="html">&lt;p&gt;Xcode 版本：Version 7.1 (7B91b)&lt;/p&gt;
+</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>Xcode 7 清除多余的 Woking copies</title><link href="https://magicalboy.com/xcode-remove-working-copies.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/xcode-remove-working-copies.html</id><summary type="html">&lt;p&gt;Xcode 版本：Version 7.1 (7B91b)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;
 由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;
@@ -571,7 +571,7 @@ agvtool next-version -all
 &lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;
 删除 &lt;em&gt;ProjectName.xcworkspace &amp;gt; xcshareddata &amp;gt; ProjectName.xcscmblueprint&lt;/em&gt;，重启 Xcode。&lt;/p&gt;
 &lt;p&gt;参考链接：&lt;a class="reference external" href="http://stackoverflow.com/a/27535601"&gt;http://stackoverflow.com/a/27535601&lt;/a&gt;&lt;/p&gt;
-</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>iOS 11 Developer beta 2</title><link href="/ios-11-beta-2-update.html" rel="alternate"></link><published>2017-06-22T10:30:00+08:00</published><updated>2017-06-22T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-06-22:/ios-11-beta-2-update.html</id><summary type="html">&lt;p&gt;iOS 11 更新至 beta 2。&lt;/p&gt;
+</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>iOS 11 Developer beta 2</title><link href="https://magicalboy.com/ios-11-beta-2-update.html" rel="alternate"></link><published>2017-06-22T10:30:00+08:00</published><updated>2017-06-22T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-06-22:/ios-11-beta-2-update.html</id><summary type="html">&lt;p&gt;iOS 11 更新至 beta 2。&lt;/p&gt;
 &lt;p&gt;更新后版本号为：&lt;code&gt;11 (15A5304i)&lt;/code&gt;，详细的更新日志见官网：&lt;a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Jun_21_2017/iOS_11_beta_2_Release_Notes.pdf"&gt;iOS 11 beta 2 Release Notes&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;iOS 11 第一个 beta 版本问题还是很多的，而且部分 bug 还严重影响设备的正常使用。&lt;/p&gt;
 &lt;p&gt;关于 iOS 11 的新特性请见 &lt;a class="reference external" href="https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS_11_0.html#//apple_ref/doc/uid/TP40017637-SW1"&gt;What's New in iOS&lt;/a&gt;&lt;/p&gt;
@@ -588,7 +588,7 @@ agvtool next-version -all
 &lt;li&gt;iOS 11 不再支持 armv7 或 armv7s（32位）。 如果 iOS 目标的 iOS 部署目标为 11，则不会为 32 位构建。 默认情况下，针对早于11的iOS部署目标的iOS目标仍将生成32位。（32163517）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img alt="install on iPhone 6s plus" class="align-left" src="https://github.com/donly/note/blob/master/images/ios-11-beta-2.PNG?raw=true" style="width: 320px; height: 568px;" /&gt;
-</content><category term="apple"></category></entry><entry><title>iOS 10.3 正式版发布</title><link href="/ios-10-3-release.html" rel="alternate"></link><published>2017-03-28T10:30:00+08:00</published><updated>2017-03-28T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-03-28:/ios-10-3-release.html</id><summary type="html">&lt;p&gt;今天苹果 iOS 10.3 正式版已经发布。版本号为：&lt;code&gt;10.3 (14E277)&lt;/code&gt;，对应的开发工具 Xcode 8.3 版本号为 8E162。&lt;/p&gt;
+</content><category term="apple"></category></entry><entry><title>iOS 10.3 正式版发布</title><link href="https://magicalboy.com/ios-10-3-release.html" rel="alternate"></link><published>2017-03-28T10:30:00+08:00</published><updated>2017-03-28T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-03-28:/ios-10-3-release.html</id><summary type="html">&lt;p&gt;今天苹果 iOS 10.3 正式版已经发布。版本号为：&lt;code&gt;10.3 (14E277)&lt;/code&gt;，对应的开发工具 Xcode 8.3 版本号为 8E162。&lt;/p&gt;
 &lt;p&gt;详细的更新日志见官网：&lt;a class="reference external" href="https://support.apple.com/zh-cn/HT201222"&gt;https://support.apple.com/zh-cn/HT201222&lt;/a&gt;。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;iOS 10.3 推出了包括使用“查找我的 iPhone”定位 AirPods 在内的全新功能，并提供了使用 Siri 进行支付、叫车以及与车载设备配合使用的更多途径。&lt;/p&gt;
@@ -643,7 +643,7 @@ agvtool next-version -all
 &lt;/blockquote&gt;
 &lt;img alt="install on iPhone 6s" class="align-left" src="https://github.com/donly/note/blob/master/images/ios-10-3-release.PNG?raw=true" style="width: 320px; height: 568px;" /&gt;
 &lt;p&gt;END&lt;/p&gt;
-</content><category term="apple"></category></entry><entry><title>iOS 10.3 Beta 7</title><link href="/ios-10-3-beta-7-update.html" rel="alternate"></link><published>2017-03-20T10:30:00+08:00</published><updated>2017-03-20T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-03-20:/ios-10-3-beta-7-update.html</id><summary type="html">&lt;p&gt;今天苹果前几天又发布了 iOS 10.3 Beta 7 更新，距离上个 Beta 版本才 3 天左右。&lt;/p&gt;
+</content><category term="apple"></category></entry><entry><title>iOS 10.3 Beta 7</title><link href="https://magicalboy.com/ios-10-3-beta-7-update.html" rel="alternate"></link><published>2017-03-20T10:30:00+08:00</published><updated>2017-03-20T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-03-20:/ios-10-3-beta-7-update.html</id><summary type="html">&lt;p&gt;今天苹果前几天又发布了 iOS 10.3 Beta 7 更新，距离上个 Beta 版本才 3 天左右。&lt;/p&gt;
 &lt;p&gt;更新后版本号为：&lt;code&gt;10.3 (14E5277a)&lt;/code&gt;，详细的更新日志见官网：&lt;a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Mar_16_2017/iOS_10.3_beta_7_Release_Notes.pdf"&gt;iOS Release Notes for iOS 10.3 beta 7&lt;/a&gt;。&lt;/p&gt;
 &lt;img alt="install on iPhone 6s" class="align-left" src="https://github.com/donly/note/blob/master/images/ios-10-3-beta-7.PNG?raw=true" style="width: 320px; height: 568px;" /&gt;
 &lt;p&gt;iPhone 6s 更新后没有发现有什么明显不同。&lt;/p&gt;
@@ -661,7 +661,7 @@ agvtool next-version -all
 &lt;li&gt;关机时少了中间的加载动画，即菊花。&lt;/li&gt;
 &lt;li&gt;增加了对 32 位应用的警告提示：此应用在未来的 iOS 版本下将无法使用。应用开发者需要更新此应用以改进兼容性。&lt;/li&gt;
 &lt;/ol&gt;
-</content><category term="apple"></category></entry><entry><title>iOS 10.3 Beta6</title><link href="/ios-10-3-beta-install.html" rel="alternate"></link><published>2017-03-14T09:30:00+08:00</published><updated>2017-03-14T09:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-03-14:/ios-10-3-beta-install.html</id><summary type="html">&lt;p&gt;今天苹果公司发布了 iOS 10.3 Beta6 更新。更新后版本号为：&lt;code&gt;10.3 (14E5273a)&lt;/code&gt;，更新如下：&lt;/p&gt;
+</content><category term="apple"></category></entry><entry><title>iOS 10.3 Beta6</title><link href="https://magicalboy.com/ios-10-3-beta-install.html" rel="alternate"></link><published>2017-03-14T09:30:00+08:00</published><updated>2017-03-14T09:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-03-14:/ios-10-3-beta-install.html</id><summary type="html">&lt;p&gt;今天苹果公司发布了 iOS 10.3 Beta6 更新。更新后版本号为：&lt;code&gt;10.3 (14E5273a)&lt;/code&gt;，更新如下：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;相对于上一个版本 Beta5，比较重要一点更新就是没有通过 MFi 认证的 Lightning 会提示：&lt;code&gt;此 iPhone 不支持此配件&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;对系统底层进行了优化，当用户完成升级后，iOS 设备的文件系统也更新至了全新的苹果文件系统 &lt;code&gt;APFS&lt;/code&gt;。&lt;/li&gt;
@@ -692,7 +692,7 @@ agvtool next-version -all
 &lt;/ol&gt;
 &lt;p&gt;最重要一点：&lt;strong&gt;更新之前请先做好备份，数据无价！&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="apple"></category></entry><entry><title>Fastlane 插件开发</title><link href="/fastlane_plugin.html" rel="alternate"></link><published>2016-12-21T09:39:00+08:00</published><updated>2016-12-21T09:39:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-12-21:/fastlane_plugin.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;能用计算机自动处理的事情，为什么还要手动重复劳动。&lt;/strong&gt;&lt;/p&gt;
+</content><category term="apple"></category></entry><entry><title>Fastlane 插件开发</title><link href="https://magicalboy.com/fastlane_plugin.html" rel="alternate"></link><published>2016-12-21T09:39:00+08:00</published><updated>2016-12-21T09:39:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-12-21:/fastlane_plugin.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;能用计算机自动处理的事情，为什么还要手动重复劳动。&lt;/strong&gt;&lt;/p&gt;
 &lt;img alt="fastlane" src="https://docs.fastlane.tools/img/fastlane_text.png" /&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://fastlane.tools/"&gt;Fastlane&lt;/a&gt; 是一个优秀的 CI 工具，移动开发少不了它。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -744,7 +744,7 @@ The easiest way to automate building and releasing your iOS and Android apps&lt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bundle &lt;span class="nb"&gt;exec&lt;/span&gt; fastlane &lt;span class="o"&gt;[&lt;/span&gt;action&lt;span class="o"&gt;]&lt;/span&gt; --verbose
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="Android"></category></entry><entry><title>iOS 10.2 更新</title><link href="/ios-10-2-update.html" rel="alternate"></link><published>2016-12-15T09:30:00+08:00</published><updated>2016-12-15T09:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-12-15:/ios-10-2-update.html</id><summary type="html">&lt;p&gt;今天苹果公司发布了 iOS 10.2 更新。更新后版本号为：10.2 (14C92)，上一个版本是 10.1.1 (14B100)。&lt;/p&gt;
+</content><category term="iOS"></category><category term="Android"></category></entry><entry><title>iOS 10.2 更新</title><link href="https://magicalboy.com/ios-10-2-update.html" rel="alternate"></link><published>2016-12-15T09:30:00+08:00</published><updated>2016-12-15T09:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-12-15:/ios-10-2-update.html</id><summary type="html">&lt;p&gt;今天苹果公司发布了 iOS 10.2 更新。更新后版本号为：10.2 (14C92)，上一个版本是 10.1.1 (14B100)。&lt;/p&gt;
 &lt;p&gt;详细的更新日志：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;iOS 10.2 加入了多项新功能，其中包括“电视”应用（仅限美国），这款全新的聚合应用使用户可在一处观看多个视频应用内的电视节目和影片。经过重新设计的表情符号更加精美、细致，新增了 100 多个表情符号，包括表情、食物、动物、运动和职业等各类型。本更新还包括稳定性提升和错误修复。&lt;/p&gt;
@@ -890,7 +890,7 @@ The easiest way to automate building and releasing your iOS and Android apps&lt;
 &lt;a class="reference external" href="https://support.apple.com/HT201222"&gt;https://support.apple.com/HT201222&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
-</content><category term="apple"></category></entry><entry><title>Swift 中的 Lazy 初始化</title><link href="/lazy_load_with_swift.html" rel="alternate"></link><published>2016-10-29T00:00:00+08:00</published><updated>2016-10-29T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-10-29:/lazy_load_with_swift.html</id><summary type="html">&lt;p&gt;Lazy 初始化技术早在 Objective C 时代经常被使用，是一种用来延时创建一些比较消耗资源的对象的技术。&lt;/p&gt;
+</content><category term="apple"></category></entry><entry><title>Swift 中的 Lazy 初始化</title><link href="https://magicalboy.com/lazy_load_with_swift.html" rel="alternate"></link><published>2016-10-29T00:00:00+08:00</published><updated>2016-10-29T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-10-29:/lazy_load_with_swift.html</id><summary type="html">&lt;p&gt;Lazy 初始化技术早在 Objective C 时代经常被使用，是一种用来延时创建一些比较消耗资源的对象的技术。&lt;/p&gt;
 &lt;p&gt;这种技术在 iOS 开发里面很有用，确保只有在需要使用某些资源的时候才开始分配内存。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;老的方式&lt;/h2&gt;
@@ -960,7 +960,7 @@ The easiest way to automate building and releasing your iOS and Android apps&lt;
 &lt;p&gt;很明显，一般情况下使用 Closure 方式创建是最简单的，能够一目了然。&lt;/p&gt;
 &lt;p&gt;本文翻译并修改自 &lt;a class="reference external" href="http://mikebuss.com/2014/06/22/lazy-initialization-swift/"&gt;Lazy Initialization with Swift&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="Swift"></category></entry><entry><title>苹果发布会视频下载</title><link href="/apple-event-download.html" rel="alternate"></link><published>2016-09-08T16:30:00+08:00</published><updated>2016-09-08T16:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-09-08:/apple-event-download.html</id><summary type="html">&lt;p&gt;苹果的发布会通常在中国北京时间凌晨一点。如果因为睡觉错过了想回顾，除了在官网在线回看，还可以在 Youtube 或其他网站上观看。&lt;/p&gt;
+</content><category term="iOS"></category><category term="Swift"></category></entry><entry><title>苹果发布会视频下载</title><link href="https://magicalboy.com/apple-event-download.html" rel="alternate"></link><published>2016-09-08T16:30:00+08:00</published><updated>2016-09-08T16:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-09-08:/apple-event-download.html</id><summary type="html">&lt;p&gt;苹果的发布会通常在中国北京时间凌晨一点。如果因为睡觉错过了想回顾，除了在官网在线回看，还可以在 Youtube 或其他网站上观看。&lt;/p&gt;
 &lt;p&gt;如果想下载完整版回来收藏，可以使用 VLC 或 ffmpeg 工具。&lt;/p&gt;
 &lt;p&gt;比如，使用 ffmpeg 下载苹果九月发布会命令：&lt;/p&gt;
 &lt;pre class="code shell literal-block"&gt;
@@ -974,7 +974,7 @@ $ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;http://p.events-delivery.apple.com.
 $ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;http://p.events-delivery.apple.com.edgesuite.net/1609lijbsdfvoihbadfvohbsdfvljhb/vod/8500/8500_vod.m3u8&amp;quot;&lt;/span&gt; -c copy apple.ts
 &lt;/pre&gt;
 &lt;p&gt;提示：1080p 的 m3u8 流地址可以复制视频地址分析得到。&lt;/p&gt;
-</content><category term="apple"></category></entry><entry><title>iOS 固件信息 API</title><link href="/ios-firmware-api.html" rel="alternate"></link><published>2016-08-31T11:30:00+08:00</published><updated>2016-08-31T11:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-08-31:/ios-firmware-api.html</id><summary type="html">&lt;p&gt;收藏几个有意思的第三方 API，主要获取固件信息，实时的 Apple TSS 服务状态：&lt;/p&gt;
+</content><category term="apple"></category></entry><entry><title>iOS 固件信息 API</title><link href="https://magicalboy.com/ios-firmware-api.html" rel="alternate"></link><published>2016-08-31T11:30:00+08:00</published><updated>2016-08-31T11:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-08-31:/ios-firmware-api.html</id><summary type="html">&lt;p&gt;收藏几个有意思的第三方 API，主要获取固件信息，实时的 Apple TSS 服务状态：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://api.ineal.me/tss/docs"&gt;Real time status of every iOS firmware currently being signed by Apple's TSS server.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://api.ios.icj.me/docs/"&gt;IPSW Downloads&lt;/a&gt;&lt;/li&gt;
@@ -984,7 +984,7 @@ $ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;http://p.events-delivery.apple.com.
 &lt;li&gt;&lt;a class="reference external" href="http://api.ineal.me/tss/docs"&gt;Real time status of every iOS firmware currently being signed by Apple's TSS server.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://api.ios.icj.me/docs/"&gt;IPSW Downloads&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</content><category term="iOS"></category><category term="crack"></category></entry><entry><title>苹果九月发布会</title><link href="/apple-event-2016-september.html" rel="alternate"></link><published>2016-08-31T00:30:00+08:00</published><updated>2016-08-31T00:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-08-31:/apple-event-2016-september.html</id><summary type="html">&lt;img alt="Apple Event" src="images/hero_image_large.jpg" /&gt;
+</content><category term="iOS"></category><category term="crack"></category></entry><entry><title>苹果九月发布会</title><link href="https://magicalboy.com/apple-event-2016-september.html" rel="alternate"></link><published>2016-08-31T00:30:00+08:00</published><updated>2016-08-31T00:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-08-31:/apple-event-2016-september.html</id><summary type="html">&lt;img alt="Apple Event" src="images/hero_image_large.jpg" /&gt;
 &lt;p&gt;中国北京时间为8日凌晨1点。&lt;/p&gt;
 &lt;p&gt;可以在线看直播，有即时字幕，流畅度提升越来越明显。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -993,7 +993,7 @@ Requirements: Live streaming uses Apple’s HTTP Live Streaming (HLS) technology
 &lt;p&gt;可以在线看直播，有即时字幕，流畅度提升越来越明显。&lt;/p&gt;
 &lt;blockquote&gt;
 Requirements: Live streaming uses Apple’s HTTP Live Streaming (HLS) technology. HLS requires an iPhone, iPad, or iPod touch with Safari on iOS 7.0 or later, a Mac with Safari 6.0.5 or later on OS X v10.8.5 or later, or a PC with Microsoft Edge on Windows 10. Streaming via Apple TV requires an Apple TV (2nd or 3rd generation) with software 6.2 or later or an Apple TV (4th generation).&lt;/blockquote&gt;
-</content><category term="apple"></category></entry><entry><title>xctool 使用</title><link href="/xctool-usage.html" rel="alternate"></link><published>2016-07-06T10:30:00+08:00</published><updated>2016-07-06T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-07-06:/xctool-usage.html</id><summary type="html">&lt;p&gt;xctool 可以理解为 xcodebuild 的增强版，特别有利于可持续集成。xctool 由 Facebook 开发维护，项目地址 &lt;a class="reference external" href="https://github.com/facebook/xctool"&gt;https://github.com/facebook/xctool&lt;/a&gt;。&lt;/p&gt;
+</content><category term="apple"></category></entry><entry><title>xctool 使用</title><link href="https://magicalboy.com/xctool-usage.html" rel="alternate"></link><published>2016-07-06T10:30:00+08:00</published><updated>2016-07-06T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-07-06:/xctool-usage.html</id><summary type="html">&lt;p&gt;xctool 可以理解为 xcodebuild 的增强版，特别有利于可持续集成。xctool 由 Facebook 开发维护，项目地址 &lt;a class="reference external" href="https://github.com/facebook/xctool"&gt;https://github.com/facebook/xctool&lt;/a&gt;。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;安装 xctool&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ brew install &lt;span class="nv"&gt;xctool&lt;/span&gt;
@@ -1055,7 +1055,7 @@ xctool &lt;span class="m"&gt;0&lt;/span&gt;.2.9
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="CI"></category></entry><entry><title>破解 Asset Catalog</title><link href="/crack-asset-catalog.html" rel="alternate"></link><published>2016-05-24T11:30:00+08:00</published><updated>2016-05-24T11:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-05-24:/crack-asset-catalog.html</id><summary type="html">&lt;p&gt;Asset Catalog 是 Xcode 5 引入的一个新的图片管理方式，支持矢量图，这样设计师不需要再切 &amp;#64;2x, &amp;#64;3x 等多套图标，提高效率。&lt;/p&gt;
+</content><category term="iOS"></category><category term="CI"></category></entry><entry><title>破解 Asset Catalog</title><link href="https://magicalboy.com/crack-asset-catalog.html" rel="alternate"></link><published>2016-05-24T11:30:00+08:00</published><updated>2016-05-24T11:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-24:/crack-asset-catalog.html</id><summary type="html">&lt;p&gt;Asset Catalog 是 Xcode 5 引入的一个新的图片管理方式，支持矢量图，这样设计师不需要再切 &amp;#64;2x, &amp;#64;3x 等多套图标，提高效率。&lt;/p&gt;
 &lt;p&gt;使用了 Asset Catalog 的 App 在发布的时候，Xcode 会为这些图片资源打包成 &lt;strong&gt;Assets.car&lt;/strong&gt; 这样的文件，而且无法直接打开。&lt;/p&gt;
 &lt;div class="section" id="assets-car"&gt;
 &lt;h2&gt;提取 Assets.car 图片&lt;/h2&gt;
@@ -1095,7 +1095,7 @@ $ ./cartool &amp;lt;.car 文件的路径&amp;gt; &amp;lt;解压后的文件路�
 &lt;h2&gt;声明&lt;/h2&gt;
 &lt;p&gt;由于素材等资源版权问题，本文仅作为学习目的，请切勿用于商业用途。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="crack"></category></entry><entry><title>CocoaPods 使用</title><link href="/cocoapods-usage.html" rel="alternate"></link><published>2015-05-30T10:02:00+08:00</published><updated>2015-05-30T10:02:00+08:00</updated><author><name>Don</name></author><id>tag:None,2015-05-30:/cocoapods-usage.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content><category term="iOS"></category><category term="crack"></category></entry><entry><title>CocoaPods 使用</title><link href="https://magicalboy.com/cocoapods-usage.html" rel="alternate"></link><published>2015-05-30T10:02:00+08:00</published><updated>2015-05-30T10:02:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2015-05-30:/cocoapods-usage.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://cocoapods.org/"&gt;CocoaPods&lt;/a&gt; 是 Objective-C 和 Swift 项目的依赖管理平台，而且已经拥有庞大的库，帮助我们优雅地扩大项目规模。&lt;/p&gt;
 &lt;p&gt;后来又出了一个 &lt;a class="reference external" href="https://github.com/Carthage/Carthage"&gt;Carthage&lt;/a&gt;，使用 Swift 实现的一个更简单的 Cocoa 依赖管理工具。由于 Carthage 仅支持动态 framework，所以必须要求 iOS 8 以及以上才能够使用，所以，这个以后再了解。&lt;/p&gt;

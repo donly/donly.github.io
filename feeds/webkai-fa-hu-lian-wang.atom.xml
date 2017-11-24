@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - WEB开发, 互聯網</title><link href="/" rel="alternate"></link><link href="/feeds/webkai-fa-hu-lian-wang.atom.xml" rel="self"></link><id>/</id><updated>2013-06-25T10:49:00+08:00</updated><entry><title>禁用 Firefox 自动增加 WWW</title><link href="/disable-firefox-auto-adding-www.html" rel="alternate"></link><published>2013-06-25T10:49:00+08:00</published><updated>2013-06-25T10:49:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-06-25:/disable-firefox-auto-adding-www.html</id><summary type="html">&lt;p&gt;每次输入一个玉米，Firefox
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - WEB开发, 互聯網</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/webkai-fa-hu-lian-wang.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2013-06-25T10:49:00+08:00</updated><entry><title>禁用 Firefox 自动增加 WWW</title><link href="https://magicalboy.com/disable-firefox-auto-adding-www.html" rel="alternate"></link><published>2013-06-25T10:49:00+08:00</published><updated>2013-06-25T10:49:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-06-25:/disable-firefox-auto-adding-www.html</id><summary type="html">&lt;p&gt;每次输入一个玉米，Firefox
 都会自动为你输入的玉米前增加www前缀。比如输入本站玉米
 magicalboy.com，回车之后请求的地址就变成了 www.magicalboy.com。&lt;/p&gt;
 &lt;p&gt;如何取消这一功能，输入 &lt;a class="reference external" href="about:config%20"&gt;about:config&lt;/a&gt;，然后搜索
@@ -13,7 +13,7 @@ magicalboy.com，回车之后请求的地址就变成了 www.magicalboy.com。&l
 fixup，双击 browser.fixup.alternate.enabled 将其默认值改为 false 即可。&lt;/p&gt;
 &lt;p&gt;具体参考官网资料：&lt;a class="reference external" href="https://support.mozilla.org/en-US/kb/search-web-address-bar?redirectlocale=en-US&amp;amp;redirectslug=Location+bar+search#w_domain-guessing"&gt;Domain
 Guessing&lt;/a&gt;&lt;/p&gt;
-</content><category term="Firefox"></category></entry><entry><title>Oops! Google App Engine 超出配额</title><link href="/google_app_engine_over_quota.html" rel="alternate"></link><published>2012-04-22T12:14:00+08:00</published><updated>2012-04-22T12:14:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-04-22:/google_app_engine_over_quota.html</id><summary type="html">&lt;p&gt;昨天将GAE空间整理过后，今天访问出现 Over Quota &lt;strong&gt;503&lt;/strong&gt;
+</content><category term="Firefox"></category></entry><entry><title>Oops! Google App Engine 超出配额</title><link href="https://magicalboy.com/google_app_engine_over_quota.html" rel="alternate"></link><published>2012-04-22T12:14:00+08:00</published><updated>2012-04-22T12:14:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-04-22:/google_app_engine_over_quota.html</id><summary type="html">&lt;p&gt;昨天将GAE空间整理过后，今天访问出现 Over Quota &lt;strong&gt;503&lt;/strong&gt;
 不能访问的问题。免费的服务果然是伤不起啊，但想一下，为什么之前就没有这问题呢，到&lt;a class="reference external" href="https://appengine.google.com/"&gt;管理控制台&lt;/a&gt;查看，原来
 &lt;strong&gt;Frontend Instance Hours&lt;/strong&gt; 的 &lt;strong&gt;Daily Quota&lt;/strong&gt; 已经耗尽，超出配额。&lt;/p&gt;
 &lt;div class="section" id="instance-hours"&gt;

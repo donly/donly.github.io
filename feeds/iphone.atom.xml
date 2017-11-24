@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - iPhone</title><link href="/" rel="alternate"></link><link href="/feeds/iphone.atom.xml" rel="self"></link><id>/</id><updated>2014-10-15T16:34:00+08:00</updated><entry><title>TestFlight 笔记</title><link href="/testflight.html" rel="alternate"></link><published>2014-10-15T16:34:00+08:00</published><updated>2014-10-15T16:34:00+08:00</updated><author><name>donly</name></author><id>tag:None,2014-10-15:/testflight.html</id><summary type="html">&lt;div&gt;&lt;p&gt;这里要说的不是 testflightapp.com，而是被苹果收购后，在 iTunes Connect
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - iPhone</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/iphone.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2014-10-15T16:34:00+08:00</updated><entry><title>TestFlight 笔记</title><link href="https://magicalboy.com/testflight.html" rel="alternate"></link><published>2014-10-15T16:34:00+08:00</published><updated>2014-10-15T16:34:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2014-10-15:/testflight.html</id><summary type="html">&lt;div&gt;&lt;p&gt;这里要说的不是 testflightapp.com，而是被苹果收购后，在 iTunes Connect
 上面的那个 TestFlight。并且 testflightapp.com 某此功能都被停掉了，比如
 Team 的 SDK 已经不能再申请使用。&lt;/p&gt;
 &lt;/div&gt;&lt;div class="section" id="id1"&gt;
@@ -65,7 +65,7 @@ Testers。&lt;strong&gt;像普通应用一样需要先提交审核，通过后�
 &lt;p&gt;&lt;a class="reference external" href="https://developer.apple.com/app-store/Testflight/"&gt;https://developer.apple.com/app-store/Testflight/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/BetaTestingTheApp.html#//apple_ref/doc/uid/TP40011225-CH35-SW2"&gt;https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/BetaTestingTheApp.html#//apple_ref/doc/uid/TP40011225-CH35-SW2&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;/div&gt;&lt;/div&gt;
-</content><category term="App Store"></category><category term="iTunes Connect"></category><category term="TestFlight"></category></entry><entry><title>开始使用 Auto Layout</title><link href="/start-using-auto-layout.html" rel="alternate"></link><published>2014-09-05T11:19:00+08:00</published><updated>2014-09-05T11:19:00+08:00</updated><author><name>donly</name></author><id>tag:None,2014-09-05:/start-using-auto-layout.html</id><summary type="html">&lt;p&gt;首先看看苹果官网提供的 iOS 设备版本使用统计情况。&lt;/p&gt;
+</content><category term="App Store"></category><category term="iTunes Connect"></category><category term="TestFlight"></category></entry><entry><title>开始使用 Auto Layout</title><link href="https://magicalboy.com/start-using-auto-layout.html" rel="alternate"></link><published>2014-09-05T11:19:00+08:00</published><updated>2014-09-05T11:19:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2014-09-05:/start-using-auto-layout.html</id><summary type="html">&lt;p&gt;首先看看苹果官网提供的 iOS 设备版本使用统计情况。&lt;/p&gt;
 &lt;p&gt;[caption id=&amp;quot;attachment_43216&amp;quot; align=&amp;quot;aligncenter&amp;quot;
 width=&amp;quot;205&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2014/09/chart-8-10-14.png"&gt;&lt;img alt="2014年8月24日期间" class="wp-image-43216 size-full" src="http://magicalboy.com/wp-content/uploads/2014/09/chart-8-10-14.png" style="width: 205px; height: 220px;" /&gt;&lt;/a&gt; 91% 的设备正在使用 iOS 7[/caption]&lt;/p&gt;
 &lt;p&gt;苹果应用程序商店（App
@@ -90,7 +90,7 @@ iOS 6， iOS 7 之后也有所改进。从这个统计数据中看到，iOS 6 �
 &lt;p&gt;最新 iOS 设备版本使用统计情况请查看苹果官网：&lt;a class="reference external" href="https://developer.apple.com/support/appstore/"&gt;App Store Distribution -
 Support - Apple
 Developer&lt;/a&gt;&lt;/p&gt;
-</content><category term="iOS"></category><category term="iPhone"></category></entry><entry><title>Xcode 5.0 下载，安装，使用</title><link href="/xcode-5-0.html" rel="alternate"></link><published>2013-09-30T12:02:00+08:00</published><updated>2013-09-30T12:02:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-09-30:/xcode-5-0.html</id><summary type="html">&lt;p&gt;Xcode 5.0 是一个大版本，改变自然也多，支持我的 iPhone5s 和 iOS7.0
+</content><category term="iOS"></category><category term="iPhone"></category></entry><entry><title>Xcode 5.0 下载，安装，使用</title><link href="https://magicalboy.com/xcode-5-0.html" rel="alternate"></link><published>2013-09-30T12:02:00+08:00</published><updated>2013-09-30T12:02:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-09-30:/xcode-5-0.html</id><summary type="html">&lt;p&gt;Xcode 5.0 是一个大版本，改变自然也多，支持我的 iPhone5s 和 iOS7.0
 开发必须的工具。另外也支持 64bit app 开发，还有支持 OS X Mavericks
 开发，TDD，Continuous Integration，自动化配置等。改进方面有界面 Flat
 化，可视化调试，静态分析，代码管理等。 具体请见 &lt;a class="reference external" href="https://developer.apple.com/technologies/tools/whats-new.html"&gt;What’s New in Xcode
@@ -141,7 +141,7 @@ Identify，否则会找不到。&lt;/li&gt;
 &lt;p&gt;技术升级太快，一下子就 iOS 7, Xcode 5
 了，得勇于面对新事物，快速学习新的知识才不被落后啊，一起努力吧，求交流。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iPhone"></category><category term="iPhone5s"></category><category term="Xcode"></category><category term="Xcode5"></category></entry><entry><title>iOS 平铺图像</title><link href="/ios-pattern-image.html" rel="alternate"></link><published>2013-08-05T14:38:00+08:00</published><updated>2013-08-05T14:38:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-08-05:/ios-pattern-image.html</id><summary type="html">&lt;p&gt;iOS SDK 里面有没有类似于 HTML 中的 background-repeat
+</content><category term="iPhone"></category><category term="iPhone5s"></category><category term="Xcode"></category><category term="Xcode5"></category></entry><entry><title>iOS 平铺图像</title><link href="https://magicalboy.com/ios-pattern-image.html" rel="alternate"></link><published>2013-08-05T14:38:00+08:00</published><updated>2013-08-05T14:38:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-08-05:/ios-pattern-image.html</id><summary type="html">&lt;p&gt;iOS SDK 里面有没有类似于 HTML 中的 background-repeat
 属性，使图像重复平铺呢？&lt;/p&gt;
 &lt;p&gt;我大苹果当然有啦，那就是：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -187,7 +187,7 @@ Images》&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;平铺可以减少图片资源所占用的app空间，重复利用资源。&lt;/p&gt;
 &lt;p&gt;原文：&lt;a class="reference external" href="http://www.bobmccune.com/2011/03/08/ios-101-pattern-images/"&gt;《iOS 101: Pattern
 Images》&lt;/a&gt;&lt;/p&gt;
-</content><category term="iOS"></category></entry><entry><title>CoreData 轻量更新</title><link href="/coredata-auto-light-migration.html" rel="alternate"></link><published>2013-07-29T11:35:00+08:00</published><updated>2013-07-29T11:35:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-07-29:/coredata-auto-light-migration.html</id><summary type="html">&lt;p&gt;项目中使用了CoreData框架，肯定会有更新Model结构后发生应用崩溃的情况：&lt;/p&gt;
+</content><category term="iOS"></category></entry><entry><title>CoreData 轻量更新</title><link href="https://magicalboy.com/coredata-auto-light-migration.html" rel="alternate"></link><published>2013-07-29T11:35:00+08:00</published><updated>2013-07-29T11:35:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-07-29:/coredata-auto-light-migration.html</id><summary type="html">&lt;p&gt;项目中使用了CoreData框架，肯定会有更新Model结构后发生应用崩溃的情况：&lt;/p&gt;
 &lt;blockquote&gt;
 *** Terminating app due to uncaught exception
 'NSInternalInconsistencyException', reason: 'This
@@ -235,7 +235,7 @@ Migration&lt;/a&gt;&lt;/li&gt;
 models?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content><category term="CoreData"></category><category term="iOS"></category></entry><entry><title>Mountain Lion 升级到 10.8.4 后每次运行 iOS Simulator 必崩</title><link href="/10-8-4-and-the-ios-simulator.html" rel="alternate"></link><published>2013-06-21T14:18:00+08:00</published><updated>2013-06-21T14:18:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-06-21:/10-8-4-and-the-ios-simulator.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content><category term="CoreData"></category><category term="iOS"></category></entry><entry><title>Mountain Lion 升级到 10.8.4 后每次运行 iOS Simulator 必崩</title><link href="https://magicalboy.com/10-8-4-and-the-ios-simulator.html" rel="alternate"></link><published>2013-06-21T14:18:00+08:00</published><updated>2013-06-21T14:18:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-06-21:/10-8-4-and-the-ios-simulator.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;问题描述&lt;/h2&gt;
 &lt;p&gt;最近遇到一个比较Egg Pain的问题，某日无意重启了一下顺便更新升级了
 Mountain Lion 到 10.8.4，之后每次在 Xcode 4.6 重复运行 iOS
@@ -268,7 +268,7 @@ Debugger 由 LLDB 改为 GDB，问题解决：&lt;/p&gt;
 Update your scheme by selecting Product &amp;gt; Scheme &amp;gt; Edit Scheme, and
 choose the GDB debugger for your debug scheme.&lt;/blockquote&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>iOS7 初体验</title><link href="/ios7-first-experience.html" rel="alternate"></link><published>2013-06-12T12:48:00+08:00</published><updated>2013-06-12T12:48:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-06-12:/ios7-first-experience.html</id><summary type="html">&lt;p&gt;今年苹果 WWDC 2013 上推出了新的iOS系统
+</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>iOS7 初体验</title><link href="https://magicalboy.com/ios7-first-experience.html" rel="alternate"></link><published>2013-06-12T12:48:00+08:00</published><updated>2013-06-12T12:48:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-06-12:/ios7-first-experience.html</id><summary type="html">&lt;p&gt;今年苹果 WWDC 2013 上推出了新的iOS系统
 iOS7。最大的特点是UI全新设计，向扁平风格靠齐。看得还不过瘾，于是上官网下载了
 iOS 7 beta 来体验一番。&lt;/p&gt;
 &lt;div class="section" id="ios-7-beta"&gt;
@@ -334,7 +334,7 @@ ids=&amp;quot;43150,43153,43157,43134,43145,43135,43138,43139,43162,43140,43141,
 Store输入搜索时出来一次自动恢复，即恢复到上锁的界面，一下子的事情。这是iOS7的第一个Beta版本，Bug
 肯定会有不少的，想玩的同学要做好心理准备。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="iOS7"></category><category term="iPhone"></category></entry><entry><title>ASIHTTPRequest 数据压缩使用</title><link href="/asihttprequest-gzip-decompression.html" rel="alternate"></link><published>2013-05-09T13:33:00+08:00</published><updated>2013-05-09T13:33:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-05-09:/asihttprequest-gzip-decompression.html</id><summary type="html">&lt;div class="line-block"&gt;
+</content><category term="iOS"></category><category term="iOS7"></category><category term="iPhone"></category></entry><entry><title>ASIHTTPRequest 数据压缩使用</title><link href="https://magicalboy.com/asihttprequest-gzip-decompression.html" rel="alternate"></link><published>2013-05-09T13:33:00+08:00</published><updated>2013-05-09T13:33:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-05-09:/asihttprequest-gzip-decompression.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;ASIHTTPRequest的官网上声称，其原作者已经不再对其进行维护和更新了，但
 ASIHTTPRequest 仍然是众多码农的首选 HTTP Request
 框架。ASI的特点有很多：容易使用，功能强大，文档齐全，整合了基于 REST
@@ -430,7 +430,7 @@ Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.dreamingwish.com/dream-2011/asihttprequest-data-compression.html"&gt;ASIHTTPRequest-数据压缩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content><category term="ASI"></category><category term="ASIHTTPRequest"></category><category term="gzip"></category></entry><entry><title>xcodebuild 命令用法</title><link href="/xcodebuild-usage.html" rel="alternate"></link><published>2013-04-18T15:35:00+08:00</published><updated>2013-04-18T15:35:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-04-18:/xcodebuild-usage.html</id><summary type="html">&lt;p&gt;xcodebuild 是什么，&lt;tt class="docutils literal"&gt;$ man xcodebuild&lt;/tt&gt;：&lt;/p&gt;
+</content><category term="ASI"></category><category term="ASIHTTPRequest"></category><category term="gzip"></category></entry><entry><title>xcodebuild 命令用法</title><link href="https://magicalboy.com/xcodebuild-usage.html" rel="alternate"></link><published>2013-04-18T15:35:00+08:00</published><updated>2013-04-18T15:35:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-04-18:/xcodebuild-usage.html</id><summary type="html">&lt;p&gt;xcodebuild 是什么，&lt;tt class="docutils literal"&gt;$ man xcodebuild&lt;/tt&gt;：&lt;/p&gt;
 &lt;blockquote&gt;
 xcodebuild -- build Xcode projects and workspaces&lt;/blockquote&gt;
 &lt;div class="section" id="id1"&gt;
@@ -489,7 +489,7 @@ Page&lt;/a&gt;&lt;/li&gt;
 GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="Xcode"></category><category term="xcodebuild"></category></entry><entry><title>Objective C 中的nil，Nil，NULL和NSNull理解</title><link href="/null-value-in-objective-c.html" rel="alternate"></link><published>2013-04-16T10:26:00+08:00</published><updated>2013-04-16T10:26:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-04-16:/null-value-in-objective-c.html</id><summary type="html">&lt;p&gt;ObjC
+</content><category term="iOS"></category><category term="Xcode"></category><category term="xcodebuild"></category></entry><entry><title>Objective C 中的nil，Nil，NULL和NSNull理解</title><link href="https://magicalboy.com/null-value-in-objective-c.html" rel="alternate"></link><published>2013-04-16T10:26:00+08:00</published><updated>2013-04-16T10:26:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-04-16:/null-value-in-objective-c.html</id><summary type="html">&lt;p&gt;ObjC
 里面的几个空值符号经常会差点把我搞死，这些基础的东西一点要弄清楚才行，以提高码农的基本素质。&lt;/p&gt;
 &lt;div class="section" id="nil"&gt;
 &lt;h2&gt;nil&lt;/h2&gt;
@@ -655,7 +655,7 @@ Overflow&lt;/a&gt;&lt;/li&gt;
 Null.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content><category term="null"></category><category term="Objective-C"></category></entry><entry><title>内嵌 UIWebView 设置</title><link href="/embeduiwebview-setting.html" rel="alternate"></link><published>2013-03-29T10:28:00+08:00</published><updated>2013-03-29T10:28:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-03-29:/embeduiwebview-setting.html</id><summary type="html">&lt;p&gt;在实际项目中会使用内嵌的 Web app，比如 HTML5 什么的现在很火啊。嵌入的
+</content><category term="null"></category><category term="Objective-C"></category></entry><entry><title>内嵌 UIWebView 设置</title><link href="https://magicalboy.com/embeduiwebview-setting.html" rel="alternate"></link><published>2013-03-29T10:28:00+08:00</published><updated>2013-03-29T10:28:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-03-29:/embeduiwebview-setting.html</id><summary type="html">&lt;p&gt;在实际项目中会使用内嵌的 Web app，比如 HTML5 什么的现在很火啊。嵌入的
 web app 还是需要一番调整才有更好的显示和体验效果。&lt;/p&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;直接上代码，详见注释：&lt;/div&gt;
@@ -703,7 +703,7 @@ webView.multipleTouchEnabled &lt;span class="o"&gt;=&lt;/span&gt; NO&lt;span cla
     &lt;span class="k"&gt;return&lt;/span&gt; nil&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-</content><category term="iOS"></category><category term="UIWebView"></category></entry><entry><title>iOS App 中使用的标识符</title><link href="/using-identifiers-in-your-apps.html" rel="alternate"></link><published>2013-03-26T22:11:00+08:00</published><updated>2013-03-26T22:11:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-03-26:/using-identifiers-in-your-apps.html</id><summary type="html">&lt;div class="line-block"&gt;
+</content><category term="iOS"></category><category term="UIWebView"></category></entry><entry><title>iOS App 中使用的标识符</title><link href="https://magicalboy.com/using-identifiers-in-your-apps.html" rel="alternate"></link><published>2013-03-26T22:11:00+08:00</published><updated>2013-03-26T22:11:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-03-26:/using-identifiers-in-your-apps.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;2013年03月21日，苹果强势地在 &lt;a class="reference external" href="https://developer.apple.com/news/index.php?id=3212013a"&gt;News and Announcements for Apple
 Developers&lt;/a&gt;
 通告开发者们在应用中使用新的标识符（Identifier），为了避免碰不必要的钉子，应该去了解了解。&lt;/div&gt;
@@ -762,7 +762,7 @@ iOS UDID 解决方案。&lt;/li&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://developer.apple.com/library/ios/#documentation/uikit/reference/UIDevice_Class/DeprecationAppendix/AppendixADeprecatedAPI.html"&gt;Deprecated UIDevice
 Methods&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="UDID"></category></entry><entry><title>Xcode4.6 中整合 zxing 库</title><link href="/install-zxing-in-xcode-4.html" rel="alternate"></link><published>2013-03-26T13:50:00+08:00</published><updated>2013-03-26T13:50:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-03-26:/install-zxing-in-xcode-4.html</id><summary type="html">&lt;p&gt;zxing（&lt;a class="reference external" href="http://code.google.com/p/zxing/"&gt;http://code.google.com/p/zxing/&lt;/a&gt;）是一个开源，支持多平台的 1d/2d
+</content><category term="iOS"></category><category term="UDID"></category></entry><entry><title>Xcode4.6 中整合 zxing 库</title><link href="https://magicalboy.com/install-zxing-in-xcode-4.html" rel="alternate"></link><published>2013-03-26T13:50:00+08:00</published><updated>2013-03-26T13:50:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-03-26:/install-zxing-in-xcode-4.html</id><summary type="html">&lt;p&gt;zxing（&lt;a class="reference external" href="http://code.google.com/p/zxing/"&gt;http://code.google.com/p/zxing/&lt;/a&gt;）是一个开源，支持多平台的 1d/2d
 条形码扫描库。同类的应用有 zbar，zbar
 支持生成条形码功能，使用简单，就是识别率没有 zxing 好。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
@@ -849,7 +849,7 @@ build target 参数：“Build Active Architecture Only” 修改成 “NO”。
 Overflow&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="iPhone"></category><category term="Xcode"></category><category term="zxing"></category><category term="二维码"></category></entry><entry><title>iOS更新到6.1.3</title><link href="/ios-6-1-3-update.html" rel="alternate"></link><published>2013-03-20T09:32:00+08:00</published><updated>2013-03-20T09:32:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-03-20:/ios-6-1-3-update.html</id><summary type="html">&lt;p&gt;更新详情以下，越狱用户请勿手贱！&lt;/p&gt;
+</content><category term="iOS"></category><category term="iPhone"></category><category term="Xcode"></category><category term="zxing"></category><category term="二维码"></category></entry><entry><title>iOS更新到6.1.3</title><link href="https://magicalboy.com/ios-6-1-3-update.html" rel="alternate"></link><published>2013-03-20T09:32:00+08:00</published><updated>2013-03-20T09:32:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-03-20:/ios-6-1-3-update.html</id><summary type="html">&lt;p&gt;更新详情以下，越狱用户请勿手贱！&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0328.png"&gt;&lt;img alt="IMG_0328" class="alignnone size-medium wp-image-43056" src="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0328-200x300.png" style="width: 200px; height: 300px;" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;iPod touch 空间太小，更新个16.9MB的包至少需要662MB空间。&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0327.png"&gt;&lt;img alt="IMG_0327" src="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0327-200x300.png" style="width: 200px; height: 300px;" /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -859,7 +859,7 @@ Overflow&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;iPod touch 空间太小，更新个16.9MB的包至少需要662MB空间。&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0327.png"&gt;&lt;img alt="IMG_0327" src="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0327-200x300.png" style="width: 200px; height: 300px;" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;另外改进了日本&amp;quot;地图&amp;quot;，很容易让人联想到DiaoYuDiao。&lt;/p&gt;
-</content><category term="iOS"></category></entry><entry><title>iOS6.1更新了</title><link href="/ios6-1-update.html" rel="alternate"></link><published>2013-01-30T00:08:00+08:00</published><updated>2013-01-30T00:08:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-01-30:/ios6-1-update.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0269.png"&gt;&lt;img alt="iOS6.1 Update" src="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0269-200x300.png" style="width: 200px; height: 300px;" /&gt;&lt;/a&gt;&lt;/p&gt;
+</content><category term="iOS"></category></entry><entry><title>iOS6.1更新了</title><link href="https://magicalboy.com/ios6-1-update.html" rel="alternate"></link><published>2013-01-30T00:08:00+08:00</published><updated>2013-01-30T00:08:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-01-30:/ios6-1-update.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0269.png"&gt;&lt;img alt="iOS6.1 Update" src="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0269-200x300.png" style="width: 200px; height: 300px;" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0270.png"&gt;&lt;img alt="Update Detail" src="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0270-200x300.png" style="width: 200px; height: 300px;" /&gt;&lt;/a&gt;&lt;/div&gt;
@@ -875,7 +875,7 @@ Overflow&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;1月29号发布的小更新，优化和细微调整。iOS升级当然少不了Xcode：&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/01/Xcode_4.6.jpg"&gt;&lt;img alt="Xcode_4.6" src="http://magicalboy.com/wp-content/uploads/2013/01/Xcode_4.6-300x118.jpg" style="width: 300px; height: 118px;" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;快跟不上节奏了，科技与时俱进，码农要苦Ｂ了唉&lt;/p&gt;
-</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>UILabel behavior enable</title><link href="/uilabel-behavior-enable.html" rel="alternate"></link><published>2012-08-08T12:22:00+08:00</published><updated>2012-08-08T12:22:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-08-08:/uilabel-behavior-enable.html</id><summary type="html">&lt;p&gt;UILabel 的 enabled 属性在文档中是这样描述的：&lt;/p&gt;
+</content><category term="iOS"></category><category term="Xcode"></category></entry><entry><title>UILabel behavior enable</title><link href="https://magicalboy.com/uilabel-behavior-enable.html" rel="alternate"></link><published>2012-08-08T12:22:00+08:00</published><updated>2012-08-08T12:22:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-08-08:/uilabel-behavior-enable.html</id><summary type="html">&lt;p&gt;UILabel 的 enabled 属性在文档中是这样描述的：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;The enabled state to use when drawing the label’s text.&lt;/div&gt;
@@ -903,7 +903,7 @@ property is set to YES by default.&lt;/div&gt;
 &lt;p&gt;另外需要注意的是，虽然它的默认值为 YES，但在XIB中改变 UITableViewCell 的
 Style 的时候，Title 或 SubTitle 的 Behavior 默认是不勾选的。&lt;/p&gt;
 &lt;p&gt;EOF.&lt;/p&gt;
-</content><category term="iOS"></category><category term="UILabel"></category></entry><entry><title>KVC 与 KVO 理解</title><link href="/kvc_and_kvo.html" rel="alternate"></link><published>2012-06-07T11:22:00+08:00</published><updated>2012-06-07T11:22:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-06-07:/kvc_and_kvo.html</id><summary type="html">&lt;p&gt;KVC 与 KVO 是 Objective C
+</content><category term="iOS"></category><category term="UILabel"></category></entry><entry><title>KVC 与 KVO 理解</title><link href="https://magicalboy.com/kvc_and_kvo.html" rel="alternate"></link><published>2012-06-07T11:22:00+08:00</published><updated>2012-06-07T11:22:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-06-07:/kvc_and_kvo.html</id><summary type="html">&lt;p&gt;KVC 与 KVO 是 Objective C
 的关键概念，个人认为必须理解的东西，下面是实例讲解。&lt;/p&gt;
 &lt;div class="section" id="key-value-coding-kvc"&gt;
 &lt;h2&gt;Key-Value Coding (KVC)&lt;/h2&gt;
@@ -1046,7 +1046,7 @@ static NSString *const &lt;span class="nv"&gt;KVO_CONTEXT_ADDRESS_CHANGED&lt;/sp
 &lt;p&gt;这就是 KVO 的作用，它通过 key path
 观察对象的值，当值发生变化的时候会收到通知。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Objective-C"></category></entry><entry><title>iPhone 近距离传感器的使用</title><link href="/using_iphone_proximity_sensor.html" rel="alternate"></link><published>2012-05-25T14:18:00+08:00</published><updated>2012-05-25T14:18:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-05-25:/using_iphone_proximity_sensor.html</id><summary type="html">&lt;p&gt;在 iOS 中，并非所有 iOS 设备都拥有近距离传感器。这里介绍如何调用 iPhone
+</content><category term="Objective-C"></category></entry><entry><title>iPhone 近距离传感器的使用</title><link href="https://magicalboy.com/using_iphone_proximity_sensor.html" rel="alternate"></link><published>2012-05-25T14:18:00+08:00</published><updated>2012-05-25T14:18:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-05-25:/using_iphone_proximity_sensor.html</id><summary type="html">&lt;p&gt;在 iOS 中，并非所有 iOS 设备都拥有近距离传感器。这里介绍如何调用 iPhone
 的距离传感器。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;使用近距离传感器&lt;/h2&gt;
@@ -1092,7 +1092,7 @@ versa。&lt;/div&gt;
 &lt;div class="line"&gt;UIDeviceProximityStateDidChangeNotification，当近距离传感器状态改变时发生。&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="iPhone"></category><category term="近距离传感器"></category></entry><entry><title>iOS 获取 GPS 位置信息</title><link href="/ios_gps_location.html" rel="alternate"></link><published>2012-05-25T11:42:00+08:00</published><updated>2012-05-25T11:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-05-25:/ios_gps_location.html</id><summary type="html">&lt;p&gt;在 iOS 平台上使用
+</content><category term="iOS"></category><category term="iPhone"></category><category term="近距离传感器"></category></entry><entry><title>iOS 获取 GPS 位置信息</title><link href="https://magicalboy.com/ios_gps_location.html" rel="alternate"></link><published>2012-05-25T11:42:00+08:00</published><updated>2012-05-25T11:42:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-05-25:/ios_gps_location.html</id><summary type="html">&lt;p&gt;在 iOS 平台上使用
 &lt;a class="reference external" href="https://developer.apple.com/library/ios/#DOCUMENTATION/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html"&gt;CLLocationManager&lt;/a&gt;
 获取 GPS 位置信息，比如经度，纬度，海拔高度等是很简单的事情。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
@@ -1138,7 +1138,7 @@ versa。&lt;/div&gt;
 &lt;h2&gt;完整 Demo&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/donly/GPS_iOS"&gt;GPS_iOS&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="GPS"></category><category term="iOS"></category></entry><entry><title>Objective C NSTimer 使用</title><link href="/objective_c_nstimer_usage.html" rel="alternate"></link><published>2012-05-24T11:36:00+08:00</published><updated>2012-05-24T11:36:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-05-24:/objective_c_nstimer_usage.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html"&gt;NSTimer&lt;/a&gt; 的使用并不复杂，简单介绍在iOS开发中经常会用到的几种方式。&lt;/p&gt;
+</content><category term="GPS"></category><category term="iOS"></category></entry><entry><title>Objective C NSTimer 使用</title><link href="https://magicalboy.com/objective_c_nstimer_usage.html" rel="alternate"></link><published>2012-05-24T11:36:00+08:00</published><updated>2012-05-24T11:36:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-05-24:/objective_c_nstimer_usage.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html"&gt;NSTimer&lt;/a&gt; 的使用并不复杂，简单介绍在iOS开发中经常会用到的几种方式。&lt;/p&gt;
 &lt;div class="section" id="nstimer"&gt;
 &lt;h2&gt;创建 NSTimer&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
@@ -1176,7 +1176,7 @@ Timers&lt;/a&gt;&lt;/li&gt;
 Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="Objective-C"></category></entry><entry><title>iOS 用户体验与界面设计学习</title><link href="/ios_ue_and_ui_learning.html" rel="alternate"></link><published>2012-02-29T13:53:00+08:00</published><updated>2012-02-29T13:53:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-02-29:/ios_ue_and_ui_learning.html</id><summary type="html">&lt;p&gt;如何学习iOS用户体验与界面设计&lt;/p&gt;
+</content><category term="iOS"></category><category term="Objective-C"></category></entry><entry><title>iOS 用户体验与界面设计学习</title><link href="https://magicalboy.com/ios_ue_and_ui_learning.html" rel="alternate"></link><published>2012-02-29T13:53:00+08:00</published><updated>2012-02-29T13:53:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-02-29:/ios_ue_and_ui_learning.html</id><summary type="html">&lt;p&gt;如何学习iOS用户体验与界面设计&lt;/p&gt;
 &lt;p&gt;&lt;img alt="iPhoneLineUp" src="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/Art/iPhoneLineUp.jpg" style="width: 408px; height: 291px;" /&gt;&lt;/p&gt;
 &lt;p&gt;Apple
 公司有世界上最牛X的UI工程师，iOS内置的UI绝对值得开发人员学习。比如内置程序电话，邮件，通讯录，日历，相册等。&lt;/p&gt;
@@ -1204,7 +1204,7 @@ Guidelines&lt;/a&gt;》，简称HIG。&lt;/p&gt;
 &lt;p&gt;iPhone用户喜欢触感性的东西，都应有视觉反应，甚至可以不管有无实际功能。比如允许视图滑动，即使数据没有超出可视范围。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image2" src="/media/aglkb25seWNoYW5yDQsSBU1lZGlhGJnyAQw/IMG_0004.PNG" style="width: 320px; height: 480px;" /&gt;&lt;/p&gt;
 &lt;p&gt;精致，用户可以感觉到应用微小的细节，UI设计的每一点都需要精雕细琢。&lt;/p&gt;
-</content><category term="Apple"></category><category term="iOS"></category><category term="iPhone"></category></entry><entry><title>iOS 5 软件更新</title><link href="/what-is-new-in-ios5.html" rel="alternate"></link><published>2011-10-21T05:59:00+08:00</published><updated>2011-10-21T05:59:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-10-21:/what-is-new-in-ios5.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;iOS 5 软件更新&lt;/strong&gt;&lt;/p&gt;
+</content><category term="Apple"></category><category term="iOS"></category><category term="iPhone"></category></entry><entry><title>iOS 5 软件更新</title><link href="https://magicalboy.com/what-is-new-in-ios5.html" rel="alternate"></link><published>2011-10-21T05:59:00+08:00</published><updated>2011-10-21T05:59:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-10-21:/what-is-new-in-ios5.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;iOS 5 软件更新&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;本更新增加了 200 多个新功能，其中包括：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul class="simple"&gt;
@@ -1374,7 +1374,7 @@ Guidelines&lt;/a&gt;》，简称HIG。&lt;/p&gt;
 短信方式发送，可能要缴纳运营商信息收费。&lt;/p&gt;
 &lt;p&gt;若要进一步了解本更新的安全性内容，请访问此网站：&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://support.apple.com/kb/HT1222?viewlocale=zh_CN"&gt;http://support.apple.com/kb/HT1222?viewlocale=zh_CN&lt;/a&gt;&lt;/p&gt;
-</content><category term="iOS"></category></entry><entry><title>ObjectiveC 深浅拷贝学习</title><link href="/objectivec-copy-and-mutablecopy.html" rel="alternate"></link><published>2011-03-09T04:13:00+08:00</published><updated>2011-03-09T04:13:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-03-09:/objectivec-copy-and-mutablecopy.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;在ObjC中，什么是深浅拷贝？&lt;/strong&gt;
+</content><category term="iOS"></category></entry><entry><title>ObjectiveC 深浅拷贝学习</title><link href="https://magicalboy.com/objectivec-copy-and-mutablecopy.html" rel="alternate"></link><published>2011-03-09T04:13:00+08:00</published><updated>2011-03-09T04:13:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-03-09:/objectivec-copy-and-mutablecopy.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;在ObjC中，什么是深浅拷贝？&lt;/strong&gt;
 深浅拷贝分别指深拷贝和浅拷贝，即mutableCopy和copy方法。
 copy复制一个不可变对象，而mutableCopy复制一个mutable可变对象。
 什么时候用到深浅拷贝？下面举几个例子说明。&lt;/p&gt;
@@ -1514,7 +1514,7 @@ NSArray *keys &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[&lt;/s
 未完请继续讨论.. 本文参考了on my way的《&lt;a class="reference external" href="http://www.cnblogs.com/scorpiozj/archive/2011/01/25/1944496.html"&gt;ios
 深浅拷贝学习&lt;/a&gt;》&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="Objective-C"></category></entry><entry><title>iOS模拟器截图工具</title><link href="/ios-simulator-screenshots.html" rel="alternate"></link><published>2011-03-03T07:13:00+08:00</published><updated>2011-03-03T07:13:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-03-03:/ios-simulator-screenshots.html</id><summary type="html">&lt;p&gt;在这里推荐一个使用非常简单的iOS模拟器或也叫iPhone模拟器截图工具：&lt;a class="reference external" href="http://www.curioustimes.de/iphonesimulatorcropper/"&gt;iOS-Simulator
+</content><category term="iOS"></category><category term="Objective-C"></category></entry><entry><title>iOS模拟器截图工具</title><link href="https://magicalboy.com/ios-simulator-screenshots.html" rel="alternate"></link><published>2011-03-03T07:13:00+08:00</published><updated>2011-03-03T07:13:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-03-03:/ios-simulator-screenshots.html</id><summary type="html">&lt;p&gt;在这里推荐一个使用非常简单的iOS模拟器或也叫iPhone模拟器截图工具：&lt;a class="reference external" href="http://www.curioustimes.de/iphonesimulatorcropper/"&gt;iOS-Simulator
 Cropper&lt;/a&gt;。对那些使用不了系统自带的截图功能的用户很有帮助，而且还帮我们处理好模拟器边角等效果。
 &lt;strong&gt;以下是iOS4模拟器截图效果：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Game Center" class="aligncenter" src="https://lh6.googleusercontent.com/-ry7--lTWSqI/TnGvWJ8I85I/AAAAAAAAAJQ/2iX69BqaTSk/s800/iOS4_game_center.png" /&gt;&lt;/p&gt;
@@ -1546,7 +1546,7 @@ iOS
 Screenshots功能是将和iPhone模拟器一样大小的图片拖到图标的位置，就可以生成想要的效果。iOS-Simulator
 Cropper还支持命令行使用方式，有需要和有兴趣就去其官网参考，在这不多做介绍了。&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category><category term="iOS Simulator Cropper"></category><category term="工具"></category></entry><entry><title>iPhone/iPod 定位技术简介</title><link href="/gps-in-iphone-ipod.html" rel="alternate"></link><published>2011-02-28T05:55:00+08:00</published><updated>2011-02-28T05:55:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-28:/gps-in-iphone-ipod.html</id><summary type="html">&lt;p&gt;最近在做一个iPhone地图相关的应用，在这介绍在iPhone或iPod
+</content><category term="iOS"></category><category term="iOS Simulator Cropper"></category><category term="工具"></category></entry><entry><title>iPhone/iPod 定位技术简介</title><link href="https://magicalboy.com/gps-in-iphone-ipod.html" rel="alternate"></link><published>2011-02-28T05:55:00+08:00</published><updated>2011-02-28T05:55:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-02-28:/gps-in-iphone-ipod.html</id><summary type="html">&lt;p&gt;最近在做一个iPhone地图相关的应用，在这介绍在iPhone或iPod
 touch中几种定位技术，顺便做下笔记。&lt;/p&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;strong&gt;蜂窝基站定位：&lt;/strong&gt;&lt;/div&gt;
@@ -1592,7 +1592,7 @@ Touch查询包含WiFi路由器位置的数据库，并根据附近的WiFi路由�
 &lt;div class="line"&gt;&lt;strong&gt;三轴陀螺仪：&lt;/strong&gt;&lt;/div&gt;
 &lt;div class="line"&gt;三轴陀螺仪在定位时，与显示位置的地图结合使用来确定方向。因为三轴陀螺仪具有指南针的功能，但它处于静止时，任何形式的地理位置定位都不能提供方向，不管它有多准确的定位。&lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>为iPhone Apps添加Splash屏显</title><link href="/add-splash-screen-for-your-iphone-apps.html" rel="alternate"></link><published>2011-02-26T04:03:00+08:00</published><updated>2011-02-26T04:03:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-26:/add-splash-screen-for-your-iphone-apps.html</id><summary type="html">&lt;p&gt;我们打开iPhone
+</content></entry><entry><title>为iPhone Apps添加Splash屏显</title><link href="https://magicalboy.com/add-splash-screen-for-your-iphone-apps.html" rel="alternate"></link><published>2011-02-26T04:03:00+08:00</published><updated>2011-02-26T04:03:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-02-26:/add-splash-screen-for-your-iphone-apps.html</id><summary type="html">&lt;p&gt;我们打开iPhone
 Apps时经常可看到一个欢迎页面，其实它就是一张全屏大小的图片，主要用来表示当前应用的名称，版权和正在加载这些信息。
 为你自己的iPhone Apps添加Splash
 Screen，有多种方法，在这就介绍最简单的吧。
@@ -1628,7 +1628,7 @@ Splash图像显示的时长跟你的程序大小有关，如果程序很快载�
 ...
 &lt;/pre&gt;
 &lt;p&gt;根据具体情况修改延时秒数可达到以假乱真的效果，很不错哦。&lt;/p&gt;
-</content><category term="iOS"></category><category term="iPhone"></category></entry><entry><title>网页颜色RGB转换UIColor</title><link href="/rgb2uicolor.html" rel="alternate"></link><published>2011-02-23T02:48:00+08:00</published><updated>2011-02-23T02:48:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-23:/rgb2uicolor.html</id><summary type="html">&lt;p&gt;在iPhone开发中遇到要使用网页颜色代码时，发现UIColor的引用文档中没有将网页颜色转换为RGB码值的方法，且UIColor中的RGB分别用0到1之间的数值来表示的，要将16进制的网页颜色代码#ff3245转换为UIColor中RGB值时会觉得有点麻烦。&lt;/p&gt;
+</content><category term="iOS"></category><category term="iPhone"></category></entry><entry><title>网页颜色RGB转换UIColor</title><link href="https://magicalboy.com/rgb2uicolor.html" rel="alternate"></link><published>2011-02-23T02:48:00+08:00</published><updated>2011-02-23T02:48:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-02-23:/rgb2uicolor.html</id><summary type="html">&lt;p&gt;在iPhone开发中遇到要使用网页颜色代码时，发现UIColor的引用文档中没有将网页颜色转换为RGB码值的方法，且UIColor中的RGB分别用0到1之间的数值来表示的，要将16进制的网页颜色代码#ff3245转换为UIColor中RGB值时会觉得有点麻烦。&lt;/p&gt;
 &lt;p&gt;UIColor Class Reference中的方法&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIColor_Class/Reference/Reference.html"&gt;–
@@ -1648,7 +1648,7 @@ colorWithRed:green:blue:alpha:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;两个方法都是使用指定的RGB值和alpha值来创建和返回一个颜色对象，不同的是第一个是实例方法，另一个是类方法。&lt;/p&gt;
 &lt;p&gt;其实这只是进制之间的换算，在这里我在网上找了一个直接输入网页颜色RGB值转换UIColor代码的小JS应用：&lt;a class="reference external" href="http://magicalboy.com/apps/RGB2UIColor.html"&gt;RGB2UIcolor&lt;/a&gt;。&lt;/p&gt;
-</content></entry><entry><title>在Xcode项目中读取plist文件</title><link href="/read-plist-file-in-xcode.html" rel="alternate"></link><published>2011-02-22T02:37:00+08:00</published><updated>2011-02-22T02:37:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-22:/read-plist-file-in-xcode.html</id><summary type="html">&lt;p&gt;.plist(Property list)
+</content></entry><entry><title>在Xcode项目中读取plist文件</title><link href="https://magicalboy.com/read-plist-file-in-xcode.html" rel="alternate"></link><published>2011-02-22T02:37:00+08:00</published><updated>2011-02-22T02:37:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-02-22:/read-plist-file-in-xcode.html</id><summary type="html">&lt;p&gt;.plist(Property list)
 文件即属性列表文件，类似于XML格式的一种配置文件，里面可保存序列化的对象。这种plist文件在Mac
 OS X及相关产品中常见到，下面是在Xcode中如果读取或写入plist文件的示例。&lt;/p&gt;
 &lt;div class="section" id="plist"&gt;
@@ -1676,7 +1676,7 @@ OS X及相关产品中常见到，下面是在Xcode中如果读取或写入plist
 &lt;p&gt;&lt;tt class="docutils literal"&gt;... NSDictionary *dict = [[NSBundle mainBundle] infoDictionary]; NSString *URLString = [dict &lt;span class="pre"&gt;objectForKey:&amp;#64;&amp;quot;Bundle&lt;/span&gt; &lt;span class="pre"&gt;version&amp;quot;];&lt;/span&gt; ...&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;-EOF-&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>移除iPhone图标中的光泽效果</title><link href="/remove-shine-gloss-effect-on-iphone-icon.html" rel="alternate"></link><published>2011-02-16T03:55:00+08:00</published><updated>2011-02-16T03:55:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-16:/remove-shine-gloss-effect-on-iphone-icon.html</id><summary type="html">&lt;div class="line-block"&gt;
+</content></entry><entry><title>移除iPhone图标中的光泽效果</title><link href="https://magicalboy.com/remove-shine-gloss-effect-on-iphone-icon.html" rel="alternate"></link><published>2011-02-16T03:55:00+08:00</published><updated>2011-02-16T03:55:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-02-16:/remove-shine-gloss-effect-on-iphone-icon.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;在Xcode中为iPhone应用增加icon图标的时，Xcode默认会自动为图标圆角化，并在图标顶部增加闪耀光泽效果，就像下面这样：&lt;/div&gt;
 &lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png"&gt;&lt;img alt="gloss-icon" class="alignnone size-full wp-image-1083" src="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png" style="width: 236px; height: 91px;" /&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -1740,7 +1740,7 @@ includes gloss and bevel effects&amp;quot;项并在其值中单击启用即可�
 &lt;p&gt;或者&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/prerenderIcon.jpg"&gt;&lt;img alt="prerenderIcon" class="alignleft size-full wp-image-43187" src="http://magicalboy.com/wp-content/uploads/2011/02/prerenderIcon.jpg" style="width: 622px; height: 472px;" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="iOS"></category></entry><entry><title>iWebKit使用体会</title><link href="/iwebkit-use-experience.html" rel="alternate"></link><published>2011-02-10T09:44:00+08:00</published><updated>2011-02-10T09:44:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-10:/iwebkit-use-experience.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://snippetspace.com/projects/iwebkit/"&gt;iWebKit&lt;/a&gt;是一个帮助我们创建iPhone,
+</content><category term="iOS"></category></entry><entry><title>iWebKit使用体会</title><link href="https://magicalboy.com/iwebkit-use-experience.html" rel="alternate"></link><published>2011-02-10T09:44:00+08:00</published><updated>2011-02-10T09:44:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-02-10:/iwebkit-use-experience.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://snippetspace.com/projects/iwebkit/"&gt;iWebKit&lt;/a&gt;是一个帮助我们创建iPhone,
 iPod
 Touch和iPad的webapp。iWebKit很容易上手，对HTML的知识几乎没什么要求，只要略懂HTML的人不用多少分钟就可以写出很专业的用词界面的网站页面。容易使用，加载速度快和兼容性、扩展性好是最大的特点。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="iWebKit" src="http://snippetspace.com/wp-content/uploads/2010/09/iphone.png" style="height: 280px;" /&gt;&lt;/p&gt;
@@ -1764,7 +1764,7 @@ Touch和iPad的webapp。iWebKit很容易上手，对HTML的知识几乎没什么
 &lt;p&gt;推荐iPhone Web
 Apps入门开发者使用。开发调试时可使用WebKit内核的现代浏览器，比如Safari、Chrome。不支持Firefox。相关的Web
 Apps框架还有iUI，JQTouch等。&lt;/p&gt;
-</content></entry><entry><title>找不到 iAd.framework 的解决办法</title><link href="/iad-framework-not-found-solutions.html" rel="alternate"></link><published>2011-01-21T06:27:00+08:00</published><updated>2011-01-21T06:27:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-21:/iad-framework-not-found-solutions.html</id><summary type="html">&lt;p&gt;在为项目添加iAD广告的时候，发现自己的SDK库没有iAd.framework。翻查了一下文档指定的路径
+</content></entry><entry><title>找不到 iAd.framework 的解决办法</title><link href="https://magicalboy.com/iad-framework-not-found-solutions.html" rel="alternate"></link><published>2011-01-21T06:27:00+08:00</published><updated>2011-01-21T06:27:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-01-21:/iad-framework-not-found-solutions.html</id><summary type="html">&lt;p&gt;在为项目添加iAD广告的时候，发现自己的SDK库没有iAd.framework。翻查了一下文档指定的路径
 /System/Library/Frameworks/iAd.framework，确实不存在，后来在官方文档iOS技术概述中对
 &lt;a class="reference external" href="http://www.apple.com.cn/developer/iphone/library/documentation/iPhone/Conceptual/iOs_TechOverview/iPhoneOSTechnologies/iPhoneOSTechnologies.html#//apple_ref/doc/uid/TP40007898-CH3-SW13"&gt;iAd.framework&lt;/a&gt;
 介绍：&lt;/p&gt;
@@ -1811,7 +1811,7 @@ link的framework的Role设为Weak。&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.cocoachina.com/bbs/read.php?tid-22984.html"&gt;如何将高版本的程序向低版本兼容&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content></entry><entry><title>“this class is not key value coding-compliant”解决方法</title><link href="/not-key-value-coding-compliant.html" rel="alternate"></link><published>2011-01-20T06:30:00+08:00</published><updated>2011-01-20T06:30:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-20:/not-key-value-coding-compliant.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content></entry><entry><title>“this class is not key value coding-compliant”解决方法</title><link href="https://magicalboy.com/not-key-value-coding-compliant.html" rel="alternate"></link><published>2011-01-20T06:30:00+08:00</published><updated>2011-01-20T06:30:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-01-20:/not-key-value-coding-compliant.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;问题描述&lt;/h2&gt;
 &lt;p&gt;在Xcode-iPhone项目中使用Interface Builder增加Tab Bar
 Controller标签视图控制器，第一次点击Tab Bar
@@ -1859,7 +1859,7 @@ Builder中看到提示：“View Loaded From 'xxxViewController”：&lt;/div&gt
 &lt;p&gt;&lt;a class="reference external" href="http://forums.macrumors.com/showthread.php?t=556417"&gt;RootViewController is not key value
 coding-compliant&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>万能的Mac OS截图</title><link href="/mac-os-screenshots.html" rel="alternate"></link><published>2011-01-15T06:13:00+08:00</published><updated>2011-01-15T06:13:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-15:/mac-os-screenshots.html</id><summary type="html">&lt;p&gt;Mac OS X 的截图很方便，下面是常用的截图快捷键。&lt;/p&gt;
+</content></entry><entry><title>万能的Mac OS截图</title><link href="https://magicalboy.com/mac-os-screenshots.html" rel="alternate"></link><published>2011-01-15T06:13:00+08:00</published><updated>2011-01-15T06:13:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-01-15:/mac-os-screenshots.html</id><summary type="html">&lt;p&gt;Mac OS X 的截图很方便，下面是常用的截图快捷键。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;**cmd为Command键*&lt;/strong&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;截取全屏保存到桌面：cmd+shift+3&lt;/li&gt;
@@ -1883,7 +1883,7 @@ v2.4，在iPhone真机上也可按Home+Power键进行截屏。&lt;/p&gt;
 &lt;p&gt;如果截到的图为黑色或无内容，请确认是否已安装显卡驱动。如果驱动无解，可借助像&lt;a class="reference external" href="http://www.evernote.com/"&gt;EverNote&lt;/a&gt;带有截图功能的软件来实现，虽然EverNote是一款专业的记事软件。&lt;/p&gt;
 &lt;p&gt;另外有一款专门用于iPhone、iTunes截图的工具——iPhone-Simulator Cropper
 v2.4，在iPhone真机上也可按Home+Power键进行截屏。&lt;/p&gt;
-</content></entry><entry><title>使用 iPhone 的嵌入式 SQLite3</title><link href="/sqlite3-on-iphone.html" rel="alternate"></link><published>2010-12-30T05:05:00+08:00</published><updated>2010-12-30T05:05:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-12-30:/sqlite3-on-iphone.html</id><summary type="html">&lt;p&gt;iPhone 和 Android
+</content></entry><entry><title>使用 iPhone 的嵌入式 SQLite3</title><link href="https://magicalboy.com/sqlite3-on-iphone.html" rel="alternate"></link><published>2010-12-30T05:05:00+08:00</published><updated>2010-12-30T05:05:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-12-30:/sqlite3-on-iphone.html</id><summary type="html">&lt;p&gt;iPhone 和 Android
 都有嵌入式的SQL数据库，名为SQLite3，作为一种持久性存储的工具，SQLite3在存储和检索大量数据方面非常有效，具有良好的性能和速度。&lt;/p&gt;
 &lt;p&gt;关系数据库（包括SQLite3）和面向对象的编程语言使用完全不同的方法来存储和组织数据。因而出现了在两者之间转换的各种技术以及库和工具。这些不同的技术统称为对象关系映射（Object-relational
 Mapping，ORM），例如苹果公司为iPhone Cocoa
@@ -1988,7 +1988,7 @@ items into destination group's folder(if needed)复选框&lt;/p&gt;
 &lt;div class="line"&gt;实践例子请参考《iPhone3开发基础教程》第11章第6小节&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Xcode配置SCM</title><link href="/scm-xcode-configuration.html" rel="alternate"></link><published>2010-12-18T02:43:00+08:00</published><updated>2010-12-18T02:43:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-12-18:/scm-xcode-configuration.html</id><summary type="html">&lt;p&gt;SCM,顾名思义为Source Control Manager，源码控制管理。&lt;/p&gt;
+</content></entry><entry><title>Xcode配置SCM</title><link href="https://magicalboy.com/scm-xcode-configuration.html" rel="alternate"></link><published>2010-12-18T02:43:00+08:00</published><updated>2010-12-18T02:43:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-12-18:/scm-xcode-configuration.html</id><summary type="html">&lt;p&gt;SCM,顾名思义为Source Control Manager，源码控制管理。&lt;/p&gt;
 &lt;p&gt;Xcode中有自带的SCM工具，我们稍微配置一下就可以方便地使用它了。&lt;/p&gt;
 &lt;p&gt;目前SCM支持CVS, Perforce,
 Subversion（SVN）三种代码管理系统，下面就以比较常用的SVN为例简单说下如何配置。&lt;/p&gt;
@@ -2048,7 +2048,7 @@ Xcode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://gigaom.com/apple/using-subversion-with-xcode-30/"&gt;Using Subversion with Xcode 3.0:
 Apple&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>NIB 和 XIB 文件有什么不同</title><link href="/xib-and-nib.html" rel="alternate"></link><published>2010-12-07T02:47:00+08:00</published><updated>2010-12-07T02:47:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-12-07:/xib-and-nib.html</id><summary type="html">&lt;div class="line-block"&gt;
+</content></entry><entry><title>NIB 和 XIB 文件有什么不同</title><link href="https://magicalboy.com/xib-and-nib.html" rel="alternate"></link><published>2010-12-07T02:47:00+08:00</published><updated>2010-12-07T02:47:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-12-07:/xib-and-nib.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;strong&gt;nib&lt;/strong&gt; 是&lt;em&gt;NeXT Interface Builder&lt;/em&gt;的缩写。&lt;/div&gt;
 &lt;div class="line"&gt;xib 是 &lt;strong&gt;x&lt;/strong&gt;ml n&lt;strong&gt;ib&lt;/strong&gt; 文件，于2007年 Leopard (and Xcode 3.0)
 版本中更新。&lt;/div&gt;
@@ -2085,7 +2085,7 @@ NIB文档里面了；程序运行时，这些对象将会“苏醒”。&lt;/div
 &lt;div class="line"&gt;NIB为二进制文件，XIB为纯文本文件，后者方便于版本控制和Diff。XIB
 可编译为 NIB。&lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>#pragma mark 是什么</title><link href="/what-is-pragma-mark.html" rel="alternate"></link><published>2010-11-17T03:25:00+08:00</published><updated>2010-11-17T03:25:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-17:/what-is-pragma-mark.html</id><summary type="html">&lt;p&gt;经常在 Xcode IDE 里面的代码中看到以下代码指令:&lt;/p&gt;
+</content></entry><entry><title>#pragma mark 是什么</title><link href="https://magicalboy.com/what-is-pragma-mark.html" rel="alternate"></link><published>2010-11-17T03:25:00+08:00</published><updated>2010-11-17T03:25:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-11-17:/what-is-pragma-mark.html</id><summary type="html">&lt;p&gt;经常在 Xcode IDE 里面的代码中看到以下代码指令:&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;#pragma mark - #pragma mark Initialization&lt;/tt&gt;&lt;/p&gt;
 &lt;div class="section" id="pragma"&gt;
 &lt;h2&gt;#pragma 是什么&lt;/h2&gt;
@@ -2135,7 +2135,7 @@ alphabetically&amp;quot;即可&lt;/li&gt;
 alphabetically&amp;quot;即可&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content></entry><entry><title>What is GM seed?</title><link href="/what-is-gm-seed.html" rel="alternate"></link><published>2010-11-02T02:52:00+08:00</published><updated>2010-11-02T02:52:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-02:/what-is-gm-seed.html</id><summary type="html">&lt;div class="line-block"&gt;
+</content></entry><entry><title>What is GM seed?</title><link href="https://magicalboy.com/what-is-gm-seed.html" rel="alternate"></link><published>2010-11-02T02:52:00+08:00</published><updated>2010-11-02T02:52:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-11-02:/what-is-gm-seed.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;iOS 4.2 &lt;strong&gt;GM seed&lt;/strong&gt;&lt;/div&gt;
 &lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/11/0809120511912128.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-894" src="http://magicalboy.com/wp-content/uploads/2010/11/0809120511912128.png" style="width: 640px; height: 213px;" /&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -2169,7 +2169,7 @@ Manufacturing), often referred to as &amp;quot;going gold&amp;quot;, or &amp;quo
 &lt;li&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Software_release_life_cycle"&gt;Software release life
 cycle&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Objective-C 中 #import 和 #include 的区别</title><link href="/import-and-include.html" rel="alternate"></link><published>2010-10-19T02:57:00+08:00</published><updated>2010-10-19T02:57:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-19:/import-and-include.html</id><summary type="html">&lt;p&gt;在 Objective-C 中，#import 被当成 #include
+</content></entry><entry><title>Objective-C 中 #import 和 #include 的区别</title><link href="https://magicalboy.com/import-and-include.html" rel="alternate"></link><published>2010-10-19T02:57:00+08:00</published><updated>2010-10-19T02:57:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-10-19:/import-and-include.html</id><summary type="html">&lt;p&gt;在 Objective-C 中，#import 被当成 #include
 指令的改良版本来使用。除此之外，#import
 确定一个文件只能被导入一次，这使你在递归包含中不会出现问题。&lt;/p&gt;
 &lt;div class="line-block"&gt;
@@ -2201,7 +2201,7 @@ Objective-C?&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;参考链接：&lt;a class="reference external" href="http://stackoverflow.com/questions/439662/what-is-the-difference-between-import-and-include-in-objective-c"&gt;What is the difference between #import and #include in
 Objective-C?&lt;/a&gt;&lt;/p&gt;
-</content></entry><entry><title>OpenStep、OPENSTEP 和 NEXTSTEP</title><link href="/openstep-and-nextstep.html" rel="alternate"></link><published>2010-10-15T08:39:00+08:00</published><updated>2010-10-15T08:39:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-15:/openstep-and-nextstep.html</id><summary type="html">&lt;p&gt;学习 Mac 开发需要了解清楚的几个常用术语：OpenStep、OPENSTEP 和
+</content></entry><entry><title>OpenStep、OPENSTEP 和 NEXTSTEP</title><link href="https://magicalboy.com/openstep-and-nextstep.html" rel="alternate"></link><published>2010-10-15T08:39:00+08:00</published><updated>2010-10-15T08:39:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-10-15:/openstep-and-nextstep.html</id><summary type="html">&lt;p&gt;学习 Mac 开发需要了解清楚的几个常用术语：OpenStep、OPENSTEP 和
 NEXTSTEP，Cocao 等。&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/OPENSTEP"&gt;OpenStep&lt;/a&gt;
@@ -2241,7 +2241,7 @@ Interface Builder 等开发工具。&lt;/div&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/NEXTSTEP"&gt;http://zh.wikipedia.org/zh-cn/NEXTSTEP&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Cocoa"&gt;http://zh.wikipedia.org/zh-cn/Cocoa&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>何謂 Cocoa Touch</title><link href="/cocoa-touch.html" rel="alternate"></link><published>2010-10-12T06:18:00+08:00</published><updated>2010-10-12T06:18:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-12:/cocoa-touch.html</id><summary type="html">&lt;p&gt;Cocoa Touch 是一個應用程序接口，專為蘋果公司的 iPhone, iPod Touch 和
+</content></entry><entry><title>何謂 Cocoa Touch</title><link href="https://magicalboy.com/cocoa-touch.html" rel="alternate"></link><published>2010-10-12T06:18:00+08:00</published><updated>2010-10-12T06:18:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-10-12:/cocoa-touch.html</id><summary type="html">&lt;p&gt;Cocoa Touch 是一個應用程序接口，專為蘋果公司的 iPhone, iPod Touch 和
 iPad 上運行的應用程序而構建的 API。&lt;/p&gt;
 &lt;p&gt;Cocoa Touch 為 iOS 提供了一個抽象層，iOS 是一個作業在 iPhone, iPod Touch
 和 iPad 的操作系統。Cocoa Touch 是一個基於 Mac OS X Cocoa API

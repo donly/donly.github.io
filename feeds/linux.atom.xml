@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Linux</title><link href="/" rel="alternate"></link><link href="/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>WHR-G300N V2 刷机</title><link href="/flash-openwrt-from-tftp.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/flash-openwrt-from-tftp.html</id><summary type="html">&lt;div class="section" id="openwrt"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Linux</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/linux.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>WHR-G300N V2 刷机</title><link href="https://magicalboy.com/flash-openwrt-from-tftp.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/flash-openwrt-from-tftp.html</id><summary type="html">&lt;div class="section" id="openwrt"&gt;
 &lt;h2&gt;OpenWrt 介绍&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt"&gt;OpenWrt&lt;/a&gt;  是用于嵌入式设备的一个 Linux 发行版本。&lt;/blockquote&gt;
@@ -87,7 +87,7 @@ Sent &lt;span class="m"&gt;3342372&lt;/span&gt; bytes in &lt;span class="m"&gt;2
 &lt;li&gt;路由器红色的灯会有不同的反应，几分钟后会自动重启。此致，成功复活！&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>Gentoo 2015</title><link href="/gentoo.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/gentoo.html</id><summary type="html">&lt;div class="section" id="gentoo"&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>Gentoo 2015</title><link href="https://magicalboy.com/gentoo.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/gentoo.html</id><summary type="html">&lt;div class="section" id="gentoo"&gt;
 &lt;h2&gt;为什么选择 Gentoo&lt;/h2&gt;
 &lt;p&gt;完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。&lt;/p&gt;
 &lt;p&gt;同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。&lt;/p&gt;
@@ -185,7 +185,7 @@ mirrorselect -i -r -o &amp;gt;&amp;gt; /etc/portage/repos.conf/gentoo.conf &lt;s
 vi /etc/portage/make.conf &lt;span class="c1"&gt;# 将 SYNC 设置删除&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 本地化配置</title><link href="/gentoo-locale.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/gentoo-locale.html</id><summary type="html">&lt;p&gt;未配置之前会有类似这样的提示：&lt;em&gt;man: can't set the locale; make sure $LC_&lt;/em&gt; and $LANG are correct*。&lt;/p&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 本地化配置</title><link href="https://magicalboy.com/gentoo-locale.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/gentoo-locale.html</id><summary type="html">&lt;p&gt;未配置之前会有类似这样的提示：&lt;em&gt;man: can't set the locale; make sure $LC_&lt;/em&gt; and $LANG are correct*。&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;查看当前本地化配置：&lt;/li&gt;
 &lt;/ol&gt;
@@ -219,7 +219,7 @@ Available targets &lt;span class="k"&gt;for&lt;/span&gt; the LANG variable:
   &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;   &lt;span class="o"&gt;(&lt;/span&gt;free form&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;参考连接：&lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Localization/Guide"&gt;https://wiki.gentoo.org/wiki/Localization/Guide&lt;/a&gt;&lt;/p&gt;
-</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 分区</title><link href="/gentoo-partition.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/gentoo-partition.html</id><summary type="html">&lt;p&gt;由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。&lt;/p&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo 分区</title><link href="https://magicalboy.com/gentoo-partition.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/gentoo-partition.html</id><summary type="html">&lt;p&gt;由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。&lt;/p&gt;
 &lt;p&gt;使用环境：&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;系统：Gentoo 3.4.103&lt;/li&gt;
@@ -294,7 +294,7 @@ shm             438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   &lt;span c
 cgroup_root      10M     &lt;span class="m"&gt;0&lt;/span&gt;   10M   &lt;span class="m"&gt;0&lt;/span&gt;% /sys/fs/cgroup
 /dev/mmcblk0p3   56G  180M   53G   &lt;span class="m"&gt;1&lt;/span&gt;% /user
 &lt;/pre&gt;&lt;/div&gt;
-</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo Portage</title><link href="/gentoo-portage.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/gentoo-portage.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Gentoo Portage</title><link href="https://magicalboy.com/gentoo-portage.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/gentoo-portage.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;修改更新源地址&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;em&gt;2.2.16&lt;/em&gt; 版本之前的配置：&lt;/li&gt;
@@ -364,7 +364,7 @@ Portage &lt;span class="m"&gt;2&lt;/span&gt;.2.8-r2 &lt;span class="o"&gt;(&lt;/
 Portage &lt;span class="m"&gt;2&lt;/span&gt;.2.20.1 &lt;span class="o"&gt;(&lt;/span&gt;python &lt;span class="m"&gt;2&lt;/span&gt;.7.7-final-0, default/linux/arm/13.0/armv7a, gcc-4.8.3, glibc-2.19-r1, &lt;span class="m"&gt;3&lt;/span&gt;.4.103 armv7l&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Samba 配置</title><link href="/gentoo-samba.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/gentoo-samba.html</id><summary type="html">&lt;p&gt;Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。&lt;/p&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>Samba 配置</title><link href="https://magicalboy.com/gentoo-samba.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/gentoo-samba.html</id><summary type="html">&lt;p&gt;Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。&lt;/p&gt;
 &lt;p&gt;其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。&lt;/p&gt;
 &lt;p&gt;Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。&lt;/p&gt;
 &lt;p&gt;Samba 现在最新版本是 4.x，但在我的树莓派上面 &lt;em&gt;emerge --ask net-fs/samba&lt;/em&gt; 出来的还是 3.6.2。&lt;/p&gt;
@@ -381,7 +381,7 @@ samba: 1 times&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;配置&lt;/h2&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>解决 OpenWrt Bad Address 问题</title><link href="/openwrt-bad-address.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/openwrt-bad-address.html</id><summary type="html">&lt;p&gt;自升级 CC 后，一切都正常。&lt;/p&gt;
+</content><category term="Linux"></category><category term="Gentoo"></category></entry><entry><title>解决 OpenWrt Bad Address 问题</title><link href="https://magicalboy.com/openwrt-bad-address.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/openwrt-bad-address.html</id><summary type="html">&lt;p&gt;自升级 CC 后，一切都正常。&lt;/p&gt;
 &lt;p&gt;突然有一天发现 DDNS 出了问题，LuCI 的服务界面都刷不完整。&lt;/p&gt;
 &lt;p&gt;opkg update 失败。&lt;/p&gt;
 &lt;p&gt;ping 所有网址都是 bad address，ping ip 地址正常。&lt;/p&gt;
@@ -408,7 +408,7 @@ nameserver &lt;span class="m"&gt;8&lt;/span&gt;.8.4.4
 &lt;span class="c1"&gt;# reboot&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;问题解决&lt;/p&gt;
-</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt DDNS 配置</title><link href="/openwrt-ddns.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/openwrt-ddns.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt DDNS 配置</title><link href="https://magicalboy.com/openwrt-ddns.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/openwrt-ddns.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;环境&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;OpenWrt CC (LuCI)&lt;/li&gt;
@@ -446,7 +446,7 @@ nameserver &lt;span class="m"&gt;8&lt;/span&gt;.8.4.4
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;然后再刷新页面，选择 Oray.com 服务，填写相关信息提交后马上就可以看到绑定的 IP 了。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="OpenWrt"></category><category term="ddns"></category></entry><entry><title>OpenWrt Luci</title><link href="/openwrt-luci.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/openwrt-luci.html</id><summary type="html">&lt;ol class="arabic simple"&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category><category term="ddns"></category></entry><entry><title>OpenWrt Luci</title><link href="https://magicalboy.com/openwrt-luci.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/openwrt-luci.html</id><summary type="html">&lt;ol class="arabic simple"&gt;
 &lt;li&gt;路由 Luci Web 界面访问不了问题&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
@@ -460,7 +460,7 @@ nameserver &lt;span class="m"&gt;8&lt;/span&gt;.8.4.4
 解决方法：重启 Luci&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/uhttpd restart
 &lt;/pre&gt;&lt;/div&gt;
-</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt WDS 连接设置</title><link href="/openwrt-wds.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/openwrt-wds.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>OpenWrt WDS 连接设置</title><link href="https://magicalboy.com/openwrt-wds.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/openwrt-wds.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
 &lt;blockquote&gt;
 算了不想写了&lt;/blockquote&gt;
@@ -549,7 +549,7 @@ Sent &lt;span class="m"&gt;3342372&lt;/span&gt; bytes in &lt;span class="m"&gt;2
 &lt;li&gt;路由器红色的灯会有不同的反应，几分钟后会自动重启。此致，成功复活！&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>重置树莓派 Root 密码</title><link href="/reset-raspberry-root-password.html" rel="alternate"></link><published>2017-03-23T10:25:00+08:00</published><updated>2017-03-23T10:25:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-03-23:/reset-raspberry-root-password.html</id><summary type="html">&lt;p&gt;自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。&lt;/p&gt;
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>重置树莓派 Root 密码</title><link href="https://magicalboy.com/reset-raspberry-root-password.html" rel="alternate"></link><published>2017-03-23T10:25:00+08:00</published><updated>2017-03-23T10:25:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-03-23:/reset-raspberry-root-password.html</id><summary type="html">&lt;p&gt;自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。&lt;/p&gt;
 &lt;p&gt;如果还有模糊印象，可以通过 &lt;code&gt;passwd pi&lt;/code&gt; 进行尝试。需要注意的是 &lt;code&gt;pi&lt;/code&gt; 用户的初始密码是：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;raspberry
 &lt;/pre&gt;&lt;/div&gt;
@@ -615,7 +615,7 @@ Sent &lt;span class="m"&gt;3342372&lt;/span&gt; bytes in &lt;span class="m"&gt;2
 &lt;li&gt;&lt;a class="reference external" href="http://www.raspberrypi-spy.co.uk/2014/08/how-to-reset-a-forgotten-raspberry-pi-password/"&gt;How To Reset A Forgotten Raspberry Pi Password&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="raspberry"></category></entry><entry><title>在树莓派上安装 AMP</title><link href="/install-amp-on-raspberry-pi.html" rel="alternate"></link><published>2016-05-31T14:22:00+08:00</published><updated>2016-05-31T14:22:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-05-31:/install-amp-on-raspberry-pi.html</id><summary type="html">&lt;p&gt;AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。&lt;/p&gt;
+</content><category term="Linux"></category><category term="raspberry"></category></entry><entry><title>在树莓派上安装 AMP</title><link href="https://magicalboy.com/install-amp-on-raspberry-pi.html" rel="alternate"></link><published>2016-05-31T14:22:00+08:00</published><updated>2016-05-31T14:22:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-31:/install-amp-on-raspberry-pi.html</id><summary type="html">&lt;p&gt;AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Apache 是一个非常流行的 Web 服务器软件&lt;/li&gt;
 &lt;li&gt;MySQL 是一个关系型数据库管理系统&lt;/li&gt;
@@ -665,7 +665,7 @@ sudo apt-get install mysql-server php5-mysql
 &lt;/pre&gt;
 &lt;p&gt;安装过程中会让你输入 MySQL root 用户的密码。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category></entry><entry><title>bash shell 学习</title><link href="/bash-shell.html" rel="alternate"></link><published>2016-05-17T10:25:00+08:00</published><updated>2016-05-17T10:25:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-05-17:/bash-shell.html</id><summary type="html">&lt;p&gt;shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：&lt;/p&gt;
+</content><category term="Linux"></category></entry><entry><title>bash shell 学习</title><link href="https://magicalboy.com/bash-shell.html" rel="alternate"></link><published>2016-05-17T10:25:00+08:00</published><updated>2016-05-17T10:25:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-17:/bash-shell.html</id><summary type="html">&lt;p&gt;shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell"&gt;什么是 shell？&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言"&gt;脚本语言&lt;/a&gt;&lt;/li&gt;
@@ -807,7 +807,7 @@ hello don!
 &lt;h2&gt;for 循环结构&lt;/h2&gt;
 &lt;p&gt;暂无&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="bash"></category><category term="shell"></category></entry><entry><title>exFAT 文件格式支持</title><link href="/raspbian-exfat-support.html" rel="alternate"></link><published>2016-05-16T14:40:00+08:00</published><updated>2016-05-16T14:40:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-05-16:/raspbian-exfat-support.html</id><summary type="html">&lt;p&gt;exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。&lt;/p&gt;
+</content><category term="Linux"></category><category term="bash"></category><category term="shell"></category></entry><entry><title>exFAT 文件格式支持</title><link href="https://magicalboy.com/raspbian-exfat-support.html" rel="alternate"></link><published>2016-05-16T14:40:00+08:00</published><updated>2016-05-16T14:40:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-16:/raspbian-exfat-support.html</id><summary type="html">&lt;p&gt;exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。&lt;/p&gt;
 &lt;p&gt;基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;为什么要使用 exFAT&lt;/h2&gt;
@@ -849,7 +849,7 @@ hello don!
 &lt;h2&gt;Android&lt;/h2&gt;
 &lt;p&gt;暂无&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="Raspbian"></category><category term="exFAT"></category></entry><entry><title>OpenWrt CC SS 配置</title><link href="/openwrt-cc-ss.html" rel="alternate"></link><published>2015-12-01T00:00:00+08:00</published><updated>2016-01-09T21:40:00+08:00</updated><author><name>Don</name></author><id>tag:None,2015-12-01:/openwrt-cc-ss.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content><category term="Linux"></category><category term="Raspbian"></category><category term="exFAT"></category></entry><entry><title>OpenWrt CC SS 配置</title><link href="https://magicalboy.com/openwrt-cc-ss.html" rel="alternate"></link><published>2015-12-01T00:00:00+08:00</published><updated>2016-01-09T21:40:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2015-12-01:/openwrt-cc-ss.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;OpenWRT 版本：Chaos Calmer 15.05&lt;/li&gt;
@@ -925,7 +925,7 @@ Configuring shadowsocks-libev-spec.
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>设置 DNS 解决 Ubuntu 10.04 上网速度慢的问题</title><link href="/ubuntu-10-04-dns-settings.html" rel="alternate"></link><published>2010-06-20T14:23:00+08:00</published><updated>2010-06-20T14:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-20:/ubuntu-10-04-dns-settings.html</id><summary type="html">&lt;p&gt;不知道大家是否和我一样觉得新安装的 Ubuntu 10.04
+</content><category term="Linux"></category><category term="OpenWrt"></category></entry><entry><title>设置 DNS 解决 Ubuntu 10.04 上网速度慢的问题</title><link href="https://magicalboy.com/ubuntu-10-04-dns-settings.html" rel="alternate"></link><published>2010-06-20T14:23:00+08:00</published><updated>2010-06-20T14:23:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-06-20:/ubuntu-10-04-dns-settings.html</id><summary type="html">&lt;p&gt;不知道大家是否和我一样觉得新安装的 Ubuntu 10.04
 上网龟速，打开一个网址可见浏览器状态一直是“正在解析服务器”，简直让人抓狂！&lt;/p&gt;
 &lt;p&gt;出现这种问题，是由域名解析速度过慢引起的，也就是系统默认的 DNS（Domain
 Name System，域名系统） 服务器地址有问题，我们可以通过更改它来解决问题。&lt;/p&gt;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 计算机应用</title><link href="/" rel="alternate"></link><link href="/feeds/ji-suan-ji-ying-yong.atom.xml" rel="self"></link><id>/</id><updated>2011-10-27T13:59:00+08:00</updated><entry><title>Git 基本配置</title><link href="/git-configuration.html" rel="alternate"></link><published>2011-10-27T13:59:00+08:00</published><updated>2011-10-27T13:59:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-10-27:/git-configuration.html</id><summary type="html">&lt;p&gt;之前写过一篇《&lt;a class="reference external" href="/git-getting-started"&gt;Git
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 计算机应用</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/ji-suan-ji-ying-yong.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2011-10-27T13:59:00+08:00</updated><entry><title>Git 基本配置</title><link href="https://magicalboy.com/git-configuration.html" rel="alternate"></link><published>2011-10-27T13:59:00+08:00</published><updated>2011-10-27T13:59:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-10-27:/git-configuration.html</id><summary type="html">&lt;p&gt;之前写过一篇《&lt;a class="reference external" href="/git-getting-started"&gt;Git
 使用入门&lt;/a&gt;》，主要简单地介绍 Git
 和安装。现在这记录一下 Git 的基本配置，方便使用。&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
@@ -39,7 +39,7 @@
 &lt;/li&gt;
 &lt;li&gt;帮助与参数资料&lt;/li&gt;
 &lt;/ol&gt;
-</content><category term="Git"></category></entry><entry><title>如何防止Mac OS复制文件时自动生成的.DS_Store</title><link href="/prevent-ds_store-on-mac-os.html" rel="alternate"></link><published>2011-01-21T05:01:00+08:00</published><updated>2011-01-21T05:01:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-21:/prevent-ds_store-on-mac-os.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;.DS_Store (Desktop Services
+</content><category term="Git"></category></entry><entry><title>如何防止Mac OS复制文件时自动生成的.DS_Store</title><link href="https://magicalboy.com/prevent-ds_store-on-mac-os.html" rel="alternate"></link><published>2011-01-21T05:01:00+08:00</published><updated>2011-01-21T05:01:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-01-21:/prevent-ds_store-on-mac-os.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;.DS_Store (Desktop Services
 Store)&lt;/strong&gt;，是Apple公司的操作系统创建的一个隐藏文件，里面保存着自定义目录的图标和背景图片等元信息。没错，听起来就好像Windows上的desktop.ini。&lt;/p&gt;
 &lt;p&gt;当我们从Mac
 OS中复制文件到移动磁盘，然后从Windows操作系统读取的时候，可发现这些自动生成的文件。幸运地，我们可以利用命令配置或软件来防止这些.DS_Store文件生成：&lt;/p&gt;
@@ -57,7 +57,7 @@ OS中复制文件到移动磁盘，然后从Windows操作系统读取的时候�
 &lt;tt class="docutils literal"&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores true&lt;/tt&gt;&lt;/li&gt;
 &lt;li&gt;或者使用blueharvest这款软件。&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>没鼠标？键盘当鼠标使用 (Windows)</title><link href="/keybord-as-mouse4windows.html" rel="alternate"></link><published>2010-08-28T09:13:00+08:00</published><updated>2010-08-28T09:13:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-28:/keybord-as-mouse4windows.html</id><summary type="html">&lt;p&gt;嗯，今天那么有空，就写一些简单的计算机应用的文章。&lt;/p&gt;
+</content></entry><entry><title>没鼠标？键盘当鼠标使用 (Windows)</title><link href="https://magicalboy.com/keybord-as-mouse4windows.html" rel="alternate"></link><published>2010-08-28T09:13:00+08:00</published><updated>2010-08-28T09:13:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-08-28:/keybord-as-mouse4windows.html</id><summary type="html">&lt;p&gt;嗯，今天那么有空，就写一些简单的计算机应用的文章。&lt;/p&gt;
 &lt;blockquote&gt;
 使用电脑不一定要鼠标，有键盘则已；不一定要键盘，有触屏则已。&lt;/blockquote&gt;
 &lt;p&gt;如果一台电脑没有鼠标确实很不方便。但在暂时没有鼠标、没有触屏，只有一个键盘的情况下，作为一名非键盘控者来说，使用键盘当鼠标来使用不失为较好的权宜之计。&lt;/p&gt;

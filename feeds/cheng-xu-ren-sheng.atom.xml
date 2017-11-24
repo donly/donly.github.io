@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 程序人生</title><link href="/" rel="alternate"></link><link href="/feeds/cheng-xu-ren-sheng.atom.xml" rel="self"></link><id>/</id><updated>2011-09-22T14:26:00+08:00</updated><entry><title>Git 使用入门</title><link href="/git-getting-started.html" rel="alternate"></link><published>2011-09-22T14:26:00+08:00</published><updated>2011-09-22T14:26:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-09-22:/git-getting-started.html</id><summary type="html">&lt;div class="line-block"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 程序人生</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/cheng-xu-ren-sheng.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2011-09-22T14:26:00+08:00</updated><entry><title>Git 使用入门</title><link href="https://magicalboy.com/git-getting-started.html" rel="alternate"></link><published>2011-09-22T14:26:00+08:00</published><updated>2011-09-22T14:26:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-09-22:/git-getting-started.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;strong&gt;一、Git简介&lt;/strong&gt;&lt;/div&gt;
 &lt;div class="line"&gt;&lt;img alt="git logo" src="https://lh6.googleusercontent.com/-6bFWTOcHH4Y/TntG8fwhJWI/AAAAAAAAAJk/pu01j_uBeDo/s800/git.png" style="width: 214px; height: 81px;" /&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -73,7 +73,7 @@ PortableGit-x.x.x-previewxxxxxxxx.7z 为例进行说明。&lt;/div&gt;
 &lt;li&gt;2012-05-23：&lt;a class="reference external" href="http://windows.github.com/"&gt;GitHub for Windows&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content><category term="Git"></category></entry><entry><title>2011春节贺语</title><link href="/2011-spring-festival-words.html" rel="alternate"></link><published>2011-02-09T07:18:00+08:00</published><updated>2011-02-09T07:18:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-09:/2011-spring-festival-words.html</id><summary type="html">&lt;p&gt;&lt;img alt="2010春节" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQcN-4pDiL4pw0gFc0FuOWbeQLSZoNLQd61vBclGHbxSwfX0kEVYg" /&gt;&lt;/p&gt;
+</content><category term="Git"></category></entry><entry><title>2011春节贺语</title><link href="https://magicalboy.com/2011-spring-festival-words.html" rel="alternate"></link><published>2011-02-09T07:18:00+08:00</published><updated>2011-02-09T07:18:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-02-09:/2011-spring-festival-words.html</id><summary type="html">&lt;p&gt;&lt;img alt="2010春节" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQcN-4pDiL4pw0gFc0FuOWbeQLSZoNLQd61vBclGHbxSwfX0kEVYg" /&gt;&lt;/p&gt;
 &lt;p&gt;又一年的春节过去了，意味着又长了一岁哈。&lt;/p&gt;
 &lt;p&gt;回家过年，最大的心愿是一家人吃个年夜饭，给家人，老人一封大大的利是，祝他们身体健康。&lt;/p&gt;
 &lt;p&gt;新年新气象，在新一年里，祝大家身体健康，技术进步，来年赚更多的钱回家过年！&lt;/p&gt;
@@ -81,7 +81,7 @@ PortableGit-x.x.x-previewxxxxxxxx.7z 为例进行说明。&lt;/div&gt;
 &lt;p&gt;又一年的春节过去了，意味着又长了一岁哈。&lt;/p&gt;
 &lt;p&gt;回家过年，最大的心愿是一家人吃个年夜饭，给家人，老人一封大大的利是，祝他们身体健康。&lt;/p&gt;
 &lt;p&gt;新年新气象，在新一年里，祝大家身体健康，技术进步，来年赚更多的钱回家过年！&lt;/p&gt;
-</content></entry><entry><title>我的2010大事记</title><link href="/my-2010-events.html" rel="alternate"></link><published>2010-12-31T02:22:00+08:00</published><updated>2010-12-31T02:22:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-12-31:/my-2010-events.html</id><summary type="html">&lt;p&gt;2010年是作出艰难的决定的一年：&lt;/p&gt;
+</content></entry><entry><title>我的2010大事记</title><link href="https://magicalboy.com/my-2010-events.html" rel="alternate"></link><published>2010-12-31T02:22:00+08:00</published><updated>2010-12-31T02:22:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-12-31:/my-2010-events.html</id><summary type="html">&lt;p&gt;2010年是作出艰难的决定的一年：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;2010年01月：实习回校，享受最后的校园生活&lt;/li&gt;
 &lt;li&gt;2010年02月：渡过最后一个寒假，感受家的温馨&lt;/li&gt;
@@ -119,7 +119,7 @@ PortableGit-x.x.x-previewxxxxxxxx.7z 为例进行说明。&lt;/div&gt;
 &lt;div class="line"&gt;---------------------------------&amp;#64;年终分割线&amp;#64;---------------------------------&lt;/div&gt;
 &lt;div class="line"&gt;未完待续&lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>求最大公约数的算法</title><link href="/greatest-common-divisor.html" rel="alternate"></link><published>2010-10-21T08:42:00+08:00</published><updated>2010-10-21T08:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-21:/greatest-common-divisor.html</id><summary type="html">&lt;div class="section" id="id2"&gt;
+</content></entry><entry><title>求最大公约数的算法</title><link href="https://magicalboy.com/greatest-common-divisor.html" rel="alternate"></link><published>2010-10-21T08:42:00+08:00</published><updated>2010-10-21T08:42:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-10-21:/greatest-common-divisor.html</id><summary type="html">&lt;div class="section" id="id2"&gt;
 &lt;h2&gt;最大公约数&lt;/h2&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;回顾一下中学学过的数学课程中最大公约数的定义，两个整数的最大公约数是能够同时整除它们的最大的正整数。&lt;/div&gt;
@@ -157,7 +157,7 @@ PortableGit-x.x.x-previewxxxxxxxx.7z 为例进行说明。&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;参考链接：&lt;a class="reference external" href="http://zh.wikipedia.org/zh/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95"&gt;辗转相除法-维基百科&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Emacs 的自学教材</title><link href="/emacs-tutorial.html" rel="alternate"></link><published>2010-10-18T06:43:00+08:00</published><updated>2010-10-18T06:43:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-18:/emacs-tutorial.html</id><summary type="html">&lt;p&gt;想快速了解 EMACS 的人，可以参考 EMACS 的自学教材（tutorial）。 使用
+</content></entry><entry><title>Emacs 的自学教材</title><link href="https://magicalboy.com/emacs-tutorial.html" rel="alternate"></link><published>2010-10-18T06:43:00+08:00</published><updated>2010-10-18T06:43:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-10-18:/emacs-tutorial.html</id><summary type="html">&lt;p&gt;想快速了解 EMACS 的人，可以参考 EMACS 的自学教材（tutorial）。 使用
 EMACS 自学教材的方法很简单，只要键入 &amp;quot;Ctrl-h t&amp;quot; (help-with-tutorial)
 即可进入 EMACS 的自学的状态了。&lt;/p&gt;
 &lt;p&gt;EMACS 的自学教材可分成以下几部份：&lt;/p&gt;
@@ -201,7 +201,7 @@ EMACS 自学教材的方法很简单，只要键入 &amp;quot;Ctrl-h t&amp;quot;
 Guide&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;如果你不小心進入了 Emacs，輸入&amp;quot;C-x C-c&amp;quot;以退出。&lt;/p&gt;
-</content></entry><entry><title>Java 情结</title><link href="/byebye-java.html" rel="alternate"></link><published>2010-10-18T02:06:00+08:00</published><updated>2010-10-18T02:06:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-18:/byebye-java.html</id><summary type="html">&lt;p&gt;自 3月17日 Java 被 Oracle 收购以来，我都没用过 Java
+</content></entry><entry><title>Java 情结</title><link href="https://magicalboy.com/byebye-java.html" rel="alternate"></link><published>2010-10-18T02:06:00+08:00</published><updated>2010-10-18T02:06:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-10-18:/byebye-java.html</id><summary type="html">&lt;p&gt;自 3月17日 Java 被 Oracle 收购以来，我都没用过 Java
 来编程。那时也刚好转职去做 Python 的开发，诸多原因使我离 Java
 越来越远。。。&lt;/p&gt;
 &lt;div class="line-block"&gt;
@@ -225,7 +225,7 @@ Guide&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;public class Bye{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; public static void main(String[] args) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;System.out.println(&amp;quot;Bye,&lt;/span&gt; &lt;span class="pre"&gt;java!&amp;quot;);&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; } }&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image1" class="alignnone" src="http://www.miamisburg.com/dukeTuxJavaOne2003TShirt.jpg" style="width: 768px; height: 576px;" /&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>在 Windows 上学习开发 Objective C</title><link href="/objective-c-on-windows.html" rel="alternate"></link><published>2010-09-21T06:39:00+08:00</published><updated>2010-09-21T06:39:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-21:/objective-c-on-windows.html</id><summary type="html">&lt;p&gt;Objective-C(ObjC) 现在几乎已经变成了苹果的专利，可以直接在苹果的 Xcode
+</content></entry><entry><title>在 Windows 上学习开发 Objective C</title><link href="https://magicalboy.com/objective-c-on-windows.html" rel="alternate"></link><published>2010-09-21T06:39:00+08:00</published><updated>2010-09-21T06:39:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-09-21:/objective-c-on-windows.html</id><summary type="html">&lt;p&gt;Objective-C(ObjC) 现在几乎已经变成了苹果的专利，可以直接在苹果的 Xcode
 上编译 ObjC 程序，但是在 Windows 平台下的编译工具就寥寥无几了，即使 ObjC
 在语言排行榜上的上升速度多么强势给力。&lt;/p&gt;
 &lt;p&gt;下面引用维基百科对 &lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Objective_C"&gt;Objective
@@ -283,7 +283,7 @@ Compiler, Objective C Compiler for
 Windows&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Python 的变量作用域和 LEGB 原则</title><link href="/python-scope-legb.html" rel="alternate"></link><published>2010-09-09T08:59:00+08:00</published><updated>2010-09-09T08:59:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-09:/python-scope-legb.html</id><summary type="html">&lt;p&gt;在 Python
+</content></entry><entry><title>Python 的变量作用域和 LEGB 原则</title><link href="https://magicalboy.com/python-scope-legb.html" rel="alternate"></link><published>2010-09-09T08:59:00+08:00</published><updated>2010-09-09T08:59:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-09-09:/python-scope-legb.html</id><summary type="html">&lt;p&gt;在 Python
 程序中创建、改变或查找变量名时，都是在一个保存变量名的地方进行中，那个地方我们称之为命名空间。作用域这个术语也称之为命名空间。&lt;/p&gt;
 &lt;p&gt;具体地说，在代码中变量名被赋值（Python 中变量声明即赋值，global
 声明的只是变量的使用域）的位置决定了该变量能被访问的范围。函数定义了本地作用域，而模块定义的是全局作用域。这两个作用域之前有如下关系：&lt;/p&gt;
@@ -349,7 +349,7 @@ global 语句声明该变量。&lt;/li&gt;
 &lt;div class="line"&gt;func(1) # func 在模块中定义，可以调用.结果=100&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>C 存储类型简介</title><link href="/c-storage-type.html" rel="alternate"></link><published>2010-09-08T15:18:00+08:00</published><updated>2010-09-08T15:18:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-08:/c-storage-type.html</id><summary type="html">&lt;p&gt;在 C 语言中，存储模型，也即存储类，使用存储时期(storage
+</content></entry><entry><title>C 存储类型简介</title><link href="https://magicalboy.com/c-storage-type.html" rel="alternate"></link><published>2010-09-08T15:18:00+08:00</published><updated>2010-09-08T15:18:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-09-08:/c-storage-type.html</id><summary type="html">&lt;p&gt;在 C 语言中，存储模型，也即存储类，使用存储时期(storage
 duration)或者作用域(scope)以及它的链接(linkage)来定义了 5
 种存储类：自动、寄存器、具有代码块作用域的静态、具有外部链接的静态和具有内部链接的静态。下表列出了这些组合的简要说明：&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
@@ -531,7 +531,7 @@ static。&lt;/div&gt;
 &lt;div class="line"&gt;&lt;em&gt;（本文内容来自《C Primer Plus》阅读笔记）&lt;/em&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>为何选择 Python</title><link href="/why-use-python.html" rel="alternate"></link><published>2010-09-07T14:31:00+08:00</published><updated>2010-09-07T14:31:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-07:/why-use-python.html</id><summary type="html">&lt;p&gt;Python
+</content></entry><entry><title>为何选择 Python</title><link href="https://magicalboy.com/why-use-python.html" rel="alternate"></link><published>2010-09-07T14:31:00+08:00</published><updated>2010-09-07T14:31:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-09-07:/why-use-python.html</id><summary type="html">&lt;p&gt;Python
 (/'paɪθɑn/)，是一种面向对象的动态编程语言。它发行于1991年，由吉多·范罗苏姆（Guido
 van Rossum，荷兰计算机程序员）设计。&lt;/p&gt;
 &lt;p&gt;Python
@@ -591,7 +591,7 @@ Python。&lt;/div&gt;
 合作伙伴列表的&lt;a class="reference external" href="http://python.org/psf/"&gt;链接地址&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>排序算法：选择排序</title><link href="/selection_sort.html" rel="alternate"></link><published>2010-08-15T15:23:00+08:00</published><updated>2010-08-15T15:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-15:/selection_sort.html</id><summary type="html">&lt;p&gt;选择排序 (selection sort)
+</content></entry><entry><title>排序算法：选择排序</title><link href="https://magicalboy.com/selection_sort.html" rel="alternate"></link><published>2010-08-15T15:23:00+08:00</published><updated>2010-08-15T15:23:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-08-15:/selection_sort.html</id><summary type="html">&lt;p&gt;选择排序 (selection sort)
 是一种简单直观的排序算法。它的工作原理如下：首先在未排序序列中找到最大（或最小）的元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最大（或最小）元素，然后放到排序序列末尾。以此类推，直到所有元素均排序完毕。&lt;/p&gt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;伪代码&lt;/h2&gt;
@@ -627,7 +627,7 @@ Python。&lt;/div&gt;
 &lt;div class="line"&gt;}&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>学习 C 数组与指针小结</title><link href="/c-array-pointer.html" rel="alternate"></link><published>2010-07-23T15:28:00+08:00</published><updated>2010-07-23T15:28:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-23:/c-array-pointer.html</id><summary type="html">&lt;div class="line-block"&gt;
+</content></entry><entry><title>学习 C 数组与指针小结</title><link href="https://magicalboy.com/c-array-pointer.html" rel="alternate"></link><published>2010-07-23T15:28:00+08:00</published><updated>2010-07-23T15:28:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-07-23:/c-array-pointer.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;在 C
 语言中，数组其实是一种变相使用指针的形式。通过了解指针与数组之间的关系，可以使用指针方便地操作数组。以下是一些指针和数组之间的关系说明：&lt;/div&gt;
 &lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;... int * p;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // 定义一个整型指针 int arr[2] = {1, 2};&amp;nbsp;&amp;nbsp; // 定义一个整型数组&lt;/tt&gt;&lt;/div&gt;
@@ -692,7 +692,7 @@ Python。&lt;/div&gt;
 &lt;div class="line"&gt;使用指针作为参数来处理数组时，可选用数组符号或指针符号。正如多数程序员认为的，程序员的主要任务是保证程序的正确性和可读性，代码的优化应该留给编译器去做。&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;在处理数组的函数中使用指针作为形式参量（而不是数组），而在函数中可以使用数组符号来处理数组。同时，使用数组名做为参数时，实质上是传递的是数组的地址，而非整个数组。也正由于指针与数组名可以互换使用，一般调用处理数组的函数时，传递该数组的开始和结束地址即可（如例1）。&lt;/p&gt;
-</content></entry><entry><title>C 指针介绍</title><link href="/c-pointer.html" rel="alternate"></link><published>2010-07-17T15:06:00+08:00</published><updated>2010-07-17T15:06:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-17:/c-pointer.html</id><summary type="html">&lt;p&gt;指针（pointer）的定义：在信息工程中，指针是一个用来指示一个内存地址的变量或中央处理器(CPU)中的寄存器(Register)。&lt;strong&gt;在
+</content></entry><entry><title>C 指针介绍</title><link href="https://magicalboy.com/c-pointer.html" rel="alternate"></link><published>2010-07-17T15:06:00+08:00</published><updated>2010-07-17T15:06:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-07-17:/c-pointer.html</id><summary type="html">&lt;p&gt;指针（pointer）的定义：在信息工程中，指针是一个用来指示一个内存地址的变量或中央处理器(CPU)中的寄存器(Register)。&lt;strong&gt;在
 C 语言中，指针就是一个存储着变量地址的变量。&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;与指针相关的操作运算符&lt;/h2&gt;
@@ -762,7 +762,7 @@ foo 的地址。&lt;/li&gt;
 &lt;/div&gt;&lt;p&gt;理解指针的相关概念，弄清楚变量名称，地址和数值之前的关系至关重要。变量地址一般只由计算机处理，当然你也可以打印出来以满足好奇心。一般也只有低级语言（比较接近机器语言，如汇编和C）才有指针这一概念，面向对象语言如
 Java 一般避免使用指针。&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>升级 WordPress 3.0 正式版：备份文件和数据库</title><link href="/upgrade-wordpress-3-0-release.html" rel="alternate"></link><published>2010-06-18T08:41:00+08:00</published><updated>2010-06-18T08:41:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-18:/upgrade-wordpress-3-0-release.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://wordpress.org"&gt;WordPress&lt;/a&gt;是一个免费的开源项目,在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。&lt;/p&gt;
+</content></entry><entry><title>升级 WordPress 3.0 正式版：备份文件和数据库</title><link href="https://magicalboy.com/upgrade-wordpress-3-0-release.html" rel="alternate"></link><published>2010-06-18T08:41:00+08:00</published><updated>2010-06-18T08:41:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-06-18:/upgrade-wordpress-3-0-release.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://wordpress.org"&gt;WordPress&lt;/a&gt;是一个免费的开源项目,在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。&lt;/p&gt;
 &lt;p&gt;经 RC3 测试版过后，WordPress 马上放出 3.0
 正式版。登陆管理后台就可以看到更新提示了。作为一位版本控，二话不说马上准备升级。下面就简单介绍一下升级的准备工作。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;备份文件到本地机器上&lt;/strong&gt;。可以使用 FTP
@@ -825,13 +825,13 @@ WordPress啦!&lt;/a&gt;&lt;/li&gt;
 官方备份说明&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;WordPress 下载：&lt;a class="reference external" href="http://wordpress.org/download/"&gt;官网&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Ubuntu 10.04 LTS 归来</title><link href="/ubuntu-10-04-lts-comeback.html" rel="alternate"></link><published>2010-06-15T15:10:00+08:00</published><updated>2010-06-15T15:10:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-15:/ubuntu-10-04-lts-comeback.html</id><summary type="html">&lt;p&gt;終于又回到 &lt;a class="reference external" href="http://ubuntu.com"&gt;Ubuntu&lt;/a&gt; 的怀抱! 自上一个版本 Ubuntu
+</content></entry><entry><title>Ubuntu 10.04 LTS 归来</title><link href="https://magicalboy.com/ubuntu-10-04-lts-comeback.html" rel="alternate"></link><published>2010-06-15T15:10:00+08:00</published><updated>2010-06-15T15:10:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-06-15:/ubuntu-10-04-lts-comeback.html</id><summary type="html">&lt;p&gt;終于又回到 &lt;a class="reference external" href="http://ubuntu.com"&gt;Ubuntu&lt;/a&gt; 的怀抱! 自上一个版本 Ubuntu
 8.04 LTS 版本以来, 转眼已是两年.而我也从大二至现在开始工作. 10.04
 改进了很多, 希望一起加油, 一起进步!&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;終于又回到 &lt;a class="reference external" href="http://ubuntu.com"&gt;Ubuntu&lt;/a&gt; 的怀抱! 自上一个版本 Ubuntu
 8.04 LTS 版本以来, 转眼已是两年.而我也从大二至现在开始工作. 10.04
 改进了很多, 希望一起加油, 一起进步!&lt;/p&gt;
-</content></entry><entry><title>递归算法：一个简单的递归函数</title><link href="/a-simple-recursive-function.html" rel="alternate"></link><published>2010-06-10T16:10:00+08:00</published><updated>2010-06-10T16:10:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-10:/a-simple-recursive-function.html</id><summary type="html">&lt;p&gt;今天看了某 C 语言 Primer
+</content></entry><entry><title>递归算法：一个简单的递归函数</title><link href="https://magicalboy.com/a-simple-recursive-function.html" rel="alternate"></link><published>2010-06-10T16:10:00+08:00</published><updated>2010-06-10T16:10:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-06-10:/a-simple-recursive-function.html</id><summary type="html">&lt;p&gt;今天看了某 C 语言 Primer
 教材中一递归（recursion）示例运行结果，一开始让我迷惑不解，后来才发觉原来我一直不懂递归。枉我之前还写过递归读取树结构的文件目录的
 Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且看代码清单如下：&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;/* recursion.c &lt;span class="pre"&gt;--&lt;/span&gt; 递归演示 */ /* 程序显示递归的级数 n 及存储 n 的内存地址 */ #include&amp;nbsp; void recursion(int);&lt;/tt&gt;&lt;/p&gt;
@@ -896,7 +896,7 @@ main() 函数！&lt;/strong&gt;，就这么简单的逻辑却被我们忽略了�
 &lt;li&gt;递归调用&lt;strong&gt;后&lt;/strong&gt;的语句和各级被调用函数的执行顺序相反。&lt;/li&gt;
 &lt;li&gt;递归的深度不宜太深，会很快消耗掉计算机资源。同时必须包含终止递归的语句。&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>C语言基础：输入缓冲区</title><link href="/c-input-buffer.html" rel="alternate"></link><published>2010-06-06T03:40:00+08:00</published><updated>2010-06-06T03:40:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-06:/c-input-buffer.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;缓冲定义&lt;/strong&gt;：暂时存放输入或输出数据的存储区域&lt;/p&gt;
+</content></entry><entry><title>C语言基础：输入缓冲区</title><link href="https://magicalboy.com/c-input-buffer.html" rel="alternate"></link><published>2010-06-06T03:40:00+08:00</published><updated>2010-06-06T03:40:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-06-06:/c-input-buffer.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;缓冲定义&lt;/strong&gt;：暂时存放输入或输出数据的存储区域&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;&lt;strong&gt;实例代码&lt;/strong&gt;：缓冲输入的实例——延时回显&lt;/h2&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;/* echo.c &lt;span class="pre"&gt;--&lt;/span&gt; 回显输入 */ #include&amp;nbsp; int main(void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; char ch;&lt;/tt&gt;&lt;/p&gt;
@@ -953,7 +953,7 @@ I/O：这种就是前面例子演示的缓冲，当遇到一个换行字符或�
 &lt;p&gt;ANSI
 C规定应该对输入进行缓冲，但K&amp;amp;R则将选择权留给了编译器的实现。运行上面的程序，大多数系统都能看到如程序示例1的结果，大家可以动手试一下。&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>C语言基础：打印长字符串</title><link href="/c-print-a-long-string.html" rel="alternate"></link><published>2010-06-02T14:31:00+08:00</published><updated>2010-06-02T14:31:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-02:/c-print-a-long-string.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content></entry><entry><title>C语言基础：打印长字符串</title><link href="https://magicalboy.com/c-print-a-long-string.html" rel="alternate"></link><published>2010-06-02T14:31:00+08:00</published><updated>2010-06-02T14:31:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-06-02:/c-print-a-long-string.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;C语言重登王位，赶紧学好C混个铁饭碗才行了。确实，不管C语言有没有王者归来，它都是一门很强大的语言。Linux/Unix
 核心是用C写的，Java，Python等高级语言也是用C来实现，学习C简直是百益而无一害啊！&lt;/p&gt;
@@ -1004,7 +1004,7 @@ C规定应该对输入进行缓冲，但K&amp;amp;R则将选择权留给了编�
 &lt;h2&gt;结束语&lt;/h2&gt;
 &lt;p&gt;方法有很多种，选择哪一种见仁见智吧。不要死钻牛角尖搞起科研就好，就比如孔乙己说的回字有四样写法的典范。就当作一下笔记吧，别忘了又翻书去，这是最不想看到的结果！&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>dev-c++自动缩进设置</title><link href="/dev-c-automatically-indent-settings.html" rel="alternate"></link><published>2010-05-30T07:12:00+08:00</published><updated>2010-05-30T07:12:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-30:/dev-c-automatically-indent-settings.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content></entry><entry><title>dev-c++自动缩进设置</title><link href="https://magicalboy.com/dev-c-automatically-indent-settings.html" rel="alternate"></link><published>2010-05-30T07:12:00+08:00</published><updated>2010-05-30T07:12:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-05-30:/dev-c-automatically-indent-settings.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Dev-C++&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;strong&gt;Dev-C++&lt;/strong&gt;是一套用于开发C/C++的&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6"&gt;自由的&lt;/a&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"&gt;整合性开发环境&lt;/a&gt;（IDE），并以&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81"&gt;GPL&lt;/a&gt;作为散布许可。使用
@@ -1057,7 +1057,7 @@ Tabs，问题就解决了！&lt;/p&gt;
 caption=&amp;quot;dev-c++编辑设置&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/devc-2.png"&gt;&lt;img alt="dev-c++编辑设置" class="size-full wp-image-179" src="http://magicalboy.com/wp-content/uploads/2010/05/devc-2.png" style="width: 441px; height: 443px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
 &lt;p&gt;另外，Dev-C++还支持国际化，支持中文，可在“工具”—&amp;gt;“环境选项”—&amp;gt;“界面”—&amp;gt;“语言”中选择“Chinese”即可。&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>典型的C编程风格</title><link href="/a-typical-c-programming-style.html" rel="alternate"></link><published>2010-05-28T15:37:00+08:00</published><updated>2010-05-28T15:37:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-28:/a-typical-c-programming-style.html</id><summary type="html">&lt;p&gt;C语法很灵活，如果我们都遵循一些良好的编程风格，可以写出高效率，思路清晰的代码。同时这也是一个程序员应该养成的良好习惯。良好的编程习惯有：写注释，代码对齐，规范命名等等。这篇文章只简单的展示一个经典的编程风格，请先看以下程序清单：&lt;/p&gt;
+</content></entry><entry><title>典型的C编程风格</title><link href="https://magicalboy.com/a-typical-c-programming-style.html" rel="alternate"></link><published>2010-05-28T15:37:00+08:00</published><updated>2010-05-28T15:37:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-05-28:/a-typical-c-programming-style.html</id><summary type="html">&lt;p&gt;C语法很灵活，如果我们都遵循一些良好的编程风格，可以写出高效率，思路清晰的代码。同时这也是一个程序员应该养成的良好习惯。良好的编程习惯有：写注释，代码对齐，规范命名等等。这篇文章只简单的展示一个经典的编程风格，请先看以下程序清单：&lt;/p&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;/* cypher1.c &lt;span class="pre"&gt;--&lt;/span&gt; 改变输入，只保留其中的空格 */ #include&amp;nbsp; #define SPACE ' ' int main(void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; char ch;&lt;/tt&gt;&lt;/div&gt;
@@ -1100,7 +1100,7 @@ caption=&amp;quot;dev-c++编辑设置&amp;quot;]&lt;a class="reference external"
 &lt;p&gt;替换为下面这种形式&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;while((ch&lt;/span&gt; = &lt;span class="pre"&gt;getchar())&lt;/span&gt; != 'n')&amp;nbsp;&amp;nbsp; // 当一行未结束时 {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; …… // 处理字符 }&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;这种典型的习惯用法在C及其它现在语言中很常见，我们应当熟悉它&lt;/p&gt;
-</content></entry><entry><title>腾讯微博邀请码，要赶紧联系啦</title><link href="/t-blog-invite-code.html" rel="alternate"></link><published>2010-05-07T04:53:00+08:00</published><updated>2010-05-07T04:53:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-07:/t-blog-invite-code.html</id><summary type="html">&lt;div class="line-block"&gt;
+</content></entry><entry><title>腾讯微博邀请码，要赶紧联系啦</title><link href="https://magicalboy.com/t-blog-invite-code.html" rel="alternate"></link><published>2010-05-07T04:53:00+08:00</published><updated>2010-05-07T04:53:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-05-07:/t-blog-invite-code.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;昨天中午开通的腾讯微博，当晚就获得了三个邀请资格，有以下图为证，喜欢的网友赶紧啦，截至发稿还剩三个&lt;/div&gt;
 &lt;div class="line"&gt;[caption id=&amp;quot;attachment_124&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;232&amp;quot;
 caption=&amp;quot;邀请听众&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/t-blog-invite-code.html/invite2"&gt;&lt;img alt="邀请听众" class="size-full wp-image-124" src="http://magicalboy.com/wp-content/uploads/2010/05/invite2.png" style="width: 232px; height: 60px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
@@ -1122,7 +1122,7 @@ caption=&amp;quot;QQ面板提示信息&amp;quot;]&lt;a class="reference external
 caption=&amp;quot;腾讯微博邀请&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/t-blog-invite-code.html/invite1"&gt;&lt;img alt="腾讯微博邀请" class="size-full wp-image-126" src="http://magicalboy.com/wp-content/uploads/2010/05/invite1.png" style="width: 717px; height: 185px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
 &lt;div class="line"&gt;怎么说还能获取2个种子，因为我获取了一个，还没复制发过别人，所以说还剩下三个！&lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>程序人生之始：初定目标职业技能</title><link href="/initially-for-target-vocational-skills.html" rel="alternate"></link><published>2010-04-23T06:59:00+08:00</published><updated>2010-04-23T06:59:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-23:/initially-for-target-vocational-skills.html</id><summary type="html">&lt;p&gt;职业技能和目标&lt;/p&gt;
+</content></entry><entry><title>程序人生之始：初定目标职业技能</title><link href="https://magicalboy.com/initially-for-target-vocational-skills.html" rel="alternate"></link><published>2010-04-23T06:59:00+08:00</published><updated>2010-04-23T06:59:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-04-23:/initially-for-target-vocational-skills.html</id><summary type="html">&lt;p&gt;职业技能和目标&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;熟悉一两门高级语言（比如，Java、Python）和C/C++&lt;/li&gt;
 &lt;li&gt;熟悉数据库SQL语言及操作&lt;/li&gt;
@@ -1136,7 +1136,7 @@ caption=&amp;quot;腾讯微博邀请&amp;quot;]&lt;a class="reference external" 
 &lt;li&gt;熟悉操作系统Linux&lt;/li&gt;
 &lt;li&gt;提高个人素质涵养，交际沟通能力，团队合作的Teamwork&lt;/li&gt;
 &lt;/ol&gt;
-</content></entry><entry><title>代码语法高亮显示插件</title><link href="/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html" rel="alternate"></link><published>2010-04-22T01:26:00+08:00</published><updated>2010-04-22T01:26:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-22:/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html</id><summary type="html">&lt;div class="section" id="java-hellomidlet-java"&gt;
+</content></entry><entry><title>代码语法高亮显示插件</title><link href="https://magicalboy.com/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html" rel="alternate"></link><published>2010-04-22T01:26:00+08:00</published><updated>2010-04-22T01:26:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-04-22:/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html</id><summary type="html">&lt;div class="section" id="java-hellomidlet-java"&gt;
 &lt;h2&gt;Java - HelloMidlet.java&lt;/h2&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;import javax.microedition.lcdui.Display; import javax.microedition.lcdui.TextBox; import &lt;span class="pre"&gt;javax.microedition.midlet.*;&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;public class HelloMidlet extends MIDlet {&lt;/p&gt;
@@ -1242,14 +1242,14 @@ this.getAppProperty(&amp;quot;MIDlet-Jar-Size&amp;quot;)&lt;/div&gt;
 &lt;div class="line"&gt;&lt;a class="reference external" href="http://wordpress.org/extend/plugins/codecolorer/installation/"&gt;http://wordpress.org/extend/plugins/codecolorer/installation/&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>sad but true, what is the date...</title><link href="/sad-but-true-what-is-the-date.html" rel="alternate"></link><published>2010-04-21T00:44:00+08:00</published><updated>2010-04-21T00:44:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-21:/sad-but-true-what-is-the-date.html</id><summary type="html">&lt;p&gt;sad but true, what is the date tody&lt;/p&gt;
+</content></entry><entry><title>sad but true, what is the date...</title><link href="https://magicalboy.com/sad-but-true-what-is-the-date.html" rel="alternate"></link><published>2010-04-21T00:44:00+08:00</published><updated>2010-04-21T00:44:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-04-21:/sad-but-true-what-is-the-date.html</id><summary type="html">&lt;p&gt;sad but true, what is the date tody&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;sad but true, what is the date tody&lt;/p&gt;
-</content></entry><entry><title>MagicWiki正式开通上线了</title><link href="/magicwiki-online.html" rel="alternate"></link><published>2010-04-18T13:04:00+08:00</published><updated>2010-04-18T13:04:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-18:/magicwiki-online.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;MagicWiki&lt;/a&gt;知识共享平台已正式开通，详情请访问&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;http://magicalboy.com/wiki/&lt;/a&gt;&lt;/p&gt;
+</content></entry><entry><title>MagicWiki正式开通上线了</title><link href="https://magicalboy.com/magicwiki-online.html" rel="alternate"></link><published>2010-04-18T13:04:00+08:00</published><updated>2010-04-18T13:04:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-04-18:/magicwiki-online.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;MagicWiki&lt;/a&gt;知识共享平台已正式开通，详情请访问&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;http://magicalboy.com/wiki/&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;MagicWiki&lt;/a&gt;知识共享平台已正式开通，详情请访问&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;http://magicalboy.com/wiki/&lt;/a&gt;&lt;/p&gt;
-</content></entry><entry><title>Hello world！</title><link href="/hello-world-2.html" rel="alternate"></link><published>2010-04-18T06:47:00+08:00</published><updated>2010-04-18T06:47:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-18:/hello-world-2.html</id><summary type="html">&lt;p&gt;欢迎访问MAGICALBOY的博客。这虽然是系统自动生成的演示文章。我已经编辑它，开始我的博客，和大家分享我的程序人生！&lt;/p&gt;
+</content></entry><entry><title>Hello world！</title><link href="https://magicalboy.com/hello-world-2.html" rel="alternate"></link><published>2010-04-18T06:47:00+08:00</published><updated>2010-04-18T06:47:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-04-18:/hello-world-2.html</id><summary type="html">&lt;p&gt;欢迎访问MAGICALBOY的博客。这虽然是系统自动生成的演示文章。我已经编辑它，开始我的博客，和大家分享我的程序人生！&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;欢迎访问MAGICALBOY的博客。这虽然是系统自动生成的演示文章。我已经编辑它，开始我的博客，和大家分享我的程序人生！&lt;/p&gt;
-</content></entry><entry><title>Flex learning~~http://livedocs...</title><link href="/flex-learninghttplivedocs.html" rel="alternate"></link><published>2010-03-16T00:56:00+08:00</published><updated>2010-03-16T00:56:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-03-16:/flex-learninghttplivedocs.html</id><summary type="html">&lt;p&gt;Flex learning~~http://livedocs.adobe.com/flex/3/html/index.html&lt;/p&gt;
+</content></entry><entry><title>Flex learning~~http://livedocs...</title><link href="https://magicalboy.com/flex-learninghttplivedocs.html" rel="alternate"></link><published>2010-03-16T00:56:00+08:00</published><updated>2010-03-16T00:56:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-03-16:/flex-learninghttplivedocs.html</id><summary type="html">&lt;p&gt;Flex learning~~http://livedocs.adobe.com/flex/3/html/index.html&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Flex learning~~http://livedocs.adobe.com/flex/3/html/index.html&lt;/p&gt;
-</content></entry><entry><title>Hello, magicalboy!</title><link href="/hello-magicalboy.html" rel="alternate"></link><published>2010-03-12T07:24:00+08:00</published><updated>2010-03-12T07:24:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-03-12:/hello-magicalboy.html</id><summary type="html">&lt;p&gt;Hello, magicalboy!&lt;/p&gt;
+</content></entry><entry><title>Hello, magicalboy!</title><link href="https://magicalboy.com/hello-magicalboy.html" rel="alternate"></link><published>2010-03-12T07:24:00+08:00</published><updated>2010-03-12T07:24:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-03-12:/hello-magicalboy.html</id><summary type="html">&lt;p&gt;Hello, magicalboy!&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Hello, magicalboy!&lt;/p&gt;
 </content></entry></feed>
