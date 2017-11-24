@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    ObjectiveC 深浅拷贝学习
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-03-09T04:13:00+08:00" pubdate>
+                            三, 09  3 2011
+                        </time>
+                        <a href="/objectivec-copy-and-mutablecopy.html" rel="bookmark"><h1>ObjectiveC 深浅拷贝学习</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p><strong>在ObjC中，什么是深浅拷贝？</strong>
+深浅拷贝分别指深拷贝和浅拷贝，即mutableCopy和copy方法。
+copy复制一个不可变对象，而mutableCopy复制一个mutable可变对象。
+什么时候用到深浅拷贝？下面举几个例子说明。</p>
+<div class="section" id="id1">
+<h2>非容器类对象</h2>
+<p>如NSString，NSNumber等一类对象</p>
+<p>示例1：</p>
+<pre class="code shell literal-block">
+// 非容器类对象
+NSString *str <span class="o">=</span> &#64;<span class="s2">&quot;origin string&quot;</span><span class="p">;</span>
+NSString *strCopy <span class="o">=</span> <span class="o">[</span>str copy<span class="o">]</span><span class="p">;</span>
+NSMutableString *mstrCopy <span class="o">=</span> <span class="o">[</span>str mutableCopy<span class="o">]</span><span class="p">;</span>
+<span class="o">[</span>mstrCopy appendString:&#64;<span class="s2">&quot;??&quot;</span><span class="o">]</span><span class="p">;</span>
+</pre>
+<p>查看内存可以发现，str和strCopy指向的是同一块内存区域，我们称之为弱引用（weak
+reference）。而mstrCopy是真正的复制，系统为其分配了新内存空间，保存从str复制过来的字符串值。从最后一行代码中修改这些值而不影响str和strCopy中可证明。</p>
+<p>示例2：</p>
+<pre class="code shell literal-block">
+NSMutableString *mstr <span class="o">=</span> <span class="o">[</span>NSMutableString stringWithString:&#64;<span class="s2">&quot;origin&quot;</span><span class="o">]</span><span class="p">;</span>
+NSString *strCopy <span class="o">=</span> <span class="o">[</span>mstr copy<span class="o">]</span><span class="p">;</span>
+NSMutableString *mstrCopy <span class="o">=</span> <span class="o">[</span>mstr copy<span class="o">]</span><span class="p">;</span>
+NSMutableString *mstrMCopy <span class="o">=</span> <span class="o">[</span>mstr mutableCopy<span class="o">]</span><span class="p">;</span>
+//<span class="o">[</span>mstrCopy appendString:&#64;<span class="s2">&quot;1111&quot;</span><span class="o">]</span><span class="p">;</span>
+//error <span class="o">[</span>mstr appendString:&#64;<span class="s2">&quot;222&quot;</span><span class="o">]</span><span class="p">;</span>
+<span class="o">[</span>mstrMCopy appendString:&#64;<span class="s2">&quot;333&quot;</span><span class="o">]</span><span class="p">;</span>
+</pre>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">以上四个对象所分配的内存都是不一样的。而且对于mstrCopy，它所指向的其实是一个imutable对象，是不可改变的，所以会出错。这点要注意，好好理解。
+<strong>小结：</strong> 对于非容器类对象，有：</div>
+</div>
+<ul class="simple">
+<li>如果对一个不可变对象复制，copy是指针复制，即浅拷贝；而mutableCopy则是对象复制，即深拷贝。（示例1）</li>
+<li>如果是对可变对象复制，都是深拷贝，但copy复制返回的对象是不可变的。（示例2）</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>容器类对象深浅复制</h2>
+<div class="line-block">
+<div class="line"><img alt="Collections copy" src="http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Collections/Art/CopyingCollections.jpg" style="width: 500px;" /></div>
+<div class="line">比如NSArray，NSDictionary等。对于容器类本身，上面讨论的结论也适用的，下面探讨的是复制后容器内对象的变化。</div>
+</div>
+<p>示例3</p>
+<pre class="code shell literal-block">
+/* copy返回不可变对象，mutablecopy返回可变对象 */
+NSArray *array1 <span class="o">=</span> <span class="o">[</span>NSArray arrayWithObjects:&#64;<span class="s2">&quot;a&quot;</span>,&#64;<span class="s2">&quot;b&quot;</span>,&#64;<span class="s2">&quot;c&quot;</span>,nil<span class="o">]</span><span class="p">;</span>
+NSArray *arrayCopy1 <span class="o">=</span> <span class="o">[</span>array1 copy<span class="o">]</span><span class="p">;</span> //arrayCopy1是和array同一个NSArray对象（指向相同的对象），包括array里面的元素也是指向相同的指针
+NSLog<span class="o">(</span>&#64;<span class="s2">&quot;array1 retain count: %d&quot;</span>,<span class="o">[</span>array1 retainCount<span class="o">])</span><span class="p">;</span>
+NSLog<span class="o">(</span>&#64;<span class="s2">&quot;array1 retain count: %d&quot;</span>,<span class="o">[</span>arrayCopy1 retainCount<span class="o">])</span><span class="p">;</span>
+NSMutableArray *mArrayCopy1 <span class="o">=</span> <span class="o">[</span>array1 mutableCopy<span class="o">]</span><span class="p">;</span> //mArrayCopy1是array1的可变副本，指向的对象和array1不同，但是其中的元素和array1中的元素指向的还是同一个对象。mArrayCopy1还可以修改自己的对象
+<span class="o">[</span>mArrayCopy1 addObject:&#64;<span class="s2">&quot;de&quot;</span><span class="o">]</span><span class="p">;</span>
+<span class="o">[</span>mArrayCopy1 removeObjectAtIndex:0<span class="o">]</span><span class="p">;</span>
+</pre>
+<p>array1和arrayCopy1是指针复制，而mArrayCopy1是对象复制，符合前面示例1讨论的结论。mArrayCopy1可以改变其内的元素：删除或添加。但容器内的元素内容都是浅拷贝。</p>
+<p>示例4</p>
+<pre class="code shell literal-block">
+NSArray *mArray1 <span class="o">=</span> <span class="o">[</span>NSArray arrayWithObjects:<span class="o">[</span>NSMutableString stringWithString:&#64;<span class="s2">&quot;a&quot;</span><span class="o">]</span>,&#64;<span class="s2">&quot;b&quot;</span>,&#64;<span class="s2">&quot;c&quot;</span>,nil<span class="o">]</span><span class="p">;</span>     NSLog<span class="o">(</span>&#64;<span class="s2">&quot;mArray1 retain count: %d&quot;</span>,<span class="o">[</span>mArray1 retainCount<span class="o">])</span><span class="p">;</span>
+NSArray *mArrayCopy2 <span class="o">=</span> <span class="o">[</span>mArray1 copy<span class="o">]</span><span class="p">;</span>     NSLog<span class="o">(</span>&#64;<span class="s2">&quot;mArray1 retain count: %d&quot;</span>,<span class="o">[</span>mArray1 retainCount<span class="o">])</span><span class="p">;</span>     // mArray1和mArrayCopy2指向同一对象，retain值+1。
+NSMutableArray *mArrayMCopy1 <span class="o">=</span> <span class="o">[</span>mArray1 mutableCopy<span class="o">]</span><span class="p">;</span>
+NSLog<span class="o">(</span>&#64;<span class="s2">&quot;mArray1 retain count: %d&quot;</span>,<span class="o">[</span>mArray1 retainCount<span class="o">])</span><span class="p">;</span>     //mArrayCopy2和mArray1指向的是不一样的对象，但是其中的元素都是一样的对象<span class="p">&amp;</span>mdash<span class="p">;&amp;</span>mdash<span class="p">;</span>同一个指针      NSMutableString *testString <span class="o">=</span> <span class="o">[</span>mArray1 objectAtIndex:0<span class="o">]</span><span class="p">;</span>     //testString <span class="o">=</span> &#64;<span class="s2">&quot;1a1&quot;</span><span class="p">;</span>//这样会改变testString的指针，其实是将&#64;<span class="p">&amp;</span>ldquo<span class="p">;</span>1a1<span class="p">&amp;</span>rdquo<span class="p">;</span>临时对象赋给了testString
+<span class="o">[</span>testString appendString:&#64;<span class="s2">&quot; tail&quot;</span><span class="o">]</span><span class="p">;</span>//这样以上三个数组的首元素都被改变了
+</pre>
+<p>由此可见，对于容器而言，其元素对象始终是指针复制。如果需要元素对象也是对象复制，就需要实现深拷贝。<a class="reference external" href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Collections/Articles/Copying.html">http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Collections/Articles/Copying.html</a></p>
+<p>示例5</p>
+<pre class="code shell literal-block">
+NSArray *array <span class="o">=</span> <span class="o">[</span>NSArray arrayWithObjects:<span class="o">[</span>NSMutableString stringWithString:&#64;<span class="s2">&quot;first&quot;</span><span class="o">]</span>,<span class="o">[</span>NSStringstringWithString:&#64;<span class="s2">&quot;b&quot;</span><span class="o">]</span>,&#64;<span class="s2">&quot;c&quot;</span>,nil<span class="o">]</span><span class="p">;</span>
+NSArray *deepCopyArray<span class="o">=[[</span>NSArray alloc<span class="o">]</span> initWithArray: array copyItems: YES<span class="o">]</span><span class="p">;</span>
+NSArray* <span class="nv">trueDeepCopyArray</span> <span class="o">=</span> <span class="o">[</span>NSKeyedUnarchiver unarchiveObjectWithData:<span class="o">[</span>NSKeyedArchiver archivedDataWithRootObject: array<span class="o">]]</span><span class="p">;</span>
+</pre>
+<p>trueDeepCopyArray是完全意义上的深拷贝，而deepCopyArray则不是，对于deepCopyArray内的不可变元素其还是指针复制。
+或者我们自己实现深拷贝的方法。因为如果容器的某一元素是不可变的，那你复制完后该对象仍旧是不能改变的，因此只需要指针复制即可。除非你对容器内的元素重新赋值，否则指针复制即已足够。
+举个例子，[[array
+objectAtIndex:0]appendstring:&#64;”sd”]后其他的容器内对象并不会受影响。[[array
+objectAtIndex:1]和[[deepCopyArray
+objectAtIndex:0]尽管是指向同一块内存，但是我们没有办法对其进行修改——因为它是不可改变的。所以指针复制已经足够。所以这并不是完全意义上的深拷贝。</p>
+</div>
+<div class="section" id="id3">
+<h2>自己实现深拷贝的方法</h2>
+<p>NSDictionaryMutableDeepCopy.h</p>
+<pre class="code shell literal-block">
+&#64;interface NSDictionary<span class="o">(</span>MutableDeepCopy<span class="o">)</span>
+- <span class="o">(</span>NSMutableDictionary *<span class="o">)</span>mutableDeepCopy<span class="p">;</span>
+&#64;end
+</pre>
+<p>NSDictionaryMutableDeepCopy.m</p>
+<pre class="code shell literal-block">
+<span class="c1">#import &quot;NSDictionaryMutableDeepCopy.h&quot;
+</span>&#64;implementation NSDictionary<span class="o">(</span>MutableDeepCopy<span class="o">)</span>
+- <span class="o">(</span>NSMutableDictionary *<span class="o">)</span>mutableDeepCopy <span class="o">{</span>
+&nbsp;NSMutableDictionary *ret <span class="o">=</span> <span class="o">[[</span>NSMutableDictionary alloc<span class="o">]</span>
+&nbsp;initWithCapacity:<span class="o">[</span>self count<span class="o">]]</span><span class="p">;</span>
+NSArray *keys <span class="o">=</span> <span class="o">[</span>self allKeys<span class="o">]</span><span class="p">;</span>
+<span class="k">for</span> <span class="o">(</span>id key in keys<span class="o">)</span> <span class="o">{</span>
+    id <span class="nv">oneValue</span> <span class="o">=</span> <span class="o">[</span>self valueForKey:key<span class="o">]</span><span class="p">;</span>
+    id <span class="nv">oneCopy</span> <span class="o">=</span> nil<span class="p">;</span>
+    <span class="k">if</span> <span class="o">([</span>oneValue respondsToSelector:&#64;selector<span class="o">(</span>mutableDeepCopy<span class="o">)])</span> <span class="o">{</span>
+         <span class="nv">oneCopy</span> <span class="o">=</span> <span class="o">[</span>oneValue mutableDeepCopy<span class="o">]</span><span class="p">;</span>      <span class="o">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="o">([</span>oneValue respondsToSelector:&#64;selector<span class="o">(</span>mutableCopy<span class="o">)])</span> <span class="o">{</span>
+    <span class="nv">oneCopy</span> <span class="o">=</span> <span class="o">[</span>oneValue mutableCopy<span class="o">]</span><span class="p">;</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="nv">oneCopy</span> <span class="o">==</span> nil<span class="o">)</span> <span class="o">{</span>
+         <span class="nv">oneCopy</span> <span class="o">=</span> <span class="o">[</span>oneValue copy<span class="o">]</span><span class="p">;</span>
+    <span class="o">}</span>
+    <span class="o">[</span>ret setValue:oneCopy forKey:key<span class="o">]</span><span class="p">;</span>
+<span class="o">}</span>
+<span class="k">return</span> ret<span class="p">;</span>
+<span class="o">}</span>
+&#64;end
+</pre>
+<p>使用类别方法来实现。</p>
+</div>
+<div class="section" id="id4">
+<h2>自定义对象</h2>
+<p>如果是我们定义的对象，那么我们自己要实现NSCopying,NSMutableCopying这样就能调用copy和mutablecopy了。举个例子：
+<tt class="docutils literal">&#64;interface MyObj : NSObject {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NSMutableString *name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NSString *imutableStr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int age; } &#64;property (nonatomic, retain) NSMutableString *name; &#64;property (nonatomic, retain) NSString *imutableStr; &#64;property (nonatomic) int age;&nbsp;&nbsp; &#64;end&nbsp;&nbsp; &#64;implementation MyObj &#64;synthesize name; &#64;synthesize age; &#64;synthesize imutableStr; - (id)init {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (self = [super init])&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self.name = [[NSMutableString alloc]init];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self.imutableStr = [[NSString alloc]init];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age = <span class="pre">-1;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return self; }&nbsp;&nbsp; - (void)dealloc {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [name release];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [imutableStr release];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [super dealloc]; } - <span class="pre">(id)copyWithZone:(NSZone</span> *)zone {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyObj *copy = <span class="pre">[[[self</span> class] allocWithZone:zone] init];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">copy-&gt;name</span> = [name copy];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">copy-&gt;imutableStr</span> = [imutableStr copy]; //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">copy-&gt;name</span> = [name <span class="pre">copyWithZone:zone];;</span> //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">copy-&gt;imutableStr</span> = [name <span class="pre">copyWithZone:zone];//</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">copy-&gt;age</span> = age;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return copy; } - <span class="pre">(id)mutableCopyWithZone:(NSZone</span> *)zone {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyObj *copy = NSCopyObject(self, 0, zone);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">copy-&gt;name</span> = [self.name mutableCopy];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">copy-&gt;age</span> = age;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return copy; } &#64;end</tt>
+未完请继续讨论.. 本文参考了on my way的《<a class="reference external" href="http://www.cnblogs.com/scorpiozj/archive/2011/01/25/1944496.html">ios
+深浅拷贝学习</a>》</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/iphone.html">iPhone</a></p>
+                        <p>Tags: <a href="/tag/ios.html">iOS</a>, <a href="/tag/objective-c.html">Objective-C</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

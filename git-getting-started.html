@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Git 使用入门
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-09-22T14:26:00+08:00" pubdate>
+                            四, 22  9 2011
+                        </time>
+                        <a href="/git-getting-started.html" rel="bookmark"><h1>Git 使用入门</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line"><strong>一、Git简介</strong></div>
+<div class="line"><img alt="git logo" src="https://lh6.googleusercontent.com/-6bFWTOcHH4Y/TntG8fwhJWI/AAAAAAAAAJk/pu01j_uBeDo/s800/git.png" style="width: 214px; height: 81px;" /></div>
+</div>
+<p>Git（Via <a class="reference external" href="http://zh.wikipedia.org/wiki/Git">http://zh.wikipedia.org/wiki/Git</a>）。当初 Linus Trovalds 开发
+Git 是为了跟踪 Linux 内核的修改情况，Git 命名来自于</p>
+<blockquote>
+“I'm an egotistical bastard, and I name all my projects after
+myself. First Linux, now git.”</blockquote>
+<div class="line-block">
+<div class="line">**
+二、为什么使用Git**</div>
+<div class="line">相信大家使用过传统的版本控制系统（Version Control System，VCS），比如
+CVS，SVN（Subversion）等。这些都是老而笨重，采用集中式的
+VCS。相比之下，Git 有如下优势：</div>
+<div class="line">1、分布式体系结构。（Distributed Version Control
+System，DVCS），可完全断网离线工作，不受网络连接限制。</div>
+<div class="line">2、分支与合并操作简单。</div>
+<div class="line">3、兼容 SVN。如果公司同事坚持使用 SVN，也可以完全从 SVN
+版本库中导入所有历史，并把在 Git 中的改动提交到 SVN。</div>
+</div>
+<p>现越来越多有名的开源项目采用 Git 管理了，熟悉 Git
+之后不会对它敬而远之，尽管 Github 上提供项目的下载链接。</p>
+<div class="line-block">
+<div class="line"><strong>三、安装 Git （Widows 篇）</strong></div>
+<div class="line">Git 为 POSIX 架构，本不支持Windows，有牛人制作了可在 Widows
+运行的环境，整合版下载地址：<a class="reference external" href="http://code.google.com/p/msysgit/downloads/list?can=3">http://code.google.com/p/msysgit/downloads/list?can=3</a></div>
+<div class="line">请放心下载，开源且官方推荐的。</div>
+<div class="line">下载时请选择第一（.exe）或第二个（Portable）下载。下面以第二个
+PortableGit-x.x.x-previewxxxxxxxx.7z 为例进行说明。</div>
+<div class="line">Tips：千万不要解压到当前目录，应解压到一个文件夹下，因为该档案是没有带目录压缩的。</div>
+</div>
+<div class="line-block">
+<div class="line">1、解压完成后，剪切到软件安装的目录。</div>
+<div class="line">2、配置以下环境变量：</div>
+<div class="line">gitdir=c:portablegit</div>
+<div class="line">path=%gitdir%cmd;%path%</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>四、快速入门</strong></div>
+<div class="line">常用到的 Checkout 项目命令：</div>
+<div class="line">git clone url.git</div>
+<div class="line">配置：</div>
+<div class="line">git config --global user.name &quot;Donly Chan&quot;</div>
+<div class="line">git config --global user.email <a class="reference external" href="mailto:donly&#64;magicalboy.com">donly&#64;magicalboy.com</a></div>
+<div class="line">帮助：</div>
+<div class="line">git --help</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>五、更多</strong></div>
+<div class="line">更多信息参见安装目录的 “README.portable”。</div>
+<div class="line">Git 首页：<a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a> （如打不开，请自行开盾）</div>
+<div class="line">Gitbug 首页：<a class="reference external" href="https://github.com/">https://github.com/</a>，强烈推荐使用，可注册。</div>
+<div class="line">Git 学习资源：<a class="reference external" href="http://progit.org/book/zh/">http://progit.org/book/zh/</a> （中文，入门推荐）</div>
+</div>
+<div class="section" id="id1">
+<h2>更新</h2>
+<ul class="simple">
+<li>2012-05-23：<a class="reference external" href="http://windows.github.com/">GitHub for Windows</a></li>
+</ul>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Tags: <a href="/tag/git.html">Git</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

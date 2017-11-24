@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - iPhone, 互聯網</title><link href="/" rel="alternate"></link><link href="/feeds/iphone-hu-lian-wang.atom.xml" rel="self"></link><id>/</id><updated>2014-11-19T14:50:00+08:00</updated><entry><title>Apple WatchKit 下载试玩</title><link href="/apple-watchkit-hello-world.html" rel="alternate"></link><published>2014-11-19T14:50:00+08:00</published><updated>2014-11-19T14:50:00+08:00</updated><author><name>donly</name></author><id>tag:None,2014-11-19:/apple-watchkit-hello-world.html</id><summary type="html">&lt;p&gt;随着 Xcode 6.2 Beta 的更新发布，苹果公司开放了
+&lt;a class="reference external" href="https://developer.apple.com/watchkit/"&gt;WatchKit&lt;/a&gt;，赶紧尝鲜下载玩玩。&lt;/p&gt;
+&lt;div class="section" id="watchkit-apps"&gt;
+&lt;h2&gt;创建 WatchKit Apps&lt;/h2&gt;
+&lt;p&gt;WatchKit 提供三种条件来扩展 iPhone app：WatchKit Apps、Glances 以及
+Actionable Notifications。这些类型都必须依赖于已经存在的 iOS
+应用而存在。所以在创建新 WatchKit 应用的时候在 Xcode
+的创建新项目中是找不到的，而是作为已经存在的 iOS 项目的新 Target
+来创建。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[gallery ids=&amp;quot;43255,43249&amp;quot;]&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;创建完成之后整个的项目结构是这样的：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2014/11/watchkit_xcode.png"&gt;&lt;img alt="watchkit_xcode" class="aligncenter wp-image-43250 size-medium" src="http://magicalboy.com/wp-content/uploads/2014/11/watchkit_xcode-300x187.png" style="width: 300px; height: 187px;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="apple-watch"&gt;
+&lt;h2&gt;Apple Watch模拟器&lt;/h2&gt;
+&lt;p&gt;Apple Watch 显示屏是方形的，有两种尺寸：38 mm 和
+42mm …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;随着 Xcode 6.2 Beta 的更新发布，苹果公司开放了
+&lt;a class="reference external" href="https://developer.apple.com/watchkit/"&gt;WatchKit&lt;/a&gt;，赶紧尝鲜下载玩玩。&lt;/p&gt;
+&lt;div class="section" id="watchkit-apps"&gt;
+&lt;h2&gt;创建 WatchKit Apps&lt;/h2&gt;
+&lt;p&gt;WatchKit 提供三种条件来扩展 iPhone app：WatchKit Apps、Glances 以及
+Actionable Notifications。这些类型都必须依赖于已经存在的 iOS
+应用而存在。所以在创建新 WatchKit 应用的时候在 Xcode
+的创建新项目中是找不到的，而是作为已经存在的 iOS 项目的新 Target
+来创建。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[gallery ids=&amp;quot;43255,43249&amp;quot;]&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;创建完成之后整个的项目结构是这样的：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2014/11/watchkit_xcode.png"&gt;&lt;img alt="watchkit_xcode" class="aligncenter wp-image-43250 size-medium" src="http://magicalboy.com/wp-content/uploads/2014/11/watchkit_xcode-300x187.png" style="width: 300px; height: 187px;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="apple-watch"&gt;
+&lt;h2&gt;Apple Watch模拟器&lt;/h2&gt;
+&lt;p&gt;Apple Watch 显示屏是方形的，有两种尺寸：38 mm 和
+42mm，对应的分辨率为：312 × 390、272 x 340。可以在 iOS Simulator &amp;gt;
+Hardware &amp;gt; External Displays 中找到打开。&lt;/p&gt;
+&lt;p&gt;[gallery ids=&amp;quot;43251,43252&amp;quot;]&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;应用架构&lt;/h2&gt;
+&lt;p&gt;简单体验了一下，Apple Watch 使用的是&amp;nbsp; WatchKit
+框架，WKInterfaceController 相当于 UIKit 的
+UIViewController，代表一个屏幕上显示的视图。UI元素也和 iOS
+的相似，WKInterfaceGroup
+用来定义布局，水平还是垂直，还可以定义边距，背景颜色或图片。WKInterfaceTable
+可以理解为 UITableView 精简版，用来展示动态内容。WKInterfaceMap
+更是精简，只是不可交互的快照，点击会打开 Maps
+App。整体运行框架见下图，由图此可见，Apple Watch
+应用不能独立存在，必须和&amp;nbsp; iOS App 相互作用运行。&lt;/p&gt;
+&lt;p&gt;[gallery ids=&amp;quot;43258,43256&amp;quot;]&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;链接&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://developer.apple.com/xcode/downloads/"&gt;Xcode - Downloads - Apple
+Developer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://developer.apple.com/watchkit/"&gt;WatchKit - Apple
+Developer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://devstreaming.apple.com/videos/watch/Getting_Started_With_Watchkit/0720/prog_index.m3u8"&gt;View the Getting Started with WatchKit
+video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="Apple"></category><category term="Watch"></category></entry></feed>

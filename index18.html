@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-18T08:33:00+08:00" pubdate>
+                            日, 18  7 2010
+                        </time>
+                        <a href="/html-named-anchors.html" rel="bookmark"><h1>创建 HTML 页面锚点的两种方式</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在 WEB 开发中，会使用到页面锚点。HTML
+页面锚点用于链接到一个页面的某一章节。<a class="reference external" href="http://www.w3school.com.cn/html/html_links.asp">W3School</a>中说到，创建锚点使用
+&lt;a&gt; （锚）标签和 name
+属性，但这不是创建页面锚点的唯一方法。下面简要说一下制作 HTML
+页面锚点的两种方式。</p>
+<p>我们可以利用 <a class="reference external" href="http://www.w3school.com.cn/tiy/t.asp?f=html_link_locations">W3School
+的在线测试工具</a>来进行测试。打开链接后的测试代码使用的是
+&lt;a href=&quot;#C4&quot;&gt; 和 &lt;a name=&quot;C4&quot;&gt;，测试没有问题。再将“ &lt;h2&gt; &lt;a
+name=&quot;C4&quot;&gt;Chapter 4 &lt;/a&gt; &lt;/h2&gt;”改为“ &lt;h2 id=&quot;C4&quot;&gt;Chapter 4 &lt;/h2&gt;”
+后进行测试，效果一样。</p>
+<p>说明 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-17T15:06:00+08:00" pubdate>
+                            六, 17  7 2010
+                        </time>
+                        <a href="/c-pointer.html" rel="bookmark"><h1>C 指针介绍</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>指针（pointer）的定义：在信息工程中，指针是一个用来指示一个内存地址的变量或中央处理器(CPU)中的寄存器(Register)。<strong>在
+C 语言中，指针就是一个存储着变量地址的变量。</strong></p>
+<div class="section" id="id1">
+<h2>与指针相关的操作运算符</h2>
+<ul class="simple">
+<li>＆：地址运算符，后跟一个变量表示该变量的地址。比如：&amp;foo 得到的是变量
+foo 的地址。</li>
+<li>＊：间接运算符，后跟一个指针名或地址表示存储在被指向地址中的值。比如；p
+= &amp;foo, *p 为 foo 的值。</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>指针声明</h2>
+<p>因为指针是一个变量，其保存的变量地址的那个变量有相应的数据类型，不同的变量类型占用的储存空间大小不同，所以必须说明指针所指向变量的数据类型。指针的声明如下：</p>
+<p><tt class="docutils literal">int * foo;&nbsp;&nbsp;&nbsp;&nbsp; // foo 是指向一个整型变量的指针 float * bar;&nbsp; // bar 是指向一个浮点变量的指针</tt></p>
+<p>类型标识符 int
+说明被指向变量的类型，而不是此指针变量的数据类型，它是一种新的数据类型。星号（＊）说明此变量是一个指针 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-17T01:34:00+08:00" pubdate>
+                            六, 17  7 2010
+                        </time>
+                        <a href="/google-robots.html" rel="bookmark"><h1>解决robots.txt在Google 网站管理员工具中语法有误的问题</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="robots-txt">
+<h2>robots.txt 在维基百科中的定义</h2>
+<blockquote>
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Robots.txt">robots.txt</a>（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它通常告诉网络搜索引擎的漫游器（又称网络蜘蛛），此网站中的哪些内容是不能被搜索引擎的漫游器获取的，哪些是可以被（漫游器）获取的。robots.txt应放置于网站的根目录下。</blockquote>
+</div>
+<div class="section" id="id1">
+<h2>问题描述</h2>
+<p>在<a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN">Google
+网站管理员工具</a>-网站配置-抓取工具的权限中可测试
+robots.txt 时发现，解析结果有错误：“第 1 行：?User-agent: *
+语法有误”。下面进行问题分析：</p>
+</div>
+<div class="section" id="id2">
+<h2>robots.txt 内容如下</h2>
+<p><tt class="docutils literal"><span class="pre">User-agent:</span> * Disallow: <span class="pre">/wp-admin</span> Disallow: <span class="pre">/wp-content/plugins</span> Disallow: <span class="pre">/wp-content/themes</span> Disallow: <span class="pre">/wp-includes</span> Sitemap: <span class="pre">http://magicalboy.com/sitemap.xml …</span></tt></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-08T15:21:00+08:00" pubdate>
+                            四, 08  7 2010
+                        </time>
+                        <a href="/google-reader-none-favicon.html" rel="bookmark"><h1>解决 Google Reader 没有显示网站图标的问题</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://reader.google.com/">Google 阅读器</a> 是一款简易实用且强大的在线阅读工具。最近在使用“<strong>显示订阅的网页图标</strong>”功能时发现有部分订阅的网站图标未能显示，包括我自己的网站，只显示一个默认的图标。经过一番仔细观察，终于发现问题所在。</p>
+<div class="section" id="id1">
+<h2>首先，设置“显示订阅的网页图标”</h2>
+<div class="line-block">
+<div class="line">从阅读器页面右上角账户名显示旁边的“设置”－“阅读器
+设置”中进入设置页面，勾选“偏好设置”标签项中的“其他“下面中的“显示订阅的网页图标“选项，或者在订阅模块标题中的下拉菜单中设置，如图：</div>
+<div class="line">返回 Google 阅读器即可看到效果。</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>解决 Google Reader 没有显示网站图标的问题</h2>
+<p>开始时认为，一时看不到图标可能是因为网络问题，但是一段时间后还是没有显示图标。于是到那些可以显示图标的网站看为什么别人的可以显示。发现 favicon 的显示代码如： 或者  即其网站图标位置都是放在网站根目录下。于是乎马上将 favicon.ico 文件移动到网站根目录，修改相应的链接，回到 Google …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-04T07:47:00+08:00" pubdate>
+                            日, 04  7 2010
+                        </time>
+                        <a href="/quick-install-django.html" rel="bookmark"><h1>Django 快速安装指南</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Django 是一个高层次的 Python Web
+框架，鼓励快速全面的开发和实用的设计。是一个使用 python 语言写的开源 web
+开发框架(open source web framework)。</p>
+<p>这是一个简单的快速安装入门教程，如果您需要一个完整的安装指南，涵盖所有安装过程中出现问题的可能性，请参见官方网站：<a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#topics-install">完整安装指南</a></p>
+<!-- install-python: -->
+<div class="section" id="python">
+<h2>安装 Python <a class="reference external" href="#install-python">¶</a></h2>
+<p>作为一个 Python Web 框架，Django 需要 Python。它适用于任何版本的 Python
+2.4 至 2.6，但是它不适用于 3.0。建议您使用 Python 2.5
+或更高版本，因为它们包括一个称为轻量级数据库 SQLite。如果您现在使用的是
+Linux 或 Mac …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-03T09:23:00+08:00" pubdate>
+                            六, 03  7 2010
+                        </time>
+                        <a href="/jquery-form-plugin-ajax-submit.html" rel="bookmark"><h1>使用 jQuery Form 插件 Ajax 提交表单</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>问题描述</h2>
+<p>在 Web 开发中，使用 Ajax
+来提交表单，比如注册页面的注册信息表单的时候，经常遇到一个令人头疼的问题：用户名或
+Email 经常要用到 Ajax 异步提交到后台判断。触发这一事件可由
+文本输入控件失去焦点 onblur 和点击提交表单 Submit 按钮来完成。</p>
+<p>第一种方法很容易实现，input 输入框失去焦点后，可以等待 Ajax
+从后台返回的回应信息，这样一来就有一段时间来缓冲。</p>
+<p>第二种方法则不好办了，提交前必须在前台判断所有的表单信息是否合法，包含
+Ajax 异步判断。因为 Ajax
+提交的请求因网络等因素总需要一小段时间来等待回应，不可能立即返回，所以，应如何做到按下提交按钮后，能得到等待
+Ajax 请求的回应信息，判断这些表单信息来决定是否让这个表单提交呢。</p>
+</div>
+<div class="section" id="id2">
+<h2>解决方法之一</h2>
+<p>使用 <a class="reference external" href="http://malsup.com/jquery/form/">jQuery Form
+Plugin</a>来验证整个表单，一次性使用
+Ajax …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-20T14:23:00+08:00" pubdate>
+                            日, 20  6 2010
+                        </time>
+                        <a href="/ubuntu-10-04-dns-settings.html" rel="bookmark"><h1>设置 DNS 解决 Ubuntu 10.04 上网速度慢的问题</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>不知道大家是否和我一样觉得新安装的 Ubuntu 10.04
+上网龟速，打开一个网址可见浏览器状态一直是“正在解析服务器”，简直让人抓狂！</p>
+<p>出现这种问题，是由域名解析速度过慢引起的，也就是系统默认的 DNS（Domain
+Name System，域名系统） 服务器地址有问题，我们可以通过更改它来解决问题。</p>
+<p>打开终端窗口，使用您喜欢的文本编辑修改 /etc/resove.conf 文件，比如 “sudo
+gedit /etc/resolv.conf”。用“＃”号注释掉所有的代码，然后增加您本地的 DNS
+地址，比如广州电信的 DNS 服务器为：61.144.56.100，备用
+DNS地址：61.144.56.101。如果不确定您本地的 DNS …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-18T08:41:00+08:00" pubdate>
+                            五, 18  6 2010
+                        </time>
+                        <a href="/upgrade-wordpress-3-0-release.html" rel="bookmark"><h1>升级 WordPress 3.0 正式版：备份文件和数据库</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://wordpress.org">WordPress</a>是一个免费的开源项目,在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。</p>
+<p>经 RC3 测试版过后，WordPress 马上放出 3.0
+正式版。登陆管理后台就可以看到更新提示了。作为一位版本控，二话不说马上准备升级。下面就简单介绍一下升级的准备工作。</p>
+<p><strong>备份文件到本地机器上</strong>。可以使用 FTP
+工具（<a class="reference external" href="http://filezilla-project.org">FileZilla</a>），或 UNIX Shell
+（比如，SSH）。由于我的 SSH 被禁用，所以使用比较通用的 FTP 工具
+FileZilla 来备份整个 WordPress 站点：</p>
+<ol class="arabic simple">
+<li>WordPress核心安装文件</li>
+<li>WordPress插件</li>
+<li>WordPress主题</li>
+<li>图片和文件</li>
+<li>Javascripts, PHP脚本, 和其他代码文件</li>
+<li>其他文件和静态页面</li>
+</ol>
+<p>现在的大部分主机供应商都备份整个服务器，所以也包括了我们的网站，比如<a class="reference external" href="https://panel.dreamhost.com/index.cgi?tree=home.backup&amp;">DreamHost</a>
+的就可以在 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-15T15:10:00+08:00" pubdate>
+                            二, 15  6 2010
+                        </time>
+                        <a href="/ubuntu-10-04-lts-comeback.html" rel="bookmark"><h1>Ubuntu 10.04 LTS 归来</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>終于又回到 <a class="reference external" href="http://ubuntu.com">Ubuntu</a> 的怀抱! 自上一个版本 Ubuntu
+8.04 LTS 版本以来, 转眼已是两年.而我也从大二至现在开始工作. 10.04
+改进了很多, 希望一起加油, 一起进步!</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-14T11:46:00+08:00" pubdate>
+                            一, 14  6 2010
+                        </time>
+                        <a href="/filezilla-or-ftp-command-to-see-hidden-files.html" rel="bookmark"><h1>使用 FileZilla 或 FTP 命令下载隐藏文件 .htaccess</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>由于服务器主机的 SSH 服务被关掉，只能被迫使用 FTP（File Transfer
+Protocol）来管理网站。这不刚好需要修改一个 .htaccess
+文件，刚好它是隐藏属性的，使用
+<a class="reference external" href="http://filezilla-project.org/">FileZilla</a> FTP 工具也查看不了。殊不知
+FileZilla 的“服务器”菜单项中有“强制显示隐藏文件”选项。</p>
+<p>启动“强制显示隐藏文件”会有确认信息，需要使用的是 FTP
+协议，同时需要服务器支持。</p>
+<p>如果手头上没有 FTP 软件，可以使用 Windows 自带的 FTP 命令，在 CMD
+命令行输入 ftp 即进入该模式：</p>
+<p><tt class="docutils literal"><span class="pre">C:&gt;ftp</span> ftp&gt; open yourdomain.com …</tt></p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="/index17.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 18 / 21
+                <a href="/index19.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

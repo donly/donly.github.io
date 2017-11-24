@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    学习 C 数组与指针小结
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-23T15:28:00+08:00" pubdate>
+                            五, 23  7 2010
+                        </time>
+                        <a href="/c-array-pointer.html" rel="bookmark"><h1>学习 C 数组与指针小结</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line">在 C
+语言中，数组其实是一种变相使用指针的形式。通过了解指针与数组之间的关系，可以使用指针方便地操作数组。以下是一些指针和数组之间的关系说明：</div>
+<div class="line"><tt class="docutils literal">... int * p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 定义一个整型指针 int arr[2] = {1, 2};&nbsp;&nbsp; // 定义一个整型数组</tt></div>
+</div>
+<div class="line-block">
+<div class="line">p = arr; // 把数组地址赋给指针</div>
+<div class="line">p == &amp;arr[0]; // 指针 p 指向数组 arr 首元素地址</div>
+<div class="line">arr == &amp;arr[0]; // 数组名同时代表数组首元素的地址</div>
+</div>
+<div class="line-block">
+<div class="line">p + 1 == &amp;arr[1]; // 对指针加 1 等于加上它所指向的对象的字节大小 (int
+一般为 4 字节)</div>
+<div class="line">p + 2 == &amp;arr[2]; // 相同的地址</div>
+<div class="line">*(p + 2) == arr[2]; // 相同的值，arr 数组第三个元素的值</div>
+<div class="line">*(arr + i) == arr[i]; // 与下面语句等价，arr 为数组名</div>
+<div class="line">*(p + i) == arr[i]; // p 为指针变量，可使用 p++ 表达式</div>
+<div class="line">++p != ++arr; // 只能对指针变量使用自增一元运算符，在此语法错误！</div>
+<div class="line">...</div>
+<div class="line">例子 1：</div>
+<div class="line"><tt class="docutils literal">/* arr_and_p.c <span class="pre">--</span> 对一个数组的所有元素求和 */ #define SIZE 10 #include&nbsp; int sum (int *, int *); // 声明函数原型 int main (void) {&nbsp;&nbsp;&nbsp;&nbsp; int balls[SIZE] = {30, 20, 25, 9, 56, 14, 18, 16, 21, 28};&nbsp;&nbsp;&nbsp;&nbsp; long total = 0;</tt></div>
+</div>
+<div class="line-block">
+<div class="line">total = sum (balls, balls + SIZE); // 调用函数, balls + SIZE
+为数组的结束地址</div>
+<div class="line">printf (&quot;The total number of balls is %ld.n&quot;, total);</div>
+</div>
+<div class="line-block">
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">int sum (int * start, int * end) // 函数定义</div>
+<div class="line">{</div>
+<div class="line">int total = 0;</div>
+</div>
+<div class="line-block">
+<div class="line">while (start &lt; end)</div>
+<div class="line">{</div>
+<div class="line">total += *(start++); // 此处括号可省略，* 和 ++ 优先级相同，从右至左</div>
+<div class="line">}</div>
+<div class="line">}</div>
+<div class="line">此例子主要演示使用指针对数组操作的函数，最后函数返回数组内所有元素的和。</div>
+<div class="line">首先看程序第 4 ，10， 16 行的数组参数变量的声明和调用。</div>
+</div>
+<div class="line-block">
+<div class="line">第 4 行中，由于原型允许省略名称，所以还有以下 3 种原型是和它等价的：</div>
+<div class="line"><tt class="docutils literal">int sum (int * start, int * end); int sum (int <span class="pre">start[],</span> int <span class="pre">end[]);</span> int sum (int [], int <span class="pre">[]);</span></tt></div>
+<div class="line">使用指针作为参数来处理数组时，可选用数组符号或指针符号。正如多数程序员认为的，程序员的主要任务是保证程序的正确性和可读性，代码的优化应该留给编译器去做。</div>
+</div>
+<p>在处理数组的函数中使用指针作为形式参量（而不是数组），而在函数中可以使用数组符号来处理数组。同时，使用数组名做为参数时，实质上是传递的是数组的地址，而非整个数组。也正由于指针与数组名可以互换使用，一般调用处理数组的函数时，传递该数组的开始和结束地址即可（如例1）。</p>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-04-25T01:49:00+08:00" pubdate>
+                            日, 25  4 2010
+                        </time>
+                        <a href="/codecolorer-bug.html" rel="bookmark"><h1>CodeColorer插件的BUG</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>换了N多个代码语法高亮插件之后，发现CodeColorer比较适合这个主题，美中不足的是，CodeColorer竟然有JS错误的BUG，在IE和FF都有报错，插件列表页
+/wp-admin/plugins.php</p>
+<p>[caption id=&quot;attachment_64&quot; align=&quot;alignnone&quot; width=&quot;596&quot;
+caption=&quot;Firebug下提示的错误信息&quot;]<a class="reference external" href="http://magicalboy.com/archives/codecolorer-bug.html/error_ff"><img alt="CodeColorer_FF_Err" class="size-full wp-image-64" src="http://magicalboy.com/wp-content/uploads/2010/04/error_ff.png" style="width: 596px; height: 351px;" /></a>[/caption]</p>
+<p>[caption id=&quot;attachment_67&quot; align=&quot;alignnone&quot; width=&quot;691&quot;
+caption=&quot;IE8下提示错误信息&quot;]<a class="reference external" href="http://magicalboy.com/archives/codecolorer-bug.html/error_ie8"><img alt="image1" class="alignnone size-full wp-image-67" src="http://magicalboy.com/wp-content/uploads/2010/04/error_ie8.png" style="width: 691px; height: 272px;" /></a>[/caption]</p>
+<div class="line-block">
+<div class="line">出错的JS文件代码：/wp-content/plugins/codecolorer/js/quicktags.js</div>
+<div class="line"><tt class="docutils literal"><span class="pre">(function($)</span> {&nbsp;&nbsp; $.fn.codeColorerQuickTags = function(options) {&nbsp;&nbsp;&nbsp;&nbsp; var codeTagIndex = <span class="pre">-1;</span>&nbsp;&nbsp;&nbsp;&nbsp; /* 出错原因：edButtons 未定义&nbsp;&nbsp;&nbsp;&nbsp; for (var i …</tt></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-04-23T06:59:00+08:00" pubdate>
+                            五, 23  4 2010
+                        </time>
+                        <a href="/initially-for-target-vocational-skills.html" rel="bookmark"><h1>程序人生之始：初定目标职业技能</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>职业技能和目标</p>
+<ol class="arabic simple">
+<li>熟悉一两门高级语言（比如，Java、Python）和C/C++</li>
+<li>熟悉数据库SQL语言及操作</li>
+<li>熟悉操作系统Linux</li>
+<li>提高个人素质涵养，交际沟通能力，团队合作的Teamwork</li>
+</ol>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-04-22T01:26:00+08:00" pubdate>
+                            四, 22  4 2010
+                        </time>
+                        <a href="/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html" rel="bookmark"><h1>代码语法高亮显示插件</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="java-hellomidlet-java">
+<h2>Java - HelloMidlet.java</h2>
+<p><tt class="docutils literal">import javax.microedition.lcdui.Display; import javax.microedition.lcdui.TextBox; import <span class="pre">javax.microedition.midlet.*;</span></tt></p>
+<p>public class HelloMidlet extends MIDlet {</p>
+<div class="line-block">
+<div class="line">public HelloMidlet(){</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">public void startApp() {</div>
+<div class="line">String info = this.getAppProperty(&quot;MIDlet-Vendor&quot;) +
+this.getAppProperty(&quot;MIDlet-Jar-Size&quot;)</div>
+<div class="line">+ this.getAppProperty(&quot;MIDlet-Description&quot;) + &quot;wtf&quot;;</div>
+<div class="line">// System.out.println(info);</div>
+<div class="line">Display.getDisplay(this).setCurrent(</div>
+<div class="line">new TextBox(&quot;MIDlet属性 …</div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-04-21T00:44:00+08:00" pubdate>
+                            三, 21  4 2010
+                        </time>
+                        <a href="/sad-but-true-what-is-the-date.html" rel="bookmark"><h1>sad but true, what is the date...</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>sad but true, what is the date tody</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-04-18T13:04:00+08:00" pubdate>
+                            日, 18  4 2010
+                        </time>
+                        <a href="/magicwiki-online.html" rel="bookmark"><h1>MagicWiki正式开通上线了</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://magicalboy.com/wiki/">MagicWiki</a>知识共享平台已正式开通，详情请访问<a class="reference external" href="http://magicalboy.com/wiki/">http://magicalboy.com/wiki/</a></p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-04-18T06:47:00+08:00" pubdate>
+                            日, 18  4 2010
+                        </time>
+                        <a href="/hello-world-2.html" rel="bookmark"><h1>Hello world！</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>欢迎访问MAGICALBOY的博客。这虽然是系统自动生成的演示文章。我已经编辑它，开始我的博客，和大家分享我的程序人生！</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-03-16T00:56:00+08:00" pubdate>
+                            二, 16  3 2010
+                        </time>
+                        <a href="/flex-learninghttplivedocs.html" rel="bookmark"><h1>Flex learning~~http://livedocs...</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Flex learning~~http://livedocs.adobe.com/flex/3/html/index.html</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-03-12T07:24:00+08:00" pubdate>
+                            五, 12  3 2010
+                        </time>
+                        <a href="/hello-magicalboy.html" rel="bookmark"><h1>Hello, magicalboy!</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Hello, magicalboy!</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="/index20.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 21 / 21
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

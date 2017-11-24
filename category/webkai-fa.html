@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - WEB开发</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-04-21T05:53:00+08:00" pubdate>
+                            六, 21  4 2012
+                        </time>
+                        <a href="/update_google_app_engine_applications.html" rel="bookmark"><h1>更新 Google App Engine 应用</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>又有一段时间没更新博客程序，博客所用的 <a class="reference external" href="https://developers.google.com/appengine/docs/whatisgoogleappengine?hl=zh-CN">Google App
+Engine</a>（以下简称GAE）<a class="reference external" href="https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python">Python
+版本</a>当前已经更新到
+<em>1.6.4 - 2012-03-27</em>。在更新的同时做一些简要的 GAE
+使用笔记，以免下次又忘了去查文档。这里有官网详细的教程：<a class="reference external" href="https://developers.google.com/appengine/docs/python/gettingstarted/?hl=zh-CN">使用入门：Python</a>
+。</p>
+<div class="section" id="google-app-engine-python">
+<h2>安装 Google App Engine（Python）</h2>
+<p>在Mac OS Lion 下安装完成后，第一次运行会有提示创建
+Symlink。需要提供管理员权限，成功后会有提示。</p>
+<pre class="code shell literal-block">
+Symlink Status
+
+Symbolic links in /usr/local/bin have been created <span class="k">for</span> the following commands:
+
+api_server.py …</pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-10-20T02:26:00+08:00" pubdate>
+                            三, 20 10 2010
+                        </time>
+                        <a href="/stack-overflow-at-line.html" rel="bookmark"><h1>IE &quot;Stack overflow at line&quot; 的解决方法</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>出现该错误提示，主要有两种原因：</p>
+<ol class="arabic simple">
+<li>使用系统的事件名称作为自定义函数名如：</li>
+<li>出现死循环 ：</li>
+</ol>
+<div class="section" id="id1">
+<h2>解决方法</h2>
+<ol class="arabic simple">
+<li>You can turn off the &quot;Disable Script Debugging&quot; option inside of
+Internet Explorer and start debugging with Visual Studio if you
+happen to have that around.</li>
+<li>找到无法显示图片的地方，上传图片</li>
+</ol>
+<ul class="simple">
+<li>引用地址：<a class="reference external" href="http://chenchendefeng.javaeye.com/blog/456247">IE中出现 &quot;Stack overflow at line&quot;
+错误的解决方法</a></li>
+<li>参考地址：<a class="reference external" href="http://stackoverflow.com/questions/226102/stack-overflow-in-line-0-on-internet-explorer">&quot;Stack Overflow in Line 0&quot; on Internet Explorer - Stack …</a></li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-27T15:39:00+08:00" pubdate>
+                            五, 27  8 2010
+                        </time>
+                        <a href="/build-blog-on-google-appengine.html" rel="bookmark"><h1>在 Google appengine 搭建 Micolog 博客</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天简要的介绍一下，如何使用 <a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/">Google App Engine</a> 在 Google
+的基础架构上运行您的网络应用程序——搭建一个属于自己的独立博客。</p>
+<p>适合安装在 GAE 的开源 Python
+博客有很多，<a class="reference external" href="http://www.allengao.com/blog/python-blog-4-google-app-engine-gae.html">这里</a> 有一个列表,可以链接去看看.本文主要使用
+<a class="reference external" href="micolog.appspot.com/">Micolog</a>
+作为示例，一个追求自由、开放、简约的GAE免费博客程序。</p>
+<div class="section" id="id1">
+<h2>第一步：配置环境</h2>
+<p>首先准备好以下环境：</p>
+<ul class="simple">
+<li>Linux Ubuntu10.04（在 Windows 下相对简单，本文最后给出安装文档链接）</li>
+<li><a class="reference external" href="http://www.python.org/ftp/python/">Python 2.6.5</a> （Windows
+需要自行安装，建议安装2.5.x 版本）</li>
+<li>django-admin.py --version: 0.96.5 （请参考我之前写的 …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-24T05:28:00+08:00" pubdate>
+                            二, 24  8 2010
+                        </time>
+                        <a href="/onsubmit-return-false.html" rel="bookmark"><h1>onsubmit 和 return false</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>onsubmit 事件会在表单提交前触发。属于 w3c 标准事件，是 form 标签的属性。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="46%" />
+<col width="9%" />
+<col width="7%" />
+<col width="7%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">属性</th>
+<th class="head">此事件发生在何时...</th>
+<th class="head">IE</th>
+<th class="head">F</th>
+<th class="head">O</th>
+<th class="head">W3C</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>onsubmit</td>
+<td>确认按钮被点击。</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">支持该事件的 HTML 标签和 JavaScript 对象：&lt;form&gt;。</div>
+<div class="line">使用示例——代码清单1：</div>
+</div>
+<div class="section" id="form">
+<h2>防止 form 表单提交</h2>
+<div class="line-block">
+<div class="line">在 onsubmit 事件中返回 false
+值，就能防止表单提交。请看下面代码清单2，表单会提交吗？</div>
+<div class="line"><tt class="docutils literal">&lt; !DOCTYPE html PUBLIC <span class="pre">&quot;-//W3C//DTD</span> XHTML 1.0 <span class="pre">Transitional//EN&quot;</span> <span class="pre">&quot;http …</span></tt></div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-21T13:47:00+08:00" pubdate>
+                            六, 21  8 2010
+                        </time>
+                        <a href="/gae-appconfignotfounderror.html" rel="bookmark"><h1>GAE 使用入门：Python 遇到的 AppConfigNotFoundError 错误</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>自己之前有搭建过 GAE（<a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/whatisgoogleappengine.html">Google App
+Engine</a>）谷歌应用程序引擎开发环境，那时只是玩玩没有认真地去学习。这次在配置环境开发
+<a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/python/gettingstarted/helloworld.html">Hello
+world</a>
+时，遇上了 AppConfigNotFoundError 错误，看了N久都没发现是哪里引起的错误
+- -!</p>
+<div class="section" id="helloworld">
+<h2>helloworld</h2>
+<p>步骤一切像官方教程所说的那样，只不过没有使用 Ctrl-C/Ctrl-V
+大法，而是一步步手动敲代码。直到“测试应用程序”这一步，执行
+dev_appserver.py helloworld/
+后发现服务启动不了：google.appengine.tools.dev_appserver.AppConfigNotFoundError。</p>
+</div>
+<div class="section" id="id1">
+<h2>问题所在</h2>
+<div class="line-block">
+<div class="line">命令行中报错为
+AppConfigNotFoundError，那可能和应用程序配置文件有关。找不到应用配置错误，很有可能是应用程序路径不对或者是在创建配置文件
+app.yaml 时出错了。检查过路径无误，即定位到 /helloworld
+的上一级目录。再看看 app …</div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-20T07:03:00+08:00" pubdate>
+                            五, 20  8 2010
+                        </time>
+                        <a href="/mediawiki-displaying-a-formula.html" rel="bookmark"><h1>MediaWiki 增加数学公式显示支持</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>最近心血来潮，于是乎为 <a class="reference external" href="http://wiki.magicalboy.com">magicwiki</a>
+增加数学公式显示的支持，有兴趣的朋友不妨前往围观。</p>
+<div class="section" id="id1">
+<h2>原理</h2>
+<p>MediaWiki 对数学公式仅支持 <a class="reference external" href="http://en.wikipedia.org/wiki/TeX">TeX</a>
+标记语言的子集，包括 <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a> 和
+AMS-LaTeX，根据用户的喜好和表达式的复杂性生成简单的 HTML 标记或者 PNG
+图片来显示公式。也就是说 Mediawiki 过滤 Tex 标记后，使用 Texvc
+命令来渲染成图形。</p>
+</div>
+<div class="section" id="texvc">
+<h2>方法一：texvc</h2>
+<div class="line-block">
+<div class="line">为 MediaWiki
+增加数学公式显示支持方法有很多种，如果拥有主机空间的控制权限（比如可使用
+SSH），可尝试下面的方法。</div>
+<div class="line">准备工作是主机上必须安装好以下软件包:</div>
+</div>
+<ul class="simple">
+<li>ocaml</li>
+<li>imagemagick</li>
+<li>gs</li>
+<li>cjk-latex (now called latex-cjk-all)</li>
+<li>tetex-extra</li>
+<li>binutils (&quot;/usr/bin/as&quot; is …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-14T01:45:00+08:00" pubdate>
+                            六, 14  8 2010
+                        </time>
+                        <a href="/net2ftpupload_unzip.html" rel="bookmark"><h1>抛弃 FTP 工具，net2ftp 文件上传在线解压</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>net2ftp 是一个基于 ftp 客户端的 web
+应用程序，它支持在线文件上传和解压，为我们上传或删除等操作大量文件带来极大的方便！</p>
+<p>使用 FTP 客户端工具，比如 FileZilla，要上传一个 Web 应用网站（比如
+Wordpress）的普通方法是：首先解压网站的压缩包，然后将解压开来的所有文件使用
+FTP 工具批量上传到 FTP
+服务器。这样一个一个小文件地上传不仅消耗时间，而且容易出现上传失败或上传过程中需要手动控制等，煞是不方便。</p>
+<div class="line-block">
+<div class="line">而使用 net2ftp 工具，只要将网站压缩成 .zip
+格式，再上传到服务器解压即可。</div>
+<div class="line">拿 DreamHost 的 net2ftp 工具做例子，首先登陆
+<a class="reference external" href="http://webftp.dreamhost.com/">http://webftp.dreamhost.com/</a>界面如下：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/login.png"><img alt="image0" class="alignnone size-full wp-image-704" src="http://magicalboy.com/wp-content/uploads/2010/08/login.png" style="width: 464px; height: 265px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line">接着可以选中某个文件或文件夹作以下操作：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/funs.png"><img alt="image1" class="alignnone size-full wp-image-705" src="http://magicalboy.com/wp-content/uploads/2010/08/funs.png" style="width: 313px; height: 378px;" /></a></div>
+</div>
+<p>可以看到 net2ftp 支持多种上传方式 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-03T08:45:00+08:00" pubdate>
+                            二, 03  8 2010
+                        </time>
+                        <a href="/django-file-upload.html" rel="bookmark"><h1>Django 文件上传</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>本文介绍的 Django 文件上传不是 Django 1.0
+以上的上传方法，而是一般通用的文件上传。主要使用
+<a class="reference external" href="http://www.djangoproject.com/documentation/0.96/request_response/">HttpRequest</a>对象的
+FILES 属性，一个类似字典的属性。</p>
+<div class="section" id="files">
+<h2>FILES</h2>
+<p>是一个包含所有上传文件的类似于字典的对象，它里面的每个 key
+的名称来自于表单输入控件 &lt;input type=&quot;file&quot; name=&quot;&quot; /&gt; 中的 name
+属性。每个 key 的值为标准的 Python 字典，其里面又包含以下三个 Key-Value
+键值对：</p>
+<ul class="simple">
+<li>filename: 上传的文件的名字。</li>
+<li>content-type: 上传文件的类型。</li>
+<li>content: 上传文件的原始内容</li>
+</ul>
+<p><strong>注意</strong>：只要在表单中指定提交方式为 POST，而且有
+enctype=&quot;multipart/form-data&quot; 这个属性，FILES 对象不为空 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-02T09:27:00+08:00" pubdate>
+                            一, 02  8 2010
+                        </time>
+                        <a href="/install-django-admin-app.html" rel="bookmark"><h1>增加 Django 自带的 admin 管理界面</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>admin 是
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Django">Django</a>提供的一个核心
+app，它可以根据项目中的 model
+来自动生成管理界面。它功能强大，而且界面美观。可以管理用户权限，对于管理集中，正如它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站一样，主要以发布为主。</p>
+<p>下面我们来开始安装 admin app 。</p>
+<ol class="arabic">
+<li><p class="first"><strong>创建一个新项目：demo</strong>
+<tt class="docutils literal"><span class="pre">django-admin.py</span> startproject demo</tt></p>
+</li>
+<li><p class="first"><strong>修改 settings.py</strong></p>
+<div class="line-block">
+<div class="line">配置数据库（MySQL）：</div>
+<div class="line"><tt class="docutils literal">DATABASE_ENGINE = 'mysql' DATABASE_NAME = 'django' DATABASE_USER = 'root' DATABASE_PASSWORD = 'password'&nbsp; # 数据库密码 DATABASE_HOST = ''&nbsp; # 数据库服务器主机（默认本地） DATABASE_PORT = ''&nbsp; # 数据库服务器端口（默认3306）</tt></div>
+<div class="line">增添 admin app：</div>
+<div class="line"><tt class="docutils literal">INSTALLED_APPS = (&nbsp;&nbsp;&nbsp;&nbsp; 'django.contrib.auth' …</tt></div></div></li></ol>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-27T15:28:00+08:00" pubdate>
+                            二, 27  7 2010
+                        </time>
+                        <a href="/php-beginning.html" rel="bookmark"><h1>PHP 学习伊始</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>久仰 PHP 大名，<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Php">PHP</a> (Hypertext
+Preprocessor（递归式命名），超文本预处理器）是一种创建动态交互性站点的强有力的服务器端脚本语言。网络上流行的多种开源网站系统都是采用
+PHP 进行开发的，比如本博客使用的 Wordpress，维基百科 MediaWiki，ECShop
+网店等。</p>
+<div class="line-block">
+<div class="line">作为一名 Web 开发者应该掌握的语言，PHP
+学习起来相当容易上手，尤其对于有 Web
+开发基础的人们来说。目前最新稳定版本为 <a class="reference external" href="http://php.net/">PHP 5.3.3
+Released!</a>(via php 官网)。网络上已有大量新手入门
+tutorials，有兴趣请
+<a class="reference external" href="http://www.google.com/search?client=ubuntu&amp;channel=fs&amp;q=php&amp;ie=utf-8&amp;oe=utf-8">Google</a>。</div>
+<div class="line">像JavaScript，Perl， Python 等脚本语言一样，PHP
+也是一门松散类型的语言（Loosely Typed Language），其语法非常类似于
+Perl …</div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+            Page 1 / 4
+                <a href="/category/webkai-fa2.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

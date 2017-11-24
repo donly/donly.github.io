@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    递归算法：一个简单的递归函数
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-10T16:10:00+08:00" pubdate>
+                            四, 10  6 2010
+                        </time>
+                        <a href="/a-simple-recursive-function.html" rel="bookmark"><h1>递归算法：一个简单的递归函数</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>今天看了某 C 语言 Primer
+教材中一递归（recursion）示例运行结果，一开始让我迷惑不解，后来才发觉原来我一直不懂递归。枉我之前还写过递归读取树结构的文件目录的
+Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且看代码清单如下：</p>
+<p><tt class="docutils literal">/* recursion.c <span class="pre">--</span> 递归演示 */ /* 程序显示递归的级数 n 及存储 n 的内存地址 */ #include&nbsp; void recursion(int);</tt></p>
+<div class="line-block">
+<div class="line">int main(void)</div>
+<div class="line">{</div>
+<div class="line">recursion(1);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">void recursion(int n)</div>
+<div class="line">{</div>
+<div class="line">printf(&quot;第%d级递归: n 内存地址 %pn&quot;, n, &amp;n);</div>
+<div class="line">if (n &lt; 4)</div>
+<div class="line">recursion(n+1); // 注意此处 n+1 并不等于 ++n!</div>
+<div class="line">printf(&quot;第%d级递归: n 内存地址 %pn&quot;, n, &amp;n);</div>
+<div class="line">}</div>
+</div>
+<p><strong>运行结果</strong></p>
+<p><tt class="docutils literal">第1级递归: n 内存地址 0022FF30 第2级递归: n 内存地址 0022FF10 第3级递归: n 内存地址 0022FEF0 第4级递归: n 内存地址 0022FED0 第4级递归: n 内存地址 0022FED0 第3级递归: n 内存地址 0022FEF0 第2级递归: n 内存地址 0022FF10 第1级递归: n 内存地址 0022FF30</tt></p>
+<p><strong>递归函数分析</strong></p>
+<p>递归函数即是直接或间接调用自身的函数。在上面的程序中，recursion()
+递归函数定义代码中，局部变量 n&lt;4 不是正好调用自己三次打印 3 次，另加上
+if 控制语句外的 1 条打印语句，应该是打印输出 4 打语句才对的啊，Why？</p>
+<p>如果有人和我开始的想法一样，那下面开始分析。</p>
+<p>首先看调用函数 main() 中，使用参数 1 调用了 recursion()
+函数。recursion() 的形参 n 为 1，故打印输出的 n 值为 1。接着由于
+n=1&lt;4，第一级递归使用 n=n+1 即 n=2 调用 recursion(), 使得 n
+在第二级中调用被赋值为 2，打印输出 n 的值为
+2。依此类推，下面的调用输出的为第 3 级递归和第 4 级递归。</p>
+<p>这都没问题，好，继续看当开始执行第四级调用时，此时 n=4，由于 n&lt;4
+不成立不再调用 recursion()
+函数，直接执行下面的语句，输出：“第4级递归...”。现在看关键的地方，<strong>第四级递归调用至此已经执行完毕了，那接着做些什么事呢。按我们开始的想法是函数调用结束，回到调用函数
+main()
+整个程序运行结束。</strong>问题正是出于此，<strong>当第四级调用结束会把返回给当前被调用函数（即第四级递归）的调用函数（即第三级递归），而非直接返回到第一级递归调用的
+main() 函数！</strong>，就这么简单的逻辑却被我们忽略了，哈哈</p>
+<p>同时注意到第层的调用中 n
+的内存地址有所变化，说明每一级的递归使用的是它自己的私有变量。</p>
+<p><strong>总结</strong></p>
+<p>如果是刚接触递归可能会有些迷惑，使用递归必须注意几点：</p>
+<ul class="simple">
+<li>递归可以使程序结构简单，但递归的执行效率没有循环语句高，需注意使用。</li>
+<li>递归每一级函数的调用都有它自己的私有变量。</li>
+<li>每一次函数调用完都有一次返回，这是容易疏忽的一点。</li>
+<li>递归调用<strong>前</strong>的语句和各级被调用函数具有相同的执行顺序。这点看输出结果就知道了，不难理解。</li>
+<li>递归调用<strong>后</strong>的语句和各级被调用函数的执行顺序相反。</li>
+<li>递归的深度不宜太深，会很快消耗掉计算机资源。同时必须包含终止递归的语句。</li>
+</ul>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

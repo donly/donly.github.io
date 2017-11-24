@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    iOS 开发教程，HelloWorld
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-03-31T14:47:00+08:00" pubdate>
+                            六, 31  3 2012
+                        </time>
+                        <a href="/ios_helloworld.html" rel="bookmark"><h1>iOS 开发教程，HelloWorld</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>为了方便大家入门iOS开发，写个简单的iOS项目让大家了解一下 iPhone, iPad
+等应用程序是如何开发出来的。本文只是快速入门，不涉及 Objective C
+语法讲解，Xcode 与 User Interface 使用等。</p>
+<div class="section" id="id1">
+<h2>开发环境</h2>
+<ol class="arabic simple">
+<li>Mac OS X 10.7.3</li>
+<li>Xcode Version 4.3.2 (4E2002)</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>开发流程</h2>
+<ol class="arabic simple">
+<li>选择项目模板，Choose 'Empty Application' for your new project.
+下一步。</li>
+<li>填写模板选项，项目名称 'HelloWorld'，下一步。</li>
+<li>选择项目工作空间，创建项目完成。</li>
+</ol>
+</div>
+<div class="section" id="hello-world">
+<h2>编写Hello, world</h2>
+<p>由于新建的项目类型是 'Empty
+Application'，所以是相当纯的，窗口是空的。下面用纯 Objective C
+代码的方式创建显示 'Hello, world' 的 UILabel。</p>
+<p>单击 AppDelegate.m 文件，在 application:didFinishLaunchingWithOptions:
+方法的注释行&quot;Override point for customization after application
+launch.&quot;下面键入以下代码。</p>
+<pre class="code shell literal-block">
+// 创建一个Label
+UILabel *helloLabel <span class="o">=</span> <span class="o">[[</span>UILabel alloc<span class="o">]</span> initWithFrame:CGRectMake<span class="o">(</span><span class="m">0</span>, <span class="m">10</span>, <span class="m">200</span>, <span class="m">100</span><span class="o">)]</span><span class="p">;</span>
+<span class="o">[</span>helloLabel setTextAlignment:UITextAlignmentCenter<span class="o">]</span><span class="p">;</span>  // 设置Label文本对齐方式为居中
+<span class="o">[</span>helloLabel setBackgroundColor:<span class="o">[</span>UIColor redColor<span class="o">]]</span><span class="p">;</span>   // 设置Label背景色为红色
+<span class="o">[</span>helloLabel setText:&#64;<span class="s2">&quot;Hello, world!!!&quot;</span><span class="o">]</span><span class="p">;</span>  // 设置Label的文字
+<span class="o">[</span>self.window addSubview:helloLabel<span class="o">]</span><span class="p">;</span>    // 将Label这个View增加到窗口
+</pre>
+<div class="line-block">
+<div class="line"><strong>选择模拟器运行（Command+R），你会看到结果：</strong></div>
+<div class="line"><img alt="image0" src="https://lh5.googleusercontent.com/-QRFojkmUZbA/T5u6hmYFyGI/AAAAAAAABHM/xuAv5Tou3os/s383/ios_hello_world_result.png" /></div>
+</div>
+</div>
+<div class="section" id="xib">
+<h2>使用XIB来实现以上效果</h2>
+<p>单击 <em>AppDelegate.h</em> 文件，在 <em>UIWindow</em> 前加入关键字 <em>IBOutlet</em>。</p>
+<pre class="code shell literal-block">
+&#64;property <span class="o">(</span>strong, nonatomic<span class="o">)</span> IBOutlet UIWindow *window<span class="p">;</span>
+</pre>
+<div class="line-block">
+<div class="line"><strong>新建XIB文件，同样为了清楚整个创建过程，选择如处女般清纯的 Empty XIB
+模板。</strong></div>
+<div class="line"><img alt="ios_user_interface" src="https://lh6.googleusercontent.com/-Y3zxn6GfyIA/T5u6koRebVI/AAAAAAAABHs/b85O08R1_8k/s732/ios_user_interface.png" style="width: 544px; height: 372px;" /></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>打开工具面板</strong></div>
+<div class="line"><img alt="xcode_utilities" src="https://lh3.googleusercontent.com/-erIt05OLPKY/T5u6jjjBwwI/AAAAAAAABHk/f2wIRX-Xd5c/s284/xcode_utilities.png" /></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>增加 XIB 对象</strong></div>
+<div class="line">XIB对象包括所有UIView对象和UIViewController，NSObject等。</div>
+<div class="line"><img alt="ios_objects_library" src="https://lh6.googleusercontent.com/-lZxa-_BpZMM/T5u6hoG6eAI/AAAAAAAABHQ/5GmRUTnF260/s264/ios_objects_library.png" /></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>稍微配置一下参数</strong></div>
+<div class="line"><img alt="Xcode_helloworld_xib 配置" src="https://lh6.googleusercontent.com/-t6P2ExUTQ_g/T5u6imNsR4I/AAAAAAAABHU/HmepJdWnsf4/s903/Xcode_helloworld_xib.png" style="width: 821px; height: 226px;" /></div>
+</div>
+<p><strong>修改 main.m</strong></p>
+<pre class="code shell literal-block">
+int main<span class="o">(</span>int argc, char *argv<span class="o">[])</span>
+<span class="o">{</span>
+    &#64;autoreleasepool <span class="o">{</span>
+//        <span class="k">return</span> UIApplicationMain<span class="o">(</span>argc, argv, nil, NSStringFromClass<span class="o">([</span>AppDelegate class<span class="o">]))</span><span class="p">;</span>
+        <span class="k">return</span> UIApplicationMain<span class="o">(</span>argc, argv, nil, nil<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<p><strong>修改 Info.plist</strong></p>
+<p>在文件最后增加一行 Key 为 '<em>Main nib file base name'</em>，Type 为
+'String'，Value 为 '<em>Empty</em>'，即对应 XIB 名称。</p>
+</div>
+<div class="section" id="id3">
+<h2>详细请参考项目源码</h2>
+<p><a class="reference external" href="/media/aglkb25seWNoYW5yDQsSBU1lZGlhGOqBAgw/HelloWorld.7z?a=download">HelloWorld</a></p>
+<p>有任何疑问或意见请留言。</p>
+</div>
+<div class="section" id="id4">
+<h2>[20120428更新]</h2>
+<ol class="arabic simple">
+<li>更新源码下载弹空白窗口问题。</li>
+<li>调整图片显示大小</li>
+</ol>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/wei-fen-lei.html">未分类</a></p>
+                        <p>Tags: <a href="/tag/helloworld.html">helloworld</a>, <a href="/tag/ios.html">iOS</a>, <a href="/tag/iphone.html">iPhone</a>, <a href="/tag/objective-c.html">Objective-C</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

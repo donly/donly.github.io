@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - 程序人生</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-15T15:23:00+08:00" pubdate>
+                            日, 15  8 2010
+                        </time>
+                        <a href="/selection_sort.html" rel="bookmark"><h1>排序算法：选择排序</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>选择排序 (selection sort)
+是一种简单直观的排序算法。它的工作原理如下：首先在未排序序列中找到最大（或最小）的元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最大（或最小）元素，然后放到排序序列末尾。以此类推，直到所有元素均排序完毕。</p>
+<div class="section" id="id2">
+<h2>伪代码</h2>
+<p><tt class="docutils literal">for i ( first element)&nbsp; to n (next to last element):&nbsp;&nbsp;&nbsp;&nbsp; for i+1 (second element) to n(next to last element):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compare the i+1 element with nth element, if nth is greater …</tt></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-23T15:28:00+08:00" pubdate>
+                            五, 23  7 2010
+                        </time>
+                        <a href="/c-array-pointer.html" rel="bookmark"><h1>学习 C 数组与指针小结</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line">在 C
+语言中，数组其实是一种变相使用指针的形式。通过了解指针与数组之间的关系，可以使用指针方便地操作数组。以下是一些指针和数组之间的关系说明：</div>
+<div class="line"><tt class="docutils literal">... int * p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 定义一个整型指针 int arr[2] = {1, 2};&nbsp;&nbsp; // 定义一个整型数组</tt></div>
+</div>
+<div class="line-block">
+<div class="line">p = arr; // 把数组地址赋给指针</div>
+<div class="line">p == &amp;arr[0]; // 指针 p 指向数组 arr 首元素地址</div>
+<div class="line">arr == &amp;arr[0]; // 数组名同时代表数组首元素的地址</div>
+</div>
+<div class="line-block">
+<div class="line">p + 1 == &amp;arr[1]; // 对指针加 1 等于加上它所指向的对象的字节大小 (int
+一般为 4 字节)</div>
+<div class="line">p + 2 == &amp;arr[2]; // 相同的地址</div>
+<div class="line">*(p + 2) == arr …</div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-17T15:06:00+08:00" pubdate>
+                            六, 17  7 2010
+                        </time>
+                        <a href="/c-pointer.html" rel="bookmark"><h1>C 指针介绍</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>指针（pointer）的定义：在信息工程中，指针是一个用来指示一个内存地址的变量或中央处理器(CPU)中的寄存器(Register)。<strong>在
+C 语言中，指针就是一个存储着变量地址的变量。</strong></p>
+<div class="section" id="id1">
+<h2>与指针相关的操作运算符</h2>
+<ul class="simple">
+<li>＆：地址运算符，后跟一个变量表示该变量的地址。比如：&amp;foo 得到的是变量
+foo 的地址。</li>
+<li>＊：间接运算符，后跟一个指针名或地址表示存储在被指向地址中的值。比如；p
+= &amp;foo, *p 为 foo 的值。</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>指针声明</h2>
+<p>因为指针是一个变量，其保存的变量地址的那个变量有相应的数据类型，不同的变量类型占用的储存空间大小不同，所以必须说明指针所指向变量的数据类型。指针的声明如下：</p>
+<p><tt class="docutils literal">int * foo;&nbsp;&nbsp;&nbsp;&nbsp; // foo 是指向一个整型变量的指针 float * bar;&nbsp; // bar 是指向一个浮点变量的指针</tt></p>
+<p>类型标识符 int
+说明被指向变量的类型，而不是此指针变量的数据类型，它是一种新的数据类型。星号（＊）说明此变量是一个指针 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-18T08:41:00+08:00" pubdate>
+                            五, 18  6 2010
+                        </time>
+                        <a href="/upgrade-wordpress-3-0-release.html" rel="bookmark"><h1>升级 WordPress 3.0 正式版：备份文件和数据库</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://wordpress.org">WordPress</a>是一个免费的开源项目,在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。</p>
+<p>经 RC3 测试版过后，WordPress 马上放出 3.0
+正式版。登陆管理后台就可以看到更新提示了。作为一位版本控，二话不说马上准备升级。下面就简单介绍一下升级的准备工作。</p>
+<p><strong>备份文件到本地机器上</strong>。可以使用 FTP
+工具（<a class="reference external" href="http://filezilla-project.org">FileZilla</a>），或 UNIX Shell
+（比如，SSH）。由于我的 SSH 被禁用，所以使用比较通用的 FTP 工具
+FileZilla 来备份整个 WordPress 站点：</p>
+<ol class="arabic simple">
+<li>WordPress核心安装文件</li>
+<li>WordPress插件</li>
+<li>WordPress主题</li>
+<li>图片和文件</li>
+<li>Javascripts, PHP脚本, 和其他代码文件</li>
+<li>其他文件和静态页面</li>
+</ol>
+<p>现在的大部分主机供应商都备份整个服务器，所以也包括了我们的网站，比如<a class="reference external" href="https://panel.dreamhost.com/index.cgi?tree=home.backup&amp;">DreamHost</a>
+的就可以在 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-15T15:10:00+08:00" pubdate>
+                            二, 15  6 2010
+                        </time>
+                        <a href="/ubuntu-10-04-lts-comeback.html" rel="bookmark"><h1>Ubuntu 10.04 LTS 归来</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>終于又回到 <a class="reference external" href="http://ubuntu.com">Ubuntu</a> 的怀抱! 自上一个版本 Ubuntu
+8.04 LTS 版本以来, 转眼已是两年.而我也从大二至现在开始工作. 10.04
+改进了很多, 希望一起加油, 一起进步!</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-10T16:10:00+08:00" pubdate>
+                            四, 10  6 2010
+                        </time>
+                        <a href="/a-simple-recursive-function.html" rel="bookmark"><h1>递归算法：一个简单的递归函数</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天看了某 C 语言 Primer
+教材中一递归（recursion）示例运行结果，一开始让我迷惑不解，后来才发觉原来我一直不懂递归。枉我之前还写过递归读取树结构的文件目录的
+Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且看代码清单如下：</p>
+<p><tt class="docutils literal">/* recursion.c <span class="pre">--</span> 递归演示 */ /* 程序显示递归的级数 n 及存储 n 的内存地址 */ #include&nbsp; void recursion(int);</tt></p>
+<div class="line-block">
+<div class="line">int main(void)</div>
+<div class="line">{</div>
+<div class="line">recursion(1);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">void recursion(int n)</div>
+<div class="line">{</div>
+<div class="line">printf(&quot;第%d级递归: n 内存地址 %pn&quot;, n, &amp;n);</div>
+<div class="line">if (n &lt; 4 …</div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-06T03:40:00+08:00" pubdate>
+                            日, 06  6 2010
+                        </time>
+                        <a href="/c-input-buffer.html" rel="bookmark"><h1>C语言基础：输入缓冲区</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><strong>缓冲定义</strong>：暂时存放输入或输出数据的存储区域</p>
+<div class="section" id="id1">
+<h2><strong>实例代码</strong>：缓冲输入的实例——延时回显</h2>
+<p><tt class="docutils literal">/* echo.c <span class="pre">--</span> 回显输入 */ #include&nbsp; int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; char ch;</tt></p>
+<div class="line-block">
+<div class="line">while((ch=getchar()) != '#')</div>
+<div class="line">putchar(ch);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<p>程序示例1：</p>
+<p><tt class="docutils literal">hello,welcome to magicalboy.com【回车】 hello,welcome to magicalboy.com you are always the <span class="pre">#1!【回车】</span> you are always the</tt></p>
+<p>程序示例2：</p>
+<p><tt class="docutils literal"><span class="pre">hheelloo,,wweellccoommee</span> ttoo&nbsp; <span class="pre">mmaaggiiccaallbbooyy..ccoomm【回车 …</span></tt></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-02T14:31:00+08:00" pubdate>
+                            三, 02  6 2010
+                        </time>
+                        <a href="/c-print-a-long-string.html" rel="bookmark"><h1>C语言基础：打印长字符串</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>前言</h2>
+<p>C语言重登王位，赶紧学好C混个铁饭碗才行了。确实，不管C语言有没有王者归来，它都是一门很强大的语言。Linux/Unix
+核心是用C写的，Java，Python等高级语言也是用C来实现，学习C简直是百益而无一害啊！</p>
+</div>
+<div class="section" id="id2">
+<h2>问题描述</h2>
+<p>好了好了，说回本次话题，打印长字符串在Java中直接使用重载的“+”运算符，即可在下一行断行继续输入，那么在C中要怎么写呢：</p>
+<p><tt class="docutils literal">/** * LongStrg.java <span class="pre">--</span> 打印长字符串 * &#64;author magicalboy */ public class LongStrg {</tt></p>
+<div class="line-block">
+<div class="line">public static void main(String[] args) {</div>
+<div class="line">System.out.println(&quot;Hello, Welcome to magicalboy's blog!n&quot; +</div>
+<div class="line">&quot;Any problems please contact <a class="reference external" href="mailto:admin&#64;magicalboy.com">admin&#64;magicalboy.com</a>. Thanks …</div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-30T07:12:00+08:00" pubdate>
+                            日, 30  5 2010
+                        </time>
+                        <a href="/dev-c-automatically-indent-settings.html" rel="bookmark"><h1>dev-c++自动缩进设置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>Dev-C++</h2>
+<blockquote>
+<strong>Dev-C++</strong>是一套用于开发C/C++的<a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6">自由的</a><a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">整合性开发环境</a>（IDE），并以<a class="reference external" href="http://zh.wikipedia.org/zh-cn/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81">GPL</a>作为散布许可。使用
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/MinGW">MinGW</a> 及
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/GDB">GDB</a>
+作为编译系统与除错系统。Dev-C++的IDE是利用<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Delphi">Delphi</a>开发
+的。</blockquote>
+<p>它使用包管理器，集成GCC，MinGW等包，支持C99标准，基于GPL让它得到很好的改进，但似乎有段时间没有更新了。当前IDE最新版本为4.9.9.2</p>
+<p>下载最新版本的dev-c++：<a class="reference external" href="http://sourceforge.net/projects/dev-cpp/files/">http://sourceforge.net/projects/dev-cpp/files/</a>，Windows平台下载并运行devcpp-4.9.9.2_setup.exe直接安装</p>
+</div>
+<div class="section" id="id2">
+<h2>解决自动缩进问题</h2>
+<p>默认的缩进代码如下：</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><tt class="docutils literal">/* divisible.c <span class="pre">--</span> 求约数 */ #include&nbsp; #include …</tt></div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-28T15:37:00+08:00" pubdate>
+                            五, 28  5 2010
+                        </time>
+                        <a href="/a-typical-c-programming-style.html" rel="bookmark"><h1>典型的C编程风格</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>C语法很灵活，如果我们都遵循一些良好的编程风格，可以写出高效率，思路清晰的代码。同时这也是一个程序员应该养成的良好习惯。良好的编程习惯有：写注释，代码对齐，规范命名等等。这篇文章只简单的展示一个经典的编程风格，请先看以下程序清单：</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><tt class="docutils literal">/* cypher1.c <span class="pre">--</span> 改变输入，只保留其中的空格 */ #include&nbsp; #define SPACE ' ' int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; char ch;</tt></div>
+</div>
+<div class="line-block">
+<div class="line">ch = getchar(); // 读入一个字符</div>
+<div class="line">while(ch != 'n') // 当一行未结束时</div>
+<div class="line">{</div>
+<div class="line">if(ch == SPACE) // 空格不变</div>
+<div class="line">putchar(ch);</div>
+<div class="line">else</div>
+<div class="line">putchar(ch+1);</div>
+<div class="line">ch = getchar(); // 获取下一个字符</div>
+<div class="line">}</div>
+<div class="line">putchar(ch); // 打印换行符</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<p>这里一个读取字符语句在while循环之前，另一个 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="/category/cheng-xu-ren-sheng.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 2 / 3
+                <a href="/category/cheng-xu-ren-sheng3.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

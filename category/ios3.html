@@ -9,16 +9,16 @@
         <title>MAG's Note - iOS</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
         <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
 
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
-        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
-        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -28,7 +28,7 @@
         <div id="wrapper">
 <header id="sidebar" class="side-shadow">
     <hgroup id="site-header">
-        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
         <p id="site-desc"> 关注移动应用开发 </p>
     </hgroup>
     <nav>
@@ -56,19 +56,28 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
+                        <time class="post-time" datetime="2016-05-24T11:30:00+08:00" pubdate>
+                            二, 24  5 2016
                         </time>
-                        <a href="https://magicalboy.com/note/xcode-remove-working-copies.html" rel="bookmark"><h1>Xcode 7 清除多余的 Woking copies</h1></a>
+                        <a href="/crack-asset-catalog.html" rel="bookmark"><h1>破解 Asset Catalog</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Xcode 版本：Version 7.1 (7B91b)</p>
-<p><strong>问题描述：</strong>
-由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。</p>
-<p><strong>解决方法：</strong>
-删除 <em>ProjectName.xcworkspace &gt; xcshareddata &gt; ProjectName.xcscmblueprint</em>，重启 Xcode。</p>
-<p>参考链接：<a class="reference external" href="http://stackoverflow.com/a/27535601">http://stackoverflow.com/a/27535601</a></p>
-
+                        <p>Asset Catalog 是 Xcode 5 引入的一个新的图片管理方式，支持矢量图，这样设计师不需要再切 &#64;2x, &#64;3x 等多套图标，提高效率。</p>
+<p>使用了 Asset Catalog 的 App 在发布的时候，Xcode 会为这些图片资源打包成 <strong>Assets.car</strong> 这样的文件，而且无法直接打开。</p>
+<div class="section" id="assets-car">
+<h2>提取 Assets.car 图片</h2>
+<p>使用开源的 <a class="reference external" href="https://github.com/steventroughtonsmith/cartool">cartool</a> 工具提取 <em>.car</em> 文件中的资源。</p>
+<ol class="arabic simple">
+<li>clone 源码。</li>
+<li>编译，生成 <em>cartool</em> 工具。</li>
+<li>使用 <em>cartool</em> 破解 <em>.car</em> 文件中的资源</li>
+</ol>
+<blockquote>
+<pre class="code shell literal-block">
+$ ./cartool &lt;.car 文件的路径&gt; &lt;解压后的文件路径&gt;
+</pre>
+</blockquote>
+<p>这样就可以获取 <em>Assets …</em></p></div>
                     </section>
                 </article>
             </li>
@@ -79,7 +88,7 @@
                         <time class="post-time" datetime="2015-05-30T10:02:00+08:00" pubdate>
                             六, 30  5 2015
                         </time>
-                        <a href="https://magicalboy.com/note/cocoapods-usage.html" rel="bookmark"><h1>CocoaPods 使用</h1></a>
+                        <a href="/cocoapods-usage.html" rel="bookmark"><h1>CocoaPods 使用</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="section" id="id1">
@@ -101,7 +110,7 @@
             <hr/>
         </ol>
         <div class="paginator">
-                    <a href="https://magicalboy.com/note/category/ios2.html">
+                    <a href="/category/ios2.html">
                         <i class="icon-circle-arrow-left"></i>
                     </a>
             Page 3 / 3
@@ -116,6 +125,6 @@
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
     </p>
-</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+</footer>        <script src="/theme/js/main.js"></script>
     </body>
 </html>

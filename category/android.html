@@ -9,16 +9,16 @@
         <title>MAG's Note - Android</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
         <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
 
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
-        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
-        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -28,7 +28,7 @@
         <div id="wrapper">
 <header id="sidebar" class="side-shadow">
     <hgroup id="site-header">
-        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
         <p id="site-desc"> 关注移动应用开发 </p>
     </hgroup>
     <nav>
@@ -56,10 +56,119 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/android_wear.html" rel="bookmark"><h1>Android Wear</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <img alt="Android wear for watch" src="images/Android-Wear.jpg" />
+<p>可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。</p>
+<div class="section" id="id1">
+<h2>Android Wear</h2>
+<p>2014年3月19日，Google 发布了可穿戴设备 SDK 的开发者预览版（<a class="reference external" href="https://developer.android.com/wear/index.html">https://developer.android.com/wear/index.html</a>），率先打开可穿戴智能设备平台这个大门。所以，我们可以通过更新 SDK 获取 Android Wear 模拟器来尝个新鲜。</p>
+<p>Android Wear 开发平台搭建步骤：</p>
+<ol class="arabic simple">
+<li>Sign Up for the Developer Preview：<a class="reference external" href="https://developer.android.com/wear/preview/signup.html">https://developer.android.com/wear/preview/signup.html</a></li>
+</ol>
+<img alt="Sign Up for the Developer Preview" src="images/sign_up_google_developer_preview.png" />
+<p>在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/flash-android-on-mac.html" rel="bookmark"><h1>在 OS X 上给 Android 刷机</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。</p>
+<div class="section" id="id1">
+<h2>下载</h2>
+<p>可以在 <a class="reference external" href="https://developer.android.com/index.html">Android 开发者</a> 下载，如果看不到入口，请检查语言并选择英语。或者直接进入 <a class="reference external" href="https://developer.android.com/preview/download.html">下载页面</a>。</p>
+<p>如果下载遇到问题，可以考虑从国内网盘找，下载完成后验证一下。</p>
+</div>
+<div class="section" id="id3">
+<h2>安装</h2>
+<p>解压之后，配置好 PATH，并按照 <a class="reference external" href="https://developers.google.com/android/nexus/images#instructions">官网的安装方法</a>，执行 flash-all 时出现了如下错误：</p>
+<div class="highlight"><pre><span></span> ./flash-all.sh
+ERROR: could not get pipe properties
+target reported max download size of <span class="m">536870912 …</span></pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/fragment.html" rel="bookmark"><h1>Fragment</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id3">Fragment 定义</a></li>
+<li><a class="reference internal" href="#fragment-demo" id="id4">Fragment Demo</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id3">Fragment 定义</a></h2>
+<p>为了让界面可以在平板上更好地展示，Android在3.0版本引入了Fragment(碎片)功能，它非常类似于Activity，可以像Activity一样包含布局。Fragment通常是嵌套在Activity中使用的。</p>
+<img alt="Fragments" src="images/fragments.png" />
+<p>可以看出，使用Fragment可以让我们更加充分地利用平板的屏幕空间。</p>
+</div>
+<div class="section" id="fragment-demo">
+<h2><a class="toc-backref" href="#id4">Fragment Demo</a></h2>
+<p><a class="reference external" href="http://blog.csdn.net/guolin_blog/article/details/8881711">http://blog.csdn.net/guolin_blog/article/details/8881711</a>
+<a class="reference external" href="https://developer.android.com/guide/components/fragments.html">https://developer.android.com/guide/components/fragments.html</a></p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/reverse-engineering-apk.html" rel="bookmark"><h1>反编译 APK</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#apktool" id="id3">apktool</a></li>
+<li><a class="reference internal" href="#dex2jar" id="id4">dex2jar</a></li>
+</ul>
+</div>
+<div class="section" id="apktool">
+<h2><a class="toc-backref" href="#id3">apktool</a></h2>
+<p><a class="reference external" href="http://ibotpeaches.github.io/Apktool/">apktool1.5.2</a> 使用示范，直接运行：</p>
+<div class="highlight"><pre><span></span>Apktool v1.5.2 - a tool <span class="k">for</span> reengineering Android apk files
+Copyright <span class="m">2010</span> Ryszard Wi?niewski &lt;brut.alll@gmail.com&gt;
+with smali v1.4.1, and baksmali v1.4.1
+Updated by @iBotPeaches &lt;connor.tumbleson@gmail.com&gt;
+Apache License <span class="m">2</span>.0 …</pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2017-03-17T10:30:00+08:00" pubdate>
                             五, 17  3 2017
                         </time>
-                        <a href="https://magicalboy.com/note/android-march-2017-upgrade.html" rel="bookmark"><h1>2017年3月 Android 安全补丁推送</h1></a>
+                        <a href="/android-march-2017-upgrade.html" rel="bookmark"><h1>2017年3月 Android 安全补丁推送</h1></a>
                     </header>
                     <section class="post-content">
                         <p>Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。</p>
@@ -79,7 +188,7 @@
                         <time class="post-time" datetime="2016-10-28T00:00:00+08:00" pubdate>
                             五, 28 10 2016
                         </time>
-                        <a href="https://magicalboy.com/note/whaley_android_tv.html" rel="bookmark"><h1>微鲸电视，智能电视</h1></a>
+                        <a href="/whaley_android_tv.html" rel="bookmark"><h1>微鲸电视，智能电视</h1></a>
                     </header>
                     <section class="post-content">
                         <p>这是一台四月份在 <a class="reference external" href="https://item.jd.com/2268749.html">京东商场</a> 买的一台平板电视，关于微鲸这个新品牌请自行搜索。</p>
@@ -110,7 +219,7 @@
                         <time class="post-time" datetime="2016-10-20T12:20:00+08:00" pubdate>
                             四, 20 10 2016
                         </time>
-                        <a href="https://magicalboy.com/note/motorola_mt620.html" rel="bookmark"><h1>摩托罗拉(Motorola) MT620</h1></a>
+                        <a href="/motorola_mt620.html" rel="bookmark"><h1>摩托罗拉(Motorola) MT620</h1></a>
                     </header>
                     <section class="post-content">
                         <p>今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。</p>
@@ -130,119 +239,10 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/android_wear.html" rel="bookmark"><h1>Android Wear</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <img alt="Android wear for watch" src="images/Android-Wear.jpg" />
-<p>可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。</p>
-<div class="section" id="id1">
-<h2>Android Wear</h2>
-<p>2014年3月19日，Google 发布了可穿戴设备 SDK 的开发者预览版（<a class="reference external" href="https://developer.android.com/wear/index.html">https://developer.android.com/wear/index.html</a>），率先打开可穿戴智能设备平台这个大门。所以，我们可以通过更新 SDK 获取 Android Wear 模拟器来尝个新鲜。</p>
-<p>Android Wear 开发平台搭建步骤：</p>
-<ol class="arabic simple">
-<li>Sign Up for the Developer Preview：<a class="reference external" href="https://developer.android.com/wear/preview/signup.html">https://developer.android.com/wear/preview/signup.html</a></li>
-</ol>
-<img alt="Sign Up for the Developer Preview" src="images/sign_up_google_developer_preview.png" />
-<p>在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/flash-android-on-mac.html" rel="bookmark"><h1>在 OS X 上给 Android 刷机</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。</p>
-<div class="section" id="id1">
-<h2>下载</h2>
-<p>可以在 <a class="reference external" href="https://developer.android.com/index.html">Android 开发者</a> 下载，如果看不到入口，请检查语言并选择英语。或者直接进入 <a class="reference external" href="https://developer.android.com/preview/download.html">下载页面</a>。</p>
-<p>如果下载遇到问题，可以考虑从国内网盘找，下载完成后验证一下。</p>
-</div>
-<div class="section" id="id3">
-<h2>安装</h2>
-<p>解压之后，配置好 PATH，并按照 <a class="reference external" href="https://developers.google.com/android/nexus/images#instructions">官网的安装方法</a>，执行 flash-all 时出现了如下错误：</p>
-<div class="highlight"><pre><span></span> ./flash-all.sh
-ERROR: could not get pipe properties
-target reported max download size of <span class="m">536870912 …</span></pre></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/fragment.html" rel="bookmark"><h1>Fragment</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="contents topic" id="id1">
-<p class="topic-title first">目录</p>
-<ul class="simple">
-<li><a class="reference internal" href="#id2" id="id3">Fragment 定义</a></li>
-<li><a class="reference internal" href="#fragment-demo" id="id4">Fragment Demo</a></li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id3">Fragment 定义</a></h2>
-<p>为了让界面可以在平板上更好地展示，Android在3.0版本引入了Fragment(碎片)功能，它非常类似于Activity，可以像Activity一样包含布局。Fragment通常是嵌套在Activity中使用的。</p>
-<img alt="Fragments" src="images/fragments.png" />
-<p>可以看出，使用Fragment可以让我们更加充分地利用平板的屏幕空间。</p>
-</div>
-<div class="section" id="fragment-demo">
-<h2><a class="toc-backref" href="#id4">Fragment Demo</a></h2>
-<p><a class="reference external" href="http://blog.csdn.net/guolin_blog/article/details/8881711">http://blog.csdn.net/guolin_blog/article/details/8881711</a>
-<a class="reference external" href="https://developer.android.com/guide/components/fragments.html">https://developer.android.com/guide/components/fragments.html</a></p>
-</div>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/reverse-engineering-apk.html" rel="bookmark"><h1>反编译 APK</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="contents topic" id="id1">
-<p class="topic-title first">目录</p>
-<ul class="simple">
-<li><a class="reference internal" href="#apktool" id="id3">apktool</a></li>
-<li><a class="reference internal" href="#dex2jar" id="id4">dex2jar</a></li>
-</ul>
-</div>
-<div class="section" id="apktool">
-<h2><a class="toc-backref" href="#id3">apktool</a></h2>
-<p><a class="reference external" href="http://ibotpeaches.github.io/Apktool/">apktool1.5.2</a> 使用示范，直接运行：</p>
-<div class="highlight"><pre><span></span>Apktool v1.5.2 - a tool <span class="k">for</span> reengineering Android apk files
-Copyright <span class="m">2010</span> Ryszard Wi?niewski &lt;brut.alll@gmail.com&gt;
-with smali v1.4.1, and baksmali v1.4.1
-Updated by @iBotPeaches &lt;connor.tumbleson@gmail.com&gt;
-Apache License <span class="m">2</span>.0 …</pre></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
                         <time class="post-time" datetime="2014-12-13T19:20:00+08:00" pubdate>
                             六, 13 12 2014
                         </time>
-                        <a href="https://magicalboy.com/note/android_coursera_part1_week1.html" rel="bookmark"><h1>Android 教程第一周</h1></a>
+                        <a href="/android_coursera_part1_week1.html" rel="bookmark"><h1>Android 教程第一周</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="contents topic" id="id1">
@@ -281,7 +281,7 @@ Apache License <span class="m">2</span>.0 …</pre></div></div>
                         <time class="post-time" datetime="2014-01-08T00:00:00+08:00" pubdate>
                             三, 08  1 2014
                         </time>
-                        <a href="https://magicalboy.com/note/adb.html" rel="bookmark"><h1>ADB 使用</h1></a>
+                        <a href="/adb.html" rel="bookmark"><h1>ADB 使用</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="contents topic" id="id1">
@@ -306,9 +306,38 @@ Apache License <span class="m">2</span>.0 …</pre></div></div>
                 </article>
             </li>
             <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-04-10T17:42:00+08:00" pubdate>
+                            三, 10  4 2013
+                        </time>
+                        <a href="/how-to-exit-android-app.html" rel="bookmark"><h1>理解 Android 应用退出</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天我又学了一下 Android 开发，了解如何退出一个 Android 程序。</p>
+<p>Android
+没有退出应用程序的API，所谓退出是指关闭此应用的进程。要彻底关闭一个
+App，应该到设置-&gt;应用程序管理中强制关闭。类似于 iOS 设备双击 Home
+按钮，持续按住应用至出现关闭提示来关闭。内存控们的至爱 ：）</p>
+<p>所以退出一个 Android app，只需要清理 Activity
+，令它生命周期结束，并返回手机主界面，其余的让 OS
+来处理吧。下面是一段用于普通 Android OS 退出代码：</p>
+<pre class="code shell literal-block">
+Intent <span class="nv">intent</span> <span class="o">=</span> new Intent<span class="o">(</span>Intent.ACTION_MAIN<span class="o">)</span><span class="p">;</span>
+intent.addCategory<span class="o">(</span>Intent.CATEGORY_HOME<span class="o">)</span><span class="p">;</span>
+intent.setFlags<span class="o">(</span>Intent.FLAG_ACTIVITY_NEW_TASK<span class="o">)</span><span class="p">;</span>
+startActivity<span class="o">(</span>intent …</pre>
+                    </section>
+                </article>
+            </li>
+            <hr/>
         </ol>
         <div class="paginator">
-            Page 1 / 1
+            Page 1 / 2
+                <a href="/category/android2.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
         </div>
 
     </div>
@@ -320,6 +349,6 @@ Apache License <span class="m">2</span>.0 …</pre></div></div>
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
     </p>
-</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+</footer>        <script src="/theme/js/main.js"></script>
     </body>
 </html>

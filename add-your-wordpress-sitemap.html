@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    WordPress：为您的博客增加“网站地图”页面
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-12T13:34:00+08:00" pubdate>
+                            六, 12  6 2010
+                        </time>
+                        <a href="/add-your-wordpress-sitemap.html" rel="bookmark"><h1>WordPress：为您的博客增加“网站地图”页面</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>网站地图（Sitemaps）又称站点地图，是一个显示网站所有页面的页面。它是一个很友好的页面，向来访的朋友展示您的站点结构。还有一种站点地图，XML站点地图，专门给搜索引擎看的，SEO
+优化必备文件。有很多创建 XML 站点地图的在线工具，比如 Google 的
+<a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN">WebMaster
+Tools</a>。这篇文章主要介绍的是前者，使用
+WordPress 的模板系统创建一个“网站地图”页面。</p>
+<div class="section" id="id1">
+<h2>第一步，创建自己的页面模板</h2>
+<p>最简单的方法就是使用 FTP 或 SSH
+工具，到当前使用的主题目录（/wp-content/themes/您的主题名/）下复制
+paga.php 文件里面的内容到新建的 Sitemap.php 文件，并在头部增加以下代码：</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><tt class="docutils literal">&lt; <span class="pre">?php</span> /* Template Name: Sitemap */ <span class="pre">?&gt;</span></tt></div>
+</div>
+<p>以上代码的表示定义一个“Sitemap”模板，这样此模板就可以在后台“外观”—&gt;“编辑”的模板列表中可见了，名字为文件的名字，<a class="reference external" href="http://codex.wordpress.org/Theme_Development#Theme_Template_Files_List">除了
+保留的文件名（不可用）</a>以外。这样就增加了一个自定义的模板了。</p>
+</div>
+<div class="section" id="sitemap">
+<h2>为 Sitemap 模板增加网站地图程序代码</h2>
+<p>有两种方式实现，下面只介绍最简单的一种，使用 <strong>Dagon Design Sitemap
+Generator 3.15</strong> 插件。</p>
+<p>首先，安装一款生成网站地图所用的插件 Dagon Design Sitemap Generator
+3.15，激活后在“页面”—&gt;“添加新页面”中增加一个新页面。页面名字“网站地图”，内容则简单，在
+HTML 代码模式下加下面一句即可：</p>
+<hr class="docutils" />
+<p>接着，在属性选项中选择自定义的模板“Sitemap”。默认值是“默认模板”（page.php），下拉选项可以看到。这就是加了那个段注释的头部代码的作用了。</p>
+<p>最后的工作就是修改 Sitemap 模板。去掉里面的不必要
+Widgets，比如评论功能，侧边工具栏等，这样一个结构清晰的网站地图就出来了。</p>
+<p>说到这里应该明白，其实添加页面不需要自定义模板，这样做只是为了个性化页面。使页面显示更加灵活。</p>
+<p>了解更多详细帮助信息，请访问 WordPress.org
+官方帮助：<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E9%A1%B5%E9%9D%A2">创建自己的页面模板（简体中文）</a></p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

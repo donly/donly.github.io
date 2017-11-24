@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - WEB开发, 互聯網</title><link href="/" rel="alternate"></link><link href="/feeds/webkai-fa-hu-lian-wang.atom.xml" rel="self"></link><id>/</id><updated>2013-06-25T10:49:00+08:00</updated><entry><title>禁用 Firefox 自动增加 WWW</title><link href="/disable-firefox-auto-adding-www.html" rel="alternate"></link><published>2013-06-25T10:49:00+08:00</published><updated>2013-06-25T10:49:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-06-25:/disable-firefox-auto-adding-www.html</id><summary type="html">&lt;p&gt;每次输入一个玉米，Firefox
+都会自动为你输入的玉米前增加www前缀。比如输入本站玉米
+magicalboy.com，回车之后请求的地址就变成了 www.magicalboy.com。&lt;/p&gt;
+&lt;p&gt;如何取消这一功能，输入 &lt;a class="reference external" href="about:config%20"&gt;about:config&lt;/a&gt;，然后搜索
+fixup，双击 browser.fixup.alternate.enabled 将其默认值改为 false 即可。&lt;/p&gt;
+&lt;p&gt;具体参考官网资料：&lt;a class="reference external" href="https://support.mozilla.org/en-US/kb/search-web-address-bar?redirectlocale=en-US&amp;amp;redirectslug=Location+bar+search#w_domain-guessing"&gt;Domain
+Guessing&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;每次输入一个玉米，Firefox
+都会自动为你输入的玉米前增加www前缀。比如输入本站玉米
+magicalboy.com，回车之后请求的地址就变成了 www.magicalboy.com。&lt;/p&gt;
+&lt;p&gt;如何取消这一功能，输入 &lt;a class="reference external" href="about:config%20"&gt;about:config&lt;/a&gt;，然后搜索
+fixup，双击 browser.fixup.alternate.enabled 将其默认值改为 false 即可。&lt;/p&gt;
+&lt;p&gt;具体参考官网资料：&lt;a class="reference external" href="https://support.mozilla.org/en-US/kb/search-web-address-bar?redirectlocale=en-US&amp;amp;redirectslug=Location+bar+search#w_domain-guessing"&gt;Domain
+Guessing&lt;/a&gt;&lt;/p&gt;
+</content><category term="Firefox"></category></entry><entry><title>Oops! Google App Engine 超出配额</title><link href="/google_app_engine_over_quota.html" rel="alternate"></link><published>2012-04-22T12:14:00+08:00</published><updated>2012-04-22T12:14:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-04-22:/google_app_engine_over_quota.html</id><summary type="html">&lt;p&gt;昨天将GAE空间整理过后，今天访问出现 Over Quota &lt;strong&gt;503&lt;/strong&gt;
+不能访问的问题。免费的服务果然是伤不起啊，但想一下，为什么之前就没有这问题呢，到&lt;a class="reference external" href="https://appengine.google.com/"&gt;管理控制台&lt;/a&gt;查看，原来
+&lt;strong&gt;Frontend Instance Hours&lt;/strong&gt; 的 &lt;strong&gt;Daily Quota&lt;/strong&gt; 已经耗尽，超出配额。&lt;/p&gt;
+&lt;div class="section" id="instance-hours"&gt;
+&lt;h2&gt;什么是 Instance Hours&lt;/h2&gt;
+&lt;blockquote&gt;
+Instance Hours 对应于CPU Hours 而言的 先说CPU Hours: 一个请求,
+如果耗费 0.1s, 那么计费时就按照 0.1s累计. 假设每天100K请求, 那么就是
+100K*0.1s = 10Ks, 约2.8 CPU Hours. 而Instance Hours …&lt;/blockquote&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;昨天将GAE空间整理过后，今天访问出现 Over Quota &lt;strong&gt;503&lt;/strong&gt;
+不能访问的问题。免费的服务果然是伤不起啊，但想一下，为什么之前就没有这问题呢，到&lt;a class="reference external" href="https://appengine.google.com/"&gt;管理控制台&lt;/a&gt;查看，原来
+&lt;strong&gt;Frontend Instance Hours&lt;/strong&gt; 的 &lt;strong&gt;Daily Quota&lt;/strong&gt; 已经耗尽，超出配额。&lt;/p&gt;
+&lt;div class="section" id="instance-hours"&gt;
+&lt;h2&gt;什么是 Instance Hours&lt;/h2&gt;
+&lt;blockquote&gt;
+Instance Hours 对应于CPU Hours 而言的 先说CPU Hours: 一个请求,
+如果耗费 0.1s, 那么计费时就按照 0.1s累计. 假设每天100K请求, 那么就是
+100K*0.1s = 10Ks, 约2.8 CPU Hours. 而Instance Hours
+是指Instance的保持时间, 不管是否在处理请求 (这里的Instance
+和Amazon的Micro Instance差不多) GAE的Instance数量是动态,
+并且创建后通常会在空闲一段时间(15分钟?)后才释放 之前CPU
+Hours对于小规模应用很合算, 基本不会超过6.5小时的免费限额
+而现在新价格下, 虽然有24小时的Instance Hours,
+但是一旦有突发大量请求, 一个Instance处理不过来的时候, 就会产生第二,
+第三个Instance..., 于是就会有费用产生. 关键是,
+GAE/Python目前不支持并发请求, 一个Instance只能顺序处理逐个请求,
+于是对于并发请求很多的应用, 就会产生&amp;quot;惊人&amp;quot;的收费,
+而真正的CPU使用率很低 简单来说, 之前CPU Hours惊人的便宜,
+现在Instance Hours惊人的昂贵, 在没有支持并发请求的情况下.&lt;/blockquote&gt;
+&lt;p&gt;引用自&lt;a class="reference external" href="http://www.v2ex.com/t/17891"&gt;Instance Hours
+究竟是什么东西？&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="logs"&gt;
+&lt;h2&gt;分析 Logs&lt;/h2&gt;
+&lt;p&gt;为了找出哪个 &lt;strong&gt;Frontend Instance&lt;/strong&gt; 占用 &lt;strong&gt;Hours&lt;/strong&gt;
+最多，翻查了一下日志，发现 &lt;strong&gt;/admin/wp_import&lt;/strong&gt; 所调用的次数最多。
+&lt;img alt="import" src="https://lh3.googleusercontent.com/-KKU--IAshKE/T5PopLj_BCI/AAAAAAAABEU/X-yNHirWUzY/w597-h343-k/appengine_logs.png" /&gt; 这只是一个 Wordpress Import
+插件，只能在后台调用而且只在导入文章时使用。排除 Robots.txt
+没有设置，将此插件禁用依然调用，如上图。最后发现是任务队列干的好事。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="task-queues"&gt;
+&lt;h2&gt;取消 Task Queues&lt;/h2&gt;
+&lt;p&gt;在&lt;a class="reference external" href="https://appengine.google.com/"&gt;管理控制台&lt;/a&gt; Main -&amp;gt; Task Queues
+查看有没有任务队列在运行。如果有，删掉 queue.yaml
+文件或删除其中的某一任务，然后使用命令更新。&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+$ appcfg.py update_queues myapp/
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="application-settings"&gt;
+&lt;h2&gt;Application Settings&lt;/h2&gt;
+&lt;p&gt;想想昨天还有一个改动的地方，在管理控制台的 &lt;strong&gt;Administration -&amp;gt;
+Application Settings -&amp;gt; Performance&lt;/strong&gt;，将 &lt;strong&gt;Frontend Instance Class&lt;/strong&gt;
+默认的 &lt;em&gt;F1(600MHz, 128MB)&lt;/em&gt; 更改为 &lt;em&gt;F4(2400MHz, 512MB)&lt;/em&gt;，按照提示 &amp;quot;&lt;em&gt;For
+example an F2 consumes instance hours at twice the rate of an F1.&lt;/em&gt;&amp;quot;
+所说，更改之后 &lt;strong&gt;instance hours&lt;/strong&gt; 消耗为原先的 4 倍。效果可想而知了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;一些建议&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;尽量在本地开发环境做测试，减少对服务器的 &lt;strong&gt;Request&lt;/strong&gt;，节省
+&lt;strong&gt;instance hours&lt;/strong&gt; 。&lt;/li&gt;
+&lt;li&gt;同样的目的，对静态文件的请求建议使用外链引用。&lt;/li&gt;
+&lt;li&gt;优化程序代码，经常查看分析 &lt;strong&gt;Logs&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;减少在服务器处理比较消耗CPU资源的任务。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;处理好以上问题之后，等待 Quota 更新吧。 Quotas are reset every 24 hours.
+Next reset: 4 hours。:) 其它参考资料：&lt;a class="reference external" href="http://blog.longwin.com.tw/2010/12/gae-billing-quota-status-2010/"&gt;Google App Engine
+計費、配額、系統狀態
+常用資料匯整&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="GAE"></category><category term="Google"></category></entry></feed>

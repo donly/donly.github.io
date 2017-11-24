@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    创建 HTML 页面锚点的两种方式
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-18T08:33:00+08:00" pubdate>
+                            日, 18  7 2010
+                        </time>
+                        <a href="/html-named-anchors.html" rel="bookmark"><h1>创建 HTML 页面锚点的两种方式</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>在 WEB 开发中，会使用到页面锚点。HTML
+页面锚点用于链接到一个页面的某一章节。<a class="reference external" href="http://www.w3school.com.cn/html/html_links.asp">W3School</a>中说到，创建锚点使用
+&lt;a&gt; （锚）标签和 name
+属性，但这不是创建页面锚点的唯一方法。下面简要说一下制作 HTML
+页面锚点的两种方式。</p>
+<p>我们可以利用 <a class="reference external" href="http://www.w3school.com.cn/tiy/t.asp?f=html_link_locations">W3School
+的在线测试工具</a>来进行测试。打开链接后的测试代码使用的是
+&lt;a href=&quot;#C4&quot;&gt; 和 &lt;a name=&quot;C4&quot;&gt;，测试没有问题。再将“ &lt;h2&gt; &lt;a
+name=&quot;C4&quot;&gt;Chapter 4 &lt;/a&gt; &lt;/h2&gt;”改为“ &lt;h2 id=&quot;C4&quot;&gt;Chapter 4 &lt;/h2&gt;”
+后进行测试，效果一样。</p>
+<p>说明，制作页面锚点除了使用 锚点标签 name 属性之外，还可以使用 id
+属性。锚点 &lt;a&gt; 标签中 href 属性的值为 # 开头加上目标的 name 或 id 的值：</p>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><a class="reference external" href="#method1">页面锚点方法一</a></p>
+<p><a class="reference external" href="#method2">页面锚点方法二</a></p>
+<div class="section" id="id1">
+<h2>方法一</h2>
+<p>使用锚标签的 href 和 name 属性</p>
+<!-- method2: -->
+</div>
+<div class="section" id="id2">
+<h2>方法二</h2>
+<p>使用锚标签和 id 属性</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id3">
+<h3>结果如下：（可点击测试）</h3>
+<p><a class="reference external" href="#method1">页面锚点方法一</a></p>
+<p><a class="reference external" href="#method2">页面锚点方法二</a></p>
+<!-- 方法一-1: -->
+</div>
+<div class="section" id="id4">
+<h3>方法一</h3>
+<p>使用锚标签的 href 和 name 属性</p>
+<!-- method2: -->
+</div>
+<div class="section" id="id5">
+<h3>方法二</h3>
+<p>使用锚标签和 id 属性</p>
+<div><p>=======================内容分割线=======================</p>
+</div><p>假如浏览器找不到已定义的命名锚，那么就会定位到文档的顶端。不会有错误发生。锚点还有其它用途，本文只是介绍页面中的锚点的使用。</p>
+<p>更多锚点的使用见：<a class="reference external" href="http://www.blueidea.com/tech/web/2008/5883.asp">标记语言——锚点 - 网页制作 -
+蓝色理想</a></p>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

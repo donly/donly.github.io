@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    KVC 与 KVO 理解
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-06-07T11:22:00+08:00" pubdate>
+                            四, 07  6 2012
+                        </time>
+                        <a href="/kvc_and_kvo.html" rel="bookmark"><h1>KVC 与 KVO 理解</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>KVC 与 KVO 是 Objective C
+的关键概念，个人认为必须理解的东西，下面是实例讲解。</p>
+<div class="section" id="key-value-coding-kvc">
+<h2>Key-Value Coding (KVC)</h2>
+<p>KVC，即是指
+<a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueCoding_Protocol/Reference/Reference.html#//apple_ref/occ/cat/NSKeyValueCoding">NSKeyValueCoding</a>，一个非正式的
+Protocol，提供一种机制来间接访问对象的属性。KVO 就是基于 KVC
+实现的关键技术之一。</p>
+<p>一个对象拥有某些属性。比如说，一个 Person 对象有一个 name 和一个 address
+属性。以 KVC 说法，Person 对象分别有一个 value 对应他的 name 和 address
+的 key。 key
+只是一个字符串，它对应的值可以是任意类型的对象。从最基础的层次上看，KVC
+有两个方法：一个是设置 key 的值，另一个是获取 key 的值。如下面的例子：</p>
+<pre class="code shell literal-block">
+void changeName<span class="o">(</span>Person *p, NSString *newName<span class="o">)</span>
+<span class="o">{</span>
+
+    // using the KVC accessor <span class="o">(</span>getter<span class="o">)</span> method
+    NSString *originalName <span class="o">=</span> <span class="o">[</span>p valueForKey:&#64;<span class="s2">&quot;name&quot;</span><span class="o">]</span><span class="p">;</span>
+
+    // using the KVC  accessor <span class="o">(</span>setter<span class="o">)</span> method.
+    <span class="o">[</span>p setValue:newName forKey:&#64;<span class="s2">&quot;name&quot;</span><span class="o">]</span><span class="p">;</span>
+
+    NSLog<span class="o">(</span>&#64;<span class="s2">&quot;Changed %&#64;'s name to: %&#64;&quot;</span>, originalName, newName<span class="o">)</span><span class="p">;</span>
+
+<span class="o">}</span>
+</pre>
+<p>现在，如果 Person 有另外一个 key 配偶（spouse），spouse 的 key
+值是另一个 Person 对象，用 KVC 可以这样写：</p>
+<pre class="code shell literal-block">
+void logMarriage<span class="o">(</span>Person *p<span class="o">)</span>
+<span class="o">{</span>
+
+    // just using the accessor again, same as example above
+    NSString *personsName <span class="o">=</span> <span class="o">[</span>p valueForKey:&#64;<span class="s2">&quot;name&quot;</span><span class="o">]</span><span class="p">;</span>
+
+    // this line is different, because it is using
+    // a <span class="s2">&quot;key path&quot;</span> instead of a normal <span class="s2">&quot;key&quot;</span>
+    NSString *spousesName <span class="o">=</span> <span class="o">[</span>p valueForKeyPath:&#64;<span class="s2">&quot;spouse.name&quot;</span><span class="o">]</span><span class="p">;</span>
+
+    NSLog<span class="o">(</span>&#64;<span class="s2">&quot;%&#64; is happily married to %&#64;&quot;</span>, personsName, spousesName<span class="o">)</span><span class="p">;</span>
+
+<span class="o">}</span>
+</pre>
+<p>key 与 key pat 要区分开来，key 可以从一个对象中获取值，而 key path
+可以将多个 key 用点号 &quot;.&quot; 分割连接起来，比如：</p>
+<pre class="code shell literal-block">
+<span class="o">[</span>p valueForKeyPath:&#64;<span class="s2">&quot;spouse.name&quot;</span><span class="o">]</span><span class="p">;</span>
+</pre>
+<p>相当于这样……</p>
+<pre class="code shell literal-block">
+<span class="o">[[</span>p valueForKey:&#64;<span class="s2">&quot;spouse&quot;</span><span class="o">]</span> valueForKey:&#64;<span class="s2">&quot;name&quot;</span><span class="o">]</span><span class="p">;</span>
+</pre>
+<p>好了，以上是 KVC 的基本知识，接着看看 KVO。</p>
+</div>
+<div class="section" id="key-value-observing-kvo">
+<h2>Key-Value Observing (KVO)</h2>
+<p>Key-Value Observing (KVO) 建立在 KVC 之上，它能够观察一个对象的 KVC key
+path 值的变化。举个例子，用代码观察一个 person 对象的 address
+变化，以下是实现的三个方法：</p>
+<ul class="simple">
+<li>watchPersonForChangeOfAddress: 实现观察</li>
+<li>observeValueForKeyPath:ofObject:change:context: 在被观察的 key path
+的值变化时调用。</li>
+<li>dealloc 停止观察</li>
+</ul>
+<pre class="code shell literal-block">
+static NSString *const <span class="nv">KVO_CONTEXT_ADDRESS_CHANGED</span> <span class="o">=</span> &#64;<span class="s2">&quot;KVO_CONTEXT_ADDRESS_CHANGED&quot;</span>
+
+&#64;implementation PersonWatcher
+
+-<span class="o">(</span>void<span class="o">)</span> watchPersonForChangeOfAddress:<span class="o">(</span>Person *<span class="o">)</span>p
+<span class="o">{</span>
+
+    // this begins the observing
+    <span class="o">[</span>p addObserver:self
+        forKeyPath:&#64;<span class="s2">&quot;address&quot;</span>
+           options:0
+           context:KVO_CONTEXT_ADDRESS_CHANGED<span class="o">]</span><span class="p">;</span>
+
+    // keep a record of all the people being observed,
+    // because we need to stop observing them in dealloc
+    <span class="o">[</span>m_observedPeople addObject:p<span class="o">]</span><span class="p">;</span>
+<span class="o">}</span>
+
+// whenever an observed key path changes, this method will be called
+- <span class="o">(</span>void<span class="o">)</span>observeValueForKeyPath:<span class="o">(</span>NSString *<span class="o">)</span>keyPath
+                      ofObject:<span class="o">(</span>id<span class="o">)</span>object
+                        change:<span class="o">(</span>NSDictionary *<span class="o">)</span>change
+                       context:<span class="o">(</span>void *<span class="o">)</span>context
+
+<span class="o">{</span>
+    // use the context to make sure this is a change in the address,
+    // because we may also be observing other things
+    <span class="k">if</span><span class="o">(</span><span class="nv">context</span> <span class="o">==</span> KVO_CONTEXT_ADDRESS_CHANGED<span class="o">)</span> <span class="o">{</span>
+        NSString *name <span class="o">=</span> <span class="o">[</span>object valueForKey:&#64;<span class="s2">&quot;name&quot;</span><span class="o">]</span><span class="p">;</span>
+        NSString *address <span class="o">=</span> <span class="o">[</span>object valueForKey:&#64;<span class="s2">&quot;address&quot;</span><span class="o">]</span><span class="p">;</span>
+        NSLog<span class="o">(</span>&#64;<span class="s2">&quot;%&#64; has a new address: %&#64;&quot;</span>, name, address<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+-<span class="o">(</span>void<span class="o">)</span> dealloc<span class="p">;</span>
+<span class="o">{</span>
+
+    // must stop observing everything before this object is
+    // deallocated, otherwise it will cause crashes
+    <span class="k">for</span><span class="o">(</span>Person *p in m_observedPeople<span class="o">){</span>
+        <span class="o">[</span>p removeObserver:self forKeyPath:&#64;<span class="s2">&quot;address&quot;</span><span class="o">]</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    <span class="o">[</span>m_observedPeople release<span class="o">]</span><span class="p">;</span>
+    <span class="nv">m_observedPeople</span> <span class="o">=</span> nil<span class="p">;</span>
+
+    <span class="o">[</span>super dealloc<span class="o">]</span><span class="p">;</span>
+
+<span class="o">}</span>
+
+-<span class="o">(</span>id<span class="o">)</span> init<span class="p">;</span>
+<span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="nv">self</span> <span class="o">=</span> <span class="o">[</span>super init<span class="o">]){</span>
+        <span class="nv">m_observedPeople</span> <span class="o">=</span> <span class="o">[</span>NSMutableArray new<span class="o">]</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> self<span class="p">;</span>
+<span class="o">}</span>
+
+&#64;end
+</pre>
+<p>这就是 KVO 的作用，它通过 key path
+观察对象的值，当值发生变化的时候会收到通知。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/iphone.html">iPhone</a></p>
+                        <p>Tags: <a href="/tag/objective-c.html">Objective-C</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    浅谈JavaScript全局变量与局部变量
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-13T06:44:00+08:00" pubdate>
+                            四, 13  5 2010
+                        </time>
+                        <a href="/javascript-global-and-local-variables.html" rel="bookmark"><h1>浅谈JavaScript全局变量与局部变量</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>JavaScript是一门具有非常丰富特性的脚本语言，它有着其他编程语言一样的复杂性，甚至有时更复杂。下面就谈谈JavaScript的全局变量与局部变量的作用范围。</p>
+<p>先看一个简单示例，<strong>修改全局变量的值</strong></p>
+<p><tt class="docutils literal">var message = &quot;Hello, Welcome to magicalboy.com&quot;;</tt></p>
+<div class="line-block">
+<div class="line">function show() {</div>
+<div class="line">message=&quot;magicalboy&quot;;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">show();</div>
+<div class="line">alert(message);</div>
+</div>
+<p><tt class="docutils literal">运行结果为弹出窗口警告信息：magicalboy.</tt></p>
+<p><strong>JavaScript(ECMAScript)
+的解释程序遇到未声明过的标识符时，用该变量名创建一个全局变量，并将其初始化为指定的值。</strong></p>
+<p>所以message是一个全局变量。show()函数中遇到message，首先在函数里面即当前内存空间去找，找不到再向上在全局空间继续找，如果找到了，那好，为它所指向的内存地址赋新的值&quot;magicalboy&quot;。如果找不到呢，正如前面所说，用该变量名创建一个全局变量，并将其初始化为指定的值。</p>
+<p>JavaScript像Python等其它动态脚本语言一样支持闭包（closure）这一特性，使得函数可以使用函数之外定义的变量。</p>
+<p>对代码作如下修改，会有什么样的输出呢</p>
+<p><tt class="docutils literal">var message = &quot;Hello, Welcome to magicalboy.com&quot;;</tt></p>
+<div class="line-block">
+<div class="line">function show() {</div>
+<div class="line">var message; // 增加var关键字显式声明变量</div>
+<div class="line">message=&quot;magicalboy&quot;;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">show();</div>
+<div class="line">alert(message);</div>
+</div>
+<p>没错，这次输出的是全局变量的值：<tt class="docutils literal">Hello, Welcome to magicalboy.com</tt></p>
+<p>在show函数里面，我们重要用var显式声明了message变量。因为是在show函数里面显式声明的，它是一个局部变量。我们在函数里面修改了它的值，但它没有改变与之同名的全局变量的值，由此说明<strong>全局变量与局部变量的作用空间是相互独立的</strong>。</p>
+<p>学过Python语言的人会觉得有点奇怪，他们会这两种情况和Python刚好相反，虽然Python中全局变量是使用global关键字声明的。</p>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

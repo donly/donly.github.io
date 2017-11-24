@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    解决robots.txt在Google 网站管理员工具中语法有误的问题
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-17T01:34:00+08:00" pubdate>
+                            六, 17  7 2010
+                        </time>
+                        <a href="/google-robots.html" rel="bookmark"><h1>解决robots.txt在Google 网站管理员工具中语法有误的问题</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="section" id="robots-txt">
+<h2>robots.txt 在维基百科中的定义</h2>
+<blockquote>
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Robots.txt">robots.txt</a>（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它通常告诉网络搜索引擎的漫游器（又称网络蜘蛛），此网站中的哪些内容是不能被搜索引擎的漫游器获取的，哪些是可以被（漫游器）获取的。robots.txt应放置于网站的根目录下。</blockquote>
+</div>
+<div class="section" id="id1">
+<h2>问题描述</h2>
+<p>在<a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN">Google
+网站管理员工具</a>-网站配置-抓取工具的权限中可测试
+robots.txt 时发现，解析结果有错误：“第 1 行：?User-agent: *
+语法有误”。下面进行问题分析：</p>
+</div>
+<div class="section" id="id2">
+<h2>robots.txt 内容如下</h2>
+<p><tt class="docutils literal"><span class="pre">User-agent:</span> * Disallow: <span class="pre">/wp-admin</span> Disallow: <span class="pre">/wp-content/plugins</span> Disallow: <span class="pre">/wp-content/themes</span> Disallow: <span class="pre">/wp-includes</span> Sitemap: <span class="pre">http://magicalboy.com/sitemap.xml</span></tt></p>
+<p>可以发现，?User-agent 前面并没有任何字符，但经 Google
+网站管理员工具的读取后，就变成了：</p>
+<p><tt class="docutils literal"><span class="pre">?User-agent:</span> * Disallow: <span class="pre">/wp-admin</span> Disallow: <span class="pre">/wp-content/plugins</span> Disallow: <span class="pre">/wp-content/themes</span> Disallow: <span class="pre">/wp-includes</span> Sitemap: <span class="pre">http://magicalboy.com/sitemap.xml</span></tt></p>
+</div>
+<div class="section" id="id3">
+<h2>解决问题</h2>
+<p>最简单的解决方法就是：下载在“Google 网站管理员工具-生成
+robots.txt下载”生成的模板修改再上传到网站所在的根目录下。</p>
+</div>
+<div class="section" id="id4">
+<h2>分析问题</h2>
+<p>出现这一原因是由于 robots.txt 文件的编码所导致。在前面引用百科中
+robots.txt 中说到，它是一个
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/ASCII">ASCII</a>
+编码的文本文件。而造成语法错误多出一个?字符的 robotxs.txt 的文件编码为
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/UTF-8">UTF-8</a> +
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E4%BD%8D%E5%85%83%E7%B5%84%E9%A0%86%E5%BA%8F%E8%A8%98%E8%99%9F">BOM</a>（字节顺序记号（英：byte-order
+mark，BOM））！而从 Google 下载回来的编码是 UTF-8。而 UTF-8 编码包含了
+ASCII。更多请点击术语链接到维基百科自行理解:)。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

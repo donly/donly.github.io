@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 程序人生</title><link href="/" rel="alternate"></link><link href="/feeds/cheng-xu-ren-sheng.atom.xml" rel="self"></link><id>/</id><updated>2011-09-22T14:26:00+08:00</updated><entry><title>Git 使用入门</title><link href="/git-getting-started.html" rel="alternate"></link><published>2011-09-22T14:26:00+08:00</published><updated>2011-09-22T14:26:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-09-22:/git-getting-started.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;一、Git简介&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="git logo" src="https://lh6.googleusercontent.com/-6bFWTOcHH4Y/TntG8fwhJWI/AAAAAAAAAJk/pu01j_uBeDo/s800/git.png" style="width: 214px; height: 81px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Git（Via &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/Git"&gt;http://zh.wikipedia.org/wiki/Git&lt;/a&gt;）。当初 Linus Trovalds 开发
+Git 是为了跟踪 Linux 内核的修改情况，Git 命名来自于&lt;/p&gt;
+&lt;blockquote&gt;
+“I'm an egotistical bastard, and I name all my projects after
+myself. First Linux, now git.”&lt;/blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;**
+二、为什么使用Git**&lt;/div&gt;
+&lt;div class="line"&gt;相信大家使用过传统的版本控制系统（Version Control System，VCS），比如
+CVS，SVN（Subversion）等。这些都是老而笨重，采用集中式的 …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;一、Git简介&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="git logo" src="https://lh6.googleusercontent.com/-6bFWTOcHH4Y/TntG8fwhJWI/AAAAAAAAAJk/pu01j_uBeDo/s800/git.png" style="width: 214px; height: 81px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Git（Via &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/Git"&gt;http://zh.wikipedia.org/wiki/Git&lt;/a&gt;）。当初 Linus Trovalds 开发
+Git 是为了跟踪 Linux 内核的修改情况，Git 命名来自于&lt;/p&gt;
+&lt;blockquote&gt;
+“I'm an egotistical bastard, and I name all my projects after
+myself. First Linux, now git.”&lt;/blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;**
+二、为什么使用Git**&lt;/div&gt;
+&lt;div class="line"&gt;相信大家使用过传统的版本控制系统（Version Control System，VCS），比如
+CVS，SVN（Subversion）等。这些都是老而笨重，采用集中式的
+VCS。相比之下，Git 有如下优势：&lt;/div&gt;
+&lt;div class="line"&gt;1、分布式体系结构。（Distributed Version Control
+System，DVCS），可完全断网离线工作，不受网络连接限制。&lt;/div&gt;
+&lt;div class="line"&gt;2、分支与合并操作简单。&lt;/div&gt;
+&lt;div class="line"&gt;3、兼容 SVN。如果公司同事坚持使用 SVN，也可以完全从 SVN
+版本库中导入所有历史，并把在 Git 中的改动提交到 SVN。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;现越来越多有名的开源项目采用 Git 管理了，熟悉 Git
+之后不会对它敬而远之，尽管 Github 上提供项目的下载链接。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;三、安装 Git （Widows 篇）&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;Git 为 POSIX 架构，本不支持Windows，有牛人制作了可在 Widows
+运行的环境，整合版下载地址：&lt;a class="reference external" href="http://code.google.com/p/msysgit/downloads/list?can=3"&gt;http://code.google.com/p/msysgit/downloads/list?can=3&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;请放心下载，开源且官方推荐的。&lt;/div&gt;
+&lt;div class="line"&gt;下载时请选择第一（.exe）或第二个（Portable）下载。下面以第二个
+PortableGit-x.x.x-previewxxxxxxxx.7z 为例进行说明。&lt;/div&gt;
+&lt;div class="line"&gt;Tips：千万不要解压到当前目录，应解压到一个文件夹下，因为该档案是没有带目录压缩的。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;1、解压完成后，剪切到软件安装的目录。&lt;/div&gt;
+&lt;div class="line"&gt;2、配置以下环境变量：&lt;/div&gt;
+&lt;div class="line"&gt;gitdir=c:portablegit&lt;/div&gt;
+&lt;div class="line"&gt;path=%gitdir%cmd;%path%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;四、快速入门&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;常用到的 Checkout 项目命令：&lt;/div&gt;
+&lt;div class="line"&gt;git clone url.git&lt;/div&gt;
+&lt;div class="line"&gt;配置：&lt;/div&gt;
+&lt;div class="line"&gt;git config --global user.name &amp;quot;Donly Chan&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;git config --global user.email &lt;a class="reference external" href="mailto:donly&amp;#64;magicalboy.com"&gt;donly&amp;#64;magicalboy.com&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;帮助：&lt;/div&gt;
+&lt;div class="line"&gt;git --help&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;五、更多&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;更多信息参见安装目录的 “README.portable”。&lt;/div&gt;
+&lt;div class="line"&gt;Git 首页：&lt;a class="reference external" href="http://git-scm.com/"&gt;http://git-scm.com/&lt;/a&gt; （如打不开，请自行开盾）&lt;/div&gt;
+&lt;div class="line"&gt;Gitbug 首页：&lt;a class="reference external" href="https://github.com/"&gt;https://github.com/&lt;/a&gt;，强烈推荐使用，可注册。&lt;/div&gt;
+&lt;div class="line"&gt;Git 学习资源：&lt;a class="reference external" href="http://progit.org/book/zh/"&gt;http://progit.org/book/zh/&lt;/a&gt; （中文，入门推荐）&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;更新&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;2012-05-23：&lt;a class="reference external" href="http://windows.github.com/"&gt;GitHub for Windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="Git"></category></entry><entry><title>2011春节贺语</title><link href="/2011-spring-festival-words.html" rel="alternate"></link><published>2011-02-09T07:18:00+08:00</published><updated>2011-02-09T07:18:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-02-09:/2011-spring-festival-words.html</id><summary type="html">&lt;p&gt;&lt;img alt="2010春节" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQcN-4pDiL4pw0gFc0FuOWbeQLSZoNLQd61vBclGHbxSwfX0kEVYg" /&gt;&lt;/p&gt;
+&lt;p&gt;又一年的春节过去了，意味着又长了一岁哈。&lt;/p&gt;
+&lt;p&gt;回家过年，最大的心愿是一家人吃个年夜饭，给家人，老人一封大大的利是，祝他们身体健康。&lt;/p&gt;
+&lt;p&gt;新年新气象，在新一年里，祝大家身体健康，技术进步，来年赚更多的钱回家过年！&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="2010春节" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQcN-4pDiL4pw0gFc0FuOWbeQLSZoNLQd61vBclGHbxSwfX0kEVYg" /&gt;&lt;/p&gt;
+&lt;p&gt;又一年的春节过去了，意味着又长了一岁哈。&lt;/p&gt;
+&lt;p&gt;回家过年，最大的心愿是一家人吃个年夜饭，给家人，老人一封大大的利是，祝他们身体健康。&lt;/p&gt;
+&lt;p&gt;新年新气象，在新一年里，祝大家身体健康，技术进步，来年赚更多的钱回家过年！&lt;/p&gt;
+</content></entry><entry><title>我的2010大事记</title><link href="/my-2010-events.html" rel="alternate"></link><published>2010-12-31T02:22:00+08:00</published><updated>2010-12-31T02:22:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-12-31:/my-2010-events.html</id><summary type="html">&lt;p&gt;2010年是作出艰难的决定的一年：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;2010年01月：实习回校，享受最后的校园生活&lt;/li&gt;
+&lt;li&gt;2010年02月：渡过最后一个寒假，感受家的温馨&lt;/li&gt;
+&lt;li&gt;2010年03月：Oracle收购了Sun，我放弃了Java，谷歌退出中国大陆&lt;/li&gt;
+&lt;li&gt;2010年04月：青海玉树7.1级大地震&lt;/li&gt;
+&lt;li&gt;2010年05月：上海世博会开幕，富士康跳楼事件&lt;/li&gt;
+&lt;li&gt;2010年06月：毕业了，一张纸&lt;/li&gt;
+&lt;li&gt;2010年07月：南京大爆炸&lt;/li&gt;
+&lt;li&gt;2010年08月：菲律宾人质劫持血案&lt;/li&gt;
+&lt;li&gt;2010年09月：离职，终于狠下心离开，坚决果断地离开&lt;/li&gt;
+&lt;li&gt;2010年10月：一个艰难的选择──iPhone开发&lt;/li&gt;
+&lt;li&gt;2010年11月：腾讯大战360，“一个艰难的决定”&lt;/li&gt;
+&lt;li&gt;2010年12月：Mac OS X 和 iPhone 真的很好&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;---------------------------------&amp;#64;年终分割线&amp;#64;---------------------------------&lt;/div&gt;
+&lt;div class="line"&gt;未完待续&lt;/div&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;p&gt;2010年是作出艰难的决定的一年：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;2010年01月：实习回校，享受最后的校园生活&lt;/li&gt;
+&lt;li&gt;2010年02月：渡过最后一个寒假，感受家的温馨&lt;/li&gt;
+&lt;li&gt;2010年03月：Oracle收购了Sun，我放弃了Java，谷歌退出中国大陆&lt;/li&gt;
+&lt;li&gt;2010年04月：青海玉树7.1级大地震&lt;/li&gt;
+&lt;li&gt;2010年05月：上海世博会开幕，富士康跳楼事件&lt;/li&gt;
+&lt;li&gt;2010年06月：毕业了，一张纸&lt;/li&gt;
+&lt;li&gt;2010年07月：南京大爆炸&lt;/li&gt;
+&lt;li&gt;2010年08月：菲律宾人质劫持血案&lt;/li&gt;
+&lt;li&gt;2010年09月：离职，终于狠下心离开，坚决果断地离开&lt;/li&gt;
+&lt;li&gt;2010年10月：一个艰难的选择──iPhone开发&lt;/li&gt;
+&lt;li&gt;2010年11月：腾讯大战360，“一个艰难的决定”&lt;/li&gt;
+&lt;li&gt;2010年12月：Mac OS X 和 iPhone 真的很好&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;---------------------------------&amp;#64;年终分割线&amp;#64;---------------------------------&lt;/div&gt;
+&lt;div class="line"&gt;未完待续&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>求最大公约数的算法</title><link href="/greatest-common-divisor.html" rel="alternate"></link><published>2010-10-21T08:42:00+08:00</published><updated>2010-10-21T08:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-21:/greatest-common-divisor.html</id><summary type="html">&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;最大公约数&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;回顾一下中学学过的数学课程中最大公约数的定义，两个整数的最大公约数是能够同时整除它们的最大的正整数。&lt;/div&gt;
+&lt;div class="line"&gt;在数学中，辗转相除法，又称欧几里得算法，是求最大公约数的算法。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;辗转相除法原理&lt;/h2&gt;
+&lt;p&gt;辗转相除法基于如下原理：两个整数的最大公约数等于其中较小的数和两数的差的最大公约数。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;算法代码&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;伪代码：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;function gcd(a, b)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if a = 0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return b&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; while b ≠ 0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if a &amp;gt; b&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; a := a − b&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; b := b − a&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return a&lt;/tt&gt;&lt;/div&gt;
+&lt;div class="line"&gt;递归版本：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;function gcd(a, b)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if b = 0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return a&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return gcd(b …&lt;/tt&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;最大公约数&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;回顾一下中学学过的数学课程中最大公约数的定义，两个整数的最大公约数是能够同时整除它们的最大的正整数。&lt;/div&gt;
+&lt;div class="line"&gt;在数学中，辗转相除法，又称欧几里得算法，是求最大公约数的算法。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;辗转相除法原理&lt;/h2&gt;
+&lt;p&gt;辗转相除法基于如下原理：两个整数的最大公约数等于其中较小的数和两数的差的最大公约数。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;算法代码&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;伪代码：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;function gcd(a, b)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if a = 0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return b&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; while b ≠ 0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if a &amp;gt; b&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; a := a − b&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; b := b − a&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return a&lt;/tt&gt;&lt;/div&gt;
+&lt;div class="line"&gt;递归版本：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;function gcd(a, b)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if b = 0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return a&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return gcd(b, a mod b)&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;参考链接：&lt;a class="reference external" href="http://zh.wikipedia.org/zh/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95"&gt;辗转相除法-维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Emacs 的自学教材</title><link href="/emacs-tutorial.html" rel="alternate"></link><published>2010-10-18T06:43:00+08:00</published><updated>2010-10-18T06:43:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-18:/emacs-tutorial.html</id><summary type="html">&lt;p&gt;想快速了解 EMACS 的人，可以参考 EMACS 的自学教材（tutorial）。 使用
+EMACS 自学教材的方法很简单，只要键入 &amp;quot;Ctrl-h t&amp;quot; (help-with-tutorial)
+即可进入 EMACS 的自学的状态了。&lt;/p&gt;
+&lt;p&gt;EMACS 的自学教材可分成以下几部份：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;介绍 EMACS 指令的键入方法，即介绍 Ctrl 与 Meta 键 。&lt;/li&gt;
+&lt;li&gt;viewing screenfuls&lt;/li&gt;
+&lt;li&gt;basic cursor control&lt;/li&gt;
+&lt;li&gt;Ctrl-g 的用法&lt;/li&gt;
+&lt;li&gt;EMACS 的 window 与 multiple windows&lt;/li&gt;
+&lt;li&gt;inserting and deleting&lt;/li&gt;
+&lt;li&gt;undo&lt;/li&gt;
+&lt;li&gt;EMACS 档案的处理&lt;/li&gt;
+&lt;li&gt;EMACS 的 buffers&lt;/li&gt;
+&lt;li&gt;extending …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;想快速了解 EMACS 的人，可以参考 EMACS 的自学教材（tutorial）。 使用
+EMACS 自学教材的方法很简单，只要键入 &amp;quot;Ctrl-h t&amp;quot; (help-with-tutorial)
+即可进入 EMACS 的自学的状态了。&lt;/p&gt;
+&lt;p&gt;EMACS 的自学教材可分成以下几部份：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;介绍 EMACS 指令的键入方法，即介绍 Ctrl 与 Meta 键 。&lt;/li&gt;
+&lt;li&gt;viewing screenfuls&lt;/li&gt;
+&lt;li&gt;basic cursor control&lt;/li&gt;
+&lt;li&gt;Ctrl-g 的用法&lt;/li&gt;
+&lt;li&gt;EMACS 的 window 与 multiple windows&lt;/li&gt;
+&lt;li&gt;inserting and deleting&lt;/li&gt;
+&lt;li&gt;undo&lt;/li&gt;
+&lt;li&gt;EMACS 档案的处理&lt;/li&gt;
+&lt;li&gt;EMACS 的 buffers&lt;/li&gt;
+&lt;li&gt;extending the command set&lt;/li&gt;
+&lt;li&gt;简介 EMACS 的 mode line 与 echo area&lt;/li&gt;
+&lt;li&gt;searching&lt;/li&gt;
+&lt;li&gt;recursive editing levels&lt;/li&gt;
+&lt;li&gt;getting more help&lt;/li&gt;
+&lt;li&gt;leaving EMACS&lt;/li&gt;
+&lt;li&gt;有关 EMACS 的版权问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;EMACS 的自学教材是以编辑功能的介绍为主。虽然 EMACS 的功能&lt;/div&gt;
+&lt;div class="line"&gt;不只如此， 但编辑是 EMACS 的最基础的功能，要了解 EMACS&lt;/div&gt;
+&lt;div class="line"&gt;当然要从它的基本著手。所以 EMACS的自学教材也以编辑的介绍&lt;/div&gt;
+&lt;div class="line"&gt;为主，至於 EMACS 其它的工件环境請參考&lt;a class="reference external" href="http://www.cbi.pku.edu.cn/chinese/documents/csdoc/emacs/"&gt;Emacs User's
+Guide&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果你不小心進入了 Emacs，輸入&amp;quot;C-x C-c&amp;quot;以退出。&lt;/p&gt;
+</content></entry><entry><title>Java 情结</title><link href="/byebye-java.html" rel="alternate"></link><published>2010-10-18T02:06:00+08:00</published><updated>2010-10-18T02:06:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-18:/byebye-java.html</id><summary type="html">&lt;p&gt;自 3月17日 Java 被 Oracle 收购以来，我都没用过 Java
+来编程。那时也刚好转职去做 Python 的开发，诸多原因使我离 Java
+越来越远。。。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;今天在更新 JRE 时看到的安装界面，Oracle 标志是多么的鲜红艳丽：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/10/Java_Install.jpg"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-867" src="http://magicalboy.com/wp-content/uploads/2010/10/Java_Install.jpg" style="width: 506px; height: 379px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="bye-java"&gt;
+&lt;h2&gt;Bye Java&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;public class Bye{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; public static void main(String[] args) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;System.out.println(&amp;quot;Bye,&lt;/span&gt; &lt;span class="pre"&gt;java!&amp;quot;);&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; } }&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" class="alignnone" src="http://www.miamisburg.com/dukeTuxJavaOne2003TShirt.jpg" style="width: 768px; height: 576px;" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;p&gt;自 3月17日 Java 被 Oracle 收购以来，我都没用过 Java
+来编程。那时也刚好转职去做 Python 的开发，诸多原因使我离 Java
+越来越远。。。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;今天在更新 JRE 时看到的安装界面，Oracle 标志是多么的鲜红艳丽：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/10/Java_Install.jpg"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-867" src="http://magicalboy.com/wp-content/uploads/2010/10/Java_Install.jpg" style="width: 506px; height: 379px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="bye-java"&gt;
+&lt;h2&gt;Bye Java&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;public class Bye{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; public static void main(String[] args) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;System.out.println(&amp;quot;Bye,&lt;/span&gt; &lt;span class="pre"&gt;java!&amp;quot;);&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; } }&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" class="alignnone" src="http://www.miamisburg.com/dukeTuxJavaOne2003TShirt.jpg" style="width: 768px; height: 576px;" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>在 Windows 上学习开发 Objective C</title><link href="/objective-c-on-windows.html" rel="alternate"></link><published>2010-09-21T06:39:00+08:00</published><updated>2010-09-21T06:39:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-21:/objective-c-on-windows.html</id><summary type="html">&lt;p&gt;Objective-C(ObjC) 现在几乎已经变成了苹果的专利，可以直接在苹果的 Xcode
+上编译 ObjC 程序，但是在 Windows 平台下的编译工具就寥寥无几了，即使 ObjC
+在语言排行榜上的上升速度多么强势给力。&lt;/p&gt;
+&lt;p&gt;下面引用维基百科对 &lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Objective_C"&gt;Objective
+C&lt;/a&gt;描述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Objective-C，通常写作ObjC和较少用的Objective
+C或Obj-C，是在C的基础上，加入面向对象特性扩充而成的編程語言。&lt;/p&gt;
+&lt;p&gt;今日主要应用于&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Mac_OS_X"&gt;Mac OS
+X&lt;/a&gt;和&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/IPhone_OS"&gt;iPhone
+OS&lt;/a&gt;这两个以&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/OpenStep"&gt;OpenStep&lt;/a&gt;为标准的系统，而在&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/NeXTSTEP"&gt;NeXTSTEP&lt;/a&gt;和OpenStep中它更是基本语言。Objective-C可以在任何运行&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Gcc"&gt;gcc&lt;/a&gt;的系统写和编译，因为gcc含Objective-C的编译器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/09/program_top20_on9.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-836" src="http://magicalboy.com/wp-content/uploads/2010/09/program_top20_on9.png" style="width: 550px; height: 784px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;在 Windows 上编译 Objective C&lt;/h2&gt;
+&lt;p&gt;看到前面的介绍，我们了解了如果要编译 ObjC 就必须有 gcc …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Objective-C(ObjC) 现在几乎已经变成了苹果的专利，可以直接在苹果的 Xcode
+上编译 ObjC 程序，但是在 Windows 平台下的编译工具就寥寥无几了，即使 ObjC
+在语言排行榜上的上升速度多么强势给力。&lt;/p&gt;
+&lt;p&gt;下面引用维基百科对 &lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Objective_C"&gt;Objective
+C&lt;/a&gt;描述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Objective-C，通常写作ObjC和较少用的Objective
+C或Obj-C，是在C的基础上，加入面向对象特性扩充而成的編程語言。&lt;/p&gt;
+&lt;p&gt;今日主要应用于&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Mac_OS_X"&gt;Mac OS
+X&lt;/a&gt;和&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/IPhone_OS"&gt;iPhone
+OS&lt;/a&gt;这两个以&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/OpenStep"&gt;OpenStep&lt;/a&gt;为标准的系统，而在&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/NeXTSTEP"&gt;NeXTSTEP&lt;/a&gt;和OpenStep中它更是基本语言。Objective-C可以在任何运行&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Gcc"&gt;gcc&lt;/a&gt;的系统写和编译，因为gcc含Objective-C的编译器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/09/program_top20_on9.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-836" src="http://magicalboy.com/wp-content/uploads/2010/09/program_top20_on9.png" style="width: 550px; height: 784px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;在 Windows 上编译 Objective C&lt;/h2&gt;
+&lt;p&gt;看到前面的介绍，我们了解了如果要编译 ObjC 就必须有 gcc
+或相关的环境。而本文将要介绍使用 &lt;a class="reference external" href="http://www.gnustep.org/"&gt;GNUstep&lt;/a&gt;
+在 Windows 上搭建 ObjC 开发学习环境。GNUstep是一个跨平台的免费开放的
+Cocoa(NeXTSTEP/OpenStep 的前身) APIs。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;安装GNUstep&lt;/li&gt;
+&lt;li&gt;编写Objective-C代码&lt;/li&gt;
+&lt;li&gt;配置环境变量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;参考链接&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://wiki.gnustep.org/index.php/Deployment_on_Windows"&gt;Deployment on Windows -
+GNUstepWiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://wiki.gnustep.org/index.php/Installation_on_Windows#Install_msys_developer_toolkit"&gt;Installation on Windows -
+GNUstepWiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.roseindia.net/iphone/objectivec/objective-c-windows.shtml"&gt;Objective C on Windows, Objective C Windows, Objective C Windows
+Compiler, Objective C Compiler for
+Windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Python 的变量作用域和 LEGB 原则</title><link href="/python-scope-legb.html" rel="alternate"></link><published>2010-09-09T08:59:00+08:00</published><updated>2010-09-09T08:59:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-09:/python-scope-legb.html</id><summary type="html">&lt;p&gt;在 Python
+程序中创建、改变或查找变量名时，都是在一个保存变量名的地方进行中，那个地方我们称之为命名空间。作用域这个术语也称之为命名空间。&lt;/p&gt;
+&lt;p&gt;具体地说，在代码中变量名被赋值（Python 中变量声明即赋值，global
+声明的只是变量的使用域）的位置决定了该变量能被访问的范围。函数定义了本地作用域，而模块定义的是全局作用域。这两个作用域之前有如下关系：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;每一个模块都是全局作用域。&lt;/strong&gt;也就是说，创建于模块文件顶层的变量具有全局作用域，对于外部访问就成了一个模块对象的属性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全局作用域的作用范围仅限于单个文件。&lt;/strong&gt;“全局”指的是在一个文件的顶层变量名对于这个文件而言是全局的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;每次对函数的调用都创建了一个新的本地作用域。&lt;/strong&gt;Python
+中也有递归，即可以调用自身，每次调用都会创建五个新的本地命名空间。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;赋值的变量名除非声明为全局变量，否则均为本地变量。&lt;/strong&gt;如果需要在函数内部对模块文件顶层的变量名赋值，需要在函数内部通过
+global 语句声明该变量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;所有的变量可归纳为本地、全局或者内置三种。&lt;/strong&gt;范围分别为 def
+内部，在一个模块的命名空间内部和预定义的 __builtin__
+模块提供的变量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="legb"&gt;
+&lt;h2&gt;变量名解析：LEGB 原则&lt;/h2&gt;
+&lt;p&gt;如果对以上内容有所迷惑的话，请看以下总结出的几条原则。在函数命名空间中：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;变量名引用分为三个作用域进行查找 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;在 Python
+程序中创建、改变或查找变量名时，都是在一个保存变量名的地方进行中，那个地方我们称之为命名空间。作用域这个术语也称之为命名空间。&lt;/p&gt;
+&lt;p&gt;具体地说，在代码中变量名被赋值（Python 中变量声明即赋值，global
+声明的只是变量的使用域）的位置决定了该变量能被访问的范围。函数定义了本地作用域，而模块定义的是全局作用域。这两个作用域之前有如下关系：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;每一个模块都是全局作用域。&lt;/strong&gt;也就是说，创建于模块文件顶层的变量具有全局作用域，对于外部访问就成了一个模块对象的属性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全局作用域的作用范围仅限于单个文件。&lt;/strong&gt;“全局”指的是在一个文件的顶层变量名对于这个文件而言是全局的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;每次对函数的调用都创建了一个新的本地作用域。&lt;/strong&gt;Python
+中也有递归，即可以调用自身，每次调用都会创建五个新的本地命名空间。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;赋值的变量名除非声明为全局变量，否则均为本地变量。&lt;/strong&gt;如果需要在函数内部对模块文件顶层的变量名赋值，需要在函数内部通过
+global 语句声明该变量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;所有的变量可归纳为本地、全局或者内置三种。&lt;/strong&gt;范围分别为 def
+内部，在一个模块的命名空间内部和预定义的 __builtin__
+模块提供的变量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="legb"&gt;
+&lt;h2&gt;变量名解析：LEGB 原则&lt;/h2&gt;
+&lt;p&gt;如果对以上内容有所迷惑的话，请看以下总结出的几条原则。在函数命名空间中：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;变量名引用分为三个作用域进行查找：首先是本地，然后是函数内（如果有的话），之后是全局，最后是内置。&lt;/li&gt;
+&lt;li&gt;在默认情况下，变量名赋值会创建或者改变本地变量。&lt;/li&gt;
+&lt;li&gt;全局声明将会给映射到模块文件内部的作用域的变量名赋值。&lt;/li&gt;
+&lt;li&gt;Python 的变量名解析机制也称为 &lt;em&gt;LEGB&lt;/em&gt; 法则，具体如下：
+当在函数中使用未确定的变量名时，Python 搜索 4
+个作用域：本地作用域（L），之后是上一层嵌套结构中 def 或 lambda
+的本地作用域（E），之后是全局作用域（G），最后是内置作用域（B）。按这个查找原则，在第一处找到的地方停止。如果没有找到，Python
+会报错的。&lt;/li&gt;
+&lt;li&gt;下图说明了搜索流程（由内及外）：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;作用域实例&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;# &lt;span class="pre"&gt;-*-&lt;/span&gt; coding: utf8 &lt;span class="pre"&gt;-*-&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;# 全局作用域&lt;/div&gt;
+&lt;div class="line"&gt;x = 99 # x 和 func 函数在模块中声明，为全局使用域&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;def func(y):&lt;/div&gt;
+&lt;div class="line"&gt;# 本地作用域&lt;/div&gt;
+&lt;div class="line"&gt;z = x + y # x 为全局变量&lt;/div&gt;
+&lt;div class="line"&gt;return z&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;func(1) # func 在模块中定义，可以调用.结果=100&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>C 存储类型简介</title><link href="/c-storage-type.html" rel="alternate"></link><published>2010-09-08T15:18:00+08:00</published><updated>2010-09-08T15:18:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-08:/c-storage-type.html</id><summary type="html">&lt;p&gt;在 C 语言中，存储模型，也即存储类，使用存储时期(storage
+duration)或者作用域(scope)以及它的链接(linkage)来定义了 5
+种存储类：自动、寄存器、具有代码块作用域的静态、具有外部链接的静态和具有内部链接的静态。下表列出了这些组合的简要说明：&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="27%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="11%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="45%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;存储类&lt;/th&gt;
+&lt;th class="head"&gt;时期&lt;/th&gt;
+&lt;th class="head"&gt;作用域&lt;/th&gt;
+&lt;th class="head"&gt;链接&lt;/th&gt;
+&lt;th class="head"&gt;声明方式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;自动&lt;/td&gt;
+&lt;td&gt;自动&lt;/td&gt;
+&lt;td&gt;代码块&lt;/td&gt;
+&lt;td&gt;空&lt;/td&gt;
+&lt;td&gt;代码块内&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;寄存器&lt;/td&gt;
+&lt;td&gt;自动&lt;/td&gt;
+&lt;td&gt;代码块&lt;/td&gt;
+&lt;td&gt;空&lt;/td&gt;
+&lt;td&gt;代码块内，使用关键字 register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;具有外部链接的静态&lt;/td&gt;
+&lt;td&gt;静态&lt;/td&gt;
+&lt;td&gt;文件&lt;/td&gt;
+&lt;td&gt;外部&lt;/td&gt;
+&lt;td&gt;所有函数之外&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;具有内部链接的静态&lt;/td&gt;
+&lt;td&gt;静态&lt;/td&gt;
+&lt;td&gt;文件&lt;/td&gt;
+&lt;td&gt;内部&lt;/td&gt;
+&lt;td&gt;所有函数之外，使用关键字 static&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;空链接静态 …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</summary><content type="html">&lt;p&gt;在 C 语言中，存储模型，也即存储类，使用存储时期(storage
+duration)或者作用域(scope)以及它的链接(linkage)来定义了 5
+种存储类：自动、寄存器、具有代码块作用域的静态、具有外部链接的静态和具有内部链接的静态。下表列出了这些组合的简要说明：&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="27%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="11%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="45%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;存储类&lt;/th&gt;
+&lt;th class="head"&gt;时期&lt;/th&gt;
+&lt;th class="head"&gt;作用域&lt;/th&gt;
+&lt;th class="head"&gt;链接&lt;/th&gt;
+&lt;th class="head"&gt;声明方式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;自动&lt;/td&gt;
+&lt;td&gt;自动&lt;/td&gt;
+&lt;td&gt;代码块&lt;/td&gt;
+&lt;td&gt;空&lt;/td&gt;
+&lt;td&gt;代码块内&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;寄存器&lt;/td&gt;
+&lt;td&gt;自动&lt;/td&gt;
+&lt;td&gt;代码块&lt;/td&gt;
+&lt;td&gt;空&lt;/td&gt;
+&lt;td&gt;代码块内，使用关键字 register&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;具有外部链接的静态&lt;/td&gt;
+&lt;td&gt;静态&lt;/td&gt;
+&lt;td&gt;文件&lt;/td&gt;
+&lt;td&gt;外部&lt;/td&gt;
+&lt;td&gt;所有函数之外&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;具有内部链接的静态&lt;/td&gt;
+&lt;td&gt;静态&lt;/td&gt;
+&lt;td&gt;文件&lt;/td&gt;
+&lt;td&gt;内部&lt;/td&gt;
+&lt;td&gt;所有函数之外，使用关键字 static&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;空链接静态&lt;/td&gt;
+&lt;td&gt;静态&lt;/td&gt;
+&lt;td&gt;代码块&lt;/td&gt;
+&lt;td&gt;空&lt;/td&gt;
+&lt;td&gt;代码块内，使用关键字 static&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;术语解释&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;作用域&lt;/li&gt;
+&lt;li&gt;链接&lt;/li&gt;
+&lt;li&gt;存储时期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;存储类说明符&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;auto：表明一个变量具有自动存储时期。只能用于具有代码块作用域的变量声明中，明确意图，提高程序易读性。&lt;/li&gt;
+&lt;li&gt;extern：用于引用声明，即声明的变量已经在别处定义过了。&lt;/li&gt;
+&lt;li&gt;register：也只能用于具有代码块作用域的变量。请求将该变量存储在一个寄存器内，以更快地存取。使用它后将不能获取变量的地址。&lt;/li&gt;
+&lt;li&gt;static：用于表明链接类型，根据上下文而不同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意：绝不能在一个声明中使用一个以上的存储类说明符。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;代码示例&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;// parta.c &lt;span class="pre"&gt;---&lt;/span&gt; various storage classes #include&amp;nbsp; void &lt;span class="pre"&gt;report_count();&lt;/span&gt; void accumulate(int k); int count = 0;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // file scope, external linkage&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;int main(void)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;int value; // automatic variable&lt;/div&gt;
+&lt;div class="line"&gt;register int i; // register variable&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;printf(&amp;quot;Enter a positive integer (0 to quit): &amp;quot;);&lt;/div&gt;
+&lt;div class="line"&gt;while (scanf(&amp;quot;%d&amp;quot;, &amp;amp;value) == 1 &amp;amp;&amp;amp; value &amp;gt; 0)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;++count; // use file scope variable&lt;/div&gt;
+&lt;div class="line"&gt;for (i = value; i &amp;gt;= 0; i--)&lt;/div&gt;
+&lt;div class="line"&gt;accumulate(i);&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;Enter a positive integer (0 to quit): &amp;quot;);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;report_count();&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;void report_count()&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;Loop executed %d timesn&amp;quot;, count);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// partb.c -- rest of the program&lt;/div&gt;
+&lt;div class="line"&gt;#include&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;extern int count; // reference declaration, external linkage&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;static int total = 0; // static definition, internal linkage&lt;/div&gt;
+&lt;div class="line"&gt;void accumulate(int k); // prototype&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;void accumulate(int k) // k has block scope, no linkage&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;static int subtotal = 0; // static, no linkage&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;if (k &amp;lt; = 0)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;loop cycle: %dn&amp;quot;, count);&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;subtotal: %d; total: %dn&amp;quot;, subtotal, total);&lt;/div&gt;
+&lt;div class="line"&gt;subtotal = 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;else&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;subtotal += k;&lt;/div&gt;
+&lt;div class="line"&gt;total += k;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;自动变量具有代码块作用域、空链接和自动存储时期。它们是局部变量，为定义它们的代码块（比如函数）所私有。寄存器变量和自动变量具有相同的属性，不同的是编译器&lt;strong&gt;可能&lt;/strong&gt;使用速度更快的内存或寄存器来存储它们，另外也无法获取一个寄存器的地址。&lt;/div&gt;
+&lt;div class="line"&gt;具有静态存储时期的变量可能具有外部链接、内部链接或空链接。这取决于声明变量的位置和是否使用关键字
+static。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;em&gt;（本文内容来自《C Primer Plus》阅读笔记）&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>为何选择 Python</title><link href="/why-use-python.html" rel="alternate"></link><published>2010-09-07T14:31:00+08:00</published><updated>2010-09-07T14:31:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-09-07:/why-use-python.html</id><summary type="html">&lt;p&gt;Python
+(/'paɪθɑn/)，是一种面向对象的动态编程语言。它发行于1991年，由吉多·范罗苏姆（Guido
+van Rossum，荷兰计算机程序员）设计。&lt;/p&gt;
+&lt;p&gt;Python
+取名于1989年圣诞节期间的阿姆斯特丹，吉多为了打发圣诞节的无趣，决心开发一个新的脚本解释程序，作为ABC语言的一种继承。之所以选中Python（大蟒蛇的意思）作为程序的名字，是因为他是一个蒙提·派森的飞行马戏团的爱好者。（via
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Python"&gt;维基百科&lt;/a&gt;）&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;为何选择 Python&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;软件质量&lt;/li&gt;
+&lt;li&gt;开发者效率&lt;/li&gt;
+&lt;li&gt;可移植性&lt;/li&gt;
+&lt;li&gt;标准库支持&lt;/li&gt;
+&lt;li&gt;组件集成&lt;/li&gt;
+&lt;li&gt;享受乐趣&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;Python 的唯一缺点&lt;/h2&gt;
+&lt;p&gt;也许有人会问，Python 的执行速度快吗？相对于 C/C++
+这类编译编译语言相比，Python 的执行速度还不够快。这取决于 Python
+语言的实现方式：Python
+源文件首先被编译为字节码（跨平台），运行的时候再将字节码解释为底层的机器码（这点类似 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Python
+(/'paɪθɑn/)，是一种面向对象的动态编程语言。它发行于1991年，由吉多·范罗苏姆（Guido
+van Rossum，荷兰计算机程序员）设计。&lt;/p&gt;
+&lt;p&gt;Python
+取名于1989年圣诞节期间的阿姆斯特丹，吉多为了打发圣诞节的无趣，决心开发一个新的脚本解释程序，作为ABC语言的一种继承。之所以选中Python（大蟒蛇的意思）作为程序的名字，是因为他是一个蒙提·派森的飞行马戏团的爱好者。（via
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Python"&gt;维基百科&lt;/a&gt;）&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;为何选择 Python&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;软件质量&lt;/li&gt;
+&lt;li&gt;开发者效率&lt;/li&gt;
+&lt;li&gt;可移植性&lt;/li&gt;
+&lt;li&gt;标准库支持&lt;/li&gt;
+&lt;li&gt;组件集成&lt;/li&gt;
+&lt;li&gt;享受乐趣&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;Python 的唯一缺点&lt;/h2&gt;
+&lt;p&gt;也许有人会问，Python 的执行速度快吗？相对于 C/C++
+这类编译编译语言相比，Python 的执行速度还不够快。这取决于 Python
+语言的实现方式：Python
+源文件首先被编译为字节码（跨平台），运行的时候再将字节码解释为底层的机器码（这点类似
+Java）。所以它运行起来将会比 C 这类完全编译型语言慢一点。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;谁在使用 Python&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;因为 Python 是开放源代码的，在很多操作系统上都内置安装了
+Python。开发者社区也有很多，比如&lt;a class="reference external" href="http://wiki.woodpecker.org.cn/"&gt;啄木鸟Python开源社区&lt;/a&gt;，&lt;a class="reference external" href="http://python.cn/"&gt;Python
+中文社区&lt;/a&gt;。另外 Google 的 &lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/python/gettingstarted/"&gt;App
+Engine&lt;/a&gt;
+使用的 Python 开发平台最值得我们注意。我们可以利用这个平台学习
+Python。&lt;/div&gt;
+&lt;div class="line"&gt;以下是一份 Python
+合作伙伴列表的&lt;a class="reference external" href="http://python.org/psf/"&gt;链接地址&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>排序算法：选择排序</title><link href="/selection_sort.html" rel="alternate"></link><published>2010-08-15T15:23:00+08:00</published><updated>2010-08-15T15:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-15:/selection_sort.html</id><summary type="html">&lt;p&gt;选择排序 (selection sort)
+是一种简单直观的排序算法。它的工作原理如下：首先在未排序序列中找到最大（或最小）的元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最大（或最小）元素，然后放到排序序列末尾。以此类推，直到所有元素均排序完毕。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;伪代码&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;for i ( first element)&amp;nbsp; to n (next to last element):&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; for i+1 (second element) to n(next to last element):&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; compare the i+1 element with nth element, if nth is greater …&lt;/tt&gt;&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;选择排序 (selection sort)
+是一种简单直观的排序算法。它的工作原理如下：首先在未排序序列中找到最大（或最小）的元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最大（或最小）元素，然后放到排序序列末尾。以此类推，直到所有元素均排序完毕。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;伪代码&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;for i ( first element)&amp;nbsp; to n (next to last element):&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; for i+1 (second element) to n(next to last element):&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; compare the i+1 element with nth element, if nth is greater, swap values&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;简单说明&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;交换操作介于0和(n − 1)次之间。&lt;/li&gt;
+&lt;li&gt;比较操作为n(n − 1) / 2次之间。&lt;/li&gt;
+&lt;li&gt;赋值操作介于0和3(n − 1)次之间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;源代码示例&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;/* 字符串指针排序函数 */ void stsrt (char &lt;span class="pre"&gt;*strings[],&lt;/span&gt; int num) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; char *temp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; int top, seek;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;for (top = 0; top &amp;lt; num-1; top++)&lt;/div&gt;
+&lt;div class="line"&gt;for (seek = top + 1; seek &amp;lt; num; seek++)&lt;/div&gt;
+&lt;div class="line"&gt;if (strcmp (strings[top], strings[seek]) &amp;gt; 0)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;temp = strings[top];&lt;/div&gt;
+&lt;div class="line"&gt;strings[top] = strings[seek];&lt;/div&gt;
+&lt;div class="line"&gt;strings[seek] = temp;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>学习 C 数组与指针小结</title><link href="/c-array-pointer.html" rel="alternate"></link><published>2010-07-23T15:28:00+08:00</published><updated>2010-07-23T15:28:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-23:/c-array-pointer.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;在 C
+语言中，数组其实是一种变相使用指针的形式。通过了解指针与数组之间的关系，可以使用指针方便地操作数组。以下是一些指针和数组之间的关系说明：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;... int * p;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // 定义一个整型指针 int arr[2] = {1, 2};&amp;nbsp;&amp;nbsp; // 定义一个整型数组&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;p = arr; // 把数组地址赋给指针&lt;/div&gt;
+&lt;div class="line"&gt;p == &amp;amp;arr[0]; // 指针 p 指向数组 arr 首元素地址&lt;/div&gt;
+&lt;div class="line"&gt;arr == &amp;amp;arr[0]; // 数组名同时代表数组首元素的地址&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;p + 1 == &amp;amp;arr[1]; // 对指针加 1 等于加上它所指向的对象的字节大小 (int
+一般为 4 字节)&lt;/div&gt;
+&lt;div class="line"&gt;p + 2 == &amp;amp;arr[2]; // 相同的地址&lt;/div&gt;
+&lt;div class="line"&gt;*(p + 2) == arr …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;在 C
+语言中，数组其实是一种变相使用指针的形式。通过了解指针与数组之间的关系，可以使用指针方便地操作数组。以下是一些指针和数组之间的关系说明：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;... int * p;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // 定义一个整型指针 int arr[2] = {1, 2};&amp;nbsp;&amp;nbsp; // 定义一个整型数组&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;p = arr; // 把数组地址赋给指针&lt;/div&gt;
+&lt;div class="line"&gt;p == &amp;amp;arr[0]; // 指针 p 指向数组 arr 首元素地址&lt;/div&gt;
+&lt;div class="line"&gt;arr == &amp;amp;arr[0]; // 数组名同时代表数组首元素的地址&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;p + 1 == &amp;amp;arr[1]; // 对指针加 1 等于加上它所指向的对象的字节大小 (int
+一般为 4 字节)&lt;/div&gt;
+&lt;div class="line"&gt;p + 2 == &amp;amp;arr[2]; // 相同的地址&lt;/div&gt;
+&lt;div class="line"&gt;*(p + 2) == arr[2]; // 相同的值，arr 数组第三个元素的值&lt;/div&gt;
+&lt;div class="line"&gt;*(arr + i) == arr[i]; // 与下面语句等价，arr 为数组名&lt;/div&gt;
+&lt;div class="line"&gt;*(p + i) == arr[i]; // p 为指针变量，可使用 p++ 表达式&lt;/div&gt;
+&lt;div class="line"&gt;++p != ++arr; // 只能对指针变量使用自增一元运算符，在此语法错误！&lt;/div&gt;
+&lt;div class="line"&gt;...&lt;/div&gt;
+&lt;div class="line"&gt;例子 1：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;/* arr_and_p.c &lt;span class="pre"&gt;--&lt;/span&gt; 对一个数组的所有元素求和 */ #define SIZE 10 #include&amp;nbsp; int sum (int *, int *); // 声明函数原型 int main (void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; int balls[SIZE] = {30, 20, 25, 9, 56, 14, 18, 16, 21, 28};&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; long total = 0;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;total = sum (balls, balls + SIZE); // 调用函数, balls + SIZE
+为数组的结束地址&lt;/div&gt;
+&lt;div class="line"&gt;printf (&amp;quot;The total number of balls is %ld.n&amp;quot;, total);&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;int sum (int * start, int * end) // 函数定义&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;int total = 0;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;while (start &amp;lt; end)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;total += *(start++); // 此处括号可省略，* 和 ++ 优先级相同，从右至左&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;此例子主要演示使用指针对数组操作的函数，最后函数返回数组内所有元素的和。&lt;/div&gt;
+&lt;div class="line"&gt;首先看程序第 4 ，10， 16 行的数组参数变量的声明和调用。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;第 4 行中，由于原型允许省略名称，所以还有以下 3 种原型是和它等价的：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;int sum (int * start, int * end); int sum (int &lt;span class="pre"&gt;start[],&lt;/span&gt; int &lt;span class="pre"&gt;end[]);&lt;/span&gt; int sum (int [], int &lt;span class="pre"&gt;[]);&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;div class="line"&gt;使用指针作为参数来处理数组时，可选用数组符号或指针符号。正如多数程序员认为的，程序员的主要任务是保证程序的正确性和可读性，代码的优化应该留给编译器去做。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在处理数组的函数中使用指针作为形式参量（而不是数组），而在函数中可以使用数组符号来处理数组。同时，使用数组名做为参数时，实质上是传递的是数组的地址，而非整个数组。也正由于指针与数组名可以互换使用，一般调用处理数组的函数时，传递该数组的开始和结束地址即可（如例1）。&lt;/p&gt;
+</content></entry><entry><title>C 指针介绍</title><link href="/c-pointer.html" rel="alternate"></link><published>2010-07-17T15:06:00+08:00</published><updated>2010-07-17T15:06:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-17:/c-pointer.html</id><summary type="html">&lt;p&gt;指针（pointer）的定义：在信息工程中，指针是一个用来指示一个内存地址的变量或中央处理器(CPU)中的寄存器(Register)。&lt;strong&gt;在
+C 语言中，指针就是一个存储着变量地址的变量。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;与指针相关的操作运算符&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;＆：地址运算符，后跟一个变量表示该变量的地址。比如：&amp;amp;foo 得到的是变量
+foo 的地址。&lt;/li&gt;
+&lt;li&gt;＊：间接运算符，后跟一个指针名或地址表示存储在被指向地址中的值。比如；p
+= &amp;amp;foo, *p 为 foo 的值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;指针声明&lt;/h2&gt;
+&lt;p&gt;因为指针是一个变量，其保存的变量地址的那个变量有相应的数据类型，不同的变量类型占用的储存空间大小不同，所以必须说明指针所指向变量的数据类型。指针的声明如下：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;int * foo;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // foo 是指向一个整型变量的指针 float * bar;&amp;nbsp; // bar 是指向一个浮点变量的指针&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;类型标识符 int
+说明被指向变量的类型，而不是此指针变量的数据类型，它是一种新的数据类型。星号（＊）说明此变量是一个指针 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;指针（pointer）的定义：在信息工程中，指针是一个用来指示一个内存地址的变量或中央处理器(CPU)中的寄存器(Register)。&lt;strong&gt;在
+C 语言中，指针就是一个存储着变量地址的变量。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;与指针相关的操作运算符&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;＆：地址运算符，后跟一个变量表示该变量的地址。比如：&amp;amp;foo 得到的是变量
+foo 的地址。&lt;/li&gt;
+&lt;li&gt;＊：间接运算符，后跟一个指针名或地址表示存储在被指向地址中的值。比如；p
+= &amp;amp;foo, *p 为 foo 的值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;指针声明&lt;/h2&gt;
+&lt;p&gt;因为指针是一个变量，其保存的变量地址的那个变量有相应的数据类型，不同的变量类型占用的储存空间大小不同，所以必须说明指针所指向变量的数据类型。指针的声明如下：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;int * foo;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // foo 是指向一个整型变量的指针 float * bar;&amp;nbsp; // bar 是指向一个浮点变量的指针&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;类型标识符 int
+说明被指向变量的类型，而不是此指针变量的数据类型，它是一种新的数据类型。星号（＊）说明此变量是一个指针。代码书写规范：*
+和指针名之间的空格可选，通常在声明时加上，作为间接运算符取值使用时省略。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;指针在函数间的通信示例&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;[cc lang=&amp;quot;c&amp;quot;]&lt;/div&gt;
+&lt;div class="line"&gt;/* pointer.c -- 使用指针交换变量 */&lt;/div&gt;
+&lt;div class="line"&gt;#include&lt;/div&gt;
+&lt;div class="line"&gt;void change (int *, int *); // 声明函数&lt;/div&gt;
+&lt;div class="line"&gt;int main (void)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;int a, b; // 声明两个整型变量&lt;/div&gt;
+&lt;div class="line"&gt;printf (&amp;quot;Please input two int numbers:n&amp;quot;);&lt;/div&gt;
+&lt;div class="line"&gt;scanf (&amp;quot;%d%d&amp;quot;, &amp;amp;a, &amp;amp;b); // 为两变量赋值&lt;/div&gt;
+&lt;div class="line"&gt;printf (&amp;quot;Before change a = %d and b = %d.n&amp;quot;, a, b);&lt;/div&gt;
+&lt;div class="line"&gt;change (&amp;amp;a, &amp;amp;b); // 向函数传递地址&lt;/div&gt;
+&lt;div class="line"&gt;printf (&amp;quot;After change a = %d and b = %d.n&amp;quot;, a, b);&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;void change (int * x, int * y) // 函数定义&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;int temp; // 声明一个整型的临时变量&lt;/div&gt;
+&lt;div class="line"&gt;temp = *x; // 将指针类型的参数 x 指向的数值赋给 temp&lt;/div&gt;
+&lt;div class="line"&gt;*x = *y; // 将指针 x 指向 y 指向的数值&lt;/div&gt;
+&lt;div class="line"&gt;*y = temp; // 将指针 y 指向 temp 即 x 指向的数值&lt;/div&gt;
+&lt;div class="line"&gt;// 因 x 为 main 中 a 的地址，y 为 b 的地址&lt;/div&gt;
+&lt;div class="line"&gt;// 至此已完成两值的交换&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;[/cc]&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;========================分割线========================&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;理解指针的相关概念，弄清楚变量名称，地址和数值之前的关系至关重要。变量地址一般只由计算机处理，当然你也可以打印出来以满足好奇心。一般也只有低级语言（比较接近机器语言，如汇编和C）才有指针这一概念，面向对象语言如
+Java 一般避免使用指针。&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>升级 WordPress 3.0 正式版：备份文件和数据库</title><link href="/upgrade-wordpress-3-0-release.html" rel="alternate"></link><published>2010-06-18T08:41:00+08:00</published><updated>2010-06-18T08:41:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-18:/upgrade-wordpress-3-0-release.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://wordpress.org"&gt;WordPress&lt;/a&gt;是一个免费的开源项目,在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。&lt;/p&gt;
+&lt;p&gt;经 RC3 测试版过后，WordPress 马上放出 3.0
+正式版。登陆管理后台就可以看到更新提示了。作为一位版本控，二话不说马上准备升级。下面就简单介绍一下升级的准备工作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;备份文件到本地机器上&lt;/strong&gt;。可以使用 FTP
+工具（&lt;a class="reference external" href="http://filezilla-project.org"&gt;FileZilla&lt;/a&gt;），或 UNIX Shell
+（比如，SSH）。由于我的 SSH 被禁用，所以使用比较通用的 FTP 工具
+FileZilla 来备份整个 WordPress 站点：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;WordPress核心安装文件&lt;/li&gt;
+&lt;li&gt;WordPress插件&lt;/li&gt;
+&lt;li&gt;WordPress主题&lt;/li&gt;
+&lt;li&gt;图片和文件&lt;/li&gt;
+&lt;li&gt;Javascripts, PHP脚本, 和其他代码文件&lt;/li&gt;
+&lt;li&gt;其他文件和静态页面&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;现在的大部分主机供应商都备份整个服务器，所以也包括了我们的网站，比如&lt;a class="reference external" href="https://panel.dreamhost.com/index.cgi?tree=home.backup&amp;amp;"&gt;DreamHost&lt;/a&gt;
+的就可以在 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://wordpress.org"&gt;WordPress&lt;/a&gt;是一个免费的开源项目,在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。&lt;/p&gt;
+&lt;p&gt;经 RC3 测试版过后，WordPress 马上放出 3.0
+正式版。登陆管理后台就可以看到更新提示了。作为一位版本控，二话不说马上准备升级。下面就简单介绍一下升级的准备工作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;备份文件到本地机器上&lt;/strong&gt;。可以使用 FTP
+工具（&lt;a class="reference external" href="http://filezilla-project.org"&gt;FileZilla&lt;/a&gt;），或 UNIX Shell
+（比如，SSH）。由于我的 SSH 被禁用，所以使用比较通用的 FTP 工具
+FileZilla 来备份整个 WordPress 站点：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;WordPress核心安装文件&lt;/li&gt;
+&lt;li&gt;WordPress插件&lt;/li&gt;
+&lt;li&gt;WordPress主题&lt;/li&gt;
+&lt;li&gt;图片和文件&lt;/li&gt;
+&lt;li&gt;Javascripts, PHP脚本, 和其他代码文件&lt;/li&gt;
+&lt;li&gt;其他文件和静态页面&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;现在的大部分主机供应商都备份整个服务器，所以也包括了我们的网站，比如&lt;a class="reference external" href="https://panel.dreamhost.com/index.cgi?tree=home.backup&amp;amp;"&gt;DreamHost&lt;/a&gt;
+的就可以在 CPanel&amp;gt;Dreamhost&amp;gt;Backup Your Account
+找到。BTW，想成为一名优秀的站长，应该懂得如何备份和养成良好的经常备份的习惯。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;备份数据库&lt;/strong&gt;。第一种方法，使用命令行的方式访问（前提条件是必须先安装好
+MySQL 软件）：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;mysql &lt;span class="pre"&gt;-u&lt;/span&gt; username &lt;span class="pre"&gt;-ppassword&lt;/span&gt; &lt;span class="pre"&gt;-h&lt;/span&gt; hostname databasename&lt;/tt&gt;&lt;/div&gt;
+&lt;div class="line"&gt;（注意: &lt;strong&gt;在 -p 和 password
+之前是没有空格的！&lt;/strong&gt;，另外说明一下，有些主机限制这种连接方式，请用下面这种的方法吧）&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;第二种方法，使用最流行的数据库管理系统之一的
+&lt;a class="reference external" href="http://codex.wordpress.org/phpMyAdmin"&gt;phpMyAdmin&lt;/a&gt;。一般主机提供商有提供该工具，在主机
+Cpanel 管理后台可找到。万一没有找到，请 Google 吧。下面是操作步骤：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;只勾选包含WordPress站点的数据表&lt;/li&gt;
+&lt;li&gt;勾选&amp;quot;Add DROP TABLE&amp;quot;&lt;/li&gt;
+&lt;li&gt;勾选&amp;quot;Complete inserts&amp;quot;&lt;/li&gt;
+&lt;li&gt;勾选&amp;quot;Save as File&amp;quot;&lt;/li&gt;
+&lt;li&gt;压缩那项勾选&amp;quot;None&amp;quot;，如果你的数据库很大，那么选择一种压缩方式。&lt;/li&gt;
+&lt;li&gt;点Go，然后数据就会保存到你的电脑中。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;把这些文件保存到一个安全的地方 !&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最后，回到后台放心地点自动升级&lt;/strong&gt;，很快就可以看到升级到 3.0
+后的效果——后台界面变成白灰色。需要注意的是，&lt;strong&gt;现在的 WordPress 3.0
+正式版是国际版本，有限支持简单中文，本地化版本暂时没有发布&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;WordPress 3.0 介绍文章：&lt;a class="reference external" href="http://www.wordpress.la/WordPress-3.0.html"&gt;WordPress 3.0十大看点 |
+WordPress啦!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;详细备份请参考：&lt;a class="reference external" href="http://codex.wordpress.org/zh-cn:WordPress_%E5%A4%87%E4%BB%BD"&gt;WordPress
+官方备份说明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;WordPress 下载：&lt;a class="reference external" href="http://wordpress.org/download/"&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Ubuntu 10.04 LTS 归来</title><link href="/ubuntu-10-04-lts-comeback.html" rel="alternate"></link><published>2010-06-15T15:10:00+08:00</published><updated>2010-06-15T15:10:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-15:/ubuntu-10-04-lts-comeback.html</id><summary type="html">&lt;p&gt;終于又回到 &lt;a class="reference external" href="http://ubuntu.com"&gt;Ubuntu&lt;/a&gt; 的怀抱! 自上一个版本 Ubuntu
+8.04 LTS 版本以来, 转眼已是两年.而我也从大二至现在开始工作. 10.04
+改进了很多, 希望一起加油, 一起进步!&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;終于又回到 &lt;a class="reference external" href="http://ubuntu.com"&gt;Ubuntu&lt;/a&gt; 的怀抱! 自上一个版本 Ubuntu
+8.04 LTS 版本以来, 转眼已是两年.而我也从大二至现在开始工作. 10.04
+改进了很多, 希望一起加油, 一起进步!&lt;/p&gt;
+</content></entry><entry><title>递归算法：一个简单的递归函数</title><link href="/a-simple-recursive-function.html" rel="alternate"></link><published>2010-06-10T16:10:00+08:00</published><updated>2010-06-10T16:10:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-10:/a-simple-recursive-function.html</id><summary type="html">&lt;p&gt;今天看了某 C 语言 Primer
+教材中一递归（recursion）示例运行结果，一开始让我迷惑不解，后来才发觉原来我一直不懂递归。枉我之前还写过递归读取树结构的文件目录的
+Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且看代码清单如下：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/* recursion.c &lt;span class="pre"&gt;--&lt;/span&gt; 递归演示 */ /* 程序显示递归的级数 n 及存储 n 的内存地址 */ #include&amp;nbsp; void recursion(int);&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;int main(void)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;recursion(1);&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;void recursion(int n)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;第%d级递归: n 内存地址 %pn&amp;quot;, n, &amp;amp;n);&lt;/div&gt;
+&lt;div class="line"&gt;if (n &amp;lt; 4 …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;今天看了某 C 语言 Primer
+教材中一递归（recursion）示例运行结果，一开始让我迷惑不解，后来才发觉原来我一直不懂递归。枉我之前还写过递归读取树结构的文件目录的
+Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且看代码清单如下：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/* recursion.c &lt;span class="pre"&gt;--&lt;/span&gt; 递归演示 */ /* 程序显示递归的级数 n 及存储 n 的内存地址 */ #include&amp;nbsp; void recursion(int);&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;int main(void)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;recursion(1);&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;void recursion(int n)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;第%d级递归: n 内存地址 %pn&amp;quot;, n, &amp;amp;n);&lt;/div&gt;
+&lt;div class="line"&gt;if (n &amp;lt; 4)&lt;/div&gt;
+&lt;div class="line"&gt;recursion(n+1); // 注意此处 n+1 并不等于 ++n!&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;第%d级递归: n 内存地址 %pn&amp;quot;, n, &amp;amp;n);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;运行结果&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;第1级递归: n 内存地址 0022FF30 第2级递归: n 内存地址 0022FF10 第3级递归: n 内存地址 0022FEF0 第4级递归: n 内存地址 0022FED0 第4级递归: n 内存地址 0022FED0 第3级递归: n 内存地址 0022FEF0 第2级递归: n 内存地址 0022FF10 第1级递归: n 内存地址 0022FF30&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;递归函数分析&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;递归函数即是直接或间接调用自身的函数。在上面的程序中，recursion()
+递归函数定义代码中，局部变量 n&amp;lt;4 不是正好调用自己三次打印 3 次，另加上
+if 控制语句外的 1 条打印语句，应该是打印输出 4 打语句才对的啊，Why？&lt;/p&gt;
+&lt;p&gt;如果有人和我开始的想法一样，那下面开始分析。&lt;/p&gt;
+&lt;p&gt;首先看调用函数 main() 中，使用参数 1 调用了 recursion()
+函数。recursion() 的形参 n 为 1，故打印输出的 n 值为 1。接着由于
+n=1&amp;lt;4，第一级递归使用 n=n+1 即 n=2 调用 recursion(), 使得 n
+在第二级中调用被赋值为 2，打印输出 n 的值为
+2。依此类推，下面的调用输出的为第 3 级递归和第 4 级递归。&lt;/p&gt;
+&lt;p&gt;这都没问题，好，继续看当开始执行第四级调用时，此时 n=4，由于 n&amp;lt;4
+不成立不再调用 recursion()
+函数，直接执行下面的语句，输出：“第4级递归...”。现在看关键的地方，&lt;strong&gt;第四级递归调用至此已经执行完毕了，那接着做些什么事呢。按我们开始的想法是函数调用结束，回到调用函数
+main()
+整个程序运行结束。&lt;/strong&gt;问题正是出于此，&lt;strong&gt;当第四级调用结束会把返回给当前被调用函数（即第四级递归）的调用函数（即第三级递归），而非直接返回到第一级递归调用的
+main() 函数！&lt;/strong&gt;，就这么简单的逻辑却被我们忽略了，哈哈&lt;/p&gt;
+&lt;p&gt;同时注意到第层的调用中 n
+的内存地址有所变化，说明每一级的递归使用的是它自己的私有变量。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;总结&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果是刚接触递归可能会有些迷惑，使用递归必须注意几点：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;递归可以使程序结构简单，但递归的执行效率没有循环语句高，需注意使用。&lt;/li&gt;
+&lt;li&gt;递归每一级函数的调用都有它自己的私有变量。&lt;/li&gt;
+&lt;li&gt;每一次函数调用完都有一次返回，这是容易疏忽的一点。&lt;/li&gt;
+&lt;li&gt;递归调用&lt;strong&gt;前&lt;/strong&gt;的语句和各级被调用函数具有相同的执行顺序。这点看输出结果就知道了，不难理解。&lt;/li&gt;
+&lt;li&gt;递归调用&lt;strong&gt;后&lt;/strong&gt;的语句和各级被调用函数的执行顺序相反。&lt;/li&gt;
+&lt;li&gt;递归的深度不宜太深，会很快消耗掉计算机资源。同时必须包含终止递归的语句。&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>C语言基础：输入缓冲区</title><link href="/c-input-buffer.html" rel="alternate"></link><published>2010-06-06T03:40:00+08:00</published><updated>2010-06-06T03:40:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-06:/c-input-buffer.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;缓冲定义&lt;/strong&gt;：暂时存放输入或输出数据的存储区域&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;strong&gt;实例代码&lt;/strong&gt;：缓冲输入的实例——延时回显&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/* echo.c &lt;span class="pre"&gt;--&lt;/span&gt; 回显输入 */ #include&amp;nbsp; int main(void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; char ch;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;while((ch=getchar()) != '#')&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch);&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;程序示例1：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;hello,welcome to magicalboy.com【回车】 hello,welcome to magicalboy.com you are always the &lt;span class="pre"&gt;#1!【回车】&lt;/span&gt; you are always the&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;程序示例2：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;hheelloo,,wweellccoommee&lt;/span&gt; ttoo&amp;nbsp; &lt;span class="pre"&gt;mmaaggiiccaallbbooyy..ccoomm【回车 …&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;缓冲定义&lt;/strong&gt;：暂时存放输入或输出数据的存储区域&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;strong&gt;实例代码&lt;/strong&gt;：缓冲输入的实例——延时回显&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/* echo.c &lt;span class="pre"&gt;--&lt;/span&gt; 回显输入 */ #include&amp;nbsp; int main(void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; char ch;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;while((ch=getchar()) != '#')&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch);&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;程序示例1：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;hello,welcome to magicalboy.com【回车】 hello,welcome to magicalboy.com you are always the &lt;span class="pre"&gt;#1!【回车】&lt;/span&gt; you are always the&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;程序示例2：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;hheelloo,,wweellccoommee&lt;/span&gt; ttoo&amp;nbsp; &lt;span class="pre"&gt;mmaaggiiccaallbbooyy..ccoomm【回车】&lt;/span&gt; yyoouu&amp;nbsp; aarree aallwwaayyss&amp;nbsp; tthhee&amp;nbsp; #&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;程序分析&lt;/h2&gt;
+&lt;p&gt;输入的字符被临时存储在缓冲区中，直到按下回车键，所缓冲的字符才变得可用，同时，缓冲区被清空。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;为什么需要缓冲区&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;提高数据传输效率，将若干个字符作为一个块传输比逐个发送这些字符耗费的时间少。&lt;/li&gt;
+&lt;li&gt;及时修改数据，如果输入有误，可以及时更正，直到按下回车键发送正确的输入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;缓冲的分类&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;完全缓冲
+I/O：缓冲区满时被清空，即缓冲区数据被发送到目的地。此类缓冲通常用在文件输入中。缓冲区的大小取决于系统，常见的值有512字节和4096字节。&lt;/li&gt;
+&lt;li&gt;行缓冲
+I/O：这种就是前面例子演示的缓冲，当遇到一个换行字符或按下回车键时将被清空缓冲区，键盘输入是标准的行缓冲。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;非缓冲输入&lt;/h2&gt;
+&lt;p&gt;直接输入，表示输入的数据对程序马上可用，例如，前面的程序运行示例2中，我们在命令行输入的字符马上回显。再如游戏中的输入，按下一个键马上执行某一个命令。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;结束语&lt;/h2&gt;
+&lt;p&gt;ANSI
+C规定应该对输入进行缓冲，但K&amp;amp;R则将选择权留给了编译器的实现。运行上面的程序，大多数系统都能看到如程序示例1的结果，大家可以动手试一下。&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>C语言基础：打印长字符串</title><link href="/c-print-a-long-string.html" rel="alternate"></link><published>2010-06-02T14:31:00+08:00</published><updated>2010-06-02T14:31:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-02:/c-print-a-long-string.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;C语言重登王位，赶紧学好C混个铁饭碗才行了。确实，不管C语言有没有王者归来，它都是一门很强大的语言。Linux/Unix
+核心是用C写的，Java，Python等高级语言也是用C来实现，学习C简直是百益而无一害啊！&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;好了好了，说回本次话题，打印长字符串在Java中直接使用重载的“+”运算符，即可在下一行断行继续输入，那么在C中要怎么写呢：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/** * LongStrg.java &lt;span class="pre"&gt;--&lt;/span&gt; 打印长字符串 * &amp;#64;author magicalboy */ public class LongStrg {&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public static void main(String[] args) {&lt;/div&gt;
+&lt;div class="line"&gt;System.out.println(&amp;quot;Hello, Welcome to magicalboy's blog!n&amp;quot; +&lt;/div&gt;
+&lt;div class="line"&gt;&amp;quot;Any problems please contact &lt;a class="reference external" href="mailto:admin&amp;#64;magicalboy.com"&gt;admin&amp;#64;magicalboy.com&lt;/a&gt;. Thanks …&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;C语言重登王位，赶紧学好C混个铁饭碗才行了。确实，不管C语言有没有王者归来，它都是一门很强大的语言。Linux/Unix
+核心是用C写的，Java，Python等高级语言也是用C来实现，学习C简直是百益而无一害啊！&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;好了好了，说回本次话题，打印长字符串在Java中直接使用重载的“+”运算符，即可在下一行断行继续输入，那么在C中要怎么写呢：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/** * LongStrg.java &lt;span class="pre"&gt;--&lt;/span&gt; 打印长字符串 * &amp;#64;author magicalboy */ public class LongStrg {&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public static void main(String[] args) {&lt;/div&gt;
+&lt;div class="line"&gt;System.out.println(&amp;quot;Hello, Welcome to magicalboy's blog!n&amp;quot; +&lt;/div&gt;
+&lt;div class="line"&gt;&amp;quot;Any problems please contact &lt;a class="reference external" href="mailto:admin&amp;#64;magicalboy.com"&gt;admin&amp;#64;magicalboy.com&lt;/a&gt;. Thanks! \n&amp;quot;);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决问题&lt;/h2&gt;
+&lt;p&gt;C没有这样的写法，也不能在引号括起来的字符串中间断行，要实现上面的效果，有如下三种方法：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/* longstrg.c &lt;span class="pre"&gt;--&lt;/span&gt; 打印长字符串 */ #include int main(void) { /* 第 1 种方法，使用多个 printf() 语句 */ &lt;span class="pre"&gt;printf(&amp;quot;Hello,&lt;/span&gt; Welcome to magicalboy's &lt;span class="pre"&gt;blog!\n&amp;quot;);&lt;/span&gt; &lt;span class="pre"&gt;printf(&amp;quot;Any&lt;/span&gt; problems please contact admin&amp;#64;magicalboy.com. &lt;span class="pre"&gt;Thanks!\n&amp;quot;);&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;/* 第 2 种方法，使用反斜线符号（）和回车键组合 （同Python）*/&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;Hello, Welcome to magicalboy's blog!n&lt;/div&gt;
+&lt;div class="line"&gt;Any problems please contact &lt;a class="reference external" href="mailto:admin&amp;#64;magicalboy.com"&gt;admin&amp;#64;magicalboy.com&lt;/a&gt;. Thanks!n&amp;quot;);&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;/* 第 3 种方法，采用 ANSI C 标准的字符串连接方法 */&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;Hello, Welcome to magicalboy's blog!n&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;&amp;quot;Any problems please contact &lt;a class="reference external" href="mailto:admin&amp;#64;magicalboy.com"&gt;admin&amp;#64;magicalboy.com&lt;/a&gt;. Thanks!n&amp;quot;);&lt;/div&gt;
+&lt;div class="line"&gt;getchar(); // 等待输入字符，防止执行窗口关闭&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;结束语&lt;/h2&gt;
+&lt;p&gt;方法有很多种，选择哪一种见仁见智吧。不要死钻牛角尖搞起科研就好，就比如孔乙己说的回字有四样写法的典范。就当作一下笔记吧，别忘了又翻书去，这是最不想看到的结果！&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>dev-c++自动缩进设置</title><link href="/dev-c-automatically-indent-settings.html" rel="alternate"></link><published>2010-05-30T07:12:00+08:00</published><updated>2010-05-30T07:12:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-30:/dev-c-automatically-indent-settings.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Dev-C++&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;strong&gt;Dev-C++&lt;/strong&gt;是一套用于开发C/C++的&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6"&gt;自由的&lt;/a&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"&gt;整合性开发环境&lt;/a&gt;（IDE），并以&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81"&gt;GPL&lt;/a&gt;作为散布许可。使用
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/MinGW"&gt;MinGW&lt;/a&gt; 及
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/GDB"&gt;GDB&lt;/a&gt;
+作为编译系统与除错系统。Dev-C++的IDE是利用&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Delphi"&gt;Delphi&lt;/a&gt;开发
+的。&lt;/blockquote&gt;
+&lt;p&gt;它使用包管理器，集成GCC，MinGW等包，支持C99标准，基于GPL让它得到很好的改进，但似乎有段时间没有更新了。当前IDE最新版本为4.9.9.2&lt;/p&gt;
+&lt;p&gt;下载最新版本的dev-c++：&lt;a class="reference external" href="http://sourceforge.net/projects/dev-cpp/files/"&gt;http://sourceforge.net/projects/dev-cpp/files/&lt;/a&gt;，Windows平台下载并运行devcpp-4.9.9.2_setup.exe直接安装&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;解决自动缩进问题&lt;/h2&gt;
+&lt;p&gt;默认的缩进代码如下：&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;/* divisible.c &lt;span class="pre"&gt;--&lt;/span&gt; 求约数 */ #include&amp;nbsp; #include …&lt;/tt&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Dev-C++&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;strong&gt;Dev-C++&lt;/strong&gt;是一套用于开发C/C++的&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6"&gt;自由的&lt;/a&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"&gt;整合性开发环境&lt;/a&gt;（IDE），并以&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81"&gt;GPL&lt;/a&gt;作为散布许可。使用
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/MinGW"&gt;MinGW&lt;/a&gt; 及
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/GDB"&gt;GDB&lt;/a&gt;
+作为编译系统与除错系统。Dev-C++的IDE是利用&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Delphi"&gt;Delphi&lt;/a&gt;开发
+的。&lt;/blockquote&gt;
+&lt;p&gt;它使用包管理器，集成GCC，MinGW等包，支持C99标准，基于GPL让它得到很好的改进，但似乎有段时间没有更新了。当前IDE最新版本为4.9.9.2&lt;/p&gt;
+&lt;p&gt;下载最新版本的dev-c++：&lt;a class="reference external" href="http://sourceforge.net/projects/dev-cpp/files/"&gt;http://sourceforge.net/projects/dev-cpp/files/&lt;/a&gt;，Windows平台下载并运行devcpp-4.9.9.2_setup.exe直接安装&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;解决自动缩进问题&lt;/h2&gt;
+&lt;p&gt;默认的缩进代码如下：&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;/* divisible.c &lt;span class="pre"&gt;--&lt;/span&gt; 求约数 */ #include&amp;nbsp; #include&amp;nbsp; int main(void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; int num;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; int div;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;printf(&amp;quot;请输入一个整数：&amp;quot;);&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;scanf(&amp;quot;%d&amp;quot;,&lt;/span&gt; &amp;amp;num);&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;for(div=2; div {&lt;/div&gt;
+&lt;div class="line"&gt;if(num%div == 0)&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;%d 为 %d 的约数n&amp;quot;, div, num);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;// getchar();&lt;/div&gt;
+&lt;div class="line"&gt;system(&amp;quot;pause&amp;quot;);&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;默认的缩进截图：&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_178&amp;quot; align=&amp;quot;alignleft&amp;quot; width=&amp;quot;788&amp;quot;
+caption=&amp;quot;dev-c++代码自动缩进&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/devc-1.png"&gt;&lt;img alt="dev-c++代码自动缩进" class="size-full wp-image-178" src="http://magicalboy.com/wp-content/uploads/2010/05/devc-1.png" style="width: 788px; height: 509px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;设置编辑选项：Tools菜单—&amp;gt;Editor Options—&amp;gt;General标签项，取消选中的Smart
+Tabs，问题就解决了！&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_179&amp;quot; width=&amp;quot;441&amp;quot;
+caption=&amp;quot;dev-c++编辑设置&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/devc-2.png"&gt;&lt;img alt="dev-c++编辑设置" class="size-full wp-image-179" src="http://magicalboy.com/wp-content/uploads/2010/05/devc-2.png" style="width: 441px; height: 443px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;另外，Dev-C++还支持国际化，支持中文，可在“工具”—&amp;gt;“环境选项”—&amp;gt;“界面”—&amp;gt;“语言”中选择“Chinese”即可。&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>典型的C编程风格</title><link href="/a-typical-c-programming-style.html" rel="alternate"></link><published>2010-05-28T15:37:00+08:00</published><updated>2010-05-28T15:37:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-28:/a-typical-c-programming-style.html</id><summary type="html">&lt;p&gt;C语法很灵活，如果我们都遵循一些良好的编程风格，可以写出高效率，思路清晰的代码。同时这也是一个程序员应该养成的良好习惯。良好的编程习惯有：写注释，代码对齐，规范命名等等。这篇文章只简单的展示一个经典的编程风格，请先看以下程序清单：&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;/* cypher1.c &lt;span class="pre"&gt;--&lt;/span&gt; 改变输入，只保留其中的空格 */ #include&amp;nbsp; #define SPACE ' ' int main(void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; char ch;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;ch = getchar(); // 读入一个字符&lt;/div&gt;
+&lt;div class="line"&gt;while(ch != 'n') // 当一行未结束时&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;if(ch == SPACE) // 空格不变&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch);&lt;/div&gt;
+&lt;div class="line"&gt;else&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch+1);&lt;/div&gt;
+&lt;div class="line"&gt;ch = getchar(); // 获取下一个字符&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch); // 打印换行符&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这里一个读取字符语句在while循环之前，另一个 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;C语法很灵活，如果我们都遵循一些良好的编程风格，可以写出高效率，思路清晰的代码。同时这也是一个程序员应该养成的良好习惯。良好的编程习惯有：写注释，代码对齐，规范命名等等。这篇文章只简单的展示一个经典的编程风格，请先看以下程序清单：&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;/* cypher1.c &lt;span class="pre"&gt;--&lt;/span&gt; 改变输入，只保留其中的空格 */ #include&amp;nbsp; #define SPACE ' ' int main(void) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; char ch;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;ch = getchar(); // 读入一个字符&lt;/div&gt;
+&lt;div class="line"&gt;while(ch != 'n') // 当一行未结束时&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;if(ch == SPACE) // 空格不变&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch);&lt;/div&gt;
+&lt;div class="line"&gt;else&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch+1);&lt;/div&gt;
+&lt;div class="line"&gt;ch = getchar(); // 获取下一个字符&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;putchar(ch); // 打印换行符&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这里一个读取字符语句在while循环之前，另一个“读”在循环的结尾，这样，我们可以通过C灵活的语法来将读取字符和判断字符合并为一个表达式：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;ch = &lt;span class="pre"&gt;getchar();&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // 读入一个字符 while(ch != 'n')&amp;nbsp;&amp;nbsp; // 当一行未结束时 {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ……&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ch = &lt;span class="pre"&gt;getchar();&lt;/span&gt; // 获取下一个字符 }&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;替换为下面这种形式&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;while((ch&lt;/span&gt; = &lt;span class="pre"&gt;getchar())&lt;/span&gt; != 'n')&amp;nbsp;&amp;nbsp; // 当一行未结束时 {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; …… // 处理字符 }&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;这种典型的习惯用法在C及其它现在语言中很常见，我们应当熟悉它&lt;/p&gt;
+</content></entry><entry><title>腾讯微博邀请码，要赶紧联系啦</title><link href="/t-blog-invite-code.html" rel="alternate"></link><published>2010-05-07T04:53:00+08:00</published><updated>2010-05-07T04:53:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-07:/t-blog-invite-code.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;昨天中午开通的腾讯微博，当晚就获得了三个邀请资格，有以下图为证，喜欢的网友赶紧啦，截至发稿还剩三个&lt;/div&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_124&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;232&amp;quot;
+caption=&amp;quot;邀请听众&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/t-blog-invite-code.html/invite2"&gt;&lt;img alt="邀请听众" class="size-full wp-image-124" src="http://magicalboy.com/wp-content/uploads/2010/05/invite2.png" style="width: 232px; height: 60px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_125&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;241&amp;quot;
+caption=&amp;quot;QQ面板提示信息&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/invite.png"&gt;&lt;img alt="QQ面板提示信息" class="size-full wp-image-125" src="http://magicalboy.com/wp-content/uploads/2010/05/invite.png" style="width: 241px; height: 127px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;晕哦，图截得小了，证明不了，再截一张&lt;/div&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_126&amp;quot; align=&amp;quot;alignnone&amp;quot;
+caption=&amp;quot;腾讯微博邀请&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/t-blog-invite-code.html/invite1"&gt;&lt;img alt="腾讯微博邀请" class="size-full wp-image-126" src="http://magicalboy.com/wp-content/uploads/2010/05/invite1.png" style="width: 717px; height: 185px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;怎么说还能获取2个种子，因为我获取了一个，还没复制发过别人，所以说还剩下三个！&lt;/div&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;昨天中午开通的腾讯微博，当晚就获得了三个邀请资格，有以下图为证，喜欢的网友赶紧啦，截至发稿还剩三个&lt;/div&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_124&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;232&amp;quot;
+caption=&amp;quot;邀请听众&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/t-blog-invite-code.html/invite2"&gt;&lt;img alt="邀请听众" class="size-full wp-image-124" src="http://magicalboy.com/wp-content/uploads/2010/05/invite2.png" style="width: 232px; height: 60px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_125&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;241&amp;quot;
+caption=&amp;quot;QQ面板提示信息&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/invite.png"&gt;&lt;img alt="QQ面板提示信息" class="size-full wp-image-125" src="http://magicalboy.com/wp-content/uploads/2010/05/invite.png" style="width: 241px; height: 127px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;晕哦，图截得小了，证明不了，再截一张&lt;/div&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_126&amp;quot; align=&amp;quot;alignnone&amp;quot;
+caption=&amp;quot;腾讯微博邀请&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/t-blog-invite-code.html/invite1"&gt;&lt;img alt="腾讯微博邀请" class="size-full wp-image-126" src="http://magicalboy.com/wp-content/uploads/2010/05/invite1.png" style="width: 717px; height: 185px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;怎么说还能获取2个种子，因为我获取了一个，还没复制发过别人，所以说还剩下三个！&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>程序人生之始：初定目标职业技能</title><link href="/initially-for-target-vocational-skills.html" rel="alternate"></link><published>2010-04-23T06:59:00+08:00</published><updated>2010-04-23T06:59:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-23:/initially-for-target-vocational-skills.html</id><summary type="html">&lt;p&gt;职业技能和目标&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;熟悉一两门高级语言（比如，Java、Python）和C/C++&lt;/li&gt;
+&lt;li&gt;熟悉数据库SQL语言及操作&lt;/li&gt;
+&lt;li&gt;熟悉操作系统Linux&lt;/li&gt;
+&lt;li&gt;提高个人素质涵养，交际沟通能力，团队合作的Teamwork&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;p&gt;职业技能和目标&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;熟悉一两门高级语言（比如，Java、Python）和C/C++&lt;/li&gt;
+&lt;li&gt;熟悉数据库SQL语言及操作&lt;/li&gt;
+&lt;li&gt;熟悉操作系统Linux&lt;/li&gt;
+&lt;li&gt;提高个人素质涵养，交际沟通能力，团队合作的Teamwork&lt;/li&gt;
+&lt;/ol&gt;
+</content></entry><entry><title>代码语法高亮显示插件</title><link href="/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html" rel="alternate"></link><published>2010-04-22T01:26:00+08:00</published><updated>2010-04-22T01:26:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-22:/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html</id><summary type="html">&lt;div class="section" id="java-hellomidlet-java"&gt;
+&lt;h2&gt;Java - HelloMidlet.java&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;import javax.microedition.lcdui.Display; import javax.microedition.lcdui.TextBox; import &lt;span class="pre"&gt;javax.microedition.midlet.*;&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;public class HelloMidlet extends MIDlet {&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public HelloMidlet(){&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public void startApp() {&lt;/div&gt;
+&lt;div class="line"&gt;String info = this.getAppProperty(&amp;quot;MIDlet-Vendor&amp;quot;) +
+this.getAppProperty(&amp;quot;MIDlet-Jar-Size&amp;quot;)&lt;/div&gt;
+&lt;div class="line"&gt;+ this.getAppProperty(&amp;quot;MIDlet-Description&amp;quot;) + &amp;quot;wtf&amp;quot;;&lt;/div&gt;
+&lt;div class="line"&gt;// System.out.println(info);&lt;/div&gt;
+&lt;div class="line"&gt;Display.getDisplay(this).setCurrent(&lt;/div&gt;
+&lt;div class="line"&gt;new TextBox(&amp;quot;MIDlet属性 …&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="java-hellomidlet-java"&gt;
+&lt;h2&gt;Java - HelloMidlet.java&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;import javax.microedition.lcdui.Display; import javax.microedition.lcdui.TextBox; import &lt;span class="pre"&gt;javax.microedition.midlet.*;&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;public class HelloMidlet extends MIDlet {&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public HelloMidlet(){&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public void startApp() {&lt;/div&gt;
+&lt;div class="line"&gt;String info = this.getAppProperty(&amp;quot;MIDlet-Vendor&amp;quot;) +
+this.getAppProperty(&amp;quot;MIDlet-Jar-Size&amp;quot;)&lt;/div&gt;
+&lt;div class="line"&gt;+ this.getAppProperty(&amp;quot;MIDlet-Description&amp;quot;) + &amp;quot;wtf&amp;quot;;&lt;/div&gt;
+&lt;div class="line"&gt;// System.out.println(info);&lt;/div&gt;
+&lt;div class="line"&gt;Display.getDisplay(this).setCurrent(&lt;/div&gt;
+&lt;div class="line"&gt;new TextBox(&amp;quot;MIDlet属性&amp;quot;, info, 20, 0));&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public void pauseApp() {&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;public void destroyApp(boolean unconditional) {&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h2&gt;Python&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;#! /usr/bin/env python &lt;span class="pre"&gt;#coding=utf-8&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;copyright (c) magicalboy(&lt;a class="reference external" href="mailto:cdlmagical&amp;#64;gmail.com"&gt;cdlmagical&amp;#64;gmail.com&lt;/a&gt;)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;This is a free software. It's destributed under the terms of GPL.&lt;/div&gt;
+&lt;div class="line"&gt;You can use it to grab HTML documents begin with specified url.&lt;/div&gt;
+&lt;div class="line"&gt;When you give a url, it'll first grab it, and parses all the links&lt;/div&gt;
+&lt;div class="line"&gt;in the page, then grab them all. Enjoy it!&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;import os&lt;/div&gt;
+&lt;div class="line"&gt;from os.path import isdir&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;def changefilepath(pathname):&lt;/div&gt;
+&lt;div class="line"&gt;if(os.path.isdir(pathname)):&lt;/div&gt;
+&lt;div class="line"&gt;for f in os.listdir(pathname):&lt;/div&gt;
+&lt;div class="line"&gt;filename = pathname +''+f&lt;/div&gt;
+&lt;div class="line"&gt;if(os.path.isdir(filename)):&lt;/div&gt;
+&lt;div class="line"&gt;changefilepath(filename);&lt;/div&gt;
+&lt;div class="line"&gt;else:&lt;/div&gt;
+&lt;div class="line"&gt;updateURL(filename);&lt;/div&gt;
+&lt;div class="line"&gt;else:&lt;/div&gt;
+&lt;div class="line"&gt;updateURL(pathname);&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;def updateURL(pathname):&lt;/div&gt;
+&lt;div class="line"&gt;suffix = pathname.split('#')[1]&lt;/div&gt;
+&lt;div class="line"&gt;id = pathname.split('#')[0]&lt;/div&gt;
+&lt;div class="line"&gt;if suffix == &amp;quot;st.html&amp;quot;:&lt;/div&gt;
+&lt;div class="line"&gt;print id&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;changefilepath(r&amp;quot;F:studydata&amp;quot;)&lt;/div&gt;
+&lt;div class="line"&gt;注意：codecolorer有些小Bug，它将我的反斜杠转义后再显示，所以要显示上面的文件路径，必须在code标签里面这样写：filename
+= pathname +''+f&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mysql"&gt;
+&lt;h2&gt;MySQL&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;CREATE USER &lt;span class="pre"&gt;'magicalboy'&amp;#64;'localhost'&lt;/span&gt; IDENTIFIED BY 'magicalboypw'&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="c"&gt;
+&lt;h2&gt;C&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;#include&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;int main(void)&lt;/div&gt;
+&lt;div class="line"&gt;{&lt;/div&gt;
+&lt;div class="line"&gt;printf(&amp;quot;hello world!n&amp;quot;);&lt;/div&gt;
+&lt;div class="line"&gt;return 0;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;支持的语言详见：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://wordpress.org/extend/plugins/codecolorer/other_notes/"&gt;http://wordpress.org/extend/plugins/codecolorer/other_notes/&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://wordpress.org/extend/plugins/codecolorer/installation/"&gt;http://wordpress.org/extend/plugins/codecolorer/installation/&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>sad but true, what is the date...</title><link href="/sad-but-true-what-is-the-date.html" rel="alternate"></link><published>2010-04-21T00:44:00+08:00</published><updated>2010-04-21T00:44:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-21:/sad-but-true-what-is-the-date.html</id><summary type="html">&lt;p&gt;sad but true, what is the date tody&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;sad but true, what is the date tody&lt;/p&gt;
+</content></entry><entry><title>MagicWiki正式开通上线了</title><link href="/magicwiki-online.html" rel="alternate"></link><published>2010-04-18T13:04:00+08:00</published><updated>2010-04-18T13:04:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-18:/magicwiki-online.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;MagicWiki&lt;/a&gt;知识共享平台已正式开通，详情请访问&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;http://magicalboy.com/wiki/&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;MagicWiki&lt;/a&gt;知识共享平台已正式开通，详情请访问&lt;a class="reference external" href="http://magicalboy.com/wiki/"&gt;http://magicalboy.com/wiki/&lt;/a&gt;&lt;/p&gt;
+</content></entry><entry><title>Hello world！</title><link href="/hello-world-2.html" rel="alternate"></link><published>2010-04-18T06:47:00+08:00</published><updated>2010-04-18T06:47:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-18:/hello-world-2.html</id><summary type="html">&lt;p&gt;欢迎访问MAGICALBOY的博客。这虽然是系统自动生成的演示文章。我已经编辑它，开始我的博客，和大家分享我的程序人生！&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;欢迎访问MAGICALBOY的博客。这虽然是系统自动生成的演示文章。我已经编辑它，开始我的博客，和大家分享我的程序人生！&lt;/p&gt;
+</content></entry><entry><title>Flex learning~~http://livedocs...</title><link href="/flex-learninghttplivedocs.html" rel="alternate"></link><published>2010-03-16T00:56:00+08:00</published><updated>2010-03-16T00:56:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-03-16:/flex-learninghttplivedocs.html</id><summary type="html">&lt;p&gt;Flex learning~~http://livedocs.adobe.com/flex/3/html/index.html&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Flex learning~~http://livedocs.adobe.com/flex/3/html/index.html&lt;/p&gt;
+</content></entry><entry><title>Hello, magicalboy!</title><link href="/hello-magicalboy.html" rel="alternate"></link><published>2010-03-12T07:24:00+08:00</published><updated>2010-03-12T07:24:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-03-12:/hello-magicalboy.html</id><summary type="html">&lt;p&gt;Hello, magicalboy!&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Hello, magicalboy!&lt;/p&gt;
+</content></entry></feed>

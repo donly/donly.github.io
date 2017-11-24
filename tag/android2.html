@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - Android</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-05-18T13:16:00+08:00" pubdate>
+                            六, 18  5 2013
+                        </time>
+                        <a href="/samsung-gt-i9082-rom.html" rel="bookmark"><h1>Samsung GT-I9082 刷机（多图）</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>朋友在公司手机拍卖上入了一台i9082，嗯，这是一台5&quot;屏，分辨率为480 x 800
+(WVGA)的手机，<a class="reference external" href="http://www.samsung.com/tw/support/model/GT-I9082EWABRI-techspecs">详细参数点这里</a>。。当然这手机不是为我而买的，我只负责将里面的
+Android OS 刷掉换为有中文语言的。</p>
+<div class="line-block">
+<div class="line">使用 odin3 刷机，旧版本会报 &quot;There is no memory&quot; 错误。</div>
+<div class="line">刷的是台版的 ROM（GT-I9082-BRI-I9082ZTAMA5），网上随便找的。。</div>
+<div class="line">不说了，详细看图，三星的塑料机v5</div>
+<div class="line">[gallery
+ids=&quot;43113,43114,43115,43116,43117,43118,43119,43120,43121,43122,43123,43124&quot;]</div>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-04-10T17:42:00+08:00" pubdate>
+                            三, 10  4 2013
+                        </time>
+                        <a href="/how-to-exit-android-app.html" rel="bookmark"><h1>理解 Android 应用退出</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天我又学了一下 Android 开发，了解如何退出一个 Android 程序。</p>
+<p>Android
+没有退出应用程序的API，所谓退出是指关闭此应用的进程。要彻底关闭一个
+App，应该到设置-&gt;应用程序管理中强制关闭。类似于 iOS 设备双击 Home
+按钮，持续按住应用至出现关闭提示来关闭。内存控们的至爱 ：）</p>
+<p>所以退出一个 Android app，只需要清理 Activity
+，令它生命周期结束，并返回手机主界面，其余的让 OS
+来处理吧。下面是一段用于普通 Android OS 退出代码：</p>
+<pre class="code shell literal-block">
+Intent <span class="nv">intent</span> <span class="o">=</span> new Intent<span class="o">(</span>Intent.ACTION_MAIN<span class="o">)</span><span class="p">;</span>
+intent.addCategory<span class="o">(</span>Intent.CATEGORY_HOME<span class="o">)</span><span class="p">;</span>
+intent.setFlags<span class="o">(</span>Intent.FLAG_ACTIVITY_NEW_TASK<span class="o">)</span><span class="p">;</span>
+startActivity<span class="o">(</span>intent …</pre>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-04-27T22:04:00+08:00" pubdate>
+                            五, 27  4 2012
+                        </time>
+                        <a href="/htchd2-wifi-error-solution.html" rel="bookmark"><h1>HTC HD2 WIFI Error 解决方法</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>为了了解Android与WP7等手机移动操作系统特性，但又限于经济条件不可能买多台手机，因此年初入手了一台神机
+<a class="reference external" href="https://zh.wikipedia.org/wiki/HTC_HD2">HTC HD2</a>。马上刷上 Android
+HTC Sense 3.5
+Rom（来自<a class="reference external" href="http://forum.xda-developers.com/showthread.php?t=1298188">XDA</a>），感觉非常完美。直到现在已经使用两个月左右，突然出现WIFI启动不了，提示
+WIFI Error。</p>
+<div class="line-block">
+<div class="line"><img alt="WIFI Error" src="https://lh3.googleusercontent.com/-E-hjEaCTdo4/T5o6LPrv-jI/AAAAAAAABGg/LN6Lg-ltIFs/s553/wifi_error.png" style="width: 266px; height: 442px;" /></div>
+<div class="line">上图：设置里面的无线与网络截屏。</div>
+</div>
+<div class="line-block">
+<div class="line"><img alt="wifi error2" src="https://lh4.googleusercontent.com/-EL8Wwq2Cfkg/T5o6K-aH_mI/AAAAAAAABGc/I78HRKh-ukM/s553/wifi_error2.png" style="width: 266px; height: 442px;" /></div>
+<div class="line">上图：通知的控件显示截屏。</div>
+</div>
+<div class="section" id="id1">
+<h2>寻找解决方法</h2>
+<p>刚开始以为是ROM或Radio等软件问题，花了不少时间折腾。因为还在保修期内，所以还是决定了返修处理。将问题具体情况写在纸条上，一定要说清楚。并和手机一起寄给卖家，邮费自付。然后关注机子的最新动态，每天要记得联系他们了解情况，不出两天他们就修好寄回来了，连邮费都是他们出。</p>
+</div>
+<div class="section" id="id2">
+<h2>问题原因是什么</h2>
+<div class="line-block">
+<div class="line">返修给修理师傅是修好了，但是什么原因导致WIFI
+Error呢。问过他们得到的回答是手机字体库坏了，需要用专用的仪器刷，不需要换任何零件。</div>
+<div class="line"><img alt="聊天记录" src="https://lh5.googleusercontent.com/-djWwK-pErMw/T5qixBdDW7I/AAAAAAAABG0/lg1GpCCEl0M/s360/htc_hd2_contact_record.jpg" /></div>
+</div>
+<p>虽说可能是因刷机太多引起的，怎么可能阻止得了刷机的诱惑，何况也正是HD2的使命。生命在于折腾，目前已经愉快地用上<a class="reference external" href="http://forum.xda-developers.com/showthread.php?t=1404993">CM7 …</a></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-04-08T10:23:00+08:00" pubdate>
+                            日, 08  4 2012
+                        </time>
+                        <a href="/how-to-take-screenshots-on-android-device.html" rel="bookmark"><h1>如何在 Android 设备上截图</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在苹果 iOS 设备上可以很轻松的使用 Home + Power
+组合按键来截图，系统自带有此功能。但在 Android
+系统上，没有类似系统自带的截图功能，肿么办？</p>
+<p>本文介绍如何使用 Dalvik Debug Monitor Server ( DDMS)
+截图，它的特点有：免root， 免App，不影响程序运行性能，随时可截图。</p>
+<div class="section" id="id1">
+<h2>操作步骤</h2>
+<ol class="arabic simple">
+<li>安装 Android SDK，（Windows 用户可参考
+<a class="reference external" href="/android-dev-guid-for-windows.html">Android开发环境搭建（Windows篇）</a>）</li>
+<li>在设置（Settings） &gt; 应用程序（Applications） &gt;
+开发（Development）开启 USB 调试（USB Debugging）。</li>
+<li>连接 Android 设备，可通过 USB 或者 Wireless …</li></ol></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="/tag/android.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 2 / 2
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

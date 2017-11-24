@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 未分类</title><link href="/" rel="alternate"></link><link href="/feeds/wei-fen-lei.atom.xml" rel="self"></link><id>/</id><updated>2013-05-18T13:16:00+08:00</updated><entry><title>Samsung GT-I9082 刷机（多图）</title><link href="/samsung-gt-i9082-rom.html" rel="alternate"></link><published>2013-05-18T13:16:00+08:00</published><updated>2013-05-18T13:16:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-05-18:/samsung-gt-i9082-rom.html</id><summary type="html">&lt;p&gt;朋友在公司手机拍卖上入了一台i9082，嗯，这是一台5&amp;quot;屏，分辨率为480 x 800
+(WVGA)的手机，&lt;a class="reference external" href="http://www.samsung.com/tw/support/model/GT-I9082EWABRI-techspecs"&gt;详细参数点这里&lt;/a&gt;。。当然这手机不是为我而买的，我只负责将里面的
+Android OS 刷掉换为有中文语言的。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;使用 odin3 刷机，旧版本会报 &amp;quot;There is no memory&amp;quot; 错误。&lt;/div&gt;
+&lt;div class="line"&gt;刷的是台版的 ROM（GT-I9082-BRI-I9082ZTAMA5），网上随便找的。。&lt;/div&gt;
+&lt;div class="line"&gt;不说了，详细看图，三星的塑料机v5&lt;/div&gt;
+&lt;div class="line"&gt;[gallery
+ids=&amp;quot;43113,43114,43115,43116,43117,43118,43119,43120,43121,43122,43123,43124&amp;quot;]&lt;/div&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;p&gt;朋友在公司手机拍卖上入了一台i9082，嗯，这是一台5&amp;quot;屏，分辨率为480 x 800
+(WVGA)的手机，&lt;a class="reference external" href="http://www.samsung.com/tw/support/model/GT-I9082EWABRI-techspecs"&gt;详细参数点这里&lt;/a&gt;。。当然这手机不是为我而买的，我只负责将里面的
+Android OS 刷掉换为有中文语言的。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;使用 odin3 刷机，旧版本会报 &amp;quot;There is no memory&amp;quot; 错误。&lt;/div&gt;
+&lt;div class="line"&gt;刷的是台版的 ROM（GT-I9082-BRI-I9082ZTAMA5），网上随便找的。。&lt;/div&gt;
+&lt;div class="line"&gt;不说了，详细看图，三星的塑料机v5&lt;/div&gt;
+&lt;div class="line"&gt;[gallery
+ids=&amp;quot;43113,43114,43115,43116,43117,43118,43119,43120,43121,43122,43123,43124&amp;quot;]&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="Android"></category><category term="刷机"></category></entry><entry><title>iOS 开发教程，HelloWorld</title><link href="/ios_helloworld.html" rel="alternate"></link><published>2012-03-31T14:47:00+08:00</published><updated>2012-03-31T14:47:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-03-31:/ios_helloworld.html</id><summary type="html">&lt;p&gt;为了方便大家入门iOS开发，写个简单的iOS项目让大家了解一下 iPhone, iPad
+等应用程序是如何开发出来的。本文只是快速入门，不涉及 Objective C
+语法讲解，Xcode 与 User Interface 使用等。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;开发环境&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Mac OS X 10.7.3&lt;/li&gt;
+&lt;li&gt;Xcode Version 4.3.2 (4E2002)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;开发流程&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;选择项目模板，Choose 'Empty Application' for your new project.
+下一步。&lt;/li&gt;
+&lt;li&gt;填写模板选项，项目名称 'HelloWorld'，下一步。&lt;/li&gt;
+&lt;li&gt;选择项目工作空间，创建项目完成。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hello-world"&gt;
+&lt;h2&gt;编写Hello, world&lt;/h2&gt;
+&lt;p&gt;由于新建的项目类型是 'Empty
+Application'，所以是相当纯的 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;为了方便大家入门iOS开发，写个简单的iOS项目让大家了解一下 iPhone, iPad
+等应用程序是如何开发出来的。本文只是快速入门，不涉及 Objective C
+语法讲解，Xcode 与 User Interface 使用等。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;开发环境&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Mac OS X 10.7.3&lt;/li&gt;
+&lt;li&gt;Xcode Version 4.3.2 (4E2002)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;开发流程&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;选择项目模板，Choose 'Empty Application' for your new project.
+下一步。&lt;/li&gt;
+&lt;li&gt;填写模板选项，项目名称 'HelloWorld'，下一步。&lt;/li&gt;
+&lt;li&gt;选择项目工作空间，创建项目完成。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hello-world"&gt;
+&lt;h2&gt;编写Hello, world&lt;/h2&gt;
+&lt;p&gt;由于新建的项目类型是 'Empty
+Application'，所以是相当纯的，窗口是空的。下面用纯 Objective C
+代码的方式创建显示 'Hello, world' 的 UILabel。&lt;/p&gt;
+&lt;p&gt;单击 AppDelegate.m 文件，在 application:didFinishLaunchingWithOptions:
+方法的注释行&amp;quot;Override point for customization after application
+launch.&amp;quot;下面键入以下代码。&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+// 创建一个Label
+UILabel *helloLabel &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt;UILabel alloc&lt;span class="o"&gt;]&lt;/span&gt; initWithFrame:CGRectMake&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;, &lt;span class="m"&gt;10&lt;/span&gt;, &lt;span class="m"&gt;200&lt;/span&gt;, &lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;helloLabel setTextAlignment:UITextAlignmentCenter&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  // 设置Label文本对齐方式为居中
+&lt;span class="o"&gt;[&lt;/span&gt;helloLabel setBackgroundColor:&lt;span class="o"&gt;[&lt;/span&gt;UIColor redColor&lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;   // 设置Label背景色为红色
+&lt;span class="o"&gt;[&lt;/span&gt;helloLabel setText:&amp;#64;&lt;span class="s2"&gt;&amp;quot;Hello, world!!!&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  // 设置Label的文字
+&lt;span class="o"&gt;[&lt;/span&gt;self.window addSubview:helloLabel&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    // 将Label这个View增加到窗口
+&lt;/pre&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;选择模拟器运行（Command+R），你会看到结果：&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="image0" src="https://lh5.googleusercontent.com/-QRFojkmUZbA/T5u6hmYFyGI/AAAAAAAABHM/xuAv5Tou3os/s383/ios_hello_world_result.png" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="xib"&gt;
+&lt;h2&gt;使用XIB来实现以上效果&lt;/h2&gt;
+&lt;p&gt;单击 &lt;em&gt;AppDelegate.h&lt;/em&gt; 文件，在 &lt;em&gt;UIWindow&lt;/em&gt; 前加入关键字 &lt;em&gt;IBOutlet&lt;/em&gt;。&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+&amp;#64;property &lt;span class="o"&gt;(&lt;/span&gt;strong, nonatomic&lt;span class="o"&gt;)&lt;/span&gt; IBOutlet UIWindow *window&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;新建XIB文件，同样为了清楚整个创建过程，选择如处女般清纯的 Empty XIB
+模板。&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="ios_user_interface" src="https://lh6.googleusercontent.com/-Y3zxn6GfyIA/T5u6koRebVI/AAAAAAAABHs/b85O08R1_8k/s732/ios_user_interface.png" style="width: 544px; height: 372px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;打开工具面板&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="xcode_utilities" src="https://lh3.googleusercontent.com/-erIt05OLPKY/T5u6jjjBwwI/AAAAAAAABHk/f2wIRX-Xd5c/s284/xcode_utilities.png" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;增加 XIB 对象&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;XIB对象包括所有UIView对象和UIViewController，NSObject等。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="ios_objects_library" src="https://lh6.googleusercontent.com/-lZxa-_BpZMM/T5u6hoG6eAI/AAAAAAAABHQ/5GmRUTnF260/s264/ios_objects_library.png" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;稍微配置一下参数&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="Xcode_helloworld_xib 配置" src="https://lh6.googleusercontent.com/-t6P2ExUTQ_g/T5u6imNsR4I/AAAAAAAABHU/HmepJdWnsf4/s903/Xcode_helloworld_xib.png" style="width: 821px; height: 226px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;修改 main.m&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+int main&lt;span class="o"&gt;(&lt;/span&gt;int argc, char *argv&lt;span class="o"&gt;[])&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;
+    &amp;#64;autoreleasepool &lt;span class="o"&gt;{&lt;/span&gt;
+//        &lt;span class="k"&gt;return&lt;/span&gt; UIApplicationMain&lt;span class="o"&gt;(&lt;/span&gt;argc, argv, nil, NSStringFromClass&lt;span class="o"&gt;([&lt;/span&gt;AppDelegate class&lt;span class="o"&gt;]))&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; UIApplicationMain&lt;span class="o"&gt;(&lt;/span&gt;argc, argv, nil, nil&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;修改 Info.plist&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在文件最后增加一行 Key 为 '&lt;em&gt;Main nib file base name'&lt;/em&gt;，Type 为
+'String'，Value 为 '&lt;em&gt;Empty&lt;/em&gt;'，即对应 XIB 名称。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;详细请参考项目源码&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="/media/aglkb25seWNoYW5yDQsSBU1lZGlhGOqBAgw/HelloWorld.7z?a=download"&gt;HelloWorld&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有任何疑问或意见请留言。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;[20120428更新]&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;更新源码下载弹空白窗口问题。&lt;/li&gt;
+&lt;li&gt;调整图片显示大小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</content><category term="helloworld"></category><category term="iOS"></category><category term="iPhone"></category><category term="Objective-C"></category></entry></feed>

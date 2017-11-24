@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    C语言基础：输入缓冲区
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-06T03:40:00+08:00" pubdate>
+                            日, 06  6 2010
+                        </time>
+                        <a href="/c-input-buffer.html" rel="bookmark"><h1>C语言基础：输入缓冲区</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p><strong>缓冲定义</strong>：暂时存放输入或输出数据的存储区域</p>
+<div class="section" id="id1">
+<h2><strong>实例代码</strong>：缓冲输入的实例——延时回显</h2>
+<p><tt class="docutils literal">/* echo.c <span class="pre">--</span> 回显输入 */ #include&nbsp; int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; char ch;</tt></p>
+<div class="line-block">
+<div class="line">while((ch=getchar()) != '#')</div>
+<div class="line">putchar(ch);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<p>程序示例1：</p>
+<p><tt class="docutils literal">hello,welcome to magicalboy.com【回车】 hello,welcome to magicalboy.com you are always the <span class="pre">#1!【回车】</span> you are always the</tt></p>
+<p>程序示例2：</p>
+<p><tt class="docutils literal"><span class="pre">hheelloo,,wweellccoommee</span> ttoo&nbsp; <span class="pre">mmaaggiiccaallbbooyy..ccoomm【回车】</span> yyoouu&nbsp; aarree aallwwaayyss&nbsp; tthhee&nbsp; #</tt></p>
+</div>
+<div class="section" id="id2">
+<h2>程序分析</h2>
+<p>输入的字符被临时存储在缓冲区中，直到按下回车键，所缓冲的字符才变得可用，同时，缓冲区被清空。</p>
+</div>
+<div class="section" id="id3">
+<h2>为什么需要缓冲区</h2>
+<ul class="simple">
+<li>提高数据传输效率，将若干个字符作为一个块传输比逐个发送这些字符耗费的时间少。</li>
+<li>及时修改数据，如果输入有误，可以及时更正，直到按下回车键发送正确的输入。</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>缓冲的分类</h2>
+<ul class="simple">
+<li>完全缓冲
+I/O：缓冲区满时被清空，即缓冲区数据被发送到目的地。此类缓冲通常用在文件输入中。缓冲区的大小取决于系统，常见的值有512字节和4096字节。</li>
+<li>行缓冲
+I/O：这种就是前面例子演示的缓冲，当遇到一个换行字符或按下回车键时将被清空缓冲区，键盘输入是标准的行缓冲。</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>非缓冲输入</h2>
+<p>直接输入，表示输入的数据对程序马上可用，例如，前面的程序运行示例2中，我们在命令行输入的字符马上回显。再如游戏中的输入，按下一个键马上执行某一个命令。</p>
+</div>
+<div class="section" id="id6">
+<h2>结束语</h2>
+<p>ANSI
+C规定应该对输入进行缓冲，但K&amp;R则将选择权留给了编译器的实现。运行上面的程序，大多数系统都能看到如程序示例1的结果，大家可以动手试一下。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

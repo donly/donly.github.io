@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    在 Windows 上学习开发 Objective C
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-09-21T06:39:00+08:00" pubdate>
+                            二, 21  9 2010
+                        </time>
+                        <a href="/objective-c-on-windows.html" rel="bookmark"><h1>在 Windows 上学习开发 Objective C</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Objective-C(ObjC) 现在几乎已经变成了苹果的专利，可以直接在苹果的 Xcode
+上编译 ObjC 程序，但是在 Windows 平台下的编译工具就寥寥无几了，即使 ObjC
+在语言排行榜上的上升速度多么强势给力。</p>
+<p>下面引用维基百科对 <a class="reference external" href="http://zh.wikipedia.org/zh-cn/Objective_C">Objective
+C</a>描述：</p>
+<blockquote>
+<p>Objective-C，通常写作ObjC和较少用的Objective
+C或Obj-C，是在C的基础上，加入面向对象特性扩充而成的編程語言。</p>
+<p>今日主要应用于<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Mac_OS_X">Mac OS
+X</a>和<a class="reference external" href="http://zh.wikipedia.org/zh-cn/IPhone_OS">iPhone
+OS</a>这两个以<a class="reference external" href="http://zh.wikipedia.org/zh-cn/OpenStep">OpenStep</a>为标准的系统，而在<a class="reference external" href="http://zh.wikipedia.org/zh-cn/NeXTSTEP">NeXTSTEP</a>和OpenStep中它更是基本语言。Objective-C可以在任何运行<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Gcc">gcc</a>的系统写和编译，因为gcc含Objective-C的编译器。</p>
+</blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/09/program_top20_on9.png"><img alt="image0" class="alignnone size-full wp-image-836" src="http://magicalboy.com/wp-content/uploads/2010/09/program_top20_on9.png" style="width: 550px; height: 784px;" /></a></div>
+</div>
+<div class="section" id="id1">
+<h2>在 Windows 上编译 Objective C</h2>
+<p>看到前面的介绍，我们了解了如果要编译 ObjC 就必须有 gcc
+或相关的环境。而本文将要介绍使用 <a class="reference external" href="http://www.gnustep.org/">GNUstep</a>
+在 Windows 上搭建 ObjC 开发学习环境。GNUstep是一个跨平台的免费开放的
+Cocoa(NeXTSTEP/OpenStep 的前身) APIs。</p>
+<ol class="arabic simple">
+<li>安装GNUstep</li>
+<li>编写Objective-C代码</li>
+<li>配置环境变量</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>参考链接</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://wiki.gnustep.org/index.php/Deployment_on_Windows">Deployment on Windows -
+GNUstepWiki</a></li>
+<li><a class="reference external" href="http://wiki.gnustep.org/index.php/Installation_on_Windows#Install_msys_developer_toolkit">Installation on Windows -
+GNUstepWiki</a></li>
+<li><a class="reference external" href="http://www.roseindia.net/iphone/objectivec/objective-c-windows.shtml">Objective C on Windows, Objective C Windows, Objective C Windows
+Compiler, Objective C Compiler for
+Windows</a></li>
+</ul>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

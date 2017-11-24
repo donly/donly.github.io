@@ -9,16 +9,16 @@
         <title>MAG's Note - Don</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
         <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
 
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
-        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
-        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -28,7 +28,7 @@
         <div id="wrapper">
 <header id="sidebar" class="side-shadow">
     <hgroup id="site-header">
-        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
         <p id="site-desc"> 关注移动应用开发 </p>
     </hgroup>
     <nav>
@@ -56,169 +56,27 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-23T18:05:00+08:00" pubdate>
-                            一, 23  5 2016
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
                         </time>
-                        <a href="https://magicalboy.com/note/raspberry-pi-gpio.html" rel="bookmark"><h1>树莓派 GPIO 入门</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。</p>
-<p>比较常用的第三方函数库有：</p>
-<ol class="arabic simple">
-<li>Python GPIO</li>
-<li>wiringPi</li>
-<li>BCM2835 C Library</li>
-<li>Shell</li>
-</ol>
-<div class="section" id="model-b-40-pin-gpio">
-<h2>树莓派 3 Model B 的 40 Pin GPIO 编号</h2>
-<img alt="树莓派 3 Model B 的 40 Pin GPIO" src="https://www.element14.com/community/servlet/JiveServlet/previewBody/73950-102-10-339300/pi3_gpio.png" />
-</div>
-<div class="section" id="gpio-led">
-<h2>使用 GPIO 接口控制 LED 闪烁</h2>
-<div class="section" id="id1">
-<h3>硬件清单</h3>
-<ol class="arabic simple">
-<li>树莓派 3 Model B x1。本人机子出自 Element14，GPIO 请参考上图。</li>
-<li>LED 发光二极管 x1。</li>
-<li>母头杜邦线 x2。这些材料在国内很容易买到的。</li>
-</ol>
-</div>
-<div class="section" id="id2">
-<h3>原理说明 …</h3></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-17T10:25:00+08:00" pubdate>
-                            二, 17  5 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/bash-shell.html" rel="bookmark"><h1>bash shell 学习</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：</p>
-<ul class="simple">
-<li><a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell">什么是 shell？</a></li>
-<li><a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言">脚本语言</a></li>
-</ul>
-<p>简单来说， shell 是可以接受用户输入命令的程序，比如 Windows 下的命令行。</p>
-<p>而脚本语言可以理解为不需要编译，直接解释运行的语言。</p>
-<div class="section" id="id2">
-<h2>换行与注释</h2>
-<p>1. bash 在解析字符的时候，对待“;”跟看见回车是一样的
-1. 注释符号为 “#”</p>
-</div>
-<div class="section" id="id3">
-<h2>设计哲学</h2>
-<p>一切皆表达式。</p>
-<p>根据表达式的定义，任何表达式都必须有一个值。而 shell 在执行任何东西（不仅是命令）的时候都会有一个返回值。</p>
-<ul class="simple">
-<li>在 bash 编程中，返回值取值范围：<em>0-255</em></li>
-<li>跟 C 语言含义相反， bash 中 0 为真 …</li></ul></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-16T14:40:00+08:00" pubdate>
-                            一, 16  5 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/raspbian-exfat-support.html" rel="bookmark"><h1>exFAT 文件格式支持</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。</p>
-<p>基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。</p>
-<div class="section" id="id1">
-<h2>为什么要使用 exFAT</h2>
-<ul class="simple">
-<li>支持拷贝文件大于 4 GB</li>
-<li>兼容性好，方便在不同设备上插拔拷贝数据</li>
-<li>部分大容量内存卡购买回来默认使用的就是这种格式</li>
-</ul>
-<p>如何让部分操作系统支持 exFAT？</p>
-</div>
-<div class="section" id="raspberry-pi-raspbian">
-<h2>Raspberry Pi (RASPBIAN)</h2>
-<div class="highlight"><pre><span></span>sudo apt-get install exfat-fuse
-</pre></div>
-<p>安装完成后，重新插拔内存卡即可自动加载出来。</p>
-</div>
-<div class="section" id="android">
-<h2>Android</h2>
-<p>暂无</p>
-</div>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-04-22T14:40:00+08:00" pubdate>
-                            五, 22  4 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/pelican-no-module-named-html_parser.html" rel="bookmark"><h1>Pelican No module named html_parser</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p class="first last">在 OS X 上解决 No module named html_parser 问题。</p>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/Objective-C.html" rel="bookmark"><h1>Objective C</h1></a>
+                        <a href="/reverse-engineering-apk.html" rel="bookmark"><h1>反编译 APK</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="contents topic" id="id1">
 <p class="topic-title first">目录</p>
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id17">介绍</a></li>
-<li><a class="reference internal" href="#id3" id="id18">类</a><ul>
-<li><a class="reference internal" href="#id4" id="id19">声明</a></li>
-<li><a class="reference internal" href="#id5" id="id20">实现</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id6" id="id21">属性</a><ul>
-<li><a class="reference internal" href="#id7" id="id22">声明</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id8" id="id23">方法</a><ul>
-<li><a class="reference internal" href="#id9" id="id24">类方法</a></li>
-<li><a class="reference internal" href="#block" id="id25">Block 块</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#protocol" id="id26">Protocol 协议</a><ul>
-<li><a class="reference internal" href="#id10" id="id27">声明</a></li>
-<li><a class="reference internal" href="#id11" id="id28">使用</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#category" id="id29">Category 分类</a><ul>
-<li><a class="reference internal" href="#id12" id="id30">声明</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id13" id="id31">Objective C 类型</a><ul>
-<li><a class="reference internal" href="#id14" id="id32">类型和字面常量</a></li>
-<li><a class="reference internal" href="#id15" id="id33">编译器指令</a></li>
-<li><a class="reference internal" href="#id16" id="id34">其它</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#apktool" id="id3">apktool</a></li>
+<li><a class="reference internal" href="#dex2jar" id="id4">dex2jar</a></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id17">介绍</a></h2>
-<p>Objective-C 作为 C 程序设计语言的超集，支持与 C 相同的基本语法。您会看到所有熟悉的元素，例如基本类型（<tt class="docutils literal">int</tt>、<tt class="docutils literal">float</tt> 等）、结构、函数、指针，以及流程控制结构，如 <tt class="docutils literal"><span class="pre">if...else</span></tt> 语句和 <tt class="docutils literal">for</tt> 语句。还可以直接使用 C 标准库 …</p></div>
+<div class="section" id="apktool">
+<h2><a class="toc-backref" href="#id3">apktool</a></h2>
+<p><a class="reference external" href="http://ibotpeaches.github.io/Apktool/">apktool1.5.2</a> 使用示范，直接运行：</p>
+<div class="highlight"><pre><span></span>Apktool v1.5.2 - a tool <span class="k">for</span> reengineering Android apk files
+Copyright <span class="m">2010</span> Ryszard Wi?niewski &lt;brut.alll@gmail.com&gt;
+with smali v1.4.1, and baksmali v1.4.1
+Updated by @iBotPeaches &lt;connor.tumbleson@gmail.com&gt;
+Apache License <span class="m">2</span>.0 …</pre></div></div>
                     </section>
                 </article>
             </li>
@@ -226,39 +84,18 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
                         </time>
-                        <a href="https://magicalboy.com/note/android_wear.html" rel="bookmark"><h1>Android Wear</h1></a>
+                        <a href="/skill-framework.html" rel="bookmark"><h1>码农必备</h1></a>
                     </header>
                     <section class="post-content">
-                        <img alt="Android wear for watch" src="images/Android-Wear.jpg" />
-<p>可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。</p>
-<div class="section" id="id1">
-<h2>Android Wear</h2>
-<p>2014年3月19日，Google 发布了可穿戴设备 SDK 的开发者预览版（<a class="reference external" href="https://developer.android.com/wear/index.html">https://developer.android.com/wear/index.html</a>），率先打开可穿戴智能设备平台这个大门。所以，我们可以通过更新 SDK 获取 Android Wear 模拟器来尝个新鲜。</p>
-<p>Android Wear 开发平台搭建步骤：</p>
-<ol class="arabic simple">
-<li>Sign Up for the Developer Preview：<a class="reference external" href="https://developer.android.com/wear/preview/signup.html">https://developer.android.com/wear/preview/signup.html</a></li>
-</ol>
-<img alt="Sign Up for the Developer Preview" src="images/sign_up_google_developer_preview.png" />
-<p>在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/bluetooth.html" rel="bookmark"><h1>Bluetooth</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="ios">
-<h2>iOS</h2>
-<p>Bluetooth access on the ios is very limited. As a matter of fact you can only access it through the GameKit.</p>
+                        <div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="码农的求生技能" src="images/skills.png" />
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
 
                     </section>
@@ -268,111 +105,249 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
                         </time>
-                        <a href="https://magicalboy.com/note/brew.html" rel="bookmark"><h1>Brew</h1></a>
+                        <a href="/svn.html" rel="bookmark"><h1>SVN 使用</h1></a>
                     </header>
                     <section class="post-content">
-                        <div class="section" id="homebrew">
-<h2>Homebrew</h2>
-<p>OS X 或缺的软件包管理器，使用 Ruby 语言实现。官网：<a class="reference external" href="http://brew.sh/index_zh-cn.html">http://brew.sh/index_zh-cn.html</a></p>
-</div>
-<div class="section" id="id1">
-<h2>安装日志</h2>
-<p>在 OS X 10.9.2，Xcode 5.1 下安装 Brew 0.9.5 的日志：</p>
-<div class="highlight"><pre><span></span>$ ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go/install<span class="k">)</span><span class="s2">&quot;</span>
-<span class="o">==</span>&gt; This script will install:
-/usr/local/bin/brew
-/usr …</pre></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/cocoa-auto-layout.html" rel="bookmark"><h1>Cocoa Auto Layout</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Auto Layout 是 iOS 6.0 和 Xcode 4.5 的新特性。</p>
-<p>使用 Cocoa Auto Layout 系统为用户界面元素定义布局约束，其中约束（Constraints）表示用户界面控件之间的关系，比如 “这些视图从头至尾排列”。</p>
-<p>Cocoa Auto Layout 让用户来定义界面元素的布局规则。</p>
-<div class="section" id="id1">
-<h2>视图之间的约束表示</h2>
-</div>
+                        <div class="section" id="id1">
+<h2>创建分支</h2>
+<p>建立分支非常的简单—使用svn copy命令给你的工程做个拷贝。</p>
+<div class="highlight"><pre><span></span>$ svn copy http://svn.example.com/repos/calc/trunk <span class="se">\</span>
+           http://svn.example.com/repos/calc/branches/my-calc-branch <span class="se">\</span>
+      -m <span class="s2">&quot;Creating a private branch of /calc/trunk.&quot;</span>
 
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
-                        </time>
-                        <a href="https://magicalboy.com/note/cpp.html" rel="bookmark"><h1>C++ 学习笔记</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="contents topic" id="id1">
-<p class="topic-title first">目录</p>
-<ul class="simple">
-<li><a class="reference internal" href="#id2" id="id13">概述</a></li>
-<li><a class="reference internal" href="#id3" id="id14">语法</a><ul>
-<li><a class="reference internal" href="#id4" id="id15">注释</a></li>
-<li><a class="reference internal" href="#id5" id="id16">编译预处理指令</a></li>
-<li><a class="reference internal" href="#namespace" id="id17">命名空间 Namespace</a></li>
-<li><a class="reference internal" href="#main" id="id18">main 函数</a></li>
-<li><a class="reference internal" href="#id6" id="id19">语句</a></li>
-<li><a class="reference internal" href="#id7" id="id20">标识符</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id8" id="id21">数据类型</a><ul>
-<li><a class="reference internal" href="#id9" id="id22">系统指定的数据类型</a></li>
-<li><a class="reference internal" href="#id10" id="id23">变量</a></li>
-<li><a class="reference internal" href="#id11" id="id24">常量</a></li>
-<li><a class="reference internal" href="#id12" id="id25">表达式</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id13">概述</a></h2>
-<p>C++是20世纪80年代中期（发行于1983）由AT&amp;T贝尔实验室的 Bjarne Stroustrup 开发的。</p>
-<p>属于面向对象语言，它包含 C 语言全部属性。</p>
-<p>使用很广泛，不得不学。</p>
-</div>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id14">语法</a></h2>
-<div class="section" id="id4">
-<h3><a class="toc-backref" href="#id15">注释</a></h3>
-<div class="highlight"><pre><span></span><span class="c1">// 这是单行注释</span>
-<span class="cm">/**</span>
-<span class="cm"> * 这是</span>
-<span class="cm"> * 多行的注释</span>
-<span class="cm"> */</span>
+Committed revision <span class="m">341</span>.
 </pre></div>
 </div>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id16">编译预处理指令</a></h3>
-<p>编译器对 source code 编译之前做的事。用 &quot;#&quot; 开头的命令行来表示。</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;filename&gt; // 尖括号表示包含的是 C++ 标准库的头文件</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;book …</span></pre></div></div></div>
+<div class="section" id="id2">
+<h2>在分支上工作</h2>
+<p>现在你已经在项目里建立分支了，你可以取出一个新的工作拷贝来开始使用：</p>
+<div class="highlight"><pre><span></span>$ svn checkout http://svn.example.com/repos/calc/branches/my-calc-branch
+A  my-calc-branch/Makefile
+A  my-calc-branch …</pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/text_editor.html" rel="bookmark"><h1>纯文本编辑器</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="retext">
+<h2>ReText</h2>
+<p><a class="reference external" href="http://sourceforge.net/projects/retext/">ReText</a> is a simple editor that reads your text with MarkDown or HTML markup and saves it as plain text, HTML or PDF.</p>
+<p>It is written in Python using Qt libraries.</p>
+<p><strong>It's a cross platform program.</strong></p>
+<div class="section" id="mac-os-x-yosemite">
+<h3>Mac OS X Yosemite 上安装</h3>
+<p>使用 brew 安装：<a class="reference external" href="http://sourceforge.net/p/retext/wiki/Home/">http://sourceforge.net/p/retext …</a></p></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/uiimage.html" rel="bookmark"><h1>UIImage 使用</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html">UIImage Class Reference</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Inherits from</td>
+<td>NSObject</td>
+</tr>
+<tr><td>Framework</td>
+<td>/System/Library/Frameworks/UIKit.framework</td>
+</tr>
+<tr><td>Availability</td>
+<td>Available in iOS 2.0 and later.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="stretch">
+<h2>Stretch</h2>
+<p>将</p>
+<img alt="" src="http://i.stack.imgur.com/IPNUm.png" />
+<p>拉伸为</p>
+<img alt="" src="http://i.stack.imgur.com/1skMj.png" />
+<p>代码：</p>
+<div class="highlight"><pre><span></span><span class="bp">UIImage</span> <span class="o">*</span><span class="n">originalImage</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIImage</span> <span class="nl">imageNamed</span><span class="p">:</span><span class="s">@&quot;myImage.png&quot;</span><span class="p">];</span>
+<span class="bp">UIImage</span> <span class="o">*</span><span class="n">newImage</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">([</span><span class="n">originalImage</span> <span class="nl">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">resizableImageWithCapInsets</span><span class="p">:)])</span> <span class="p">{</span>
+    <span class="c1">// iOS 5 and obove.</span>
+    <span class="n">newImage</span> <span class="o">=</span> <span class="p">[</span><span class="n">originalImage</span> <span class="nl">resizableImageWithCapInsets</span><span class="p">:(</span><span class="bp">UIEdgeInsets</span><span class="p">){</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5 …</span></pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/unit_testing.html" rel="bookmark"><h1>单元测试</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id2">
+<h2>单元测试是什么</h2>
+<p>即分模块测试，针对程序模块进行正确性检验的测试工作。单元测试可以在软件开发过程的早期及时发现问题，同时也利于未来对代码的重构。</p>
+</div>
+<div class="section" id="ios">
+<h2>iOS 中的单元测试</h2>
+<p>OCUnit，被官方集成进XCode 4.x版本中；GHUnit，被推荐最多的测试框架，带GUI界面。</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/xcode.html" rel="bookmark"><h1>Xcode</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Xcode 目前最新版本 <a class="reference external" href="http://magicalboy.com/xcode-5-0/">Xcode 5.0</a> ，支持 iPhone 5s, iOS 7 开发。</p>
+<div class="section" id="what-s-new">
+<h2>What's New</h2>
+<p>各个版本的 Xcode 新增功能说明。</p>
+<div class="section" id="xcode-5-0-x">
+<h3>Xcode 5.0.x</h3>
+<p>Help you design an app that looks gorgeous on iOS 7 or OS X Mavericks.</p>
+<p>WWDC地址：<a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400">What’s New in Xcode 5</a></p>
+<ul class="simple">
+<li>素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets …</li></ul></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/xcode-remove-working-copies.html" rel="bookmark"><h1>Xcode 7 清除多余的 Woking copies</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Xcode 版本：Version 7.1 (7B91b)</p>
+<p><strong>问题描述：</strong>
+由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。</p>
+<p><strong>解决方法：</strong>
+删除 <em>ProjectName.xcworkspace &gt; xcshareddata &gt; ProjectName.xcscmblueprint</em>，重启 Xcode。</p>
+<p>参考链接：<a class="reference external" href="http://stackoverflow.com/a/27535601">http://stackoverflow.com/a/27535601</a></p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-10-26T22:30:00+08:00" pubdate>
+                            四, 26 10 2017
+                        </time>
+                        <a href="/wepy.html" rel="bookmark"><h1>wepy 框架</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="https://wepyjs.github.io/wepy">小程序组件化开发框架</a></p>
+<div class="section" id="id2">
+<h2>WePY项目的创建与使用</h2>
+<ol class="arabic simple">
+<li>环境介绍：macOS Sierra 10.12.6 (16G29)</li>
+</ol>
+<blockquote>
+<pre class="code shell literal-block">
+$ npm --version
+<span class="m">5</span>.4.2
+
+$ node -v
+v8.8.1
+</pre>
+</blockquote>
+<ol class="arabic simple" start="2">
+<li>全局安装或更新WePY命令行工具</li>
+</ol>
+<blockquote>
+<pre class="code shell literal-block">
+$ npm install wepy-cli -g
+/usr/local/bin/wepy -&gt; /usr/local/lib/node_modules/wepy-cli/bin/wepy.js
+
+&gt; fsevents&#64;1.1.2 install /usr/local/lib/node_modules/wepy-cli/node_modules/fsevents
+&gt; node install …</pre></blockquote></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-06-30T19:39:00+08:00" pubdate>
+                            五, 30  6 2017
+                        </time>
+                        <a href="/java_anonymous_class.html" rel="bookmark"><h1>Java 匿名类</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>最近在复习 Java，利用 Learn Java App 有一定基础复习一遍还是很快的。</p>
+<img alt="java" src="https://lh3.googleusercontent.com/GG1ijmZNLKV6wfyLBqgr0Y7Lnx2sPD3pInbzRt9HY5RJIFpxYPPfUDAT2JmnqztmfdjaSPMNsp41fA=w1440-h900-no" />
+<p>在复习过程中，觉得比较容易忘记的几点还是有必要做一下笔记的。比如匿名内部类。</p>
+<div class="section" id="id1">
+<h2>匿名类</h2>
+<p>没有名字，创建方式：</p>
+<div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">父类构造器</span><span class="err">（</span><span class="n">参数列表</span><span class="err">）</span><span class="o">|</span><span class="n">实现接口</span><span class="err">（）</span>
+<span class="o">{</span>
+ <span class="c1">//匿名内部类的类体部分</span>
+<span class="o">}</span>
+</pre></div>
+<p>举个例子：</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Bird</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">int</span> <span class="nf">fly</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="n">Bird …</span></pre></div></div>
                     </section>
                 </article>
             </li>
             <hr/>
         </ol>
         <div class="paginator">
-                    <a href="https://magicalboy.com/note/author/don3.html">
+                    <a href="/author/don3.html">
                         <i class="icon-circle-arrow-left"></i>
                     </a>
             Page 4 / 8
-                <a href="https://magicalboy.com/note/author/don5.html">
+                <a href="/author/don5.html">
                     <i class="icon-circle-arrow-right"></i>
                 </a>
         </div>
@@ -386,6 +361,6 @@
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
     </p>
-</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+</footer>        <script src="/theme/js/main.js"></script>
     </body>
 </html>

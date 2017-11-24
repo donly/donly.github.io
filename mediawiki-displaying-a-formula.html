@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    MediaWiki 增加数学公式显示支持
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-20T07:03:00+08:00" pubdate>
+                            五, 20  8 2010
+                        </time>
+                        <a href="/mediawiki-displaying-a-formula.html" rel="bookmark"><h1>MediaWiki 增加数学公式显示支持</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>最近心血来潮，于是乎为 <a class="reference external" href="http://wiki.magicalboy.com">magicwiki</a>
+增加数学公式显示的支持，有兴趣的朋友不妨前往围观。</p>
+<div class="section" id="id1">
+<h2>原理</h2>
+<p>MediaWiki 对数学公式仅支持 <a class="reference external" href="http://en.wikipedia.org/wiki/TeX">TeX</a>
+标记语言的子集，包括 <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a> 和
+AMS-LaTeX，根据用户的喜好和表达式的复杂性生成简单的 HTML 标记或者 PNG
+图片来显示公式。也就是说 Mediawiki 过滤 Tex 标记后，使用 Texvc
+命令来渲染成图形。</p>
+</div>
+<div class="section" id="texvc">
+<h2>方法一：texvc</h2>
+<div class="line-block">
+<div class="line">为 MediaWiki
+增加数学公式显示支持方法有很多种，如果拥有主机空间的控制权限（比如可使用
+SSH），可尝试下面的方法。</div>
+<div class="line">准备工作是主机上必须安装好以下软件包:</div>
+</div>
+<ul class="simple">
+<li>ocaml</li>
+<li>imagemagick</li>
+<li>gs</li>
+<li>cjk-latex (now called latex-cjk-all)</li>
+<li>tetex-extra</li>
+<li>binutils (&quot;/usr/bin/as&quot; is needed by make job)</li>
+<li>gcc</li>
+</ul>
+<div class="line-block">
+<div class="line">然后 cd 到 MediaWiki 安装目录下的 math/ 子目录，执行 make 开始安装
+texvc。</div>
+<div class="line">最后，在根目录 LocalSettings.php 中设置 $wgUseTeX = true;
+这样就可以使用 math 渲染了。</div>
+<div class="line">在页面中输入</div>
+</div>
+<pre class="literal-block">
+sintheta
+</pre>
+<div class="line-block">
+<div class="line">进行测试，显示没问题。别高兴得太早，来点复杂的：</div>
+<div class="line"><tt class="docutils literal">phi_n(kappa) =&nbsp; <span class="pre">frac{1}{4pi^2kappa^2}</span> int_0^infty&nbsp; frac{sin(kappa <span class="pre">R)}{kappa</span> R}&nbsp; <span class="pre">frac{partial}{partial</span> R}&nbsp; left[R^2frac{partial <span class="pre">D_n(R)}{partial</span> <span class="pre">R}right],dR</span></tt></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">情况貌似没有想像中顺利：“<strong>解析失败
+(无法写入或建立数学公式输出目录)</strong>”出错了。</div>
+</div>
+<p>这是因为前者使用简单的 HTML
+标记即可显示，而后者需要渲染成图片以显示复杂的数学公式，生成图片需要创建目录和文件，由于服务器权限不允许，所以出现在这样的错误。</p>
+<p>解决方法参见<a class="reference external" href="http://www.mediawiki.org/wiki/Manual:Troubleshooting_math_display_errors#.22Failed_to_parse_.28Can.27t_write_to_or_create_math_output_directory.29.22">&quot;Failed to parse (Can't write to or create math output
+directory)&quot;</a></p>
+</div>
+<div class="section" id="mimetex">
+<h2>方法二：使用 Mimetex</h2>
+<div class="line-block">
+<div class="line">使用这种方法实质上是利用外部的 cgi
+链接来帮我们生成公式图片，所以比较灵活，我们可以使用自定义的标签或者修改代码来实现。</div>
+<div class="line">自定义标签方法见：<a class="reference external" href="http://www.mediawiki.org/wiki/Mimetex_alternative">Extension:Mimetex
+alternative</a></div>
+<div class="line">修改代码使 math 也能过滤到使用 mimetex
+渲染文章见：<a class="reference external" href="http://49px.com/wiki/%E5%88%A9%E7%94%A8%E5%A4%96%E9%93%BECGI%E4%B8%BAMediawiki%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81">利用外链CGI为Mediawiki添加数学公式支持</a></div>
+</div>
+<div class="line-block">
+<div class="line">第二种方法也即是修改 includes/Math.php 下的 renderMath 方法：</div>
+<div class="line"><tt class="docutils literal">#public static function renderMath( $tex, $params=array() ) {&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp; global $wgUser;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp; $math = new MathRenderer( $tex, $params );&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp; <span class="pre">$math-&gt;setOutputMode(</span> <span class="pre">$wgUser-&gt;getOption('math'));</span>&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp; return <span class="pre">$math-&gt;render();</span>&nbsp;&nbsp;&nbsp;&nbsp; #}&nbsp;&nbsp;&nbsp;&nbsp; public static function renderMath( $tex, $params=array() ) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return '';&nbsp;&nbsp;&nbsp;&nbsp; }</tt></div>
+</div>
+<p>数学公式展示页：<a class="reference external" href="http://wiki.magicalboy.com/%E6%95%B0%E5%AD%A6">数学</a></p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    C 指针介绍
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-17T15:06:00+08:00" pubdate>
+                            六, 17  7 2010
+                        </time>
+                        <a href="/c-pointer.html" rel="bookmark"><h1>C 指针介绍</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>指针（pointer）的定义：在信息工程中，指针是一个用来指示一个内存地址的变量或中央处理器(CPU)中的寄存器(Register)。<strong>在
+C 语言中，指针就是一个存储着变量地址的变量。</strong></p>
+<div class="section" id="id1">
+<h2>与指针相关的操作运算符</h2>
+<ul class="simple">
+<li>＆：地址运算符，后跟一个变量表示该变量的地址。比如：&amp;foo 得到的是变量
+foo 的地址。</li>
+<li>＊：间接运算符，后跟一个指针名或地址表示存储在被指向地址中的值。比如；p
+= &amp;foo, *p 为 foo 的值。</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>指针声明</h2>
+<p>因为指针是一个变量，其保存的变量地址的那个变量有相应的数据类型，不同的变量类型占用的储存空间大小不同，所以必须说明指针所指向变量的数据类型。指针的声明如下：</p>
+<p><tt class="docutils literal">int * foo;&nbsp;&nbsp;&nbsp;&nbsp; // foo 是指向一个整型变量的指针 float * bar;&nbsp; // bar 是指向一个浮点变量的指针</tt></p>
+<p>类型标识符 int
+说明被指向变量的类型，而不是此指针变量的数据类型，它是一种新的数据类型。星号（＊）说明此变量是一个指针。代码书写规范：*
+和指针名之间的空格可选，通常在声明时加上，作为间接运算符取值使用时省略。</p>
+</div>
+<div class="section" id="id3">
+<h2>指针在函数间的通信示例</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">[cc lang=&quot;c&quot;]</div>
+<div class="line">/* pointer.c -- 使用指针交换变量 */</div>
+<div class="line">#include</div>
+<div class="line">void change (int *, int *); // 声明函数</div>
+<div class="line">int main (void)</div>
+<div class="line">{</div>
+<div class="line">int a, b; // 声明两个整型变量</div>
+<div class="line">printf (&quot;Please input two int numbers:n&quot;);</div>
+<div class="line">scanf (&quot;%d%d&quot;, &amp;a, &amp;b); // 为两变量赋值</div>
+<div class="line">printf (&quot;Before change a = %d and b = %d.n&quot;, a, b);</div>
+<div class="line">change (&amp;a, &amp;b); // 向函数传递地址</div>
+<div class="line">printf (&quot;After change a = %d and b = %d.n&quot;, a, b);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">void change (int * x, int * y) // 函数定义</div>
+<div class="line">{</div>
+<div class="line">int temp; // 声明一个整型的临时变量</div>
+<div class="line">temp = *x; // 将指针类型的参数 x 指向的数值赋给 temp</div>
+<div class="line">*x = *y; // 将指针 x 指向 y 指向的数值</div>
+<div class="line">*y = temp; // 将指针 y 指向 temp 即 x 指向的数值</div>
+<div class="line">// 因 x 为 main 中 a 的地址，y 为 b 的地址</div>
+<div class="line">// 至此已完成两值的交换</div>
+<div class="line">}</div>
+<div class="line">[/cc]</div>
+</div>
+<div><p>========================分割线========================</p>
+</div><p>理解指针的相关概念，弄清楚变量名称，地址和数值之前的关系至关重要。变量地址一般只由计算机处理，当然你也可以打印出来以满足好奇心。一般也只有低级语言（比较接近机器语言，如汇编和C）才有指针这一概念，面向对象语言如
+Java 一般避免使用指针。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

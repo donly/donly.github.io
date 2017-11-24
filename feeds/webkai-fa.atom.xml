@@ -1,0 +1,1714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - WEB开发</title><link href="/" rel="alternate"></link><link href="/feeds/webkai-fa.atom.xml" rel="self"></link><id>/</id><updated>2012-04-21T05:53:00+08:00</updated><entry><title>更新 Google App Engine 应用</title><link href="/update_google_app_engine_applications.html" rel="alternate"></link><published>2012-04-21T05:53:00+08:00</published><updated>2012-04-21T05:53:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-04-21:/update_google_app_engine_applications.html</id><summary type="html">&lt;p&gt;又有一段时间没更新博客程序，博客所用的 &lt;a class="reference external" href="https://developers.google.com/appengine/docs/whatisgoogleappengine?hl=zh-CN"&gt;Google App
+Engine&lt;/a&gt;（以下简称GAE）&lt;a class="reference external" href="https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python"&gt;Python
+版本&lt;/a&gt;当前已经更新到
+&lt;em&gt;1.6.4 - 2012-03-27&lt;/em&gt;。在更新的同时做一些简要的 GAE
+使用笔记，以免下次又忘了去查文档。这里有官网详细的教程：&lt;a class="reference external" href="https://developers.google.com/appengine/docs/python/gettingstarted/?hl=zh-CN"&gt;使用入门：Python&lt;/a&gt;
+。&lt;/p&gt;
+&lt;div class="section" id="google-app-engine-python"&gt;
+&lt;h2&gt;安装 Google App Engine（Python）&lt;/h2&gt;
+&lt;p&gt;在Mac OS Lion 下安装完成后，第一次运行会有提示创建
+Symlink。需要提供管理员权限，成功后会有提示。&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+Symlink Status
+
+Symbolic links in /usr/local/bin have been created &lt;span class="k"&gt;for&lt;/span&gt; the following commands:
+
+api_server.py …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;又有一段时间没更新博客程序，博客所用的 &lt;a class="reference external" href="https://developers.google.com/appengine/docs/whatisgoogleappengine?hl=zh-CN"&gt;Google App
+Engine&lt;/a&gt;（以下简称GAE）&lt;a class="reference external" href="https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python"&gt;Python
+版本&lt;/a&gt;当前已经更新到
+&lt;em&gt;1.6.4 - 2012-03-27&lt;/em&gt;。在更新的同时做一些简要的 GAE
+使用笔记，以免下次又忘了去查文档。这里有官网详细的教程：&lt;a class="reference external" href="https://developers.google.com/appengine/docs/python/gettingstarted/?hl=zh-CN"&gt;使用入门：Python&lt;/a&gt;
+。&lt;/p&gt;
+&lt;div class="section" id="google-app-engine-python"&gt;
+&lt;h2&gt;安装 Google App Engine（Python）&lt;/h2&gt;
+&lt;p&gt;在Mac OS Lion 下安装完成后，第一次运行会有提示创建
+Symlink。需要提供管理员权限，成功后会有提示。&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+Symlink Status
+
+Symbolic links in /usr/local/bin have been created &lt;span class="k"&gt;for&lt;/span&gt; the following commands:
+
+api_server.py appcfg.py bulkload_client.py bulkloader.py dev_appserver.py gen_protorpc.py google_sql.py remote_api_shell.py
+
+In addition, /usr/local/google_appengine points to the SDK.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;下载应用&lt;/h2&gt;
+&lt;p&gt;上传与下载所使用工具为 appcfg.py，基本用法为：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+Usage: appcfg.py &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;在终端输入 appcfg.py 可查看帮助，其中下载应用的 action（动作）为：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+download_app: Download a previously-uploaded app.
+&lt;/pre&gt;
+&lt;pre class="code shell literal-block"&gt;
+Usage: appcfg.py &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt; download_app -A app_id &lt;span class="o"&gt;[&lt;/span&gt; -V version &lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;options 应为账号地址，比如 &lt;a class="reference external" href="mailto:--email=example&amp;#64;magicalboy.com"&gt;--email=example&amp;#64;magicalboy.com&lt;/a&gt;。&lt;/div&gt;
+&lt;div class="line"&gt;app_id 为应用ID名称，紧跟在 -A后面，比如 -A appname。&lt;/div&gt;
+&lt;div class="line"&gt;-V 可选，因为在 app.yaml 中已经指定过了，如果在此指定，则会覆盖
+app.yaml 中的 version 。&lt;/div&gt;
+&lt;div class="line"&gt;为下载到本地保存的目录，该目录不能为空，否则报错：&lt;/div&gt;
+&lt;/div&gt;
+&lt;pre class="code shell literal-block"&gt;
+appcfg.py: error: Cannot download to path &lt;span class="s2"&gt;&amp;quot;./&amp;quot;&lt;/span&gt;: directory already exists and it isn&lt;span class="err"&gt;'&lt;/span&gt;t empty.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;上传应用&lt;/h2&gt;
+&lt;p&gt;在修改完应用之后，准备提交更新时，这时往往需要更改一下 app.yaml
+里面的版本号，以免上传后覆盖服务器上相同版本。以下是 app.yaml
+文件的部分示例：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+application: myapp
+version: &lt;span class="m"&gt;1&lt;/span&gt;-0-dev
+runtime: python
+api_version: &lt;span class="m"&gt;1&lt;/span&gt;
+...
+&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;*版本说明符可以包含字母、数字和连字符。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;提交上传应用&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+appcfg.py --email&lt;span class="o"&gt;=&lt;/span&gt;example&amp;#64;magicalboy.com update myapp/
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;选择默认版本&lt;/h2&gt;
+&lt;p&gt;为什么上传了修改后的应用却没有任何更新呢，在开发服务器上明明有更新的啊，怎么回事。别忘了上传之后还需要在&lt;a class="reference external" href="https://appengine.google.com/"&gt;管理控制台&lt;/a&gt;选择默认使用版本，在
+My Applications 列表的 Current Version
+列中可以看到当前使用版本。进入应用的 Main -&amp;gt; Versions 可以选择默认版本。&lt;/p&gt;
+&lt;p&gt;如果选择后还是没有更新，可以尝试改变一下主题模板试试。&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="GAE"></category><category term="Python"></category></entry><entry><title>IE "Stack overflow at line" 的解决方法</title><link href="/stack-overflow-at-line.html" rel="alternate"></link><published>2010-10-20T02:26:00+08:00</published><updated>2010-10-20T02:26:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-10-20:/stack-overflow-at-line.html</id><summary type="html">&lt;p&gt;出现该错误提示，主要有两种原因：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;使用系统的事件名称作为自定义函数名如：&lt;/li&gt;
+&lt;li&gt;出现死循环 ：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;You can turn off the &amp;quot;Disable Script Debugging&amp;quot; option inside of
+Internet Explorer and start debugging with Visual Studio if you
+happen to have that around.&lt;/li&gt;
+&lt;li&gt;找到无法显示图片的地方，上传图片&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;引用地址：&lt;a class="reference external" href="http://chenchendefeng.javaeye.com/blog/456247"&gt;IE中出现 &amp;quot;Stack overflow at line&amp;quot;
+错误的解决方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;参考地址：&lt;a class="reference external" href="http://stackoverflow.com/questions/226102/stack-overflow-in-line-0-on-internet-explorer"&gt;&amp;quot;Stack Overflow in Line 0&amp;quot; on Internet Explorer - Stack …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;出现该错误提示，主要有两种原因：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;使用系统的事件名称作为自定义函数名如：&lt;/li&gt;
+&lt;li&gt;出现死循环 ：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;You can turn off the &amp;quot;Disable Script Debugging&amp;quot; option inside of
+Internet Explorer and start debugging with Visual Studio if you
+happen to have that around.&lt;/li&gt;
+&lt;li&gt;找到无法显示图片的地方，上传图片&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;引用地址：&lt;a class="reference external" href="http://chenchendefeng.javaeye.com/blog/456247"&gt;IE中出现 &amp;quot;Stack overflow at line&amp;quot;
+错误的解决方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;参考地址：&lt;a class="reference external" href="http://stackoverflow.com/questions/226102/stack-overflow-in-line-0-on-internet-explorer"&gt;&amp;quot;Stack Overflow in Line 0&amp;quot; on Internet Explorer - Stack
+Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>在 Google appengine 搭建 Micolog 博客</title><link href="/build-blog-on-google-appengine.html" rel="alternate"></link><published>2010-08-27T15:39:00+08:00</published><updated>2010-08-27T15:39:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-27:/build-blog-on-google-appengine.html</id><summary type="html">&lt;p&gt;今天简要的介绍一下，如何使用 &lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/"&gt;Google App Engine&lt;/a&gt; 在 Google
+的基础架构上运行您的网络应用程序——搭建一个属于自己的独立博客。&lt;/p&gt;
+&lt;p&gt;适合安装在 GAE 的开源 Python
+博客有很多，&lt;a class="reference external" href="http://www.allengao.com/blog/python-blog-4-google-app-engine-gae.html"&gt;这里&lt;/a&gt; 有一个列表,可以链接去看看.本文主要使用
+&lt;a class="reference external" href="micolog.appspot.com/"&gt;Micolog&lt;/a&gt;
+作为示例，一个追求自由、开放、简约的GAE免费博客程序。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;第一步：配置环境&lt;/h2&gt;
+&lt;p&gt;首先准备好以下环境：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Linux Ubuntu10.04（在 Windows 下相对简单，本文最后给出安装文档链接）&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.python.org/ftp/python/"&gt;Python 2.6.5&lt;/a&gt; （Windows
+需要自行安装，建议安装2.5.x 版本）&lt;/li&gt;
+&lt;li&gt;django-admin.py --version: 0.96.5 （请参考我之前写的 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;今天简要的介绍一下，如何使用 &lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/"&gt;Google App Engine&lt;/a&gt; 在 Google
+的基础架构上运行您的网络应用程序——搭建一个属于自己的独立博客。&lt;/p&gt;
+&lt;p&gt;适合安装在 GAE 的开源 Python
+博客有很多，&lt;a class="reference external" href="http://www.allengao.com/blog/python-blog-4-google-app-engine-gae.html"&gt;这里&lt;/a&gt; 有一个列表,可以链接去看看.本文主要使用
+&lt;a class="reference external" href="micolog.appspot.com/"&gt;Micolog&lt;/a&gt;
+作为示例，一个追求自由、开放、简约的GAE免费博客程序。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;第一步：配置环境&lt;/h2&gt;
+&lt;p&gt;首先准备好以下环境：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Linux Ubuntu10.04（在 Windows 下相对简单，本文最后给出安装文档链接）&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.python.org/ftp/python/"&gt;Python 2.6.5&lt;/a&gt; （Windows
+需要自行安装，建议安装2.5.x 版本）&lt;/li&gt;
+&lt;li&gt;django-admin.py --version: 0.96.5 （请参考我之前写的 &lt;a class="reference external" href="http://magicalboy.com/quick-install-django.html"&gt;Django 快速安装指南&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/downloads.html#Google_App_Engine_SDK_for_Python"&gt;google_appengine_1.3.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://micolog.googlecode.com/files/micolog0.7rc2.zip"&gt;micolog 0.7 RC2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="micolog"&gt;
+&lt;h2&gt;第二步：配置 micolog&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;使用 unzip 或其它解压缩命令来解压 google_appengine_1.3.6.zip 和
+micolog 0.7 RC2.zip，并将 micolog 移动到 google_appengine 下，可使用
+cp 命令，目标目录的命名需要和你的 Google appengine
+中的应用名一致，比如我申请的应用名为
+woicode（以下均使用此名作为示例，读者可自行修改为自己的。）。&lt;/li&gt;
+&lt;li&gt;修改 woicode 下的 app.yaml 文件的第一行为对应的应用名，application:
+woicode。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;第三步，测试并上传&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;可在 google_appengine 目录中使用 &amp;quot;python dev_appserver.py woicode/&amp;quot;
+命令在本地测试。&lt;/li&gt;
+&lt;li&gt;确定没问题可运行后，使用 &amp;quot;python appcfg.py update woicode/&amp;quot;
+命令上传到 google appengine 服务器。&lt;/li&gt;
+&lt;li&gt;打开应用访问地址，应用名.appspot.com，比如我的为
+&lt;a class="reference external" href="http://woicode.appspot.com/"&gt;http://woicode.appspot.com/&lt;/a&gt; 。看到一些错误提示信息甚至 DNS 解析错误都属于正常，因为 google 的 gae 服务器正在为程序建立索引等信息，我们耐心等待吧（一般不会超过12小时）。&lt;/li&gt;
+&lt;li&gt;恭喜你，又一个独立博客！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;对于个人独立博客来说，GAE 为每个应用都提供了足够的空间和访问量（500M 和 500万PV）。&lt;/p&gt;
+&lt;p&gt;访问速度也比较令人满意，如果不喜欢 Google 为我们提供的免费二级域名，还可以绑定自己喜欢的域名（&lt;cite&gt;*.appspot.com&lt;/cite&gt;）。&lt;/p&gt;
+&lt;p&gt;另外，会不会由于某种原因某一天访问不了就不得而知了，希望这一天不会到来吧。&lt;/p&gt;
+&lt;p&gt;附 &lt;a class="reference external" href="http://micolog.appspot.com/%E5%AE%89%E8%A3%85"&gt;micoblog 安装文档&lt;/a&gt; 链接（For Windows）。&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>onsubmit 和 return false</title><link href="/onsubmit-return-false.html" rel="alternate"></link><published>2010-08-24T05:28:00+08:00</published><updated>2010-08-24T05:28:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-24:/onsubmit-return-false.html</id><summary type="html">&lt;p&gt;onsubmit 事件会在表单提交前触发。属于 w3c 标准事件，是 form 标签的属性。&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="22%" /&gt;
+&lt;col width="46%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="7%" /&gt;
+&lt;col width="7%" /&gt;
+&lt;col width="11%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;属性&lt;/th&gt;
+&lt;th class="head"&gt;此事件发生在何时...&lt;/th&gt;
+&lt;th class="head"&gt;IE&lt;/th&gt;
+&lt;th class="head"&gt;F&lt;/th&gt;
+&lt;th class="head"&gt;O&lt;/th&gt;
+&lt;th class="head"&gt;W3C&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;onsubmit&lt;/td&gt;
+&lt;td&gt;确认按钮被点击。&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;支持该事件的 HTML 标签和 JavaScript 对象：&amp;lt;form&amp;gt;。&lt;/div&gt;
+&lt;div class="line"&gt;使用示例——代码清单1：&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="form"&gt;
+&lt;h2&gt;防止 form 表单提交&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;在 onsubmit 事件中返回 false
+值，就能防止表单提交。请看下面代码清单2，表单会提交吗？&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&amp;lt; !DOCTYPE html PUBLIC &lt;span class="pre"&gt;&amp;quot;-//W3C//DTD&lt;/span&gt; XHTML 1.0 &lt;span class="pre"&gt;Transitional//EN&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;&amp;quot;http …&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;onsubmit 事件会在表单提交前触发。属于 w3c 标准事件，是 form 标签的属性。&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="22%" /&gt;
+&lt;col width="46%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="7%" /&gt;
+&lt;col width="7%" /&gt;
+&lt;col width="11%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;属性&lt;/th&gt;
+&lt;th class="head"&gt;此事件发生在何时...&lt;/th&gt;
+&lt;th class="head"&gt;IE&lt;/th&gt;
+&lt;th class="head"&gt;F&lt;/th&gt;
+&lt;th class="head"&gt;O&lt;/th&gt;
+&lt;th class="head"&gt;W3C&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;onsubmit&lt;/td&gt;
+&lt;td&gt;确认按钮被点击。&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;支持该事件的 HTML 标签和 JavaScript 对象：&amp;lt;form&amp;gt;。&lt;/div&gt;
+&lt;div class="line"&gt;使用示例——代码清单1：&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="form"&gt;
+&lt;h2&gt;防止 form 表单提交&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;在 onsubmit 事件中返回 false
+值，就能防止表单提交。请看下面代码清单2，表单会提交吗？&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&amp;lt; !DOCTYPE html PUBLIC &lt;span class="pre"&gt;&amp;quot;-//W3C//DTD&lt;/span&gt; XHTML 1.0 &lt;span class="pre"&gt;Transitional//EN&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;&amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;如果你认为表单不会提交，那就错了。这段代码无论是否选择了上传的文件，表单都会提交。因为
+onsubmit 事件接收不了返回的 boolean 值~！&lt;/div&gt;
+&lt;div class="line"&gt;要想这个检查方法有效，应该为代码清单2的18行中 onsubmit 增加 return
+关键字：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;onsubmit=&amp;quot;return&lt;/span&gt; &lt;span class="pre"&gt;checkform(this);&amp;quot;&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;类似的用法，在锚标签(&amp;lt;a/&amp;gt;)中，我们会用到它来增加一些点击事件，比如，&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;返回&lt;/li&gt;
+&lt;li&gt;显示手形指针&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>GAE 使用入门：Python 遇到的 AppConfigNotFoundError 错误</title><link href="/gae-appconfignotfounderror.html" rel="alternate"></link><published>2010-08-21T13:47:00+08:00</published><updated>2010-08-21T13:47:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-21:/gae-appconfignotfounderror.html</id><summary type="html">&lt;p&gt;自己之前有搭建过 GAE（&lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/whatisgoogleappengine.html"&gt;Google App
+Engine&lt;/a&gt;）谷歌应用程序引擎开发环境，那时只是玩玩没有认真地去学习。这次在配置环境开发
+&lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/python/gettingstarted/helloworld.html"&gt;Hello
+world&lt;/a&gt;
+时，遇上了 AppConfigNotFoundError 错误，看了N久都没发现是哪里引起的错误
+- -!&lt;/p&gt;
+&lt;div class="section" id="helloworld"&gt;
+&lt;h2&gt;helloworld&lt;/h2&gt;
+&lt;p&gt;步骤一切像官方教程所说的那样，只不过没有使用 Ctrl-C/Ctrl-V
+大法，而是一步步手动敲代码。直到“测试应用程序”这一步，执行
+dev_appserver.py helloworld/
+后发现服务启动不了：google.appengine.tools.dev_appserver.AppConfigNotFoundError。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;问题所在&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;命令行中报错为
+AppConfigNotFoundError，那可能和应用程序配置文件有关。找不到应用配置错误，很有可能是应用程序路径不对或者是在创建配置文件
+app.yaml 时出错了。检查过路径无误，即定位到 /helloworld
+的上一级目录。再看看 app …&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;自己之前有搭建过 GAE（&lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/whatisgoogleappengine.html"&gt;Google App
+Engine&lt;/a&gt;）谷歌应用程序引擎开发环境，那时只是玩玩没有认真地去学习。这次在配置环境开发
+&lt;a class="reference external" href="http://code.google.com/intl/zh-CN/appengine/docs/python/gettingstarted/helloworld.html"&gt;Hello
+world&lt;/a&gt;
+时，遇上了 AppConfigNotFoundError 错误，看了N久都没发现是哪里引起的错误
+- -!&lt;/p&gt;
+&lt;div class="section" id="helloworld"&gt;
+&lt;h2&gt;helloworld&lt;/h2&gt;
+&lt;p&gt;步骤一切像官方教程所说的那样，只不过没有使用 Ctrl-C/Ctrl-V
+大法，而是一步步手动敲代码。直到“测试应用程序”这一步，执行
+dev_appserver.py helloworld/
+后发现服务启动不了：google.appengine.tools.dev_appserver.AppConfigNotFoundError。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;问题所在&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;命令行中报错为
+AppConfigNotFoundError，那可能和应用程序配置文件有关。找不到应用配置错误，很有可能是应用程序路径不对或者是在创建配置文件
+app.yaml 时出错了。检查过路径无误，即定位到 /helloworld
+的上一级目录。再看看 app.yaml 文件：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;application: helloworld version: 1 runtime: python api_version: 1&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;handlers:&lt;/div&gt;
+&lt;div class="line"&gt;- url: /.*&lt;/div&gt;
+&lt;div class="line"&gt;script: helloworld.py # 注意这行开头有两个空格！&lt;/div&gt;
+&lt;div class="line"&gt;再和官方网站的教程（最新版本的）对比，才发现第8行前面少了两个空格！天啊，这个
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/YAML"&gt;yaml&lt;/a&gt;(YAML Ain't Markup
+Language)
+太变态了吧。那么严格，不愧为以数据做为中心，而不是以置标语言为重点。使用空白符号缩排这点和
+Python 一样呢。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;关闭服务&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;还有一个问题就是，在关闭服务的时候，按照官方所说的：&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+要关闭网络服务器，请确保终端窗口处于活动状态，然后按
+Control-C（或您的控制台上相应的“break”键）。&lt;/blockquote&gt;
+&lt;p&gt;上述方法竟然完全无效，在我的 Windows XP 下只能通过 Ctrl-Break
+来结束，呵呵。&lt;/p&gt;
+&lt;p&gt;继续学习吧，之后将准备在 GAE
+下搭建博客等网站，即使由于众所周知的原因不怎么受欢迎，呵呵&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>MediaWiki 增加数学公式显示支持</title><link href="/mediawiki-displaying-a-formula.html" rel="alternate"></link><published>2010-08-20T07:03:00+08:00</published><updated>2010-08-20T07:03:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-20:/mediawiki-displaying-a-formula.html</id><summary type="html">&lt;p&gt;最近心血来潮，于是乎为 &lt;a class="reference external" href="http://wiki.magicalboy.com"&gt;magicwiki&lt;/a&gt;
+增加数学公式显示的支持，有兴趣的朋友不妨前往围观。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;原理&lt;/h2&gt;
+&lt;p&gt;MediaWiki 对数学公式仅支持 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/TeX"&gt;TeX&lt;/a&gt;
+标记语言的子集，包括 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX"&gt;LaTeX&lt;/a&gt; 和
+AMS-LaTeX，根据用户的喜好和表达式的复杂性生成简单的 HTML 标记或者 PNG
+图片来显示公式。也就是说 Mediawiki 过滤 Tex 标记后，使用 Texvc
+命令来渲染成图形。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="texvc"&gt;
+&lt;h2&gt;方法一：texvc&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;为 MediaWiki
+增加数学公式显示支持方法有很多种，如果拥有主机空间的控制权限（比如可使用
+SSH），可尝试下面的方法。&lt;/div&gt;
+&lt;div class="line"&gt;准备工作是主机上必须安装好以下软件包:&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ocaml&lt;/li&gt;
+&lt;li&gt;imagemagick&lt;/li&gt;
+&lt;li&gt;gs&lt;/li&gt;
+&lt;li&gt;cjk-latex (now called latex-cjk-all)&lt;/li&gt;
+&lt;li&gt;tetex-extra&lt;/li&gt;
+&lt;li&gt;binutils (&amp;quot;/usr/bin/as&amp;quot; is …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;最近心血来潮，于是乎为 &lt;a class="reference external" href="http://wiki.magicalboy.com"&gt;magicwiki&lt;/a&gt;
+增加数学公式显示的支持，有兴趣的朋友不妨前往围观。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;原理&lt;/h2&gt;
+&lt;p&gt;MediaWiki 对数学公式仅支持 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/TeX"&gt;TeX&lt;/a&gt;
+标记语言的子集，包括 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX"&gt;LaTeX&lt;/a&gt; 和
+AMS-LaTeX，根据用户的喜好和表达式的复杂性生成简单的 HTML 标记或者 PNG
+图片来显示公式。也就是说 Mediawiki 过滤 Tex 标记后，使用 Texvc
+命令来渲染成图形。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="texvc"&gt;
+&lt;h2&gt;方法一：texvc&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;为 MediaWiki
+增加数学公式显示支持方法有很多种，如果拥有主机空间的控制权限（比如可使用
+SSH），可尝试下面的方法。&lt;/div&gt;
+&lt;div class="line"&gt;准备工作是主机上必须安装好以下软件包:&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ocaml&lt;/li&gt;
+&lt;li&gt;imagemagick&lt;/li&gt;
+&lt;li&gt;gs&lt;/li&gt;
+&lt;li&gt;cjk-latex (now called latex-cjk-all)&lt;/li&gt;
+&lt;li&gt;tetex-extra&lt;/li&gt;
+&lt;li&gt;binutils (&amp;quot;/usr/bin/as&amp;quot; is needed by make job)&lt;/li&gt;
+&lt;li&gt;gcc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;然后 cd 到 MediaWiki 安装目录下的 math/ 子目录，执行 make 开始安装
+texvc。&lt;/div&gt;
+&lt;div class="line"&gt;最后，在根目录 LocalSettings.php 中设置 $wgUseTeX = true;
+这样就可以使用 math 渲染了。&lt;/div&gt;
+&lt;div class="line"&gt;在页面中输入&lt;/div&gt;
+&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+sintheta
+&lt;/pre&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;进行测试，显示没问题。别高兴得太早，来点复杂的：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;phi_n(kappa) =&amp;nbsp; &lt;span class="pre"&gt;frac{1}{4pi^2kappa^2}&lt;/span&gt; int_0^infty&amp;nbsp; frac{sin(kappa &lt;span class="pre"&gt;R)}{kappa&lt;/span&gt; R}&amp;nbsp; &lt;span class="pre"&gt;frac{partial}{partial&lt;/span&gt; R}&amp;nbsp; left[R^2frac{partial &lt;span class="pre"&gt;D_n(R)}{partial&lt;/span&gt; &lt;span class="pre"&gt;R}right],dR&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;情况貌似没有想像中顺利：“&lt;strong&gt;解析失败
+(无法写入或建立数学公式输出目录)&lt;/strong&gt;”出错了。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这是因为前者使用简单的 HTML
+标记即可显示，而后者需要渲染成图片以显示复杂的数学公式，生成图片需要创建目录和文件，由于服务器权限不允许，所以出现在这样的错误。&lt;/p&gt;
+&lt;p&gt;解决方法参见&lt;a class="reference external" href="http://www.mediawiki.org/wiki/Manual:Troubleshooting_math_display_errors#.22Failed_to_parse_.28Can.27t_write_to_or_create_math_output_directory.29.22"&gt;&amp;quot;Failed to parse (Can't write to or create math output
+directory)&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mimetex"&gt;
+&lt;h2&gt;方法二：使用 Mimetex&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;使用这种方法实质上是利用外部的 cgi
+链接来帮我们生成公式图片，所以比较灵活，我们可以使用自定义的标签或者修改代码来实现。&lt;/div&gt;
+&lt;div class="line"&gt;自定义标签方法见：&lt;a class="reference external" href="http://www.mediawiki.org/wiki/Mimetex_alternative"&gt;Extension:Mimetex
+alternative&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;修改代码使 math 也能过滤到使用 mimetex
+渲染文章见：&lt;a class="reference external" href="http://49px.com/wiki/%E5%88%A9%E7%94%A8%E5%A4%96%E9%93%BECGI%E4%B8%BAMediawiki%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81"&gt;利用外链CGI为Mediawiki添加数学公式支持&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;第二种方法也即是修改 includes/Math.php 下的 renderMath 方法：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;#public static function renderMath( $tex, $params=array() ) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #&amp;nbsp;&amp;nbsp; global $wgUser;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #&amp;nbsp;&amp;nbsp; $math = new MathRenderer( $tex, $params );&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;$math-&amp;gt;setOutputMode(&lt;/span&gt; &lt;span class="pre"&gt;$wgUser-&amp;gt;getOption('math'));&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #&amp;nbsp;&amp;nbsp; return &lt;span class="pre"&gt;$math-&amp;gt;render();&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #}&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; public static function renderMath( $tex, $params=array() ) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; return '';&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;数学公式展示页：&lt;a class="reference external" href="http://wiki.magicalboy.com/%E6%95%B0%E5%AD%A6"&gt;数学&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>抛弃 FTP 工具，net2ftp 文件上传在线解压</title><link href="/net2ftpupload_unzip.html" rel="alternate"></link><published>2010-08-14T01:45:00+08:00</published><updated>2010-08-14T01:45:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-14:/net2ftpupload_unzip.html</id><summary type="html">&lt;p&gt;net2ftp 是一个基于 ftp 客户端的 web
+应用程序，它支持在线文件上传和解压，为我们上传或删除等操作大量文件带来极大的方便！&lt;/p&gt;
+&lt;p&gt;使用 FTP 客户端工具，比如 FileZilla，要上传一个 Web 应用网站（比如
+Wordpress）的普通方法是：首先解压网站的压缩包，然后将解压开来的所有文件使用
+FTP 工具批量上传到 FTP
+服务器。这样一个一个小文件地上传不仅消耗时间，而且容易出现上传失败或上传过程中需要手动控制等，煞是不方便。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;而使用 net2ftp 工具，只要将网站压缩成 .zip
+格式，再上传到服务器解压即可。&lt;/div&gt;
+&lt;div class="line"&gt;拿 DreamHost 的 net2ftp 工具做例子，首先登陆
+&lt;a class="reference external" href="http://webftp.dreamhost.com/"&gt;http://webftp.dreamhost.com/&lt;/a&gt;界面如下：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/login.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-704" src="http://magicalboy.com/wp-content/uploads/2010/08/login.png" style="width: 464px; height: 265px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;接着可以选中某个文件或文件夹作以下操作：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/funs.png"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-705" src="http://magicalboy.com/wp-content/uploads/2010/08/funs.png" style="width: 313px; height: 378px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;可以看到 net2ftp 支持多种上传方式 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;net2ftp 是一个基于 ftp 客户端的 web
+应用程序，它支持在线文件上传和解压，为我们上传或删除等操作大量文件带来极大的方便！&lt;/p&gt;
+&lt;p&gt;使用 FTP 客户端工具，比如 FileZilla，要上传一个 Web 应用网站（比如
+Wordpress）的普通方法是：首先解压网站的压缩包，然后将解压开来的所有文件使用
+FTP 工具批量上传到 FTP
+服务器。这样一个一个小文件地上传不仅消耗时间，而且容易出现上传失败或上传过程中需要手动控制等，煞是不方便。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;而使用 net2ftp 工具，只要将网站压缩成 .zip
+格式，再上传到服务器解压即可。&lt;/div&gt;
+&lt;div class="line"&gt;拿 DreamHost 的 net2ftp 工具做例子，首先登陆
+&lt;a class="reference external" href="http://webftp.dreamhost.com/"&gt;http://webftp.dreamhost.com/&lt;/a&gt;界面如下：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/login.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-704" src="http://magicalboy.com/wp-content/uploads/2010/08/login.png" style="width: 464px; height: 265px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;接着可以选中某个文件或文件夹作以下操作：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/funs.png"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-705" src="http://magicalboy.com/wp-content/uploads/2010/08/funs.png" style="width: 313px; height: 378px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;可以看到 net2ftp 支持多种上传方式，Java applet，Flash Upload
+等，但是都有文件大小限制。如果文件太大，可以分开多个文件压缩。&lt;/p&gt;
+&lt;p&gt;现在大多数主机/虚拟主机都支持 net2ftp
+工具，不妨到你的网站控制面板看下，惊喜总是在等待着我们。&lt;/p&gt;
+</content></entry><entry><title>Django 文件上传</title><link href="/django-file-upload.html" rel="alternate"></link><published>2010-08-03T08:45:00+08:00</published><updated>2010-08-03T08:45:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-03:/django-file-upload.html</id><summary type="html">&lt;p&gt;本文介绍的 Django 文件上传不是 Django 1.0
+以上的上传方法，而是一般通用的文件上传。主要使用
+&lt;a class="reference external" href="http://www.djangoproject.com/documentation/0.96/request_response/"&gt;HttpRequest&lt;/a&gt;对象的
+FILES 属性，一个类似字典的属性。&lt;/p&gt;
+&lt;div class="section" id="files"&gt;
+&lt;h2&gt;FILES&lt;/h2&gt;
+&lt;p&gt;是一个包含所有上传文件的类似于字典的对象，它里面的每个 key
+的名称来自于表单输入控件 &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;&amp;quot; /&amp;gt; 中的 name
+属性。每个 key 的值为标准的 Python 字典，其里面又包含以下三个 Key-Value
+键值对：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;filename: 上传的文件的名字。&lt;/li&gt;
+&lt;li&gt;content-type: 上传文件的类型。&lt;/li&gt;
+&lt;li&gt;content: 上传文件的原始内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：只要在表单中指定提交方式为 POST，而且有
+enctype=&amp;quot;multipart/form-data&amp;quot; 这个属性，FILES 对象不为空 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;本文介绍的 Django 文件上传不是 Django 1.0
+以上的上传方法，而是一般通用的文件上传。主要使用
+&lt;a class="reference external" href="http://www.djangoproject.com/documentation/0.96/request_response/"&gt;HttpRequest&lt;/a&gt;对象的
+FILES 属性，一个类似字典的属性。&lt;/p&gt;
+&lt;div class="section" id="files"&gt;
+&lt;h2&gt;FILES&lt;/h2&gt;
+&lt;p&gt;是一个包含所有上传文件的类似于字典的对象，它里面的每个 key
+的名称来自于表单输入控件 &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;&amp;quot; /&amp;gt; 中的 name
+属性。每个 key 的值为标准的 Python 字典，其里面又包含以下三个 Key-Value
+键值对：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;filename: 上传的文件的名字。&lt;/li&gt;
+&lt;li&gt;content-type: 上传文件的类型。&lt;/li&gt;
+&lt;li&gt;content: 上传文件的原始内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：只要在表单中指定提交方式为 POST，而且有
+enctype=&amp;quot;multipart/form-data&amp;quot; 这个属性，FILES 对象不为空。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;处理上传文件的内容&lt;/h2&gt;
+&lt;p&gt;也就是我们需要保存 FILES 中 content
+的内容到磁盘上，核心的方法如以下这段代码：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;def saveUploadFile (file_obj, &lt;span class="pre"&gt;types=(),&lt;/span&gt; size=524288):&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; '''&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 处理上传文件 v1.0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 可设置上传文件类型: types&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 可设置上传文件大小: size&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;#64;magicalboy 10.8.3&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; '''&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; from fileupload.settings import MEDIA_ROOT&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; from os import makedirs&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; from os.path import isdir, exists, dirname&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;if types: # 判断是否限制上传文件类型&lt;/div&gt;
+&lt;div class="line"&gt;if not file_obj['content-type'] in types: # 判断上传的文件类型&lt;/div&gt;
+&lt;div class="line"&gt;return False, &amp;quot;不允许上传的文件类型！&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;buf = file_obj['content']&lt;/div&gt;
+&lt;div class="line"&gt;if len(buf) &amp;lt; size: # 判断上传文件大小&lt;/div&gt;
+&lt;div class="line"&gt;filename = file_obj['filename']&lt;/div&gt;
+&lt;div class="line"&gt;savePath = '%s/%s' % (MEDIA_ROOT, filename.decode('utf8'))&lt;/div&gt;
+&lt;div class="line"&gt;dir = dirname(savePath)&lt;/div&gt;
+&lt;div class="line"&gt;if not isdir(dir): # create archive dir if nec.&lt;/div&gt;
+&lt;div class="line"&gt;makedirs(dir)&lt;/div&gt;
+&lt;div class="line"&gt;f = open(savePath, 'wb+')&lt;/div&gt;
+&lt;div class="line"&gt;f.write(buf)&lt;/div&gt;
+&lt;div class="line"&gt;f.close()&lt;/div&gt;
+&lt;div class="line"&gt;return True, &amp;quot;&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;else:&lt;/div&gt;
+&lt;div class="line"&gt;return False, &amp;quot;上传文件不能大于 %d K！&amp;quot; % size&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;完整源代码下载：&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/fileupload.zip"&gt;fileupload.zip&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;测试环境：&lt;/h2&gt;
+&lt;p&gt;WinXP + Python 2.4 + Django 9.05&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;运行效果：&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/fileupload-1.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-696" src="http://magicalboy.com/wp-content/uploads/2010/08/fileupload-1.png" style="width: 443px; height: 201px;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>增加 Django 自带的 admin 管理界面</title><link href="/install-django-admin-app.html" rel="alternate"></link><published>2010-08-02T09:27:00+08:00</published><updated>2010-08-02T09:27:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-08-02:/install-django-admin-app.html</id><summary type="html">&lt;p&gt;admin 是
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Django"&gt;Django&lt;/a&gt;提供的一个核心
+app，它可以根据项目中的 model
+来自动生成管理界面。它功能强大，而且界面美观。可以管理用户权限，对于管理集中，正如它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站一样，主要以发布为主。&lt;/p&gt;
+&lt;p&gt;下面我们来开始安装 admin app 。&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;创建一个新项目：demo&lt;/strong&gt;
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;django-admin.py&lt;/span&gt; startproject demo&lt;/tt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;修改 settings.py&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;配置数据库（MySQL）：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;DATABASE_ENGINE = 'mysql' DATABASE_NAME = 'django' DATABASE_USER = 'root' DATABASE_PASSWORD = 'password'&amp;nbsp; # 数据库密码 DATABASE_HOST = ''&amp;nbsp; # 数据库服务器主机（默认本地） DATABASE_PORT = ''&amp;nbsp; # 数据库服务器端口（默认3306）&lt;/tt&gt;&lt;/div&gt;
+&lt;div class="line"&gt;增添 admin app：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;INSTALLED_APPS = (&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'django.contrib.auth' …&lt;/tt&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;admin 是
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Django"&gt;Django&lt;/a&gt;提供的一个核心
+app，它可以根据项目中的 model
+来自动生成管理界面。它功能强大，而且界面美观。可以管理用户权限，对于管理集中，正如它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站一样，主要以发布为主。&lt;/p&gt;
+&lt;p&gt;下面我们来开始安装 admin app 。&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;创建一个新项目：demo&lt;/strong&gt;
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;django-admin.py&lt;/span&gt; startproject demo&lt;/tt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;修改 settings.py&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;配置数据库（MySQL）：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;DATABASE_ENGINE = 'mysql' DATABASE_NAME = 'django' DATABASE_USER = 'root' DATABASE_PASSWORD = 'password'&amp;nbsp; # 数据库密码 DATABASE_HOST = ''&amp;nbsp; # 数据库服务器主机（默认本地） DATABASE_PORT = ''&amp;nbsp; # 数据库服务器端口（默认3306）&lt;/tt&gt;&lt;/div&gt;
+&lt;div class="line"&gt;增添 admin app：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;INSTALLED_APPS = (&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'django.contrib.auth',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'django.contrib.contenttypes',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'django.contrib.sessions',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'django.contrib.sites',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'django.contrib.admin', # 增加的 admin app )&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;修改 urls.py&lt;/strong&gt;
+&lt;tt class="docutils literal"&gt;# Uncomment this for admin: &lt;span class="pre"&gt;(r'^admin/',&lt;/span&gt; &lt;span class="pre"&gt;include('django.contrib.admin.urls')),&lt;/span&gt;&amp;nbsp; 去掉默认注释即可&lt;/tt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;同步数据库&lt;/strong&gt;
+&lt;tt class="docutils literal"&gt;manage.py syncdb&lt;/tt&gt;
+这样将在数据库中创建 admin 相关的表。
+&lt;strong&gt;需要注意的是&lt;/strong&gt;：在你第一次运行 syncdb
+时，你很可能被问起是否创建一个 superuser ，如果那时你没有创建
+superuser ，你需要运行 djang/contrib/auth/bin/create_superuser.py
+来创建一个admin用户，否则你就不能登录到管理界面里去！方法如下：
+&lt;tt class="docutils literal"&gt;manage.py shell &amp;gt;&amp;gt;&amp;gt; from django.contrib.auth.create_superuser import createsuperuser &amp;gt;&amp;gt;&amp;gt; createsuperuser()&lt;/tt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;进入 admin&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;启动内置的服务器：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;manage.py runserver&lt;/tt&gt;&lt;/div&gt;
+&lt;div class="line"&gt;打开浏览器访问：&lt;a class="reference external" href="http://localhost:8000/admin/"&gt;http://localhost:8000/admin/&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;界面如下：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/django-admin-1.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-676" src="http://magicalboy.com/wp-content/uploads/2010/08/django-admin-1.png" style="width: 548px; height: 434px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content></entry><entry><title>PHP 学习伊始</title><link href="/php-beginning.html" rel="alternate"></link><published>2010-07-27T15:28:00+08:00</published><updated>2010-07-27T15:28:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-27:/php-beginning.html</id><summary type="html">&lt;p&gt;久仰 PHP 大名，&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Php"&gt;PHP&lt;/a&gt; (Hypertext
+Preprocessor（递归式命名），超文本预处理器）是一种创建动态交互性站点的强有力的服务器端脚本语言。网络上流行的多种开源网站系统都是采用
+PHP 进行开发的，比如本博客使用的 Wordpress，维基百科 MediaWiki，ECShop
+网店等。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;作为一名 Web 开发者应该掌握的语言，PHP
+学习起来相当容易上手，尤其对于有 Web
+开发基础的人们来说。目前最新稳定版本为 &lt;a class="reference external" href="http://php.net/"&gt;PHP 5.3.3
+Released!&lt;/a&gt;(via php 官网)。网络上已有大量新手入门
+tutorials，有兴趣请
+&lt;a class="reference external" href="http://www.google.com/search?client=ubuntu&amp;amp;channel=fs&amp;amp;q=php&amp;amp;ie=utf-8&amp;amp;oe=utf-8"&gt;Google&lt;/a&gt;。&lt;/div&gt;
+&lt;div class="line"&gt;像JavaScript，Perl， Python 等脚本语言一样，PHP
+也是一门松散类型的语言（Loosely Typed Language），其语法非常类似于
+Perl …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;久仰 PHP 大名，&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Php"&gt;PHP&lt;/a&gt; (Hypertext
+Preprocessor（递归式命名），超文本预处理器）是一种创建动态交互性站点的强有力的服务器端脚本语言。网络上流行的多种开源网站系统都是采用
+PHP 进行开发的，比如本博客使用的 Wordpress，维基百科 MediaWiki，ECShop
+网店等。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;作为一名 Web 开发者应该掌握的语言，PHP
+学习起来相当容易上手，尤其对于有 Web
+开发基础的人们来说。目前最新稳定版本为 &lt;a class="reference external" href="http://php.net/"&gt;PHP 5.3.3
+Released!&lt;/a&gt;(via php 官网)。网络上已有大量新手入门
+tutorials，有兴趣请
+&lt;a class="reference external" href="http://www.google.com/search?client=ubuntu&amp;amp;channel=fs&amp;amp;q=php&amp;amp;ie=utf-8&amp;amp;oe=utf-8"&gt;Google&lt;/a&gt;。&lt;/div&gt;
+&lt;div class="line"&gt;像JavaScript，Perl， Python 等脚本语言一样，PHP
+也是一门松散类型的语言（Loosely Typed Language），其语法非常类似于
+Perl 和 C，下面是代码预览。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&amp;lt; &lt;span class="pre"&gt;?php&lt;/span&gt; function echoMyName () {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; echo &amp;quot;MAGICALBOY&amp;quot;; } echo &amp;quot;Hello &lt;span class="pre"&gt;Word!&amp;quot;;&lt;/span&gt; echo &amp;quot;My name is &amp;quot;; &lt;span class="pre"&gt;echoMyName();&lt;/span&gt; echo &amp;quot;.That's right, &amp;quot;; &lt;span class="pre"&gt;echoMyName();&lt;/span&gt; echo &amp;quot; is my &lt;span class="pre"&gt;name.&amp;quot;;&lt;/span&gt; &lt;span class="pre"&gt;?&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;So much could this time : )&lt;/p&gt;
+</content></entry><entry><title>Feed 终于更新了：FeedSky [705] : 保存失败错误</title><link href="/feedsky-update.html" rel="alternate"></link><published>2010-07-26T15:36:00+08:00</published><updated>2010-07-26T15:36:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-26:/feedsky-update.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;本博客的 Feed 源托管 &lt;a class="reference external" href="http://www.feedsky.com/"&gt;FeedSky&lt;/a&gt;
+有两天没更新了，这是自从 &lt;a class="reference external" href="http://feeds.feedburner.com/magicalboy"&gt;Google
+Feedburner&lt;/a&gt; 迁到国内的
+FeedSky Feed 托管以来，第一次遇到 &lt;strong&gt;[705] : 保存失败&lt;/strong&gt; 错误。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/07/feedstatus.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-649" src="http://magicalboy.com/wp-content/uploads/2010/07/feedstatus.png" style="width: 323px; height: 365px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;改用国内的 Feed 托管服务器 FeedSky
+，主要是因为它支持免费的二级域名绑定。虽然 Feedburner
+更新速度上很快，但是 Feedburner
+不支持二级域名绑定，且经常被墙，好危险啊。而国内的 FeedSky
+相对来说更新速度上没那么及时，如果没有手动通知它来更新，一般 3
+个小时过来抓取一次（看上面截图的更新时间）。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;设置更新服务&lt;/h2&gt;
+&lt;p&gt;当您发表一篇新文章时，WordPress 将会向所设置的站点发出通告。在此加上
+FeedSky
+的通知地址，如此一来，当你博客有文章发表或更新，马上会通知它们。在
+“控制板－设置 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;本博客的 Feed 源托管 &lt;a class="reference external" href="http://www.feedsky.com/"&gt;FeedSky&lt;/a&gt;
+有两天没更新了，这是自从 &lt;a class="reference external" href="http://feeds.feedburner.com/magicalboy"&gt;Google
+Feedburner&lt;/a&gt; 迁到国内的
+FeedSky Feed 托管以来，第一次遇到 &lt;strong&gt;[705] : 保存失败&lt;/strong&gt; 错误。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/07/feedstatus.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-649" src="http://magicalboy.com/wp-content/uploads/2010/07/feedstatus.png" style="width: 323px; height: 365px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;改用国内的 Feed 托管服务器 FeedSky
+，主要是因为它支持免费的二级域名绑定。虽然 Feedburner
+更新速度上很快，但是 Feedburner
+不支持二级域名绑定，且经常被墙，好危险啊。而国内的 FeedSky
+相对来说更新速度上没那么及时，如果没有手动通知它来更新，一般 3
+个小时过来抓取一次（看上面截图的更新时间）。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;设置更新服务&lt;/h2&gt;
+&lt;p&gt;当您发表一篇新文章时，WordPress 将会向所设置的站点发出通告。在此加上
+FeedSky
+的通知地址，如此一来，当你博客有文章发表或更新，马上会通知它们。在
+“控制板－设置－撰写选项－更新服务”中增加以下地址即可：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://www.feedsky.com/api/RPC2/"&gt;http://www.feedsky.com/api/RPC2/&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;订阅工具当然首选 GoogleReader，支持 https
+安全协议让我们看得更多，呵呵。欢迎大家订阅本博客哦 :)&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>让你的 WordPress 参加反 IE6 活动吧</title><link href="/wordpress-anti-ie6.html" rel="alternate"></link><published>2010-07-24T19:11:00+08:00</published><updated>2010-07-24T19:11:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-24:/wordpress-anti-ie6.html</id><summary type="html">&lt;p&gt;“够了够了，我受不了这万恶的 IE6 了！” —— 网页设计师或 Web
+开发员经常抱怨道&lt;/p&gt;
+&lt;p&gt;IE6 一直是前端开发人员心中的痛，前端开发人员能支持 IE6
+是很了不起，但与其将精力花在支持 IE6 上还不如向标准看齐。网络上有关于
+IE6 的话题太多了，稍候将在本文后面给出一些参考链接以供围观发泄之备用。&lt;/p&gt;
+&lt;p&gt;本文主要介绍给自己的 WordPress 博客增加几个反 IE6
+的小部件(widget)，以提示到访的朋友从古老的 IE6
+升级到现代浏览器，从而获得更好的体验。&lt;/p&gt;
+&lt;div class="section" id="anti-ie6-widgets"&gt;
+&lt;h2&gt;Anti IE6 widgets&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;来自 &lt;a class="reference external" href="http://www.ie6nomore.com/"&gt;IE6 No More&lt;/a&gt; 的 Widget，从 IE6
+中打开 &lt;a class="reference external" href="http://www.ie6nomore.com/code-samples.html"&gt;code-samples&lt;/a&gt;
+可以看到效果。
+如果你觉得代码中的图片加载速度缓慢，建议下载离线版，然后自行添加到网站。下载地址：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/07/antii_ie6_demo1.zip"&gt;IE6
+No More …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;“够了够了，我受不了这万恶的 IE6 了！” —— 网页设计师或 Web
+开发员经常抱怨道&lt;/p&gt;
+&lt;p&gt;IE6 一直是前端开发人员心中的痛，前端开发人员能支持 IE6
+是很了不起，但与其将精力花在支持 IE6 上还不如向标准看齐。网络上有关于
+IE6 的话题太多了，稍候将在本文后面给出一些参考链接以供围观发泄之备用。&lt;/p&gt;
+&lt;p&gt;本文主要介绍给自己的 WordPress 博客增加几个反 IE6
+的小部件(widget)，以提示到访的朋友从古老的 IE6
+升级到现代浏览器，从而获得更好的体验。&lt;/p&gt;
+&lt;div class="section" id="anti-ie6-widgets"&gt;
+&lt;h2&gt;Anti IE6 widgets&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;来自 &lt;a class="reference external" href="http://www.ie6nomore.com/"&gt;IE6 No More&lt;/a&gt; 的 Widget，从 IE6
+中打开 &lt;a class="reference external" href="http://www.ie6nomore.com/code-samples.html"&gt;code-samples&lt;/a&gt;
+可以看到效果。
+如果你觉得代码中的图片加载速度缓慢，建议下载离线版，然后自行添加到网站。下载地址：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/07/antii_ie6_demo1.zip"&gt;IE6
+No More
+离线版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.neoease.com/lets-kill-ie6/"&gt;Let's Kill IE6&lt;/a&gt; 提供的
+Widget（via
+&lt;a class="reference external" href="http://www.neoease.com/"&gt;neoease&lt;/a&gt;）。此种方法使用很简单，只要引入一个
+JS 即可。如果用户使用的是 IE6
+访问，浏览器右下角就会弹出一个提示信息：
+&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/07/anti_ie6_demo2.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-642" src="http://magicalboy.com/wp-content/uploads/2010/07/anti_ie6_demo2.png" style="width: 341px; height: 221px;" /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;来自 interjc.net 的
+Widget。本博使用的正是这个控件，因为它风格和本博客主题相近，占用空间小，只有两个小图标加载速度比较快。下载地址：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/07/anti_ie6_demo3.zip"&gt;反
+IE6
+Widget&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;参考链接&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://interjc.net/a/anti-ie6"&gt;反 IE6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.neoease.com/ie6-must-die/"&gt;IE6 必死&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docs.google.com/View?id=dg5phkpq_78cd6t5gf8"&gt;符合 Web
+标准的浏览器&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Ubuntu 10.04 快速搭建 LAMP 开发环境</title><link href="/ubuntu10-04-lamp.html" rel="alternate"></link><published>2010-07-24T14:00:00+08:00</published><updated>2010-07-24T14:00:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-24:/ubuntu10-04-lamp.html</id><summary type="html">&lt;p&gt;本文将介绍在 Linux Ubuntu 10.04 下快速搭建 LAMP 开发环境。原文来自
+&lt;a class="reference external" href="http://amilaudana.wordpress.com/2010/05/06/configure-apache-mysql-php-on-ubuntu/"&gt;Configure Apache MySQL PHP on Ubuntu 10.04&lt;/a&gt; ，加上自己实践的安装过程 :）。&lt;/p&gt;
+&lt;p&gt;image0&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/LAMP"&gt;LAMP&lt;/a&gt; ，是指基于&lt;/dt&gt;
+&lt;dd&gt;Linux，Apache，MySQL 和
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/PHP"&gt;PHP&lt;/a&gt; （ &lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Perl"&gt;Perl&lt;/a&gt;
+或
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Python"&gt;Python&lt;/a&gt; ，&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80"&gt;脚本语言&lt;/a&gt; ）的开放资源网络开发平台。如果是在 Windows 操作系统下使用这些工具称为使用 WAMP 了。&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;搭建 LAMP 有很多种方法，下面我将和大家分享最佳和最简单的方法，just enjoy it。&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;首先，打开&lt;strong&gt;终端&lt;/strong&gt;命令行窗口，输入以下命令：
+$ &lt;strong&gt;sudo tasksel …&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;本文将介绍在 Linux Ubuntu 10.04 下快速搭建 LAMP 开发环境。原文来自
+&lt;a class="reference external" href="http://amilaudana.wordpress.com/2010/05/06/configure-apache-mysql-php-on-ubuntu/"&gt;Configure Apache MySQL PHP on Ubuntu 10.04&lt;/a&gt; ，加上自己实践的安装过程 :）。&lt;/p&gt;
+&lt;p&gt;image0&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/LAMP"&gt;LAMP&lt;/a&gt; ，是指基于&lt;/dt&gt;
+&lt;dd&gt;Linux，Apache，MySQL 和
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/PHP"&gt;PHP&lt;/a&gt; （ &lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Perl"&gt;Perl&lt;/a&gt;
+或
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Python"&gt;Python&lt;/a&gt; ，&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80"&gt;脚本语言&lt;/a&gt; ）的开放资源网络开发平台。如果是在 Windows 操作系统下使用这些工具称为使用 WAMP 了。&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;搭建 LAMP 有很多种方法，下面我将和大家分享最佳和最简单的方法，just enjoy it。&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;首先，打开&lt;strong&gt;终端&lt;/strong&gt;命令行窗口，输入以下命令：
+$ &lt;strong&gt;sudo tasksel install lamp-server&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;输入密码后会看到下载安装包界面：
+image1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;最后，设置好 MySQL 超级用户 root 的密码，等待 LAMP
+所需的组件下载安装完毕，That's all：
+image2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;下面介绍配置它们，创建一个新站点并在 Apache2 中启动它。
+创建一个新站点，首先复制作为出发点的默认网站文件：
+$ &lt;strong&gt;sudo cp /etc/apache2/sites-available/default/etc/apache2/sites-available/mysite&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;更改 &lt;strong&gt;DocumentRoot&lt;/strong&gt; 指向新的位置。默认为 &lt;strong&gt;/var/www&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;div class="first line-block"&gt;
+&lt;div class="line"&gt;更改目录指令 (cd) 到 /etc/apache2/sites-available ，执行：&lt;/div&gt;
+&lt;div class="line"&gt;/etc/apache2/sites-available$ &lt;strong&gt;sudo a2dissite default &amp;amp;&amp;amp; sudo
+a2ensite mysite&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;输出：&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Site default disabled.
+Run '/etc/init.d/apache2 reload' to activate new configuration!
+Enabling site mysite.
+Run '/etc/init.d/apache2 reload' to activate new configuration!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;从上面输出中可看出 Apache2 已经自动加载了，无须重启。重启 Apache2 服务的命令：
+$ &lt;strong&gt;sudo /etc/init.d/apache2 restart&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;最后打开 &lt;a class="reference external" href="http://localhost/"&gt;http://localhost/&lt;/a&gt;：It works!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content></entry><entry><title>创建 HTML 页面锚点的两种方式</title><link href="/html-named-anchors.html" rel="alternate"></link><published>2010-07-18T08:33:00+08:00</published><updated>2010-07-18T08:33:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-18:/html-named-anchors.html</id><summary type="html">&lt;p&gt;在 WEB 开发中，会使用到页面锚点。HTML
+页面锚点用于链接到一个页面的某一章节。&lt;a class="reference external" href="http://www.w3school.com.cn/html/html_links.asp"&gt;W3School&lt;/a&gt;中说到，创建锚点使用
+&amp;lt;a&amp;gt; （锚）标签和 name
+属性，但这不是创建页面锚点的唯一方法。下面简要说一下制作 HTML
+页面锚点的两种方式。&lt;/p&gt;
+&lt;p&gt;我们可以利用 &lt;a class="reference external" href="http://www.w3school.com.cn/tiy/t.asp?f=html_link_locations"&gt;W3School
+的在线测试工具&lt;/a&gt;来进行测试。打开链接后的测试代码使用的是
+&amp;lt;a href=&amp;quot;#C4&amp;quot;&amp;gt; 和 &amp;lt;a name=&amp;quot;C4&amp;quot;&amp;gt;，测试没有问题。再将“ &amp;lt;h2&amp;gt; &amp;lt;a
+name=&amp;quot;C4&amp;quot;&amp;gt;Chapter 4 &amp;lt;/a&amp;gt; &amp;lt;/h2&amp;gt;”改为“ &amp;lt;h2 id=&amp;quot;C4&amp;quot;&amp;gt;Chapter 4 &amp;lt;/h2&amp;gt;”
+后进行测试，效果一样。&lt;/p&gt;
+&lt;p&gt;说明 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在 WEB 开发中，会使用到页面锚点。HTML
+页面锚点用于链接到一个页面的某一章节。&lt;a class="reference external" href="http://www.w3school.com.cn/html/html_links.asp"&gt;W3School&lt;/a&gt;中说到，创建锚点使用
+&amp;lt;a&amp;gt; （锚）标签和 name
+属性，但这不是创建页面锚点的唯一方法。下面简要说一下制作 HTML
+页面锚点的两种方式。&lt;/p&gt;
+&lt;p&gt;我们可以利用 &lt;a class="reference external" href="http://www.w3school.com.cn/tiy/t.asp?f=html_link_locations"&gt;W3School
+的在线测试工具&lt;/a&gt;来进行测试。打开链接后的测试代码使用的是
+&amp;lt;a href=&amp;quot;#C4&amp;quot;&amp;gt; 和 &amp;lt;a name=&amp;quot;C4&amp;quot;&amp;gt;，测试没有问题。再将“ &amp;lt;h2&amp;gt; &amp;lt;a
+name=&amp;quot;C4&amp;quot;&amp;gt;Chapter 4 &amp;lt;/a&amp;gt; &amp;lt;/h2&amp;gt;”改为“ &amp;lt;h2 id=&amp;quot;C4&amp;quot;&amp;gt;Chapter 4 &amp;lt;/h2&amp;gt;”
+后进行测试，效果一样。&lt;/p&gt;
+&lt;p&gt;说明，制作页面锚点除了使用 锚点标签 name 属性之外，还可以使用 id
+属性。锚点 &amp;lt;a&amp;gt; 标签中 href 属性的值为 # 开头加上目标的 name 或 id 的值：&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="#method1"&gt;页面锚点方法一&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="#method2"&gt;页面锚点方法二&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;方法一&lt;/h2&gt;
+&lt;p&gt;使用锚标签的 href 和 name 属性&lt;/p&gt;
+&lt;!-- method2: --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;方法二&lt;/h2&gt;
+&lt;p&gt;使用锚标签和 id 属性&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;结果如下：（可点击测试）&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="#method1"&gt;页面锚点方法一&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="#method2"&gt;页面锚点方法二&lt;/a&gt;&lt;/p&gt;
+&lt;!-- 方法一-1: --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;方法一&lt;/h3&gt;
+&lt;p&gt;使用锚标签的 href 和 name 属性&lt;/p&gt;
+&lt;!-- method2: --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;方法二&lt;/h3&gt;
+&lt;p&gt;使用锚标签和 id 属性&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;=======================内容分割线=======================&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;假如浏览器找不到已定义的命名锚，那么就会定位到文档的顶端。不会有错误发生。锚点还有其它用途，本文只是介绍页面中的锚点的使用。&lt;/p&gt;
+&lt;p&gt;更多锚点的使用见：&lt;a class="reference external" href="http://www.blueidea.com/tech/web/2008/5883.asp"&gt;标记语言——锚点 - 网页制作 -
+蓝色理想&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>解决robots.txt在Google 网站管理员工具中语法有误的问题</title><link href="/google-robots.html" rel="alternate"></link><published>2010-07-17T01:34:00+08:00</published><updated>2010-07-17T01:34:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-17:/google-robots.html</id><summary type="html">&lt;div class="section" id="robots-txt"&gt;
+&lt;h2&gt;robots.txt 在维基百科中的定义&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Robots.txt"&gt;robots.txt&lt;/a&gt;（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它通常告诉网络搜索引擎的漫游器（又称网络蜘蛛），此网站中的哪些内容是不能被搜索引擎的漫游器获取的，哪些是可以被（漫游器）获取的。robots.txt应放置于网站的根目录下。&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在&lt;a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN"&gt;Google
+网站管理员工具&lt;/a&gt;-网站配置-抓取工具的权限中可测试
+robots.txt 时发现，解析结果有错误：“第 1 行：?User-agent: *
+语法有误”。下面进行问题分析：&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;robots.txt 内容如下&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;User-agent:&lt;/span&gt; * Disallow: &lt;span class="pre"&gt;/wp-admin&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-content/plugins&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-content/themes&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-includes&lt;/span&gt; Sitemap: &lt;span class="pre"&gt;http://magicalboy.com/sitemap.xml …&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="robots-txt"&gt;
+&lt;h2&gt;robots.txt 在维基百科中的定义&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/Robots.txt"&gt;robots.txt&lt;/a&gt;（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它通常告诉网络搜索引擎的漫游器（又称网络蜘蛛），此网站中的哪些内容是不能被搜索引擎的漫游器获取的，哪些是可以被（漫游器）获取的。robots.txt应放置于网站的根目录下。&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在&lt;a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN"&gt;Google
+网站管理员工具&lt;/a&gt;-网站配置-抓取工具的权限中可测试
+robots.txt 时发现，解析结果有错误：“第 1 行：?User-agent: *
+语法有误”。下面进行问题分析：&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;robots.txt 内容如下&lt;/h2&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;User-agent:&lt;/span&gt; * Disallow: &lt;span class="pre"&gt;/wp-admin&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-content/plugins&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-content/themes&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-includes&lt;/span&gt; Sitemap: &lt;span class="pre"&gt;http://magicalboy.com/sitemap.xml&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;可以发现，?User-agent 前面并没有任何字符，但经 Google
+网站管理员工具的读取后，就变成了：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;?User-agent:&lt;/span&gt; * Disallow: &lt;span class="pre"&gt;/wp-admin&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-content/plugins&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-content/themes&lt;/span&gt; Disallow: &lt;span class="pre"&gt;/wp-includes&lt;/span&gt; Sitemap: &lt;span class="pre"&gt;http://magicalboy.com/sitemap.xml&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决问题&lt;/h2&gt;
+&lt;p&gt;最简单的解决方法就是：下载在“Google 网站管理员工具-生成
+robots.txt下载”生成的模板修改再上传到网站所在的根目录下。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;分析问题&lt;/h2&gt;
+&lt;p&gt;出现这一原因是由于 robots.txt 文件的编码所导致。在前面引用百科中
+robots.txt 中说到，它是一个
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/ASCII"&gt;ASCII&lt;/a&gt;
+编码的文本文件。而造成语法错误多出一个?字符的 robotxs.txt 的文件编码为
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/UTF-8"&gt;UTF-8&lt;/a&gt; +
+&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E4%BD%8D%E5%85%83%E7%B5%84%E9%A0%86%E5%BA%8F%E8%A8%98%E8%99%9F"&gt;BOM&lt;/a&gt;（字节顺序记号（英：byte-order
+mark，BOM））！而从 Google 下载回来的编码是 UTF-8。而 UTF-8 编码包含了
+ASCII。更多请点击术语链接到维基百科自行理解:)。&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>解决 Google Reader 没有显示网站图标的问题</title><link href="/google-reader-none-favicon.html" rel="alternate"></link><published>2010-07-08T15:21:00+08:00</published><updated>2010-07-08T15:21:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-08:/google-reader-none-favicon.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://reader.google.com/"&gt;Google 阅读器&lt;/a&gt; 是一款简易实用且强大的在线阅读工具。最近在使用“&lt;strong&gt;显示订阅的网页图标&lt;/strong&gt;”功能时发现有部分订阅的网站图标未能显示，包括我自己的网站，只显示一个默认的图标。经过一番仔细观察，终于发现问题所在。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;首先，设置“显示订阅的网页图标”&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;从阅读器页面右上角账户名显示旁边的“设置”－“阅读器
+设置”中进入设置页面，勾选“偏好设置”标签项中的“其他“下面中的“显示订阅的网页图标“选项，或者在订阅模块标题中的下拉菜单中设置，如图：&lt;/div&gt;
+&lt;div class="line"&gt;返回 Google 阅读器即可看到效果。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;解决 Google Reader 没有显示网站图标的问题&lt;/h2&gt;
+&lt;p&gt;开始时认为，一时看不到图标可能是因为网络问题，但是一段时间后还是没有显示图标。于是到那些可以显示图标的网站看为什么别人的可以显示。发现 favicon 的显示代码如： 或者  即其网站图标位置都是放在网站根目录下。于是乎马上将 favicon.ico 文件移动到网站根目录，修改相应的链接，回到 Google …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://reader.google.com/"&gt;Google 阅读器&lt;/a&gt; 是一款简易实用且强大的在线阅读工具。最近在使用“&lt;strong&gt;显示订阅的网页图标&lt;/strong&gt;”功能时发现有部分订阅的网站图标未能显示，包括我自己的网站，只显示一个默认的图标。经过一番仔细观察，终于发现问题所在。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;首先，设置“显示订阅的网页图标”&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;从阅读器页面右上角账户名显示旁边的“设置”－“阅读器
+设置”中进入设置页面，勾选“偏好设置”标签项中的“其他“下面中的“显示订阅的网页图标“选项，或者在订阅模块标题中的下拉菜单中设置，如图：&lt;/div&gt;
+&lt;div class="line"&gt;返回 Google 阅读器即可看到效果。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;解决 Google Reader 没有显示网站图标的问题&lt;/h2&gt;
+&lt;p&gt;开始时认为，一时看不到图标可能是因为网络问题，但是一段时间后还是没有显示图标。于是到那些可以显示图标的网站看为什么别人的可以显示。发现 favicon 的显示代码如： 或者  即其网站图标位置都是放在网站根目录下。于是乎马上将 favicon.ico 文件移动到网站根目录，修改相应的链接，回到 Google 阅读器刷新，马上有显示了，呵呵 :)&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Django 快速安装指南</title><link href="/quick-install-django.html" rel="alternate"></link><published>2010-07-04T07:47:00+08:00</published><updated>2010-07-04T07:47:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-04:/quick-install-django.html</id><summary type="html">&lt;p&gt;Django 是一个高层次的 Python Web
+框架，鼓励快速全面的开发和实用的设计。是一个使用 python 语言写的开源 web
+开发框架(open source web framework)。&lt;/p&gt;
+&lt;p&gt;这是一个简单的快速安装入门教程，如果您需要一个完整的安装指南，涵盖所有安装过程中出现问题的可能性，请参见官方网站：&lt;a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#topics-install"&gt;完整安装指南&lt;/a&gt;&lt;/p&gt;
+&lt;!-- install-python: --&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h2&gt;安装 Python &lt;a class="reference external" href="#install-python"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;作为一个 Python Web 框架，Django 需要 Python。它适用于任何版本的 Python
+2.4 至 2.6，但是它不适用于 3.0。建议您使用 Python 2.5
+或更高版本，因为它们包括一个称为轻量级数据库 SQLite。如果您现在使用的是
+Linux 或 Mac …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Django 是一个高层次的 Python Web
+框架，鼓励快速全面的开发和实用的设计。是一个使用 python 语言写的开源 web
+开发框架(open source web framework)。&lt;/p&gt;
+&lt;p&gt;这是一个简单的快速安装入门教程，如果您需要一个完整的安装指南，涵盖所有安装过程中出现问题的可能性，请参见官方网站：&lt;a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#topics-install"&gt;完整安装指南&lt;/a&gt;&lt;/p&gt;
+&lt;!-- install-python: --&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h2&gt;安装 Python &lt;a class="reference external" href="#install-python"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;作为一个 Python Web 框架，Django 需要 Python。它适用于任何版本的 Python
+2.4 至 2.6，但是它不适用于 3.0。建议您使用 Python 2.5
+或更高版本，因为它们包括一个称为轻量级数据库 SQLite。如果您现在使用的是
+Linux 或 Mac OS
+x，则有可能已经安装好了。您可以从&lt;a class="reference external" href="http://www.python.org"&gt;这里&lt;/a&gt;得到
+Python，或者直接进入其&lt;a class="reference external" href="http://www.python.org/ftp/python/"&gt;FTP服务器&lt;/a&gt;下载您想要的版本。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;要验证是否已经安装好
+Pyhton，可以在命令窗口中输入&amp;quot;python&amp;quot;，可以看到类似以下的信息说明已经安装成功：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;Python 2.6.5 (r265:79063, Apr 16 2010, 13:57:41) [GCC 4.4.3] on linux2 Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- setup-database: --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;设置数据库 &lt;a class="reference external" href="#setup-database"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;因为我们安装的 Python 是 2.5 以上的版本，里面自带了
+SQLite，所以可以跳过这一步。如果需要安装其它数据库，请参考&lt;a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#database-installation"&gt;database
+installation
+information&lt;/a&gt;。&lt;/p&gt;
+&lt;!-- remove-old-version: --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;卸载所有旧的 Django 版本&lt;a class="reference external" href="#remove-old-version"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;如果您是从以前的版本升级你的Django的安装，你需要&lt;a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#removing-old-versions-of-django"&gt;卸载旧版本的Django然后再安装新的版本&lt;/a&gt;。&lt;/p&gt;
+&lt;!-- install-django: --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装 Django &lt;a class="reference external" href="#install-django"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;安装 Django 的几个步骤：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;选择一个为我们操作系统发布的 Django
+版本&lt;a class="reference external" href="http://www.djangoproject.com/download/"&gt;下载&lt;/a&gt;，我们以
+Django 0.96.5:
+&lt;a class="reference external" href="http://www.djangoproject.com/download/0.96.5/tarball/"&gt;tarball&lt;/a&gt;
+， Linux 平台下操作为例。&lt;/li&gt;
+&lt;li&gt;解压缩并安装：
+&lt;tt class="docutils literal"&gt;tar xzvf &lt;span class="pre"&gt;Django-0.96.5.tar.gz&lt;/span&gt; cd &lt;span class="pre"&gt;Django-1.2.1&lt;/span&gt; sudo python setup.py install&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;验证是否安装成功：
+&lt;tt class="docutils literal"&gt;&amp;gt;&amp;gt;&amp;gt; import django &amp;gt;&amp;gt;&amp;gt; help(django)&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果没有报任何出错信息，则说明已经安装成功。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="that-is-it"&gt;
+&lt;h2&gt;That is it &lt;a class="reference external" href="#that-is-it"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;安装成功！赶紧体验 Django 框架带来的快速、简便的 WEB 开发乐趣吧。&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>使用 jQuery Form 插件 Ajax 提交表单</title><link href="/jquery-form-plugin-ajax-submit.html" rel="alternate"></link><published>2010-07-03T09:23:00+08:00</published><updated>2010-07-03T09:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-07-03:/jquery-form-plugin-ajax-submit.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在 Web 开发中，使用 Ajax
+来提交表单，比如注册页面的注册信息表单的时候，经常遇到一个令人头疼的问题：用户名或
+Email 经常要用到 Ajax 异步提交到后台判断。触发这一事件可由
+文本输入控件失去焦点 onblur 和点击提交表单 Submit 按钮来完成。&lt;/p&gt;
+&lt;p&gt;第一种方法很容易实现，input 输入框失去焦点后，可以等待 Ajax
+从后台返回的回应信息，这样一来就有一段时间来缓冲。&lt;/p&gt;
+&lt;p&gt;第二种方法则不好办了，提交前必须在前台判断所有的表单信息是否合法，包含
+Ajax 异步判断。因为 Ajax
+提交的请求因网络等因素总需要一小段时间来等待回应，不可能立即返回，所以，应如何做到按下提交按钮后，能得到等待
+Ajax 请求的回应信息，判断这些表单信息来决定是否让这个表单提交呢。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;解决方法之一&lt;/h2&gt;
+&lt;p&gt;使用 &lt;a class="reference external" href="http://malsup.com/jquery/form/"&gt;jQuery Form
+Plugin&lt;/a&gt;来验证整个表单，一次性使用
+Ajax …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在 Web 开发中，使用 Ajax
+来提交表单，比如注册页面的注册信息表单的时候，经常遇到一个令人头疼的问题：用户名或
+Email 经常要用到 Ajax 异步提交到后台判断。触发这一事件可由
+文本输入控件失去焦点 onblur 和点击提交表单 Submit 按钮来完成。&lt;/p&gt;
+&lt;p&gt;第一种方法很容易实现，input 输入框失去焦点后，可以等待 Ajax
+从后台返回的回应信息，这样一来就有一段时间来缓冲。&lt;/p&gt;
+&lt;p&gt;第二种方法则不好办了，提交前必须在前台判断所有的表单信息是否合法，包含
+Ajax 异步判断。因为 Ajax
+提交的请求因网络等因素总需要一小段时间来等待回应，不可能立即返回，所以，应如何做到按下提交按钮后，能得到等待
+Ajax 请求的回应信息，判断这些表单信息来决定是否让这个表单提交呢。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;解决方法之一&lt;/h2&gt;
+&lt;p&gt;使用 &lt;a class="reference external" href="http://malsup.com/jquery/form/"&gt;jQuery Form
+Plugin&lt;/a&gt;来验证整个表单，一次性使用
+Ajax 方式验证所有的表单信息。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;第一步：安装插件。下载 &lt;a class="reference external" href="http://jquery.com/"&gt;jQuery&lt;/a&gt; 库和
+&lt;a class="reference external" href="http://github.com/malsup/form/raw/master/jquery.form.js?v2.43"&gt;jquery.form.js&lt;/a&gt;插件。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;第二步：前台代码：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;$(document).ready(function()&lt;/span&gt; {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; var options = {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; target:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; '#output1',&amp;nbsp;&amp;nbsp; // 显示服务器回应信息的目标元素&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; beforeSubmit:&amp;nbsp; showRequest,&amp;nbsp; // 预提交反馈，即前台 JS 判断方法&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; success:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; showResponse&amp;nbsp; // 服务器回馈信息处理方法&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// 其它可选方法:&lt;/div&gt;
+&lt;div class="line"&gt;//url: url // 重新指定表单的提交地址&lt;/div&gt;
+&lt;div class="line"&gt;//type: type // 重新设置 form 表单的 method 属性值：'get' or 'post'&lt;/div&gt;
+&lt;div class="line"&gt;//dataType: null // 服务器回应信息类型： 'xml', 'script', or 'json'&lt;/div&gt;
+&lt;div class="line"&gt;//clearForm: true // 提交成功后清空表单域&lt;/div&gt;
+&lt;div class="line"&gt;//resetForm: true // 提交成功后重置表单域&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// $.ajax 选项也可以在此使用，例如：&lt;/div&gt;
+&lt;div class="line"&gt;//timeout: 3000&lt;/div&gt;
+&lt;div class="line"&gt;};&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// 使用 'ajaxForm' 绑定表单&lt;/div&gt;
+&lt;div class="line"&gt;$('#myForm1').ajaxForm(options);&lt;/div&gt;
+&lt;div class="line"&gt;});&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// 预提交反馈，即前台 JS 判断方法&lt;/div&gt;
+&lt;div class="line"&gt;function showRequest(formData, jqForm, options) {&lt;/div&gt;
+&lt;div class="line"&gt;// formData is an array; here we use $.param to convert it to a string
+to display it&lt;/div&gt;
+&lt;div class="line"&gt;// but the form plugin does this for you automatically when it submits
+the data&lt;/div&gt;
+&lt;div class="line"&gt;var queryString = $.param(formData);&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// jqForm is a jQuery object encapsulating the form element. To access
+the&lt;/div&gt;
+&lt;div class="line"&gt;// DOM element for the form do this:&lt;/div&gt;
+&lt;div class="line"&gt;// var formElement = jqForm[0];&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;alert('About to submit: nn' + queryString);&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// here we could return false to prevent the form from being
+submitted;&lt;/div&gt;
+&lt;div class="line"&gt;// returning anything other than false will allow the form submit to
+continue&lt;/div&gt;
+&lt;div class="line"&gt;return true;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// 服务器回馈信息处理方法&lt;/div&gt;
+&lt;div class="line"&gt;function showResponse(responseText, statusText, xhr, $form) {&lt;/div&gt;
+&lt;div class="line"&gt;// for normal html responses, the first argument to the success
+callback&lt;/div&gt;
+&lt;div class="line"&gt;// is the XMLHttpRequest object's responseText property&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// if the ajaxForm method was passed an Options Object with the
+dataType&lt;/div&gt;
+&lt;div class="line"&gt;// property set to 'xml' then the first argument to the success
+callback&lt;/div&gt;
+&lt;div class="line"&gt;// is the XMLHttpRequest object's responseXML property&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;// if the ajaxForm method was passed an Options Object with the
+dataType&lt;/div&gt;
+&lt;div class="line"&gt;// property set to 'json' then the first argument to the success
+callback&lt;/div&gt;
+&lt;div class="line"&gt;// is the json data object returned by the server&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;alert('status: ' + statusText + 'nnresponseText: n' + responseText +&lt;/div&gt;
+&lt;div class="line"&gt;'nnThe output div should have already been updated with the
+responseText.');&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;最后一步，在后台提供一份和前台一样的验证方法。这是最后一首防线，所以很重要，甚至于前台的验证都可以不写，仅作文字说明的提示信息即可。建议使用
+JSON 格式的 Response 信息，Ajax 返回到前台后作相应的处理即可。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决方法之二&lt;/h2&gt;
+&lt;p&gt;在检测所有表单时，无论结果如何，最后 return false;
+以防止表单提交。然后在 Ajax 传回结果中使用 $(&amp;quot;form&amp;quot;).submit();
+方法来提交，此方法后来才想到，在此补上。&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;以上仅是个人思路，具体实例请参考官网
+&lt;a class="reference external" href="http://malsup.com/jquery/form/#ajaxForm"&gt;Examples&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>使用 FileZilla 或 FTP 命令下载隐藏文件 .htaccess</title><link href="/filezilla-or-ftp-command-to-see-hidden-files.html" rel="alternate"></link><published>2010-06-14T11:46:00+08:00</published><updated>2010-06-14T11:46:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-14:/filezilla-or-ftp-command-to-see-hidden-files.html</id><summary type="html">&lt;p&gt;由于服务器主机的 SSH 服务被关掉，只能被迫使用 FTP（File Transfer
+Protocol）来管理网站。这不刚好需要修改一个 .htaccess
+文件，刚好它是隐藏属性的，使用
+&lt;a class="reference external" href="http://filezilla-project.org/"&gt;FileZilla&lt;/a&gt; FTP 工具也查看不了。殊不知
+FileZilla 的“服务器”菜单项中有“强制显示隐藏文件”选项。&lt;/p&gt;
+&lt;p&gt;启动“强制显示隐藏文件”会有确认信息，需要使用的是 FTP
+协议，同时需要服务器支持。&lt;/p&gt;
+&lt;p&gt;如果手头上没有 FTP 软件，可以使用 Windows 自带的 FTP 命令，在 CMD
+命令行输入 ftp 即进入该模式：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:&amp;gt;ftp&lt;/span&gt; ftp&amp;gt; open yourdomain.com …&lt;/tt&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;由于服务器主机的 SSH 服务被关掉，只能被迫使用 FTP（File Transfer
+Protocol）来管理网站。这不刚好需要修改一个 .htaccess
+文件，刚好它是隐藏属性的，使用
+&lt;a class="reference external" href="http://filezilla-project.org/"&gt;FileZilla&lt;/a&gt; FTP 工具也查看不了。殊不知
+FileZilla 的“服务器”菜单项中有“强制显示隐藏文件”选项。&lt;/p&gt;
+&lt;p&gt;启动“强制显示隐藏文件”会有确认信息，需要使用的是 FTP
+协议，同时需要服务器支持。&lt;/p&gt;
+&lt;p&gt;如果手头上没有 FTP 软件，可以使用 Windows 自带的 FTP 命令，在 CMD
+命令行输入 ftp 即进入该模式：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:&amp;gt;ftp&lt;/span&gt; ftp&amp;gt; open yourdomain.com Connected to yourdomain.com. 220 XXXHost FTP Server User &lt;span class="pre"&gt;(yourdomain.com:(none)):&lt;/span&gt; username 331 Password required for tb_cdl. Password: 230 User username logged in. ftp&amp;gt; cd yourdomain.com 250 CWD command successful ftp&amp;gt; get .htaccess 200 PORT command successful 150 Opening ASCII mode data connection for .htaccess (379 bytes) 226 Transfer complete. ftp: 收到 394 字节，用时 0.00Seconds 394000.00Kbytes/sec.&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;如果需要上传。htaccess 必须以 ASCII
+模式（默认模式）上传，最好将其权限设置为644。&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;ftp&amp;gt; mput .htaccess mput .htaccess? 200 PORT command successful 150 Opening ASCII mode data connection for .htaccess 226 Transfer complete. ftp: 发送 394 字节，用时 0.00Seconds 394000.00Kbytes/sec.&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;更多命令请见 ftp&amp;gt; help 或参考
+&lt;a class="reference external" href="http://www.edu.cn/20010830/210045.shtml"&gt;FTP命令详解&lt;/a&gt;&lt;/p&gt;
+</content></entry><entry><title>WordPress:解决 RSS 没有排版的问题</title><link href="/solved-wordpress-rss-layout-problem.html" rel="alternate"></link><published>2010-06-13T15:58:00+08:00</published><updated>2010-06-13T15:58:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-13:/solved-wordpress-rss-layout-problem.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/RSS"&gt;RSS&lt;/a&gt;（简易资讯聚合），是 Really
+Simple Syndication（RSS
+2.0）的简写。使用阅读器订阅文章或新闻是一种良好的获得信息的习惯。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;我在使用 Google Reader 订阅几个朋友的 WordPress
+博客的时候发现，他们的文章排版有问题，没有标题、段落等格式之分，看上去就是密密麻麻的文字。这样就导致可阅读性很差，严重影响订阅者的心情。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;问题原因&lt;/h2&gt;
+&lt;p&gt;刚开始我以为，他们使用了文字处理编辑工具（比如 MS Word
+等）来写博文，可能是 HTML
+标签没有闭合等原因引起的。于是我建议他们使用纯文本编辑工具，比如WordPress
+后台添加新文章的默认编辑器，但不要使用可视化模式，转换到 HTML
+源码编辑模式，手动为文章加上 &amp;lt;h3&amp;gt;，&amp;lt;p&amp;gt;等 HTML
+标签。这仅是我的个人习惯 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://zh.wikipedia.org/zh-cn/RSS"&gt;RSS&lt;/a&gt;（简易资讯聚合），是 Really
+Simple Syndication（RSS
+2.0）的简写。使用阅读器订阅文章或新闻是一种良好的获得信息的习惯。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;我在使用 Google Reader 订阅几个朋友的 WordPress
+博客的时候发现，他们的文章排版有问题，没有标题、段落等格式之分，看上去就是密密麻麻的文字。这样就导致可阅读性很差，严重影响订阅者的心情。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;问题原因&lt;/h2&gt;
+&lt;p&gt;刚开始我以为，他们使用了文字处理编辑工具（比如 MS Word
+等）来写博文，可能是 HTML
+标签没有闭合等原因引起的。于是我建议他们使用纯文本编辑工具，比如WordPress
+后台添加新文章的默认编辑器，但不要使用可视化模式，转换到 HTML
+源码编辑模式，手动为文章加上 &amp;lt;h3&amp;gt;，&amp;lt;p&amp;gt;等 HTML
+标签。这仅是我的个人习惯，如果不熟悉 HTML 标签也很正常，使用 DreamWeaver
+或标准的可视化修改插件。&lt;/p&gt;
+&lt;p&gt;问题仍然存在，这下来了兴趣了，使用 Firebug 查看订阅的文章，发现没有 HTML
+标签，超链接和所有的内容都变成了纯文本显示。使用浏览器（FF会直接订阅，使用
+IE、Chrome 或 Opera 可以查看 RSS Feed 的内容）直接打开 Feed地址，格式为
+&lt;a class="reference external" href="http://domain.com/feed"&gt;http://domain.com/feed&lt;/a&gt;，有不同的显示：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;IE 8:
+显示的友好的格式，头部为博客名字和相关介绍，并有“订阅该源”的链接。点击订阅会像收藏夹一样可方便下次阅读。接着是带有版本格式的所有文章。右侧是工具导航功能。其页面源代码是
+RSS XML 文档。&lt;/li&gt;
+&lt;li&gt;FF 3.6.*: 直接弹出订阅收藏窗口。&lt;/li&gt;
+&lt;li&gt;Google Chrome: 显示的是纯文本，如 Google
+阅读器显示的效果一样，但是其源代码也是和 IE 8 相同的 RSS XML
+扩展文档。&lt;/li&gt;
+&lt;li&gt;其它未测试，有兴趣你可以试下。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看出可能的原因是，WordPress RSS Feed 虽然提供了 RSS 的 XML
+定义文档，但也可能被显示为纯文本的文章订阅内容。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;为了解决这种不统一显示的问题，推荐使用 RSS Feed 托管工具：Google
+FeedBurner，国内的 Feedsky 等，这样就可以简单地解决排版问题了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;后语&lt;/h2&gt;
+&lt;p&gt;RSS 还有很多设置方法，我在这里就暂时献丑说这么多了。有关更多的 RSS
+设置，下面抛砖引玉为大家推荐几个相关资源：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.williamlong.info/archives/843.html"&gt;在FeedSky和FeedBurner中无缝切换-月光博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.happinesz.cn/archives/789/"&gt;10个优化WordPress RSS Feed的技巧(1) -
+幸福收藏夹&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.wordpress.la/completely-control-rss-in-wordpress.html"&gt;如何完全掌控WordPress的RSS |
+WordPress啦!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>WordPress：为您的博客增加“网站地图”页面</title><link href="/add-your-wordpress-sitemap.html" rel="alternate"></link><published>2010-06-12T13:34:00+08:00</published><updated>2010-06-12T13:34:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-12:/add-your-wordpress-sitemap.html</id><summary type="html">&lt;p&gt;网站地图（Sitemaps）又称站点地图，是一个显示网站所有页面的页面。它是一个很友好的页面，向来访的朋友展示您的站点结构。还有一种站点地图，XML站点地图，专门给搜索引擎看的，SEO
+优化必备文件。有很多创建 XML 站点地图的在线工具，比如 Google 的
+&lt;a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN"&gt;WebMaster
+Tools&lt;/a&gt;。这篇文章主要介绍的是前者，使用
+WordPress 的模板系统创建一个“网站地图”页面。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;第一步，创建自己的页面模板&lt;/h2&gt;
+&lt;p&gt;最简单的方法就是使用 FTP 或 SSH
+工具，到当前使用的主题目录（/wp-content/themes/您的主题名/）下复制
+paga.php 文件里面的内容到新建的 Sitemap.php 文件，并在头部增加以下代码：&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&amp;lt; &lt;span class="pre"&gt;?php&lt;/span&gt; /* Template Name: Sitemap */ &lt;span class="pre"&gt;?&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;以上代码的表示定义一个“Sitemap …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;网站地图（Sitemaps）又称站点地图，是一个显示网站所有页面的页面。它是一个很友好的页面，向来访的朋友展示您的站点结构。还有一种站点地图，XML站点地图，专门给搜索引擎看的，SEO
+优化必备文件。有很多创建 XML 站点地图的在线工具，比如 Google 的
+&lt;a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN"&gt;WebMaster
+Tools&lt;/a&gt;。这篇文章主要介绍的是前者，使用
+WordPress 的模板系统创建一个“网站地图”页面。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;第一步，创建自己的页面模板&lt;/h2&gt;
+&lt;p&gt;最简单的方法就是使用 FTP 或 SSH
+工具，到当前使用的主题目录（/wp-content/themes/您的主题名/）下复制
+paga.php 文件里面的内容到新建的 Sitemap.php 文件，并在头部增加以下代码：&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&amp;lt; &lt;span class="pre"&gt;?php&lt;/span&gt; /* Template Name: Sitemap */ &lt;span class="pre"&gt;?&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;以上代码的表示定义一个“Sitemap”模板，这样此模板就可以在后台“外观”—&amp;gt;“编辑”的模板列表中可见了，名字为文件的名字，&lt;a class="reference external" href="http://codex.wordpress.org/Theme_Development#Theme_Template_Files_List"&gt;除了
+保留的文件名（不可用）&lt;/a&gt;以外。这样就增加了一个自定义的模板了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sitemap"&gt;
+&lt;h2&gt;为 Sitemap 模板增加网站地图程序代码&lt;/h2&gt;
+&lt;p&gt;有两种方式实现，下面只介绍最简单的一种，使用 &lt;strong&gt;Dagon Design Sitemap
+Generator 3.15&lt;/strong&gt; 插件。&lt;/p&gt;
+&lt;p&gt;首先，安装一款生成网站地图所用的插件 Dagon Design Sitemap Generator
+3.15，激活后在“页面”—&amp;gt;“添加新页面”中增加一个新页面。页面名字“网站地图”，内容则简单，在
+HTML 代码模式下加下面一句即可：&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;接着，在属性选项中选择自定义的模板“Sitemap”。默认值是“默认模板”（page.php），下拉选项可以看到。这就是加了那个段注释的头部代码的作用了。&lt;/p&gt;
+&lt;p&gt;最后的工作就是修改 Sitemap 模板。去掉里面的不必要
+Widgets，比如评论功能，侧边工具栏等，这样一个结构清晰的网站地图就出来了。&lt;/p&gt;
+&lt;p&gt;说到这里应该明白，其实添加页面不需要自定义模板，这样做只是为了个性化页面。使页面显示更加灵活。&lt;/p&gt;
+&lt;p&gt;了解更多详细帮助信息，请访问 WordPress.org
+官方帮助：&lt;a class="reference external" href="http://codex.wordpress.org/zh-cn:%E9%A1%B5%E9%9D%A2"&gt;创建自己的页面模板（简体中文）&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>老生常谈：CSS overflow 那些事儿</title><link href="/css-overflow-usages.html" rel="alternate"></link><published>2010-06-10T11:23:00+08:00</published><updated>2010-06-10T11:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-10:/css-overflow-usages.html</id><summary type="html">&lt;p&gt;css 的 overflow 属性的用法很广泛也很重要，最近在修改 WordPress 和 CMS
+的模板的时候就发现有很多地方是因为不正确地使用 overflow
+属性而导致跨浏览器使用会出现诡异的渲染结果。&lt;/p&gt;
+&lt;div class="section" id="overflow"&gt;
+&lt;h2&gt;overflow 属性定义和说明&lt;/h2&gt;
+&lt;p&gt;overflow 中文即溢出的意思，在 CSS
+中则是指当前元素的内容溢出后应该怎么处理。&lt;/p&gt;
+&lt;p&gt;overflow 属性值有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;visible&lt;/strong&gt;：默认值，表示当前元素显示的内容不可截断，这表示它可能会从当前容器元素中溢出，跑到盒模型外面。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;hidden&lt;/strong&gt;：此值表示的内容是剪辑，也没有滚动用户界面应提供查看剪辑区域以外的内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;scroll&lt;/strong&gt;：使用滚动条来显示溢出的内容，使用这一值时，它却不管用户是否需要都使用滚动条机制。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;auto&lt;/strong&gt;：自动模式，根据需要使用滚动条。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inherit&lt;/strong&gt;：从父元素继承。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你参考 W3school 的 &lt;a class="reference external" href="http://www.w3school.com.cn/css/pr_pos_overflow.asp"&gt;CSS
+overflow&lt;/a&gt;
+属性，你会发现它的 overflow 定义说明中表格中的默认值为
+auto，这是错误的。请参考 W3C …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;css 的 overflow 属性的用法很广泛也很重要，最近在修改 WordPress 和 CMS
+的模板的时候就发现有很多地方是因为不正确地使用 overflow
+属性而导致跨浏览器使用会出现诡异的渲染结果。&lt;/p&gt;
+&lt;div class="section" id="overflow"&gt;
+&lt;h2&gt;overflow 属性定义和说明&lt;/h2&gt;
+&lt;p&gt;overflow 中文即溢出的意思，在 CSS
+中则是指当前元素的内容溢出后应该怎么处理。&lt;/p&gt;
+&lt;p&gt;overflow 属性值有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;visible&lt;/strong&gt;：默认值，表示当前元素显示的内容不可截断，这表示它可能会从当前容器元素中溢出，跑到盒模型外面。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;hidden&lt;/strong&gt;：此值表示的内容是剪辑，也没有滚动用户界面应提供查看剪辑区域以外的内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;scroll&lt;/strong&gt;：使用滚动条来显示溢出的内容，使用这一值时，它却不管用户是否需要都使用滚动条机制。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;auto&lt;/strong&gt;：自动模式，根据需要使用滚动条。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inherit&lt;/strong&gt;：从父元素继承。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你参考 W3school 的 &lt;a class="reference external" href="http://www.w3school.com.cn/css/pr_pos_overflow.asp"&gt;CSS
+overflow&lt;/a&gt;
+属性，你会发现它的 overflow 定义说明中表格中的默认值为
+auto，这是错误的。请参考 W3C 标准中的
+&lt;a class="reference external" href="http://www.w3.org/TR/CSS2/visufx.html"&gt;overflow&lt;/a&gt; 定义吧。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;跨浏览器问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;overflow:scroll 时滚动条位置：Firefox 3.0.10
+的滚动条在盒子里面，标准的应该是在框模型外面，更新版本已经更正。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;IE 8 扩展盒子的bug&lt;/p&gt;
+&lt;p&gt;这里有一个介绍得很详细的&lt;a class="reference external" href="http://edskes.net/ie8overflowandexpandingboxbugs.htm"&gt;参考文章&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;破坏浮动布局&lt;/p&gt;
+&lt;p&gt;IE 6, 7 和 8都会扭曲 overflow 默认的 visible
+值并将水平的扩展一个盒子一匹配内容(比如图片)。
+这对使用浮动列布局的结构非常痛苦，而且单个扩展的列就能够将其它列挤下去并使布局乱掉！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;IE6 中 overflow:hidden 必须指定宽度和高度才能起作用&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;overflow 的妙用&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;清除浮动&lt;/li&gt;
+&lt;li&gt;去掉 IE 浏览器的默认滚动条：设置 body 标签中的 overflow:auto
+就可以了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;相关博文阅读&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://paranimage.com/css-overflow-attribute/"&gt;CSS Overflow属性详解 |
+帕兰映像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://dudo.org/2009/05/289/"&gt;快速认识CSS中的overflow属性 |
+dudo博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://biotechgo.net/blog/css-overflow-hidden-bug-in-ie6/"&gt;解决IE6下CSS中overflow: hidden问题 |
+百奥博&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些文章写得很好，推荐之！&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>翻译：Adobe Dreamweaver CS5 HTML 5 扩展包</title><link href="/adobe-dreamweaver-cs5-html5pack.html" rel="alternate"></link><published>2010-06-09T13:52:00+08:00</published><updated>2010-06-09T13:52:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-09:/adobe-dreamweaver-cs5-html5pack.html</id><summary type="html">&lt;p&gt;跟着主研究员 Jorge Taylor 演示一个 Dreamweaver 扩展的 CS5 HTML5 的包，为
+Adobe Creative Suite 5 用户提供更多创新的选择。&lt;/p&gt;
+&lt;p&gt;通过该扩展包，DW CS5 将获得以下新特性：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;多屏幕预览面板，适用于同时为不同设备开发 HTML 应用&lt;/li&gt;
+&lt;li&gt;支持对 HTML 5 新增的标签库的代码提示&lt;/li&gt;
+&lt;li&gt;支持对 CSS 3 代码提示&lt;/li&gt;
+&lt;li&gt;增加 Video 和 Audio 标签的实时预览&lt;/li&gt;
+&lt;li&gt;改进 CSS 3 实时预览效果&lt;/li&gt;
+&lt;li&gt;改进设计视图下对 HTML 5 新增标签的渲染效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_313&amp;quot; align=&amp;quot;alignnone&amp;quot; caption …&lt;/p&gt;</summary><content type="html">&lt;p&gt;跟着主研究员 Jorge Taylor 演示一个 Dreamweaver 扩展的 CS5 HTML5 的包，为
+Adobe Creative Suite 5 用户提供更多创新的选择。&lt;/p&gt;
+&lt;p&gt;通过该扩展包，DW CS5 将获得以下新特性：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;多屏幕预览面板，适用于同时为不同设备开发 HTML 应用&lt;/li&gt;
+&lt;li&gt;支持对 HTML 5 新增的标签库的代码提示&lt;/li&gt;
+&lt;li&gt;支持对 CSS 3 代码提示&lt;/li&gt;
+&lt;li&gt;增加 Video 和 Audio 标签的实时预览&lt;/li&gt;
+&lt;li&gt;改进 CSS 3 实时预览效果&lt;/li&gt;
+&lt;li&gt;改进设计视图下对 HTML 5 新增标签的渲染效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_313&amp;quot; align=&amp;quot;alignnone&amp;quot; caption=&amp;quot;Adobe Extension
+Manager CS 5, HTML 5 PACK&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/06/DW_CS5_HTML5.png"&gt;&lt;img alt="Adobe Extension Manager CS 5" class="size-full wp-image-313" src="http://magicalboy.com/wp-content/uploads/2010/06/DW_CS5_HTML5.png" style="height: 217px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;点击&lt;a class="reference external" href="http://download.macromedia.com/pub/labs/html5pack/html5pack_p1_051910.zxp"&gt;这里&lt;/a&gt;下载。&lt;/p&gt;
+&lt;p&gt;安装成功后，DreamWeaver CS 5
+就有上面所提到的相应功能了，例如上篇文章所提到的 SVG
+标签自动提示，更多功能请君自行体验。&lt;/p&gt;
+</content></entry><entry><title>IE9 预览版演示 HTML 5 图形测试</title><link href="/ie9-platform-preview-graphics-demos.html" rel="alternate"></link><published>2010-06-07T23:59:00+08:00</published><updated>2010-06-07T23:59:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-07:/ie9-platform-preview-graphics-demos.html</id><summary type="html">&lt;p&gt;首先访问&lt;a class="reference external" href="http://ie.microsoft.com/testdrive/"&gt;Internet Explorer 9: Platform
+Demos&lt;/a&gt;，首次访问会提示您下载安装
+IE9 预览版，一个全新的 Web 平台功能。&lt;/p&gt;
+&lt;p&gt;点击“Install the Preview!”，下载一个 14.3M 的安装文件
+iepreview.msi，点击开始安装。注意：不支持 Win XP，安装的只是一个 IE
+预览平台，不会替换掉当前系统的 IE 版本。平台演示的这些功能将会随正式版
+IE9 发布。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_289&amp;quot; align=&amp;quot;alignnone&amp;quot; caption=&amp;quot;HTML 5&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/06/html5.png"&gt;&lt;img alt="HTML 5" class="size-full wp-image-289" src="http://magicalboy.com/wp-content/uploads/2010/06/html5.png" style="height: 313px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;下面就开始测试一下 HTML 5 的图形显示——SVG …&lt;/p&gt;</summary><content type="html">&lt;p&gt;首先访问&lt;a class="reference external" href="http://ie.microsoft.com/testdrive/"&gt;Internet Explorer 9: Platform
+Demos&lt;/a&gt;，首次访问会提示您下载安装
+IE9 预览版，一个全新的 Web 平台功能。&lt;/p&gt;
+&lt;p&gt;点击“Install the Preview!”，下载一个 14.3M 的安装文件
+iepreview.msi，点击开始安装。注意：不支持 Win XP，安装的只是一个 IE
+预览平台，不会替换掉当前系统的 IE 版本。平台演示的这些功能将会随正式版
+IE9 发布。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_289&amp;quot; align=&amp;quot;alignnone&amp;quot; caption=&amp;quot;HTML 5&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/06/html5.png"&gt;&lt;img alt="HTML 5" class="size-full wp-image-289" src="http://magicalboy.com/wp-content/uploads/2010/06/html5.png" style="height: 313px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;下面就开始测试一下 HTML 5 的图形显示——SVG 标签&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&amp;lt; !DOCTYPE html&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;width=&amp;quot;100&amp;quot; height=&amp;quot;200&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;fill=&amp;quot;blue&amp;quot; stroke=&amp;quot;red&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;stroke-width=&amp;quot;5px&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;rx=&amp;quot;8&amp;quot; ry=&amp;quot;8&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;id=&amp;quot;myRect&amp;quot; class=&amp;quot;chart&amp;quot; /&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;IE9 下运行效果图&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_291&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;327&amp;quot;
+caption=&amp;quot;HTML5_SVG&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/06/HTML5_SVG.png"&gt;&lt;img alt="HTML5_SVG" class="size-full wp-image-291" src="http://magicalboy.com/wp-content/uploads/2010/06/HTML5_SVG.png" style="width: 327px; height: 274px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;目前只有 IE9 预览版支持 SVG 标签，所以必须在 IE9 下测试哦&lt;/p&gt;
+</content></entry><entry><title>翻译：全面的 HTML 5 视频教程</title><link href="/html-5-video-tutorial-and-comprehensive.html" rel="alternate"></link><published>2010-06-07T06:42:00+08:00</published><updated>2010-06-07T06:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-07:/html-5-video-tutorial-and-comprehensive.html</id><summary type="html">&lt;p&gt;这是一个老的视频教程，由一位叫 Brad Neuberg 的 Google
+员工发布的介绍HTML5的教程。这篇文章专为那些时间很忙但又想跟进HTML5发展步伐的人而写的。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://vimeo.com/6691519"&gt;Introduction to HTML 5&lt;/a&gt; from &lt;a class="reference external" href="http://vimeo.com/user1005914"&gt;Brad
+Neuberg&lt;/a&gt; on
+&lt;a class="reference external" href="http://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;本篇文章包括的话题有：&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Web 矢量图形：Canvas 标签和可缩放矢量图形（SVG）&lt;/li&gt;
+&lt;li&gt;地理定位接口&lt;/li&gt;
+&lt;li&gt;HTML 5 视频&lt;/li&gt;
+&lt;li&gt;HTML 5 数据库和应用程序缓存&lt;/li&gt;
+&lt;li&gt;Web 工作者&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;视频比较长，坐下来尽情享受吧。&lt;/p&gt;
+&lt;p&gt;假如你喜欢传统类型的教程，我们在这里准备了另一个教程：&lt;a class="reference external" href="http://www.html5trends.com/tutorials/an-html5-tutorial-by-a-google-employee/"&gt;An HTML5
+Tutorial by a Google
+Employee&lt;/a&gt;，也是出自一位
+Google 员工之手。&lt;/p&gt;
+&lt;p&gt;原文链接：&lt;a class="reference external" href="http://www.html5trends.com/tutorials/comprehensive-video-tutorial-on-html5/"&gt;Comprehensive video tutorial …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;这是一个老的视频教程，由一位叫 Brad Neuberg 的 Google
+员工发布的介绍HTML5的教程。这篇文章专为那些时间很忙但又想跟进HTML5发展步伐的人而写的。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://vimeo.com/6691519"&gt;Introduction to HTML 5&lt;/a&gt; from &lt;a class="reference external" href="http://vimeo.com/user1005914"&gt;Brad
+Neuberg&lt;/a&gt; on
+&lt;a class="reference external" href="http://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;本篇文章包括的话题有：&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Web 矢量图形：Canvas 标签和可缩放矢量图形（SVG）&lt;/li&gt;
+&lt;li&gt;地理定位接口&lt;/li&gt;
+&lt;li&gt;HTML 5 视频&lt;/li&gt;
+&lt;li&gt;HTML 5 数据库和应用程序缓存&lt;/li&gt;
+&lt;li&gt;Web 工作者&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;视频比较长，坐下来尽情享受吧。&lt;/p&gt;
+&lt;p&gt;假如你喜欢传统类型的教程，我们在这里准备了另一个教程：&lt;a class="reference external" href="http://www.html5trends.com/tutorials/an-html5-tutorial-by-a-google-employee/"&gt;An HTML5
+Tutorial by a Google
+Employee&lt;/a&gt;，也是出自一位
+Google 员工之手。&lt;/p&gt;
+&lt;p&gt;原文链接：&lt;a class="reference external" href="http://www.html5trends.com/tutorials/comprehensive-video-tutorial-on-html5/"&gt;Comprehensive video tutorial on
+HTML5&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>手绘风格的原型设计工具Mockups</title><link href="/hand-painted-style-of-prototyping-tools.html" rel="alternate"></link><published>2010-06-05T01:37:00+08:00</published><updated>2010-06-05T01:37:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-06-05:/hand-painted-style-of-prototyping-tools.html</id><summary type="html">&lt;p&gt;由于需要为美工MM提供线框图，在网上找了几个有手绘效果的模型设计工具：Cacoo
+和 Balsamiq Mockups。&lt;/p&gt;
+&lt;div class="section" id="cacoo"&gt;
+&lt;h2&gt;Cacoo&lt;/h2&gt;
+&lt;p&gt;Cacoo是一款在线的Web App，功能确实很强大，不仅仅可以画手绘效果的Freehand
+Wireframe，还可以画流程图，UML图等。不足之处是可用元素比较少，而且以国内的网速使用Web
+App体验效果不佳。Cacoo(カクー)由日本人开发的，可以免费体验4个月。网址：&lt;a class="reference external" href="http://cacoo.com/"&gt;http://cacoo.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="balsamiq-mockups"&gt;
+&lt;h2&gt;Balsamiq Mockups&lt;/h2&gt;
+&lt;p&gt;Mockups，顾名思其义，一款实体模型设计工具。具有丰富的UI元素，IPHONE应用程序界面，RIA
+UI等。Mockups 也是基于Adobe 的 Flex 技术开发的，有Web App和Desktop
+App两个版本，即使没有网络也可以通过下载桌面版的AIR程序安装使用。Mockups
+不是免费软件，不过有免费的途径获取注册码，比如写信给Balsamiq，写博文介绍Mockups等。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Mockups 官方截图 …&lt;/h2&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;由于需要为美工MM提供线框图，在网上找了几个有手绘效果的模型设计工具：Cacoo
+和 Balsamiq Mockups。&lt;/p&gt;
+&lt;div class="section" id="cacoo"&gt;
+&lt;h2&gt;Cacoo&lt;/h2&gt;
+&lt;p&gt;Cacoo是一款在线的Web App，功能确实很强大，不仅仅可以画手绘效果的Freehand
+Wireframe，还可以画流程图，UML图等。不足之处是可用元素比较少，而且以国内的网速使用Web
+App体验效果不佳。Cacoo(カクー)由日本人开发的，可以免费体验4个月。网址：&lt;a class="reference external" href="http://cacoo.com/"&gt;http://cacoo.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="balsamiq-mockups"&gt;
+&lt;h2&gt;Balsamiq Mockups&lt;/h2&gt;
+&lt;p&gt;Mockups，顾名思其义，一款实体模型设计工具。具有丰富的UI元素，IPHONE应用程序界面，RIA
+UI等。Mockups 也是基于Adobe 的 Flex 技术开发的，有Web App和Desktop
+App两个版本，即使没有网络也可以通过下载桌面版的AIR程序安装使用。Mockups
+不是免费软件，不过有免费的途径获取注册码，比如写信给Balsamiq，写博文介绍Mockups等。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;Mockups 官方截图&lt;/h2&gt;
+&lt;p&gt;[gallery]&lt;/p&gt;
+&lt;p&gt;更多介绍请访问&lt;a class="reference external" href="http://www.balsamiq.com/products/mockups/examples"&gt;http://www.balsamiq.com/products/mockups/examples&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>wordpress的文章图片浮动解决方法</title><link href="/wordpress-article-image-floating-solution.html" rel="alternate"></link><published>2010-05-30T08:56:00+08:00</published><updated>2010-05-30T08:56:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-30:/wordpress-article-image-floating-solution.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;为文章添加图像&lt;/h2&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_179&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;441&amp;quot;
+caption=&amp;quot;后台添加图像&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png"&gt;&lt;img alt="后台添加图像" class="alignnone size-full wp-image-194" src="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png" style="width: 391px; height: 103px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;我们在后台为文章添加图像，使用左对齐显示的时候，可能会出现图像在文章中向左靠，标题文章向右靠等问题，点击查看示例文章&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;先看默认设置时所插入图片的代码&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;[caption &lt;span class="pre"&gt;id=&amp;quot;attachment_179&amp;quot;&lt;/span&gt;&amp;nbsp; &lt;span class="pre"&gt;align=&amp;quot;alignleft&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;width=&amp;quot;441&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;caption=&amp;quot;后台添加图像&amp;quot;]&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;http://www.wordpress.la/WordPress中图片属性caption的使用.html。&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;再看[caption]中的属性align=&amp;quot;alignleft&amp;quot;的CSS代码&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;.alignleft {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; float:left;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;margin-right:10px;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;text-align:left;&lt;/span&gt; }&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;其中的float:left使图片向左浮动，这是出现问题的原因之处了吧。所以我们在插入图片时要注意修改一下 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;为文章添加图像&lt;/h2&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_179&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;441&amp;quot;
+caption=&amp;quot;后台添加图像&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png"&gt;&lt;img alt="后台添加图像" class="alignnone size-full wp-image-194" src="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png" style="width: 391px; height: 103px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;我们在后台为文章添加图像，使用左对齐显示的时候，可能会出现图像在文章中向左靠，标题文章向右靠等问题，点击查看示例文章&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;先看默认设置时所插入图片的代码&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;[caption &lt;span class="pre"&gt;id=&amp;quot;attachment_179&amp;quot;&lt;/span&gt;&amp;nbsp; &lt;span class="pre"&gt;align=&amp;quot;alignleft&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;width=&amp;quot;441&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;caption=&amp;quot;后台添加图像&amp;quot;]&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;http://www.wordpress.la/WordPress中图片属性caption的使用.html。&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;再看[caption]中的属性align=&amp;quot;alignleft&amp;quot;的CSS代码&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;.alignleft {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; float:left;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;margin-right:10px;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;text-align:left;&lt;/span&gt; }&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;其中的float:left使图片向左浮动，这是出现问题的原因之处了吧。所以我们在插入图片时要注意修改一下，去掉align=&amp;quot;alignleft&amp;quot;或者在添加图像时，对齐方式选项设置为无，等于align=&amp;quot;alignnone&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/图片位置.png"&gt;&lt;img alt="图片位置" class="size-full wp-image-197" src="http://magicalboy.com/wp-content/uploads/2010/05/图片位置.png" style="width: 322px; height: 218px;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>防止浏览器缓存的简单方法</title><link href="/prevent-the-browser-cache.html" rel="alternate"></link><published>2010-05-19T01:33:00+08:00</published><updated>2010-05-19T01:33:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-19:/prevent-the-browser-cache.html</id><summary type="html">&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;这是一个老问题了，在WEB开发中，我们经常会忽略它的重要性以至于遇到奇妙的问题时而不知所措。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在项目开发中使用到Ajax，其中Ajax请求提交后返回的数据在IE6显示总是一成不变，甚至直接从浏览器缓存中直接读取而不去服务器请求！&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;在请求的地址后面加上一个随机数参数即可：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;…… &lt;span class="pre"&gt;$.get(&amp;quot;/getdata?nocache=&amp;quot;+Math.random(),&lt;/span&gt; function(data) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; alert(data);&amp;nbsp; // demo }); ……&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;后语&lt;/h2&gt;
+&lt;p&gt;在WEB开发中，还真不要小看浏览器缓存所带来的影响，当遇到寞名的问题时而无从下手时，不妨清理一下浏览器缓存看看&lt;/p&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;这是一个老问题了，在WEB开发中，我们经常会忽略它的重要性以至于遇到奇妙的问题时而不知所措。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在项目开发中使用到Ajax，其中Ajax请求提交后返回的数据在IE6显示总是一成不变，甚至直接从浏览器缓存中直接读取而不去服务器请求！&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;在请求的地址后面加上一个随机数参数即可：&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;…… &lt;span class="pre"&gt;$.get(&amp;quot;/getdata?nocache=&amp;quot;+Math.random(),&lt;/span&gt; function(data) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; alert(data);&amp;nbsp; // demo }); ……&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;后语&lt;/h2&gt;
+&lt;p&gt;在WEB开发中，还真不要小看浏览器缓存所带来的影响，当遇到寞名的问题时而无从下手时，不妨清理一下浏览器缓存看看&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>浅谈JavaScript全局变量与局部变量</title><link href="/javascript-global-and-local-variables.html" rel="alternate"></link><published>2010-05-13T06:44:00+08:00</published><updated>2010-05-13T06:44:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-13:/javascript-global-and-local-variables.html</id><summary type="html">&lt;p&gt;JavaScript是一门具有非常丰富特性的脚本语言，它有着其他编程语言一样的复杂性，甚至有时更复杂。下面就谈谈JavaScript的全局变量与局部变量的作用范围。&lt;/p&gt;
+&lt;p&gt;先看一个简单示例，&lt;strong&gt;修改全局变量的值&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;var message = &amp;quot;Hello, Welcome to magicalboy.com&amp;quot;;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;function show() {&lt;/div&gt;
+&lt;div class="line"&gt;message=&amp;quot;magicalboy&amp;quot;;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;show();&lt;/div&gt;
+&lt;div class="line"&gt;alert(message);&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;运行结果为弹出窗口警告信息：magicalboy.&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JavaScript(ECMAScript)
+的解释程序遇到未声明过的标识符时，用该变量名创建一个全局变量，并将其初始化为指定的值。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以message是一个全局变量。show()函数中遇到message，首先在函数里面即当前内存空间去找，找不到再向上在全局空间继续找，如果找到了，那好，为它所指向的内存地址赋新的值&amp;quot;magicalboy&amp;quot;。如果找不到呢，正如前面所说，用该变量名创建一个全局变量，并将其初始化为指定的值。&lt;/p&gt;
+&lt;p&gt;JavaScript像Python等其它动态脚本语言一样支持闭包（closure）这一特性，使得函数可以使用函数之外定义的变量。&lt;/p&gt;
+&lt;p&gt;对代码作如下修改，会有什么样的输出呢&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;var message = &amp;quot;Hello, Welcome …&lt;/tt&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;JavaScript是一门具有非常丰富特性的脚本语言，它有着其他编程语言一样的复杂性，甚至有时更复杂。下面就谈谈JavaScript的全局变量与局部变量的作用范围。&lt;/p&gt;
+&lt;p&gt;先看一个简单示例，&lt;strong&gt;修改全局变量的值&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;var message = &amp;quot;Hello, Welcome to magicalboy.com&amp;quot;;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;function show() {&lt;/div&gt;
+&lt;div class="line"&gt;message=&amp;quot;magicalboy&amp;quot;;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;show();&lt;/div&gt;
+&lt;div class="line"&gt;alert(message);&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;运行结果为弹出窗口警告信息：magicalboy.&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JavaScript(ECMAScript)
+的解释程序遇到未声明过的标识符时，用该变量名创建一个全局变量，并将其初始化为指定的值。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以message是一个全局变量。show()函数中遇到message，首先在函数里面即当前内存空间去找，找不到再向上在全局空间继续找，如果找到了，那好，为它所指向的内存地址赋新的值&amp;quot;magicalboy&amp;quot;。如果找不到呢，正如前面所说，用该变量名创建一个全局变量，并将其初始化为指定的值。&lt;/p&gt;
+&lt;p&gt;JavaScript像Python等其它动态脚本语言一样支持闭包（closure）这一特性，使得函数可以使用函数之外定义的变量。&lt;/p&gt;
+&lt;p&gt;对代码作如下修改，会有什么样的输出呢&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;var message = &amp;quot;Hello, Welcome to magicalboy.com&amp;quot;;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;function show() {&lt;/div&gt;
+&lt;div class="line"&gt;var message; // 增加var关键字显式声明变量&lt;/div&gt;
+&lt;div class="line"&gt;message=&amp;quot;magicalboy&amp;quot;;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;show();&lt;/div&gt;
+&lt;div class="line"&gt;alert(message);&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;没错，这次输出的是全局变量的值：&lt;tt class="docutils literal"&gt;Hello, Welcome to magicalboy.com&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;在show函数里面，我们重要用var显式声明了message变量。因为是在show函数里面显式声明的，它是一个局部变量。我们在函数里面修改了它的值，但它没有改变与之同名的全局变量的值，由此说明&lt;strong&gt;全局变量与局部变量的作用空间是相互独立的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;学过Python语言的人会觉得有点奇怪，他们会这两种情况和Python刚好相反，虽然Python中全局变量是使用global关键字声明的。&lt;/p&gt;
+</content></entry><entry><title>让IE6支持PNG透明(alpha通道)之FixPNG_jQuery_Plugin</title><link href="/fixpng-jquery-plugin.html" rel="alternate"></link><published>2010-05-12T03:42:00+08:00</published><updated>2010-05-12T03:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-12:/fixpng-jquery-plugin.html</id><summary type="html">&lt;p&gt;IE6与生俱来就支持png8的索引色透明度，但不支持png或8位以上的 alpha
+透明度。而对于非动画的GIF建议你使用PNG8，因为体积会更小。在这里，介绍一个jQuery的插件，它能让IE6支持PNG的
+alpha 透明度，方便使用jQuery JS库的朋友使用。&lt;/p&gt;
+&lt;div class="section" id="fixpng-jqueryie6png"&gt;
+&lt;h2&gt;使用FixPNG jQuery插件使IE6支持PNG透明&lt;/h2&gt;
+&lt;p&gt;插件官方下载地址：&lt;a class="reference external" href="http://plugins.jquery.com/project/fixpng"&gt;http://plugins.jquery.com/project/fixpng&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载解压后，有简单的使用Demo，使用方法如下：&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;需要注意的是：在fixpng.js插件里，第18行&amp;quot;gif_file =
+&amp;quot;img/vazio.gif&amp;quot;;&amp;quot;指向空白像素点的gif图片的路径需要根据你的路径修改一下。如果JS有报错：
+&amp;quot;$ is not a function&amp;quot;，将&amp;quot;$&amp;quot;换为&amp;quot;jQuery&amp;quot;即可&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="htcie6png"&gt;
+&lt;h2&gt;使用HTC组件方法使IE6支持PNG透明&lt;/h2&gt;
+&lt;blockquote&gt;
+htc的全称就是Html
+Components，由微软在IE5.0后开始提供的一种新的指令组合，它可以把某种特定功能的代码封装在一个组件之中，从而实现了代码的重复使用 …&lt;/blockquote&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;IE6与生俱来就支持png8的索引色透明度，但不支持png或8位以上的 alpha
+透明度。而对于非动画的GIF建议你使用PNG8，因为体积会更小。在这里，介绍一个jQuery的插件，它能让IE6支持PNG的
+alpha 透明度，方便使用jQuery JS库的朋友使用。&lt;/p&gt;
+&lt;div class="section" id="fixpng-jqueryie6png"&gt;
+&lt;h2&gt;使用FixPNG jQuery插件使IE6支持PNG透明&lt;/h2&gt;
+&lt;p&gt;插件官方下载地址：&lt;a class="reference external" href="http://plugins.jquery.com/project/fixpng"&gt;http://plugins.jquery.com/project/fixpng&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载解压后，有简单的使用Demo，使用方法如下：&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;需要注意的是：在fixpng.js插件里，第18行&amp;quot;gif_file =
+&amp;quot;img/vazio.gif&amp;quot;;&amp;quot;指向空白像素点的gif图片的路径需要根据你的路径修改一下。如果JS有报错：
+&amp;quot;$ is not a function&amp;quot;，将&amp;quot;$&amp;quot;换为&amp;quot;jQuery&amp;quot;即可&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="htcie6png"&gt;
+&lt;h2&gt;使用HTC组件方法使IE6支持PNG透明&lt;/h2&gt;
+&lt;blockquote&gt;
+htc的全称就是Html
+Components，由微软在IE5.0后开始提供的一种新的指令组合，它可以把某种特定功能的代码封装在一个组件之中，从而实现了代码的重复使用，据说是用来代替activex和applet的。&lt;/blockquote&gt;
+&lt;div class="section" id="ie-png-fix-v1-0-2-0-alpha-2"&gt;
+&lt;h3&gt;IE PNG Fix v1.0 / 2.0 Alpha 2&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>CodeColorer插件的BUG</title><link href="/codecolorer-bug.html" rel="alternate"></link><published>2010-04-25T01:49:00+08:00</published><updated>2010-04-25T01:49:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-04-25:/codecolorer-bug.html</id><summary type="html">&lt;p&gt;换了N多个代码语法高亮插件之后，发现CodeColorer比较适合这个主题，美中不足的是，CodeColorer竟然有JS错误的BUG，在IE和FF都有报错，插件列表页
+/wp-admin/plugins.php&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_64&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;596&amp;quot;
+caption=&amp;quot;Firebug下提示的错误信息&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/archives/codecolorer-bug.html/error_ff"&gt;&lt;img alt="CodeColorer_FF_Err" class="size-full wp-image-64" src="http://magicalboy.com/wp-content/uploads/2010/04/error_ff.png" style="width: 596px; height: 351px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_67&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;691&amp;quot;
+caption=&amp;quot;IE8下提示错误信息&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/archives/codecolorer-bug.html/error_ie8"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-67" src="http://magicalboy.com/wp-content/uploads/2010/04/error_ie8.png" style="width: 691px; height: 272px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;出错的JS文件代码：/wp-content/plugins/codecolorer/js/quicktags.js&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;(function($)&lt;/span&gt; {&amp;nbsp;&amp;nbsp; $.fn.codeColorerQuickTags = function(options) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; var codeTagIndex = &lt;span class="pre"&gt;-1;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /* 出错原因：edButtons 未定义&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; for (var i …&lt;/tt&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;换了N多个代码语法高亮插件之后，发现CodeColorer比较适合这个主题，美中不足的是，CodeColorer竟然有JS错误的BUG，在IE和FF都有报错，插件列表页
+/wp-admin/plugins.php&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_64&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;596&amp;quot;
+caption=&amp;quot;Firebug下提示的错误信息&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/archives/codecolorer-bug.html/error_ff"&gt;&lt;img alt="CodeColorer_FF_Err" class="size-full wp-image-64" src="http://magicalboy.com/wp-content/uploads/2010/04/error_ff.png" style="width: 596px; height: 351px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_67&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;691&amp;quot;
+caption=&amp;quot;IE8下提示错误信息&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/archives/codecolorer-bug.html/error_ie8"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-67" src="http://magicalboy.com/wp-content/uploads/2010/04/error_ie8.png" style="width: 691px; height: 272px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;出错的JS文件代码：/wp-content/plugins/codecolorer/js/quicktags.js&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;(function($)&lt;/span&gt; {&amp;nbsp;&amp;nbsp; $.fn.codeColorerQuickTags = function(options) {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; var codeTagIndex = &lt;span class="pre"&gt;-1;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /* 出错原因：edButtons 未定义&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; for (var i = 0; i &amp;lt; edButtons.length; &lt;span class="pre"&gt;i++)&lt;/span&gt; {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if &lt;span class="pre"&gt;(edButtons[i].id&lt;/span&gt; == 'ed_code') {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;edButtons[i].id&lt;/span&gt; = 'ed_cc';&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;edButtons[i].display&lt;/span&gt; = 'cc';&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;edButtons[i].tagStart&lt;/span&gt; = '';&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;edButtons[i].tagEnd&lt;/span&gt; = &lt;span class="pre"&gt;'[/cc]';&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;codeTagIndex = i;&lt;/div&gt;
+&lt;div class="line"&gt;break;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;} */&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;var button = '';&lt;/div&gt;
+&lt;div class="line"&gt;$(this).replaceWith(button);&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;$('#ed_cc').bind('click', insertCodeColorer);&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;function insertCodeColorer() {&lt;/div&gt;
+&lt;div class="line"&gt;if (!edCheckOpenTags(codeTagIndex)) {&lt;/div&gt;
+&lt;div class="line"&gt;var URL = prompt(codeColorerL10n.enterLanguage, '');&lt;/div&gt;
+&lt;div class="line"&gt;if (URL) {&lt;/div&gt;
+&lt;div class="line"&gt;/* edButtons 未定义&lt;/div&gt;
+&lt;div class="line"&gt;edButtons[codeTagIndex].tagStart = '[cc lang=&amp;quot;' + URL + '&amp;quot;]'; */&lt;/div&gt;
+&lt;div class="line"&gt;edInsertTag(edCanvas, codeTagIndex);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;} else {&lt;/div&gt;
+&lt;div class="line"&gt;edInsertTag(edCanvas, codeTagIndex);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;})(jQuery);&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;jQuery('#ed_code').codeColorerQuickTags();&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;按照上面那些修改就不会提示错误了，这可能是快速标签[cc]引起的，没深入了解。BTW，当然可以忽略这个小Bug，在前台浏览Blog是不会有什么问题的&lt;/p&gt;
+</content></entry></feed>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Python 的变量作用域和 LEGB 原则
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-09-09T08:59:00+08:00" pubdate>
+                            四, 09  9 2010
+                        </time>
+                        <a href="/python-scope-legb.html" rel="bookmark"><h1>Python 的变量作用域和 LEGB 原则</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>在 Python
+程序中创建、改变或查找变量名时，都是在一个保存变量名的地方进行中，那个地方我们称之为命名空间。作用域这个术语也称之为命名空间。</p>
+<p>具体地说，在代码中变量名被赋值（Python 中变量声明即赋值，global
+声明的只是变量的使用域）的位置决定了该变量能被访问的范围。函数定义了本地作用域，而模块定义的是全局作用域。这两个作用域之前有如下关系：</p>
+<ul class="simple">
+<li><strong>每一个模块都是全局作用域。</strong>也就是说，创建于模块文件顶层的变量具有全局作用域，对于外部访问就成了一个模块对象的属性。</li>
+<li><strong>全局作用域的作用范围仅限于单个文件。</strong>“全局”指的是在一个文件的顶层变量名对于这个文件而言是全局的。</li>
+<li><strong>每次对函数的调用都创建了一个新的本地作用域。</strong>Python
+中也有递归，即可以调用自身，每次调用都会创建五个新的本地命名空间。</li>
+<li><strong>赋值的变量名除非声明为全局变量，否则均为本地变量。</strong>如果需要在函数内部对模块文件顶层的变量名赋值，需要在函数内部通过
+global 语句声明该变量。</li>
+<li><strong>所有的变量可归纳为本地、全局或者内置三种。</strong>范围分别为 def
+内部，在一个模块的命名空间内部和预定义的 __builtin__
+模块提供的变量。</li>
+</ul>
+<div class="section" id="legb">
+<h2>变量名解析：LEGB 原则</h2>
+<p>如果对以上内容有所迷惑的话，请看以下总结出的几条原则。在函数命名空间中：</p>
+<ul class="simple">
+<li>变量名引用分为三个作用域进行查找：首先是本地，然后是函数内（如果有的话），之后是全局，最后是内置。</li>
+<li>在默认情况下，变量名赋值会创建或者改变本地变量。</li>
+<li>全局声明将会给映射到模块文件内部的作用域的变量名赋值。</li>
+<li>Python 的变量名解析机制也称为 <em>LEGB</em> 法则，具体如下：
+当在函数中使用未确定的变量名时，Python 搜索 4
+个作用域：本地作用域（L），之后是上一层嵌套结构中 def 或 lambda
+的本地作用域（E），之后是全局作用域（G），最后是内置作用域（B）。按这个查找原则，在第一处找到的地方停止。如果没有找到，Python
+会报错的。</li>
+<li>下图说明了搜索流程（由内及外）：</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>作用域实例</h2>
+<p><tt class="docutils literal"># <span class="pre">-*-</span> coding: utf8 <span class="pre">-*-</span></tt></p>
+<div class="line-block">
+<div class="line"># 全局作用域</div>
+<div class="line">x = 99 # x 和 func 函数在模块中声明，为全局使用域</div>
+</div>
+<div class="line-block">
+<div class="line">def func(y):</div>
+<div class="line"># 本地作用域</div>
+<div class="line">z = x + y # x 为全局变量</div>
+<div class="line">return z</div>
+</div>
+<div class="line-block">
+<div class="line">func(1) # func 在模块中定义，可以调用.结果=100</div>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    移除iPhone图标中的光泽效果
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-02-16T03:55:00+08:00" pubdate>
+                            三, 16  2 2011
+                        </time>
+                        <a href="/remove-shine-gloss-effect-on-iphone-icon.html" rel="bookmark"><h1>移除iPhone图标中的光泽效果</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line">在Xcode中为iPhone应用增加icon图标的时，Xcode默认会自动为图标圆角化，并在图标顶部增加闪耀光泽效果，就像下面这样：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png"><img alt="gloss-icon" class="alignnone size-full wp-image-1083" src="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png" style="width: 236px; height: 91px;" /></a></div>
+</div>
+<p>在图中我们可以与系统的Photos和Settings图标对比，很明显可看出增加的光泽效果。</p>
+<div class="line-block">
+<div class="line">我们可以通过修改Info.plist文件来决定是否开启这样的效果，使用Xcode或文本编辑器打开项目中的XXX-Info.plist文件，增加以下代码：</div>
+<div class="line"><tt class="docutils literal">UIPrerenderedIcon</tt></div>
+<div class="line"><strong>注意</strong></div>
+<div class="line">在Xcode中需使用&quot;Souce Code&quot;或&quot;Plain
+Text&quot;方式打开才能看到并修改XML属性代码。</div>
+</div>
+<div class="line-block">
+<div class="line">或者直接在Xcode中打打开来修改，点击增加在下拉列表中选择&quot;Icon already
+includes gloss and bevel effects&quot;项并在其值中单击启用即可，如图：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/Icon-gloss-effect.png"><img alt="Icon-gloss-effect" class="alignnone size-full wp-image-1084" src="http://magicalboy.com/wp-content/uploads/2011/02/Icon-gloss-effect.png" style="width: 438px; height: 217px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line">没有启用光泽效果的图标效果图如下：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/nongloss-icon.png"><img alt="nongloss-icon" class="alignnone size-full wp-image-1085" src="http://magicalboy.com/wp-content/uploads/2011/02/nongloss-icon.png" style="width: 237px; height: 93px;" /></a></div>
+</div>
+<p>从图中可看出来，图标的黑色和背景黑色已经分不清边界了，可根据需要使用光泽效果。</p>
+<div class="line-block">
+<div class="line"><strong>注意</strong></div>
+<div class="line">更改的效果可能不会马上生效，[STRIKEOUT:因为图标已经缓存，可更换图片再换回来以更改缓存]，删除App或者在iPhone模拟器菜单中选择“还原内容和设置...”来重置所有设置。</div>
+</div>
+<div class="section" id="ios-5">
+<h2>2013-08-02更新：iOS 5+支持</h2>
+<div class="line-block">
+<div class="line">以上设置可以支持iOS5以下，iOS5.0以上需要设置：</div>
+<div class="line"><img alt="image3" src="http://i.stack.imgur.com/TagQo.png" /></div>
+</div>
+<p>或者</p>
+<p><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/prerenderIcon.jpg"><img alt="prerenderIcon" class="alignleft size-full wp-image-43187" src="http://magicalboy.com/wp-content/uploads/2011/02/prerenderIcon.jpg" style="width: 622px; height: 472px;" /></a></p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/iphone.html">iPhone</a></p>
+                        <p>Tags: <a href="/tag/ios.html">iOS</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

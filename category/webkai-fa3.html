@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - WEB开发</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-12T13:34:00+08:00" pubdate>
+                            六, 12  6 2010
+                        </time>
+                        <a href="/add-your-wordpress-sitemap.html" rel="bookmark"><h1>WordPress：为您的博客增加“网站地图”页面</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>网站地图（Sitemaps）又称站点地图，是一个显示网站所有页面的页面。它是一个很友好的页面，向来访的朋友展示您的站点结构。还有一种站点地图，XML站点地图，专门给搜索引擎看的，SEO
+优化必备文件。有很多创建 XML 站点地图的在线工具，比如 Google 的
+<a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN">WebMaster
+Tools</a>。这篇文章主要介绍的是前者，使用
+WordPress 的模板系统创建一个“网站地图”页面。</p>
+<div class="section" id="id1">
+<h2>第一步，创建自己的页面模板</h2>
+<p>最简单的方法就是使用 FTP 或 SSH
+工具，到当前使用的主题目录（/wp-content/themes/您的主题名/）下复制
+paga.php 文件里面的内容到新建的 Sitemap.php 文件，并在头部增加以下代码：</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><tt class="docutils literal">&lt; <span class="pre">?php</span> /* Template Name: Sitemap */ <span class="pre">?&gt;</span></tt></div>
+</div>
+<p>以上代码的表示定义一个“Sitemap …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-10T11:23:00+08:00" pubdate>
+                            四, 10  6 2010
+                        </time>
+                        <a href="/css-overflow-usages.html" rel="bookmark"><h1>老生常谈：CSS overflow 那些事儿</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>css 的 overflow 属性的用法很广泛也很重要，最近在修改 WordPress 和 CMS
+的模板的时候就发现有很多地方是因为不正确地使用 overflow
+属性而导致跨浏览器使用会出现诡异的渲染结果。</p>
+<div class="section" id="overflow">
+<h2>overflow 属性定义和说明</h2>
+<p>overflow 中文即溢出的意思，在 CSS
+中则是指当前元素的内容溢出后应该怎么处理。</p>
+<p>overflow 属性值有：</p>
+<ul class="simple">
+<li><strong>visible</strong>：默认值，表示当前元素显示的内容不可截断，这表示它可能会从当前容器元素中溢出，跑到盒模型外面。</li>
+<li><strong>hidden</strong>：此值表示的内容是剪辑，也没有滚动用户界面应提供查看剪辑区域以外的内容。</li>
+<li><strong>scroll</strong>：使用滚动条来显示溢出的内容，使用这一值时，它却不管用户是否需要都使用滚动条机制。</li>
+<li><strong>auto</strong>：自动模式，根据需要使用滚动条。</li>
+<li><strong>inherit</strong>：从父元素继承。</li>
+</ul>
+<p>如果你参考 W3school 的 <a class="reference external" href="http://www.w3school.com.cn/css/pr_pos_overflow.asp">CSS
+overflow</a>
+属性，你会发现它的 overflow 定义说明中表格中的默认值为
+auto，这是错误的。请参考 W3C …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-09T13:52:00+08:00" pubdate>
+                            三, 09  6 2010
+                        </time>
+                        <a href="/adobe-dreamweaver-cs5-html5pack.html" rel="bookmark"><h1>翻译：Adobe Dreamweaver CS5 HTML 5 扩展包</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>跟着主研究员 Jorge Taylor 演示一个 Dreamweaver 扩展的 CS5 HTML5 的包，为
+Adobe Creative Suite 5 用户提供更多创新的选择。</p>
+<p>通过该扩展包，DW CS5 将获得以下新特性：</p>
+<ul class="simple">
+<li>多屏幕预览面板，适用于同时为不同设备开发 HTML 应用</li>
+<li>支持对 HTML 5 新增的标签库的代码提示</li>
+<li>支持对 CSS 3 代码提示</li>
+<li>增加 Video 和 Audio 标签的实时预览</li>
+<li>改进 CSS 3 实时预览效果</li>
+<li>改进设计视图下对 HTML 5 新增标签的渲染效果</li>
+</ul>
+<p>[caption id=&quot;attachment_313&quot; align=&quot;alignnone&quot; caption …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-07T23:59:00+08:00" pubdate>
+                            一, 07  6 2010
+                        </time>
+                        <a href="/ie9-platform-preview-graphics-demos.html" rel="bookmark"><h1>IE9 预览版演示 HTML 5 图形测试</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>首先访问<a class="reference external" href="http://ie.microsoft.com/testdrive/">Internet Explorer 9: Platform
+Demos</a>，首次访问会提示您下载安装
+IE9 预览版，一个全新的 Web 平台功能。</p>
+<p>点击“Install the Preview!”，下载一个 14.3M 的安装文件
+iepreview.msi，点击开始安装。注意：不支持 Win XP，安装的只是一个 IE
+预览平台，不会替换掉当前系统的 IE 版本。平台演示的这些功能将会随正式版
+IE9 发布。</p>
+<p>[caption id=&quot;attachment_289&quot; align=&quot;alignnone&quot; caption=&quot;HTML 5&quot;]<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/06/html5.png"><img alt="HTML 5" class="size-full wp-image-289" src="http://magicalboy.com/wp-content/uploads/2010/06/html5.png" style="height: 313px;" /></a>[/caption]</p>
+<p>下面就开始测试一下 HTML 5 的图形显示——SVG …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-07T06:42:00+08:00" pubdate>
+                            一, 07  6 2010
+                        </time>
+                        <a href="/html-5-video-tutorial-and-comprehensive.html" rel="bookmark"><h1>翻译：全面的 HTML 5 视频教程</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>这是一个老的视频教程，由一位叫 Brad Neuberg 的 Google
+员工发布的介绍HTML5的教程。这篇文章专为那些时间很忙但又想跟进HTML5发展步伐的人而写的。</p>
+<p><a class="reference external" href="http://vimeo.com/6691519">Introduction to HTML 5</a> from <a class="reference external" href="http://vimeo.com/user1005914">Brad
+Neuberg</a> on
+<a class="reference external" href="http://vimeo.com">Vimeo</a>.</p>
+<div class="section" id="id1">
+<h2>本篇文章包括的话题有：</h2>
+<ul class="simple">
+<li>Web 矢量图形：Canvas 标签和可缩放矢量图形（SVG）</li>
+<li>地理定位接口</li>
+<li>HTML 5 视频</li>
+<li>HTML 5 数据库和应用程序缓存</li>
+<li>Web 工作者</li>
+</ul>
+<p>视频比较长，坐下来尽情享受吧。</p>
+<p>假如你喜欢传统类型的教程，我们在这里准备了另一个教程：<a class="reference external" href="http://www.html5trends.com/tutorials/an-html5-tutorial-by-a-google-employee/">An HTML5
+Tutorial by a Google
+Employee</a>，也是出自一位
+Google 员工之手。</p>
+<p>原文链接：<a class="reference external" href="http://www.html5trends.com/tutorials/comprehensive-video-tutorial-on-html5/">Comprehensive video tutorial …</a></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-05T01:37:00+08:00" pubdate>
+                            六, 05  6 2010
+                        </time>
+                        <a href="/hand-painted-style-of-prototyping-tools.html" rel="bookmark"><h1>手绘风格的原型设计工具Mockups</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>由于需要为美工MM提供线框图，在网上找了几个有手绘效果的模型设计工具：Cacoo
+和 Balsamiq Mockups。</p>
+<div class="section" id="cacoo">
+<h2>Cacoo</h2>
+<p>Cacoo是一款在线的Web App，功能确实很强大，不仅仅可以画手绘效果的Freehand
+Wireframe，还可以画流程图，UML图等。不足之处是可用元素比较少，而且以国内的网速使用Web
+App体验效果不佳。Cacoo(カクー)由日本人开发的，可以免费体验4个月。网址：<a class="reference external" href="http://cacoo.com/">http://cacoo.com/</a></p>
+</div>
+<div class="section" id="balsamiq-mockups">
+<h2>Balsamiq Mockups</h2>
+<p>Mockups，顾名思其义，一款实体模型设计工具。具有丰富的UI元素，IPHONE应用程序界面，RIA
+UI等。Mockups 也是基于Adobe 的 Flex 技术开发的，有Web App和Desktop
+App两个版本，即使没有网络也可以通过下载桌面版的AIR程序安装使用。Mockups
+不是免费软件，不过有免费的途径获取注册码，比如写信给Balsamiq，写博文介绍Mockups等。</p>
+</div>
+<div class="section" id="id1">
+<h2>Mockups 官方截图 …</h2></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-30T08:56:00+08:00" pubdate>
+                            日, 30  5 2010
+                        </time>
+                        <a href="/wordpress-article-image-floating-solution.html" rel="bookmark"><h1>wordpress的文章图片浮动解决方法</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>为文章添加图像</h2>
+<p>[caption id=&quot;attachment_179&quot; align=&quot;alignnone&quot; width=&quot;441&quot;
+caption=&quot;后台添加图像&quot;]<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png"><img alt="后台添加图像" class="alignnone size-full wp-image-194" src="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png" style="width: 391px; height: 103px;" /></a>[/caption]</p>
+</div>
+<div class="section" id="id2">
+<h2>问题描述</h2>
+<p>我们在后台为文章添加图像，使用左对齐显示的时候，可能会出现图像在文章中向左靠，标题文章向右靠等问题，点击查看示例文章</p>
+</div>
+<div class="section" id="id3">
+<h2>解决方法</h2>
+<p>先看默认设置时所插入图片的代码</p>
+<p><tt class="docutils literal">[caption <span class="pre">id=&quot;attachment_179&quot;</span>&nbsp; <span class="pre">align=&quot;alignleft&quot;</span> <span class="pre">width=&quot;441&quot;</span> <span class="pre">caption=&quot;后台添加图像&quot;]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">http://www.wordpress.la/WordPress中图片属性caption的使用.html。</span></tt></p>
+<p>再看[caption]中的属性align=&quot;alignleft&quot;的CSS代码</p>
+<p><tt class="docutils literal">.alignleft {&nbsp;&nbsp;&nbsp;&nbsp; float:left;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">margin-right:10px;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">text-align:left;</span> }</tt></p>
+<p>其中的float:left使图片向左浮动，这是出现问题的原因之处了吧。所以我们在插入图片时要注意修改一下 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-19T01:33:00+08:00" pubdate>
+                            三, 19  5 2010
+                        </time>
+                        <a href="/prevent-the-browser-cache.html" rel="bookmark"><h1>防止浏览器缓存的简单方法</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id2">
+<h2>前言</h2>
+<p>这是一个老问题了，在WEB开发中，我们经常会忽略它的重要性以至于遇到奇妙的问题时而不知所措。</p>
+</div>
+<div class="section" id="id3">
+<h2>问题描述</h2>
+<p>在项目开发中使用到Ajax，其中Ajax请求提交后返回的数据在IE6显示总是一成不变，甚至直接从浏览器缓存中直接读取而不去服务器请求！</p>
+</div>
+<div class="section" id="id4">
+<h2>解决方法</h2>
+<p>在请求的地址后面加上一个随机数参数即可：</p>
+<p><tt class="docutils literal">…… <span class="pre">$.get(&quot;/getdata?nocache=&quot;+Math.random(),</span> function(data) {&nbsp;&nbsp;&nbsp;&nbsp; alert(data);&nbsp; // demo }); ……</tt></p>
+</div>
+<div class="section" id="id5">
+<h2>后语</h2>
+<p>在WEB开发中，还真不要小看浏览器缓存所带来的影响，当遇到寞名的问题时而无从下手时，不妨清理一下浏览器缓存看看</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-13T06:44:00+08:00" pubdate>
+                            四, 13  5 2010
+                        </time>
+                        <a href="/javascript-global-and-local-variables.html" rel="bookmark"><h1>浅谈JavaScript全局变量与局部变量</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>JavaScript是一门具有非常丰富特性的脚本语言，它有着其他编程语言一样的复杂性，甚至有时更复杂。下面就谈谈JavaScript的全局变量与局部变量的作用范围。</p>
+<p>先看一个简单示例，<strong>修改全局变量的值</strong></p>
+<p><tt class="docutils literal">var message = &quot;Hello, Welcome to magicalboy.com&quot;;</tt></p>
+<div class="line-block">
+<div class="line">function show() {</div>
+<div class="line">message=&quot;magicalboy&quot;;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">show();</div>
+<div class="line">alert(message);</div>
+</div>
+<p><tt class="docutils literal">运行结果为弹出窗口警告信息：magicalboy.</tt></p>
+<p><strong>JavaScript(ECMAScript)
+的解释程序遇到未声明过的标识符时，用该变量名创建一个全局变量，并将其初始化为指定的值。</strong></p>
+<p>所以message是一个全局变量。show()函数中遇到message，首先在函数里面即当前内存空间去找，找不到再向上在全局空间继续找，如果找到了，那好，为它所指向的内存地址赋新的值&quot;magicalboy&quot;。如果找不到呢，正如前面所说，用该变量名创建一个全局变量，并将其初始化为指定的值。</p>
+<p>JavaScript像Python等其它动态脚本语言一样支持闭包（closure）这一特性，使得函数可以使用函数之外定义的变量。</p>
+<p>对代码作如下修改，会有什么样的输出呢</p>
+<p><tt class="docutils literal">var message = &quot;Hello, Welcome …</tt></p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-12T03:42:00+08:00" pubdate>
+                            三, 12  5 2010
+                        </time>
+                        <a href="/fixpng-jquery-plugin.html" rel="bookmark"><h1>让IE6支持PNG透明(alpha通道)之FixPNG_jQuery_Plugin</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>IE6与生俱来就支持png8的索引色透明度，但不支持png或8位以上的 alpha
+透明度。而对于非动画的GIF建议你使用PNG8，因为体积会更小。在这里，介绍一个jQuery的插件，它能让IE6支持PNG的
+alpha 透明度，方便使用jQuery JS库的朋友使用。</p>
+<div class="section" id="fixpng-jqueryie6png">
+<h2>使用FixPNG jQuery插件使IE6支持PNG透明</h2>
+<p>插件官方下载地址：<a class="reference external" href="http://plugins.jquery.com/project/fixpng">http://plugins.jquery.com/project/fixpng</a></p>
+<p>下载解压后，有简单的使用Demo，使用方法如下：</p>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">需要注意的是：在fixpng.js插件里，第18行&quot;gif_file =
+&quot;img/vazio.gif&quot;;&quot;指向空白像素点的gif图片的路径需要根据你的路径修改一下。如果JS有报错：
+&quot;$ is not a function&quot;，将&quot;$&quot;换为&quot;jQuery&quot;即可</div>
+</div>
+</div>
+<div class="section" id="htcie6png">
+<h2>使用HTC组件方法使IE6支持PNG透明</h2>
+<blockquote>
+htc的全称就是Html
+Components，由微软在IE5.0后开始提供的一种新的指令组合，它可以把某种特定功能的代码封装在一个组件之中，从而实现了代码的重复使用 …</blockquote></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="/category/webkai-fa2.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 3 / 4
+                <a href="/category/webkai-fa4.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

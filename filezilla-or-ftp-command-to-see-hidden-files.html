@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    使用 FileZilla 或 FTP 命令下载隐藏文件 .htaccess
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-14T11:46:00+08:00" pubdate>
+                            一, 14  6 2010
+                        </time>
+                        <a href="/filezilla-or-ftp-command-to-see-hidden-files.html" rel="bookmark"><h1>使用 FileZilla 或 FTP 命令下载隐藏文件 .htaccess</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>由于服务器主机的 SSH 服务被关掉，只能被迫使用 FTP（File Transfer
+Protocol）来管理网站。这不刚好需要修改一个 .htaccess
+文件，刚好它是隐藏属性的，使用
+<a class="reference external" href="http://filezilla-project.org/">FileZilla</a> FTP 工具也查看不了。殊不知
+FileZilla 的“服务器”菜单项中有“强制显示隐藏文件”选项。</p>
+<p>启动“强制显示隐藏文件”会有确认信息，需要使用的是 FTP
+协议，同时需要服务器支持。</p>
+<p>如果手头上没有 FTP 软件，可以使用 Windows 自带的 FTP 命令，在 CMD
+命令行输入 ftp 即进入该模式：</p>
+<p><tt class="docutils literal"><span class="pre">C:&gt;ftp</span> ftp&gt; open yourdomain.com Connected to yourdomain.com. 220 XXXHost FTP Server User <span class="pre">(yourdomain.com:(none)):</span> username 331 Password required for tb_cdl. Password: 230 User username logged in. ftp&gt; cd yourdomain.com 250 CWD command successful ftp&gt; get .htaccess 200 PORT command successful 150 Opening ASCII mode data connection for .htaccess (379 bytes) 226 Transfer complete. ftp: 收到 394 字节，用时 0.00Seconds 394000.00Kbytes/sec.</tt></p>
+<p>如果需要上传。htaccess 必须以 ASCII
+模式（默认模式）上传，最好将其权限设置为644。</p>
+<p><tt class="docutils literal">ftp&gt; mput .htaccess mput .htaccess? 200 PORT command successful 150 Opening ASCII mode data connection for .htaccess 226 Transfer complete. ftp: 发送 394 字节，用时 0.00Seconds 394000.00Kbytes/sec.</tt></p>
+<p>更多命令请见 ftp&gt; help 或参考
+<a class="reference external" href="http://www.edu.cn/20010830/210045.shtml">FTP命令详解</a></p>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

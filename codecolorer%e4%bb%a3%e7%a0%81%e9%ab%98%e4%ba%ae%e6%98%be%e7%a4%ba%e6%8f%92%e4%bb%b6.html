@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    代码语法高亮显示插件
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-04-22T01:26:00+08:00" pubdate>
+                            四, 22  4 2010
+                        </time>
+                        <a href="/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html" rel="bookmark"><h1>代码语法高亮显示插件</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="section" id="java-hellomidlet-java">
+<h2>Java - HelloMidlet.java</h2>
+<p><tt class="docutils literal">import javax.microedition.lcdui.Display; import javax.microedition.lcdui.TextBox; import <span class="pre">javax.microedition.midlet.*;</span></tt></p>
+<p>public class HelloMidlet extends MIDlet {</p>
+<div class="line-block">
+<div class="line">public HelloMidlet(){</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">public void startApp() {</div>
+<div class="line">String info = this.getAppProperty(&quot;MIDlet-Vendor&quot;) +
+this.getAppProperty(&quot;MIDlet-Jar-Size&quot;)</div>
+<div class="line">+ this.getAppProperty(&quot;MIDlet-Description&quot;) + &quot;wtf&quot;;</div>
+<div class="line">// System.out.println(info);</div>
+<div class="line">Display.getDisplay(this).setCurrent(</div>
+<div class="line">new TextBox(&quot;MIDlet属性&quot;, info, 20, 0));</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">public void pauseApp() {</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">public void destroyApp(boolean unconditional) {</div>
+<div class="line">}</div>
+<div class="line">}</div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python</h2>
+<p><tt class="docutils literal">#! /usr/bin/env python <span class="pre">#coding=utf-8</span></tt></p>
+<div class="line-block">
+<div class="line">&quot;&quot;&quot;</div>
+<div class="line">copyright (c) magicalboy(<a class="reference external" href="mailto:cdlmagical&#64;gmail.com">cdlmagical&#64;gmail.com</a>)</div>
+</div>
+<div class="line-block">
+<div class="line">This is a free software. It's destributed under the terms of GPL.</div>
+<div class="line">You can use it to grab HTML documents begin with specified url.</div>
+<div class="line">When you give a url, it'll first grab it, and parses all the links</div>
+<div class="line">in the page, then grab them all. Enjoy it!</div>
+</div>
+<p>&quot;&quot;&quot;</p>
+<div class="line-block">
+<div class="line">import os</div>
+<div class="line">from os.path import isdir</div>
+</div>
+<div class="line-block">
+<div class="line">def changefilepath(pathname):</div>
+<div class="line">if(os.path.isdir(pathname)):</div>
+<div class="line">for f in os.listdir(pathname):</div>
+<div class="line">filename = pathname +''+f</div>
+<div class="line">if(os.path.isdir(filename)):</div>
+<div class="line">changefilepath(filename);</div>
+<div class="line">else:</div>
+<div class="line">updateURL(filename);</div>
+<div class="line">else:</div>
+<div class="line">updateURL(pathname);</div>
+</div>
+<div class="line-block">
+<div class="line">def updateURL(pathname):</div>
+<div class="line">suffix = pathname.split('#')[1]</div>
+<div class="line">id = pathname.split('#')[0]</div>
+<div class="line">if suffix == &quot;st.html&quot;:</div>
+<div class="line">print id</div>
+</div>
+<div class="line-block">
+<div class="line">changefilepath(r&quot;F:studydata&quot;)</div>
+<div class="line">注意：codecolorer有些小Bug，它将我的反斜杠转义后再显示，所以要显示上面的文件路径，必须在code标签里面这样写：filename
+= pathname +''+f</div>
+</div>
+</div>
+<div class="section" id="mysql">
+<h2>MySQL</h2>
+<p><tt class="docutils literal">CREATE USER <span class="pre">'magicalboy'&#64;'localhost'</span> IDENTIFIED BY 'magicalboypw'</tt></p>
+</div>
+<div class="section" id="c">
+<h2>C</h2>
+<p><tt class="docutils literal">#include</tt></p>
+<div class="line-block">
+<div class="line">int main(void)</div>
+<div class="line">{</div>
+<div class="line">printf(&quot;hello world!n&quot;);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">支持的语言详见：</div>
+<div class="line"><a class="reference external" href="http://wordpress.org/extend/plugins/codecolorer/other_notes/">http://wordpress.org/extend/plugins/codecolorer/other_notes/</a></div>
+<div class="line"><a class="reference external" href="http://wordpress.org/extend/plugins/codecolorer/installation/">http://wordpress.org/extend/plugins/codecolorer/installation/</a></div>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

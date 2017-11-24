@@ -1,114 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Android</title><link href="https://magicalboy.com/note/" rel="alternate"></link><link href="https://magicalboy.com/note/feeds/android.atom.xml" rel="self"></link><id>https://magicalboy.com/note/</id><updated>2017-03-17T10:30:00+08:00</updated><entry><title>2017年3月 Android 安全补丁推送</title><link href="https://magicalboy.com/note/android-march-2017-upgrade.html" rel="alternate"></link><published>2017-03-17T10:30:00+08:00</published><updated>2017-03-17T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-03-17:/note/android-march-2017-upgrade.html</id><summary type="html">&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
-&lt;p&gt;对此我有两个疑问：&lt;/p&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？&lt;/p&gt;
-&lt;p&gt;根据 &lt;a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html"&gt;Welcoming Android 7.1.1 Nougat | Android Developers Blog&lt;/a&gt;，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
-&lt;p&gt;对此我有两个疑问：&lt;/p&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？&lt;/p&gt;
-&lt;p&gt;根据 &lt;a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html"&gt;Welcoming Android 7.1.1 Nougat | Android Developers Blog&lt;/a&gt;，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 FC？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img alt="install on Nexus 6" class="align-left" src="https://github.com/donly/note/blob/master/images/android_20170317-082545.png?raw=true" style="width: 320px; height: 568px;" /&gt;
-&lt;p&gt;难道要重新刷机了吗，现在的系统虽然没有 Root，但也用不了 Android Pay，因为 bootloader 被解锁过。&lt;/p&gt;
-&lt;p&gt;生命果然在于折腾。&lt;/p&gt;
-</content><category term="Android"></category></entry><entry><title>微鲸电视，智能电视</title><link href="https://magicalboy.com/note/whaley_android_tv.html" rel="alternate"></link><published>2016-10-28T00:00:00+08:00</published><updated>2016-10-28T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-10-28:/note/whaley_android_tv.html</id><summary type="html">&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
-&lt;p&gt;这台电视主要特点有：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;4K 分辨率&lt;/li&gt;
-&lt;li&gt;价格不算贵，不到 1500 CNY&lt;/li&gt;
-&lt;li&gt;LG 屏幕，尺寸 43 寸，适合出租屋，将来有自己房子之时也可以作为卧室电视使用&lt;/li&gt;
-&lt;li&gt;普通 Android 定制系统，京东销售渠道非 YunOS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;缺点有：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;开机启动速度慢&lt;/li&gt;
-&lt;li&gt;资源不够丰富（GITV 牌照）&lt;/li&gt;
-&lt;li&gt;Android 5.0 不够新，建议更新到 6.0 ，有完整意义的权限管理&lt;/li&gt;
-&lt;li&gt;系统不可靠，有与 YunOS 合作的版本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;安装失败，未知原因&lt;/h2&gt;
-&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
-&lt;p&gt;这台电视主要特点有：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;4K 分辨率&lt;/li&gt;
-&lt;li&gt;价格不算贵，不到 1500 CNY&lt;/li&gt;
-&lt;li&gt;LG 屏幕，尺寸 43 寸，适合出租屋，将来有自己房子之时也可以作为卧室电视使用&lt;/li&gt;
-&lt;li&gt;普通 Android 定制系统，京东销售渠道非 YunOS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;缺点有：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;开机启动速度慢&lt;/li&gt;
-&lt;li&gt;资源不够丰富（GITV 牌照）&lt;/li&gt;
-&lt;li&gt;Android 5.0 不够新，建议更新到 6.0 ，有完整意义的权限管理&lt;/li&gt;
-&lt;li&gt;系统不可靠，有与 YunOS 合作的版本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;安装失败，未知原因&lt;/h2&gt;
-&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决。&lt;/p&gt;
-&lt;p&gt;由于这是一个定制的操作系统，这里使用 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.artchecker"&gt;ARTChecker&lt;/a&gt; 和 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.dptest"&gt;DPInfo&lt;/a&gt; 两件套查看结果（仅参考）。&lt;/p&gt;
-&lt;img alt="Whaley Android" class="align-left" src="images/whaley_android_spec.png" /&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h2&gt;黑屏问题&lt;/h2&gt;
-&lt;p&gt;可能是第一批次产品良品率问题，运气不好刚好遇上，没用几天就黑屏了。&lt;/p&gt;
-&lt;img alt="Whaley Half of Black Screen" class="align-left" src="images/whaley_half_of_black_screen.jpg" /&gt;
-&lt;p&gt;后来通过售后服务，由厂家安装人员上门检测，拿到检测报告后京东直接上门换新，并收走有问题的商品。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;虽然国内的 OTT 平台有 &lt;a class="reference external" href="http://www.digitaling.com/articles/11970.html"&gt;广电181号文件&lt;/a&gt; 限制，如果将一个开放的 Android 系统做得太封闭未见是一件好事。&lt;/p&gt;
-&lt;p&gt;目前国产电视已经大部分是互联网电视，集成 Android 系统并内置内容服务。&lt;/p&gt;
-&lt;p&gt;因受阿里云 YunOS 的问题影响极大，个人更倾向于非 Android 系统的电视。&lt;/p&gt;
-&lt;p&gt;电视的主要参数不应该为了让 Android 系统运行更快，解码能力更强而使用更强 CPU 和 GPU，而应该注重屏幕本身，提高显示质量。以及提升开机速度和响应速度。&lt;/p&gt;
-&lt;p&gt;最近的量子显示技术和 LED 屏显示技术我还是比较感兴趣的，等技术成熟和价格降下来以后买一台享受一下。不多说了，搬砖赚钱提高生活质量 :D&lt;/p&gt;
-&lt;/div&gt;
-</content><category term="Android"></category></entry><entry><title>摩托罗拉(Motorola) MT620</title><link href="https://magicalboy.com/note/motorola_mt620.html" rel="alternate"></link><published>2016-10-20T12:20:00+08:00</published><updated>2016-10-20T12:20:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-10-20:/note/motorola_mt620.html</id><summary type="html">&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
-&lt;p&gt;这是一台老手机，2012 年购买于亚马逊：&lt;a class="reference external" href="https://www.amazon.cn/gp/product/B005HM1R62"&gt;摩托罗拉(Motorola)MT620 3G智能手机(简洁白 移动定制)&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;购买价格是 470.00，在当时来说已经是令人心动了，虽然今天 299 元即可买到八核，4G 大屏手机。&lt;/p&gt;
-&lt;p&gt;主要亮点是：QWERTY 全功能键盘，全触屏，支持手写输入，摩托罗拉品牌且价格实惠。&lt;/p&gt;
-&lt;p&gt;所以买了一台给老爸使用，现在他在用 iPhone 5。:D&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;运行系统&lt;/h2&gt;
-&lt;img alt="OPhone" class="align-left" src="images/OPhone_20161020110900.png" /&gt;
-&lt;p&gt;采用以 Android 2.3.7 为基础的 &lt;a class="reference external" href="https://zh.wikipedia.org/wiki/OPhone#.E6.91.A9.E6.89.98.E7.BE.85.E6.8B.89MT620"&gt;OPhone&lt;/a&gt; 2.6 最新智能操作系统。&lt;/p&gt;
-&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
-&lt;p&gt;这是一台老手机，2012 年购买于亚马逊：&lt;a class="reference external" href="https://www.amazon.cn/gp/product/B005HM1R62"&gt;摩托罗拉(Motorola)MT620 3G智能手机(简洁白 移动定制)&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;购买价格是 470.00，在当时来说已经是令人心动了，虽然今天 299 元即可买到八核，4G 大屏手机。&lt;/p&gt;
-&lt;p&gt;主要亮点是：QWERTY 全功能键盘，全触屏，支持手写输入，摩托罗拉品牌且价格实惠。&lt;/p&gt;
-&lt;p&gt;所以买了一台给老爸使用，现在他在用 iPhone 5。:D&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;运行系统&lt;/h2&gt;
-&lt;img alt="OPhone" class="align-left" src="images/OPhone_20161020110900.png" /&gt;
-&lt;p&gt;采用以 Android 2.3.7 为基础的 &lt;a class="reference external" href="https://zh.wikipedia.org/wiki/OPhone#.E6.91.A9.E6.89.98.E7.BE.85.E6.8B.89MT620"&gt;OPhone&lt;/a&gt; 2.6 最新智能操作系统。&lt;/p&gt;
-&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序（除了开机动画和声音），更意外的是自带了 Google Play 商店和 GTalk 应用。&lt;/p&gt;
-&lt;p&gt;这一点和维基百科上面说的不一致，不但有自带 Google 服务，而且没有中国移动的全家桶应用。&lt;/p&gt;
-&lt;p&gt;根据上图显示，OPhone 主要由 &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Borqs"&gt;Borqs&lt;/a&gt; 开发，中国移动只是定制了开机动画，以及手机外观加了一个 G3 标志。&lt;/p&gt;
-&lt;p&gt;后来本人手贱点了升级，导致 Google 服务消失，但一样没有中移动应用。幸运的是还可以手动刷回去。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="recovery"&gt;
-&lt;h2&gt;Recovery 模式&lt;/h2&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;首先在关机状态下按住键盘 ALT 键，然后按开机键；&lt;/li&gt;
-&lt;li&gt;等出现移动 Logo 放开开机键，继续按着 ALT 不放，等屏幕出现一个盒子即可；&lt;/li&gt;
-&lt;li&gt;音量加减控制上下，空格键是选择。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;刷机方法：选择 “apply update from sdcard” 进入后找到 “SUPK_31I_MA_Fly.supk” 文件按空格键。
-需要注意的是，刷机包需要先解压缩。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mt620"&gt;
-&lt;h2&gt;MT620 相册&lt;/h2&gt;
-&lt;p&gt;MT620 有自带截图功能，方法是：按住菜单键（触摸按钮最左边一个）不放，接着按音量加键。&lt;/p&gt;
-&lt;p&gt;使用截图功能创建的相册：
-&lt;a class="reference external" href="https://goo.gl/photos/YhCsm3ADp3HSZua59"&gt;https://goo.gl/photos/YhCsm3ADp3HSZua59&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-</content><category term="Android"></category><category term="Motorola"></category></entry><entry><title>Android Wear</title><link href="https://magicalboy.com/note/android_wear.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/android_wear.html</id><summary type="html">&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Android</title><link href="/" rel="alternate"></link><link href="/feeds/android.atom.xml" rel="self"></link><id>/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>Android Wear</title><link href="/android_wear.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/android_wear.html</id><summary type="html">&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
 &lt;p&gt;可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Android Wear&lt;/h2&gt;
@@ -162,7 +53,7 @@
 &lt;h2&gt;参考资料：&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://developer.android.com/wear/preview/start.html"&gt;Get Started with the Developer Preview | Android Developers&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Wear"></category><category term="Android"></category></entry><entry><title>在 OS X 上给 Android 刷机</title><link href="https://magicalboy.com/note/flash-android-on-mac.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/flash-android-on-mac.html</id><summary type="html">&lt;p&gt;Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。&lt;/p&gt;
+</content><category term="Wear"></category><category term="Android"></category></entry><entry><title>在 OS X 上给 Android 刷机</title><link href="/flash-android-on-mac.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/flash-android-on-mac.html</id><summary type="html">&lt;p&gt;Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;下载&lt;/h2&gt;
 &lt;p&gt;可以在 &lt;a class="reference external" href="https://developer.android.com/index.html"&gt;Android 开发者&lt;/a&gt; 下载，如果看不到入口，请检查语言并选择英语。或者直接进入 &lt;a class="reference external" href="https://developer.android.com/preview/download.html"&gt;下载页面&lt;/a&gt;。&lt;/p&gt;
@@ -213,7 +104,7 @@ fastboot flash boot boot.img
 &lt;img alt="国内很多APP无法启动" src="images/android_wecat_per.png" /&gt;
 &lt;p&gt;EOF&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Android"></category></entry><entry><title>Fragment</title><link href="https://magicalboy.com/note/fragment.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/fragment.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+</content><category term="Android"></category></entry><entry><title>Fragment</title><link href="/fragment.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/fragment.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;Fragment 定义&lt;/a&gt;&lt;/li&gt;
@@ -249,7 +140,7 @@ fastboot flash boot boot.img
 &lt;p&gt;&lt;a class="reference external" href="http://blog.csdn.net/guolin_blog/article/details/8881711"&gt;http://blog.csdn.net/guolin_blog/article/details/8881711&lt;/a&gt;
 &lt;a class="reference external" href="https://developer.android.com/guide/components/fragments.html"&gt;https://developer.android.com/guide/components/fragments.html&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Android"></category></entry><entry><title>反编译 APK</title><link href="https://magicalboy.com/note/reverse-engineering-apk.html" rel="alternate"></link><published>2016-01-14T13:55:11+08:00</published><updated>2016-01-14T13:55:11+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-01-14:/note/reverse-engineering-apk.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+</content><category term="Android"></category></entry><entry><title>反编译 APK</title><link href="/reverse-engineering-apk.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/reverse-engineering-apk.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#apktool" id="id3"&gt;apktool&lt;/a&gt;&lt;/li&gt;
@@ -366,7 +257,116 @@ Done.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;成功后会得到相应的 jar 文件，接着可以拖到 &lt;a class="reference external" href="http://jd.benow.ca/"&gt;http://jd.benow.ca/&lt;/a&gt; 上面直接看结果，或者下载相应平台的客户端等。&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Android"></category></entry><entry><title>Android 教程第一周</title><link href="https://magicalboy.com/note/android_coursera_part1_week1.html" rel="alternate"></link><published>2014-12-13T19:20:00+08:00</published><updated>2014-12-13T19:20:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2014-12-13:/note/android_coursera_part1_week1.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+</content><category term="Android"></category></entry><entry><title>2017年3月 Android 安全补丁推送</title><link href="/android-march-2017-upgrade.html" rel="alternate"></link><published>2017-03-17T10:30:00+08:00</published><updated>2017-03-17T10:30:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-03-17:/android-march-2017-upgrade.html</id><summary type="html">&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
+&lt;p&gt;对此我有两个疑问：&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？&lt;/p&gt;
+&lt;p&gt;根据 &lt;a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html"&gt;Welcoming Android 7.1.1 Nougat | Android Developers Blog&lt;/a&gt;，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
+&lt;p&gt;对此我有两个疑问：&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？&lt;/p&gt;
+&lt;p&gt;根据 &lt;a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html"&gt;Welcoming Android 7.1.1 Nougat | Android Developers Blog&lt;/a&gt;，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 FC？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="install on Nexus 6" class="align-left" src="https://github.com/donly/note/blob/master/images/android_20170317-082545.png?raw=true" style="width: 320px; height: 568px;" /&gt;
+&lt;p&gt;难道要重新刷机了吗，现在的系统虽然没有 Root，但也用不了 Android Pay，因为 bootloader 被解锁过。&lt;/p&gt;
+&lt;p&gt;生命果然在于折腾。&lt;/p&gt;
+</content><category term="Android"></category></entry><entry><title>微鲸电视，智能电视</title><link href="/whaley_android_tv.html" rel="alternate"></link><published>2016-10-28T00:00:00+08:00</published><updated>2016-10-28T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-10-28:/whaley_android_tv.html</id><summary type="html">&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
+&lt;p&gt;这台电视主要特点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;4K 分辨率&lt;/li&gt;
+&lt;li&gt;价格不算贵，不到 1500 CNY&lt;/li&gt;
+&lt;li&gt;LG 屏幕，尺寸 43 寸，适合出租屋，将来有自己房子之时也可以作为卧室电视使用&lt;/li&gt;
+&lt;li&gt;普通 Android 定制系统，京东销售渠道非 YunOS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;开机启动速度慢&lt;/li&gt;
+&lt;li&gt;资源不够丰富（GITV 牌照）&lt;/li&gt;
+&lt;li&gt;Android 5.0 不够新，建议更新到 6.0 ，有完整意义的权限管理&lt;/li&gt;
+&lt;li&gt;系统不可靠，有与 YunOS 合作的版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装失败，未知原因&lt;/h2&gt;
+&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
+&lt;p&gt;这台电视主要特点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;4K 分辨率&lt;/li&gt;
+&lt;li&gt;价格不算贵，不到 1500 CNY&lt;/li&gt;
+&lt;li&gt;LG 屏幕，尺寸 43 寸，适合出租屋，将来有自己房子之时也可以作为卧室电视使用&lt;/li&gt;
+&lt;li&gt;普通 Android 定制系统，京东销售渠道非 YunOS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;开机启动速度慢&lt;/li&gt;
+&lt;li&gt;资源不够丰富（GITV 牌照）&lt;/li&gt;
+&lt;li&gt;Android 5.0 不够新，建议更新到 6.0 ，有完整意义的权限管理&lt;/li&gt;
+&lt;li&gt;系统不可靠，有与 YunOS 合作的版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;安装失败，未知原因&lt;/h2&gt;
+&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决。&lt;/p&gt;
+&lt;p&gt;由于这是一个定制的操作系统，这里使用 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.artchecker"&gt;ARTChecker&lt;/a&gt; 和 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.magicalboy.dptest"&gt;DPInfo&lt;/a&gt; 两件套查看结果（仅参考）。&lt;/p&gt;
+&lt;img alt="Whaley Android" class="align-left" src="images/whaley_android_spec.png" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;黑屏问题&lt;/h2&gt;
+&lt;p&gt;可能是第一批次产品良品率问题，运气不好刚好遇上，没用几天就黑屏了。&lt;/p&gt;
+&lt;img alt="Whaley Half of Black Screen" class="align-left" src="images/whaley_half_of_black_screen.jpg" /&gt;
+&lt;p&gt;后来通过售后服务，由厂家安装人员上门检测，拿到检测报告后京东直接上门换新，并收走有问题的商品。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;虽然国内的 OTT 平台有 &lt;a class="reference external" href="http://www.digitaling.com/articles/11970.html"&gt;广电181号文件&lt;/a&gt; 限制，如果将一个开放的 Android 系统做得太封闭未见是一件好事。&lt;/p&gt;
+&lt;p&gt;目前国产电视已经大部分是互联网电视，集成 Android 系统并内置内容服务。&lt;/p&gt;
+&lt;p&gt;因受阿里云 YunOS 的问题影响极大，个人更倾向于非 Android 系统的电视。&lt;/p&gt;
+&lt;p&gt;电视的主要参数不应该为了让 Android 系统运行更快，解码能力更强而使用更强 CPU 和 GPU，而应该注重屏幕本身，提高显示质量。以及提升开机速度和响应速度。&lt;/p&gt;
+&lt;p&gt;最近的量子显示技术和 LED 屏显示技术我还是比较感兴趣的，等技术成熟和价格降下来以后买一台享受一下。不多说了，搬砖赚钱提高生活质量 :D&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category></entry><entry><title>摩托罗拉(Motorola) MT620</title><link href="/motorola_mt620.html" rel="alternate"></link><published>2016-10-20T12:20:00+08:00</published><updated>2016-10-20T12:20:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-10-20:/motorola_mt620.html</id><summary type="html">&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
+&lt;p&gt;这是一台老手机，2012 年购买于亚马逊：&lt;a class="reference external" href="https://www.amazon.cn/gp/product/B005HM1R62"&gt;摩托罗拉(Motorola)MT620 3G智能手机(简洁白 移动定制)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;购买价格是 470.00，在当时来说已经是令人心动了，虽然今天 299 元即可买到八核，4G 大屏手机。&lt;/p&gt;
+&lt;p&gt;主要亮点是：QWERTY 全功能键盘，全触屏，支持手写输入，摩托罗拉品牌且价格实惠。&lt;/p&gt;
+&lt;p&gt;所以买了一台给老爸使用，现在他在用 iPhone 5。:D&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;运行系统&lt;/h2&gt;
+&lt;img alt="OPhone" class="align-left" src="images/OPhone_20161020110900.png" /&gt;
+&lt;p&gt;采用以 Android 2.3.7 为基础的 &lt;a class="reference external" href="https://zh.wikipedia.org/wiki/OPhone#.E6.91.A9.E6.89.98.E7.BE.85.E6.8B.89MT620"&gt;OPhone&lt;/a&gt; 2.6 最新智能操作系统。&lt;/p&gt;
+&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序 …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
+&lt;p&gt;这是一台老手机，2012 年购买于亚马逊：&lt;a class="reference external" href="https://www.amazon.cn/gp/product/B005HM1R62"&gt;摩托罗拉(Motorola)MT620 3G智能手机(简洁白 移动定制)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;购买价格是 470.00，在当时来说已经是令人心动了，虽然今天 299 元即可买到八核，4G 大屏手机。&lt;/p&gt;
+&lt;p&gt;主要亮点是：QWERTY 全功能键盘，全触屏，支持手写输入，摩托罗拉品牌且价格实惠。&lt;/p&gt;
+&lt;p&gt;所以买了一台给老爸使用，现在他在用 iPhone 5。:D&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;运行系统&lt;/h2&gt;
+&lt;img alt="OPhone" class="align-left" src="images/OPhone_20161020110900.png" /&gt;
+&lt;p&gt;采用以 Android 2.3.7 为基础的 &lt;a class="reference external" href="https://zh.wikipedia.org/wiki/OPhone#.E6.91.A9.E6.89.98.E7.BE.85.E6.8B.89MT620"&gt;OPhone&lt;/a&gt; 2.6 最新智能操作系统。&lt;/p&gt;
+&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序（除了开机动画和声音），更意外的是自带了 Google Play 商店和 GTalk 应用。&lt;/p&gt;
+&lt;p&gt;这一点和维基百科上面说的不一致，不但有自带 Google 服务，而且没有中国移动的全家桶应用。&lt;/p&gt;
+&lt;p&gt;根据上图显示，OPhone 主要由 &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Borqs"&gt;Borqs&lt;/a&gt; 开发，中国移动只是定制了开机动画，以及手机外观加了一个 G3 标志。&lt;/p&gt;
+&lt;p&gt;后来本人手贱点了升级，导致 Google 服务消失，但一样没有中移动应用。幸运的是还可以手动刷回去。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="recovery"&gt;
+&lt;h2&gt;Recovery 模式&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;首先在关机状态下按住键盘 ALT 键，然后按开机键；&lt;/li&gt;
+&lt;li&gt;等出现移动 Logo 放开开机键，继续按着 ALT 不放，等屏幕出现一个盒子即可；&lt;/li&gt;
+&lt;li&gt;音量加减控制上下，空格键是选择。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;刷机方法：选择 “apply update from sdcard” 进入后找到 “SUPK_31I_MA_Fly.supk” 文件按空格键。
+需要注意的是，刷机包需要先解压缩。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mt620"&gt;
+&lt;h2&gt;MT620 相册&lt;/h2&gt;
+&lt;p&gt;MT620 有自带截图功能，方法是：按住菜单键（触摸按钮最左边一个）不放，接着按音量加键。&lt;/p&gt;
+&lt;p&gt;使用截图功能创建的相册：
+&lt;a class="reference external" href="https://goo.gl/photos/YhCsm3ADp3HSZua59"&gt;https://goo.gl/photos/YhCsm3ADp3HSZua59&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category><category term="Motorola"></category></entry><entry><title>Android 教程第一周</title><link href="/android_coursera_part1_week1.html" rel="alternate"></link><published>2014-12-13T19:20:00+08:00</published><updated>2014-12-13T19:20:00+08:00</updated><author><name>Don</name></author><id>tag:None,2014-12-13:/android_coursera_part1_week1.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;简介&lt;/a&gt;&lt;/li&gt;
@@ -416,7 +416,7 @@ Done.
 &lt;li&gt;Amazone 合作的福利。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</content><category term="Android"></category></entry><entry><title>ADB 使用</title><link href="https://magicalboy.com/note/adb.html" rel="alternate"></link><published>2014-01-08T00:00:00+08:00</published><updated>2016-09-20T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2014-01-08:/note/adb.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+</content><category term="Android"></category></entry><entry><title>ADB 使用</title><link href="/adb.html" rel="alternate"></link><published>2014-01-08T00:00:00+08:00</published><updated>2016-09-20T00:00:00+08:00</updated><author><name>Don</name></author><id>tag:None,2014-01-08:/adb.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#adb-mac-os" id="id3"&gt;ADB 找不到设备（Mac OS）&lt;/a&gt;&lt;/li&gt;
@@ -474,4 +474,267 @@ List of devices attached
 &lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/a/24317563"&gt;http://stackoverflow.com/a/24317563&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content><category term="Android"></category></entry></feed>
+</content><category term="Android"></category></entry><entry><title>理解 Android 应用退出</title><link href="/how-to-exit-android-app.html" rel="alternate"></link><published>2013-04-10T17:42:00+08:00</published><updated>2013-04-10T17:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-04-10:/how-to-exit-android-app.html</id><summary type="html">&lt;p&gt;今天我又学了一下 Android 开发，了解如何退出一个 Android 程序。&lt;/p&gt;
+&lt;p&gt;Android
+没有退出应用程序的API，所谓退出是指关闭此应用的进程。要彻底关闭一个
+App，应该到设置-&amp;gt;应用程序管理中强制关闭。类似于 iOS 设备双击 Home
+按钮，持续按住应用至出现关闭提示来关闭。内存控们的至爱 ：）&lt;/p&gt;
+&lt;p&gt;所以退出一个 Android app，只需要清理 Activity
+，令它生命周期结束，并返回手机主界面，其余的让 OS
+来处理吧。下面是一段用于普通 Android OS 退出代码：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+Intent &lt;span class="nv"&gt;intent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; new Intent&lt;span class="o"&gt;(&lt;/span&gt;Intent.ACTION_MAIN&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+intent.addCategory&lt;span class="o"&gt;(&lt;/span&gt;Intent.CATEGORY_HOME&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+intent.setFlags&lt;span class="o"&gt;(&lt;/span&gt;Intent.FLAG_ACTIVITY_NEW_TASK&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+startActivity&lt;span class="o"&gt;(&lt;/span&gt;intent …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;今天我又学了一下 Android 开发，了解如何退出一个 Android 程序。&lt;/p&gt;
+&lt;p&gt;Android
+没有退出应用程序的API，所谓退出是指关闭此应用的进程。要彻底关闭一个
+App，应该到设置-&amp;gt;应用程序管理中强制关闭。类似于 iOS 设备双击 Home
+按钮，持续按住应用至出现关闭提示来关闭。内存控们的至爱 ：）&lt;/p&gt;
+&lt;p&gt;所以退出一个 Android app，只需要清理 Activity
+，令它生命周期结束，并返回手机主界面，其余的让 OS
+来处理吧。下面是一段用于普通 Android OS 退出代码：&lt;/p&gt;
+&lt;pre class="code shell literal-block"&gt;
+Intent &lt;span class="nv"&gt;intent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; new Intent&lt;span class="o"&gt;(&lt;/span&gt;Intent.ACTION_MAIN&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+intent.addCategory&lt;span class="o"&gt;(&lt;/span&gt;Intent.CATEGORY_HOME&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+intent.setFlags&lt;span class="o"&gt;(&lt;/span&gt;Intent.FLAG_ACTIVITY_NEW_TASK&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+startActivity&lt;span class="o"&gt;(&lt;/span&gt;intent&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+finish&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;参考资料：Google &amp;quot;android exit&amp;quot;&lt;/p&gt;
+&lt;p&gt;== finish() ==&lt;/p&gt;
+</content><category term="Android"></category><category term="iOS"></category></entry><entry><title>HTC HD2 WIFI Error 解决方法</title><link href="/htchd2-wifi-error-solution.html" rel="alternate"></link><published>2012-04-27T22:04:00+08:00</published><updated>2012-04-27T22:04:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-04-27:/htchd2-wifi-error-solution.html</id><summary type="html">&lt;p&gt;为了了解Android与WP7等手机移动操作系统特性，但又限于经济条件不可能买多台手机，因此年初入手了一台神机
+&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/HTC_HD2"&gt;HTC HD2&lt;/a&gt;。马上刷上 Android
+HTC Sense 3.5
+Rom（来自&lt;a class="reference external" href="http://forum.xda-developers.com/showthread.php?t=1298188"&gt;XDA&lt;/a&gt;），感觉非常完美。直到现在已经使用两个月左右，突然出现WIFI启动不了，提示
+WIFI Error。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;img alt="WIFI Error" src="https://lh3.googleusercontent.com/-E-hjEaCTdo4/T5o6LPrv-jI/AAAAAAAABGg/LN6Lg-ltIFs/s553/wifi_error.png" style="width: 266px; height: 442px;" /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;上图：设置里面的无线与网络截屏。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;img alt="wifi error2" src="https://lh4.googleusercontent.com/-EL8Wwq2Cfkg/T5o6K-aH_mI/AAAAAAAABGc/I78HRKh-ukM/s553/wifi_error2.png" style="width: 266px; height: 442px;" /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;上图：通知的控件显示截屏。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;寻找解决方法&lt;/h2&gt;
+&lt;p&gt;刚开始以为是ROM或Radio等软件问题，花了不少时间折腾。因为还在保修期内，所以还是决定了返修处理。将问题具体情况写在纸条上，一定要说清楚。并和手机一起寄给卖家，邮费自付。然后关注机子的最新动态，每天要记得联系他们了解情况，不出两天他们就修好寄回来了，连邮费都是他们出。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题原因是什么&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;返修给修理师傅是修好了，但是什么原因导致WIFI
+Error呢。问过他们得到的回答是手机字体库坏了，需要用专用的仪器刷，不需要换任何零件。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="聊天记录" src="https://lh5.googleusercontent.com/-djWwK-pErMw/T5qixBdDW7I/AAAAAAAABG0/lg1GpCCEl0M/s360/htc_hd2_contact_record.jpg" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;虽说可能是因刷机太多引起的，怎么可能阻止得了刷机的诱惑，何况也正是HD2的使命。生命在于折腾，目前已经愉快地用上&lt;a class="reference external" href="http://forum.xda-developers.com/showthread.php?t=1404993"&gt;CM7 …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;为了了解Android与WP7等手机移动操作系统特性，但又限于经济条件不可能买多台手机，因此年初入手了一台神机
+&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/HTC_HD2"&gt;HTC HD2&lt;/a&gt;。马上刷上 Android
+HTC Sense 3.5
+Rom（来自&lt;a class="reference external" href="http://forum.xda-developers.com/showthread.php?t=1298188"&gt;XDA&lt;/a&gt;），感觉非常完美。直到现在已经使用两个月左右，突然出现WIFI启动不了，提示
+WIFI Error。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;img alt="WIFI Error" src="https://lh3.googleusercontent.com/-E-hjEaCTdo4/T5o6LPrv-jI/AAAAAAAABGg/LN6Lg-ltIFs/s553/wifi_error.png" style="width: 266px; height: 442px;" /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;上图：设置里面的无线与网络截屏。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;img alt="wifi error2" src="https://lh4.googleusercontent.com/-EL8Wwq2Cfkg/T5o6K-aH_mI/AAAAAAAABGc/I78HRKh-ukM/s553/wifi_error2.png" style="width: 266px; height: 442px;" /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;上图：通知的控件显示截屏。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;寻找解决方法&lt;/h2&gt;
+&lt;p&gt;刚开始以为是ROM或Radio等软件问题，花了不少时间折腾。因为还在保修期内，所以还是决定了返修处理。将问题具体情况写在纸条上，一定要说清楚。并和手机一起寄给卖家，邮费自付。然后关注机子的最新动态，每天要记得联系他们了解情况，不出两天他们就修好寄回来了，连邮费都是他们出。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题原因是什么&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;返修给修理师傅是修好了，但是什么原因导致WIFI
+Error呢。问过他们得到的回答是手机字体库坏了，需要用专用的仪器刷，不需要换任何零件。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="聊天记录" src="https://lh5.googleusercontent.com/-djWwK-pErMw/T5qixBdDW7I/AAAAAAAABG0/lg1GpCCEl0M/s360/htc_hd2_contact_record.jpg" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;虽说可能是因刷机太多引起的，怎么可能阻止得了刷机的诱惑，何况也正是HD2的使命。生命在于折腾，目前已经愉快地用上&lt;a class="reference external" href="http://forum.xda-developers.com/showthread.php?t=1404993"&gt;CM7&lt;/a&gt;
+:)&lt;/p&gt;
+&lt;p&gt;附：&lt;a class="reference external" href="http://android.hd2roms.com/"&gt;HD2 ROM大全&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category><category term="HD2"></category><category term="HTC"></category><category term="WIFI"></category></entry><entry><title>如何在 Android 设备上截图</title><link href="/how-to-take-screenshots-on-android-device.html" rel="alternate"></link><published>2012-04-08T10:23:00+08:00</published><updated>2012-04-08T10:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-04-08:/how-to-take-screenshots-on-android-device.html</id><summary type="html">&lt;p&gt;在苹果 iOS 设备上可以很轻松的使用 Home + Power
+组合按键来截图，系统自带有此功能。但在 Android
+系统上，没有类似系统自带的截图功能，肿么办？&lt;/p&gt;
+&lt;p&gt;本文介绍如何使用 Dalvik Debug Monitor Server ( DDMS)
+截图，它的特点有：免root， 免App，不影响程序运行性能，随时可截图。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;操作步骤&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;安装 Android SDK，（Windows 用户可参考
+&lt;a class="reference external" href="/android-dev-guid-for-windows.html"&gt;Android开发环境搭建（Windows篇）&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;在设置（Settings） &amp;gt; 应用程序（Applications） &amp;gt;
+开发（Development）开启 USB 调试（USB Debugging）。&lt;/li&gt;
+&lt;li&gt;连接 Android 设备，可通过 USB 或者 Wireless …&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;在苹果 iOS 设备上可以很轻松的使用 Home + Power
+组合按键来截图，系统自带有此功能。但在 Android
+系统上，没有类似系统自带的截图功能，肿么办？&lt;/p&gt;
+&lt;p&gt;本文介绍如何使用 Dalvik Debug Monitor Server ( DDMS)
+截图，它的特点有：免root， 免App，不影响程序运行性能，随时可截图。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;操作步骤&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;安装 Android SDK，（Windows 用户可参考
+&lt;a class="reference external" href="/android-dev-guid-for-windows.html"&gt;Android开发环境搭建（Windows篇）&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;在设置（Settings） &amp;gt; 应用程序（Applications） &amp;gt;
+开发（Development）开启 USB 调试（USB Debugging）。&lt;/li&gt;
+&lt;li&gt;连接 Android 设备，可通过 USB 或者 Wireless ADB
+(需要root，且反应稍慢)。&lt;/li&gt;
+&lt;li&gt;打开 Android SDK 安装目录下的 /tools/ddms。&lt;/li&gt;
+&lt;li&gt;在 Device 菜单选择 Screen capture... （Ctrl+S 或 Command +
+S），就可以截图了，截屏后还可以进行刷新，旋转，复制到粘贴板或保存到本地等操作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="ddms capture" src="https://lh4.googleusercontent.com/-Gmg3-48cE2k/T5UF89CcMKI/AAAAAAAABE8/2eM2t3qQaI8/s548/ddms_capture.png" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Android"></category><category term="截图"></category></entry><entry><title>Android中的layout_weight问题</title><link href="/layout_weight-in-android.html" rel="alternate"></link><published>2011-01-25T16:53:00+08:00</published><updated>2011-01-25T16:53:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-25:/layout_weight-in-android.html</id><summary type="html">&lt;p&gt;在学习 Android 开发时，在看到官网的一个线性布局例子&lt;a class="reference external" href="http://developer.android.com/resources/tutorials/views/hello-linearlayout.html"&gt;Linear Layout
+tutorial&lt;/a&gt;，通过指定android:layout_weight的值来改变子视图在布局中占用的比例大小，发现运行结果与自己写的相反。到底哪里忽略了呢？直接上代码。&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&amp;lt; &lt;span class="pre"&gt;?xml&lt;/span&gt; &lt;span class="pre"&gt;version=&amp;quot;1.0&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:orientation=&amp;quot;vertical&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:background=&amp;quot;#aa0000&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:text=&amp;quot;Hello World, LinearLayout!&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:gravity=&amp;quot;center&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_weight=&amp;quot;1&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;/&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_height=&amp;quot;fill_parent …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;在学习 Android 开发时，在看到官网的一个线性布局例子&lt;a class="reference external" href="http://developer.android.com/resources/tutorials/views/hello-linearlayout.html"&gt;Linear Layout
+tutorial&lt;/a&gt;，通过指定android:layout_weight的值来改变子视图在布局中占用的比例大小，发现运行结果与自己写的相反。到底哪里忽略了呢？直接上代码。&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&amp;lt; &lt;span class="pre"&gt;?xml&lt;/span&gt; &lt;span class="pre"&gt;version=&amp;quot;1.0&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:orientation=&amp;quot;vertical&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:background=&amp;quot;#aa0000&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:text=&amp;quot;Hello World, LinearLayout!&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:gravity=&amp;quot;center&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_weight=&amp;quot;1&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;/&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:text=&amp;quot;这是第二行&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:gravity=&amp;quot;center&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_weight=&amp;quot;2&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;/&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;运行结果：&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/linear_wtf.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-1030" src="http://magicalboy.com/wp-content/uploads/2011/01/linear_wtf.png" style="width: 320px; height: 480px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;结果分析：&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;嗯哼，例子中使用LinearLayout垂直布局，有两个文本视图控件，它们除了颜色和文本不同之外，layout_weight属性也不同。但官方的Linear
+Layout
+tutorial例子中，将控件的layout_weight更改得出的结果刚好相反，应该是weight值越大的占的空间越大才对吧。先看下官方例子中修改过后的代码和结果：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;tt class="docutils literal"&gt;&amp;lt; &lt;span class="pre"&gt;?xml&lt;/span&gt; &lt;span class="pre"&gt;version=&amp;quot;1.0&amp;quot;&lt;/span&gt; &lt;span class="pre"&gt;encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:orientation=&amp;quot;vertical&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_weight=&amp;quot;1&amp;quot;&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:gravity=&amp;quot;center_horizontal&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:background=&amp;quot;#aa0000&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;wrap_content&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_weight=&amp;quot;1&amp;quot;/&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:gravity=&amp;quot;center_horizontal&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:background=&amp;quot;#00aa00&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;wrap_content&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_weight=&amp;quot;2&amp;quot;/&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:gravity=&amp;quot;center_horizontal&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:background=&amp;quot;#0000aa&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;wrap_content&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_weight=&amp;quot;3&amp;quot;/&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:gravity=&amp;quot;center_horizontal&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:background=&amp;quot;#aaaa00&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;wrap_content&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_weight=&amp;quot;4&amp;quot;/&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_weight=&amp;quot;2&amp;quot;&amp;gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_height=&amp;quot;wrap_content&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:layout_weight=&amp;quot;1&amp;quot;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class="pre"&gt;android:background=&amp;quot;#aa0000&amp;quot;/&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_height=&amp;quot;wrap_content&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_weight=&amp;quot;2&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:background=&amp;quot;#00aa00&amp;quot;/&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_height=&amp;quot;wrap_content&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_weight=&amp;quot;3&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:background=&amp;quot;#0000aa&amp;quot;/&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_width=&amp;quot;fill_parent&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_height=&amp;quot;wrap_content&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:layout_weight=&amp;quot;4&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;android:background=&amp;quot;#aaaa00&amp;quot;/&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;修改layout_weight后的运行结果：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/linear_layout2.png"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-1031" src="http://magicalboy.com/wp-content/uploads/2011/01/linear_layout2.png" style="width: 320px; height: 480px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;问题原因&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;没错，结果相反了，在自己写的Demo中，weight值较大的视图反而变小了。仔细对比代码发现，原来文本视图中的高度属性被我设置成&amp;quot;fill_parent&amp;quot;，将它们改为&amp;quot;wrap_content&amp;quot;之后，再次运行结果：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/linear.png"&gt;&lt;img alt="image2" class="alignnone size-full wp-image-1032" src="http://magicalboy.com/wp-content/uploads/2011/01/linear.png" style="width: 320px; height: 480px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://developer.android.com/reference/android/widget"&gt;layout_weight&lt;/a&gt;
+属性在文档中的定义&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;/LinearLayout.LayoutParams.html#attr_android:layout_weight&lt;/div&gt;
+&lt;div class="line"&gt;Indicates how much of the extra space in the LinearLayout will be
+allocated to the view associated with these LayoutParams. Specify
+0 if the view should not be stretched. Otherwise the extra pixels
+will be pro-rated among all views whose weight is greater than 0.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;也即是说，weight是定义独立子视图的权重比例属性，表示占用父视图的剩余空间的比例，默认值为0。&lt;/div&gt;
+&lt;div class="line"&gt;还需要注意的是，在同一个LinearLayout中的各个元素之间的 weight
+是正向比例的，但是如果是各个LinearLayout之间的 weight 则是反向的。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;参考链接&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.zhuhuang.com/2010/08/layout_weight-in-linearlayout-android/"&gt;有关LinearLayout的layout_weight属性的疑问&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/questions/3995825/what-is-androidlayout-weight-meaning"&gt;What is android:layout_weight
+meaning?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;== END ==&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Android开发环境搭建（Windows篇）</title><link href="/android-dev-guid-for-windows.html" rel="alternate"></link><published>2011-01-14T18:30:00+08:00</published><updated>2011-01-14T18:30:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-14:/android-dev-guid-for-windows.html</id><summary type="html">&lt;p&gt;Android的开发环境配置起来有几个步骤，没有iPhone有Xcode集成的SDK方便。但它有明显的优势，支持多平台开发。下面就简单记录一下，在Windows下配置Android开发环境的一些步骤。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;运行环境及開發環境&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Windows 7&lt;/li&gt;
+&lt;li&gt;Java SDK &amp;amp;Java Runtime&lt;/li&gt;
+&lt;li&gt;eclipse-java-helios-SR1-win32&lt;/li&gt;
+&lt;li&gt;android-sdk_r08-windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;安装配置基本步骤&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;首先，下载安装Java，将Java运行环境安装配置好，即配置环境变量。&lt;/li&gt;
+&lt;li&gt;然后，下载Android
+SDK，在哪下载与如何下载，请&lt;a class="reference external" href="http://www.google.com/search?q=android+dev&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;aq=t"&gt;Google之&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;下载解压并运行解压目录里面的&lt;em&gt;SDK
+Manager.exe&lt;/em&gt;，在线安装SDK。如果安装过程出现问题，请Google之。&lt;/li&gt;
+&lt;li&gt;配置android
+sdk系统环境变量，将你sdk下的tool目录路径（比如x:android-sdk-windowstool）增加到path。&lt;/li&gt;
+&lt;li&gt;增加虚拟设备，版本自己选择（如下图）：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-989" src="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg" style="width: 604px; height: 330px;" /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;到Eclipse官网下载最新版本，运行并打开帮助菜单中的安装新软件子菜单，增加android
+- &lt;a class="reference external" href="http://dl-ssl.google.com/android/eclipse"&gt;http://dl-ssl.google.com/android …&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Android的开发环境配置起来有几个步骤，没有iPhone有Xcode集成的SDK方便。但它有明显的优势，支持多平台开发。下面就简单记录一下，在Windows下配置Android开发环境的一些步骤。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;运行环境及開發環境&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Windows 7&lt;/li&gt;
+&lt;li&gt;Java SDK &amp;amp;Java Runtime&lt;/li&gt;
+&lt;li&gt;eclipse-java-helios-SR1-win32&lt;/li&gt;
+&lt;li&gt;android-sdk_r08-windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;安装配置基本步骤&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;首先，下载安装Java，将Java运行环境安装配置好，即配置环境变量。&lt;/li&gt;
+&lt;li&gt;然后，下载Android
+SDK，在哪下载与如何下载，请&lt;a class="reference external" href="http://www.google.com/search?q=android+dev&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;aq=t"&gt;Google之&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;下载解压并运行解压目录里面的&lt;em&gt;SDK
+Manager.exe&lt;/em&gt;，在线安装SDK。如果安装过程出现问题，请Google之。&lt;/li&gt;
+&lt;li&gt;配置android
+sdk系统环境变量，将你sdk下的tool目录路径（比如x:android-sdk-windowstool）增加到path。&lt;/li&gt;
+&lt;li&gt;增加虚拟设备，版本自己选择（如下图）：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-989" src="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg" style="width: 604px; height: 330px;" /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;到Eclipse官网下载最新版本，运行并打开帮助菜单中的安装新软件子菜单，增加android
+- &lt;a class="reference external" href="http://dl-ssl.google.com/android/eclipse"&gt;http://dl-ssl.google.com/android/eclipse&lt;/a&gt;，安装Android Develop
+Tool（ADT）。然后配置ADT，就可以新建Android项目HelloWorld了。不用写一句代码直接运行：&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/hello_android_for_magicalboy.jpg"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-990" src="http://magicalboy.com/wp-content/uploads/2011/01/hello_android_for_magicalboy.jpg" style="width: 807px; height: 572px;" /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;如果想在设备中运行，需要制作自签名证书，将生成的.apk文件复制到手机上即可。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;官网安装文档&lt;/h2&gt;
+&lt;p&gt;Android的开发环境搭建基本上就是这些流程步骤，欲想了解更多，请参考官方网站的：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://developer.android.com/sdk/installing.html"&gt;SDK安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://developer.android.com/guide/index.html"&gt;开发指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry></feed>

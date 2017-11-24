@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Oops! Google App Engine 超出配额
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-04-22T12:14:00+08:00" pubdate>
+                            日, 22  4 2012
+                        </time>
+                        <a href="/google_app_engine_over_quota.html" rel="bookmark"><h1>Oops! Google App Engine 超出配额</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>昨天将GAE空间整理过后，今天访问出现 Over Quota <strong>503</strong>
+不能访问的问题。免费的服务果然是伤不起啊，但想一下，为什么之前就没有这问题呢，到<a class="reference external" href="https://appengine.google.com/">管理控制台</a>查看，原来
+<strong>Frontend Instance Hours</strong> 的 <strong>Daily Quota</strong> 已经耗尽，超出配额。</p>
+<div class="section" id="instance-hours">
+<h2>什么是 Instance Hours</h2>
+<blockquote>
+Instance Hours 对应于CPU Hours 而言的 先说CPU Hours: 一个请求,
+如果耗费 0.1s, 那么计费时就按照 0.1s累计. 假设每天100K请求, 那么就是
+100K*0.1s = 10Ks, 约2.8 CPU Hours. 而Instance Hours
+是指Instance的保持时间, 不管是否在处理请求 (这里的Instance
+和Amazon的Micro Instance差不多) GAE的Instance数量是动态,
+并且创建后通常会在空闲一段时间(15分钟?)后才释放 之前CPU
+Hours对于小规模应用很合算, 基本不会超过6.5小时的免费限额
+而现在新价格下, 虽然有24小时的Instance Hours,
+但是一旦有突发大量请求, 一个Instance处理不过来的时候, 就会产生第二,
+第三个Instance..., 于是就会有费用产生. 关键是,
+GAE/Python目前不支持并发请求, 一个Instance只能顺序处理逐个请求,
+于是对于并发请求很多的应用, 就会产生&quot;惊人&quot;的收费,
+而真正的CPU使用率很低 简单来说, 之前CPU Hours惊人的便宜,
+现在Instance Hours惊人的昂贵, 在没有支持并发请求的情况下.</blockquote>
+<p>引用自<a class="reference external" href="http://www.v2ex.com/t/17891">Instance Hours
+究竟是什么东西？</a></p>
+</div>
+<div class="section" id="logs">
+<h2>分析 Logs</h2>
+<p>为了找出哪个 <strong>Frontend Instance</strong> 占用 <strong>Hours</strong>
+最多，翻查了一下日志，发现 <strong>/admin/wp_import</strong> 所调用的次数最多。
+<img alt="import" src="https://lh3.googleusercontent.com/-KKU--IAshKE/T5PopLj_BCI/AAAAAAAABEU/X-yNHirWUzY/w597-h343-k/appengine_logs.png" /> 这只是一个 Wordpress Import
+插件，只能在后台调用而且只在导入文章时使用。排除 Robots.txt
+没有设置，将此插件禁用依然调用，如上图。最后发现是任务队列干的好事。</p>
+</div>
+<div class="section" id="task-queues">
+<h2>取消 Task Queues</h2>
+<p>在<a class="reference external" href="https://appengine.google.com/">管理控制台</a> Main -&gt; Task Queues
+查看有没有任务队列在运行。如果有，删掉 queue.yaml
+文件或删除其中的某一任务，然后使用命令更新。</p>
+<pre class="code shell literal-block">
+$ appcfg.py update_queues myapp/
+</pre>
+</div>
+<div class="section" id="application-settings">
+<h2>Application Settings</h2>
+<p>想想昨天还有一个改动的地方，在管理控制台的 <strong>Administration -&gt;
+Application Settings -&gt; Performance</strong>，将 <strong>Frontend Instance Class</strong>
+默认的 <em>F1(600MHz, 128MB)</em> 更改为 <em>F4(2400MHz, 512MB)</em>，按照提示 &quot;<em>For
+example an F2 consumes instance hours at twice the rate of an F1.</em>&quot;
+所说，更改之后 <strong>instance hours</strong> 消耗为原先的 4 倍。效果可想而知了。</p>
+</div>
+<div class="section" id="id1">
+<h2>一些建议</h2>
+<ol class="arabic simple">
+<li>尽量在本地开发环境做测试，减少对服务器的 <strong>Request</strong>，节省
+<strong>instance hours</strong> 。</li>
+<li>同样的目的，对静态文件的请求建议使用外链引用。</li>
+<li>优化程序代码，经常查看分析 <strong>Logs</strong>。</li>
+<li>减少在服务器处理比较消耗CPU资源的任务。</li>
+</ol>
+<p>处理好以上问题之后，等待 Quota 更新吧。 Quotas are reset every 24 hours.
+Next reset: 4 hours。:) 其它参考资料：<a class="reference external" href="http://blog.longwin.com.tw/2010/12/gae-billing-quota-status-2010/">Google App Engine
+計費、配額、系統狀態
+常用資料匯整</a></p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa-hu-lian-wang.html">WEB开发, 互聯網</a></p>
+                        <p>Tags: <a href="/tag/gae.html">GAE</a>, <a href="/tag/google.html">Google</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

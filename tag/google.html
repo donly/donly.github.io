@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note - Google</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-04-22T12:14:00+08:00" pubdate>
+                            日, 22  4 2012
+                        </time>
+                        <a href="/google_app_engine_over_quota.html" rel="bookmark"><h1>Oops! Google App Engine 超出配额</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>昨天将GAE空间整理过后，今天访问出现 Over Quota <strong>503</strong>
+不能访问的问题。免费的服务果然是伤不起啊，但想一下，为什么之前就没有这问题呢，到<a class="reference external" href="https://appengine.google.com/">管理控制台</a>查看，原来
+<strong>Frontend Instance Hours</strong> 的 <strong>Daily Quota</strong> 已经耗尽，超出配额。</p>
+<div class="section" id="instance-hours">
+<h2>什么是 Instance Hours</h2>
+<blockquote>
+Instance Hours 对应于CPU Hours 而言的 先说CPU Hours: 一个请求,
+如果耗费 0.1s, 那么计费时就按照 0.1s累计. 假设每天100K请求, 那么就是
+100K*0.1s = 10Ks, 约2.8 CPU Hours. 而Instance Hours …</blockquote></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-01-17T01:35:00+08:00" pubdate>
+                            一, 17  1 2011
+                        </time>
+                        <a href="/google-urlshortener-api.html" rel="bookmark"><h1>Google短网址服务</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Google已公开其短网址goo.gl
+<a class="reference external" href="http://code.google.com/apis/urlshortener/">API</a>，有兴趣的赶紧研究吧。以下是本站的Google短址：</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://goo.gl/UnnoC">http://goo.gl/UnnoC</a></li>
+<li><a class="reference external" href="http://goo.gl/TXyAR">http://goo.gl/TXyAR</a></li>
+</ol>
+<div class="line-block">
+<div class="line">在短地址后面加上.qr可生成二维码，比如http://goo.gl/TXyAR.qr的二维码为：</div>
+<div class="line"><img alt="http://goo.gl/TxyAR.qr" src="http://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;choe=UTF-8&amp;chld=H&amp;chl=http://goo.gl/TXyAR" /></div>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+            Page 1 / 1
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

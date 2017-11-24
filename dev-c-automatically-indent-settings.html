@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    dev-c++自动缩进设置
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-30T07:12:00+08:00" pubdate>
+                            日, 30  5 2010
+                        </time>
+                        <a href="/dev-c-automatically-indent-settings.html" rel="bookmark"><h1>dev-c++自动缩进设置</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>Dev-C++</h2>
+<blockquote>
+<strong>Dev-C++</strong>是一套用于开发C/C++的<a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6">自由的</a><a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">整合性开发环境</a>（IDE），并以<a class="reference external" href="http://zh.wikipedia.org/zh-cn/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81">GPL</a>作为散布许可。使用
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/MinGW">MinGW</a> 及
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/GDB">GDB</a>
+作为编译系统与除错系统。Dev-C++的IDE是利用<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Delphi">Delphi</a>开发
+的。</blockquote>
+<p>它使用包管理器，集成GCC，MinGW等包，支持C99标准，基于GPL让它得到很好的改进，但似乎有段时间没有更新了。当前IDE最新版本为4.9.9.2</p>
+<p>下载最新版本的dev-c++：<a class="reference external" href="http://sourceforge.net/projects/dev-cpp/files/">http://sourceforge.net/projects/dev-cpp/files/</a>，Windows平台下载并运行devcpp-4.9.9.2_setup.exe直接安装</p>
+</div>
+<div class="section" id="id2">
+<h2>解决自动缩进问题</h2>
+<p>默认的缩进代码如下：</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><tt class="docutils literal">/* divisible.c <span class="pre">--</span> 求约数 */ #include&nbsp; #include&nbsp; int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; int num;&nbsp;&nbsp;&nbsp;&nbsp; int div;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">printf(&quot;请输入一个整数：&quot;);</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">scanf(&quot;%d&quot;,</span> &amp;num);</tt></div>
+</div>
+<div class="line-block">
+<div class="line">for(div=2; div {</div>
+<div class="line">if(num%div == 0)</div>
+<div class="line">printf(&quot;%d 为 %d 的约数n&quot;, div, num);</div>
+<div class="line">}</div>
+<div class="line">// getchar();</div>
+<div class="line">system(&quot;pause&quot;);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<p>默认的缩进截图：</p>
+<p>[caption id=&quot;attachment_178&quot; align=&quot;alignleft&quot; width=&quot;788&quot;
+caption=&quot;dev-c++代码自动缩进&quot;]<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/devc-1.png"><img alt="dev-c++代码自动缩进" class="size-full wp-image-178" src="http://magicalboy.com/wp-content/uploads/2010/05/devc-1.png" style="width: 788px; height: 509px;" /></a>[/caption]</p>
+<p>设置编辑选项：Tools菜单—&gt;Editor Options—&gt;General标签项，取消选中的Smart
+Tabs，问题就解决了！</p>
+<p>[caption id=&quot;attachment_179&quot; width=&quot;441&quot;
+caption=&quot;dev-c++编辑设置&quot;]<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/devc-2.png"><img alt="dev-c++编辑设置" class="size-full wp-image-179" src="http://magicalboy.com/wp-content/uploads/2010/05/devc-2.png" style="width: 441px; height: 443px;" /></a>[/caption]</p>
+<p>另外，Dev-C++还支持国际化，支持中文，可在“工具”—&gt;“环境选项”—&gt;“界面”—&gt;“语言”中选择“Chinese”即可。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/cheng-xu-ren-sheng.html">程序人生</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Django 快速安装指南
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-04T07:47:00+08:00" pubdate>
+                            日, 04  7 2010
+                        </time>
+                        <a href="/quick-install-django.html" rel="bookmark"><h1>Django 快速安装指南</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Django 是一个高层次的 Python Web
+框架，鼓励快速全面的开发和实用的设计。是一个使用 python 语言写的开源 web
+开发框架(open source web framework)。</p>
+<p>这是一个简单的快速安装入门教程，如果您需要一个完整的安装指南，涵盖所有安装过程中出现问题的可能性，请参见官方网站：<a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#topics-install">完整安装指南</a></p>
+<!-- install-python: -->
+<div class="section" id="python">
+<h2>安装 Python <a class="reference external" href="#install-python">¶</a></h2>
+<p>作为一个 Python Web 框架，Django 需要 Python。它适用于任何版本的 Python
+2.4 至 2.6，但是它不适用于 3.0。建议您使用 Python 2.5
+或更高版本，因为它们包括一个称为轻量级数据库 SQLite。如果您现在使用的是
+Linux 或 Mac OS
+x，则有可能已经安装好了。您可以从<a class="reference external" href="http://www.python.org">这里</a>得到
+Python，或者直接进入其<a class="reference external" href="http://www.python.org/ftp/python/">FTP服务器</a>下载您想要的版本。</p>
+<div class="line-block">
+<div class="line">要验证是否已经安装好
+Pyhton，可以在命令窗口中输入&quot;python&quot;，可以看到类似以下的信息说明已经安装成功：</div>
+<div class="line"><tt class="docutils literal">Python 2.6.5 (r265:79063, Apr 16 2010, 13:57:41) [GCC 4.4.3] on linux2 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</tt></div>
+</div>
+<!-- setup-database: -->
+</div>
+<div class="section" id="id1">
+<h2>设置数据库 <a class="reference external" href="#setup-database">¶</a></h2>
+<p>因为我们安装的 Python 是 2.5 以上的版本，里面自带了
+SQLite，所以可以跳过这一步。如果需要安装其它数据库，请参考<a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#database-installation">database
+installation
+information</a>。</p>
+<!-- remove-old-version: -->
+</div>
+<div class="section" id="id2">
+<h2>卸载所有旧的 Django 版本<a class="reference external" href="#remove-old-version">¶</a></h2>
+<p>如果您是从以前的版本升级你的Django的安装，你需要<a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#removing-old-versions-of-django">卸载旧版本的Django然后再安装新的版本</a>。</p>
+<!-- install-django: -->
+</div>
+<div class="section" id="id3">
+<h2>安装 Django <a class="reference external" href="#install-django">¶</a></h2>
+<p>安装 Django 的几个步骤：</p>
+<ul class="simple">
+<li>选择一个为我们操作系统发布的 Django
+版本<a class="reference external" href="http://www.djangoproject.com/download/">下载</a>，我们以
+Django 0.96.5:
+<a class="reference external" href="http://www.djangoproject.com/download/0.96.5/tarball/">tarball</a>
+， Linux 平台下操作为例。</li>
+<li>解压缩并安装：
+<tt class="docutils literal">tar xzvf <span class="pre">Django-0.96.5.tar.gz</span> cd <span class="pre">Django-1.2.1</span> sudo python setup.py install</tt></li>
+<li>验证是否安装成功：
+<tt class="docutils literal">&gt;&gt;&gt; import django &gt;&gt;&gt; help(django)</tt></li>
+</ul>
+<p>如果没有报任何出错信息，则说明已经安装成功。</p>
+</div>
+<div class="section" id="that-is-it">
+<h2>That is it <a class="reference external" href="#that-is-it">¶</a></h2>
+<p>安装成功！赶紧体验 Django 框架带来的快速、简便的 WEB 开发乐趣吧。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

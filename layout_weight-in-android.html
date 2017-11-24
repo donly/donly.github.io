@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Android中的layout_weight问题
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-01-25T16:53:00+08:00" pubdate>
+                            二, 25  1 2011
+                        </time>
+                        <a href="/layout_weight-in-android.html" rel="bookmark"><h1>Android中的layout_weight问题</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>在学习 Android 开发时，在看到官网的一个线性布局例子<a class="reference external" href="http://developer.android.com/resources/tutorials/views/hello-linearlayout.html">Linear Layout
+tutorial</a>，通过指定android:layout_weight的值来改变子视图在布局中占用的比例大小，发现运行结果与自己写的相反。到底哪里忽略了呢？直接上代码。</p>
+<p><tt class="docutils literal">&lt; <span class="pre">?xml</span> <span class="pre">version=&quot;1.0&quot;</span> <span class="pre">encoding=&quot;utf-8&quot;?&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:orientation=&quot;vertical&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;&gt;</span></tt></p>
+<div class="line-block">
+<div class="line">android:layout_height=&quot;fill_parent&quot;</div>
+<div class="line">android:background=&quot;#aa0000&quot;</div>
+<div class="line">android:text=&quot;Hello World, LinearLayout!&quot;</div>
+<div class="line">android:gravity=&quot;center&quot;</div>
+<div class="line">android:layout_weight=&quot;1&quot;</div>
+<div class="line">/&gt;</div>
+<div class="line">android:layout_width=&quot;fill_parent&quot;</div>
+<div class="line">android:layout_height=&quot;fill_parent&quot;</div>
+<div class="line">android:text=&quot;这是第二行&quot;</div>
+<div class="line">android:gravity=&quot;center&quot;</div>
+<div class="line">android:layout_weight=&quot;2&quot;</div>
+<div class="line">/&gt;</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>运行结果：</strong></div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/linear_wtf.png"><img alt="image0" class="alignnone size-full wp-image-1030" src="http://magicalboy.com/wp-content/uploads/2011/01/linear_wtf.png" style="width: 320px; height: 480px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>结果分析：</strong></div>
+<div class="line">嗯哼，例子中使用LinearLayout垂直布局，有两个文本视图控件，它们除了颜色和文本不同之外，layout_weight属性也不同。但官方的Linear
+Layout
+tutorial例子中，将控件的layout_weight更改得出的结果刚好相反，应该是weight值越大的占的空间越大才对吧。先看下官方例子中修改过后的代码和结果：</div>
+<div class="line"><tt class="docutils literal">&lt; <span class="pre">?xml</span> <span class="pre">version=&quot;1.0&quot;</span> <span class="pre">encoding=&quot;utf-8&quot;?&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:orientation=&quot;vertical&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_weight=&quot;1&quot;&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:gravity=&quot;center_horizontal&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:background=&quot;#aa0000&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;wrap_content&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_weight=&quot;1&quot;/&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:gravity=&quot;center_horizontal&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:background=&quot;#00aa00&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;wrap_content&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_weight=&quot;2&quot;/&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:gravity=&quot;center_horizontal&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:background=&quot;#0000aa&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;wrap_content&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_weight=&quot;3&quot;/&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:gravity=&quot;center_horizontal&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:background=&quot;#aaaa00&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;wrap_content&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_weight=&quot;4&quot;/&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_weight=&quot;2&quot;&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_width=&quot;fill_parent&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_height=&quot;wrap_content&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:layout_weight=&quot;1&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">android:background=&quot;#aa0000&quot;/&gt;</span></tt></div>
+</div>
+<div class="line-block">
+<div class="line">android:layout_width=&quot;fill_parent&quot;</div>
+<div class="line">android:layout_height=&quot;wrap_content&quot;</div>
+<div class="line">android:layout_weight=&quot;2&quot;</div>
+<div class="line">android:background=&quot;#00aa00&quot;/&gt;</div>
+<div class="line">android:layout_width=&quot;fill_parent&quot;</div>
+<div class="line">android:layout_height=&quot;wrap_content&quot;</div>
+<div class="line">android:layout_weight=&quot;3&quot;</div>
+<div class="line">android:background=&quot;#0000aa&quot;/&gt;</div>
+<div class="line">android:layout_width=&quot;fill_parent&quot;</div>
+<div class="line">android:layout_height=&quot;wrap_content&quot;</div>
+<div class="line">android:layout_weight=&quot;4&quot;</div>
+<div class="line">android:background=&quot;#aaaa00&quot;/&gt;</div>
+</div>
+<div class="line-block">
+<div class="line">修改layout_weight后的运行结果：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/linear_layout2.png"><img alt="image1" class="alignnone size-full wp-image-1031" src="http://magicalboy.com/wp-content/uploads/2011/01/linear_layout2.png" style="width: 320px; height: 480px;" /></a></div>
+</div>
+<div class="section" id="id1">
+<h2>问题原因</h2>
+<div class="line-block">
+<div class="line">没错，结果相反了，在自己写的Demo中，weight值较大的视图反而变小了。仔细对比代码发现，原来文本视图中的高度属性被我设置成&quot;fill_parent&quot;，将它们改为&quot;wrap_content&quot;之后，再次运行结果：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/linear.png"><img alt="image2" class="alignnone size-full wp-image-1032" src="http://magicalboy.com/wp-content/uploads/2011/01/linear.png" style="width: 320px; height: 480px;" /></a></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>总结</h2>
+<p><a class="reference external" href="http://developer.android.com/reference/android/widget">layout_weight</a>
+属性在文档中的定义</p>
+<blockquote>
+<div class="line-block">
+<div class="line">/LinearLayout.LayoutParams.html#attr_android:layout_weight</div>
+<div class="line">Indicates how much of the extra space in the LinearLayout will be
+allocated to the view associated with these LayoutParams. Specify
+0 if the view should not be stretched. Otherwise the extra pixels
+will be pro-rated among all views whose weight is greater than 0.</div>
+</div>
+</blockquote>
+<div class="line-block">
+<div class="line">也即是说，weight是定义独立子视图的权重比例属性，表示占用父视图的剩余空间的比例，默认值为0。</div>
+<div class="line">还需要注意的是，在同一个LinearLayout中的各个元素之间的 weight
+是正向比例的，但是如果是各个LinearLayout之间的 weight 则是反向的。</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>参考链接</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.zhuhuang.com/2010/08/layout_weight-in-linearlayout-android/">有关LinearLayout的layout_weight属性的疑问</a></li>
+<li><a class="reference external" href="http://stackoverflow.com/questions/3995825/what-is-androidlayout-weight-meaning">What is android:layout_weight
+meaning?</a></li>
+</ul>
+<p>== END ==</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/android.html">Android</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

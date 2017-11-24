@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Ubuntu 10.04 快速搭建 LAMP 开发环境
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-24T14:00:00+08:00" pubdate>
+                            六, 24  7 2010
+                        </time>
+                        <a href="/ubuntu10-04-lamp.html" rel="bookmark"><h1>Ubuntu 10.04 快速搭建 LAMP 开发环境</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>本文将介绍在 Linux Ubuntu 10.04 下快速搭建 LAMP 开发环境。原文来自
+<a class="reference external" href="http://amilaudana.wordpress.com/2010/05/06/configure-apache-mysql-php-on-ubuntu/">Configure Apache MySQL PHP on Ubuntu 10.04</a> ，加上自己实践的安装过程 :）。</p>
+<p>image0</p>
+<blockquote>
+<dl class="docutils">
+<dt><a class="reference external" href="http://zh.wikipedia.org/zh-cn/LAMP">LAMP</a> ，是指基于</dt>
+<dd>Linux，Apache，MySQL 和
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/PHP">PHP</a> （ <a class="reference external" href="http://zh.wikipedia.org/zh-cn/Perl">Perl</a>
+或
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Python">Python</a> ，<a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80">脚本语言</a> ）的开放资源网络开发平台。如果是在 Windows 操作系统下使用这些工具称为使用 WAMP 了。</dd>
+</dl>
+</blockquote>
+<p>搭建 LAMP 有很多种方法，下面我将和大家分享最佳和最简单的方法，just enjoy it。</p>
+<ol class="arabic">
+<li><p class="first">首先，打开<strong>终端</strong>命令行窗口，输入以下命令：
+$ <strong>sudo tasksel install lamp-server</strong></p>
+</li>
+<li><p class="first">输入密码后会看到下载安装包界面：
+image1</p>
+</li>
+<li><p class="first">最后，设置好 MySQL 超级用户 root 的密码，等待 LAMP
+所需的组件下载安装完毕，That's all：
+image2</p>
+</li>
+<li><p class="first">下面介绍配置它们，创建一个新站点并在 Apache2 中启动它。
+创建一个新站点，首先复制作为出发点的默认网站文件：
+$ <strong>sudo cp /etc/apache2/sites-available/default/etc/apache2/sites-available/mysite</strong></p>
+</li>
+<li><p class="first">更改 <strong>DocumentRoot</strong> 指向新的位置。默认为 <strong>/var/www</strong></p>
+</li>
+<li><div class="first line-block">
+<div class="line">更改目录指令 (cd) 到 /etc/apache2/sites-available ，执行：</div>
+<div class="line">/etc/apache2/sites-available$ <strong>sudo a2dissite default &amp;&amp; sudo
+a2ensite mysite</strong></div>
+<div class="line">输出：</div>
+</div>
+<blockquote>
+<p>Site default disabled.
+Run '/etc/init.d/apache2 reload' to activate new configuration!
+Enabling site mysite.
+Run '/etc/init.d/apache2 reload' to activate new configuration!</p>
+</blockquote>
+</li>
+<li><p class="first">从上面输出中可看出 Apache2 已经自动加载了，无须重启。重启 Apache2 服务的命令：
+$ <strong>sudo /etc/init.d/apache2 restart</strong></p>
+</li>
+<li><p class="first">最后打开 <a class="reference external" href="http://localhost/">http://localhost/</a>：It works!</p>
+</li>
+</ol>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    TestFlight 笔记
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2014-10-15T16:34:00+08:00" pubdate>
+                            三, 15 10 2014
+                        </time>
+                        <a href="/testflight.html" rel="bookmark"><h1>TestFlight 笔记</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div><p>这里要说的不是 testflightapp.com，而是被苹果收购后，在 iTunes Connect
+上面的那个 TestFlight。并且 testflightapp.com 某此功能都被停掉了，比如
+Team 的 SDK 已经不能再申请使用。</p>
+</div><div class="section" id="id1">
+<h2>TestFlight 是什么</h2>
+<div></div><div><p>使用 TestFlight Beta Testing，将预发布版的 app
+分发给测试者来收集反馈，做好发布到 App Store 的准备。</p>
+</div><div><p>TestFlight Beta Testing 是可选的，还是可以直接提交 app 给 App Store
+审核。</p>
+</div><div><p>TestFlight 是免费的，容易使用，发布到 App Store 之前的改善工具。</p>
+</div><div><p>TestFlight 目前仅支持 iOS 应用，一个开发者用户同时能够对 10 个 apps 启用
+TestFlight Beta Testing。</p>
+</div><div></div></div>
+<div class="section" id="itunes-connect">
+<h2>在 iTunes Connect 设置预发布版本应用测试的步骤：</h2>
+<ul class="simple">
+<li>如果是新应用则需要先创建。</li>
+<li>生成新的 App Store Distribution profile。</li>
+<li>上传 app 的二进制文件。</li>
+<li>增加应用描述和针对此版本的测试内容。</li>
+<li>发布应用给内部测试者。</li>
+<li>从测试者中获取反馈。</li>
+<li>处理这些反馈，提交新版本。</li>
+<li>完成测试，提交应用到审核，或关闭测试。</li>
+</ul>
+<div></div></div>
+<div class="section" id="id2">
+<h2>下面说说以上这些步骤操作的实践过程遇到的问题：</h2>
+<ol class="arabic simple">
+<li>直接使用发布证书打包，按平时提交 App Store 的步骤上传要发布的包即可。</li>
+<li>给应用分配内部测试者的时候，必须是 iTunes Connect 用户，而且必须将
+Internal Tester 开头打开才能在 Prerelease-&gt;Internal Tester 的 Testers
+列表中看到。</li>
+<li>必须至少有一个 Tester，打开 TestFlight Beta Testing 开关才会有效。</li>
+<li>邀请会通过邮件发送，必须在 iOS 设备上操作，会自动打开 TestFlight
+来下载安装测试的 app。</li>
+<li>Tester 的状态（&quot;Status&quot;）没有像文档中所说的当用户下载了
+app，状态会变成 &quot;Testing&quot;。原文：&quot;When they download the app, their
+status changes to Testing&quot;。</li>
+<li>在 TestFlight-&gt;Testers 的列表中，测试者的 Installed Devices
+有时会变成空。</li>
+<li>从测试用户获取反馈这个也有问题，测试过程中崩溃的信息没有能够反馈到指定的
+Feedback Email。</li>
+</ol>
+<div></div><p>除了 Internal Testers 之外，还有一个 External
+Testers。<strong>像普通应用一样需要先提交审核，通过后才会发布测试</strong>。[STRIKEOUT:可惜目前还未开放，开放之后]最多可以邀请1000个非开发组成员进行测试，值得期待的一个功能。</p>
+<p>总之 TestFlight 被苹果收购之后，随着新版的 iTunes Connect
+一起推出，目前应该还在进一步开发整合中，多少会有些小问题，不久应该会有更新。不过，TestFlight
+的类似功能 Google Play Developer Console 早就已经实现了哦。</p>
+<div></div><div><p>最后需要注意的是 TestFlight is iOS 8 only!</p>
+</div><div></div></div>
+<div class="section" id="id3">
+<h2>参考连接：</h2>
+<p><a class="reference external" href="https://developer.apple.com/app-store/Testflight/">https://developer.apple.com/app-store/Testflight/</a></p>
+<p><a class="reference external" href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/BetaTestingTheApp.html#//apple_ref/doc/uid/TP40011225-CH35-SW2">https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/BetaTestingTheApp.html#//apple_ref/doc/uid/TP40011225-CH35-SW2</a></p>
+<div></div></div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/iphone.html">iPhone</a></p>
+                        <p>Tags: <a href="/tag/app-store.html">App Store</a>, <a href="/tag/itunes-connect.html">iTunes Connect</a>, <a href="/tag/testflight.html">TestFlight</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

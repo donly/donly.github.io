@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-04-22T20:25:00+08:00" pubdate>
+                            一, 22  4 2013
+                        </time>
+                        <a href="/webfaction-is-good.html" rel="bookmark"><h1>一直担心的问题发生了</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>一直担心的问题发生了，所有在同一服务器（Webfaction）托管下的网站访问异常，具体情况如下。</p>
+<div class="section" id="id2">
+<h2>症状表现</h2>
+<ol class="arabic simple">
+<li>网站请求超时</li>
+<li>请求部分数据断开，只能看到标题了</li>
+<li>请求部分数据断开，加载到内容了，但没css样式</li>
+<li>刚好请求完就断开，再访问都是请求超时</li>
+<li>首次ping玉米正常，打开网站后再去ping，超时</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>解决方法</h2>
+<ol class="arabic simple">
+<li>迁移主机，之前迁移过一次，USA2Asia</li>
+<li>购买独立IP，5美刀一个月。这方法不错，但超出目前经济预算</li>
+<li>联系主机提供商，请求更换IP。目前就是采用这途径解决了问题</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>小结</h2>
+<p>Webfaction 的员工态度很好的，效率高，至少令本 diaoser
+感受到了什么是人性化服务。引用几段他们的回复：</p>
+<blockquote>
+<p>Please note that this is not an issue on our end. We will,
+nonetheless …</p></blockquote></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-04-18T15:35:00+08:00" pubdate>
+                            四, 18  4 2013
+                        </time>
+                        <a href="/xcodebuild-usage.html" rel="bookmark"><h1>xcodebuild 命令用法</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>xcodebuild 是什么，<tt class="docutils literal">$ man xcodebuild</tt>：</p>
+<blockquote>
+xcodebuild -- build Xcode projects and workspaces</blockquote>
+<div class="section" id="id1">
+<h2>xcodebuild 基本使用</h2>
+<ul class="simple">
+<li>查看帮助：<tt class="docutils literal">$ xcodebuild <span class="pre">-help</span></tt>，或者随便输入一个不存在的选项：<tt class="docutils literal">$ xcodebuild <span class="pre">-fuck</span></tt></li>
+<li>查看用法：<tt class="docutils literal">$ xcodebuild <span class="pre">-usage</span></tt></li>
+<li>查看已安装 sdk 列表：<tt class="docutils literal">$ xcodebuild <span class="pre">-showsdks</span></tt></li>
+<li>查看当前 Xcode 版本：<tt class="docutils literal">$ xcodebuild <span class="pre">-version</span></tt></li>
+<li>查看 xcodebuild 目录：<tt class="docutils literal">$ <span class="pre">xcode-select</span> <span class="pre">-print-path</span></tt></li>
+<li>查看项目配置：<tt class="docutils literal">$ xcodebuild <span class="pre">-showBuildSettings</span></tt></li>
+<li>编译项目：<tt class="docutils literal">$ xcodebuild</tt></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>xcodebuild 具体用法</h2>
+<ol class="arabic">
+<li><p class="first">编译普通项目：</p>
+<pre class="code shell literal-block">
+xcodebuild -configuration <span class="s2">&quot;Release&quot;</span> -arch <span class="s2">&quot;armv7 armv7s …</span></pre></li></ol></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-04-16T10:26:00+08:00" pubdate>
+                            二, 16  4 2013
+                        </time>
+                        <a href="/null-value-in-objective-c.html" rel="bookmark"><h1>Objective C 中的nil，Nil，NULL和NSNull理解</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>ObjC
+里面的几个空值符号经常会差点把我搞死，这些基础的东西一点要弄清楚才行，以提高码农的基本素质。</p>
+<div class="section" id="nil">
+<h2>nil</h2>
+<ul>
+<li><p class="first">nil 是 ObjC 对象的字面空值，对应 id 类型的对象，或者使用 &#64;interface
+声明的 ObjC 对象。</p>
+</li>
+<li><p class="first">例如：</p>
+<pre class="code shell literal-block">
+NSString *someString <span class="o">=</span> nil<span class="p">;</span>
+NSURL *someURL <span class="o">=</span> nil<span class="p">;</span>
+id <span class="nv">someObject</span> <span class="o">=</span> nil<span class="p">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="nv">anotherObject</span> <span class="o">==</span> nil<span class="o">)</span> // <span class="k">do</span> something
+</pre>
+</li>
+<li><p class="first">定义：</p>
+<pre class="code shell literal-block">
+// objc.h
+<span class="c1">#ifndef nil
+# if __has_feature(cxx_nullptr)
+#   define nil nullptr
+# else
+#   define nil __DARWIN_NULL
+# endif
+#endif
+</span>
+// __DARWIN_NULL …</pre></li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-04-10T17:42:00+08:00" pubdate>
+                            三, 10  4 2013
+                        </time>
+                        <a href="/how-to-exit-android-app.html" rel="bookmark"><h1>理解 Android 应用退出</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天我又学了一下 Android 开发，了解如何退出一个 Android 程序。</p>
+<p>Android
+没有退出应用程序的API，所谓退出是指关闭此应用的进程。要彻底关闭一个
+App，应该到设置-&gt;应用程序管理中强制关闭。类似于 iOS 设备双击 Home
+按钮，持续按住应用至出现关闭提示来关闭。内存控们的至爱 ：）</p>
+<p>所以退出一个 Android app，只需要清理 Activity
+，令它生命周期结束，并返回手机主界面，其余的让 OS
+来处理吧。下面是一段用于普通 Android OS 退出代码：</p>
+<pre class="code shell literal-block">
+Intent <span class="nv">intent</span> <span class="o">=</span> new Intent<span class="o">(</span>Intent.ACTION_MAIN<span class="o">)</span><span class="p">;</span>
+intent.addCategory<span class="o">(</span>Intent.CATEGORY_HOME<span class="o">)</span><span class="p">;</span>
+intent.setFlags<span class="o">(</span>Intent.FLAG_ACTIVITY_NEW_TASK<span class="o">)</span><span class="p">;</span>
+startActivity<span class="o">(</span>intent …</pre>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-03-29T10:28:00+08:00" pubdate>
+                            五, 29  3 2013
+                        </time>
+                        <a href="/embeduiwebview-setting.html" rel="bookmark"><h1>内嵌 UIWebView 设置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在实际项目中会使用内嵌的 Web app，比如 HTML5 什么的现在很火啊。嵌入的
+web app 还是需要一番调整才有更好的显示和体验效果。</p>
+<div class="line-block">
+<div class="line">直接上代码，详见注释：</div>
+</div>
+<pre class="code shell literal-block">
+// 将页面缩放到 webView 大小
+webView.scalesPageToFit <span class="o">=</span> YES<span class="p">;</span>
+// 禁止多点触控事件
+webView.multipleTouchEnabled <span class="o">=</span> NO<span class="p">;</span>
+
+// UIWebView 的 scrollView 属性仅 iOS <span class="m">5</span>.0+ 支持
+<span class="k">if</span> <span class="o">([</span>webView respondsToSelector:&#64;selector<span class="o">(</span>scrollView<span class="o">)])</span> <span class="o">{</span>
+    webView.scrollView.bounces <span class="o">=</span> NO<span class="p">;</span>    // 禁止拖动
+    webView.scrollView.delegate <span class="o">=</span> self<span class="p">;</span> // 设置代理
+<span class="o">}</span>
+<span class="k">else</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span>id subview in …</pre>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-03-26T22:11:00+08:00" pubdate>
+                            二, 26  3 2013
+                        </time>
+                        <a href="/using-identifiers-in-your-apps.html" rel="bookmark"><h1>iOS App 中使用的标识符</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line">2013年03月21日，苹果强势地在 <a class="reference external" href="https://developer.apple.com/news/index.php?id=3212013a">News and Announcements for Apple
+Developers</a>
+通告开发者们在应用中使用新的标识符（Identifier），为了避免碰不必要的钉子，应该去了解了解。</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/03/using_identifier.png"><img alt="using_identifier" class="alignleft size-full wp-image-43069" src="http://magicalboy.com/wp-content/uploads/2013/03/using_identifier.png" style="width: 640px; height: 403px;" /></a></div>
+</div>
+<div class="section" id="uniqueidentifier">
+<h2>uniqueIdentifier 属性</h2>
+<p>UIDevice 类的 uniqueIdentifier 方法早在 iOS 5.0
+时已宣布过期，现在苹果正式通知开发者，从 2013年05月01日开始，App Store
+将不再接受新的应用或更新的应用使用 UUID。</p>
+<pre class="code shell literal-block">
+// UIDevice.h
+&#64;property<span class="o">(</span>nonatomic,readonly,retain<span class="o">)</span> NSString    *uniqueIdentifier  NS_DEPRECATED_IOS<span class="o">(</span>2_0, 5_0<span class="o">)</span><span class="p">;</span>  // a string unique to each device based on various hardware …</pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-03-26T13:50:00+08:00" pubdate>
+                            二, 26  3 2013
+                        </time>
+                        <a href="/install-zxing-in-xcode-4.html" rel="bookmark"><h1>Xcode4.6 中整合 zxing 库</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>zxing（<a class="reference external" href="http://code.google.com/p/zxing/">http://code.google.com/p/zxing/</a>）是一个开源，支持多平台的 1d/2d
+条形码扫描库。同类的应用有 zbar，zbar
+支持生成条形码功能，使用简单，就是识别率没有 zxing 好。</p>
+<div class="section" id="id1">
+<h2>准备</h2>
+<ol class="arabic simple">
+<li>zxing 源码：221.16 MiB<ul>
+<li><a class="reference external" href="https://github.com/zxing/zxing">https://github.com/zxing/zxing</a></li>
+<li><a class="reference external" href="http://zxing.googlecode.com/svn/trunk/">http://zxing.googlecode.com/svn/trunk/</a></li>
+</ul>
+</li>
+<li>Xcode 4.6</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>整合到项目</h2>
+<ol class="arabic simple">
+<li>首先，打开 “zxing/iphone/ZXingWidget/” ，将 ZXingWidget.xcodeproj
+文件拖放到你的 …</li></ol></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-03-20T09:32:00+08:00" pubdate>
+                            三, 20  3 2013
+                        </time>
+                        <a href="/ios-6-1-3-update.html" rel="bookmark"><h1>iOS更新到6.1.3</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>更新详情以下，越狱用户请勿手贱！</p>
+<p><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0328.png"><img alt="IMG_0328" class="alignnone size-medium wp-image-43056" src="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0328-200x300.png" style="width: 200px; height: 300px;" /></a></p>
+<p>iPod touch 空间太小，更新个16.9MB的包至少需要662MB空间。</p>
+<p><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0327.png"><img alt="IMG_0327" src="http://magicalboy.com/wp-content/uploads/2013/03/IMG_0327-200x300.png" style="width: 200px; height: 300px;" /></a></p>
+<p>另外改进了日本&quot;地图&quot;，很容易让人联想到DiaoYuDiao。</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-01-30T00:08:00+08:00" pubdate>
+                            三, 30  1 2013
+                        </time>
+                        <a href="/ios6-1-update.html" rel="bookmark"><h1>iOS6.1更新了</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0269.png"><img alt="iOS6.1 Update" src="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0269-200x300.png" style="width: 200px; height: 300px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0270.png"><img alt="Update Detail" src="http://magicalboy.com/wp-content/uploads/2013/01/IMG_0270-200x300.png" style="width: 200px; height: 300px;" /></a></div>
+</div>
+<p>1月29号发布的小更新，优化和细微调整。iOS升级当然少不了Xcode：</p>
+<p><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2013/01/Xcode_4.6.jpg"><img alt="Xcode_4.6" src="http://magicalboy.com/wp-content/uploads/2013/01/Xcode_4.6-300x118.jpg" style="width: 300px; height: 118px;" /></a></p>
+<p>快跟不上节奏了，科技与时俱进，码农要苦Ｂ了唉</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-12-31T18:15:00+08:00" pubdate>
+                            一, 31 12 2012
+                        </time>
+                        <a href="/2012-in-a-word.html" rel="bookmark"><h1>2012总结</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>2012是无情的，就这么走了！</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="/index9.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 10 / 21
+                <a href="/index11.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

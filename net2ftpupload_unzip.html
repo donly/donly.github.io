@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    抛弃 FTP 工具，net2ftp 文件上传在线解压
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-14T01:45:00+08:00" pubdate>
+                            六, 14  8 2010
+                        </time>
+                        <a href="/net2ftpupload_unzip.html" rel="bookmark"><h1>抛弃 FTP 工具，net2ftp 文件上传在线解压</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>net2ftp 是一个基于 ftp 客户端的 web
+应用程序，它支持在线文件上传和解压，为我们上传或删除等操作大量文件带来极大的方便！</p>
+<p>使用 FTP 客户端工具，比如 FileZilla，要上传一个 Web 应用网站（比如
+Wordpress）的普通方法是：首先解压网站的压缩包，然后将解压开来的所有文件使用
+FTP 工具批量上传到 FTP
+服务器。这样一个一个小文件地上传不仅消耗时间，而且容易出现上传失败或上传过程中需要手动控制等，煞是不方便。</p>
+<div class="line-block">
+<div class="line">而使用 net2ftp 工具，只要将网站压缩成 .zip
+格式，再上传到服务器解压即可。</div>
+<div class="line">拿 DreamHost 的 net2ftp 工具做例子，首先登陆
+<a class="reference external" href="http://webftp.dreamhost.com/">http://webftp.dreamhost.com/</a>界面如下：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/login.png"><img alt="image0" class="alignnone size-full wp-image-704" src="http://magicalboy.com/wp-content/uploads/2010/08/login.png" style="width: 464px; height: 265px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line">接着可以选中某个文件或文件夹作以下操作：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/funs.png"><img alt="image1" class="alignnone size-full wp-image-705" src="http://magicalboy.com/wp-content/uploads/2010/08/funs.png" style="width: 313px; height: 378px;" /></a></div>
+</div>
+<p>可以看到 net2ftp 支持多种上传方式，Java applet，Flash Upload
+等，但是都有文件大小限制。如果文件太大，可以分开多个文件压缩。</p>
+<p>现在大多数主机/虚拟主机都支持 net2ftp
+工具，不妨到你的网站控制面板看下，惊喜总是在等待着我们。</p>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

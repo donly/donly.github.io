@@ -9,16 +9,16 @@
         <title>MAG's Note - Don</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-            <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/normalize.css">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
         <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/main.css">
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
 
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/blog.css">
-    <link rel="stylesheet" href="https://magicalboy.com/note/theme/css/github.css">
-        <link href="https://magicalboy.com/note/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
-        <script src="https://magicalboy.com/note/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -28,7 +28,7 @@
         <div id="wrapper">
 <header id="sidebar" class="side-shadow">
     <hgroup id="site-header">
-        <a id="site-title" href="https://magicalboy.com/note"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
         <p id="site-desc"> 关注移动应用开发 </p>
     </hgroup>
     <nav>
@@ -56,22 +56,34 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
+                        <time class="post-time" datetime="2016-05-16T14:40:00+08:00" pubdate>
+                            一, 16  5 2016
                         </time>
-                        <a href="https://magicalboy.com/note/xcode.html" rel="bookmark"><h1>Xcode</h1></a>
+                        <a href="/raspbian-exfat-support.html" rel="bookmark"><h1>exFAT 文件格式支持</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Xcode 目前最新版本 <a class="reference external" href="http://magicalboy.com/xcode-5-0/">Xcode 5.0</a> ，支持 iPhone 5s, iOS 7 开发。</p>
-<div class="section" id="what-s-new">
-<h2>What's New</h2>
-<p>各个版本的 Xcode 新增功能说明。</p>
-<div class="section" id="xcode-5-0-x">
-<h3>Xcode 5.0.x</h3>
-<p>Help you design an app that looks gorgeous on iOS 7 or OS X Mavericks.</p>
-<p>WWDC地址：<a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400">What’s New in Xcode 5</a></p>
+                        <p>exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。</p>
+<p>基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。</p>
+<div class="section" id="id1">
+<h2>为什么要使用 exFAT</h2>
 <ul class="simple">
-<li>素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets …</li></ul></div></div>
+<li>支持拷贝文件大于 4 GB</li>
+<li>兼容性好，方便在不同设备上插拔拷贝数据</li>
+<li>部分大容量内存卡购买回来默认使用的就是这种格式</li>
+</ul>
+<p>如何让部分操作系统支持 exFAT？</p>
+</div>
+<div class="section" id="raspberry-pi-raspbian">
+<h2>Raspberry Pi (RASPBIAN)</h2>
+<div class="highlight"><pre><span></span>sudo apt-get install exfat-fuse
+</pre></div>
+<p>安装完成后，重新插拔内存卡即可自动加载出来。</p>
+</div>
+<div class="section" id="android">
+<h2>Android</h2>
+<p>暂无</p>
+</div>
+
                     </section>
                 </article>
             </li>
@@ -79,18 +91,13 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-01-14T13:55:11+08:00" pubdate>
-                            四, 14  1 2016
+                        <time class="post-time" datetime="2016-04-22T14:40:00+08:00" pubdate>
+                            五, 22  4 2016
                         </time>
-                        <a href="https://magicalboy.com/note/xcode-remove-working-copies.html" rel="bookmark"><h1>Xcode 7 清除多余的 Woking copies</h1></a>
+                        <a href="/pelican-no-module-named-html_parser.html" rel="bookmark"><h1>Pelican No module named html_parser</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Xcode 版本：Version 7.1 (7B91b)</p>
-<p><strong>问题描述：</strong>
-由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。</p>
-<p><strong>解决方法：</strong>
-删除 <em>ProjectName.xcworkspace &gt; xcshareddata &gt; ProjectName.xcscmblueprint</em>，重启 Xcode。</p>
-<p>参考链接：<a class="reference external" href="http://stackoverflow.com/a/27535601">http://stackoverflow.com/a/27535601</a></p>
+                        <p class="first last">在 OS X 上解决 No module named html_parser 问题。</p>
 
                     </section>
                 </article>
@@ -102,7 +109,7 @@
                         <time class="post-time" datetime="2015-12-01T00:00:00+08:00" pubdate>
                             二, 01 12 2015
                         </time>
-                        <a href="https://magicalboy.com/note/openwrt-cc-ss.html" rel="bookmark"><h1>OpenWrt CC SS 配置</h1></a>
+                        <a href="/openwrt-cc-ss.html" rel="bookmark"><h1>OpenWrt CC SS 配置</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="section" id="id1">
@@ -136,7 +143,7 @@ Downloading …</pre></div></div>
                         <time class="post-time" datetime="2015-05-30T10:02:00+08:00" pubdate>
                             六, 30  5 2015
                         </time>
-                        <a href="https://magicalboy.com/note/cocoapods-usage.html" rel="bookmark"><h1>CocoaPods 使用</h1></a>
+                        <a href="/cocoapods-usage.html" rel="bookmark"><h1>CocoaPods 使用</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="section" id="id1">
@@ -162,7 +169,7 @@ Downloading …</pre></div></div>
                         <time class="post-time" datetime="2014-12-13T19:20:00+08:00" pubdate>
                             六, 13 12 2014
                         </time>
-                        <a href="https://magicalboy.com/note/android_coursera_part1_week1.html" rel="bookmark"><h1>Android 教程第一周</h1></a>
+                        <a href="/android_coursera_part1_week1.html" rel="bookmark"><h1>Android 教程第一周</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="contents topic" id="id1">
@@ -201,7 +208,7 @@ Downloading …</pre></div></div>
                         <time class="post-time" datetime="2014-01-08T00:00:00+08:00" pubdate>
                             三, 08  1 2014
                         </time>
-                        <a href="https://magicalboy.com/note/adb.html" rel="bookmark"><h1>ADB 使用</h1></a>
+                        <a href="/adb.html" rel="bookmark"><h1>ADB 使用</h1></a>
                     </header>
                     <section class="post-content">
                         <div class="contents topic" id="id1">
@@ -228,7 +235,7 @@ Downloading …</pre></div></div>
             <hr/>
         </ol>
         <div class="paginator">
-                    <a href="https://magicalboy.com/note/author/don7.html">
+                    <a href="/author/don7.html">
                         <i class="icon-circle-arrow-left"></i>
                     </a>
             Page 8 / 8
@@ -243,6 +250,6 @@ Downloading …</pre></div></div>
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
     </p>
-</footer>        <script src="https://magicalboy.com/note/theme/js/main.js"></script>
+</footer>        <script src="/theme/js/main.js"></script>
     </body>
 </html>

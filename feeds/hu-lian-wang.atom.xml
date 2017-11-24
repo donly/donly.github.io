@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 互聯網</title><link href="/" rel="alternate"></link><link href="/feeds/hu-lian-wang.atom.xml" rel="self"></link><id>/</id><updated>2014-11-19T09:42:00+08:00</updated><entry><title>从 Baidu 免费下载高质量的 MP3 音乐</title><link href="/download-mp3-music-from-baidu-for-free.html" rel="alternate"></link><published>2014-11-19T09:42:00+08:00</published><updated>2014-11-19T09:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2014-11-19:/download-mp3-music-from-baidu-for-free.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;百度音乐（&lt;a class="reference external" href="http://music.baidu.com/"&gt;http://music.baidu.com/&lt;/a&gt;）大家一定不会陌生，百度音乐盒（&lt;a class="reference external" href="http://play.baidu.com/"&gt;http://play.baidu.com/&lt;/a&gt;）可以在线听音乐，可惜需要
+Adobe Flash 支持。而且在线听的音乐质量比不上下载回来听好。如果需要下载
+mp3 音乐，Baidu 默认只对标准品质（128 kbps）提供免费下载，下载高质量的
+mp3 音乐会提示开通它家的
+VIP。在这里我想介绍如何绕过这个限制来下载更高品质的 mp3 音乐。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img alt="baidu_mp3_download" class="aligncenter wp-image-43245 size-full" src="http://magicalboy.com/wp-content/uploads/2014/11/baidu_mp3_download.png" style="width: 785px; height: 337px;" /&gt;&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;方法&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;方法其实很简单，先将 Adobe Flash
+插件禁用，从音乐盒里面进行下载，会提示从云音乐下载，点击立即去下载，会跳转到
+&lt;strong&gt;http://yinyueyun.baidu.com/?download=&amp;amp;pst=naga&amp;amp;fr …&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;百度音乐（&lt;a class="reference external" href="http://music.baidu.com/"&gt;http://music.baidu.com/&lt;/a&gt;）大家一定不会陌生，百度音乐盒（&lt;a class="reference external" href="http://play.baidu.com/"&gt;http://play.baidu.com/&lt;/a&gt;）可以在线听音乐，可惜需要
+Adobe Flash 支持。而且在线听的音乐质量比不上下载回来听好。如果需要下载
+mp3 音乐，Baidu 默认只对标准品质（128 kbps）提供免费下载，下载高质量的
+mp3 音乐会提示开通它家的
+VIP。在这里我想介绍如何绕过这个限制来下载更高品质的 mp3 音乐。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img alt="baidu_mp3_download" class="aligncenter wp-image-43245 size-full" src="http://magicalboy.com/wp-content/uploads/2014/11/baidu_mp3_download.png" style="width: 785px; height: 337px;" /&gt;&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;方法&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;方法其实很简单，先将 Adobe Flash
+插件禁用，从音乐盒里面进行下载，会提示从云音乐下载，点击立即去下载，会跳转到
+&lt;strong&gt;http://yinyueyun.baidu.com/?download=&amp;amp;pst=naga&amp;amp;fr=&lt;/strong&gt;。如截图，可以选择除无损品质之外的
+MP3 文件下载。&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="mp3_download_selection" class="aligncenter wp-image-43246 size-full" src="http://magicalboy.com/wp-content/uploads/2014/11/mp3_download_selection.png" style="width: 388px; height: 251px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;不知道这么做会不会有版权的问题&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="MP3"></category><category term="音乐"></category></entry><entry><title>新版 iTunes Connect 提交 App 遇到的问题</title><link href="/new-itunes-connect.html" rel="alternate"></link><published>2014-09-09T15:33:00+08:00</published><updated>2014-09-09T15:33:00+08:00</updated><author><name>donly</name></author><id>tag:None,2014-09-09:/new-itunes-connect.html</id><summary type="html">&lt;p&gt;随着 Apple 将其 OS X Yosemite 更新到扁平化风格后，&lt;a class="reference external" href="https://itunesconnect.apple.com"&gt;iTunes
+Connect&lt;/a&gt; 终于也被拍扁了。除了 UI
+扁平化外，也改进了用户体验，能够快速切换到其它功能，并且新增了
+Prerelease 项。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;遇到的问题&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;今天在为 app
+发布新版本的时候发现，其流程和以往有所不同。增加新版本在一个页面上完成，之后就是使用工具提交要发布app的二进制包。这里有一个小的更新，可以选择账户里面所有的app进行上传。问题是上传完发布包后，点
+&amp;quot;Submit for Review&amp;quot; 会有错误提示：&amp;quot;You must choose a build.&amp;quot;。&lt;/div&gt;
+&lt;div class="line"&gt;同时又发现没有地方可以选择一个编译版本来发布，是不是令人很郁闷啊。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题原因&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;原来，我们提交上传的包被移到 Prerelease
+下了。而且这里也有原因说明：&amp;quot;After builds are uploaded …&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;随着 Apple 将其 OS X Yosemite 更新到扁平化风格后，&lt;a class="reference external" href="https://itunesconnect.apple.com"&gt;iTunes
+Connect&lt;/a&gt; 终于也被拍扁了。除了 UI
+扁平化外，也改进了用户体验，能够快速切换到其它功能，并且新增了
+Prerelease 项。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;遇到的问题&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;今天在为 app
+发布新版本的时候发现，其流程和以往有所不同。增加新版本在一个页面上完成，之后就是使用工具提交要发布app的二进制包。这里有一个小的更新，可以选择账户里面所有的app进行上传。问题是上传完发布包后，点
+&amp;quot;Submit for Review&amp;quot; 会有错误提示：&amp;quot;You must choose a build.&amp;quot;。&lt;/div&gt;
+&lt;div class="line"&gt;同时又发现没有地方可以选择一个编译版本来发布，是不是令人很郁闷啊。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;问题原因&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;原来，我们提交上传的包被移到 Prerelease
+下了。而且这里也有原因说明：&amp;quot;After builds are uploaded thye will go
+through a processing status before they can be
+used.&amp;quot;，意思是上传的编译包在能够使用之前必须经过处理状态。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_43221&amp;quot; align=&amp;quot;alignleft&amp;quot;
+width=&amp;quot;878&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2014/09/new_itunes_connect_prerelease.png"&gt;&lt;img alt="Prerelease" class="size-full wp-image-43221" src="http://magicalboy.com/wp-content/uploads/2014/09/屏幕快照-2014-09-09-下午3.13.19.png" style="width: 878px; height: 456px;" /&gt;&lt;/a&gt; the new iTunes Connect Prerelease
+tab[/caption]&lt;/p&gt;
+&lt;p&gt;一旦状态改变会收到邮件通知和问题警告具体说明。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;等，没错，就是等处理状态完成，大概十来分钟左右。有在快下班才发布版本习惯的同学要注意咯。然后就可以在
+Build 栏下点击加号来选择版本，点击 &amp;quot;Submit for Review&amp;quot;
+来进入最后的发布页面，Prepare for Submission。Advertising Identifier
+(IDFA) 和版权等选项在这里选择。最后点提交来完成发布。&lt;/p&gt;
+&lt;p&gt;新版本的 iTunes Connect 还可以让用户在新版 app
+等待审核的时候修改编辑所有信息，方便开发者。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;2014年09月16日更新&lt;/h2&gt;
+&lt;p&gt;更详细的流程请查看：&lt;a class="reference external" href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html"&gt;iTunes Connect Developer
+Guide&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="Apple"></category><category term="iTunes Connect"></category></entry><entry><title>一直担心的问题发生了</title><link href="/webfaction-is-good.html" rel="alternate"></link><published>2013-04-22T20:25:00+08:00</published><updated>2013-04-22T20:25:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-04-22:/webfaction-is-good.html</id><summary type="html">&lt;p&gt;一直担心的问题发生了，所有在同一服务器（Webfaction）托管下的网站访问异常，具体情况如下。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;症状表现&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;网站请求超时&lt;/li&gt;
+&lt;li&gt;请求部分数据断开，只能看到标题了&lt;/li&gt;
+&lt;li&gt;请求部分数据断开，加载到内容了，但没css样式&lt;/li&gt;
+&lt;li&gt;刚好请求完就断开，再访问都是请求超时&lt;/li&gt;
+&lt;li&gt;首次ping玉米正常，打开网站后再去ping，超时&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;迁移主机，之前迁移过一次，USA2Asia&lt;/li&gt;
+&lt;li&gt;购买独立IP，5美刀一个月。这方法不错，但超出目前经济预算&lt;/li&gt;
+&lt;li&gt;联系主机提供商，请求更换IP。目前就是采用这途径解决了问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;p&gt;Webfaction 的员工态度很好的，效率高，至少令本 diaoser
+感受到了什么是人性化服务。引用几段他们的回复：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please note that this is not an issue on our end. We will,
+nonetheless …&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;一直担心的问题发生了，所有在同一服务器（Webfaction）托管下的网站访问异常，具体情况如下。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;症状表现&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;网站请求超时&lt;/li&gt;
+&lt;li&gt;请求部分数据断开，只能看到标题了&lt;/li&gt;
+&lt;li&gt;请求部分数据断开，加载到内容了，但没css样式&lt;/li&gt;
+&lt;li&gt;刚好请求完就断开，再访问都是请求超时&lt;/li&gt;
+&lt;li&gt;首次ping玉米正常，打开网站后再去ping，超时&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;迁移主机，之前迁移过一次，USA2Asia&lt;/li&gt;
+&lt;li&gt;购买独立IP，5美刀一个月。这方法不错，但超出目前经济预算&lt;/li&gt;
+&lt;li&gt;联系主机提供商，请求更换IP。目前就是采用这途径解决了问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;p&gt;Webfaction 的员工态度很好的，效率高，至少令本 diaoser
+感受到了什么是人性化服务。引用几段他们的回复：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please note that this is not an issue on our end. We will,
+nonetheless, do everything we can to help you resolve the problem.&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;If you need further assistance then please do not hesitate to
+contact us again.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Valentin I.&lt;/div&gt;
+&lt;div class="line"&gt;WebFaction Support&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+</content><category term="webfaction"></category><category term="请求超时"></category></entry><entry><title>苹果iOS4.3正式发布</title><link href="/ios4-3-release.html" rel="alternate"></link><published>2011-03-10T02:30:00+08:00</published><updated>2011-03-10T02:30:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-03-10:/ios4-3-release.html</id><summary type="html">&lt;p&gt;2011-03-10，苹果iOS 4.3固件升级正式提供更新和下载。&lt;/p&gt;
+&lt;p&gt;苹果官网地址：&lt;a class="reference external" href="http://www.apple.com/ios/"&gt;http://www.apple.com/ios/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="iOS4.3" src="http://images.apple.com/ipod/home/images/promobar_ios_20110302.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;苹果iOS4.3更新特点&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;为GSM网络iPhone4的无线热点功能（Personal Hotspot for iPhone 4）&lt;/li&gt;
+&lt;li&gt;Safari浏览器性能增强（Safari Performance）&lt;/li&gt;
+&lt;li&gt;家庭共享iTunes数据库（iTunes Home Sharing）&lt;/li&gt;
+&lt;li&gt;无线点播功能增强（AirPlay Enhancements）&lt;/li&gt;
+&lt;li&gt;自定义iPad侧开关功能（iPad Side Switch）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;苹果iOS 4.3版本支持设备包括&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;iPhone 4（GSM/WCDMA版本）&lt;/li&gt;
+&lt;li&gt;iPhone 3GS&lt;/li&gt;
+&lt;li&gt;iPod touch3/4代&lt;/li&gt;
+&lt;li&gt;iPad2（3月11日上市）&lt;/li&gt;
+&lt;li&gt;iPad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;苹果iOS 4.3版本升级步骤 …&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;2011-03-10，苹果iOS 4.3固件升级正式提供更新和下载。&lt;/p&gt;
+&lt;p&gt;苹果官网地址：&lt;a class="reference external" href="http://www.apple.com/ios/"&gt;http://www.apple.com/ios/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="iOS4.3" src="http://images.apple.com/ipod/home/images/promobar_ios_20110302.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;苹果iOS4.3更新特点&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;为GSM网络iPhone4的无线热点功能（Personal Hotspot for iPhone 4）&lt;/li&gt;
+&lt;li&gt;Safari浏览器性能增强（Safari Performance）&lt;/li&gt;
+&lt;li&gt;家庭共享iTunes数据库（iTunes Home Sharing）&lt;/li&gt;
+&lt;li&gt;无线点播功能增强（AirPlay Enhancements）&lt;/li&gt;
+&lt;li&gt;自定义iPad侧开关功能（iPad Side Switch）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;苹果iOS 4.3版本支持设备包括&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;iPhone 4（GSM/WCDMA版本）&lt;/li&gt;
+&lt;li&gt;iPhone 3GS&lt;/li&gt;
+&lt;li&gt;iPod touch3/4代&lt;/li&gt;
+&lt;li&gt;iPad2（3月11日上市）&lt;/li&gt;
+&lt;li&gt;iPad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;苹果iOS 4.3版本升级步骤：&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="iTunes update" src="http://images.apple.com/ios/images/easy_bg_20110302.jpg" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;将设备与电脑连接，并启动iTunes；&lt;/li&gt;
+&lt;li&gt;自动或手动检查设备版本更新；&lt;/li&gt;
+&lt;li&gt;根据提示进行备份；&lt;/li&gt;
+&lt;li&gt;阅读条款，进行下载更新（选择“仅下载”，后续步骤有变化）；&lt;/li&gt;
+&lt;li&gt;升级后需要连接苹果官方进行验证，稍做等待；&lt;/li&gt;
+&lt;li&gt;同步iTunes资料，升级完毕。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;以上新闻部分引用&lt;a class="reference external" href="http://www.cnbeta.com/articles/136775.htm"&gt;CNbeta&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;温馨的提示：破解越狱之类设备请不要更新&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Apple iPad2 正式发布</title><link href="/apple-ipad2-release.html" rel="alternate"></link><published>2011-03-03T08:17:00+08:00</published><updated>2011-03-03T08:17:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-03-03:/apple-ipad2-release.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="%20http://zh.wikipedia.org/wiki/IPad_2"&gt;iPad
+2&lt;/a&gt;是苹果公司设计开发并销售的第二代平板电脑，主要面向视听媒体，包括图书、期刊、电影、音乐、游戏和网络内容的平台。它的大小和重量介于市面上的智能手机和笔记本电脑之间。2011年3月2日上午10点（PST:18点），苹果公司在耶尔巴布埃纳艺术中心发布了这款产品。（Via
+&lt;a class="reference external" href="http://zh.wikipedia.org/wiki/IPad_2"&gt;维基百科&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我喜欢的特点&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;大陆价格变化：(二代发布后 全部机型降价1100元)&lt;/div&gt;
+&lt;div class="line"&gt;iPad2全球上市：3.11&lt;/div&gt;
+&lt;div class="line"&gt;中国行货上市：日期未定&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;处理器：A5&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="Apple A5 CPU" src="%20http://images.apple.com/ipad/home/images/image_chip_20110302.png" /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;苹果自行研发的A5处理器,双核心构架,图形处理能力是前代9倍。1.08GHz 双核
+A5 专门设计的高性能低功耗系统级芯片。&lt;/div&gt;
+&lt;div class="line"&gt;绘图: PowerVR SGX543MP (cores: 2-4)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;屏幕：&lt;/div&gt;
+&lt;div class="line"&gt;与一代相比没有任何改动&lt;/div&gt;
+&lt;div class="line"&gt;屏幕尺寸：9.7英寸&lt;/div&gt;
+&lt;div class="line"&gt;屏幕分辨率：1024×768&lt;/div&gt;
+&lt;div class="line"&gt;特点：多点触摸LED背光IPS屏 …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="%20http://zh.wikipedia.org/wiki/IPad_2"&gt;iPad
+2&lt;/a&gt;是苹果公司设计开发并销售的第二代平板电脑，主要面向视听媒体，包括图书、期刊、电影、音乐、游戏和网络内容的平台。它的大小和重量介于市面上的智能手机和笔记本电脑之间。2011年3月2日上午10点（PST:18点），苹果公司在耶尔巴布埃纳艺术中心发布了这款产品。（Via
+&lt;a class="reference external" href="http://zh.wikipedia.org/wiki/IPad_2"&gt;维基百科&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我喜欢的特点&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;大陆价格变化：(二代发布后 全部机型降价1100元)&lt;/div&gt;
+&lt;div class="line"&gt;iPad2全球上市：3.11&lt;/div&gt;
+&lt;div class="line"&gt;中国行货上市：日期未定&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;处理器：A5&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="Apple A5 CPU" src="%20http://images.apple.com/ipad/home/images/image_chip_20110302.png" /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;苹果自行研发的A5处理器,双核心构架,图形处理能力是前代9倍。1.08GHz 双核
+A5 专门设计的高性能低功耗系统级芯片。&lt;/div&gt;
+&lt;div class="line"&gt;绘图: PowerVR SGX543MP (cores: 2-4)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;屏幕：&lt;/div&gt;
+&lt;div class="line"&gt;与一代相比没有任何改动&lt;/div&gt;
+&lt;div class="line"&gt;屏幕尺寸：9.7英寸&lt;/div&gt;
+&lt;div class="line"&gt;屏幕分辨率：1024×768&lt;/div&gt;
+&lt;div class="line"&gt;特点：多点触摸LED背光IPS屏，防指纹涂层&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;传感器：三轴陀螺仪(iPhone4加入的新技术,动作感应更逼真)&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;摄像头：&lt;/div&gt;
+&lt;div class="line"&gt;前后双摄像头&lt;/div&gt;
+&lt;div class="line"&gt;背面的摄像头可以录制30帧每秒的720p视频及声音,同时支持5倍数码变焦&lt;/div&gt;
+&lt;div class="line"&gt;前置摄像头可以拍摄30帧每秒的标准VGA的视频与声音&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;iPad2外观：&lt;/div&gt;
+&lt;div class="line"&gt;机身尺寸：241.2×185.7×8.8mm(更薄)&lt;/div&gt;
+&lt;div class="line"&gt;重量：0.601千克Wi-Fi版;0.613千克(WCDMA);0.607千克(CDMA2000)&lt;/div&gt;
+&lt;div class="line"&gt;颜色：黑色,白色(两种颜色将同时上市)&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;更多信息请参考以下：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://ipad.tgbus.com/zt/ipad-cs/iPadVSiPad2.shtml"&gt;iPad两代参数详尽地对比&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.apple.com/ipad/"&gt;Apple - iPad - All-new design. Video calls. HD video. And
+more.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Google短网址服务</title><link href="/google-urlshortener-api.html" rel="alternate"></link><published>2011-01-17T01:35:00+08:00</published><updated>2011-01-17T01:35:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-17:/google-urlshortener-api.html</id><summary type="html">&lt;p&gt;Google已公开其短网址goo.gl
+&lt;a class="reference external" href="http://code.google.com/apis/urlshortener/"&gt;API&lt;/a&gt;，有兴趣的赶紧研究吧。以下是本站的Google短址：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://goo.gl/UnnoC"&gt;http://goo.gl/UnnoC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://goo.gl/TXyAR"&gt;http://goo.gl/TXyAR&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;在短地址后面加上.qr可生成二维码，比如http://goo.gl/TXyAR.qr的二维码为：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="http://goo.gl/TxyAR.qr" src="http://chart.apis.google.com/chart?cht=qr&amp;amp;chs=150x150&amp;amp;choe=UTF-8&amp;amp;chld=H&amp;amp;chl=http://goo.gl/TXyAR" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><content type="html">&lt;p&gt;Google已公开其短网址goo.gl
+&lt;a class="reference external" href="http://code.google.com/apis/urlshortener/"&gt;API&lt;/a&gt;，有兴趣的赶紧研究吧。以下是本站的Google短址：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://goo.gl/UnnoC"&gt;http://goo.gl/UnnoC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://goo.gl/TXyAR"&gt;http://goo.gl/TXyAR&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;在短地址后面加上.qr可生成二维码，比如http://goo.gl/TXyAR.qr的二维码为：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="http://goo.gl/TxyAR.qr" src="http://chart.apis.google.com/chart?cht=qr&amp;amp;chs=150x150&amp;amp;choe=UTF-8&amp;amp;chld=H&amp;amp;chl=http://goo.gl/TXyAR" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="Google"></category></entry><entry><title>Feedsky已恢复，继续给力！</title><link href="/feedsky-geilivable.html" rel="alternate"></link><published>2010-12-19T15:11:00+08:00</published><updated>2010-12-19T15:11:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-12-19:/feedsky-geilivable.html</id><summary type="html">&lt;p&gt;本博客的二级永久RSS订阅地址&lt;a class="reference external" href="http://feed.magicalboy.com"&gt;http://feed.magicalboy.com&lt;/a&gt;已经有一个多月没更新了，今天在Google
+Reader的订阅趋势看了一下，已经在前40名之外，冷淡了。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;这是Google Reader解析出错信息：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/Feed_none.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-958" src="http://magicalboy.com/wp-content/uploads/2010/12/Feed_none.png" style="width: 545px; height: 403px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;自从上次的Feedsky歇菜以来，都没有更新。&lt;/div&gt;
+&lt;div class="line"&gt;Feedsky现已恢复正常：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/Feedsky_Setting.png"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-959" src="http://magicalboy.com/wp-content/uploads/2010/12/Feedsky_Setting.png" style="width: 570px; height: 404px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Feedsky要给力啊，希望这种事情以后少点发生，同时也祝福自己工作顺利，早日赚到钱买个好点的主机空间。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;本博客的二级永久RSS订阅地址&lt;a class="reference external" href="http://feed.magicalboy.com"&gt;http://feed.magicalboy.com&lt;/a&gt;已经有一个多月没更新了，今天在Google
+Reader的订阅趋势看了一下，已经在前40名之外，冷淡了。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;这是Google Reader解析出错信息：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/Feed_none.png"&gt;&lt;img alt="image0" class="alignnone size-full wp-image-958" src="http://magicalboy.com/wp-content/uploads/2010/12/Feed_none.png" style="width: 545px; height: 403px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;自从上次的Feedsky歇菜以来，都没有更新。&lt;/div&gt;
+&lt;div class="line"&gt;Feedsky现已恢复正常：&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/Feedsky_Setting.png"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-959" src="http://magicalboy.com/wp-content/uploads/2010/12/Feedsky_Setting.png" style="width: 570px; height: 404px;" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Feedsky要给力啊，希望这种事情以后少点发生，同时也祝福自己工作顺利，早日赚到钱买个好点的主机空间。&lt;/p&gt;
+</content></entry><entry><title>iBlog 苹果风格 WordPress 主题</title><link href="/iblog-theme.html" rel="alternate"></link><published>2010-11-11T07:23:00+08:00</published><updated>2010-11-11T07:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-11:/iblog-theme.html</id><summary type="html">&lt;p&gt;今天我做出了一个非常艰难的决定：为本博客装上 iBlog
+主题！从之前的灰蓝色风格一转到苹果类的简洁白色风格，让人有股焕然一新的感觉。&lt;/p&gt;
+&lt;p&gt;iBolg 是一款专业而且免费的 Wordpress 主题，它基于PageLines CMS
+框架。这款主题有缩略图，工具，可选项和本地化等功能，由 PageLines
+设计和开发。&lt;/p&gt;
+&lt;p&gt;比较有特色的是它的风格接近于苹果公司的 Mac OS X 名为 Aqua
+之专有版权的图形用户界面。i 字母开头的主题名称也是苹果软件一惯的做法。&lt;/p&gt;
+&lt;p&gt;由于此主题上没有白苹果
+Logo，且非商业营利用途，作为个人独立博客是完全合法的啦。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_920&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;301&amp;quot;
+caption=&amp;quot;Mac OS X v10.6 &amp;quot;Snow Leopard&amp;quot;画面&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/11/301px-Snow_Leopard_Desktop.png"&gt;&lt;img alt="Mac OS X v10.6 &amp;quot;Snow Leopard&amp;quot;画面" class="size-full wp-image-920" src="http://magicalboy.com/wp-content/uploads/2010/11/301px-Snow_Leopard_Desktop.png" style="width: 301px; height: 188px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;图 …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;今天我做出了一个非常艰难的决定：为本博客装上 iBlog
+主题！从之前的灰蓝色风格一转到苹果类的简洁白色风格，让人有股焕然一新的感觉。&lt;/p&gt;
+&lt;p&gt;iBolg 是一款专业而且免费的 Wordpress 主题，它基于PageLines CMS
+框架。这款主题有缩略图，工具，可选项和本地化等功能，由 PageLines
+设计和开发。&lt;/p&gt;
+&lt;p&gt;比较有特色的是它的风格接近于苹果公司的 Mac OS X 名为 Aqua
+之专有版权的图形用户界面。i 字母开头的主题名称也是苹果软件一惯的做法。&lt;/p&gt;
+&lt;p&gt;由于此主题上没有白苹果
+Logo，且非商业营利用途，作为个人独立博客是完全合法的啦。&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[caption id=&amp;quot;attachment_920&amp;quot; align=&amp;quot;alignnone&amp;quot; width=&amp;quot;301&amp;quot;
+caption=&amp;quot;Mac OS X v10.6 &amp;quot;Snow Leopard&amp;quot;画面&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/11/301px-Snow_Leopard_Desktop.png"&gt;&lt;img alt="Mac OS X v10.6 &amp;quot;Snow Leopard&amp;quot;画面" class="size-full wp-image-920" src="http://magicalboy.com/wp-content/uploads/2010/11/301px-Snow_Leopard_Desktop.png" style="width: 301px; height: 188px;" /&gt;&lt;/a&gt;[/caption]&lt;/div&gt;
+&lt;div class="line"&gt;图：Mac OS X v10.6 &amp;quot;Snow Leopard&amp;quot;画面&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;主题官方地址：&lt;a class="reference external" href="http://wordpress.org/extend/themes/iblog"&gt;http://wordpress.org/extend/themes/iblog&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Feedsky歇菜了</title><link href="/feedsky-can-not-access.html" rel="alternate"></link><published>2010-11-09T01:21:00+08:00</published><updated>2010-11-09T01:21:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-09:/feedsky-can-not-access.html</id><summary type="html">&lt;p&gt;对不起，本博客的 Feed 托管服务器 Feedsky
+歇菜，其主页也访问不了，估计是没戏了，由于众所周知的原因吧。&lt;/p&gt;
+&lt;p&gt;想赶紧换一个 Feed 托管服务商，发现能支持二级域名绑定的 Feedburner 和
+Feedcat不是我想要的。比如我的永久订阅地址为
+feed.magicalboy.com，Feedburner 和 Feedcat 只能提供
+feed.magicalboy.com/[idname] 这样的格式，没有 Feedsky
+那样方便，实在令人不爽。&lt;/p&gt;
+&lt;p&gt;订阅了本博客的朋友不必担心，Feed 地址仍然不变，永久地址为：
+&lt;a class="reference external" href="http://feed.magicalboy.com"&gt;http://feed.magicalboy.com&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;Feedsky
+挂了，同时由于本博客寄托在别人的主机空间，受到诸多的限制，做不了转向，唯有暂时停止更新，造成的不便请朋友们能够谅解，并考虑近期更换主机空间。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;对不起，本博客的 Feed 托管服务器 Feedsky
+歇菜，其主页也访问不了，估计是没戏了，由于众所周知的原因吧。&lt;/p&gt;
+&lt;p&gt;想赶紧换一个 Feed 托管服务商，发现能支持二级域名绑定的 Feedburner 和
+Feedcat不是我想要的。比如我的永久订阅地址为
+feed.magicalboy.com，Feedburner 和 Feedcat 只能提供
+feed.magicalboy.com/[idname] 这样的格式，没有 Feedsky
+那样方便，实在令人不爽。&lt;/p&gt;
+&lt;p&gt;订阅了本博客的朋友不必担心，Feed 地址仍然不变，永久地址为：
+&lt;a class="reference external" href="http://feed.magicalboy.com"&gt;http://feed.magicalboy.com&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;Feedsky
+挂了，同时由于本博客寄托在别人的主机空间，受到诸多的限制，做不了转向，唯有暂时停止更新，造成的不便请朋友们能够谅解，并考虑近期更换主机空间。&lt;/p&gt;
+</content></entry><entry><title>騰訊QQ和奇虎360</title><link href="/qq-vs-360.html" rel="alternate"></link><published>2010-11-08T06:27:00+08:00</published><updated>2010-11-08T06:27:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-08:/qq-vs-360.html</id><summary type="html">&lt;div class="section" id="oicq"&gt;
+&lt;h2&gt;懷念當年的OICQ&lt;/h2&gt;
+&lt;p&gt;本人於本世紀初開始使用QQ，時至今日使用了十年。像大部分一樣，QQ成了進入互聯網的入門，QQ號成了網號，同時也在不知不覺中，QQ成了自己在互聯網的ID。&lt;/p&gt;
+&lt;p&gt;不知何時，QQ已經成為了我們主要的IM工具，甚至是主要的上網工具，從開始追求的QQ等級，QQ秀，QQ圖標到各種QQ鑽石，無非是用來向好友炫耀自己，以滿足其虛榮心。其實有沒想過，此等皆為浮雲啊。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;數字360&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;說說數字360，剛開始的時候聽說是從臭名遠揚的3721進化而來。不過它比百度虛飾的更好（指百度出身），由一個電腦安全工具做到現在的裝機必備工具和殺毒軟件（購買的殺毒引擎授權）。正是因為它的“永久免費”和“安全的XX”吸引了許多用詞，使其知名度響亮了，成了P民的必備工具。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;人權至上&lt;/h2&gt;
+&lt;p&gt;QQ掃描硬盤的事很早就看到一些文章說過，可惜到現在才由360叫板，正說明了中國網民的隱私意識低。還有其余的種種競爭手段，讓很多無辜的用戶成了炮灰。我唯一能使用的Web
+QQ突然被重定向了，愕然之後的憤怒，徹底地失望了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="im-im"&gt;
+&lt;h2&gt;未來的IM，開放的IM協議&lt;/h2&gt;
+&lt;p&gt;XMPP是目前主流的四种IM协议之一，其他三种分别为：即时信息和空间协议(IMPP)、空间和即时信息协议(PRIM …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="oicq"&gt;
+&lt;h2&gt;懷念當年的OICQ&lt;/h2&gt;
+&lt;p&gt;本人於本世紀初開始使用QQ，時至今日使用了十年。像大部分一樣，QQ成了進入互聯網的入門，QQ號成了網號，同時也在不知不覺中，QQ成了自己在互聯網的ID。&lt;/p&gt;
+&lt;p&gt;不知何時，QQ已經成為了我們主要的IM工具，甚至是主要的上網工具，從開始追求的QQ等級，QQ秀，QQ圖標到各種QQ鑽石，無非是用來向好友炫耀自己，以滿足其虛榮心。其實有沒想過，此等皆為浮雲啊。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;數字360&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;說說數字360，剛開始的時候聽說是從臭名遠揚的3721進化而來。不過它比百度虛飾的更好（指百度出身），由一個電腦安全工具做到現在的裝機必備工具和殺毒軟件（購買的殺毒引擎授權）。正是因為它的“永久免費”和“安全的XX”吸引了許多用詞，使其知名度響亮了，成了P民的必備工具。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;人權至上&lt;/h2&gt;
+&lt;p&gt;QQ掃描硬盤的事很早就看到一些文章說過，可惜到現在才由360叫板，正說明了中國網民的隱私意識低。還有其余的種種競爭手段，讓很多無辜的用戶成了炮灰。我唯一能使用的Web
+QQ突然被重定向了，愕然之後的憤怒，徹底地失望了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="im-im"&gt;
+&lt;h2&gt;未來的IM，開放的IM協議&lt;/h2&gt;
+&lt;p&gt;XMPP是目前主流的四种IM协议之一，其他三种分别为：即时信息和空间协议(IMPP)、空间和即时信息协议(PRIM)、针对即时通讯和空间平衡扩充的进程开始协议SIP(SIMPLE)。&lt;/p&gt;
+&lt;p&gt;Google
+Talk基于XMPP，同时允许其它IM自由使用XMPP协议。如此一来，任何IM供应商在遵循XMPP协议的前提下，都可以随时与Google
+Talk实现免费连接。&lt;/p&gt;
+&lt;p&gt;我的GTalk：&lt;a class="reference external" href="mailto:donly&amp;#64;magicalboy.com"&gt;donly&amp;#64;magicalboy.com&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry></feed>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MAG's Note</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-13T15:58:00+08:00" pubdate>
+                            日, 13  6 2010
+                        </time>
+                        <a href="/solved-wordpress-rss-layout-problem.html" rel="bookmark"><h1>WordPress:解决 RSS 没有排版的问题</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>前言</h2>
+<p><a class="reference external" href="http://zh.wikipedia.org/zh-cn/RSS">RSS</a>（简易资讯聚合），是 Really
+Simple Syndication（RSS
+2.0）的简写。使用阅读器订阅文章或新闻是一种良好的获得信息的习惯。</p>
+</div>
+<div class="section" id="id2">
+<h2>问题描述</h2>
+<p>我在使用 Google Reader 订阅几个朋友的 WordPress
+博客的时候发现，他们的文章排版有问题，没有标题、段落等格式之分，看上去就是密密麻麻的文字。这样就导致可阅读性很差，严重影响订阅者的心情。</p>
+</div>
+<div class="section" id="id3">
+<h2>问题原因</h2>
+<p>刚开始我以为，他们使用了文字处理编辑工具（比如 MS Word
+等）来写博文，可能是 HTML
+标签没有闭合等原因引起的。于是我建议他们使用纯文本编辑工具，比如WordPress
+后台添加新文章的默认编辑器，但不要使用可视化模式，转换到 HTML
+源码编辑模式，手动为文章加上 &lt;h3&gt;，&lt;p&gt;等 HTML
+标签。这仅是我的个人习惯 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-12T13:34:00+08:00" pubdate>
+                            六, 12  6 2010
+                        </time>
+                        <a href="/add-your-wordpress-sitemap.html" rel="bookmark"><h1>WordPress：为您的博客增加“网站地图”页面</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>网站地图（Sitemaps）又称站点地图，是一个显示网站所有页面的页面。它是一个很友好的页面，向来访的朋友展示您的站点结构。还有一种站点地图，XML站点地图，专门给搜索引擎看的，SEO
+优化必备文件。有很多创建 XML 站点地图的在线工具，比如 Google 的
+<a class="reference external" href="https://www.google.com/webmasters/tools/home?hl=zh-CN">WebMaster
+Tools</a>。这篇文章主要介绍的是前者，使用
+WordPress 的模板系统创建一个“网站地图”页面。</p>
+<div class="section" id="id1">
+<h2>第一步，创建自己的页面模板</h2>
+<p>最简单的方法就是使用 FTP 或 SSH
+工具，到当前使用的主题目录（/wp-content/themes/您的主题名/）下复制
+paga.php 文件里面的内容到新建的 Sitemap.php 文件，并在头部增加以下代码：</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><tt class="docutils literal">&lt; <span class="pre">?php</span> /* Template Name: Sitemap */ <span class="pre">?&gt;</span></tt></div>
+</div>
+<p>以上代码的表示定义一个“Sitemap …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-10T16:10:00+08:00" pubdate>
+                            四, 10  6 2010
+                        </time>
+                        <a href="/a-simple-recursive-function.html" rel="bookmark"><h1>递归算法：一个简单的递归函数</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天看了某 C 语言 Primer
+教材中一递归（recursion）示例运行结果，一开始让我迷惑不解，后来才发觉原来我一直不懂递归。枉我之前还写过递归读取树结构的文件目录的
+Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且看代码清单如下：</p>
+<p><tt class="docutils literal">/* recursion.c <span class="pre">--</span> 递归演示 */ /* 程序显示递归的级数 n 及存储 n 的内存地址 */ #include&nbsp; void recursion(int);</tt></p>
+<div class="line-block">
+<div class="line">int main(void)</div>
+<div class="line">{</div>
+<div class="line">recursion(1);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">void recursion(int n)</div>
+<div class="line">{</div>
+<div class="line">printf(&quot;第%d级递归: n 内存地址 %pn&quot;, n, &amp;n);</div>
+<div class="line">if (n &lt; 4 …</div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-10T11:23:00+08:00" pubdate>
+                            四, 10  6 2010
+                        </time>
+                        <a href="/css-overflow-usages.html" rel="bookmark"><h1>老生常谈：CSS overflow 那些事儿</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>css 的 overflow 属性的用法很广泛也很重要，最近在修改 WordPress 和 CMS
+的模板的时候就发现有很多地方是因为不正确地使用 overflow
+属性而导致跨浏览器使用会出现诡异的渲染结果。</p>
+<div class="section" id="overflow">
+<h2>overflow 属性定义和说明</h2>
+<p>overflow 中文即溢出的意思，在 CSS
+中则是指当前元素的内容溢出后应该怎么处理。</p>
+<p>overflow 属性值有：</p>
+<ul class="simple">
+<li><strong>visible</strong>：默认值，表示当前元素显示的内容不可截断，这表示它可能会从当前容器元素中溢出，跑到盒模型外面。</li>
+<li><strong>hidden</strong>：此值表示的内容是剪辑，也没有滚动用户界面应提供查看剪辑区域以外的内容。</li>
+<li><strong>scroll</strong>：使用滚动条来显示溢出的内容，使用这一值时，它却不管用户是否需要都使用滚动条机制。</li>
+<li><strong>auto</strong>：自动模式，根据需要使用滚动条。</li>
+<li><strong>inherit</strong>：从父元素继承。</li>
+</ul>
+<p>如果你参考 W3school 的 <a class="reference external" href="http://www.w3school.com.cn/css/pr_pos_overflow.asp">CSS
+overflow</a>
+属性，你会发现它的 overflow 定义说明中表格中的默认值为
+auto，这是错误的。请参考 W3C …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-09T13:52:00+08:00" pubdate>
+                            三, 09  6 2010
+                        </time>
+                        <a href="/adobe-dreamweaver-cs5-html5pack.html" rel="bookmark"><h1>翻译：Adobe Dreamweaver CS5 HTML 5 扩展包</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>跟着主研究员 Jorge Taylor 演示一个 Dreamweaver 扩展的 CS5 HTML5 的包，为
+Adobe Creative Suite 5 用户提供更多创新的选择。</p>
+<p>通过该扩展包，DW CS5 将获得以下新特性：</p>
+<ul class="simple">
+<li>多屏幕预览面板，适用于同时为不同设备开发 HTML 应用</li>
+<li>支持对 HTML 5 新增的标签库的代码提示</li>
+<li>支持对 CSS 3 代码提示</li>
+<li>增加 Video 和 Audio 标签的实时预览</li>
+<li>改进 CSS 3 实时预览效果</li>
+<li>改进设计视图下对 HTML 5 新增标签的渲染效果</li>
+</ul>
+<p>[caption id=&quot;attachment_313&quot; align=&quot;alignnone&quot; caption …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-07T23:59:00+08:00" pubdate>
+                            一, 07  6 2010
+                        </time>
+                        <a href="/ie9-platform-preview-graphics-demos.html" rel="bookmark"><h1>IE9 预览版演示 HTML 5 图形测试</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>首先访问<a class="reference external" href="http://ie.microsoft.com/testdrive/">Internet Explorer 9: Platform
+Demos</a>，首次访问会提示您下载安装
+IE9 预览版，一个全新的 Web 平台功能。</p>
+<p>点击“Install the Preview!”，下载一个 14.3M 的安装文件
+iepreview.msi，点击开始安装。注意：不支持 Win XP，安装的只是一个 IE
+预览平台，不会替换掉当前系统的 IE 版本。平台演示的这些功能将会随正式版
+IE9 发布。</p>
+<p>[caption id=&quot;attachment_289&quot; align=&quot;alignnone&quot; caption=&quot;HTML 5&quot;]<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/06/html5.png"><img alt="HTML 5" class="size-full wp-image-289" src="http://magicalboy.com/wp-content/uploads/2010/06/html5.png" style="height: 313px;" /></a>[/caption]</p>
+<p>下面就开始测试一下 HTML 5 的图形显示——SVG …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-07T06:42:00+08:00" pubdate>
+                            一, 07  6 2010
+                        </time>
+                        <a href="/html-5-video-tutorial-and-comprehensive.html" rel="bookmark"><h1>翻译：全面的 HTML 5 视频教程</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>这是一个老的视频教程，由一位叫 Brad Neuberg 的 Google
+员工发布的介绍HTML5的教程。这篇文章专为那些时间很忙但又想跟进HTML5发展步伐的人而写的。</p>
+<p><a class="reference external" href="http://vimeo.com/6691519">Introduction to HTML 5</a> from <a class="reference external" href="http://vimeo.com/user1005914">Brad
+Neuberg</a> on
+<a class="reference external" href="http://vimeo.com">Vimeo</a>.</p>
+<div class="section" id="id1">
+<h2>本篇文章包括的话题有：</h2>
+<ul class="simple">
+<li>Web 矢量图形：Canvas 标签和可缩放矢量图形（SVG）</li>
+<li>地理定位接口</li>
+<li>HTML 5 视频</li>
+<li>HTML 5 数据库和应用程序缓存</li>
+<li>Web 工作者</li>
+</ul>
+<p>视频比较长，坐下来尽情享受吧。</p>
+<p>假如你喜欢传统类型的教程，我们在这里准备了另一个教程：<a class="reference external" href="http://www.html5trends.com/tutorials/an-html5-tutorial-by-a-google-employee/">An HTML5
+Tutorial by a Google
+Employee</a>，也是出自一位
+Google 员工之手。</p>
+<p>原文链接：<a class="reference external" href="http://www.html5trends.com/tutorials/comprehensive-video-tutorial-on-html5/">Comprehensive video tutorial …</a></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-06T03:40:00+08:00" pubdate>
+                            日, 06  6 2010
+                        </time>
+                        <a href="/c-input-buffer.html" rel="bookmark"><h1>C语言基础：输入缓冲区</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><strong>缓冲定义</strong>：暂时存放输入或输出数据的存储区域</p>
+<div class="section" id="id1">
+<h2><strong>实例代码</strong>：缓冲输入的实例——延时回显</h2>
+<p><tt class="docutils literal">/* echo.c <span class="pre">--</span> 回显输入 */ #include&nbsp; int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; char ch;</tt></p>
+<div class="line-block">
+<div class="line">while((ch=getchar()) != '#')</div>
+<div class="line">putchar(ch);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<p>程序示例1：</p>
+<p><tt class="docutils literal">hello,welcome to magicalboy.com【回车】 hello,welcome to magicalboy.com you are always the <span class="pre">#1!【回车】</span> you are always the</tt></p>
+<p>程序示例2：</p>
+<p><tt class="docutils literal"><span class="pre">hheelloo,,wweellccoommee</span> ttoo&nbsp; <span class="pre">mmaaggiiccaallbbooyy..ccoomm【回车 …</span></tt></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-05T01:37:00+08:00" pubdate>
+                            六, 05  6 2010
+                        </time>
+                        <a href="/hand-painted-style-of-prototyping-tools.html" rel="bookmark"><h1>手绘风格的原型设计工具Mockups</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>由于需要为美工MM提供线框图，在网上找了几个有手绘效果的模型设计工具：Cacoo
+和 Balsamiq Mockups。</p>
+<div class="section" id="cacoo">
+<h2>Cacoo</h2>
+<p>Cacoo是一款在线的Web App，功能确实很强大，不仅仅可以画手绘效果的Freehand
+Wireframe，还可以画流程图，UML图等。不足之处是可用元素比较少，而且以国内的网速使用Web
+App体验效果不佳。Cacoo(カクー)由日本人开发的，可以免费体验4个月。网址：<a class="reference external" href="http://cacoo.com/">http://cacoo.com/</a></p>
+</div>
+<div class="section" id="balsamiq-mockups">
+<h2>Balsamiq Mockups</h2>
+<p>Mockups，顾名思其义，一款实体模型设计工具。具有丰富的UI元素，IPHONE应用程序界面，RIA
+UI等。Mockups 也是基于Adobe 的 Flex 技术开发的，有Web App和Desktop
+App两个版本，即使没有网络也可以通过下载桌面版的AIR程序安装使用。Mockups
+不是免费软件，不过有免费的途径获取注册码，比如写信给Balsamiq，写博文介绍Mockups等。</p>
+</div>
+<div class="section" id="id1">
+<h2>Mockups 官方截图 …</h2></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-02T14:31:00+08:00" pubdate>
+                            三, 02  6 2010
+                        </time>
+                        <a href="/c-print-a-long-string.html" rel="bookmark"><h1>C语言基础：打印长字符串</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>前言</h2>
+<p>C语言重登王位，赶紧学好C混个铁饭碗才行了。确实，不管C语言有没有王者归来，它都是一门很强大的语言。Linux/Unix
+核心是用C写的，Java，Python等高级语言也是用C来实现，学习C简直是百益而无一害啊！</p>
+</div>
+<div class="section" id="id2">
+<h2>问题描述</h2>
+<p>好了好了，说回本次话题，打印长字符串在Java中直接使用重载的“+”运算符，即可在下一行断行继续输入，那么在C中要怎么写呢：</p>
+<p><tt class="docutils literal">/** * LongStrg.java <span class="pre">--</span> 打印长字符串 * &#64;author magicalboy */ public class LongStrg {</tt></p>
+<div class="line-block">
+<div class="line">public static void main(String[] args) {</div>
+<div class="line">System.out.println(&quot;Hello, Welcome to magicalboy's blog!n&quot; +</div>
+<div class="line">&quot;Any problems please contact <a class="reference external" href="mailto:admin&#64;magicalboy.com">admin&#64;magicalboy.com</a>. Thanks …</div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+        </ol>
+        <div class="paginator">
+                    <a href="/index18.html">
+                        <i class="icon-circle-arrow-left"></i>
+                    </a>
+            Page 19 / 21
+                <a href="/index20.html">
+                    <i class="icon-circle-arrow-right"></i>
+                </a>
+        </div>
+
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

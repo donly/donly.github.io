@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    使用 iPhone 的嵌入式 SQLite3
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-12-30T05:05:00+08:00" pubdate>
+                            四, 30 12 2010
+                        </time>
+                        <a href="/sqlite3-on-iphone.html" rel="bookmark"><h1>使用 iPhone 的嵌入式 SQLite3</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>iPhone 和 Android
+都有嵌入式的SQL数据库，名为SQLite3，作为一种持久性存储的工具，SQLite3在存储和检索大量数据方面非常有效，具有良好的性能和速度。</p>
+<p>关系数据库（包括SQLite3）和面向对象的编程语言使用完全不同的方法来存储和组织数据。因而出现了在两者之间转换的各种技术以及库和工具。这些不同的技术统称为对象关系映射（Object-relational
+Mapping，ORM），例如苹果公司为iPhone Cocoa
+Touch提供的一种ORM解决方案Core Data。</p>
+<div class="section" id="sqlite3">
+<h2>SQLite3安装运行</h2>
+<div class="line-block">
+<div class="line">MacOS
+X内置有SQLite3，如果没有或想升级，请到官网下载http://sqlite.org/download.html。</div>
+<div class="line">SQLite 官网使用手册：Command Line Shell For SQLite
+（<a class="reference external" href="http://sqlite.org/sqlite.html">http://sqlite.org/sqlite.html</a>）。</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>设置项目使用SQLite3</h2>
+<p>要使用SQLite3
+API，需要将应用程序连接到一个名为libsqlite3.dylib的动态库。在Mac OS
+X和iPhone上，该库位于/usr/lib中。</p>
+<ul>
+<li><p class="first">在Groups &amp; Files窗格中选中Frameworks</p>
+</li>
+<li><p class="first">从Project菜单中选择Add to Project...</p>
+</li>
+<li><p class="first">导入/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulatorX.Y.sdk/usr/lib.找到libsqlite3.dylib文件，取消选中Copy
+items into destination group's folder(if needed)复选框</p>
+</li>
+<li><p class="first">在代码中导入头文件：</p>
+<pre class="code shell literal-block">
+<span class="c1">#import &lt;sqlite3.h&gt;</span>
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>使用iPhone 的嵌入式 SQLite3的基本步骤</h2>
+<ol class="arabic simple">
+<li>创建或打开数据库</li>
+</ol>
+<div class="line-block">
+<div class="line">使用SQLite3之前，必须打开数据库，如果指定位置上不存在数据库，则它会自动创建一个新的数据库，下面是打开或创建新数据库的代码：</div>
+<div class="line"><tt class="docutils literal">sqlite3 *database; int result = <span class="pre">sqlite3_open(&quot;/path/to/database/file&quot;,</span> &amp;database);</tt></div>
+</div>
+<ol class="arabic simple">
+<li>创建表</li>
+</ol>
+<div class="line-block">
+<div class="line"><tt class="docutils literal">char * errorMsg; const char *createSQL = &quot;CREATE TABLE IF NOT EXISTS TABLE1 ( ID INTEGER PRIMARY KEY AUTOINCREMENT, FIELD_DATA <span class="pre">TEXT)&quot;;</span> int result = sqlite3_exec (database, createSQL, NULL, NULL, &amp;errorMsg);</tt></div>
+<div class="line">函数sqlite3_exec用于针对任何不返回数据的命令，比如执行更新、插入和删除操作。</div>
+</div>
+<ol class="arabic simple">
+<li>插入数据（绑定变量）</li>
+</ol>
+<div class="line-block">
+<div class="line">处理字符串并确保它们没有无效字符以及引号处理过的属性是件非常烦琐的事情。使用绑定变量可解决这些问题：</div>
+<div class="line"><tt class="docutils literal">char *sql = &quot;INSERT INTO TABLE1 VALUES <span class="pre">(?,</span> <span class="pre">?)&quot;;</span> sqlite3_stmt *stmt; if (sqlite3_prepare_v2(database, sql, <span class="pre">-1,</span> &amp;stmt, nil) == SQLITE_OK) { sqlite3_bind_int(stmt, 1, 235); sqlite3_bind_text(stmt, 2, &quot;Bar&quot;, <span class="pre">-1</span> , NULL); }</tt></div>
+</div>
+<ol class="arabic simple">
+<li>检索数据</li>
+</ol>
+<div class="line-block">
+<div class="line">从数据库中检索数据有点复杂：</div>
+<div class="line"><tt class="docutils literal">NSString *query = &#64;&quot;SELECT ID, FIELD_DATA FROM TABLE1 ORDER BY ROW&quot;; sqlite3_stmt *statement;</tt></div>
+</div>
+<p>int result = (sqlite3_prepare_v2(database, [query UTF8String], -1,
+&amp;statement, nil);</p>
+<div class="line-block">
+<div class="line">如果result等于SQLITE_OK，则开始单步获取结果集：</div>
+<div class="line"><tt class="docutils literal">while (sqlite3_step(statement) == SQLITE_ROW) { int rowNum = sqlite3_column_int(statement, 0); char *rowData = (char *)sqlite3_column_text(satement, 1); NSString *fieldValue = [[NSString alloc] initWithUIF8String:rowData]; // Do someting with the data here</tt></div>
+</div>
+<div class="line-block">
+<div class="line">[fieldValue release];</div>
+<div class="line">}</div>
+<div class="line">sqlite3_finalize(statement);</div>
+</div>
+<ol class="arabic simple">
+<li>关闭数据库</li>
+</ol>
+<div class="line-block">
+<div class="line">当对SQLite3数据库执行完所有操作时，通过以下代码关闭：</div>
+<div class="line"><tt class="docutils literal">sqlite3_close(database);</tt></div>
+</div>
+<div class="line-block">
+<div class="line">不必担心这些函数的用法，更详细更全面的API参考请见：<a class="reference external" href="http://sqlite.org/cintro.html">http://sqlite.org/cintro.html</a></div>
+<div class="line">实践例子请参考《iPhone3开发基础教程》第11章第6小节</div>
+</div>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/iphone.html">iPhone</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

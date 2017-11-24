@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Xcode 5.0 下载，安装，使用
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2013-09-30T12:02:00+08:00" pubdate>
+                            一, 30  9 2013
+                        </time>
+                        <a href="/xcode-5-0.html" rel="bookmark"><h1>Xcode 5.0 下载，安装，使用</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Xcode 5.0 是一个大版本，改变自然也多，支持我的 iPhone5s 和 iOS7.0
+开发必须的工具。另外也支持 64bit app 开发，还有支持 OS X Mavericks
+开发，TDD，Continuous Integration，自动化配置等。改进方面有界面 Flat
+化，可视化调试，静态分析，代码管理等。 具体请见 <a class="reference external" href="https://developer.apple.com/technologies/tools/whats-new.html">What’s New in Xcode
+5</a>。</p>
+<div class="section" id="id1">
+<h2>Xcode 5.0 下载</h2>
+<div class="line-block">
+<div class="line">Xcode 5.0 正式版发布于2013年9月18日（美国当地时间），可以从Mac
+Store上下载安装，免费。前提条件上是，系统版本必须 Mountain Lion 10.8.5
+及以上，否则：</div>
+<div class="line"><img alt="Xcode5.0_OSX10.8.5_Error" class="alignleft size-full wp-image-43202" src="http://magicalboy.com/wp-content/uploads/2013/09/Xcode5.0_OSX10.8.5_Error.png" style="width: 749px; height: 227px;" /></div>
+</div>
+<div class="line-block">
+<div class="line">如果想保留之前旧版本的Xcode，比如Xcode4.6，建议下载DMG。下载地址：<a class="reference external" href="https://developer.apple.com/downloads/index">https://developer.apple.com/downloads/index</a>.action#。需要登录。</div>
+<div class="line"><img alt="Xcode5.0_dmg" class="alignleft size-full wp-image-43201" src="http://magicalboy.com/wp-content/uploads/2013/09/Xcode5.0_dmg.png" style="width: 851px; height: 298px;" /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Xcode 5.0 安装</h2>
+<p>下载好DMG安装包后，打开会发现 Xcode 以 app
+的形式发布，直接复制到本地磁盘即可，比如 ~/Development 下，与之前版本的
+Xcode 路径不同即可。</p>
+</div>
+<div class="section" id="id3">
+<h2>Xcode 5.0 使用</h2>
+<p>这里说一下初步使用情况。</p>
+<ol class="arabic simple">
+<li>Code Signing 增加了 Provisioning
+Profile，真机调试的时候要注意先选择对应的Profile，再选选
+Identify，否则会找不到。</li>
+<li>旧项目升级问题，如果项目代码用到 SVN 1.7 之前版本来管理，会提示升级到
+1.7，升级后，旧的Xcode就识别不了啦。</li>
+<li>与旧项目兼容问题，主要是指项目中的 XIB 文件，在 Xcode 5.0
+中会自动升级，只要你打开过。升级后的 XIB 在旧的 Xcode
+打不开，重要的是有些 XIB 升级后，布局乱了，主要是坐标混乱。。</li>
+<li>不支持 4.3 模拟器，项目Target却允许支持到
+4.3，估计还支持真机调试（未测试）。</li>
+</ol>
+<p>技术升级太快，一下子就 iOS 7, Xcode 5
+了，得勇于面对新事物，快速学习新的知识才不被落后啊，一起努力吧，求交流。</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/iphone.html">iPhone</a></p>
+                        <p>Tags: <a href="/tag/iphone.html">iPhone</a>, <a href="/tag/iphone5s.html">iPhone5s</a>, <a href="/tag/xcode.html">Xcode</a>, <a href="/tag/xcode5.html">Xcode5</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

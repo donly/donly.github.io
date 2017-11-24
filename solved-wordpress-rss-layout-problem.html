@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    WordPress:解决 RSS 没有排版的问题
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <p id="site-desc"> 关注移动应用开发 </p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          <li><a target="_blank" href="https://magicalboy.com">MAGICALBOY</a></li>
+          <li><a href="https://plus.google.com/u/0/108274467552316757908">icon-google-plus-sign</a></li>
+          <li><a href="https://github.com/donly">icon-github</a></li>
+          <li><a href="mailto:donly@magicalboy.com">icon-envelope-alt</a></li>
+          <li><a href="rss">icon-rss</a></li>
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+              <li><a href="https://plus.google.com/u/0/108274467552316757908" target="_brank"><i class="icon-google-plus-sign svc-badge"></i></a></li>
+              <li><a href="https://github.com/donly" target="_brank"><i class="icon-github svc-badge"></i></a></li>
+              <li><a href="mailto:donly@magicalboy.com" target="_brank"><i class="icon-envelope-alt svc-badge"></i></a></li>
+              <li><a href="rss" target="_brank"><i class="icon-rss svc-badge"></i></a></li>
+      </ul>
+	</nav>
+</header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-13T15:58:00+08:00" pubdate>
+                            日, 13  6 2010
+                        </time>
+                        <a href="/solved-wordpress-rss-layout-problem.html" rel="bookmark"><h1>WordPress:解决 RSS 没有排版的问题</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>前言</h2>
+<p><a class="reference external" href="http://zh.wikipedia.org/zh-cn/RSS">RSS</a>（简易资讯聚合），是 Really
+Simple Syndication（RSS
+2.0）的简写。使用阅读器订阅文章或新闻是一种良好的获得信息的习惯。</p>
+</div>
+<div class="section" id="id2">
+<h2>问题描述</h2>
+<p>我在使用 Google Reader 订阅几个朋友的 WordPress
+博客的时候发现，他们的文章排版有问题，没有标题、段落等格式之分，看上去就是密密麻麻的文字。这样就导致可阅读性很差，严重影响订阅者的心情。</p>
+</div>
+<div class="section" id="id3">
+<h2>问题原因</h2>
+<p>刚开始我以为，他们使用了文字处理编辑工具（比如 MS Word
+等）来写博文，可能是 HTML
+标签没有闭合等原因引起的。于是我建议他们使用纯文本编辑工具，比如WordPress
+后台添加新文章的默认编辑器，但不要使用可视化模式，转换到 HTML
+源码编辑模式，手动为文章加上 &lt;h3&gt;，&lt;p&gt;等 HTML
+标签。这仅是我的个人习惯，如果不熟悉 HTML 标签也很正常，使用 DreamWeaver
+或标准的可视化修改插件。</p>
+<p>问题仍然存在，这下来了兴趣了，使用 Firebug 查看订阅的文章，发现没有 HTML
+标签，超链接和所有的内容都变成了纯文本显示。使用浏览器（FF会直接订阅，使用
+IE、Chrome 或 Opera 可以查看 RSS Feed 的内容）直接打开 Feed地址，格式为
+<a class="reference external" href="http://domain.com/feed">http://domain.com/feed</a>，有不同的显示：</p>
+<ul class="simple">
+<li>IE 8:
+显示的友好的格式，头部为博客名字和相关介绍，并有“订阅该源”的链接。点击订阅会像收藏夹一样可方便下次阅读。接着是带有版本格式的所有文章。右侧是工具导航功能。其页面源代码是
+RSS XML 文档。</li>
+<li>FF 3.6.*: 直接弹出订阅收藏窗口。</li>
+<li>Google Chrome: 显示的是纯文本，如 Google
+阅读器显示的效果一样，但是其源代码也是和 IE 8 相同的 RSS XML
+扩展文档。</li>
+<li>其它未测试，有兴趣你可以试下。</li>
+</ul>
+<p>可以看出可能的原因是，WordPress RSS Feed 虽然提供了 RSS 的 XML
+定义文档，但也可能被显示为纯文本的文章订阅内容。</p>
+</div>
+<div class="section" id="id4">
+<h2>解决方法</h2>
+<p>为了解决这种不统一显示的问题，推荐使用 RSS Feed 托管工具：Google
+FeedBurner，国内的 Feedsky 等，这样就可以简单地解决排版问题了。</p>
+</div>
+<div class="section" id="id5">
+<h2>后语</h2>
+<p>RSS 还有很多设置方法，我在这里就暂时献丑说这么多了。有关更多的 RSS
+设置，下面抛砖引玉为大家推荐几个相关资源：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.williamlong.info/archives/843.html">在FeedSky和FeedBurner中无缝切换-月光博客</a></li>
+<li><a class="reference external" href="http://www.happinesz.cn/archives/789/">10个优化WordPress RSS Feed的技巧(1) -
+幸福收藏夹</a></li>
+<li><a class="reference external" href="http://www.wordpress.la/completely-control-rss-in-wordpress.html">如何完全掌控WordPress的RSS |
+WordPress啦!</a></li>
+</ul>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/webkai-fa.html">WEB开发</a></p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer>        <script src="/theme/js/main.js"></script>
+    </body>
+</html>
