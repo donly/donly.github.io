@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 测试</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/ce-shi.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2011-09-13T12:49:00+08:00</updated><entry><title>欢迎光临</title><link href="https://magicalboy.com/hello_world.html" rel="alternate"></link><published>2011-09-13T12:49:00+08:00</published><updated>2011-09-13T12:49:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-09-13:/hello_world.html</id><summary type="html">&lt;p&gt;欢迎光临MAGICALBOY. 这是我的第一篇博客.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 测试</title><link href="/" rel="alternate"></link><link href="/feeds/ce-shi.atom.xml" rel="self"></link><id>/</id><updated>2011-09-13T12:49:00+08:00</updated><entry><title>欢迎光临</title><link href="/hello_world.html" rel="alternate"></link><published>2011-09-13T12:49:00+08:00</published><updated>2011-09-13T12:49:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-09-13:/hello_world.html</id><summary type="html">&lt;p&gt;欢迎光临MAGICALBOY. 这是我的第一篇博客.
 您可以忽略这篇文章，开始您精彩的欣赏Blog之旅。&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;欢迎光临MAGICALBOY. 这是我的第一篇博客.
 您可以忽略这篇文章，开始您精彩的欣赏Blog之旅。&lt;/p&gt;
-</content><category term="blog"></category><category term="MAGICALBOY"></category></entry><entry><title>演示文章——图片浮动问题</title><link href="https://magicalboy.com/mages-float-problem-demonstrate.html" rel="alternate"></link><published>2010-05-30T09:30:00+08:00</published><updated>2010-05-30T09:30:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-05-30:/mages-float-problem-demonstrate.html</id><summary type="html">&lt;div class="section" id="id2"&gt;
+</content><category term="blog"></category><category term="MAGICALBOY"></category></entry><entry><title>演示文章——图片浮动问题</title><link href="/mages-float-problem-demonstrate.html" rel="alternate"></link><published>2010-05-30T09:30:00+08:00</published><updated>2010-05-30T09:30:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-30:/mages-float-problem-demonstrate.html</id><summary type="html">&lt;div class="section" id="id2"&gt;
 &lt;h2&gt;测试文章——图片浮动问题&lt;/h2&gt;
 &lt;p&gt;[caption id=&amp;quot;attachment_179&amp;quot; align=&amp;quot;alignleft&amp;quot; width=&amp;quot;441&amp;quot;
 caption=&amp;quot;后台添加图像&amp;quot;]&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png"&gt;&lt;img alt="后台添加图像" class="alignnone size-full wp-image-194" src="http://magicalboy.com/wp-content/uploads/2010/05/后台添加图像.png" style="width: 391px; height: 103px;" /&gt;&lt;/a&gt;[/caption]&lt;/p&gt;
@@ -25,7 +25,7 @@ caption=&amp;quot;后台添加图像&amp;quot;]&lt;a class="reference external" 
 &lt;p&gt;文章内容测试&lt;/p&gt;
 &lt;p&gt;解决方法见&lt;a class="reference external" href="http://magicalboy.com/archives/189.html"&gt;wordpress的文章图像浮动解决方法&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>QQ邮箱之申请认领该博客测试</title><link href="https://magicalboy.com/qq-mail-blog-test.html" rel="alternate"></link><published>2010-05-15T16:21:00+08:00</published><updated>2010-05-15T16:21:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-05-15:/qq-mail-blog-test.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</content></entry><entry><title>QQ邮箱之申请认领该博客测试</title><link href="/qq-mail-blog-test.html" rel="alternate"></link><published>2010-05-15T16:21:00+08:00</published><updated>2010-05-15T16:21:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-05-15:/qq-mail-blog-test.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;成为认证博主，认领自己的博客&lt;/h2&gt;
 &lt;p&gt;这是QQ邮箱的阅读空间里面的一个推广博客的功能，认领成功后，订阅您博客读者可以同时看到您的广播，本博客也会列在您的广播主页上。可以使更多使用QQ邮箱的好友关注您的博客哦&lt;/p&gt;
 &lt;/div&gt;

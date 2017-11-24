@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Hardware</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/hardware.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2016-05-24T10:05:00+08:00</updated><entry><title>树莓派 GPIO 模拟器：GPIOSim</title><link href="https://magicalboy.com/raspberry-pi-gpio-sim.html" rel="alternate"></link><published>2016-05-24T10:05:00+08:00</published><updated>2016-05-24T10:05:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-24:/raspberry-pi-gpio-sim.html</id><summary type="html">&lt;p&gt;GPIOSim 是一个树莓派 GPIO 模拟器，目前支持 Linux 和 OS X。它能够在 PC 上进行开发调试使用 RPi.GPIO 模块编写的树莓派应用。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Hardware</title><link href="/" rel="alternate"></link><link href="/feeds/hardware.atom.xml" rel="self"></link><id>/</id><updated>2016-05-24T10:05:00+08:00</updated><entry><title>树莓派 GPIO 模拟器：GPIOSim</title><link href="/raspberry-pi-gpio-sim.html" rel="alternate"></link><published>2016-05-24T10:05:00+08:00</published><updated>2016-05-24T10:05:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-05-24:/raspberry-pi-gpio-sim.html</id><summary type="html">&lt;p&gt;GPIOSim 是一个树莓派 GPIO 模拟器，目前支持 Linux 和 OS X。它能够在 PC 上进行开发调试使用 RPi.GPIO 模块编写的树莓派应用。&lt;/p&gt;
 &lt;p&gt;这是一个开源项目：&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Github：&lt;a class="reference external" href="https://github.com/bobvann/GPIOSim"&gt;bobvann/GPIOSim: Raspberry Pi GPIO simulator&lt;/a&gt;&lt;/li&gt;
@@ -53,7 +53,7 @@
 &lt;p&gt;可以看到上面的代码有两行被注释的代码，因为这是一个小项目，没有模拟实现完整的 RPi.GPIO 模块。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="GPIO"></category><category term="RaspberryPi"></category><category term="Python"></category></entry><entry><title>树莓派 GPIO 入门</title><link href="https://magicalboy.com/raspberry-pi-gpio.html" rel="alternate"></link><published>2016-05-23T18:05:00+08:00</published><updated>2016-05-23T18:05:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-23:/raspberry-pi-gpio.html</id><summary type="html">&lt;p&gt;GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。&lt;/p&gt;
+</content><category term="GPIO"></category><category term="RaspberryPi"></category><category term="Python"></category></entry><entry><title>树莓派 GPIO 入门</title><link href="/raspberry-pi-gpio.html" rel="alternate"></link><published>2016-05-23T18:05:00+08:00</published><updated>2016-05-23T18:05:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-05-23:/raspberry-pi-gpio.html</id><summary type="html">&lt;p&gt;GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。&lt;/p&gt;
 &lt;p&gt;比较常用的第三方函数库有：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Python GPIO&lt;/li&gt;

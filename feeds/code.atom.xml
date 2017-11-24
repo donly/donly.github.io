@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - code</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/code.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2017-06-30T19:39:00+08:00</updated><entry><title>Java 匿名类</title><link href="https://magicalboy.com/java_anonymous_class.html" rel="alternate"></link><published>2017-06-30T19:39:00+08:00</published><updated>2017-06-30T19:39:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-06-30:/java_anonymous_class.html</id><summary type="html">&lt;p&gt;最近在复习 Java，利用 Learn Java App 有一定基础复习一遍还是很快的。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - code</title><link href="/" rel="alternate"></link><link href="/feeds/code.atom.xml" rel="self"></link><id>/</id><updated>2017-06-30T19:39:00+08:00</updated><entry><title>Java 匿名类</title><link href="/java_anonymous_class.html" rel="alternate"></link><published>2017-06-30T19:39:00+08:00</published><updated>2017-06-30T19:39:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-06-30:/java_anonymous_class.html</id><summary type="html">&lt;p&gt;最近在复习 Java，利用 Learn Java App 有一定基础复习一遍还是很快的。&lt;/p&gt;
 &lt;img alt="java" src="https://lh3.googleusercontent.com/GG1ijmZNLKV6wfyLBqgr0Y7Lnx2sPD3pInbzRt9HY5RJIFpxYPPfUDAT2JmnqztmfdjaSPMNsp41fA=w1440-h900-no" /&gt;
 &lt;p&gt;在复习过程中，觉得比较容易忘记的几点还是有必要做一下笔记的。比如匿名内部类。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
@@ -79,7 +79,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;EOF.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Java"></category></entry><entry><title>Ruby 快速入门</title><link href="https://magicalboy.com/ruby-quickstart.html" rel="alternate"></link><published>2016-12-21T09:39:00+08:00</published><updated>2016-12-21T09:39:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-12-21:/ruby-quickstart.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+</content><category term="Java"></category></entry><entry><title>Ruby 快速入门</title><link href="/ruby-quickstart.html" rel="alternate"></link><published>2016-12-21T09:39:00+08:00</published><updated>2016-12-21T09:39:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-12-21:/ruby-quickstart.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id16"&gt;Ruby&lt;/a&gt;&lt;/li&gt;
@@ -394,7 +394,7 @@ Goodbye Albert, Brenda, Charles, Dave, Engelbert. Come back soon!
 &lt;p&gt;这句代码的意思是 “如果这是启动脚本的话…”。这允许代码作为库调用的时候不运行启动代码，而在作为执行脚本的时候调用启动代码。&lt;/p&gt;
 &lt;p&gt;EOF.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="ruby"></category></entry><entry><title>自定义 Django Serializer</title><link href="https://magicalboy.com/django-serializer_customize.html" rel="alternate"></link><published>2016-05-29T08:41:00+08:00</published><updated>2016-05-29T08:41:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-05-29:/django-serializer_customize.html</id><summary type="html">&lt;p&gt;根据 &lt;a class="reference external" href="https://docs.djangoproject.com/en/1.9/topics/serialization/#serialization-formats-json"&gt;Serializing Django objects | Django documentation | Django&lt;/a&gt;
+</content><category term="ruby"></category></entry><entry><title>自定义 Django Serializer</title><link href="/django-serializer_customize.html" rel="alternate"></link><published>2016-05-29T08:41:00+08:00</published><updated>2016-05-29T08:41:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-05-29:/django-serializer_customize.html</id><summary type="html">&lt;p&gt;根据 &lt;a class="reference external" href="https://docs.djangoproject.com/en/1.9/topics/serialization/#serialization-formats-json"&gt;Serializing Django objects | Django documentation | Django&lt;/a&gt;
 ，使用内置默认的 serializer 格式化的 JSON 如下：&lt;/p&gt;
 &lt;pre class="code json literal-block"&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;

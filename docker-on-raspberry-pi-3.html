@@ -10,16 +10,16 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-            <link rel="stylesheet" href="https://magicalboy.com/theme/css/normalize.css">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
         <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://magicalboy.com/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://magicalboy.com/theme/css/main.css">
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
 
-    <link rel="stylesheet" href="https://magicalboy.com/theme/css/blog.css">
-    <link rel="stylesheet" href="https://magicalboy.com/theme/css/github.css">
-        <link href="https://magicalboy.com//feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
-        <script src="https://magicalboy.com/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MAG's Note Atom Feed" />
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -29,7 +29,7 @@
         <div id="wrapper">
 <header id="sidebar" class="side-shadow">
     <hgroup id="site-header">
-        <a id="site-title" href="https://magicalboy.com"><h1><i class="icon-mobile-phone"></i> Don</h1></a>
+        <a id="site-title" href=""><h1><i class="icon-mobile-phone"></i> Don</h1></a>
         <p id="site-desc"> 关注移动应用开发 </p>
     </hgroup>
     <nav>
@@ -60,7 +60,7 @@
                         <time class="post-time" datetime="2017-11-24T14:25:00+08:00" pubdate>
                             五, 24 11 2017
                         </time>
-                        <a href="https://magicalboy.com/docker-on-raspberry-pi-3.html" rel="bookmark"><h1>Docker on Raspberry Pi 3</h1></a>
+                        <a href="/docker-on-raspberry-pi-3.html" rel="bookmark"><h1>Docker on Raspberry Pi 3</h1></a>
                     </header>
 
                     <section class="post-content">
@@ -75,9 +75,10 @@
 </div>
 <div class="section" id="docker">
 <h2>什么是 Docker?</h2>
-<p>请阅读官方文档：<a class="reference external" href="https://docs.docker.com/engine/docker-overview/">Understanding Docker</a>。</p>
+<p>请阅读官方文档：<a class="reference external" href="https://docs.docker.com/engine/docker-overview/">Understanding Docker</a>。
+另推荐入门教程：<a class="reference external" href="https://yeasy.gitbooks.io/docker_practice">Docker —— 从入门到实践</a>。</p>
 </div>
-<div class="section" id="id2">
+<div class="section" id="id3">
 <h2>安装 Docker</h2>
 <p>安装与结果部分日志：</p>
 <div class="highlight"><pre><span></span>$ curl -sSL https://get.docker.com <span class="p">|</span> sh
@@ -100,9 +101,9 @@ Server:
  Experimental: <span class="nb">false</span>
 </pre></div>
 </div>
-<div class="section" id="id3">
-<h2>配置 Docker</h2>
 <div class="section" id="id4">
+<h2>配置 Docker</h2>
+<div class="section" id="id5">
 <h3>开机自动启动</h3>
 <div class="highlight"><pre><span></span>$ sudo systemctl <span class="nb">enable</span> docker
 Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
@@ -120,7 +121,7 @@ Executing: /lib/systemd/systemd-sysv-install <span class="nb">enable</span> dock
 <p>如果使用 <cite>ssh</cite> 登录，需要重新连接以生效。</p>
 </div>
 </div>
-<div class="section" id="id5">
+<div class="section" id="id6">
 <h2>使用 Docker</h2>
 <p>运行你的第一个 ARM 镜像（image）</p>
 <div class="highlight"><pre><span></span>$ docker run -ti arm32v6/alpine:3.5 /bin/sh
@@ -146,7 +147,7 @@ Hi, this is a tiny Linux distribution!
 / <span class="c1"># exit</span>
 </pre></div>
 </div>
-<div class="section" id="id6">
+<div class="section" id="id7">
 <h2>本文参考</h2>
 <ul class="simple">
 <li><a class="reference external" href="https://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/">Get Started with Docker 1.12 on Raspberry Pi</a></li>
@@ -156,8 +157,8 @@ Hi, this is a tiny Linux distribution!
                     </section>
                     <hr/>
                     <aside class="post-meta">
-                        <p>Category: <a href="https://magicalboy.com/category/linux.html">Linux</a></p>
-                        <p>Tags: <a href="https://magicalboy.com/tag/linux.html">Linux</a>, <a href="https://magicalboy.com/tag/docker.html">Docker</a>, </p>
+                        <p>Category: <a href="/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="/tag/linux.html">Linux</a>, <a href="/tag/docker.html">Docker</a>, </p>
                         <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
                     </aside>
                     <hr/>
@@ -186,6 +187,6 @@ Hi, this is a tiny Linux distribution!
     <p>
         Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
     </p>
-</footer>        <script src="https://magicalboy.com/theme/js/main.js"></script>
+</footer>        <script src="/theme/js/main.js"></script>
     </body>
 </html>
