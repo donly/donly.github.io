@@ -6349,7 +6349,7 @@ caption=&amp;quot;IE8下提示错误信息&amp;quot;]&lt;a class="reference exte
 &lt;li&gt;熟悉操作系统Linux&lt;/li&gt;
 &lt;li&gt;提高个人素质涵养，交际沟通能力，团队合作的Teamwork&lt;/li&gt;
 &lt;/ol&gt;
-</content></entry><entry><title>代码语法高亮显示插件</title><link href="https://magicalboy.com/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html" rel="alternate"></link><published>2010-04-22T01:26:00+08:00</published><updated>2010-04-22T01:26:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-04-22:/codecolorer%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae%e6%98%be%e7%a4%ba%e6%8f%92%e4%bb%b6.html</id><summary type="html">&lt;div class="section" id="java-hellomidlet-java"&gt;
+</content></entry><entry><title>代码语法高亮显示插件</title><link href="https://magicalboy.com/codecolorer-for-wordpress.html" rel="alternate"></link><published>2010-04-22T01:26:00+08:00</published><updated>2010-04-22T01:26:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-04-22:/codecolorer-for-wordpress.html</id><summary type="html">&lt;div class="section" id="java-hellomidlet-java"&gt;
 &lt;h2&gt;Java - HelloMidlet.java&lt;/h2&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;import javax.microedition.lcdui.Display; import javax.microedition.lcdui.TextBox; import &lt;span class="pre"&gt;javax.microedition.midlet.*;&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;public class HelloMidlet extends MIDlet {&lt;/p&gt;
