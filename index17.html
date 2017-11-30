@@ -56,6 +56,58 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-24T05:28:00+08:00" pubdate>
+                            二, 24  8 2010
+                        </time>
+                        <a href="/onsubmit-return-false.html" rel="bookmark"><h1>onsubmit 和 return false</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>onsubmit 事件会在表单提交前触发。属于 w3c 标准事件，是 form 标签的属性。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="46%" />
+<col width="9%" />
+<col width="7%" />
+<col width="7%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">属性</th>
+<th class="head">此事件发生在何时...</th>
+<th class="head">IE</th>
+<th class="head">F</th>
+<th class="head">O</th>
+<th class="head">W3C</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>onsubmit</td>
+<td>确认按钮被点击。</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">支持该事件的 HTML 标签和 JavaScript 对象：&lt;form&gt;。</div>
+<div class="line">使用示例——代码清单1：</div>
+</div>
+<div class="section" id="form">
+<h2>防止 form 表单提交</h2>
+<div class="line-block">
+<div class="line">在 onsubmit 事件中返回 false
+值，就能防止表单提交。请看下面代码清单2，表单会提交吗？</div>
+<div class="line"><tt class="docutils literal">&lt; !DOCTYPE html PUBLIC <span class="pre">&quot;-//W3C//DTD</span> XHTML 1.0 <span class="pre">Transitional//EN&quot;</span> <span class="pre">&quot;http …</span></tt></div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-08-21T13:47:00+08:00" pubdate>
                             六, 21  8 2010
                         </time>
@@ -315,35 +367,6 @@ IE6 的话题太多了，稍候将在本文后面给出一些参考链接以供�
 可以看到效果。
 如果你觉得代码中的图片加载速度缓慢，建议下载离线版，然后自行添加到网站。下载地址：<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/07/antii_ie6_demo1.zip">IE6
 No More …</a></li></ul></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-07-24T14:00:00+08:00" pubdate>
-                            六, 24  7 2010
-                        </time>
-                        <a href="/ubuntu10-04-lamp.html" rel="bookmark"><h1>Ubuntu 10.04 快速搭建 LAMP 开发环境</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>本文将介绍在 Linux Ubuntu 10.04 下快速搭建 LAMP 开发环境。原文来自
-<a class="reference external" href="http://amilaudana.wordpress.com/2010/05/06/configure-apache-mysql-php-on-ubuntu/">Configure Apache MySQL PHP on Ubuntu 10.04</a> ，加上自己实践的安装过程 :）。</p>
-<p>image0</p>
-<blockquote>
-<dl class="docutils">
-<dt><a class="reference external" href="http://zh.wikipedia.org/zh-cn/LAMP">LAMP</a> ，是指基于</dt>
-<dd>Linux，Apache，MySQL 和
-<a class="reference external" href="http://zh.wikipedia.org/zh-cn/PHP">PHP</a> （ <a class="reference external" href="http://zh.wikipedia.org/zh-cn/Perl">Perl</a>
-或
-<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Python">Python</a> ，<a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80">脚本语言</a> ）的开放资源网络开发平台。如果是在 Windows 操作系统下使用这些工具称为使用 WAMP 了。</dd>
-</dl>
-</blockquote>
-<p>搭建 LAMP 有很多种方法，下面我将和大家分享最佳和最简单的方法，just enjoy it。</p>
-<ol class="arabic">
-<li><p class="first">首先，打开<strong>终端</strong>命令行窗口，输入以下命令：
-$ <strong>sudo tasksel …</strong></p></li></ol>
                     </section>
                 </article>
             </li>

@@ -56,6 +56,32 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2012-04-08T10:23:00+08:00" pubdate>
+                            日, 08  4 2012
+                        </time>
+                        <a href="/how-to-take-screenshots-on-android-device.html" rel="bookmark"><h1>如何在 Android 设备上截图</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在苹果 iOS 设备上可以很轻松的使用 Home + Power
+组合按键来截图，系统自带有此功能。但在 Android
+系统上，没有类似系统自带的截图功能，肿么办？</p>
+<p>本文介绍如何使用 Dalvik Debug Monitor Server ( DDMS)
+截图，它的特点有：免root， 免App，不影响程序运行性能，随时可截图。</p>
+<div class="section" id="id1">
+<h2>操作步骤</h2>
+<ol class="arabic simple">
+<li>安装 Android SDK，（Windows 用户可参考
+<a class="reference external" href="/android-dev-guid-for-windows.html">Android开发环境搭建（Windows篇）</a>）</li>
+<li>在设置（Settings） &gt; 应用程序（Applications） &gt;
+开发（Development）开启 USB 调试（USB Debugging）。</li>
+<li>连接 Android 设备，可通过 USB 或者 Wireless …</li></ol></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2012-03-31T14:47:00+08:00" pubdate>
                             六, 31  3 2012
                         </time>
@@ -306,41 +332,6 @@ CVS，SVN（Subversion）等。这些都是老而笨重，采用集中式的 …
 </ul>
 <div class="line-block">
 <div class="line"><strong>苹果iOS 4.3版本升级步骤 …</strong></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-03-09T04:13:00+08:00" pubdate>
-                            三, 09  3 2011
-                        </time>
-                        <a href="/objectivec-copy-and-mutablecopy.html" rel="bookmark"><h1>ObjectiveC 深浅拷贝学习</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p><strong>在ObjC中，什么是深浅拷贝？</strong>
-深浅拷贝分别指深拷贝和浅拷贝，即mutableCopy和copy方法。
-copy复制一个不可变对象，而mutableCopy复制一个mutable可变对象。
-什么时候用到深浅拷贝？下面举几个例子说明。</p>
-<div class="section" id="id1">
-<h2>非容器类对象</h2>
-<p>如NSString，NSNumber等一类对象</p>
-<p>示例1：</p>
-<pre class="code shell literal-block">
-// 非容器类对象
-NSString *str <span class="o">=</span> &#64;<span class="s2">&quot;origin string&quot;</span><span class="p">;</span>
-NSString *strCopy <span class="o">=</span> <span class="o">[</span>str copy<span class="o">]</span><span class="p">;</span>
-NSMutableString *mstrCopy <span class="o">=</span> <span class="o">[</span>str mutableCopy<span class="o">]</span><span class="p">;</span>
-<span class="o">[</span>mstrCopy appendString:&#64;<span class="s2">&quot;??&quot;</span><span class="o">]</span><span class="p">;</span>
-</pre>
-<p>查看内存可以发现，str和strCopy指向的是同一块内存区域，我们称之为弱引用（weak
-reference）。而mstrCopy是真正的复制，系统为其分配了新内存空间，保存从str复制过来的字符串值。从最后一行代码中修改这些值而不影响str和strCopy中可证明。</p>
-<p>示例2：</p>
-<pre class="code shell literal-block">
-NSMutableString *mstr <span class="o">=</span> <span class="o">[</span>NSMutableString stringWithString:&#64;<span class="s2">&quot;origin&quot;</span><span class="o">]</span><span class="p">;</span>
-NSString *strCopy <span class="o">=</span> <span class="o">[</span>mstr copy<span class="o">]</span><span class="p">;</span>
-NSMutableString *mstrCopy <span class="o">=</span> <span class="o">[</span>mstr copy …</pre></div>
                     </section>
                 </article>
             </li>

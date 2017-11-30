@@ -10,8 +10,10 @@
 &lt;/div&gt;
 &lt;div class="section" id="docker"&gt;
 &lt;h2&gt;什么是 Docker?&lt;/h2&gt;
-&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。
-另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;安装 Docker&lt;/h2&gt;
@@ -34,8 +36,10 @@ Client:
 &lt;/div&gt;
 &lt;div class="section" id="docker"&gt;
 &lt;h2&gt;什么是 Docker?&lt;/h2&gt;
-&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。
-另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;安装 Docker&lt;/h2&gt;
@@ -75,7 +79,7 @@ Executing: /lib/systemd/systemd-sysv-install &lt;span class="nb"&gt;enable&lt;/s
 &lt;div class="section" id="docker-client"&gt;
 &lt;h3&gt;启动 Docker Client&lt;/h3&gt;
 &lt;p&gt;Client 只能在 &lt;cite&gt;root&lt;/cite&gt; 用户或在 &lt;cite&gt;docker&lt;/cite&gt; 组用户使用，将 &lt;cite&gt;pi&lt;/cite&gt; 用户添加到 &lt;cite&gt;docker&lt;/cite&gt; 组：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG docker pi
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG docker &lt;span class="nv"&gt;$USER&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果使用 &lt;cite&gt;ssh&lt;/cite&gt; 登录，需要重新连接以生效。&lt;/p&gt;
 &lt;/div&gt;
@@ -110,6 +114,7 @@ Hi, this is a tiny Linux distribution!
 &lt;h2&gt;本文参考&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/"&gt;Get Started with Docker 1.12 on Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice/install/raspberry-pi.html"&gt;树莓派卡片电脑安装 Docker CE&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </content><category term="Linux"></category><category term="Docker"></category></entry><entry><title>WHR-G300N V2 刷机</title><link href="/flash-openwrt-from-tftp.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/flash-openwrt-from-tftp.html</id><summary type="html">&lt;div class="section" id="openwrt"&gt;

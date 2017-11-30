@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>/</id><updated>2017-11-24T14:25:00+08:00</updated><entry><title>Docker on Raspberry Pi 3</title><link href="/docker-on-raspberry-pi-3.html" rel="alternate"></link><published>2017-11-24T14:25:00+08:00</published><updated>2017-11-24T14:25:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-24:/docker-on-raspberry-pi-3.html</id><summary type="html">&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>/</id><updated>2017-11-30T11:00:00+08:00</updated><entry><title>iOS 11.2 Developer beta</title><link href="/ios-11-2-beta-update.html" rel="alternate"></link><published>2017-11-28T10:30:00+08:00</published><updated>2017-11-30T11:00:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-28:/ios-11-2-beta-update.html</id><summary type="html">&lt;p&gt;iOS 11.2 更新至 &lt;code&gt;beta 5&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;更新后版本号为：&lt;code&gt;11.2 (15C5111a)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;iOS 11.2 新增了自动更新订阅功能，新增类 &lt;code&gt;SKProductDiscount&lt;/code&gt; 和 &lt;code&gt;SKProductSubscriptionPeriod&lt;/code&gt;，以及 &lt;cite&gt;SKProduct&lt;/cite&gt; 类属性 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936878-introductoryprice"&gt;introductoryPrice&lt;/a&gt; 和 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936884-subscriptionperiod"&gt;subscriptionPeriod&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;iOS 11.2 Beta 相关的 Bugs 修复和已知问题列表&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_17_2017/iOS_11.2_beta_4_Release_Notes.pdf"&gt;iOS 11.2 beta 4 Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_28_2017/iOS_11.2_beta_5_Release_Notes.pdf"&gt;iOS 11.2 beta 5 Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;iOS 11.2 更新至 &lt;code&gt;beta 5&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;更新后版本号为：&lt;code&gt;11.2 (15C5111a)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;iOS 11.2 新增了自动更新订阅功能，新增类 &lt;code&gt;SKProductDiscount&lt;/code&gt; 和 &lt;code&gt;SKProductSubscriptionPeriod&lt;/code&gt;，以及 &lt;cite&gt;SKProduct&lt;/cite&gt; 类属性 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936878-introductoryprice"&gt;introductoryPrice&lt;/a&gt; 和 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936884-subscriptionperiod"&gt;subscriptionPeriod&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;iOS 11.2 Beta 相关的 Bugs 修复和已知问题列表&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_17_2017/iOS_11.2_beta_4_Release_Notes.pdf"&gt;iOS 11.2 beta 4 Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_28_2017/iOS_11.2_beta_5_Release_Notes.pdf"&gt;iOS 11.2 beta 5 Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="apple"></category></entry><entry><title>Docker on Raspberry Pi 3</title><link href="/docker-on-raspberry-pi-3.html" rel="alternate"></link><published>2017-11-24T14:25:00+08:00</published><updated>2017-11-24T14:25:00+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-24:/docker-on-raspberry-pi-3.html</id><summary type="html">&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;本文环境&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -10,8 +26,10 @@
 &lt;/div&gt;
 &lt;div class="section" id="docker"&gt;
 &lt;h2&gt;什么是 Docker?&lt;/h2&gt;
-&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。
-另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;安装 Docker&lt;/h2&gt;
@@ -34,8 +52,10 @@ Client:
 &lt;/div&gt;
 &lt;div class="section" id="docker"&gt;
 &lt;h2&gt;什么是 Docker?&lt;/h2&gt;
-&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。
-另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;安装 Docker&lt;/h2&gt;
@@ -75,7 +95,7 @@ Executing: /lib/systemd/systemd-sysv-install &lt;span class="nb"&gt;enable&lt;/s
 &lt;div class="section" id="docker-client"&gt;
 &lt;h3&gt;启动 Docker Client&lt;/h3&gt;
 &lt;p&gt;Client 只能在 &lt;cite&gt;root&lt;/cite&gt; 用户或在 &lt;cite&gt;docker&lt;/cite&gt; 组用户使用，将 &lt;cite&gt;pi&lt;/cite&gt; 用户添加到 &lt;cite&gt;docker&lt;/cite&gt; 组：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG docker pi
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG docker &lt;span class="nv"&gt;$USER&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果使用 &lt;cite&gt;ssh&lt;/cite&gt; 登录，需要重新连接以生效。&lt;/p&gt;
 &lt;/div&gt;
@@ -110,6 +130,7 @@ Hi, this is a tiny Linux distribution!
 &lt;h2&gt;本文参考&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/"&gt;Get Started with Docker 1.12 on Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice/install/raspberry-pi.html"&gt;树莓派卡片电脑安装 Docker CE&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </content><category term="Linux"></category><category term="Docker"></category></entry><entry><title>Android Wear</title><link href="/android_wear.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/android_wear.html</id><summary type="html">&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;

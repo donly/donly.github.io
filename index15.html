@@ -56,6 +56,49 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-12-18T02:43:00+08:00" pubdate>
+                            六, 18 12 2010
+                        </time>
+                        <a href="/scm-xcode-configuration.html" rel="bookmark"><h1>Xcode配置SCM</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>SCM,顾名思义为Source Control Manager，源码控制管理。</p>
+<p>Xcode中有自带的SCM工具，我们稍微配置一下就可以方便地使用它了。</p>
+<p>目前SCM支持CVS, Perforce,
+Subversion（SVN）三种代码管理系统，下面就以比较常用的SVN为例简单说下如何配置。</p>
+<p>首先配置服务器端的托管仓库（Repositories），具体配置这在不做说明，请<a class="reference external" href="http://www.google.com/#sclient=psy&amp;hl=en&amp;site=&amp;source=hp&amp;q=svn%E9%85%8D%E7%BD%AE&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=&amp;gs_rfai=&amp;pbx=1&amp;fp=7bf371fda32a213b">Google</a>。</p>
+<div class="line-block">
+<div class="line">然后，在Xcode的菜单中打开SCM-&gt;Repositories：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/SCM_Repositories.png"><img alt="image0" class="alignnone size-full wp-image-949" src="http://magicalboy.com/wp-content/uploads/2010/12/SCM_Repositories.png" style="width: 627px; height: 674px;" /></a></div>
+<div class="line">填好如图各项数据，填写无误就可看到绿色的Authenticated已认证提示。</div>
+</div>
+<div class="line-block">
+<div class="line">接着导入项目代码：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/SCM_import.png"><img alt="image1" class="alignnone size-full wp-image-950" src="http://magicalboy.com/wp-content/uploads/2010/12/SCM_import.png" style="width: 633px; height: 632px;" /></a></div>
+</div>
+<p>注意：导入项目之后服务器上的路径要对应上。还必须删除托管服务器上的build目录，不然在同步时会出错。</p>
+<div class="line-block">
+<div class="line">最后checkout项目或者为导入的项目配置SCM：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/SCM_Repository.png"><img alt="image2" class="alignnone size-full wp-image-951" src="http://magicalboy.com/wp-content/uploads/2010/12/SCM_Repository.png" style="width: 391px; height: 593px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line">至此，已经完成了在Xcode中为项目配置SCM：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/SCM_successful.png"><img alt="image3" class="alignnone size-full wp-image-952" src="http://magicalboy.com/wp-content/uploads/2010/12/SCM_successful.png" style="width: 788px; height: 559px;" /></a></div>
+</div>
+<p>关于 SVN 如何更新，提交等使用说明，请参考官方文档或其它资料。</p>
+<p>相关链接：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://developer.apple.com/tools/subversionxcode.html">Getting Control with Subversion and
+Xcode</a></li>
+<li><a class="reference external" href="http://gigaom.com/apple/using-subversion-with-xcode-30/">Using Subversion with Xcode 3.0:
+Apple …</a></li></ul>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-12-07T02:47:00+08:00" pubdate>
                             二, 07 12 2010
                         </time>
@@ -319,34 +362,6 @@ happen to have that around.</li>
 <p>参考链接：<a class="reference external" href="http://stackoverflow.com/questions/439662/what-is-the-difference-between-import-and-include-in-objective-c">What is the difference between #import and #include in
 Objective-C?</a></p>
 
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-10-18T06:43:00+08:00" pubdate>
-                            一, 18 10 2010
-                        </time>
-                        <a href="/emacs-tutorial.html" rel="bookmark"><h1>Emacs 的自学教材</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>想快速了解 EMACS 的人，可以参考 EMACS 的自学教材（tutorial）。 使用
-EMACS 自学教材的方法很简单，只要键入 &quot;Ctrl-h t&quot; (help-with-tutorial)
-即可进入 EMACS 的自学的状态了。</p>
-<p>EMACS 的自学教材可分成以下几部份：</p>
-<ol class="arabic simple">
-<li>介绍 EMACS 指令的键入方法，即介绍 Ctrl 与 Meta 键 。</li>
-<li>viewing screenfuls</li>
-<li>basic cursor control</li>
-<li>Ctrl-g 的用法</li>
-<li>EMACS 的 window 与 multiple windows</li>
-<li>inserting and deleting</li>
-<li>undo</li>
-<li>EMACS 档案的处理</li>
-<li>EMACS 的 buffers</li>
-<li>extending …</li></ol>
                     </section>
                 </article>
             </li>

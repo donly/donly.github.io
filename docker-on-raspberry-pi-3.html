@@ -75,8 +75,10 @@
 </div>
 <div class="section" id="docker">
 <h2>什么是 Docker?</h2>
-<p>请阅读官方文档：<a class="reference external" href="https://docs.docker.com/engine/docker-overview/">Understanding Docker</a>。
-另推荐入门教程：<a class="reference external" href="https://yeasy.gitbooks.io/docker_practice">Docker —— 从入门到实践</a>。</p>
+<ul class="simple">
+<li>请阅读官方文档：<a class="reference external" href="https://docs.docker.com/engine/docker-overview/">Understanding Docker</a>。</li>
+<li>另推荐入门教程：<a class="reference external" href="https://yeasy.gitbooks.io/docker_practice">Docker —— 从入门到实践</a>。</li>
+</ul>
 </div>
 <div class="section" id="id3">
 <h2>安装 Docker</h2>
@@ -116,7 +118,7 @@ Executing: /lib/systemd/systemd-sysv-install <span class="nb">enable</span> dock
 <div class="section" id="docker-client">
 <h3>启动 Docker Client</h3>
 <p>Client 只能在 <cite>root</cite> 用户或在 <cite>docker</cite> 组用户使用，将 <cite>pi</cite> 用户添加到 <cite>docker</cite> 组：</p>
-<div class="highlight"><pre><span></span>sudo usermod -aG docker pi
+<div class="highlight"><pre><span></span>sudo usermod -aG docker <span class="nv">$USER</span>
 </pre></div>
 <p>如果使用 <cite>ssh</cite> 登录，需要重新连接以生效。</p>
 </div>
@@ -151,6 +153,7 @@ Hi, this is a tiny Linux distribution!
 <h2>本文参考</h2>
 <ul class="simple">
 <li><a class="reference external" href="https://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/">Get Started with Docker 1.12 on Raspberry Pi</a></li>
+<li><a class="reference external" href="https://yeasy.gitbooks.io/docker_practice/install/raspberry-pi.html">树莓派卡片电脑安装 Docker CE</a></li>
 </ul>
 </div>
 

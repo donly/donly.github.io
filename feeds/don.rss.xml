@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>MAG's Note - Don</title><link>/</link><description>关注移动应用开发</description><lastBuildDate>Fri, 24 Nov 2017 14:25:00 +0800</lastBuildDate><item><title>Docker on Raspberry Pi 3</title><link>/docker-on-raspberry-pi-3.html</link><description>&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
+<rss version="2.0"><channel><title>MAG's Note - Don</title><link>/</link><description>关注移动应用开发</description><lastBuildDate>Thu, 30 Nov 2017 11:00:00 +0800</lastBuildDate><item><title>iOS 11.2 Developer beta</title><link>/ios-11-2-beta-update.html</link><description>&lt;p&gt;iOS 11.2 更新至 &lt;code&gt;beta 5&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;更新后版本号为：&lt;code&gt;11.2 (15C5111a)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;iOS 11.2 新增了自动更新订阅功能，新增类 &lt;code&gt;SKProductDiscount&lt;/code&gt; 和 &lt;code&gt;SKProductSubscriptionPeriod&lt;/code&gt;，以及 &lt;cite&gt;SKProduct&lt;/cite&gt; 类属性 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936878-introductoryprice"&gt;introductoryPrice&lt;/a&gt; 和 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936884-subscriptionperiod"&gt;subscriptionPeriod&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;iOS 11.2 Beta 相关的 Bugs 修复和已知问题列表&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_17_2017/iOS_11.2_beta_4_Release_Notes.pdf"&gt;iOS 11.2 beta 4 Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_28_2017/iOS_11.2_beta_5_Release_Notes.pdf"&gt;iOS 11.2 beta 5 Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 28 Nov 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-28:/ios-11-2-beta-update.html</guid><category>apple</category></item><item><title>Docker on Raspberry Pi 3</title><link>/docker-on-raspberry-pi-3.html</link><description>&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;本文环境&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -10,8 +18,10 @@
 &lt;/div&gt;
 &lt;div class="section" id="docker"&gt;
 &lt;h2&gt;什么是 Docker?&lt;/h2&gt;
-&lt;p&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。
-另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;请阅读官方文档：&lt;a class="reference external" href="https://docs.docker.com/engine/docker-overview/"&gt;Understanding Docker&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;另推荐入门教程：&lt;a class="reference external" href="https://yeasy.gitbooks.io/docker_practice"&gt;Docker —— 从入门到实践&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;安装 Docker&lt;/h2&gt;
