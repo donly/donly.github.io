@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>MAG's Note - Don</title><link>/</link><description>关注移动应用开发</description><lastBuildDate>Thu, 30 Nov 2017 11:00:00 +0800</lastBuildDate><item><title>iOS 11.2 Developer beta</title><link>/ios-11-2-beta-update.html</link><description>&lt;p&gt;iOS 11.2 更新至 &lt;code&gt;beta 5&lt;/code&gt;。&lt;/p&gt;
+<rss version="2.0"><channel><title>MAG's Note - Don</title><link>/</link><description>关注移动应用开发</description><lastBuildDate>Thu, 30 Nov 2017 11:00:00 +0800</lastBuildDate><item><title>macOS Hight Sierra Security Update</title><link>/macos-hight-sierra-security-update.html</link><description>&lt;p&gt;Apple 最新版本的系统 macOS Hight Sierra 被暴出 &lt;strong&gt;严重安全漏洞&lt;/strong&gt;，即使是小学生也能轻易以管理员身份登录陌生人的Mac。具体描述为：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS High Sierra 都会受这一漏洞影响，在打开 Mac 到登陆界面或者进入系统偏好设置里修改用户群组管理、安全隐私等选项时，用户名输入 “root” 密码填空，然后多试几次 Return 按钮就能顺利登陆。
+&lt;/pre&gt;
+刚好有同学过来借宿，不知道我的&lt;del&gt;小秘密以及相关&lt;/del&gt;隐私暴光了没。&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;亡羊补牢，打上 &lt;code&gt;2017-001&lt;/code&gt; 安全补丁。&lt;/p&gt;
+&lt;p&gt;建议将自动更新打开，关闭访客户账户等提高安全性。&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 30 Nov 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-30:/macos-hight-sierra-security-update.html</guid><category>apple</category></item><item><title>iOS 11.2 Developer beta</title><link>/ios-11-2-beta-update.html</link><description>&lt;p&gt;iOS 11.2 更新至 &lt;code&gt;beta 5&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;更新后版本号为：&lt;code&gt;11.2 (15C5111a)&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;iOS 11.2 新增了自动更新订阅功能，新增类 &lt;code&gt;SKProductDiscount&lt;/code&gt; 和 &lt;code&gt;SKProductSubscriptionPeriod&lt;/code&gt;，以及 &lt;cite&gt;SKProduct&lt;/cite&gt; 类属性 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936878-introductoryprice"&gt;introductoryPrice&lt;/a&gt; 和 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936884-subscriptionperiod"&gt;subscriptionPeriod&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;iOS 11.2 Beta 相关的 Bugs 修复和已知问题列表&lt;/p&gt;

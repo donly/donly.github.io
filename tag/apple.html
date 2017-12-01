@@ -56,6 +56,29 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-30T10:30:00+08:00" pubdate>
+                            四, 30 11 2017
+                        </time>
+                        <a href="/macos-hight-sierra-security-update.html" rel="bookmark"><h1>macOS Hight Sierra Security Update</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Apple 最新版本的系统 macOS Hight Sierra 被暴出 <strong>严重安全漏洞</strong>，即使是小学生也能轻易以管理员身份登录陌生人的Mac。具体描述为：</p>
+<pre class="literal-block">
+macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS High Sierra 都会受这一漏洞影响，在打开 Mac 到登陆界面或者进入系统偏好设置里修改用户群组管理、安全隐私等选项时，用户名输入 “root” 密码填空，然后多试几次 Return 按钮就能顺利登陆。
+</pre>
+刚好有同学过来借宿，不知道我的<del>小秘密以及相关</del>隐私暴光了没。<div class="section" id="id1">
+<h2>解决方法</h2>
+<p>亡羊补牢，打上 <code>2017-001</code> 安全补丁。</p>
+<p>建议将自动更新打开，关闭访客户账户等提高安全性。</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2017-11-28T10:30:00+08:00" pubdate>
                             二, 28 11 2017
                         </time>
@@ -257,37 +280,6 @@ Actionable Notifications。这些类型都必须依赖于已经存在的 iOS
 <h2>Apple Watch模拟器</h2>
 <p>Apple Watch 显示屏是方形的，有两种尺寸：38 mm 和
 42mm …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2014-09-09T15:33:00+08:00" pubdate>
-                            二, 09  9 2014
-                        </time>
-                        <a href="/new-itunes-connect.html" rel="bookmark"><h1>新版 iTunes Connect 提交 App 遇到的问题</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>随着 Apple 将其 OS X Yosemite 更新到扁平化风格后，<a class="reference external" href="https://itunesconnect.apple.com">iTunes
-Connect</a> 终于也被拍扁了。除了 UI
-扁平化外，也改进了用户体验，能够快速切换到其它功能，并且新增了
-Prerelease 项。</p>
-<div class="section" id="id1">
-<h2>遇到的问题</h2>
-<div class="line-block">
-<div class="line">今天在为 app
-发布新版本的时候发现，其流程和以往有所不同。增加新版本在一个页面上完成，之后就是使用工具提交要发布app的二进制包。这里有一个小的更新，可以选择账户里面所有的app进行上传。问题是上传完发布包后，点
-&quot;Submit for Review&quot; 会有错误提示：&quot;You must choose a build.&quot;。</div>
-<div class="line">同时又发现没有地方可以选择一个编译版本来发布，是不是令人很郁闷啊。</div>
-</div>
-</div>
-<div class="section" id="id2">
-<h2>问题原因</h2>
-<div class="line-block">
-<div class="line">原来，我们提交上传的包被移到 Prerelease
-下了。而且这里也有原因说明：&quot;After builds are uploaded …</div></div></div>
                     </section>
                 </article>
             </li>

@@ -56,6 +56,26 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
+                            四, 23 11 2017
+                        </time>
+                        <a href="/xcode-remove-working-copies.html" rel="bookmark"><h1>Xcode 7 清除多余的 Woking copies</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Xcode 版本：Version 7.1 (7B91b)</p>
+<p><strong>问题描述：</strong>
+由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。</p>
+<p><strong>解决方法：</strong>
+删除 <em>ProjectName.xcworkspace &gt; xcshareddata &gt; ProjectName.xcscmblueprint</em>，重启 Xcode。</p>
+<p>参考链接：<a class="reference external" href="http://stackoverflow.com/a/27535601">http://stackoverflow.com/a/27535601</a></p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2017-06-22T10:30:00+08:00" pubdate>
                             四, 22  6 2017
                         </time>
@@ -273,24 +293,6 @@ $ ffmpeg -i <span class="s2">&quot;http://p.events-delivery.apple.com.edgesuite.
 <li><a class="reference external" href="http://api.ios.icj.me/docs/">IPSW Downloads</a></li>
 </ol>
 
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-08-31T00:30:00+08:00" pubdate>
-                            三, 31  8 2016
-                        </time>
-                        <a href="/apple-event-2016-september.html" rel="bookmark"><h1>苹果九月发布会</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <img alt="Apple Event" src="images/hero_image_large.jpg" />
-<p>中国北京时间为8日凌晨1点。</p>
-<p>可以在线看直播，有即时字幕，流畅度提升越来越明显。</p>
-<blockquote>
-Requirements: Live streaming uses Apple’s HTTP Live Streaming (HLS) technology. HLS requires an iPhone, iPad, or iPod touch with Safari on iOS 7.0 or later, a Mac with Safari 6.0.5 or later on OS X v10.8.5 or later, or a …</blockquote>
                     </section>
                 </article>
             </li>

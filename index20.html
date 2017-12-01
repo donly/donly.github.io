@@ -56,6 +56,33 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-06T03:40:00+08:00" pubdate>
+                            日, 06  6 2010
+                        </time>
+                        <a href="/c-input-buffer.html" rel="bookmark"><h1>C语言基础：输入缓冲区</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><strong>缓冲定义</strong>：暂时存放输入或输出数据的存储区域</p>
+<div class="section" id="id1">
+<h2><strong>实例代码</strong>：缓冲输入的实例——延时回显</h2>
+<p><tt class="docutils literal">/* echo.c <span class="pre">--</span> 回显输入 */ #include&nbsp; int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; char ch;</tt></p>
+<div class="line-block">
+<div class="line">while((ch=getchar()) != '#')</div>
+<div class="line">putchar(ch);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<p>程序示例1：</p>
+<p><tt class="docutils literal">hello,welcome to magicalboy.com【回车】 hello,welcome to magicalboy.com you are always the <span class="pre">#1!【回车】</span> you are always the</tt></p>
+<p>程序示例2：</p>
+<p><tt class="docutils literal"><span class="pre">hheelloo,,wweellccoommee</span> ttoo&nbsp; <span class="pre">mmaaggiiccaallbbooyy..ccoomm【回车 …</span></tt></p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-06-05T01:37:00+08:00" pubdate>
                             六, 05  6 2010
                         </time>
@@ -313,51 +340,12 @@ caption=&quot;后台添加图像&quot;]<a class="reference external" href="http:
                 </article>
             </li>
             <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-05-12T03:42:00+08:00" pubdate>
-                            三, 12  5 2010
-                        </time>
-                        <a href="/fixpng-jquery-plugin.html" rel="bookmark"><h1>让IE6支持PNG透明(alpha通道)之FixPNG_jQuery_Plugin</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>IE6与生俱来就支持png8的索引色透明度，但不支持png或8位以上的 alpha
-透明度。而对于非动画的GIF建议你使用PNG8，因为体积会更小。在这里，介绍一个jQuery的插件，它能让IE6支持PNG的
-alpha 透明度，方便使用jQuery JS库的朋友使用。</p>
-<div class="section" id="fixpng-jqueryie6png">
-<h2>使用FixPNG jQuery插件使IE6支持PNG透明</h2>
-<p>插件官方下载地址：<a class="reference external" href="http://plugins.jquery.com/project/fixpng">http://plugins.jquery.com/project/fixpng</a></p>
-<p>下载解压后，有简单的使用Demo，使用方法如下：</p>
-<hr class="docutils" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line">需要注意的是：在fixpng.js插件里，第18行&quot;gif_file =
-&quot;img/vazio.gif&quot;;&quot;指向空白像素点的gif图片的路径需要根据你的路径修改一下。如果JS有报错：
-&quot;$ is not a function&quot;，将&quot;$&quot;换为&quot;jQuery&quot;即可</div>
-</div>
-</div>
-<div class="section" id="htcie6png">
-<h2>使用HTC组件方法使IE6支持PNG透明</h2>
-<blockquote>
-htc的全称就是Html
-Components，由微软在IE5.0后开始提供的一种新的指令组合，它可以把某种特定功能的代码封装在一个组件之中，从而实现了代码的重复使用 …</blockquote></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
         </ol>
         <div class="paginator">
                     <a href="/index19.html">
                         <i class="icon-circle-arrow-left"></i>
                     </a>
-            Page 20 / 21
+            Page 20 / 22
                 <a href="/index21.html">
                     <i class="icon-circle-arrow-right"></i>
                 </a>

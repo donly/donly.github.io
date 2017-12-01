@@ -56,6 +56,36 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-18T08:41:00+08:00" pubdate>
+                            五, 18  6 2010
+                        </time>
+                        <a href="/upgrade-wordpress-3-0-release.html" rel="bookmark"><h1>升级 WordPress 3.0 正式版：备份文件和数据库</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://wordpress.org">WordPress</a>是一个免费的开源项目,在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。</p>
+<p>经 RC3 测试版过后，WordPress 马上放出 3.0
+正式版。登陆管理后台就可以看到更新提示了。作为一位版本控，二话不说马上准备升级。下面就简单介绍一下升级的准备工作。</p>
+<p><strong>备份文件到本地机器上</strong>。可以使用 FTP
+工具（<a class="reference external" href="http://filezilla-project.org">FileZilla</a>），或 UNIX Shell
+（比如，SSH）。由于我的 SSH 被禁用，所以使用比较通用的 FTP 工具
+FileZilla 来备份整个 WordPress 站点：</p>
+<ol class="arabic simple">
+<li>WordPress核心安装文件</li>
+<li>WordPress插件</li>
+<li>WordPress主题</li>
+<li>图片和文件</li>
+<li>Javascripts, PHP脚本, 和其他代码文件</li>
+<li>其他文件和静态页面</li>
+</ol>
+<p>现在的大部分主机供应商都备份整个服务器，所以也包括了我们的网站，比如<a class="reference external" href="https://panel.dreamhost.com/index.cgi?tree=home.backup&amp;">DreamHost</a>
+的就可以在 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-06-15T15:10:00+08:00" pubdate>
                             二, 15  6 2010
                         </time>
@@ -294,39 +324,12 @@ Google 员工之手。</p>
                 </article>
             </li>
             <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-06-06T03:40:00+08:00" pubdate>
-                            日, 06  6 2010
-                        </time>
-                        <a href="/c-input-buffer.html" rel="bookmark"><h1>C语言基础：输入缓冲区</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p><strong>缓冲定义</strong>：暂时存放输入或输出数据的存储区域</p>
-<div class="section" id="id1">
-<h2><strong>实例代码</strong>：缓冲输入的实例——延时回显</h2>
-<p><tt class="docutils literal">/* echo.c <span class="pre">--</span> 回显输入 */ #include&nbsp; int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; char ch;</tt></p>
-<div class="line-block">
-<div class="line">while((ch=getchar()) != '#')</div>
-<div class="line">putchar(ch);</div>
-<div class="line">return 0;</div>
-<div class="line">}</div>
-</div>
-<p>程序示例1：</p>
-<p><tt class="docutils literal">hello,welcome to magicalboy.com【回车】 hello,welcome to magicalboy.com you are always the <span class="pre">#1!【回车】</span> you are always the</tt></p>
-<p>程序示例2：</p>
-<p><tt class="docutils literal"><span class="pre">hheelloo,,wweellccoommee</span> ttoo&nbsp; <span class="pre">mmaaggiiccaallbbooyy..ccoomm【回车 …</span></tt></p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
         </ol>
         <div class="paginator">
                     <a href="/index18.html">
                         <i class="icon-circle-arrow-left"></i>
                     </a>
-            Page 19 / 21
+            Page 19 / 22
                 <a href="/index20.html">
                     <i class="icon-circle-arrow-right"></i>
                 </a>

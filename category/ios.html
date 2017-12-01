@@ -56,6 +56,29 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2017-11-30T10:30:00+08:00" pubdate>
+                            四, 30 11 2017
+                        </time>
+                        <a href="/macos-hight-sierra-security-update.html" rel="bookmark"><h1>macOS Hight Sierra Security Update</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Apple 最新版本的系统 macOS Hight Sierra 被暴出 <strong>严重安全漏洞</strong>，即使是小学生也能轻易以管理员身份登录陌生人的Mac。具体描述为：</p>
+<pre class="literal-block">
+macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS High Sierra 都会受这一漏洞影响，在打开 Mac 到登陆界面或者进入系统偏好设置里修改用户群组管理、安全隐私等选项时，用户名输入 “root” 密码填空，然后多试几次 Return 按钮就能顺利登陆。
+</pre>
+刚好有同学过来借宿，不知道我的<del>小秘密以及相关</del>隐私暴光了没。<div class="section" id="id1">
+<h2>解决方法</h2>
+<p>亡羊补牢，打上 <code>2017-001</code> 安全补丁。</p>
+<p>建议将自动更新打开，关闭访客户账户等提高安全性。</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2017-11-28T10:30:00+08:00" pubdate>
                             二, 28 11 2017
                         </time>
@@ -314,26 +337,6 @@ ja,
 <p>WWDC地址：<a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400">What’s New in Xcode 5</a></p>
 <ul class="simple">
 <li>素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets …</li></ul></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            四, 23 11 2017
-                        </time>
-                        <a href="/xcode-remove-working-copies.html" rel="bookmark"><h1>Xcode 7 清除多余的 Woking copies</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Xcode 版本：Version 7.1 (7B91b)</p>
-<p><strong>问题描述：</strong>
-由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。</p>
-<p><strong>解决方法：</strong>
-删除 <em>ProjectName.xcworkspace &gt; xcshareddata &gt; ProjectName.xcscmblueprint</em>，重启 Xcode。</p>
-<p>参考链接：<a class="reference external" href="http://stackoverflow.com/a/27535601">http://stackoverflow.com/a/27535601</a></p>
-
                     </section>
                 </article>
             </li>
