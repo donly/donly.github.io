@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 未分类</title><link href="/" rel="alternate"></link><link href="/feeds/wei-fen-lei.atom.xml" rel="self"></link><id>/</id><updated>2013-05-18T13:16:00+08:00</updated><entry><title>Samsung GT-I9082 刷机（多图）</title><link href="/samsung-gt-i9082-rom.html" rel="alternate"></link><published>2013-05-18T13:16:00+08:00</published><updated>2013-05-18T13:16:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-05-18:/samsung-gt-i9082-rom.html</id><summary type="html">&lt;p&gt;朋友在公司手机拍卖上入了一台i9082，嗯，这是一台5&amp;quot;屏，分辨率为480 x 800
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 未分类</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/wei-fen-lei.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2013-05-18T13:16:00+08:00</updated><entry><title>Samsung GT-I9082 刷机（多图）</title><link href="https://magicalboy.com/samsung-gt-i9082-rom.html" rel="alternate"></link><published>2013-05-18T13:16:00+08:00</published><updated>2013-05-18T13:16:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-05-18:/samsung-gt-i9082-rom.html</id><summary type="html">&lt;p&gt;朋友在公司手机拍卖上入了一台i9082，嗯，这是一台5&amp;quot;屏，分辨率为480 x 800
 (WVGA)的手机，&lt;a class="reference external" href="http://www.samsung.com/tw/support/model/GT-I9082EWABRI-techspecs"&gt;详细参数点这里&lt;/a&gt;。。当然这手机不是为我而买的，我只负责将里面的
 Android OS 刷掉换为有中文语言的。&lt;/p&gt;
 &lt;div class="line-block"&gt;
@@ -19,7 +19,7 @@ Android OS 刷掉换为有中文语言的。&lt;/p&gt;
 &lt;div class="line"&gt;[gallery
 ids=&amp;quot;43113,43114,43115,43116,43117,43118,43119,43120,43121,43122,43123,43124&amp;quot;]&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="Android"></category><category term="刷机"></category></entry><entry><title>iOS 开发教程，HelloWorld</title><link href="/ios_helloworld.html" rel="alternate"></link><published>2012-03-31T14:47:00+08:00</published><updated>2012-03-31T14:47:00+08:00</updated><author><name>donly</name></author><id>tag:None,2012-03-31:/ios_helloworld.html</id><summary type="html">&lt;p&gt;为了方便大家入门iOS开发，写个简单的iOS项目让大家了解一下 iPhone, iPad
+</content><category term="Android"></category><category term="刷机"></category></entry><entry><title>iOS 开发教程，HelloWorld</title><link href="https://magicalboy.com/ios_helloworld.html" rel="alternate"></link><published>2012-03-31T14:47:00+08:00</published><updated>2012-03-31T14:47:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2012-03-31:/ios_helloworld.html</id><summary type="html">&lt;p&gt;为了方便大家入门iOS开发，写个简单的iOS项目让大家了解一下 iPhone, iPad
 等应用程序是如何开发出来的。本文只是快速入门，不涉及 Objective C
 语法讲解，Xcode 与 User Interface 使用等。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;

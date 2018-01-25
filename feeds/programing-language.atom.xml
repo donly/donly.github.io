@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Programing Language</title><link href="/" rel="alternate"></link><link href="/feeds/programing-language.atom.xml" rel="self"></link><id>/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>C++ 学习笔记</title><link href="/cpp.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:None,2017-11-23:/cpp.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Programing Language</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/programing-language.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2017-11-23T15:54:43+08:00</updated><entry><title>C++ 学习笔记</title><link href="https://magicalboy.com/cpp.html" rel="alternate"></link><published>2017-11-23T15:54:43+08:00</published><updated>2017-11-23T15:54:43+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2017-11-23:/cpp.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id13"&gt;概述&lt;/a&gt;&lt;/li&gt;
@@ -151,7 +151,7 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#id25"&gt;表达式&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="C++"></category></entry><entry><title>Objective C</title><link href="/Objective-C.html" rel="alternate"></link><published>2016-11-24T14:25:00+08:00</published><updated>2016-11-24T14:25:00+08:00</updated><author><name>Don</name></author><id>tag:None,2016-11-24:/Objective-C.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
+</content><category term="C++"></category></entry><entry><title>Objective C</title><link href="https://magicalboy.com/Objective-C.html" rel="alternate"></link><published>2016-11-24T14:25:00+08:00</published><updated>2016-11-24T14:25:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-11-24:/Objective-C.html</id><summary type="html">&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id17"&gt;介绍&lt;/a&gt;&lt;/li&gt;

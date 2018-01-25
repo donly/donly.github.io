@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>MAG's Note - Don</title><link>/</link><description>关注移动应用开发</description><lastBuildDate>Thu, 30 Nov 2017 11:00:00 +0800</lastBuildDate><item><title>macOS Hight Sierra Security Update</title><link>/macos-hight-sierra-security-update.html</link><description>&lt;p&gt;Apple 最新版本的系统 macOS Hight Sierra 被暴出 &lt;strong&gt;严重安全漏洞&lt;/strong&gt;，即使是小学生也能轻易以管理员身份登录陌生人的Mac。具体描述为：&lt;/p&gt;
+<rss version="2.0"><channel><title>MAG's Note - Don</title><link>https://magicalboy.com/</link><description>关注移动应用开发</description><lastBuildDate>Thu, 25 Jan 2018 15:00:00 +0800</lastBuildDate><item><title>iOS 11.3 Developer beta</title><link>https://magicalboy.com/ios-11-3-beta-update.html</link><description>&lt;p&gt;这是 iOS 11.3 的第一个 &lt;code&gt;beta&lt;/code&gt; 版本，更新后版本号为：&lt;code&gt;11.3 (15E5167f)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;配套的 Xcode 9.3 beta 版本号为 &lt;code&gt;9Q98q&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;主要更新亮点有：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Message on iCloud&lt;/li&gt;
+&lt;li&gt;iBooks 改名为 Books&lt;/li&gt;
+&lt;li&gt;AirPlay 2&lt;/li&gt;
+&lt;li&gt;Business Chat&lt;/li&gt;
+&lt;li&gt;ARKit 1.5&lt;/li&gt;
+&lt;li&gt;Health App 增加 Health Records&lt;/li&gt;
+&lt;li&gt;iPhone X 新增4个 “动话表情”&lt;/li&gt;
+&lt;/ul&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 25 Jan 2018 15:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2018-01-25:/ios-11-3-beta-update.html</guid><category>apple</category></item><item><title>macOS Hight Sierra Security Update</title><link>https://magicalboy.com/macos-hight-sierra-security-update.html</link><description>&lt;p&gt;Apple 最新版本的系统 macOS Hight Sierra 被暴出 &lt;strong&gt;严重安全漏洞&lt;/strong&gt;，即使是小学生也能轻易以管理员身份登录陌生人的Mac。具体描述为：&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS High Sierra 都会受这一漏洞影响，在打开 Mac 到登陆界面或者进入系统偏好设置里修改用户群组管理、安全隐私等选项时，用户名输入 “root” 密码填空，然后多试几次 Return 按钮就能顺利登陆。
 &lt;/pre&gt;
@@ -8,7 +20,7 @@ macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS Hi
 &lt;p&gt;亡羊补牢，打上 &lt;code&gt;2017-001&lt;/code&gt; 安全补丁。&lt;/p&gt;
 &lt;p&gt;建议将自动更新打开，关闭访客户账户等提高安全性。&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 30 Nov 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-30:/macos-hight-sierra-security-update.html</guid><category>apple</category></item><item><title>iOS 11.2 Developer beta</title><link>/ios-11-2-beta-update.html</link><description>&lt;p&gt;iOS 11.2 更新至 &lt;code&gt;beta 5&lt;/code&gt;。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 30 Nov 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-30:/macos-hight-sierra-security-update.html</guid><category>apple</category></item><item><title>iOS 11.2 Developer beta</title><link>https://magicalboy.com/ios-11-2-beta-update.html</link><description>&lt;p&gt;iOS 11.2 更新至 &lt;code&gt;beta 5&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;更新后版本号为：&lt;code&gt;11.2 (15C5111a)&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;iOS 11.2 新增了自动更新订阅功能，新增类 &lt;code&gt;SKProductDiscount&lt;/code&gt; 和 &lt;code&gt;SKProductSubscriptionPeriod&lt;/code&gt;，以及 &lt;cite&gt;SKProduct&lt;/cite&gt; 类属性 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936878-introductoryprice"&gt;introductoryPrice&lt;/a&gt; 和 &lt;a class="reference external" href="https://developer.apple.com/documentation/storekit/skproduct/2936884-subscriptionperiod"&gt;subscriptionPeriod&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;iOS 11.2 Beta 相关的 Bugs 修复和已知问题列表&lt;/p&gt;
@@ -16,7 +28,7 @@ macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS Hi
 &lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_17_2017/iOS_11.2_beta_4_Release_Notes.pdf"&gt;iOS 11.2 beta 4 Release Notes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://download.developer.apple.com/Documentation/Beta_Release_Notes_Nov_28_2017/iOS_11.2_beta_5_Release_Notes.pdf"&gt;iOS 11.2 beta 5 Release Notes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 28 Nov 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-28:/ios-11-2-beta-update.html</guid><category>apple</category></item><item><title>Docker on Raspberry Pi 3</title><link>/docker-on-raspberry-pi-3.html</link><description>&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 28 Nov 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-28:/ios-11-2-beta-update.html</guid><category>apple</category></item><item><title>Docker on Raspberry Pi 3</title><link>https://magicalboy.com/docker-on-raspberry-pi-3.html</link><description>&lt;img alt="Docker icon via wikipedia" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" /&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;本文环境&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -42,7 +54,7 @@ Client:
  API version:  &lt;span class="m"&gt;1&lt;/span&gt;.34
  Go version:   go1.8.3
  Git commit:   1caf76c
- Built …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 24 Nov 2017 14:25:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-24:/docker-on-raspberry-pi-3.html</guid><category>Linux</category><category>Docker</category></item><item><title>Android Wear</title><link>/android_wear.html</link><description>&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
+ Built …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 24 Nov 2017 14:25:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-24:/docker-on-raspberry-pi-3.html</guid><category>Linux</category><category>Docker</category></item><item><title>Android Wear</title><link>https://magicalboy.com/android_wear.html</link><description>&lt;img alt="Android wear for watch" src="images/Android-Wear.jpg" /&gt;
 &lt;p&gt;可穿戴智能设备终于要火起来了，大多数拥有者认为自己是科技潮人。可穿戴智能设备充满了潜在市场，目前主要有智能手表，眼镜和可穿戴健身设备。可穿戴设备以后可以发展到鞋子，手套甚至笔等。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Android Wear&lt;/h2&gt;
@@ -52,11 +64,11 @@ Client:
 &lt;li&gt;Sign Up for the Developer Preview：&lt;a class="reference external" href="https://developer.android.com/wear/preview/signup.html"&gt;https://developer.android.com/wear/preview/signup.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img alt="Sign Up for the Developer Preview" src="images/sign_up_google_developer_preview.png" /&gt;
-&lt;p&gt;在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/android_wear.html</guid><category>Wear</category><category>Android</category></item><item><title>Bluetooth</title><link>/bluetooth.html</link><description>&lt;div class="section" id="ios"&gt;
+&lt;p&gt;在等待申请请求通过同时，配置项目环境，请留意您申请的 Gmail …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/android_wear.html</guid><category>Wear</category><category>Android</category></item><item><title>Bluetooth</title><link>https://magicalboy.com/bluetooth.html</link><description>&lt;div class="section" id="ios"&gt;
 &lt;h2&gt;iOS&lt;/h2&gt;
 &lt;p&gt;Bluetooth access on the ios is very limited. As a matter of fact you can only access it through the GameKit.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/bluetooth.html</guid><category>bluetooth</category></item><item><title>Brew</title><link>/brew.html</link><description>&lt;div class="section" id="homebrew"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/bluetooth.html</guid><category>bluetooth</category></item><item><title>Brew</title><link>https://magicalboy.com/brew.html</link><description>&lt;div class="section" id="homebrew"&gt;
 &lt;h2&gt;Homebrew&lt;/h2&gt;
 &lt;p&gt;OS X 或缺的软件包管理器，使用 Ruby 语言实现。官网：&lt;a class="reference external" href="http://brew.sh/index_zh-cn.html"&gt;http://brew.sh/index_zh-cn.html&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -66,13 +78,13 @@ Client:
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ruby -e &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.github.com/mxcl/homebrew/go/install&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
 &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; This script will install:
 /usr/local/bin/brew
-/usr …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/brew.html</guid></item><item><title>Cocoa Auto Layout</title><link>/cocoa-auto-layout.html</link><description>&lt;p&gt;Auto Layout 是 iOS 6.0 和 Xcode 4.5 的新特性。&lt;/p&gt;
+/usr …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/brew.html</guid></item><item><title>Cocoa Auto Layout</title><link>https://magicalboy.com/cocoa-auto-layout.html</link><description>&lt;p&gt;Auto Layout 是 iOS 6.0 和 Xcode 4.5 的新特性。&lt;/p&gt;
 &lt;p&gt;使用 Cocoa Auto Layout 系统为用户界面元素定义布局约束，其中约束（Constraints）表示用户界面控件之间的关系，比如 “这些视图从头至尾排列”。&lt;/p&gt;
 &lt;p&gt;Cocoa Auto Layout 让用户来定义界面元素的布局规则。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;视图之间的约束表示&lt;/h2&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/cocoa-auto-layout.html</guid><category>cocoa</category><category>iOS</category><category>auto layout</category></item><item><title>C++ 学习笔记</title><link>/cpp.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/cocoa-auto-layout.html</guid><category>cocoa</category><category>iOS</category><category>auto layout</category></item><item><title>C++ 学习笔记</title><link>https://magicalboy.com/cpp.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id13"&gt;概述&lt;/a&gt;&lt;/li&gt;
@@ -115,7 +127,7 @@ Client:
 &lt;h3&gt;&lt;a class="toc-backref" href="#id16"&gt;编译预处理指令&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;编译器对 source code 编译之前做的事。用 &amp;quot;#&amp;quot; 开头的命令行来表示。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;filename&amp;gt; // 尖括号表示包含的是 C++ 标准库的头文件&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
-&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;quot;book …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/cpp.html</guid><category>C++</category></item><item><title>Epub 电子书</title><link>/epub.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;quot;book …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/cpp.html</guid><category>C++</category></item><item><title>Epub 电子书</title><link>https://magicalboy.com/epub.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;ePub 中文乱码处理&lt;/h2&gt;
 &lt;p&gt;修改字体集：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;font-face&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -126,7 +138,7 @@ Client:
     &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;ttf&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
     &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///../../&lt;/span&gt;&lt;span class="nt"&gt;media&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;mmcblk0p1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
     &lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;res&lt;/span&gt;&lt;span class="o"&gt;:///&lt;/span&gt;&lt;span class="nt"&gt;DK_System&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;font&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;zw&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;ttf&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
-    &lt;span class="nt"&gt;url …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/epub.html</guid><category>epub</category><category>ebook</category></item><item><title>在 OS X 上给 Android 刷机</title><link>/flash-android-on-mac.html</link><description>&lt;p&gt;Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。&lt;/p&gt;
+    &lt;span class="nt"&gt;url …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/epub.html</guid><category>epub</category><category>ebook</category></item><item><title>在 OS X 上给 Android 刷机</title><link>https://magicalboy.com/flash-android-on-mac.html</link><description>&lt;p&gt;Google 在其 I/O 大会上发布了最新的 Android M Preview，看得非常激动，尤其是原生的权限管理那块，于是拿起手上的 Nexus 6 动作体验一番。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;下载&lt;/h2&gt;
 &lt;p&gt;可以在 &lt;a class="reference external" href="https://developer.android.com/index.html"&gt;Android 开发者&lt;/a&gt; 下载，如果看不到入口，请检查语言并选择英语。或者直接进入 &lt;a class="reference external" href="https://developer.android.com/preview/download.html"&gt;下载页面&lt;/a&gt;。&lt;/p&gt;
@@ -137,7 +149,7 @@ Client:
 &lt;p&gt;解压之后，配置好 PATH，并按照 &lt;a class="reference external" href="https://developers.google.com/android/nexus/images#instructions"&gt;官网的安装方法&lt;/a&gt;，执行 flash-all 时出现了如下错误：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; ./flash-all.sh
 ERROR: could not get pipe properties
-target reported max download size of &lt;span class="m"&gt;536870912 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/flash-android-on-mac.html</guid><category>Android</category></item><item><title>WHR-G300N V2 刷机</title><link>/flash-openwrt-from-tftp.html</link><description>&lt;div class="section" id="openwrt"&gt;
+target reported max download size of &lt;span class="m"&gt;536870912 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/flash-android-on-mac.html</guid><category>Android</category></item><item><title>WHR-G300N V2 刷机</title><link>https://magicalboy.com/flash-openwrt-from-tftp.html</link><description>&lt;div class="section" id="openwrt"&gt;
 &lt;h2&gt;OpenWrt 介绍&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt"&gt;OpenWrt&lt;/a&gt;  是用于嵌入式设备的一个 Linux 发行版本。&lt;/blockquote&gt;
@@ -150,7 +162,7 @@ target reported max download size of &lt;span class="m"&gt;536870912 …&lt;/spa
 &lt;li&gt;产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。&lt;/li&gt;
 &lt;li&gt;购买链接：&lt;a class="reference external" href="http://www.amazon.cn/BUFFALO"&gt;http://www.amazon.cn/BUFFALO&lt;/a&gt;-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC&lt;/li&gt;
 &lt;li&gt;官网地址：&lt;a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router"&gt;http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OpenWrt Wiki …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/flash-openwrt-from-tftp.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>Fragment</title><link>/fragment.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+&lt;li&gt;OpenWrt Wiki …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/flash-openwrt-from-tftp.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>Fragment</title><link>https://magicalboy.com/fragment.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;Fragment 定义&lt;/a&gt;&lt;/li&gt;
@@ -168,8 +180,8 @@ target reported max download size of &lt;span class="m"&gt;536870912 …&lt;/spa
 &lt;p&gt;&lt;a class="reference external" href="http://blog.csdn.net/guolin_blog/article/details/8881711"&gt;http://blog.csdn.net/guolin_blog/article/details/8881711&lt;/a&gt;
 &lt;a class="reference external" href="https://developer.android.com/guide/components/fragments.html"&gt;https://developer.android.com/guide/components/fragments.html&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/fragment.html</guid><category>Android</category></item><item><title>Geeks vs Nerds</title><link>/geeks-vs-nerds.html</link><description>&lt;a class="reference external image-reference" href="http://www.mastersinit.org/geeks-vs-nerds/"&gt;&lt;img alt="Geeks vs Nerds" src="http://www.mastersinit.org/geeks-vs-nerds/geek-nerd.jpg" /&gt;&lt;/a&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/geeks-vs-nerds.html</guid><category>geek</category><category>nerd</category></item><item><title>Gentoo 2015</title><link>/gentoo.html</link><description>&lt;div class="section" id="gentoo"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/fragment.html</guid><category>Android</category></item><item><title>Geeks vs Nerds</title><link>https://magicalboy.com/geeks-vs-nerds.html</link><description>&lt;a class="reference external image-reference" href="http://www.mastersinit.org/geeks-vs-nerds/"&gt;&lt;img alt="Geeks vs Nerds" src="http://www.mastersinit.org/geeks-vs-nerds/geek-nerd.jpg" /&gt;&lt;/a&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/geeks-vs-nerds.html</guid><category>geek</category><category>nerd</category></item><item><title>Gentoo 2015</title><link>https://magicalboy.com/gentoo.html</link><description>&lt;div class="section" id="gentoo"&gt;
 &lt;h2&gt;为什么选择 Gentoo&lt;/h2&gt;
 &lt;p&gt;完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。&lt;/p&gt;
 &lt;p&gt;同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。&lt;/p&gt;
@@ -179,14 +191,14 @@ target reported max download size of &lt;span class="m"&gt;536870912 …&lt;/spa
 &lt;h2&gt;安装过程&lt;/h2&gt;
 &lt;p&gt;整个安装过程主要参考 &lt;a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64"&gt;Handbook 手册&lt;/a&gt;，利用业余时间两个晚上搞定。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# uname -a&lt;/span&gt;
-Linux don &lt;span class="m"&gt;4&lt;/span&gt;.0.5-gentoo &lt;span class="c1"&gt;#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/gentoo.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Gentoo 本地化配置</title><link>/gentoo-locale.html</link><description>&lt;p&gt;未配置之前会有类似这样的提示：&lt;em&gt;man: can't set the locale; make sure $LC_&lt;/em&gt; and $LANG are correct*。&lt;/p&gt;
+Linux don &lt;span class="m"&gt;4&lt;/span&gt;.0.5-gentoo &lt;span class="c1"&gt;#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/gentoo.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Gentoo 本地化配置</title><link>https://magicalboy.com/gentoo-locale.html</link><description>&lt;p&gt;未配置之前会有类似这样的提示：&lt;em&gt;man: can't set the locale; make sure $LC_&lt;/em&gt; and $LANG are correct*。&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;查看当前本地化配置：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# locale -a&lt;/span&gt;
 locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_CTYPE to default locale: No such file or directory
 locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_MESSAGES to default locale: No such file or directory
-locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_COLLATE to default locale: No such file …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/gentoo-locale.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Gentoo 分区</title><link>/gentoo-partition.html</link><description>&lt;p&gt;由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。&lt;/p&gt;
+locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_COLLATE to default locale: No such file …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/gentoo-locale.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Gentoo 分区</title><link>https://magicalboy.com/gentoo-partition.html</link><description>&lt;p&gt;由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。&lt;/p&gt;
 &lt;p&gt;使用环境：&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;系统：Gentoo 3.4.103&lt;/li&gt;
@@ -200,7 +212,7 @@ locale: Cannot &lt;span class="nb"&gt;set&lt;/span&gt; LC_COLLATE to default loc
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/root       &lt;span class="m"&gt;3&lt;/span&gt;.4G  &lt;span class="m"&gt;1&lt;/span&gt;.7G  &lt;span class="m"&gt;1&lt;/span&gt;.6G  &lt;span class="m"&gt;52&lt;/span&gt;% /
 devtmpfs        438M     &lt;span class="m"&gt;0&lt;/span&gt;  438M   &lt;span class="m"&gt;0&lt;/span&gt;% /dev
-tmpfs            88M  244K   88M   &lt;span class="m"&gt;1 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/gentoo-partition.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Gentoo Portage</title><link>/gentoo-portage.html</link><description>&lt;div class="section" id="id1"&gt;
+tmpfs            88M  244K   88M   &lt;span class="m"&gt;1 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/gentoo-partition.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Gentoo Portage</title><link>https://magicalboy.com/gentoo-portage.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;修改更新源地址&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;em&gt;2.2.16&lt;/em&gt; 版本之前的配置：&lt;/li&gt;
@@ -214,12 +226,12 @@ tmpfs            88M  244K   88M   &lt;span class="m"&gt;1 …&lt;/span&gt;&lt;/
     This setting is Deprecated and no longer used.  Please ensure your &lt;span class="s1"&gt;&amp;#39;sync-type&amp;#39;&lt;/span&gt; and &lt;span class="s1"&gt;&amp;#39;sync-uri&amp;#39;&lt;/span&gt; are &lt;span class="nb"&gt;set&lt;/span&gt; correctly in /etc/portage/repos.conf/gentoo.conf
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ol class="arabic simple" start="3"&gt;
-&lt;li&gt;新版本配置，编辑 &lt;em&gt;/etc/portage/make.conf&lt;/em&gt; 删除原来的 …&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/gentoo-portage.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Samba 配置</title><link>/gentoo-samba.html</link><description>&lt;p&gt;Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。&lt;/p&gt;
+&lt;li&gt;新版本配置，编辑 &lt;em&gt;/etc/portage/make.conf&lt;/em&gt; 删除原来的 …&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/gentoo-portage.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Samba 配置</title><link>https://magicalboy.com/gentoo-samba.html</link><description>&lt;p&gt;Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。&lt;/p&gt;
 &lt;p&gt;其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。&lt;/p&gt;
 &lt;p&gt;Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。&lt;/p&gt;
 &lt;p&gt;Samba 现在最新版本是 4.x，但在我的树莓派上面 &lt;em&gt;emerge --ask net-fs/samba&lt;/em&gt; 出来的还是 3.6.2。&lt;/p&gt;
-&lt;p&gt;官网上的 &lt;a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba"&gt;net-fs/samba&lt;/a&gt; package 4.x 以上的版本不支持 arm 或被 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/gentoo-samba.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Git使用</title><link>/git.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://openshift.redhat.com/community/kb/kb-e1035-git-push-throws-error-rpc-failed-result22-http-code-411"&gt;error: RPC failed; result=22, HTTP code = 411&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/git.html</guid></item><item><title>GTD学习</title><link>/gtd.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;p&gt;官网上的 &lt;a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba"&gt;net-fs/samba&lt;/a&gt; package 4.x 以上的版本不支持 arm 或被 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/gentoo-samba.html</guid><category>Linux</category><category>Gentoo</category></item><item><title>Git使用</title><link>https://magicalboy.com/git.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://openshift.redhat.com/community/kb/kb-e1035-git-push-throws-error-rpc-failed-result22-http-code-411"&gt;error: RPC failed; result=22, HTTP code = 411&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/git.html</guid></item><item><title>GTD学习</title><link>https://magicalboy.com/gtd.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;GTD 流程图&lt;/h2&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
@@ -229,13 +241,13 @@ tmpfs            88M  244K   88M   &lt;span class="m"&gt;1 …&lt;/span&gt;&lt;/
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/gtd.html</guid><category>GTD</category></item><item><title>iOS 设计模式: Model View Controller</title><link>/ios-design-patterns-model-view-controller.html</link><description>&lt;p&gt;MVC 设计模式的主要目的是可重用性，能够在不同的视图中使用重用同一个模型。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/gtd.html</guid><category>GTD</category></item><item><title>iOS 设计模式: Model View Controller</title><link>https://magicalboy.com/ios-design-patterns-model-view-controller.html</link><description>&lt;p&gt;MVC 设计模式的主要目的是可重用性，能够在不同的视图中使用重用同一个模型。&lt;/p&gt;
 &lt;img alt="Model View Controller (MVC) Design Pattern" src="static/images/mvc.jpg" /&gt;
 &lt;div class="section" id="model"&gt;
 &lt;h2&gt;模型 Model&lt;/h2&gt;
 &lt;p&gt;模型包含了数据。例如，一个 Book 对象包含有关书的信息：标题和作者。此外，Book 对象能够被其它对象关联，建立一对一或一对多的关系。例如 Category 对象可包含多个 Book 对象。模型中的数据可以来源于本地数据库或文件，也可以从网络请求回来。&lt;/p&gt;
 &lt;p&gt;模型不应该直接和视图打交道，应该在需要的时候访问通过控制器来访问。&lt;/p&gt;
-&lt;p&gt;在 iOS 中，模型通常是 NSObject 或 NSManagedObject的子类。任何模型对象包括一些实例变量和对应的 getter/setter 方法。大多数面向对象编程语言都有提供封装的机制。在 iOS 中使用 &amp;#64;property 封装，和可选的 &amp;#64;synthesize 自动生成 getter/setter 方法。以 Book 模型为例 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/ios-design-patterns-model-view-controller.html</guid><category>iOS</category><category>design pattern</category></item><item><title>iOS Frameworks</title><link>/ios-frameworks.html</link><description>&lt;div class="section" id="ios"&gt;
+&lt;p&gt;在 iOS 中，模型通常是 NSObject 或 NSManagedObject的子类。任何模型对象包括一些实例变量和对应的 getter/setter 方法。大多数面向对象编程语言都有提供封装的机制。在 iOS 中使用 &amp;#64;property 封装，和可选的 &amp;#64;synthesize 自动生成 getter/setter 方法。以 Book 模型为例 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/ios-design-patterns-model-view-controller.html</guid><category>iOS</category><category>design pattern</category></item><item><title>iOS Frameworks</title><link>https://magicalboy.com/ios-frameworks.html</link><description>&lt;div class="section" id="ios"&gt;
 &lt;h2&gt;iOS 的架构是分层的&lt;/h2&gt;
 &lt;img alt="Layers of iOS" class="align-left" src="http://developer.apple.com/library/ios/documentation/miscellaneous/conceptual/iphoneostechoverview/Art/SystemLayers_2x.png" style="width: 366px; height: 202px;" /&gt;
 &lt;div class="line-block"&gt;
@@ -246,7 +258,7 @@ tmpfs            88M  244K   88M   &lt;span class="m"&gt;1 …&lt;/span&gt;&lt;/
 &lt;h2&gt;Frameworks&lt;/h2&gt;
 &lt;p&gt;iOS 提供了一套框架，将 iOS 应用程序的技术，服务和功能结合了起来。&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/ios-frameworks.html</guid><category>iOS</category></item><item><title>iOS 国际化/本地化</title><link>/ios-i18n.html</link><description>&lt;div class="section" id="id1"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/ios-frameworks.html</guid><category>iOS</category></item><item><title>iOS 国际化/本地化</title><link>https://magicalboy.com/ios-i18n.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;获取首选语言&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// 获取首选语言&lt;/span&gt;
 &lt;span class="n"&gt;NSLog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;@&amp;quot;preferredLanguages:%@&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;NSLocale&lt;/span&gt; &lt;span class="n"&gt;preferredLanguages&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
@@ -275,8 +287,8 @@ ja,
 &lt;h2&gt;获取当前地区&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="bp"&gt;NSLocale&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;locale&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;NSLocale&lt;/span&gt; &lt;span class="n"&gt;currentLocale&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
 &lt;span class="bp"&gt;NSString&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;localeName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;locale&lt;/span&gt; &lt;span class="nl"&gt;displayNameForKey&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;NSLocaleIdentifier&lt;/span&gt;
-                                         &lt;span class="nl"&gt;value&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="n"&gt;locale&lt;/span&gt; &lt;span class="n"&gt;localeIdentifier …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/ios-i18n.html</guid><category>iOS</category><category>i18n</category></item><item><title>iOS 支持矩阵</title><link>/ios-support-matrix.html</link><description>&lt;img alt="iOS Support Matrix" src="images/ios_support_matrix.png" /&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/ios-support-matrix.html</guid><category>iOS</category><category>support</category></item><item><title>iOS 多线程学习</title><link>/ios-thread.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+                                         &lt;span class="nl"&gt;value&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="n"&gt;locale&lt;/span&gt; &lt;span class="n"&gt;localeIdentifier …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/ios-i18n.html</guid><category>iOS</category><category>i18n</category></item><item><title>iOS 支持矩阵</title><link>https://magicalboy.com/ios-support-matrix.html</link><description>&lt;img alt="iOS Support Matrix" src="images/ios_support_matrix.png" /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/ios-support-matrix.html</guid><category>iOS</category><category>support</category></item><item><title>iOS 多线程学习</title><link>https://magicalboy.com/ios-thread.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id9"&gt;基础知识&lt;/a&gt;&lt;/li&gt;
@@ -315,7 +327,7 @@ ja,
 &lt;p&gt;注意：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在iPhone和Mac中，线程功能是由POSIX Threads API（或者pthreads）提供的，它是操作系统的一部分。这是相当底层的东西，你会发现很容易犯错；也许线程最坏的地方就是那些极难被发现的错误吧！&lt;/p&gt;
-&lt;p&gt;Foundation 框架包含了一个叫做NSThread的类 …&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/ios-thread.html</guid><category>iOS</category><category>thread</category></item><item><title>解决 OpenWrt Bad Address 问题</title><link>/openwrt-bad-address.html</link><description>&lt;p&gt;自升级 CC 后，一切都正常。&lt;/p&gt;
+&lt;p&gt;Foundation 框架包含了一个叫做NSThread的类 …&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/ios-thread.html</guid><category>iOS</category><category>thread</category></item><item><title>解决 OpenWrt Bad Address 问题</title><link>https://magicalboy.com/openwrt-bad-address.html</link><description>&lt;p&gt;自升级 CC 后，一切都正常。&lt;/p&gt;
 &lt;p&gt;突然有一天发现 DDNS 出了问题，LuCI 的服务界面都刷不完整。&lt;/p&gt;
 &lt;p&gt;opkg update 失败。&lt;/p&gt;
 &lt;p&gt;ping 所有网址都是 bad address，ping ip 地址正常。&lt;/p&gt;
@@ -323,7 +335,7 @@ ja,
 &lt;p&gt;检查 DNS 配置 &lt;em&gt;vi /etc/config/dhcp&lt;/em&gt; 正常，网络配置 &lt;em&gt;/etc/config/network&lt;/em&gt; 正常。&lt;/p&gt;
 &lt;p&gt;找了Ｎ久才发现 &lt;em&gt;/etc/resolv.conf&lt;/em&gt; 文件被修改，解决方法：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 删除 /etc/resolv.conf&lt;/span&gt;
-vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/openwrt-bad-address.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>OpenWrt DDNS 配置</title><link>/openwrt-ddns.html</link><description>&lt;div class="section" id="id1"&gt;
+vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/openwrt-bad-address.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>OpenWrt DDNS 配置</title><link>https://magicalboy.com/openwrt-ddns.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;环境&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;OpenWrt CC (LuCI)&lt;/li&gt;
@@ -338,14 +350,14 @@ vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:d
 &lt;/div&gt;
 &lt;div class="section" id="ddns"&gt;
 &lt;h2&gt;二、配置 DDNS&lt;/h2&gt;
-&lt;p&gt;DDNS 服务提供商选择列表中没有花生壳服务 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/openwrt-ddns.html</guid><category>Linux</category><category>OpenWrt</category><category>ddns</category></item><item><title>OpenWrt Luci</title><link>/openwrt-luci.html</link><description>&lt;ol class="arabic simple"&gt;
+&lt;p&gt;DDNS 服务提供商选择列表中没有花生壳服务 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/openwrt-ddns.html</guid><category>Linux</category><category>OpenWrt</category><category>ddns</category></item><item><title>OpenWrt Luci</title><link>https://magicalboy.com/openwrt-luci.html</link><description>&lt;ol class="arabic simple"&gt;
 &lt;li&gt;路由 Luci Web 界面访问不了问题&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
 解决方法：重启 Luci&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/uhttpd restart
 &lt;/pre&gt;&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/openwrt-luci.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>OpenWrt WDS 连接设置</title><link>/openwrt-wds.html</link><description>&lt;div class="section" id="id1"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/openwrt-luci.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>OpenWrt WDS 连接设置</title><link>https://magicalboy.com/openwrt-wds.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
 &lt;blockquote&gt;
 算了不想写了&lt;/blockquote&gt;
@@ -361,7 +373,7 @@ vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:d
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="tftp"&gt;
-&lt;h2&gt;砖头复活记：tftp …&lt;/h2&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/openwrt-wds.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>Pelican</title><link>/pelican.html</link><description>&lt;div class="line-block"&gt;
+&lt;h2&gt;砖头复活记：tftp …&lt;/h2&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/openwrt-wds.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>Pelican</title><link>https://magicalboy.com/pelican.html</link><description>&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;img alt="pelican logo" src="http://docs.getpelican.com/en/3.2/_static/pelican.png" /&gt;
@@ -381,7 +393,7 @@ vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:d
 &lt;/ol&gt;
 &lt;p&gt;更多详细流程见 &lt;a class="reference external" href="http://docs.getpelican.com/en/3.2/getting_started.html"&gt;Getting started — Pelican 3 documentation&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/pelican.html</guid></item><item><title>Photoshop 学习笔记</title><link>/photoshop.html</link><description>&lt;p&gt;Photoshop 是设计作图的必备工具，如果码农也会使用Photoshop来设计UI的话。。。唉，无论结果怎么样，求人不如求己。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/pelican.html</guid></item><item><title>Photoshop 学习笔记</title><link>https://magicalboy.com/photoshop.html</link><description>&lt;p&gt;Photoshop 是设计作图的必备工具，如果码农也会使用Photoshop来设计UI的话。。。唉，无论结果怎么样，求人不如求己。&lt;/p&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -411,8 +423,8 @@ vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:d
 &lt;li&gt;背景（Background）图层，在堆栈的最下方，完全由像素填充而成。&lt;/li&gt;
 &lt;li&gt;一般图层，也由像素组成。不同的是可以包含完全透明或半透明的区域，可以透过透明区域看到下层图层。&lt;/li&gt;
 &lt;li&gt;调整图层（Adjustment Layer），不包含任何像素，它所包含的指令可以调整其下方图层的颜色与色调。&lt;/li&gt;
-&lt;li&gt;文本图层 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/photoshop.html</guid></item><item><title>程序语言历史</title><link>/programming-history.html</link><description>&lt;a class="reference external image-reference" href="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/history.html"&gt;&lt;img alt="programming history" src="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/images/programminghistory.jpg" style="width: 1024px;" /&gt;&lt;/a&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/programming-history.html</guid><category>programming</category><category>programming language</category><category>history</category></item><item><title>反编译 APK</title><link>/reverse-engineering-apk.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+&lt;li&gt;文本图层 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/photoshop.html</guid></item><item><title>程序语言历史</title><link>https://magicalboy.com/programming-history.html</link><description>&lt;a class="reference external image-reference" href="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/history.html"&gt;&lt;img alt="programming history" src="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/images/programminghistory.jpg" style="width: 1024px;" /&gt;&lt;/a&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/programming-history.html</guid><category>programming</category><category>programming language</category><category>history</category></item><item><title>反编译 APK</title><link>https://magicalboy.com/reverse-engineering-apk.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#apktool" id="id3"&gt;apktool&lt;/a&gt;&lt;/li&gt;
@@ -426,14 +438,14 @@ vi /etc/resolv.conf …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:d
 Copyright &lt;span class="m"&gt;2010&lt;/span&gt; Ryszard Wi?niewski &amp;lt;brut.alll@gmail.com&amp;gt;
 with smali v1.4.1, and baksmali v1.4.1
 Updated by @iBotPeaches &amp;lt;connor.tumbleson@gmail.com&amp;gt;
-Apache License &lt;span class="m"&gt;2&lt;/span&gt;.0 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/reverse-engineering-apk.html</guid><category>Android</category></item><item><title>码农必备</title><link>/skill-framework.html</link><description>&lt;div class="line-block"&gt;
+Apache License &lt;span class="m"&gt;2&lt;/span&gt;.0 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/reverse-engineering-apk.html</guid><category>Android</category></item><item><title>码农必备</title><link>https://magicalboy.com/skill-framework.html</link><description>&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;img alt="码农的求生技能" src="images/skills.png" /&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/skill-framework.html</guid></item><item><title>SVN 使用</title><link>/svn.html</link><description>&lt;div class="section" id="id1"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/skill-framework.html</guid></item><item><title>SVN 使用</title><link>https://magicalboy.com/svn.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;创建分支&lt;/h2&gt;
 &lt;p&gt;建立分支非常的简单—使用svn copy命令给你的工程做个拷贝。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ svn copy http://svn.example.com/repos/calc/trunk &lt;span class="se"&gt;\&lt;/span&gt;
@@ -448,14 +460,14 @@ Committed revision &lt;span class="m"&gt;341&lt;/span&gt;.
 &lt;p&gt;现在你已经在项目里建立分支了，你可以取出一个新的工作拷贝来开始使用：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ svn checkout http://svn.example.com/repos/calc/branches/my-calc-branch
 A  my-calc-branch/Makefile
-A  my-calc-branch …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/svn.html</guid></item><item><title>纯文本编辑器</title><link>/text_editor.html</link><description>&lt;div class="section" id="retext"&gt;
+A  my-calc-branch …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/svn.html</guid></item><item><title>纯文本编辑器</title><link>https://magicalboy.com/text_editor.html</link><description>&lt;div class="section" id="retext"&gt;
 &lt;h2&gt;ReText&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://sourceforge.net/projects/retext/"&gt;ReText&lt;/a&gt; is a simple editor that reads your text with MarkDown or HTML markup and saves it as plain text, HTML or PDF.&lt;/p&gt;
 &lt;p&gt;It is written in Python using Qt libraries.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;It's a cross platform program.&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="section" id="mac-os-x-yosemite"&gt;
 &lt;h3&gt;Mac OS X Yosemite 上安装&lt;/h3&gt;
-&lt;p&gt;使用 brew 安装：&lt;a class="reference external" href="http://sourceforge.net/p/retext/wiki/Home/"&gt;http://sourceforge.net/p/retext …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/text_editor.html</guid></item><item><title>UIImage 使用</title><link>/uiimage.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html"&gt;UIImage Class Reference&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用 brew 安装：&lt;a class="reference external" href="http://sourceforge.net/p/retext/wiki/Home/"&gt;http://sourceforge.net/p/retext …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/text_editor.html</guid></item><item><title>UIImage 使用</title><link>https://magicalboy.com/uiimage.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html"&gt;UIImage Class Reference&lt;/a&gt;&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
 &lt;colgroup&gt;
 &lt;col width="25%" /&gt;
@@ -485,7 +497,7 @@ A  my-calc-branch …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creat
 
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;originalImage&lt;/span&gt; &lt;span class="nl"&gt;respondsToSelector&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;@selector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;resizableImageWithCapInsets&lt;/span&gt;&lt;span class="p"&gt;:)])&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="c1"&gt;// iOS 5 and obove.&lt;/span&gt;
-    &lt;span class="n"&gt;newImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;originalImage&lt;/span&gt; &lt;span class="nl"&gt;resizableImageWithCapInsets&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;&lt;span class="bp"&gt;UIEdgeInsets&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/uiimage.html</guid><category>UIImage</category><category>iOS</category></item><item><title>单元测试</title><link>/unit_testing.html</link><description>&lt;div class="section" id="id2"&gt;
+    &lt;span class="n"&gt;newImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;originalImage&lt;/span&gt; &lt;span class="nl"&gt;resizableImageWithCapInsets&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;&lt;span class="bp"&gt;UIEdgeInsets&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/uiimage.html</guid><category>UIImage</category><category>iOS</category></item><item><title>单元测试</title><link>https://magicalboy.com/unit_testing.html</link><description>&lt;div class="section" id="id2"&gt;
 &lt;h2&gt;单元测试是什么&lt;/h2&gt;
 &lt;p&gt;即分模块测试，针对程序模块进行正确性检验的测试工作。单元测试可以在软件开发过程的早期及时发现问题，同时也利于未来对代码的重构。&lt;/p&gt;
 &lt;/div&gt;
@@ -493,7 +505,7 @@ A  my-calc-branch …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creat
 &lt;h2&gt;iOS 中的单元测试&lt;/h2&gt;
 &lt;p&gt;OCUnit，被官方集成进XCode 4.x版本中；GHUnit，被推荐最多的测试框架，带GUI界面。&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/unit_testing.html</guid></item><item><title>Xcode</title><link>/xcode.html</link><description>&lt;p&gt;Xcode 目前最新版本 &lt;a class="reference external" href="http://magicalboy.com/xcode-5-0/"&gt;Xcode 5.0&lt;/a&gt; ，支持 iPhone 5s, iOS 7 开发。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/unit_testing.html</guid></item><item><title>Xcode</title><link>https://magicalboy.com/xcode.html</link><description>&lt;p&gt;Xcode 目前最新版本 &lt;a class="reference external" href="http://magicalboy.com/xcode-5-0/"&gt;Xcode 5.0&lt;/a&gt; ，支持 iPhone 5s, iOS 7 开发。&lt;/p&gt;
 &lt;div class="section" id="what-s-new"&gt;
 &lt;h2&gt;What's New&lt;/h2&gt;
 &lt;p&gt;各个版本的 Xcode 新增功能说明。&lt;/p&gt;
@@ -502,13 +514,13 @@ A  my-calc-branch …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creat
 &lt;p&gt;Help you design an app that looks gorgeous on iOS 7 or OS X Mavericks.&lt;/p&gt;
 &lt;p&gt;WWDC地址：&lt;a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400"&gt;What’s New in Xcode 5&lt;/a&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/xcode.html</guid><category>iOS</category><category>Xcode</category></item><item><title>Xcode 7 清除多余的 Woking copies</title><link>/xcode-remove-working-copies.html</link><description>&lt;p&gt;Xcode 版本：Version 7.1 (7B91b)&lt;/p&gt;
+&lt;li&gt;素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/xcode.html</guid><category>iOS</category><category>Xcode</category></item><item><title>Xcode 7 清除多余的 Woking copies</title><link>https://magicalboy.com/xcode-remove-working-copies.html</link><description>&lt;p&gt;Xcode 版本：Version 7.1 (7B91b)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;
 由于项目从 SVN 切到 Git，所以在项目的 Source Control 里面的 Woking copies 里面有旧项目残留的 SVN。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;
 删除 &lt;em&gt;ProjectName.xcworkspace &amp;gt; xcshareddata &amp;gt; ProjectName.xcscmblueprint&lt;/em&gt;，重启 Xcode。&lt;/p&gt;
 &lt;p&gt;参考链接：&lt;a class="reference external" href="http://stackoverflow.com/a/27535601"&gt;http://stackoverflow.com/a/27535601&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:None,2017-11-23:/xcode-remove-working-copies.html</guid><category>iOS</category><category>Xcode</category></item><item><title>wepy 框架</title><link>/wepy.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://wepyjs.github.io/wepy"&gt;小程序组件化开发框架&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Nov 2017 15:54:43 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-11-23:/xcode-remove-working-copies.html</guid><category>iOS</category><category>Xcode</category></item><item><title>wepy 框架</title><link>https://magicalboy.com/wepy.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://wepyjs.github.io/wepy"&gt;小程序组件化开发框架&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;WePY项目的创建与使用&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
@@ -532,7 +544,7 @@ $ npm install wepy-cli -g
 /usr/local/bin/wepy -&amp;gt; /usr/local/lib/node_modules/wepy-cli/bin/wepy.js
 
 &amp;gt; fsevents&amp;#64;1.1.2 install /usr/local/lib/node_modules/wepy-cli/node_modules/fsevents
-&amp;gt; node install …&lt;/pre&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 26 Oct 2017 22:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-10-26:/wepy.html</guid><category>js</category></item><item><title>Java 匿名类</title><link>/java_anonymous_class.html</link><description>&lt;p&gt;最近在复习 Java，利用 Learn Java App 有一定基础复习一遍还是很快的。&lt;/p&gt;
+&amp;gt; node install …&lt;/pre&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 26 Oct 2017 22:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-10-26:/wepy.html</guid><category>js</category></item><item><title>Java 匿名类</title><link>https://magicalboy.com/java_anonymous_class.html</link><description>&lt;p&gt;最近在复习 Java，利用 Learn Java App 有一定基础复习一遍还是很快的。&lt;/p&gt;
 &lt;img alt="java" src="https://lh3.googleusercontent.com/GG1ijmZNLKV6wfyLBqgr0Y7Lnx2sPD3pInbzRt9HY5RJIFpxYPPfUDAT2JmnqztmfdjaSPMNsp41fA=w1440-h900-no" /&gt;
 &lt;p&gt;在复习过程中，觉得比较容易忘记的几点还是有必要做一下笔记的。比如匿名内部类。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
@@ -560,14 +572,14 @@ $ npm install wepy-cli -g
 
 &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Test&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 
-    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;test&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Bird …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 30 Jun 2017 19:39:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-30:/java_anonymous_class.html</guid><category>Java</category></item><item><title>iOS 11 Developer beta 2</title><link>/ios-11-beta-2-update.html</link><description>&lt;p&gt;iOS 11 更新至 beta 2。&lt;/p&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;test&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Bird …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 30 Jun 2017 19:39:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-06-30:/java_anonymous_class.html</guid><category>Java</category></item><item><title>iOS 11 Developer beta 2</title><link>https://magicalboy.com/ios-11-beta-2-update.html</link><description>&lt;p&gt;iOS 11 更新至 beta 2。&lt;/p&gt;
 &lt;p&gt;更新后版本号为：&lt;code&gt;11 (15A5304i)&lt;/code&gt;，详细的更新日志见官网：&lt;a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Jun_21_2017/iOS_11_beta_2_Release_Notes.pdf"&gt;iOS 11 beta 2 Release Notes&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;iOS 11 第一个 beta 版本问题还是很多的，而且部分 bug 还严重影响设备的正常使用。&lt;/p&gt;
 &lt;p&gt;关于 iOS 11 的新特性请见 &lt;a class="reference external" href="https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS_11_0.html#//apple_ref/doc/uid/TP40017637-SW1"&gt;What's New in iOS&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;本次更新主要亮点：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;32 位应用程序将不会运行在 iOS 11 的未来版本上。（26402174）&lt;/li&gt;
-&lt;li&gt;iOS 11 不再支持 armv7 或 armv7s（32位）。 如果 iOS 目标的 iOS 部署目标为 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 22 Jun 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-22:/ios-11-beta-2-update.html</guid><category>apple</category></item><item><title>Vultr 云主机</title><link>/vultr_host.html</link><description>&lt;img alt="" src="https://www.vultr.com/media/banner_3.png" /&gt;
+&lt;li&gt;iOS 11 不再支持 armv7 或 armv7s（32位）。 如果 iOS 目标的 iOS 部署目标为 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 22 Jun 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-06-22:/ios-11-beta-2-update.html</guid><category>apple</category></item><item><title>Vultr 云主机</title><link>https://magicalboy.com/vultr_host.html</link><description>&lt;img alt="" src="https://www.vultr.com/media/banner_3.png" /&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://www.vultr.com/?ref=7161763"&gt;DigitalOcean&lt;/a&gt; 云主机，价格最价 &lt;code&gt;2.5 USD&lt;/code&gt; 一个月。&lt;/p&gt;
 &lt;p&gt;购买请点上面连接。&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://www.vultr.com/faq/#downloadspeedtests"&gt;速度测试&lt;/a&gt;，日本 Tokyo ping 在 160 ms 左右。&lt;/p&gt;
@@ -579,7 +591,7 @@ $ npm install wepy-cli -g
 &lt;li&gt;操作系统可选比较多，而且比较新，比如有 Ubuntu 17.04, Windows 2012R2 等；&lt;/li&gt;
 &lt;li&gt;官方指导文档资料比较丰富，Support tickets 回复迅速，方便解决问题节省时间。&lt;/li&gt;
 &lt;/ul&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 20 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-20:/vultr_host.html</guid><category>misc</category></item><item><title>iOS 10.3 正式版发布</title><link>/ios-10-3-release.html</link><description>&lt;p&gt;今天苹果 iOS 10.3 正式版已经发布。版本号为：&lt;code&gt;10.3 (14E277)&lt;/code&gt;，对应的开发工具 Xcode 8.3 版本号为 8E162。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 20 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-06-20:/vultr_host.html</guid><category>misc</category></item><item><title>iOS 10.3 正式版发布</title><link>https://magicalboy.com/ios-10-3-release.html</link><description>&lt;p&gt;今天苹果 iOS 10.3 正式版已经发布。版本号为：&lt;code&gt;10.3 (14E277)&lt;/code&gt;，对应的开发工具 Xcode 8.3 版本号为 8E162。&lt;/p&gt;
 &lt;p&gt;详细的更新日志见官网：&lt;a class="reference external" href="https://support.apple.com/zh-cn/HT201222"&gt;https://support.apple.com/zh-cn/HT201222&lt;/a&gt;。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;iOS 10.3 推出了包括使用“查找我的 iPhone”定位 AirPods 在内的全新功能，并提供了使用 Siri 进行支付、叫车以及与车载设备配合使用的更多途径。&lt;/p&gt;
@@ -593,7 +605,7 @@ $ npm install wepy-cli -g
 &lt;li&gt;支持配合支付应用进行支付和检查账单状态&lt;/li&gt;
 &lt;li&gt;支持配合叫车应用预约车辆&lt;/li&gt;
 &lt;li&gt;支持配合车载应用检查油量及车锁状态，并可开灯和鸣喇叭&lt;/li&gt;
-&lt;li&gt;支持印度超级板球联赛和国际板球理事会的板球运动比分和统计数据 …&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 28 Mar 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-28:/ios-10-3-release.html</guid><category>apple</category></item><item><title>重置树莓派 Root 密码</title><link>/reset-raspberry-root-password.html</link><description>&lt;p&gt;自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。&lt;/p&gt;
+&lt;li&gt;支持印度超级板球联赛和国际板球理事会的板球运动比分和统计数据 …&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 28 Mar 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-03-28:/ios-10-3-release.html</guid><category>apple</category></item><item><title>重置树莓派 Root 密码</title><link>https://magicalboy.com/reset-raspberry-root-password.html</link><description>&lt;p&gt;自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。&lt;/p&gt;
 &lt;p&gt;如果还有模糊印象，可以通过 &lt;code&gt;passwd pi&lt;/code&gt; 进行尝试。需要注意的是 &lt;code&gt;pi&lt;/code&gt; 用户的初始密码是：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;raspberry
 &lt;/pre&gt;&lt;/div&gt;
@@ -605,7 +617,7 @@ $ npm install wepy-cli -g
 在 &lt;code&gt;boot&lt;/code&gt; 分区下找到此文件，修改之前的内容为：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dwc_otg.lpm_enable&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;serial0,115200 &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tty1 &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p7 &lt;span class="nv"&gt;rootfstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ext4 &lt;span class="nv"&gt;elevator&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;deadline fsck.repair&lt;span class="o"&gt;=&lt;/span&gt;yes rootwait …&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Mar 2017 10:25:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-23:/reset-raspberry-root-password.html</guid><category>Linux</category><category>raspberry</category></item><item><title>iOS 10.3 Beta 7</title><link>/ios-10-3-beta-7-update.html</link><description>&lt;p&gt;今天苹果前几天又发布了 iOS 10.3 Beta 7 更新，距离上个 Beta 版本才 3 天左右。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dwc_otg.lpm_enable&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;serial0,115200 &lt;span class="nv"&gt;console&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tty1 &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p7 &lt;span class="nv"&gt;rootfstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ext4 &lt;span class="nv"&gt;elevator&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;deadline fsck.repair&lt;span class="o"&gt;=&lt;/span&gt;yes rootwait …&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 23 Mar 2017 10:25:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-03-23:/reset-raspberry-root-password.html</guid><category>Linux</category><category>raspberry</category></item><item><title>iOS 10.3 Beta 7</title><link>https://magicalboy.com/ios-10-3-beta-7-update.html</link><description>&lt;p&gt;今天苹果前几天又发布了 iOS 10.3 Beta 7 更新，距离上个 Beta 版本才 3 天左右。&lt;/p&gt;
 &lt;p&gt;更新后版本号为：&lt;code&gt;10.3 (14E5277a)&lt;/code&gt;，详细的更新日志见官网：&lt;a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Mar_16_2017/iOS_10.3_beta_7_Release_Notes.pdf"&gt;iOS Release Notes for iOS 10.3 beta 7&lt;/a&gt;。&lt;/p&gt;
 &lt;img alt="install on iPhone 6s" class="align-left" src="https://github.com/donly/note/blob/master/images/ios-10-3-beta-7.PNG?raw=true" style="width: 320px; height: 568px;" /&gt;
 &lt;p&gt;iPhone 6s 更新后没有发现有什么明显不同。&lt;/p&gt;
@@ -613,17 +625,17 @@ $ npm install wepy-cli -g
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;10.3 Beta 版开机时按住 Home 和 音量加，可进入诊断模式。&lt;/li&gt;
 &lt;li&gt;关机时少了中间的加载动画，即菊花。&lt;/li&gt;
-&lt;li&gt;增加了对 32 位应用的警告提示：此应用在未来的 iOS 版本下将无法使用 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 20 Mar 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-20:/ios-10-3-beta-7-update.html</guid><category>apple</category></item><item><title>2017年3月 Android 安全补丁推送</title><link>/android-march-2017-upgrade.html</link><description>&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
+&lt;li&gt;增加了对 32 位应用的警告提示：此应用在未来的 iOS 版本下将无法使用 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 20 Mar 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-03-20:/ios-10-3-beta-7-update.html</guid><category>apple</category></item><item><title>2017年3月 Android 安全补丁推送</title><link>https://magicalboy.com/android-march-2017-upgrade.html</link><description>&lt;p&gt;Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。&lt;/p&gt;
 &lt;p&gt;对此我有两个疑问：&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？&lt;/p&gt;
 &lt;p&gt;根据 &lt;a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html"&gt;Welcoming Android 7.1.1 Nougat | Android Developers Blog&lt;/a&gt;，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 17 Mar 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-17:/android-march-2017-upgrade.html</guid><category>Android</category></item><item><title>域名备案通知</title><link>/domain_filing.html</link><description>&lt;p&gt;一大早就收到这样一条信息：&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;为什么更新完补丁后，点击系统更新会出现 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 17 Mar 2017 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-03-17:/android-march-2017-upgrade.html</guid><category>Android</category></item><item><title>域名备案通知</title><link>https://magicalboy.com/domain_filing.html</link><description>&lt;p&gt;一大早就收到这样一条信息：&lt;/p&gt;
 &lt;blockquote&gt;
 【阿里云】尊敬的****：按照工信部2017年全面域名实名认证的要求，目前阿里云已接到相关注册局通知，为保障您的网站及邮箱能够正常访问，请您务必尽快完成域名实名认证。同时提醒您：1、截止2017年5月31日，未完成实名认证的.com/.net域名将被注册局暂停解析；2、截止2017年5月15日，未完成实名认证的.top/.xyz/.vip /.club/.shop/.wang/.ren域名将被注册局暂停解析。另外，相关注册局将在4月1日左右对历史域名的认证情况进行二次审核。更多实名认证资讯请查看官网公告&lt;/blockquote&gt;
 &lt;p&gt;看来只有将域名转出保平安了，且行且珍惜。&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 17 Mar 2017 09:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-17:/domain_filing.html</guid></item><item><title>iOS 10.3 Beta6</title><link>/ios-10-3-beta-install.html</link><description>&lt;p&gt;今天苹果公司发布了 iOS 10.3 Beta6 更新。更新后版本号为：&lt;code&gt;10.3 (14E5273a)&lt;/code&gt;，更新如下：&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 17 Mar 2017 09:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-03-17:/domain_filing.html</guid></item><item><title>iOS 10.3 Beta6</title><link>https://magicalboy.com/ios-10-3-beta-install.html</link><description>&lt;p&gt;今天苹果公司发布了 iOS 10.3 Beta6 更新。更新后版本号为：&lt;code&gt;10.3 (14E5273a)&lt;/code&gt;，更新如下：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;相对于上一个版本 Beta5，比较重要一点更新就是没有通过 MFi 认证的 Lightning 会提示：&lt;code&gt;此 iPhone 不支持此配件&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;对系统底层进行了优化，当用户完成升级后，iOS 设备的文件系统也更新至了全新的苹果文件系统 &lt;code&gt;APFS&lt;/code&gt;。&lt;/li&gt;
@@ -631,7 +643,7 @@ $ npm install wepy-cli -g
 &lt;/ol&gt;
 &lt;p&gt;详细的更新日志见官网：&lt;a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Mar_13_2017/iOS_10.3_beta_6_Release_Notes.pdf"&gt;iOS Release Notes for iOS 10.3 beta 6&lt;/a&gt;。&lt;/p&gt;
 &lt;div class="section" id="beta-ios"&gt;
-&lt;h2&gt;安装 …&lt;/h2&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 14 Mar 2017 09:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-14:/ios-10-3-beta-install.html</guid><category>apple</category></item><item><title>Fastlane 插件开发</title><link>/fastlane_plugin.html</link><description>&lt;p&gt;&lt;strong&gt;能用计算机自动处理的事情，为什么还要手动重复劳动。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;安装 …&lt;/h2&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 14 Mar 2017 09:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2017-03-14:/ios-10-3-beta-install.html</guid><category>apple</category></item><item><title>Fastlane 插件开发</title><link>https://magicalboy.com/fastlane_plugin.html</link><description>&lt;p&gt;&lt;strong&gt;能用计算机自动处理的事情，为什么还要手动重复劳动。&lt;/strong&gt;&lt;/p&gt;
 &lt;img alt="fastlane" src="https://docs.fastlane.tools/img/fastlane_text.png" /&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://fastlane.tools/"&gt;Fastlane&lt;/a&gt; 是一个优秀的 CI 工具，移动开发少不了它。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -650,7 +662,7 @@ The easiest way to automate building and releasing your iOS and Android apps&lt;
 &lt;span class="c1"&gt;# Ensure this file is checked in to source control!&lt;/span&gt;
 
 &lt;span class="c1"&gt;#gem &amp;#39;fastlane-plugin-ftp&amp;#39;&lt;/span&gt;
-&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fastlane-plugin-ftp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:path&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;~/Documents …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 21 Dec 2016 09:39:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-21:/fastlane_plugin.html</guid><category>iOS</category><category>Android</category></item><item><title>Ruby 快速入门</title><link>/ruby-quickstart.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fastlane-plugin-ftp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:path&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;~/Documents …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 21 Dec 2016 09:39:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-12-21:/fastlane_plugin.html</guid><category>iOS</category><category>Android</category></item><item><title>Ruby 快速入门</title><link>https://magicalboy.com/ruby-quickstart.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id16"&gt;Ruby&lt;/a&gt;&lt;/li&gt;
@@ -674,7 +686,7 @@ The easiest way to automate building and releasing your iOS and Android apps&lt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id16"&gt;Ruby&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
-A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to …&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 21 Dec 2016 09:39:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-21:/ruby-quickstart.html</guid><category>ruby</category></item><item><title>超级玛丽酷跑</title><link>/super_mario_run.html</link><description>&lt;img alt="Super Mario" src="https://supermariorun.com/img/index/sec02_img06.png" /&gt;
+A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to …&lt;/blockquote&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 21 Dec 2016 09:39:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-12-21:/ruby-quickstart.html</guid><category>ruby</category></item><item><title>超级玛丽酷跑</title><link>https://magicalboy.com/super_mario_run.html</link><description>&lt;img alt="Super Mario" src="https://supermariorun.com/img/index/sec02_img06.png" /&gt;
 &lt;p&gt;超级玛丽最早印象是一款经典的 NES 游戏，儿时就开始玩啦。今天任天堂终于发布了 iOS 版本，叫超级玛丽酷跑。&lt;/p&gt;
 &lt;blockquote&gt;
 『超級瑪利歐酷跑』是一款瑪利歐為救出被庫巴抓走的碧姬公主，以及讓遭到庫巴侵略的蘑菇王國恢復原狀而在全世界奔走的遊戲。&lt;/blockquote&gt;
@@ -690,7 +702,7 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;/ul&gt;
 &lt;p&gt;不好的地方：&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;目前仅支持 iOS 平台，Android 平台将在 2017 年发布 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 16 Dec 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-16:/super_mario_run.html</guid><category>misc</category></item><item><title>iOS 10.2 更新</title><link>/ios-10-2-update.html</link><description>&lt;p&gt;今天苹果公司发布了 iOS 10.2 更新。更新后版本号为：10.2 (14C92)，上一个版本是 10.1.1 (14B100)。&lt;/p&gt;
+&lt;li&gt;目前仅支持 iOS 平台，Android 平台将在 2017 年发布 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 16 Dec 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-12-16:/super_mario_run.html</guid><category>misc</category></item><item><title>iOS 10.2 更新</title><link>https://magicalboy.com/ios-10-2-update.html</link><description>&lt;p&gt;今天苹果公司发布了 iOS 10.2 更新。更新后版本号为：10.2 (14C92)，上一个版本是 10.1.1 (14B100)。&lt;/p&gt;
 &lt;p&gt;详细的更新日志：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;iOS 10.2 加入了多项新功能，其中包括“电视”应用（仅限美国），这款全新的聚合应用使用户可在一处观看多个视频应用内的电视节目和影片。经过重新设计的表情符号更加精美、细致，新增了 100 多个表情符号，包括表情、食物、动物、运动和职业等各类型。本更新还包括稳定性提升和错误修复。&lt;/p&gt;
@@ -699,7 +711,7 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;li&gt;使用“接着播放”来查看当前正在观看的影片和节目，并从暂停播放的位置继续观看&lt;/li&gt;
 &lt;li&gt;在“立即观看”中获取新影片和电视节目的推荐&lt;/li&gt;
 &lt;li&gt;在“商店”中发现新的应用和 iTunes 最新发布的内容&lt;/li&gt;
-&lt;li&gt;访问“资料库”中的 …&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 15 Dec 2016 09:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-15:/ios-10-2-update.html</guid><category>apple</category></item><item><title>Digital Ocean 云主机</title><link>/digital_ocean_host.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://www.digitalocean.com/"&gt;DigitalOcean&lt;/a&gt; 云主机，价格最价 &lt;code&gt;5USD&lt;/code&gt; 一个月。&lt;/p&gt;
+&lt;li&gt;访问“资料库”中的 …&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 15 Dec 2016 09:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-12-15:/ios-10-2-update.html</guid><category>apple</category></item><item><title>Digital Ocean 云主机</title><link>https://magicalboy.com/digital_ocean_host.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://www.digitalocean.com/"&gt;DigitalOcean&lt;/a&gt; 云主机，价格最价 &lt;code&gt;5USD&lt;/code&gt; 一个月。&lt;/p&gt;
 &lt;p&gt;推荐购买连接：&lt;a class="reference external" href="https://m.do.co/c/05c0b260aaab"&gt;https://m.do.co/c/05c0b260aaab&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;这是 DigitalOcean 的官方教程：&lt;a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04"&gt;How To Install WordPress with LEMP on Ubuntu 16.04&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;主要特点有：&lt;/p&gt;
@@ -710,7 +722,7 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;li&gt;操作系统可选比较多，而且比较新，比如有 Ubuntu 16.04；&lt;/li&gt;
 &lt;li&gt;官方指导文档资料比较丰富，Support tickets 回复迅速，方便解决问题节省时间。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;不好的地方 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 13 Dec 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-13:/digital_ocean_host.html</guid><category>misc</category></item><item><title>Objective C</title><link>/Objective-C.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+&lt;p&gt;不好的地方 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 13 Dec 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-12-13:/digital_ocean_host.html</guid><category>misc</category></item><item><title>Objective C</title><link>https://magicalboy.com/Objective-C.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id17"&gt;介绍&lt;/a&gt;&lt;/li&gt;
@@ -747,7 +759,7 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id17"&gt;介绍&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Objective-C 作为 C 程序设计语言的超集，支持与 C 相同的基本语法。您会看到所有熟悉的元素，例如基本类型（&lt;tt class="docutils literal"&gt;int&lt;/tt&gt;、&lt;tt class="docutils literal"&gt;float&lt;/tt&gt; 等）、结构、函数、指针，以及流程控制结构，如 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;if...else&lt;/span&gt;&lt;/tt&gt; 语句和 &lt;tt class="docutils literal"&gt;for&lt;/tt&gt; 语句。还可以直接使用 C 标准库 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 24 Nov 2016 14:25:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-11-24:/Objective-C.html</guid><category>Objective-C</category></item><item><title>Swift 中的 Lazy 初始化</title><link>/lazy_load_with_swift.html</link><description>&lt;p&gt;Lazy 初始化技术早在 Objective C 时代经常被使用，是一种用来延时创建一些比较消耗资源的对象的技术。&lt;/p&gt;
+&lt;p&gt;Objective-C 作为 C 程序设计语言的超集，支持与 C 相同的基本语法。您会看到所有熟悉的元素，例如基本类型（&lt;tt class="docutils literal"&gt;int&lt;/tt&gt;、&lt;tt class="docutils literal"&gt;float&lt;/tt&gt; 等）、结构、函数、指针，以及流程控制结构，如 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;if...else&lt;/span&gt;&lt;/tt&gt; 语句和 &lt;tt class="docutils literal"&gt;for&lt;/tt&gt; 语句。还可以直接使用 C 标准库 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 24 Nov 2016 14:25:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-11-24:/Objective-C.html</guid><category>Objective-C</category></item><item><title>Swift 中的 Lazy 初始化</title><link>https://magicalboy.com/lazy_load_with_swift.html</link><description>&lt;p&gt;Lazy 初始化技术早在 Objective C 时代经常被使用，是一种用来延时创建一些比较消耗资源的对象的技术。&lt;/p&gt;
 &lt;p&gt;这种技术在 iOS 开发里面很有用，确保只有在需要使用某些资源的时候才开始分配内存。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;老的方式&lt;/h2&gt;
@@ -768,7 +780,7 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;非常简单，就一句话！&lt;/p&gt;
 &lt;p&gt;需要注意的是，声明 &lt;code&gt;lazy&lt;/code&gt; 变量必须用 &lt;code&gt;var&lt;/code&gt; 关键字，不能使用 &lt;code&gt;let&lt;/code&gt;。因为常量对象初始化完成的时候必须有一个初始值。&lt;/p&gt;
-&lt;p&gt;使用 &lt;code&gt;Closure&lt;/code&gt; 定义 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 29 Oct 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-10-29:/lazy_load_with_swift.html</guid><category>iOS</category><category>Swift</category></item><item><title>微鲸电视，智能电视</title><link>/whaley_android_tv.html</link><description>&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;Closure&lt;/code&gt; 定义 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 29 Oct 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-10-29:/lazy_load_with_swift.html</guid><category>iOS</category><category>Swift</category></item><item><title>微鲸电视，智能电视</title><link>https://magicalboy.com/whaley_android_tv.html</link><description>&lt;p&gt;这是一台四月份在 &lt;a class="reference external" href="https://item.jd.com/2268749.html"&gt;京东商场&lt;/a&gt; 买的一台平板电视，关于微鲸这个新品牌请自行搜索。&lt;/p&gt;
 &lt;p&gt;这台电视主要特点有：&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;4K 分辨率&lt;/li&gt;
@@ -785,7 +797,7 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;/ul&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;安装失败，未知原因&lt;/h2&gt;
-&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 28 Oct 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-10-28:/whaley_android_tv.html</guid><category>Android</category></item><item><title>摩托罗拉(Motorola) MT620</title><link>/motorola_mt620.html</link><description>&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
+&lt;p&gt;这是最近更新的一个版本在安装 APK 时报的一个错误，当时问了客服，客服没有任何回应。后来自己打开 ADB 使用命令与手动结合安装解决 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 28 Oct 2016 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-10-28:/whaley_android_tv.html</guid><category>Android</category></item><item><title>摩托罗拉(Motorola) MT620</title><link>https://magicalboy.com/motorola_mt620.html</link><description>&lt;p&gt;今天在收拾东西的时候发现一部旧 Android 手机，Motorola MT620。&lt;/p&gt;
 &lt;p&gt;这是一台老手机，2012 年购买于亚马逊：&lt;a class="reference external" href="https://www.amazon.cn/gp/product/B005HM1R62"&gt;摩托罗拉(Motorola)MT620 3G智能手机(简洁白 移动定制)&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;购买价格是 470.00，在当时来说已经是令人心动了，虽然今天 299 元即可买到八核，4G 大屏手机。&lt;/p&gt;
 &lt;p&gt;主要亮点是：QWERTY 全功能键盘，全触屏，支持手写输入，摩托罗拉品牌且价格实惠。&lt;/p&gt;
@@ -794,33 +806,33 @@ A dynamic, open source programming language with a focus on simplicity and produ
 &lt;h2&gt;运行系统&lt;/h2&gt;
 &lt;img alt="OPhone" class="align-left" src="images/OPhone_20161020110900.png" /&gt;
 &lt;p&gt;采用以 Android 2.3.7 为基础的 &lt;a class="reference external" href="https://zh.wikipedia.org/wiki/OPhone#.E6.91.A9.E6.89.98.E7.BE.85.E6.8B.89MT620"&gt;OPhone&lt;/a&gt; 2.6 最新智能操作系统。&lt;/p&gt;
-&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 20 Oct 2016 12:20:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-10-20:/motorola_mt620.html</guid><category>Android</category><category>Motorola</category></item><item><title>使用 Let's Encrypt SSL</title><link>/use-lets-encrypt-ssl.html</link><description>&lt;p&gt;本站的 SSL 由 &lt;a class="reference external" href="https://letsencrypt.org"&gt;Let's Encrypt&lt;/a&gt; 提供。不再使用 StartSSL。&lt;/p&gt;
+&lt;p&gt;虽说这是一台移动定制手机，但与别的中国版 Android 系统不同的是，里面没有移动自家应用程序 …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 20 Oct 2016 12:20:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-10-20:/motorola_mt620.html</guid><category>Android</category><category>Motorola</category></item><item><title>使用 Let's Encrypt SSL</title><link>https://magicalboy.com/use-lets-encrypt-ssl.html</link><description>&lt;p&gt;本站的 SSL 由 &lt;a class="reference external" href="https://letsencrypt.org"&gt;Let's Encrypt&lt;/a&gt; 提供。不再使用 StartSSL。&lt;/p&gt;
 &lt;p&gt;需要注意的是，Let's Encrypt 的免费证书有效期为三个月，注意过期之前更新或使用自动脚本更新。&lt;/p&gt;
 &lt;p&gt;附：&lt;a class="reference external" href="https://www.digicert.com/help/?host=magicalboy.com"&gt;SSL Certificate Checker&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 13 Sep 2016 16:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-09-13:/use-lets-encrypt-ssl.html</guid><category>web</category><category>ssl</category></item><item><title>苹果发布会视频下载</title><link>/apple-event-download.html</link><description>&lt;p&gt;苹果的发布会通常在中国北京时间凌晨一点。如果因为睡觉错过了想回顾，除了在官网在线回看，还可以在 Youtube 或其他网站上观看。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 13 Sep 2016 16:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-09-13:/use-lets-encrypt-ssl.html</guid><category>web</category><category>ssl</category></item><item><title>苹果发布会视频下载</title><link>https://magicalboy.com/apple-event-download.html</link><description>&lt;p&gt;苹果的发布会通常在中国北京时间凌晨一点。如果因为睡觉错过了想回顾，除了在官网在线回看，还可以在 Youtube 或其他网站上观看。&lt;/p&gt;
 &lt;p&gt;如果想下载完整版回来收藏，可以使用 VLC 或 ffmpeg 工具。&lt;/p&gt;
 &lt;p&gt;比如，使用 ffmpeg 下载苹果九月发布会命令：&lt;/p&gt;
 &lt;pre class="code shell literal-block"&gt;
 $ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;http://p.events-delivery.apple.com.edgesuite.net/1609lijbsdfvoihbadfvohbsdfvljhb/vod/8500/8500_vod.m3u8&amp;quot;&lt;/span&gt; -c copy apple.ts
 &lt;/pre&gt;
 &lt;p&gt;提示：1080p 的 m3u8 流地址可以复制视频地址分析得到。&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 08 Sep 2016 16:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-09-08:/apple-event-download.html</guid><category>apple</category></item><item><title>iOS 固件信息 API</title><link>/ios-firmware-api.html</link><description>&lt;p&gt;收藏几个有意思的第三方 API，主要获取固件信息，实时的 Apple TSS 服务状态：&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Thu, 08 Sep 2016 16:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-09-08:/apple-event-download.html</guid><category>apple</category></item><item><title>iOS 固件信息 API</title><link>https://magicalboy.com/ios-firmware-api.html</link><description>&lt;p&gt;收藏几个有意思的第三方 API，主要获取固件信息，实时的 Apple TSS 服务状态：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://api.ineal.me/tss/docs"&gt;Real time status of every iOS firmware currently being signed by Apple's TSS server.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://api.ios.icj.me/docs/"&gt;IPSW Downloads&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 31 Aug 2016 11:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-08-31:/ios-firmware-api.html</guid><category>iOS</category><category>crack</category></item><item><title>苹果九月发布会</title><link>/apple-event-2016-september.html</link><description>&lt;img alt="Apple Event" src="images/hero_image_large.jpg" /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 31 Aug 2016 11:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-08-31:/ios-firmware-api.html</guid><category>iOS</category><category>crack</category></item><item><title>苹果九月发布会</title><link>https://magicalboy.com/apple-event-2016-september.html</link><description>&lt;img alt="Apple Event" src="images/hero_image_large.jpg" /&gt;
 &lt;p&gt;中国北京时间为8日凌晨1点。&lt;/p&gt;
 &lt;p&gt;可以在线看直播，有即时字幕，流畅度提升越来越明显。&lt;/p&gt;
 &lt;blockquote&gt;
-Requirements: Live streaming uses Apple’s HTTP Live Streaming (HLS) technology. HLS requires an iPhone, iPad, or iPod touch with Safari on iOS 7.0 or later, a Mac with Safari 6.0.5 or later on OS X v10.8.5 or later, or a …&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 31 Aug 2016 00:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-08-31:/apple-event-2016-september.html</guid><category>apple</category></item><item><title>xctool 使用</title><link>/xctool-usage.html</link><description>&lt;p&gt;xctool 可以理解为 xcodebuild 的增强版，特别有利于可持续集成。xctool 由 Facebook 开发维护，项目地址 &lt;a class="reference external" href="https://github.com/facebook/xctool"&gt;https://github.com/facebook/xctool&lt;/a&gt;。&lt;/p&gt;
+Requirements: Live streaming uses Apple’s HTTP Live Streaming (HLS) technology. HLS requires an iPhone, iPad, or iPod touch with Safari on iOS 7.0 or later, a Mac with Safari 6.0.5 or later on OS X v10.8.5 or later, or a …&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 31 Aug 2016 00:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-08-31:/apple-event-2016-september.html</guid><category>apple</category></item><item><title>xctool 使用</title><link>https://magicalboy.com/xctool-usage.html</link><description>&lt;p&gt;xctool 可以理解为 xcodebuild 的增强版，特别有利于可持续集成。xctool 由 Facebook 开发维护，项目地址 &lt;a class="reference external" href="https://github.com/facebook/xctool"&gt;https://github.com/facebook/xctool&lt;/a&gt;。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;安装 xctool&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ brew install &lt;span class="nv"&gt;xctool&lt;/span&gt;
 &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Downloading https://homebrew.bintray.com/bottles/xctool-0.2.7.el_capitan.bottle.tar.gz
 &lt;span class="c1"&gt;######################################################################## 100.0%&lt;/span&gt;
 &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; Pouring xctool-0.2.7.el_capitan.bottle.tar.gz
-🍺  /usr/local/Cellar/xctool/0.2.7 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 06 Jul 2016 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-07-06:/xctool-usage.html</guid><category>iOS</category><category>CI</category></item><item><title>启用 OS X Web 服务器</title><link>/enable-osx-webserver.html</link><description>&lt;p&gt;OS X 有内置 &lt;code&gt;Apache&lt;/code&gt; 服务器应用，早期版本可以在网络共享中打开，目前的 OS Ｘ 版本已经取消。&lt;/p&gt;
+🍺  /usr/local/Cellar/xctool/0.2.7 …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 06 Jul 2016 10:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-07-06:/xctool-usage.html</guid><category>iOS</category><category>CI</category></item><item><title>启用 OS X Web 服务器</title><link>https://magicalboy.com/enable-osx-webserver.html</link><description>&lt;p&gt;OS X 有内置 &lt;code&gt;Apache&lt;/code&gt; 服务器应用，早期版本可以在网络共享中打开，目前的 OS Ｘ 版本已经取消。&lt;/p&gt;
 &lt;p&gt;本文 OS X 版本是 &lt;em&gt;OS X El Capitan 10.11.5&lt;/em&gt;，Apache 版本：&lt;/p&gt;
 &lt;pre class="code shell literal-block"&gt;
 $ apachectl -v
@@ -836,7 +848,7 @@ $ sudo apachectl start
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;然后输入本机地址进行测试：&lt;a class="reference external" href="http://localhost/"&gt;http://localhost/&lt;/a&gt; 或 &lt;a class="reference external" href="http://127.0.0.1"&gt;http://127.0.0.1&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;测试完毕后 …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 01 Jun 2016 14:12:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-06-01:/enable-osx-webserver.html</guid><category>web</category></item><item><title>在树莓派上安装 AMP</title><link>/install-amp-on-raspberry-pi.html</link><description>&lt;p&gt;AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;测试完毕后 …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 01 Jun 2016 14:12:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-06-01:/enable-osx-webserver.html</guid><category>web</category></item><item><title>在树莓派上安装 AMP</title><link>https://magicalboy.com/install-amp-on-raspberry-pi.html</link><description>&lt;p&gt;AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Apache 是一个非常流行的 Web 服务器软件&lt;/li&gt;
 &lt;li&gt;MySQL 是一个关系型数据库管理系统&lt;/li&gt;
@@ -850,7 +862,7 @@ $ sudo apachectl start
 &lt;li&gt;配置文件路径为 &lt;em&gt;/etc/apache2/&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;修改监听端口号 &lt;em&gt;sudo vi /etc/apache2/ports.conf&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;重启服务 &lt;em&gt;sudo service apache2 restart&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;修改权限 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 31 May 2016 14:22:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-31:/install-amp-on-raspberry-pi.html</guid><category>Linux</category></item><item><title>iTunes 可视化插件</title><link>/itunes-visualizer-plugin.html</link><description>&lt;p&gt;听到一些好的音乐时，尤其是节奏感强烈的，总是想看看可视化效果。&lt;/p&gt;
+&lt;li&gt;修改权限 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 31 May 2016 14:22:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-31:/install-amp-on-raspberry-pi.html</guid><category>Linux</category></item><item><title>iTunes 可视化插件</title><link>https://magicalboy.com/itunes-visualizer-plugin.html</link><description>&lt;p&gt;听到一些好的音乐时，尤其是节奏感强烈的，总是想看看可视化效果。&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://apptree.net/ledsa.htm"&gt;LED Spectrum Analyzer plug-in for iTunes&lt;/a&gt; 是一个很不错的 iTunes 可视化插件，免费开源。&lt;/p&gt;
 &lt;p&gt;本人一直在使用这个 LED 频谱分析议插件，虽有两年多没更新，但仍然支持目前最新 iTunes 12.4。另外需要注意的是，此插件仅支持 OS X 平台。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
@@ -858,7 +870,7 @@ $ sudo apachectl start
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;下载：&lt;a class="reference external" href="http://apptree.net/apps/LEDSA3.0.zip"&gt;Version 3.0.7&lt;/a&gt; 并解压。&lt;/li&gt;
 &lt;li&gt;打开 Finder，按下 &lt;em&gt;Shift + cmd + G&lt;/em&gt; 并输入 &lt;em&gt;~/Library/iTunes/iTunes Plug-ins&lt;/em&gt; 前往到 iTunes 插件目录。&lt;/li&gt;
-&lt;li&gt;复制 &lt;em&gt;LED Spectrum …&lt;/em&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 30 May 2016 15:51:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-30:/itunes-visualizer-plugin.html</guid><category>iTunes</category></item><item><title>自定义 Django Serializer</title><link>/django-serializer_customize.html</link><description>&lt;p&gt;根据 &lt;a class="reference external" href="https://docs.djangoproject.com/en/1.9/topics/serialization/#serialization-formats-json"&gt;Serializing Django objects | Django documentation | Django&lt;/a&gt;
+&lt;li&gt;复制 &lt;em&gt;LED Spectrum …&lt;/em&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 30 May 2016 15:51:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-30:/itunes-visualizer-plugin.html</guid><category>iTunes</category></item><item><title>自定义 Django Serializer</title><link>https://magicalboy.com/django-serializer_customize.html</link><description>&lt;p&gt;根据 &lt;a class="reference external" href="https://docs.djangoproject.com/en/1.9/topics/serialization/#serialization-formats-json"&gt;Serializing Django objects | Django documentation | Django&lt;/a&gt;
 ，使用内置默认的 serializer 格式化的 JSON 如下：&lt;/p&gt;
 &lt;pre class="code json literal-block"&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;
@@ -881,7 +893,7 @@ $ sudo apachectl start
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;
     An HttpResponse that renders its content into JSON.
     &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__ …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sun, 29 May 2016 08:41:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-29:/django-serializer_customize.html</guid><category>django</category></item><item><title>安装 phpMyAdmin</title><link>/install-phpmyadmin.html</link><description>&lt;p&gt;phpMyAdmin 是管理 MySQL 最方便的 Web 应用，如果经常使用 MySQL ，phpMyAdmin 是必备工具。&lt;/p&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__ …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sun, 29 May 2016 08:41:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-29:/django-serializer_customize.html</guid><category>django</category></item><item><title>安装 phpMyAdmin</title><link>https://magicalboy.com/install-phpmyadmin.html</link><description>&lt;p&gt;phpMyAdmin 是管理 MySQL 最方便的 Web 应用，如果经常使用 MySQL ，phpMyAdmin 是必备工具。&lt;/p&gt;
 &lt;p&gt;本文主要参考资料：&lt;a class="reference external" href="https://docs.phpmyadmin.net/en/latest/setup.html"&gt;Installation — phpMyAdmin 4.7.0-dev documentation&lt;/a&gt;。&lt;/p&gt;
 &lt;div class="section" id="os-x"&gt;
 &lt;h2&gt;在 OS X 安装&lt;/h2&gt;
@@ -891,7 +903,7 @@ $ sudo apachectl start
 &lt;li&gt;在 &lt;em&gt;phpMyAdmin&lt;/em&gt; 目录下创建一个可写的 &lt;em&gt;config&lt;/em&gt; 目录&lt;/li&gt;
 &lt;li&gt;打开 &lt;em&gt;http://localhost/~[username]/phpMyAdmin/setup&lt;/em&gt;，加载配置，修改并保存&lt;/li&gt;
 &lt;li&gt;将 &lt;em&gt;config&lt;/em&gt; 下生成的 &lt;em&gt;config.inc.php&lt;/em&gt; 移到 &lt;em&gt;phpmyadmin&lt;/em&gt; 根目录下&lt;/li&gt;
-&lt;li&gt;删除 &lt;em&gt;config …&lt;/em&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 28 May 2016 10:32:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-28:/install-phpmyadmin.html</guid><category>php</category><category>web</category></item><item><title>破解 Asset Catalog</title><link>/crack-asset-catalog.html</link><description>&lt;p&gt;Asset Catalog 是 Xcode 5 引入的一个新的图片管理方式，支持矢量图，这样设计师不需要再切 &amp;#64;2x, &amp;#64;3x 等多套图标，提高效率。&lt;/p&gt;
+&lt;li&gt;删除 &lt;em&gt;config …&lt;/em&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 28 May 2016 10:32:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-28:/install-phpmyadmin.html</guid><category>php</category><category>web</category></item><item><title>破解 Asset Catalog</title><link>https://magicalboy.com/crack-asset-catalog.html</link><description>&lt;p&gt;Asset Catalog 是 Xcode 5 引入的一个新的图片管理方式，支持矢量图，这样设计师不需要再切 &amp;#64;2x, &amp;#64;3x 等多套图标，提高效率。&lt;/p&gt;
 &lt;p&gt;使用了 Asset Catalog 的 App 在发布的时候，Xcode 会为这些图片资源打包成 &lt;strong&gt;Assets.car&lt;/strong&gt; 这样的文件，而且无法直接打开。&lt;/p&gt;
 &lt;div class="section" id="assets-car"&gt;
 &lt;h2&gt;提取 Assets.car 图片&lt;/h2&gt;
@@ -906,7 +918,7 @@ $ sudo apachectl start
 $ ./cartool &amp;lt;.car 文件的路径&amp;gt; &amp;lt;解压后的文件路径&amp;gt;
 &lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;这样就可以获取 &lt;em&gt;Assets …&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 24 May 2016 11:30:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-24:/crack-asset-catalog.html</guid><category>iOS</category><category>crack</category></item><item><title>树莓派 GPIO 模拟器：GPIOSim</title><link>/raspberry-pi-gpio-sim.html</link><description>&lt;p&gt;GPIOSim 是一个树莓派 GPIO 模拟器，目前支持 Linux 和 OS X。它能够在 PC 上进行开发调试使用 RPi.GPIO 模块编写的树莓派应用。&lt;/p&gt;
+&lt;p&gt;这样就可以获取 &lt;em&gt;Assets …&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 24 May 2016 11:30:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-24:/crack-asset-catalog.html</guid><category>iOS</category><category>crack</category></item><item><title>树莓派 GPIO 模拟器：GPIOSim</title><link>https://magicalboy.com/raspberry-pi-gpio-sim.html</link><description>&lt;p&gt;GPIOSim 是一个树莓派 GPIO 模拟器，目前支持 Linux 和 OS X。它能够在 PC 上进行开发调试使用 RPi.GPIO 模块编写的树莓派应用。&lt;/p&gt;
 &lt;p&gt;这是一个开源项目：&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Github：&lt;a class="reference external" href="https://github.com/bobvann/GPIOSim"&gt;bobvann/GPIOSim: Raspberry Pi GPIO simulator&lt;/a&gt;&lt;/li&gt;
@@ -918,7 +930,7 @@ $ ./cartool &amp;lt;.car 文件的路径&amp;gt; &amp;lt;解压后的文件路�
 运行效果：&lt;/p&gt;
 &lt;img alt="run on OS X" src="images/raspberry_pi_gpiosim_run_on_osx.png" /&gt;
 &lt;div class="section" id="id1"&gt;
-&lt;h3&gt;安装 …&lt;/h3&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 24 May 2016 10:05:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-24:/raspberry-pi-gpio-sim.html</guid><category>GPIO</category><category>RaspberryPi</category><category>Python</category></item><item><title>树莓派 GPIO 入门</title><link>/raspberry-pi-gpio.html</link><description>&lt;p&gt;GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。&lt;/p&gt;
+&lt;h3&gt;安装 …&lt;/h3&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 24 May 2016 10:05:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-24:/raspberry-pi-gpio-sim.html</guid><category>GPIO</category><category>RaspberryPi</category><category>Python</category></item><item><title>树莓派 GPIO 入门</title><link>https://magicalboy.com/raspberry-pi-gpio.html</link><description>&lt;p&gt;GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。&lt;/p&gt;
 &lt;p&gt;比较常用的第三方函数库有：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Python GPIO&lt;/li&gt;
@@ -941,7 +953,7 @@ $ ./cartool &amp;lt;.car 文件的路径&amp;gt; &amp;lt;解压后的文件路�
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h3&gt;原理说明 …&lt;/h3&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 23 May 2016 18:05:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-23:/raspberry-pi-gpio.html</guid><category>GPIO</category><category>RaspberryPi</category></item><item><title>bash shell 学习</title><link>/bash-shell.html</link><description>&lt;p&gt;shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：&lt;/p&gt;
+&lt;h3&gt;原理说明 …&lt;/h3&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 23 May 2016 18:05:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-23:/raspberry-pi-gpio.html</guid><category>GPIO</category><category>RaspberryPi</category></item><item><title>bash shell 学习</title><link>https://magicalboy.com/bash-shell.html</link><description>&lt;p&gt;shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell"&gt;什么是 shell？&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言"&gt;脚本语言&lt;/a&gt;&lt;/li&gt;
@@ -959,7 +971,7 @@ $ ./cartool &amp;lt;.car 文件的路径&amp;gt; &amp;lt;解压后的文件路�
 &lt;p&gt;根据表达式的定义，任何表达式都必须有一个值。而 shell 在执行任何东西（不仅是命令）的时候都会有一个返回值。&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;在 bash 编程中，返回值取值范围：&lt;em&gt;0-255&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;跟 C 语言含义相反， bash 中 0 为真 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 17 May 2016 10:25:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-17:/bash-shell.html</guid><category>Linux</category><category>bash</category><category>shell</category></item><item><title>exFAT 文件格式支持</title><link>/raspbian-exfat-support.html</link><description>&lt;p&gt;exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。&lt;/p&gt;
+&lt;li&gt;跟 C 语言含义相反， bash 中 0 为真 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 17 May 2016 10:25:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-17:/bash-shell.html</guid><category>Linux</category><category>bash</category><category>shell</category></item><item><title>exFAT 文件格式支持</title><link>https://magicalboy.com/raspbian-exfat-support.html</link><description>&lt;p&gt;exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。&lt;/p&gt;
 &lt;p&gt;基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;为什么要使用 exFAT&lt;/h2&gt;
@@ -980,8 +992,8 @@ $ ./cartool &amp;lt;.car 文件的路径&amp;gt; &amp;lt;解压后的文件路�
 &lt;h2&gt;Android&lt;/h2&gt;
 &lt;p&gt;暂无&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 16 May 2016 14:40:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-05-16:/raspbian-exfat-support.html</guid><category>Linux</category><category>Raspbian</category><category>exFAT</category></item><item><title>Pelican No module named html_parser</title><link>/pelican-no-module-named-html_parser.html</link><description>&lt;p class="first last"&gt;在 OS X 上解决 No module named html_parser 问题。&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 22 Apr 2016 14:40:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-04-22:/pelican-no-module-named-html_parser.html</guid><category>pelican</category></item><item><title>OpenWrt CC SS 配置</title><link>/openwrt-cc-ss.html</link><description>&lt;div class="section" id="id1"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Mon, 16 May 2016 14:40:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-05-16:/raspbian-exfat-support.html</guid><category>Linux</category><category>Raspbian</category><category>exFAT</category></item><item><title>Pelican No module named html_parser</title><link>https://magicalboy.com/pelican-no-module-named-html_parser.html</link><description>&lt;p class="first last"&gt;在 OS X 上解决 No module named html_parser 问题。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Fri, 22 Apr 2016 14:40:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2016-04-22:/pelican-no-module-named-html_parser.html</guid><category>pelican</category></item><item><title>OpenWrt CC SS 配置</title><link>https://magicalboy.com/openwrt-cc-ss.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;OpenWRT 版本：Chaos Calmer 15.05&lt;/li&gt;
@@ -1001,7 +1013,7 @@ Package kernel &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/s
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cks-libev-spec &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.4.1-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
 Installing ipset &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;.24-1&lt;span class="o"&gt;)&lt;/span&gt; to root...
-Downloading …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 01 Dec 2015 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-12-01:/openwrt-cc-ss.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>CocoaPods 使用</title><link>/cocoapods-usage.html</link><description>&lt;div class="section" id="id1"&gt;
+Downloading …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Tue, 01 Dec 2015 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2015-12-01:/openwrt-cc-ss.html</guid><category>Linux</category><category>OpenWrt</category></item><item><title>CocoaPods 使用</title><link>https://magicalboy.com/cocoapods-usage.html</link><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://cocoapods.org/"&gt;CocoaPods&lt;/a&gt; 是 Objective-C 和 Swift 项目的依赖管理平台，而且已经拥有庞大的库，帮助我们优雅地扩大项目规模。&lt;/p&gt;
 &lt;p&gt;后来又出了一个 &lt;a class="reference external" href="https://github.com/Carthage/Carthage"&gt;Carthage&lt;/a&gt;，使用 Swift 实现的一个更简单的 Cocoa 依赖管理工具。由于 Carthage 仅支持动态 framework，所以必须要求 iOS 8 以及以上才能够使用，所以，这个以后再了解。&lt;/p&gt;
@@ -1013,7 +1025,7 @@ Downloading …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xml
 &lt;/div&gt;
 &lt;div class="section" id="xcode"&gt;
 &lt;h2&gt;在 Xcode 项目中使用&lt;/h2&gt;
-&lt;p&gt;很简单，在项目根目录新建一个 &lt;em&gt;Podfile …&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 30 May 2015 10:02:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-05-30:/cocoapods-usage.html</guid></item><item><title>Android 教程第一周</title><link>/android_coursera_part1_week1.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+&lt;p&gt;很简单，在项目根目录新建一个 &lt;em&gt;Podfile …&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 30 May 2015 10:02:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2015-05-30:/cocoapods-usage.html</guid></item><item><title>Android 教程第一周</title><link>https://magicalboy.com/android_coursera_part1_week1.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#id2" id="id3"&gt;简介&lt;/a&gt;&lt;/li&gt;
@@ -1038,7 +1050,7 @@ Downloading …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xml
 &lt;li&gt;Amazone 合作的福利。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 13 Dec 2014 19:20:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-12-13:/android_coursera_part1_week1.html</guid><category>Android</category></item><item><title>ADB 使用</title><link>/adb.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Sat, 13 Dec 2014 19:20:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2014-12-13:/android_coursera_part1_week1.html</guid><category>Android</category></item><item><title>ADB 使用</title><link>https://magicalboy.com/adb.html</link><description>&lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title first"&gt;目录&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#adb-mac-os" id="id3"&gt;ADB 找不到设备（Mac OS）&lt;/a&gt;&lt;/li&gt;
@@ -1055,4 +1067,4 @@ Downloading …&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xml
 &lt;li&gt;将手机通过USB连接到Mac。&lt;/li&gt;
 &lt;li&gt;打开系统信息（点击左上的苹果，按住Option会显示），找到如图所示的手机设备，复制厂商ID。&lt;/li&gt;
 &lt;li&gt;在终端输入 $ echo 0x1782 &amp;gt;&amp;gt; ~/.android/adb_usb.ini。&lt;/li&gt;
-&lt;li&gt;重启 adb …&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 08 Jan 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-01-08:/adb.html</guid><category>Android</category></item></channel></rss>
+&lt;li&gt;重启 adb …&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Don</dc:creator><pubDate>Wed, 08 Jan 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2014-01-08:/adb.html</guid><category>Android</category></item></channel></rss>

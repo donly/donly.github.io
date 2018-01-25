@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 互聯網</title><link href="/" rel="alternate"></link><link href="/feeds/hu-lian-wang.atom.xml" rel="self"></link><id>/</id><updated>2014-11-19T09:42:00+08:00</updated><entry><title>从 Baidu 免费下载高质量的 MP3 音乐</title><link href="/download-mp3-music-from-baidu-for-free.html" rel="alternate"></link><published>2014-11-19T09:42:00+08:00</published><updated>2014-11-19T09:42:00+08:00</updated><author><name>donly</name></author><id>tag:None,2014-11-19:/download-mp3-music-from-baidu-for-free.html</id><summary type="html">&lt;div class="line-block"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - 互聯網</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/hu-lian-wang.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2014-11-19T09:42:00+08:00</updated><entry><title>从 Baidu 免费下载高质量的 MP3 音乐</title><link href="https://magicalboy.com/download-mp3-music-from-baidu-for-free.html" rel="alternate"></link><published>2014-11-19T09:42:00+08:00</published><updated>2014-11-19T09:42:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2014-11-19:/download-mp3-music-from-baidu-for-free.html</id><summary type="html">&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;百度音乐（&lt;a class="reference external" href="http://music.baidu.com/"&gt;http://music.baidu.com/&lt;/a&gt;）大家一定不会陌生，百度音乐盒（&lt;a class="reference external" href="http://play.baidu.com/"&gt;http://play.baidu.com/&lt;/a&gt;）可以在线听音乐，可惜需要
 Adobe Flash 支持。而且在线听的音乐质量比不上下载回来听好。如果需要下载
 mp3 音乐，Baidu 默认只对标准品质（128 kbps）提供免费下载，下载高质量的
@@ -31,7 +31,7 @@ MP3 文件下载。&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;不知道这么做会不会有版权的问题&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="MP3"></category><category term="音乐"></category></entry><entry><title>新版 iTunes Connect 提交 App 遇到的问题</title><link href="/new-itunes-connect.html" rel="alternate"></link><published>2014-09-09T15:33:00+08:00</published><updated>2014-09-09T15:33:00+08:00</updated><author><name>donly</name></author><id>tag:None,2014-09-09:/new-itunes-connect.html</id><summary type="html">&lt;p&gt;随着 Apple 将其 OS X Yosemite 更新到扁平化风格后，&lt;a class="reference external" href="https://itunesconnect.apple.com"&gt;iTunes
+</content><category term="MP3"></category><category term="音乐"></category></entry><entry><title>新版 iTunes Connect 提交 App 遇到的问题</title><link href="https://magicalboy.com/new-itunes-connect.html" rel="alternate"></link><published>2014-09-09T15:33:00+08:00</published><updated>2014-09-09T15:33:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2014-09-09:/new-itunes-connect.html</id><summary type="html">&lt;p&gt;随着 Apple 将其 OS X Yosemite 更新到扁平化风格后，&lt;a class="reference external" href="https://itunesconnect.apple.com"&gt;iTunes
 Connect&lt;/a&gt; 终于也被拍扁了。除了 UI
 扁平化外，也改进了用户体验，能够快速切换到其它功能，并且新增了
 Prerelease 项。&lt;/p&gt;
@@ -88,7 +88,7 @@ Build 栏下点击加号来选择版本，点击 &amp;quot;Submit for Review&amp
 &lt;p&gt;更详细的流程请查看：&lt;a class="reference external" href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html"&gt;iTunes Connect Developer
 Guide&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="Apple"></category><category term="iTunes Connect"></category></entry><entry><title>一直担心的问题发生了</title><link href="/webfaction-is-good.html" rel="alternate"></link><published>2013-04-22T20:25:00+08:00</published><updated>2013-04-22T20:25:00+08:00</updated><author><name>donly</name></author><id>tag:None,2013-04-22:/webfaction-is-good.html</id><summary type="html">&lt;p&gt;一直担心的问题发生了，所有在同一服务器（Webfaction）托管下的网站访问异常，具体情况如下。&lt;/p&gt;
+</content><category term="Apple"></category><category term="iTunes Connect"></category></entry><entry><title>一直担心的问题发生了</title><link href="https://magicalboy.com/webfaction-is-good.html" rel="alternate"></link><published>2013-04-22T20:25:00+08:00</published><updated>2013-04-22T20:25:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2013-04-22:/webfaction-is-good.html</id><summary type="html">&lt;p&gt;一直担心的问题发生了，所有在同一服务器（Webfaction）托管下的网站访问异常，具体情况如下。&lt;/p&gt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;症状表现&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
@@ -149,7 +149,7 @@ contact us again.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
-</content><category term="webfaction"></category><category term="请求超时"></category></entry><entry><title>苹果iOS4.3正式发布</title><link href="/ios4-3-release.html" rel="alternate"></link><published>2011-03-10T02:30:00+08:00</published><updated>2011-03-10T02:30:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-03-10:/ios4-3-release.html</id><summary type="html">&lt;p&gt;2011-03-10，苹果iOS 4.3固件升级正式提供更新和下载。&lt;/p&gt;
+</content><category term="webfaction"></category><category term="请求超时"></category></entry><entry><title>苹果iOS4.3正式发布</title><link href="https://magicalboy.com/ios4-3-release.html" rel="alternate"></link><published>2011-03-10T02:30:00+08:00</published><updated>2011-03-10T02:30:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-03-10:/ios4-3-release.html</id><summary type="html">&lt;p&gt;2011-03-10，苹果iOS 4.3固件升级正式提供更新和下载。&lt;/p&gt;
 &lt;p&gt;苹果官网地址：&lt;a class="reference external" href="http://www.apple.com/ios/"&gt;http://www.apple.com/ios/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="iOS4.3" src="http://images.apple.com/ipod/home/images/promobar_ios_20110302.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;苹果iOS4.3更新特点&lt;/strong&gt;&lt;/p&gt;
@@ -204,7 +204,7 @@ contact us again.&lt;/p&gt;
 &lt;div class="line"&gt;以上新闻部分引用&lt;a class="reference external" href="http://www.cnbeta.com/articles/136775.htm"&gt;CNbeta&lt;/a&gt;&lt;/div&gt;
 &lt;div class="line"&gt;温馨的提示：破解越狱之类设备请不要更新&lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Apple iPad2 正式发布</title><link href="/apple-ipad2-release.html" rel="alternate"></link><published>2011-03-03T08:17:00+08:00</published><updated>2011-03-03T08:17:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-03-03:/apple-ipad2-release.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="%20http://zh.wikipedia.org/wiki/IPad_2"&gt;iPad
+</content></entry><entry><title>Apple iPad2 正式发布</title><link href="https://magicalboy.com/apple-ipad2-release.html" rel="alternate"></link><published>2011-03-03T08:17:00+08:00</published><updated>2011-03-03T08:17:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-03-03:/apple-ipad2-release.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="%20http://zh.wikipedia.org/wiki/IPad_2"&gt;iPad
 2&lt;/a&gt;是苹果公司设计开发并销售的第二代平板电脑，主要面向视听媒体，包括图书、期刊、电影、音乐、游戏和网络内容的平台。它的大小和重量介于市面上的智能手机和笔记本电脑之间。2011年3月2日上午10点（PST:18点），苹果公司在耶尔巴布埃纳艺术中心发布了这款产品。（Via
 &lt;a class="reference external" href="http://zh.wikipedia.org/wiki/IPad_2"&gt;维基百科&lt;/a&gt;）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;我喜欢的特点&lt;/strong&gt;&lt;/p&gt;
@@ -267,7 +267,7 @@ A5 专门设计的高性能低功耗系统级芯片。&lt;/div&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.apple.com/ipad/"&gt;Apple - iPad - All-new design. Video calls. HD video. And
 more.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Google短网址服务</title><link href="/google-urlshortener-api.html" rel="alternate"></link><published>2011-01-17T01:35:00+08:00</published><updated>2011-01-17T01:35:00+08:00</updated><author><name>donly</name></author><id>tag:None,2011-01-17:/google-urlshortener-api.html</id><summary type="html">&lt;p&gt;Google已公开其短网址goo.gl
+</content></entry><entry><title>Google短网址服务</title><link href="https://magicalboy.com/google-urlshortener-api.html" rel="alternate"></link><published>2011-01-17T01:35:00+08:00</published><updated>2011-01-17T01:35:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2011-01-17:/google-urlshortener-api.html</id><summary type="html">&lt;p&gt;Google已公开其短网址goo.gl
 &lt;a class="reference external" href="http://code.google.com/apis/urlshortener/"&gt;API&lt;/a&gt;，有兴趣的赶紧研究吧。以下是本站的Google短址：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://goo.gl/UnnoC"&gt;http://goo.gl/UnnoC&lt;/a&gt;&lt;/li&gt;
@@ -287,7 +287,7 @@ more.&lt;/a&gt;&lt;/li&gt;
 &lt;div class="line"&gt;在短地址后面加上.qr可生成二维码，比如http://goo.gl/TXyAR.qr的二维码为：&lt;/div&gt;
 &lt;div class="line"&gt;&lt;img alt="http://goo.gl/TxyAR.qr" src="http://chart.apis.google.com/chart?cht=qr&amp;amp;chs=150x150&amp;amp;choe=UTF-8&amp;amp;chld=H&amp;amp;chl=http://goo.gl/TXyAR" /&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content><category term="Google"></category></entry><entry><title>Feedsky已恢复，继续给力！</title><link href="/feedsky-geilivable.html" rel="alternate"></link><published>2010-12-19T15:11:00+08:00</published><updated>2010-12-19T15:11:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-12-19:/feedsky-geilivable.html</id><summary type="html">&lt;p&gt;本博客的二级永久RSS订阅地址&lt;a class="reference external" href="http://feed.magicalboy.com"&gt;http://feed.magicalboy.com&lt;/a&gt;已经有一个多月没更新了，今天在Google
+</content><category term="Google"></category></entry><entry><title>Feedsky已恢复，继续给力！</title><link href="https://magicalboy.com/feedsky-geilivable.html" rel="alternate"></link><published>2010-12-19T15:11:00+08:00</published><updated>2010-12-19T15:11:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-12-19:/feedsky-geilivable.html</id><summary type="html">&lt;p&gt;本博客的二级永久RSS订阅地址&lt;a class="reference external" href="http://feed.magicalboy.com"&gt;http://feed.magicalboy.com&lt;/a&gt;已经有一个多月没更新了，今天在Google
 Reader的订阅趋势看了一下，已经在前40名之外，冷淡了。&lt;/p&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;这是Google Reader解析出错信息：&lt;/div&gt;
@@ -311,7 +311,7 @@ Reader的订阅趋势看了一下，已经在前40名之外，冷淡了。&lt;/p
 &lt;div class="line"&gt;&lt;a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/12/Feedsky_Setting.png"&gt;&lt;img alt="image1" class="alignnone size-full wp-image-959" src="http://magicalboy.com/wp-content/uploads/2010/12/Feedsky_Setting.png" style="width: 570px; height: 404px;" /&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Feedsky要给力啊，希望这种事情以后少点发生，同时也祝福自己工作顺利，早日赚到钱买个好点的主机空间。&lt;/p&gt;
-</content></entry><entry><title>iBlog 苹果风格 WordPress 主题</title><link href="/iblog-theme.html" rel="alternate"></link><published>2010-11-11T07:23:00+08:00</published><updated>2010-11-11T07:23:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-11:/iblog-theme.html</id><summary type="html">&lt;p&gt;今天我做出了一个非常艰难的决定：为本博客装上 iBlog
+</content></entry><entry><title>iBlog 苹果风格 WordPress 主题</title><link href="https://magicalboy.com/iblog-theme.html" rel="alternate"></link><published>2010-11-11T07:23:00+08:00</published><updated>2010-11-11T07:23:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-11-11:/iblog-theme.html</id><summary type="html">&lt;p&gt;今天我做出了一个非常艰难的决定：为本博客装上 iBlog
 主题！从之前的灰蓝色风格一转到苹果类的简洁白色风格，让人有股焕然一新的感觉。&lt;/p&gt;
 &lt;p&gt;iBolg 是一款专业而且免费的 Wordpress 主题，它基于PageLines CMS
 框架。这款主题有缩略图，工具，可选项和本地化等功能，由 PageLines
@@ -338,7 +338,7 @@ caption=&amp;quot;Mac OS X v10.6 &amp;quot;Snow Leopard&amp;quot;画面&amp;quot
 &lt;div class="line"&gt;图：Mac OS X v10.6 &amp;quot;Snow Leopard&amp;quot;画面&amp;quot;&lt;/div&gt;
 &lt;div class="line"&gt;主题官方地址：&lt;a class="reference external" href="http://wordpress.org/extend/themes/iblog"&gt;http://wordpress.org/extend/themes/iblog&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Feedsky歇菜了</title><link href="/feedsky-can-not-access.html" rel="alternate"></link><published>2010-11-09T01:21:00+08:00</published><updated>2010-11-09T01:21:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-09:/feedsky-can-not-access.html</id><summary type="html">&lt;p&gt;对不起，本博客的 Feed 托管服务器 Feedsky
+</content></entry><entry><title>Feedsky歇菜了</title><link href="https://magicalboy.com/feedsky-can-not-access.html" rel="alternate"></link><published>2010-11-09T01:21:00+08:00</published><updated>2010-11-09T01:21:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-11-09:/feedsky-can-not-access.html</id><summary type="html">&lt;p&gt;对不起，本博客的 Feed 托管服务器 Feedsky
 歇菜，其主页也访问不了，估计是没戏了，由于众所周知的原因吧。&lt;/p&gt;
 &lt;p&gt;想赶紧换一个 Feed 托管服务商，发现能支持二级域名绑定的 Feedburner 和
 Feedcat不是我想要的。比如我的永久订阅地址为
@@ -360,7 +360,7 @@ feed.magicalboy.com/[idname] 这样的格式，没有 Feedsky
 &lt;a class="reference external" href="http://feed.magicalboy.com"&gt;http://feed.magicalboy.com&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;Feedsky
 挂了，同时由于本博客寄托在别人的主机空间，受到诸多的限制，做不了转向，唯有暂时停止更新，造成的不便请朋友们能够谅解，并考虑近期更换主机空间。&lt;/p&gt;
-</content></entry><entry><title>騰訊QQ和奇虎360</title><link href="/qq-vs-360.html" rel="alternate"></link><published>2010-11-08T06:27:00+08:00</published><updated>2010-11-08T06:27:00+08:00</updated><author><name>donly</name></author><id>tag:None,2010-11-08:/qq-vs-360.html</id><summary type="html">&lt;div class="section" id="oicq"&gt;
+</content></entry><entry><title>騰訊QQ和奇虎360</title><link href="https://magicalboy.com/qq-vs-360.html" rel="alternate"></link><published>2010-11-08T06:27:00+08:00</published><updated>2010-11-08T06:27:00+08:00</updated><author><name>donly</name></author><id>tag:magicalboy.com,2010-11-08:/qq-vs-360.html</id><summary type="html">&lt;div class="section" id="oicq"&gt;
 &lt;h2&gt;懷念當年的OICQ&lt;/h2&gt;
 &lt;p&gt;本人於本世紀初開始使用QQ，時至今日使用了十年。像大部分一樣，QQ成了進入互聯網的入門，QQ號成了網號，同時也在不知不覺中，QQ成了自己在互聯網的ID。&lt;/p&gt;
 &lt;p&gt;不知何時，QQ已經成為了我們主要的IM工具，甚至是主要的上網工具，從開始追求的QQ等級，QQ秀，QQ圖標到各種QQ鑽石，無非是用來向好友炫耀自己，以滿足其虛榮心。其實有沒想過，此等皆為浮雲啊。&lt;/p&gt;
