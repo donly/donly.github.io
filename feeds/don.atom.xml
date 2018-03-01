@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Don</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/don.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2018-01-25T15:00:00+08:00</updated><entry><title>iOS 11.3 Developer beta</title><link href="https://magicalboy.com/ios-11-3-beta-update.html" rel="alternate"></link><published>2018-01-25T15:00:00+08:00</published><updated>2018-01-25T15:00:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2018-01-25:/ios-11-3-beta-update.html</id><summary type="html">&lt;p&gt;这是 iOS 11.3 的第一个 &lt;code&gt;beta&lt;/code&gt; 版本，更新后版本号为：&lt;code&gt;11.3 (15E5167f)&lt;/code&gt;。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Don</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/don.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2018-02-28T23:10:00+08:00</updated><entry><title>Install Node.js on Raspberry Pi 3</title><link href="https://magicalboy.com/nodejs-install-on-raspberry-pi-3.html" rel="alternate"></link><published>2018-02-28T23:10:00+08:00</published><updated>2018-02-28T23:10:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2018-02-28:/nodejs-install-on-raspberry-pi-3.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; 是一个能够在服务器端运行 JavaScript 的开放源代码、跨平台 JavaScript 运行环境。&lt;/p&gt;
+&lt;p&gt;树莓派 3 官方系统 &lt;code&gt;Raspbian Stretch&lt;/code&gt; 自带的 Node.js 版本比较旧，可以通过以下命令查看版本号：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ node -v
+v4.8.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在更新 Node.js 版本之前，先将旧的删除：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove nodered
+$ sudo apt-get remove nodejs nodejs-legacy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装新版本：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -sL https://deb.nodesource.com/setup_8.x &lt;span class="p"&gt;|&lt;/span&gt; sudo -E bash -
+$ sudo …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; 是一个能够在服务器端运行 JavaScript 的开放源代码、跨平台 JavaScript 运行环境。&lt;/p&gt;
+&lt;p&gt;树莓派 3 官方系统 &lt;code&gt;Raspbian Stretch&lt;/code&gt; 自带的 Node.js 版本比较旧，可以通过以下命令查看版本号：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ node -v
+v4.8.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在更新 Node.js 版本之前，先将旧的删除：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove nodered
+$ sudo apt-get remove nodejs nodejs-legacy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装新版本：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -sL https://deb.nodesource.com/setup_8.x &lt;span class="p"&gt;|&lt;/span&gt; sudo -E bash -
+$ sudo apt-get install nodejs
+$ npm -v
+&lt;span class="m"&gt;5&lt;/span&gt;.6.0
+$ node -v
+v8.9.4
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;可以新的版本自带了 &lt;code&gt;npm&lt;/code&gt; 工具。最后是一些清理工作：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt autoremove
+&lt;/pre&gt;&lt;/div&gt;
+</content><category term="nodejs"></category><category term="raspberry"></category></entry><entry><title>iOS 11.3 Developer beta</title><link href="https://magicalboy.com/ios-11-3-beta-update.html" rel="alternate"></link><published>2018-01-25T15:00:00+08:00</published><updated>2018-01-25T15:00:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2018-01-25:/ios-11-3-beta-update.html</id><summary type="html">&lt;p&gt;这是 iOS 11.3 的第一个 &lt;code&gt;beta&lt;/code&gt; 版本，更新后版本号为：&lt;code&gt;11.3 (15E5167f)&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;配套的 Xcode 9.3 beta 版本号为 &lt;code&gt;9Q98q&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;主要更新亮点有：&lt;/p&gt;
 &lt;ul class="simple"&gt;

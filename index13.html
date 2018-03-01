@@ -56,6 +56,22 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2011-09-13T13:09:00+08:00" pubdate>
+                            Tue, 13 Sep 2011
+                        </time>
+                        <a href="https://magicalboy.com/about-lost-youth.html" rel="bookmark"><h1>纪念即将逝去的青春</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><img alt="即将逝去的青春" class="aligncenter" src="https://lh4.googleusercontent.com/-IurF4a7lE08/T5UEamp2okI/AAAAAAAABE0/j2wNQbPDj1c/s435/the_young_days.jpg" /></p>
+<p>作此文，谨以纪念即将逝去的青春..</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2011-09-13T12:49:00+08:00" pubdate>
                             Tue, 13 Sep 2011
                         </time>
@@ -317,49 +333,6 @@ OS X及相关产品中常见到，下面是在Xcode中如果读取或写入plist
 <p>-EOF-</p>
 </div>
 
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-02-16T03:55:00+08:00" pubdate>
-                            Wed, 16 Feb 2011
-                        </time>
-                        <a href="https://magicalboy.com/remove-shine-gloss-effect-on-iphone-icon.html" rel="bookmark"><h1>移除iPhone图标中的光泽效果</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="line-block">
-<div class="line">在Xcode中为iPhone应用增加icon图标的时，Xcode默认会自动为图标圆角化，并在图标顶部增加闪耀光泽效果，就像下面这样：</div>
-<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png"><img alt="gloss-icon" class="alignnone size-full wp-image-1083" src="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png" style="width: 236px; height: 91px;" /></a></div>
-</div>
-<p>在图中我们可以与系统的Photos和Settings图标对比，很明显可看出增加的光泽效果。</p>
-<div class="line-block">
-<div class="line">我们可以通过修改Info.plist文件来决定是否开启这样的效果，使用Xcode或文本编辑器打开项目中的XXX-Info.plist文件，增加以下代码：</div>
-<div class="line"><tt class="docutils literal">UIPrerenderedIcon</tt></div>
-<div class="line"><strong>注意</strong></div>
-<div class="line">在Xcode中需使用&quot;Souce Code&quot;或&quot;Plain
-Text&quot;方式打开才能看到并修改XML属性代码。</div>
-</div>
-<div class="line-block">
-<div class="line">或者直接在Xcode中打打开来修改，点击增加在下拉列表中选择&quot;Icon already
-includes gloss and bevel effects&quot;项并在其值中单击启用即可，如图：</div>
-<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/Icon-gloss-effect.png"><img alt="Icon-gloss-effect" class="alignnone size-full wp-image-1084" src="http://magicalboy.com/wp-content/uploads/2011/02/Icon-gloss-effect.png" style="width: 438px; height: 217px;" /></a></div>
-</div>
-<div class="line-block">
-<div class="line">没有启用光泽效果的图标效果图如下：</div>
-<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/nongloss-icon.png"><img alt="nongloss-icon" class="alignnone size-full wp-image-1085" src="http://magicalboy.com/wp-content/uploads/2011/02/nongloss-icon.png" style="width: 237px; height: 93px;" /></a></div>
-</div>
-<p>从图中可看出来，图标的黑色和背景黑色已经分不清边界了，可根据需要使用光泽效果。</p>
-<div class="line-block">
-<div class="line"><strong>注意</strong></div>
-<div class="line">更改的效果可能不会马上生效，[STRIKEOUT:因为图标已经缓存，可更换图片再换回来以更改缓存]，删除App或者在iPhone模拟器菜单中选择“还原内容和设置...”来重置所有设置。</div>
-</div>
-<div class="section" id="ios-5">
-<h2>2013-08-02更新：iOS 5+支持</h2>
-<div class="line-block">
-<div class="line">以上设置可以支持iOS5以下，iOS5.0以上需要设置 …</div></div></div>
                     </section>
                 </article>
             </li>

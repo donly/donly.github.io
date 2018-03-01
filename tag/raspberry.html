@@ -56,6 +56,31 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2018-02-28T23:10:00+08:00" pubdate>
+                            Wed, 28 Feb 2018
+                        </time>
+                        <a href="https://magicalboy.com/nodejs-install-on-raspberry-pi-3.html" rel="bookmark"><h1>Install Node.js on Raspberry Pi 3</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="https://nodejs.org/">Node.js</a> 是一个能够在服务器端运行 JavaScript 的开放源代码、跨平台 JavaScript 运行环境。</p>
+<p>树莓派 3 官方系统 <code>Raspbian Stretch</code> 自带的 Node.js 版本比较旧，可以通过以下命令查看版本号：</p>
+<div class="highlight"><pre><span></span>$ node -v
+v4.8.2
+</pre></div>
+<p>在更新 Node.js 版本之前，先将旧的删除：</p>
+<div class="highlight"><pre><span></span>$ sudo apt-get remove nodered
+$ sudo apt-get remove nodejs nodejs-legacy
+</pre></div>
+<p>安装新版本：</p>
+<div class="highlight"><pre><span></span>$ curl -sL https://deb.nodesource.com/setup_8.x <span class="p">|</span> sudo -E bash -
+$ sudo …</pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2017-03-23T10:25:00+08:00" pubdate>
                             Thu, 23 Mar 2017
                         </time>

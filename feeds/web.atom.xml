@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - web</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/web.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2016-09-13T16:30:00+08:00</updated><entry><title>使用 Let's Encrypt SSL</title><link href="https://magicalboy.com/use-lets-encrypt-ssl.html" rel="alternate"></link><published>2016-09-13T16:30:00+08:00</published><updated>2016-09-13T16:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-09-13:/use-lets-encrypt-ssl.html</id><summary type="html">&lt;p&gt;本站的 SSL 由 &lt;a class="reference external" href="https://letsencrypt.org"&gt;Let's Encrypt&lt;/a&gt; 提供。不再使用 StartSSL。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Web</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com//feeds/web.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2018-02-28T23:10:00+08:00</updated><entry><title>Install Node.js on Raspberry Pi 3</title><link href="https://magicalboy.com/nodejs-install-on-raspberry-pi-3.html" rel="alternate"></link><published>2018-02-28T23:10:00+08:00</published><updated>2018-02-28T23:10:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2018-02-28:/nodejs-install-on-raspberry-pi-3.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; 是一个能够在服务器端运行 JavaScript 的开放源代码、跨平台 JavaScript 运行环境。&lt;/p&gt;
+&lt;p&gt;树莓派 3 官方系统 &lt;code&gt;Raspbian Stretch&lt;/code&gt; 自带的 Node.js 版本比较旧，可以通过以下命令查看版本号：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ node -v
+v4.8.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在更新 Node.js 版本之前，先将旧的删除：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove nodered
+$ sudo apt-get remove nodejs nodejs-legacy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装新版本：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -sL https://deb.nodesource.com/setup_8.x &lt;span class="p"&gt;|&lt;/span&gt; sudo -E bash -
+$ sudo …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; 是一个能够在服务器端运行 JavaScript 的开放源代码、跨平台 JavaScript 运行环境。&lt;/p&gt;
+&lt;p&gt;树莓派 3 官方系统 &lt;code&gt;Raspbian Stretch&lt;/code&gt; 自带的 Node.js 版本比较旧，可以通过以下命令查看版本号：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ node -v
+v4.8.2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在更新 Node.js 版本之前，先将旧的删除：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove nodered
+$ sudo apt-get remove nodejs nodejs-legacy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装新版本：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -sL https://deb.nodesource.com/setup_8.x &lt;span class="p"&gt;|&lt;/span&gt; sudo -E bash -
+$ sudo apt-get install nodejs
+$ npm -v
+&lt;span class="m"&gt;5&lt;/span&gt;.6.0
+$ node -v
+v8.9.4
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;可以新的版本自带了 &lt;code&gt;npm&lt;/code&gt; 工具。最后是一些清理工作：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt autoremove
+&lt;/pre&gt;&lt;/div&gt;
+</content><category term="nodejs"></category><category term="raspberry"></category></entry><entry><title>使用 Let's Encrypt SSL</title><link href="https://magicalboy.com/use-lets-encrypt-ssl.html" rel="alternate"></link><published>2016-09-13T16:30:00+08:00</published><updated>2016-09-13T16:30:00+08:00</updated><author><name>Don</name></author><id>tag:magicalboy.com,2016-09-13:/use-lets-encrypt-ssl.html</id><summary type="html">&lt;p&gt;本站的 SSL 由 &lt;a class="reference external" href="https://letsencrypt.org"&gt;Let's Encrypt&lt;/a&gt; 提供。不再使用 StartSSL。&lt;/p&gt;
 &lt;p&gt;需要注意的是，Let's Encrypt 的免费证书有效期为三个月，注意过期之前更新或使用自动脚本更新。&lt;/p&gt;
 &lt;p&gt;附：&lt;a class="reference external" href="https://www.digicert.com/help/?host=magicalboy.com"&gt;SSL Certificate Checker&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;本站的 SSL 由 &lt;a class="reference external" href="https://letsencrypt.org"&gt;Let's Encrypt&lt;/a&gt; 提供。不再使用 StartSSL。&lt;/p&gt;

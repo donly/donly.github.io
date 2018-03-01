@@ -56,6 +56,49 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2011-02-16T03:55:00+08:00" pubdate>
+                            Wed, 16 Feb 2011
+                        </time>
+                        <a href="https://magicalboy.com/remove-shine-gloss-effect-on-iphone-icon.html" rel="bookmark"><h1>移除iPhone图标中的光泽效果</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line">在Xcode中为iPhone应用增加icon图标的时，Xcode默认会自动为图标圆角化，并在图标顶部增加闪耀光泽效果，就像下面这样：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png"><img alt="gloss-icon" class="alignnone size-full wp-image-1083" src="http://magicalboy.com/wp-content/uploads/2011/02/gloss-icon.png" style="width: 236px; height: 91px;" /></a></div>
+</div>
+<p>在图中我们可以与系统的Photos和Settings图标对比，很明显可看出增加的光泽效果。</p>
+<div class="line-block">
+<div class="line">我们可以通过修改Info.plist文件来决定是否开启这样的效果，使用Xcode或文本编辑器打开项目中的XXX-Info.plist文件，增加以下代码：</div>
+<div class="line"><tt class="docutils literal">UIPrerenderedIcon</tt></div>
+<div class="line"><strong>注意</strong></div>
+<div class="line">在Xcode中需使用&quot;Souce Code&quot;或&quot;Plain
+Text&quot;方式打开才能看到并修改XML属性代码。</div>
+</div>
+<div class="line-block">
+<div class="line">或者直接在Xcode中打打开来修改，点击增加在下拉列表中选择&quot;Icon already
+includes gloss and bevel effects&quot;项并在其值中单击启用即可，如图：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/Icon-gloss-effect.png"><img alt="Icon-gloss-effect" class="alignnone size-full wp-image-1084" src="http://magicalboy.com/wp-content/uploads/2011/02/Icon-gloss-effect.png" style="width: 438px; height: 217px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line">没有启用光泽效果的图标效果图如下：</div>
+<div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/02/nongloss-icon.png"><img alt="nongloss-icon" class="alignnone size-full wp-image-1085" src="http://magicalboy.com/wp-content/uploads/2011/02/nongloss-icon.png" style="width: 237px; height: 93px;" /></a></div>
+</div>
+<p>从图中可看出来，图标的黑色和背景黑色已经分不清边界了，可根据需要使用光泽效果。</p>
+<div class="line-block">
+<div class="line"><strong>注意</strong></div>
+<div class="line">更改的效果可能不会马上生效，[STRIKEOUT:因为图标已经缓存，可更换图片再换回来以更改缓存]，删除App或者在iPhone模拟器菜单中选择“还原内容和设置...”来重置所有设置。</div>
+</div>
+<div class="section" id="ios-5">
+<h2>2013-08-02更新：iOS 5+支持</h2>
+<div class="line-block">
+<div class="line">以上设置可以支持iOS5以下，iOS5.0以上需要设置 …</div></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2011-02-10T09:44:00+08:00" pubdate>
                             Thu, 10 Feb 2011
                         </time>
@@ -292,39 +335,6 @@ sdk系统环境变量，将你sdk下的tool目录路径（比如x:android-sdk-wi
 <li>增加虚拟设备，版本自己选择（如下图）：<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg"><img alt="image0" class="alignnone size-full wp-image-989" src="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg" style="width: 604px; height: 330px;" /></a></li>
 <li>到Eclipse官网下载最新版本，运行并打开帮助菜单中的安装新软件子菜单，增加android
 - <a class="reference external" href="http://dl-ssl.google.com/android/eclipse">http://dl-ssl.google.com/android …</a></li></ol></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-12-31T02:22:00+08:00" pubdate>
-                            Fri, 31 Dec 2010
-                        </time>
-                        <a href="https://magicalboy.com/my-2010-events.html" rel="bookmark"><h1>我的2010大事记</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>2010年是作出艰难的决定的一年：</p>
-<ol class="arabic simple">
-<li>2010年01月：实习回校，享受最后的校园生活</li>
-<li>2010年02月：渡过最后一个寒假，感受家的温馨</li>
-<li>2010年03月：Oracle收购了Sun，我放弃了Java，谷歌退出中国大陆</li>
-<li>2010年04月：青海玉树7.1级大地震</li>
-<li>2010年05月：上海世博会开幕，富士康跳楼事件</li>
-<li>2010年06月：毕业了，一张纸</li>
-<li>2010年07月：南京大爆炸</li>
-<li>2010年08月：菲律宾人质劫持血案</li>
-<li>2010年09月：离职，终于狠下心离开，坚决果断地离开</li>
-<li>2010年10月：一个艰难的选择──iPhone开发</li>
-<li>2010年11月：腾讯大战360，“一个艰难的决定”</li>
-<li>2010年12月：Mac OS X 和 iPhone 真的很好</li>
-</ol>
-<div class="line-block">
-<div class="line">---------------------------------&#64;年终分割线&#64;---------------------------------</div>
-<div class="line">未完待续</div>
-</div>
-
                     </section>
                 </article>
             </li>
