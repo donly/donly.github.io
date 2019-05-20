@@ -54,23 +54,17 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2015-11-15T17:37:54+08:00" pubdate>
+                            Sun, 15 Nov 2015
                         </time>
-                        <a href="https://magicalboy.com/gentoo.html" rel="bookmark"><h1>Gentoo 2015</h1></a>
+                        <a href="https://magicalboy.com/gentoo-samba.html" rel="bookmark"><h1>Samba 配置</h1></a>
                     </header>
                     <section class="post-content">
-                        <div class="section" id="gentoo">
-<h2>为什么选择 Gentoo</h2>
-<p>完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。</p>
-<p>同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。</p>
-<p>另外附 Gentoo 排名情况：  <a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo">DistroWatch</a> 。</p>
-</div>
-<div class="section" id="id1">
-<h2>安装过程</h2>
-<p>整个安装过程主要参考 <a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64">Handbook 手册</a>，利用业余时间两个晚上搞定。</p>
-<div class="highlight"><pre><span></span><span class="c1"># uname -a</span>
-Linux don <span class="m">4</span>.0.5-gentoo <span class="c1">#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel …</span></pre></div></div>
+                        <p>Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。</p>
+<p>其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。</p>
+<p>Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。</p>
+<p>Samba 现在最新版本是 4.x，但在我的树莓派上面 <em>emerge --ask net-fs/samba</em> 出来的还是 3.6.2。</p>
+<p>官网上的 <a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba">net-fs/samba</a> package 4.x 以上的版本不支持 arm 或被 …</p>
                     </section>
                 </article>
             </li>
@@ -78,57 +72,8 @@ Linux don <span class="m">4</span>.0.5-gentoo <span class="c1">#1 SMP Fri Aug 28
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/gentoo-locale.html" rel="bookmark"><h1>Gentoo 本地化配置</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>未配置之前会有类似这样的提示：<em>man: can't set the locale; make sure $LC_</em> and $LANG are correct*。</p>
-<ol class="arabic simple">
-<li>查看当前本地化配置：</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="c1"># locale -a</span>
-locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
-locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
-locale: Cannot <span class="nb">set</span> LC_COLLATE to default locale: No such file …</pre></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/gentoo-partition.html" rel="bookmark"><h1>Gentoo 分区</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。</p>
-<p>使用环境：</p>
-<ul class="simple">
-<li>系统：Gentoo 3.4.103</li>
-<li>存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10</li>
-</ul>
-<p>第一步：查看与新建分区</p>
-<ol class="arabic simple">
-<li>分区前系统盘分区：</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="c1"># df -h</span>
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/root       <span class="m">3</span>.4G  <span class="m">1</span>.7G  <span class="m">1</span>.6G  <span class="m">52</span>% /
-devtmpfs        438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev
-tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2015-10-27T22:34:42+08:00" pubdate>
+                            Tue, 27 Oct 2015
                         </time>
                         <a href="https://magicalboy.com/gentoo-portage.html" rel="bookmark"><h1>Gentoo Portage</h1></a>
                     </header>
@@ -155,17 +100,72 @@ tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2015-10-27T10:17:08+08:00" pubdate>
+                            Tue, 27 Oct 2015
                         </time>
-                        <a href="https://magicalboy.com/gentoo-samba.html" rel="bookmark"><h1>Samba 配置</h1></a>
+                        <a href="https://magicalboy.com/gentoo-locale.html" rel="bookmark"><h1>Gentoo 本地化配置</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。</p>
-<p>其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。</p>
-<p>Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。</p>
-<p>Samba 现在最新版本是 4.x，但在我的树莓派上面 <em>emerge --ask net-fs/samba</em> 出来的还是 3.6.2。</p>
-<p>官网上的 <a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba">net-fs/samba</a> package 4.x 以上的版本不支持 arm 或被 …</p>
+                        <p>未配置之前会有类似这样的提示：<em>man: can't set the locale; make sure $LC_</em> and $LANG are correct*。</p>
+<ol class="arabic simple">
+<li>查看当前本地化配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># locale -a</span>
+locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_COLLATE to default locale: No such file …</pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-10-27T09:54:19+08:00" pubdate>
+                            Tue, 27 Oct 2015
+                        </time>
+                        <a href="https://magicalboy.com/gentoo-partition.html" rel="bookmark"><h1>Gentoo 分区</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。</p>
+<p>使用环境：</p>
+<ul class="simple">
+<li>系统：Gentoo 3.4.103</li>
+<li>存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10</li>
+</ul>
+<p>第一步：查看与新建分区</p>
+<ol class="arabic simple">
+<li>分区前系统盘分区：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># df -h</span>
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       <span class="m">3</span>.4G  <span class="m">1</span>.7G  <span class="m">1</span>.6G  <span class="m">52</span>% /
+devtmpfs        438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev
+tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-09-15T21:14:13+08:00" pubdate>
+                            Tue, 15 Sep 2015
+                        </time>
+                        <a href="https://magicalboy.com/gentoo.html" rel="bookmark"><h1>Gentoo 2015</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="gentoo">
+<h2>为什么选择 Gentoo</h2>
+<p>完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。</p>
+<p>同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。</p>
+<p>另外附 Gentoo 排名情况：  <a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo">DistroWatch</a> 。</p>
+</div>
+<div class="section" id="id1">
+<h2>安装过程</h2>
+<p>整个安装过程主要参考 <a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64">Handbook 手册</a>，利用业余时间两个晚上搞定。</p>
+<div class="highlight"><pre><span></span><span class="c1"># uname -a</span>
+Linux don <span class="m">4</span>.0.5-gentoo <span class="c1">#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel …</span></pre></div></div>
                     </section>
                 </article>
             </li>

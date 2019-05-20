@@ -125,19 +125,20 @@ macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS Hi
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2017-06-22T10:30:00+08:00" pubdate>
+                            Thu, 22 Jun 2017
                         </time>
-                        <a href="https://magicalboy.com/cocoa-auto-layout.html" rel="bookmark"><h1>Cocoa Auto Layout</h1></a>
+                        <a href="https://magicalboy.com/ios-11-beta-2-update.html" rel="bookmark"><h1>iOS 11 Developer beta 2</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Auto Layout 是 iOS 6.0 和 Xcode 4.5 的新特性。</p>
-<p>使用 Cocoa Auto Layout 系统为用户界面元素定义布局约束，其中约束（Constraints）表示用户界面控件之间的关系，比如 “这些视图从头至尾排列”。</p>
-<p>Cocoa Auto Layout 让用户来定义界面元素的布局规则。</p>
-<div class="section" id="id1">
-<h2>视图之间的约束表示</h2>
-</div>
-
+                        <p>iOS 11 更新至 beta 2。</p>
+<p>更新后版本号为：<code>11 (15A5304i)</code>，详细的更新日志见官网：<a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Jun_21_2017/iOS_11_beta_2_Release_Notes.pdf">iOS 11 beta 2 Release Notes</a>。</p>
+<p>iOS 11 第一个 beta 版本问题还是很多的，而且部分 bug 还严重影响设备的正常使用。</p>
+<p>关于 iOS 11 的新特性请见 <a class="reference external" href="https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS_11_0.html#//apple_ref/doc/uid/TP40017637-SW1">What's New in iOS</a></p>
+<p>本次更新主要亮点：</p>
+<ol class="arabic simple">
+<li>32 位应用程序将不会运行在 iOS 11 的未来版本上。（26402174）</li>
+<li>iOS 11 不再支持 armv7 或 armv7s（32位）。 如果 iOS 目标的 iOS 部署目标为 …</li></ol>
                     </section>
                 </article>
             </li>
@@ -145,155 +146,27 @@ macOS Sierra 以及之前的旧版本并没有这个 bug，但所有的 macOS Hi
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2017-03-28T10:30:00+08:00" pubdate>
+                            Tue, 28 Mar 2017
                         </time>
-                        <a href="https://magicalboy.com/ios-design-patterns-model-view-controller.html" rel="bookmark"><h1>iOS 设计模式: Model View Controller</h1></a>
+                        <a href="https://magicalboy.com/ios-10-3-release.html" rel="bookmark"><h1>iOS 10.3 正式版发布</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>MVC 设计模式的主要目的是可重用性，能够在不同的视图中使用重用同一个模型。</p>
-<img alt="Model View Controller (MVC) Design Pattern" src="static/images/mvc.jpg" />
-<div class="section" id="model">
-<h2>模型 Model</h2>
-<p>模型包含了数据。例如，一个 Book 对象包含有关书的信息：标题和作者。此外，Book 对象能够被其它对象关联，建立一对一或一对多的关系。例如 Category 对象可包含多个 Book 对象。模型中的数据可以来源于本地数据库或文件，也可以从网络请求回来。</p>
-<p>模型不应该直接和视图打交道，应该在需要的时候访问通过控制器来访问。</p>
-<p>在 iOS 中，模型通常是 NSObject 或 NSManagedObject的子类。任何模型对象包括一些实例变量和对应的 getter/setter 方法。大多数面向对象编程语言都有提供封装的机制。在 iOS 中使用 &#64;property 封装，和可选的 &#64;synthesize 自动生成 getter/setter 方法。以 Book 模型为例 …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/ios-frameworks.html" rel="bookmark"><h1>iOS Frameworks</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="ios">
-<h2>iOS 的架构是分层的</h2>
-<img alt="Layers of iOS" class="align-left" src="http://developer.apple.com/library/ios/documentation/miscellaneous/conceptual/iphoneostechoverview/Art/SystemLayers_2x.png" style="width: 366px; height: 202px;" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-</div>
-<div class="section" id="frameworks">
-<h2>Frameworks</h2>
-<p>iOS 提供了一套框架，将 iOS 应用程序的技术，服务和功能结合了起来。</p>
-</div>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/ios-i18n.html" rel="bookmark"><h1>iOS 国际化/本地化</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="id1">
-<h2>获取首选语言</h2>
-<div class="highlight"><pre><span></span><span class="c1">// 获取首选语言</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;preferredLanguages:%@&quot;</span><span class="p">,</span> <span class="p">[</span><span class="bp">NSLocale</span> <span class="n">preferredLanguages</span><span class="p">]);</span>
-
-<span class="c1">// 另一种方式</span>
-<span class="bp">NSArray</span> <span class="o">*</span><span class="n">languages</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSUserDefaults</span> <span class="n">standardUserDefaults</span><span class="p">]</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;AppleLanguages&quot;</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;languages:%@&quot;</span><span class="p">,</span> <span class="n">languages</span><span class="p">);</span>
-</pre></div>
-<p>输出结果是一样的，都是数组：</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>
-<span class="s2">&quot;zh-Hans&quot;</span>,
-en,
-fr,
-de,
-ja,
-...
-<span class="o">)</span>
-</pre></div>
-<p>数组中第一个就是当前选择的语言，名称符合 ISO 639-1 代码表。同时需要注意区域和语言是独立不同的。</p>
-<ul class="simple">
-<li>两者有什么不同，请看这：<a class="reference external" href="http://stackoverflow.com/questions/7872356/what-is-the-difference-between-nslocale-preferredlanguages-and-nsuserdefault">Stack Overflow</a></li>
-<li>苹果开发者官网专题：<a class="reference external" href="http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPInternational/Articles/ChoosingLocalizations.html">Internationalization Programming Topics</a></li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2>获取当前地区</h2>
-<div class="highlight"><pre><span></span><span class="bp">NSLocale</span> <span class="o">*</span><span class="n">locale</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSLocale</span> <span class="n">currentLocale</span><span class="p">];</span>
-<span class="bp">NSString</span> <span class="o">*</span><span class="n">localeName</span> <span class="o">=</span> <span class="p">[</span><span class="n">locale</span> <span class="nl">displayNameForKey</span><span class="p">:</span><span class="n">NSLocaleIdentifier</span>
-                                         <span class="nl">value</span><span class="p">:[</span><span class="n">locale</span> <span class="n">localeIdentifier …</span></pre></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/ios-support-matrix.html" rel="bookmark"><h1>iOS 支持矩阵</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <img alt="iOS Support Matrix" src="images/ios_support_matrix.png" />
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/ios-thread.html" rel="bookmark"><h1>iOS 多线程学习</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="contents topic" id="id1">
-<p class="topic-title first">目录</p>
-<ul class="simple">
-<li><a class="reference internal" href="#id2" id="id9">基础知识</a></li>
-<li><a class="reference internal" href="#nsthread" id="id10">NSThread</a><ul>
-<li><a class="reference internal" href="#id3" id="id11">创建和启动</a></li>
-<li><a class="reference internal" href="#id4" id="id12">线程同步</a></li>
-<li><a class="reference internal" href="#id5" id="id13">线程交互</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nsoperation" id="id14">NSOperation</a><ul>
-<li><a class="reference internal" href="#id6" id="id15">并发执行</a></li>
-<li><a class="reference internal" href="#id7" id="id16">非并发执行</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#gcd" id="id17">GCD</a></li>
-<li><a class="reference internal" href="#id8" id="id18">线程概念</a><ul>
-<li><a class="reference internal" href="#run-loops" id="id19">Run Loops</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id9">基础知识</a></h2>
-<p>并发和并行。从技术角度来看，并发是程序的属性，而并行运作是机器的属性。并行和并发是两种分开的概念。作为程序员，你不能保证你的代码会在能并行执行你的代码的机器上运行。然而，你可以设计你的代码，让它使用并发操作。</p>
-<p>主要术语：</p>
-<ul class="simple">
-<li><strong>任务</strong>：一项需要完成的，简单，单一的任务。</li>
-<li><strong>线程</strong>：一种由操作系统提供的机制，允许多条指令在一个单独的程序中同时执行。</li>
-<li><strong>进程</strong>：一段可执行的代码，它可以由几个线程组成。</li>
-</ul>
-<p>进程，线程和任务之间的关系：</p>
-<img alt="进程，线程和任务" src="images/Process_Thread_Task.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p>注意：</p>
+                        <p>今天苹果 iOS 10.3 正式版已经发布。版本号为：<code>10.3 (14E277)</code>，对应的开发工具 Xcode 8.3 版本号为 8E162。</p>
+<p>详细的更新日志见官网：<a class="reference external" href="https://support.apple.com/zh-cn/HT201222">https://support.apple.com/zh-cn/HT201222</a>。</p>
 <blockquote>
-<p>在iPhone和Mac中，线程功能是由POSIX Threads API（或者pthreads）提供的，它是操作系统的一部分。这是相当底层的东西，你会发现很容易犯错；也许线程最坏的地方就是那些极难被发现的错误吧！</p>
-<p>Foundation 框架包含了一个叫做NSThread的类 …</p></blockquote></div>
+<p>iOS 10.3 推出了包括使用“查找我的 iPhone”定位 AirPods 在内的全新功能，并提供了使用 Siri 进行支付、叫车以及与车载设备配合使用的更多途径。</p>
+<p>查找我的 iPhone</p>
+<ul class="simple">
+<li>查看您 AirPods 的当前位置或最后已知位置</li>
+<li>在一侧或左右 AirPods 上同时播放声音，帮助您找到它们</li>
+</ul>
+<p>Siri</p>
+<ul class="simple">
+<li>支持配合支付应用进行支付和检查账单状态</li>
+<li>支持配合叫车应用预约车辆</li>
+<li>支持配合车载应用检查油量及车锁状态，并可开灯和鸣喇叭</li>
+<li>支持印度超级板球联赛和国际板球理事会的板球运动比分和统计数据 …</li></ul></blockquote>
                     </section>
                 </article>
             </li>
@@ -301,43 +174,134 @@ ja,
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2017-03-20T10:30:00+08:00" pubdate>
+                            Mon, 20 Mar 2017
                         </time>
-                        <a href="https://magicalboy.com/uiimage.html" rel="bookmark"><h1>UIImage 使用</h1></a>
+                        <a href="https://magicalboy.com/ios-10-3-beta-7-update.html" rel="bookmark"><h1>iOS 10.3 Beta 7</h1></a>
                     </header>
                     <section class="post-content">
-                        <p><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html">UIImage Class Reference</a></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="75%" />
-</colgroup>
-<tbody valign="top">
-<tr><td>Inherits from</td>
-<td>NSObject</td>
-</tr>
-<tr><td>Framework</td>
-<td>/System/Library/Frameworks/UIKit.framework</td>
-</tr>
-<tr><td>Availability</td>
-<td>Available in iOS 2.0 and later.</td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="stretch">
-<h2>Stretch</h2>
-<p>将</p>
-<img alt="" src="http://i.stack.imgur.com/IPNUm.png" />
-<p>拉伸为</p>
-<img alt="" src="http://i.stack.imgur.com/1skMj.png" />
-<p>代码：</p>
-<div class="highlight"><pre><span></span><span class="bp">UIImage</span> <span class="o">*</span><span class="n">originalImage</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIImage</span> <span class="nl">imageNamed</span><span class="p">:</span><span class="s">@&quot;myImage.png&quot;</span><span class="p">];</span>
-<span class="bp">UIImage</span> <span class="o">*</span><span class="n">newImage</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+                        <p>今天苹果前几天又发布了 iOS 10.3 Beta 7 更新，距离上个 Beta 版本才 3 天左右。</p>
+<p>更新后版本号为：<code>10.3 (14E5277a)</code>，详细的更新日志见官网：<a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Mar_16_2017/iOS_10.3_beta_7_Release_Notes.pdf">iOS Release Notes for iOS 10.3 beta 7</a>。</p>
+<img alt="install on iPhone 6s" class="align-left" src="https://github.com/donly/note/blob/master/images/ios-10-3-beta-7.PNG?raw=true" style="width: 320px; height: 568px;" />
+<p>iPhone 6s 更新后没有发现有什么明显不同。</p>
+<p>关于 10.3 Beta 补充几点：</p>
+<ol class="arabic simple">
+<li>10.3 Beta 版开机时按住 Home 和 音量加，可进入诊断模式。</li>
+<li>关机时少了中间的加载动画，即菊花。</li>
+<li>增加了对 32 位应用的警告提示：此应用在未来的 iOS 版本下将无法使用 …</li></ol>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-03-14T09:30:00+08:00" pubdate>
+                            Tue, 14 Mar 2017
+                        </time>
+                        <a href="https://magicalboy.com/ios-10-3-beta-install.html" rel="bookmark"><h1>iOS 10.3 Beta6</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天苹果公司发布了 iOS 10.3 Beta6 更新。更新后版本号为：<code>10.3 (14E5273a)</code>，更新如下：</p>
+<ol class="arabic simple">
+<li>相对于上一个版本 Beta5，比较重要一点更新就是没有通过 MFi 认证的 Lightning 会提示：<code>此 iPhone 不支持此配件</code>。</li>
+<li>对系统底层进行了优化，当用户完成升级后，iOS 设备的文件系统也更新至了全新的苹果文件系统 <code>APFS</code>。</li>
+<li>苹果还计划在 iOS 10.3 中对 App Store 进行一些功能调整，允许开发者直接回复应用的评价，这点早已在 Google Play 实现。</li>
+</ol>
+<p>详细的更新日志见官网：<a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Mar_13_2017/iOS_10.3_beta_6_Release_Notes.pdf">iOS Release Notes for iOS 10.3 beta 6</a>。</p>
+<div class="section" id="beta-ios">
+<h2>安装 …</h2></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-12-21T09:39:00+08:00" pubdate>
+                            Wed, 21 Dec 2016
+                        </time>
+                        <a href="https://magicalboy.com/fastlane_plugin.html" rel="bookmark"><h1>Fastlane 插件开发</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><strong>能用计算机自动处理的事情，为什么还要手动重复劳动。</strong></p>
+<img alt="fastlane" src="https://docs.fastlane.tools/img/fastlane_text.png" />
+<p><a class="reference external" href="https://fastlane.tools/">Fastlane</a> 是一个优秀的 CI 工具，移动开发少不了它。</p>
+<blockquote>
+The easiest way to automate building and releasing your iOS and Android apps</blockquote>
+<div class="section" id="id2">
+<h2>创建插件</h2>
+<p>详细步骤：<a class="reference external" href="https://docs.fastlane.tools/plugins/create-plugin/">https://docs.fastlane.tools/plugins/create-plugin/</a></p>
+</div>
+<div class="section" id="id3">
+<h2>开发&amp;调试</h2>
+<ol class="arabic simple">
+<li>添加到项目 <code>Pluginfile</code></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># Autogenerated by fastlane</span>
+<span class="c1">#</span>
+<span class="c1"># Ensure this file is checked in to source control!</span>
 
-<span class="k">if</span> <span class="p">([</span><span class="n">originalImage</span> <span class="nl">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">resizableImageWithCapInsets</span><span class="p">:)])</span> <span class="p">{</span>
-    <span class="c1">// iOS 5 and obove.</span>
-    <span class="n">newImage</span> <span class="o">=</span> <span class="p">[</span><span class="n">originalImage</span> <span class="nl">resizableImageWithCapInsets</span><span class="p">:(</span><span class="bp">UIEdgeInsets</span><span class="p">){</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5 …</span></pre></div></div>
+<span class="c1">#gem &#39;fastlane-plugin-ftp&#39;</span>
+<span class="n">gem</span> <span class="s1">&#39;fastlane-plugin-ftp&#39;</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">&#39;~/Documents …</span></pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-12-15T09:30:00+08:00" pubdate>
+                            Thu, 15 Dec 2016
+                        </time>
+                        <a href="https://magicalboy.com/ios-10-2-update.html" rel="bookmark"><h1>iOS 10.2 更新</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天苹果公司发布了 iOS 10.2 更新。更新后版本号为：10.2 (14C92)，上一个版本是 10.1.1 (14B100)。</p>
+<p>详细的更新日志：</p>
+<blockquote>
+<p>iOS 10.2 加入了多项新功能，其中包括“电视”应用（仅限美国），这款全新的聚合应用使用户可在一处观看多个视频应用内的电视节目和影片。经过重新设计的表情符号更加精美、细致，新增了 100 多个表情符号，包括表情、食物、动物、运动和职业等各类型。本更新还包括稳定性提升和错误修复。</p>
+<p>电视</p>
+<ul class="simple">
+<li>使用“接着播放”来查看当前正在观看的影片和节目，并从暂停播放的位置继续观看</li>
+<li>在“立即观看”中获取新影片和电视节目的推荐</li>
+<li>在“商店”中发现新的应用和 iTunes 最新发布的内容</li>
+<li>访问“资料库”中的 …</li></ul></blockquote>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-10-29T00:00:00+08:00" pubdate>
+                            Sat, 29 Oct 2016
+                        </time>
+                        <a href="https://magicalboy.com/lazy_load_with_swift.html" rel="bookmark"><h1>Swift 中的 Lazy 初始化</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Lazy 初始化技术早在 Objective C 时代经常被使用，是一种用来延时创建一些比较消耗资源的对象的技术。</p>
+<p>这种技术在 iOS 开发里面很有用，确保只有在需要使用某些资源的时候才开始分配内存。</p>
+<div class="section" id="id1">
+<h2>老的方式</h2>
+<p>这是在 Objective C 里面的写法：</p>
+<div class="highlight"><pre><span></span><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="bp">NSMutableArray</span> <span class="o">*</span><span class="n">players</span><span class="p">;</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="bp">NSMutableArray</span> <span class="o">*</span><span class="p">)</span><span class="nf">players</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_players</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_players</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSMutableArray</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">_players</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="swift">
+<h2>Swift 新方式</h2>
+<div class="highlight"><pre><span></span><span class="kr">lazy</span> <span class="kd">var</span> <span class="nv">players</span> <span class="p">=</span> <span class="p">[</span><span class="nb">String</span><span class="p">]()</span>
+</pre></div>
+<p>非常简单，就一句话！</p>
+<p>需要注意的是，声明 <code>lazy</code> 变量必须用 <code>var</code> 关键字，不能使用 <code>let</code>。因为常量对象初始化完成的时候必须有一个初始值。</p>
+<p>使用 <code>Closure</code> 定义 …</p></div>
                     </section>
                 </article>
             </li>

@@ -54,6 +54,70 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-28T15:37:00+08:00" pubdate>
+                            Fri, 28 May 2010
+                        </time>
+                        <a href="https://magicalboy.com/a-typical-c-programming-style.html" rel="bookmark"><h1>典型的C编程风格</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>C语法很灵活，如果我们都遵循一些良好的编程风格，可以写出高效率，思路清晰的代码。同时这也是一个程序员应该养成的良好习惯。良好的编程习惯有：写注释，代码对齐，规范命名等等。这篇文章只简单的展示一个经典的编程风格，请先看以下程序清单：</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><tt class="docutils literal">/* cypher1.c <span class="pre">--</span> 改变输入，只保留其中的空格 */ #include&nbsp; #define SPACE ' ' int main(void) {&nbsp;&nbsp;&nbsp;&nbsp; char ch;</tt></div>
+</div>
+<div class="line-block">
+<div class="line">ch = getchar(); // 读入一个字符</div>
+<div class="line">while(ch != 'n') // 当一行未结束时</div>
+<div class="line">{</div>
+<div class="line">if(ch == SPACE) // 空格不变</div>
+<div class="line">putchar(ch);</div>
+<div class="line">else</div>
+<div class="line">putchar(ch+1);</div>
+<div class="line">ch = getchar(); // 获取下一个字符</div>
+<div class="line">}</div>
+<div class="line">putchar(ch); // 打印换行符</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<p>这里一个读取字符语句在while循环之前，另一个 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-05-19T01:33:00+08:00" pubdate>
+                            Wed, 19 May 2010
+                        </time>
+                        <a href="https://magicalboy.com/prevent-the-browser-cache.html" rel="bookmark"><h1>防止浏览器缓存的简单方法</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id2">
+<h2>前言</h2>
+<p>这是一个老问题了，在WEB开发中，我们经常会忽略它的重要性以至于遇到奇妙的问题时而不知所措。</p>
+</div>
+<div class="section" id="id3">
+<h2>问题描述</h2>
+<p>在项目开发中使用到Ajax，其中Ajax请求提交后返回的数据在IE6显示总是一成不变，甚至直接从浏览器缓存中直接读取而不去服务器请求！</p>
+</div>
+<div class="section" id="id4">
+<h2>解决方法</h2>
+<p>在请求的地址后面加上一个随机数参数即可：</p>
+<p><tt class="docutils literal">…… <span class="pre">$.get(&quot;/getdata?nocache=&quot;+Math.random(),</span> function(data) {&nbsp;&nbsp;&nbsp;&nbsp; alert(data);&nbsp; // demo }); ……</tt></p>
+</div>
+<div class="section" id="id5">
+<h2>后语</h2>
+<p>在WEB开发中，还真不要小看浏览器缓存所带来的影响，当遇到寞名的问题时而无从下手时，不妨清理一下浏览器缓存看看</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-05-15T16:21:00+08:00" pubdate>
                             Sat, 15 May 2010
                         </time>
@@ -263,36 +327,6 @@ this.getAppProperty(&quot;MIDlet-Jar-Size&quot;)</div>
 <div class="line">// System.out.println(info);</div>
 <div class="line">Display.getDisplay(this).setCurrent(</div>
 <div class="line">new TextBox(&quot;MIDlet属性 …</div></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-04-21T00:44:00+08:00" pubdate>
-                            Wed, 21 Apr 2010
-                        </time>
-                        <a href="https://magicalboy.com/sad-but-true-what-is-the-date.html" rel="bookmark"><h1>sad but true, what is the date...</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>sad but true, what is the date tody</p>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-04-18T13:04:00+08:00" pubdate>
-                            Sun, 18 Apr 2010
-                        </time>
-                        <a href="https://magicalboy.com/magicwiki-online.html" rel="bookmark"><h1>MagicWiki正式开通上线了</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p><a class="reference external" href="http://magicalboy.com/wiki/">MagicWiki</a>知识共享平台已正式开通，详情请访问<a class="reference external" href="http://magicalboy.com/wiki/">http://magicalboy.com/wiki/</a></p>
-
                     </section>
                 </article>
             </li>

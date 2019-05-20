@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note - Donnie</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com/feeds/donnie.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2019-05-19T00:00:00+08:00</updated><subtitle>关注移动应用开发</subtitle><entry><title>LGT8F328P Arduino Nano3 兼容板的使用</title><link href="https://magicalboy.com/lgt8f328p_nano3_compatible_board.html" rel="alternate"></link><published>2019-05-19T00:00:00+08:00</published><updated>2019-05-19T00:00:00+08:00</updated><author><name>Donnie</name></author><id>tag:magicalboy.com,2019-05-19:/lgt8f328p_nano3_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;p&gt;LGT8F328P LQFP32，是一款替代 NANO V3.0 的廉价解决方案，在淘宝上买到的一般长这样：
+&lt;img alt="LGT8F328P" src="images/arduino/LGT8F328P.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.ocrobot.com/doku.php?id=ocrobot:alpha:8f328p-u:main"&gt;ALPHA 8F328P-U&lt;/a&gt; 所使用的 MCU 为LGT8F328P，是一款 Atmel MEGA328P 兼容芯片。USB 芯片使用的是合泰 HT42B534-1，WIN10和MAC OS X免驱。由 &lt;a href="http://www.ocrobot.com/doku.php?id=start"&gt;OCROBOT&lt;/a&gt; 设计，板载USB 至 UART。&lt;/p&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;ALPHA 8F328P-U是一款Arduino兼容的开发板。可以使用Arduino IDE进行开发（需要自己安装支持），参考 https://github.com/donly/Larduino_HSP#installation&lt;/p&gt;
+&lt;h2&gt;使用&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="在 macOS Arduino 上的使用参数" src="images/arduino/arduino_usage_setup.png"&gt;&lt;/p&gt;
+&lt;h2&gt;测试&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;Blink&lt;/code&gt; 例程&lt;/p&gt;</summary><content type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;p&gt;LGT8F328P LQFP32，是一款替代 NANO V3.0 的廉价解决方案，在淘宝上买到的一般长这样：
+&lt;img alt="LGT8F328P" src="images/arduino/LGT8F328P.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.ocrobot.com/doku.php?id=ocrobot:alpha:8f328p-u:main"&gt;ALPHA 8F328P-U&lt;/a&gt; 所使用的 MCU 为LGT8F328P，是一款 Atmel MEGA328P 兼容芯片。USB 芯片使用的是合泰 HT42B534-1，WIN10和MAC OS X免驱。由 &lt;a href="http://www.ocrobot.com/doku.php?id=start"&gt;OCROBOT&lt;/a&gt; 设计，板载USB 至 UART。&lt;/p&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;ALPHA 8F328P-U是一款Arduino兼容的开发板。可以使用Arduino IDE进行开发（需要自己安装支持），参考 https://github.com/donly/Larduino_HSP#installation&lt;/p&gt;
+&lt;h2&gt;使用&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="在 macOS Arduino 上的使用参数" src="images/arduino/arduino_usage_setup.png"&gt;&lt;/p&gt;
+&lt;h2&gt;测试&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;Blink&lt;/code&gt; 例程&lt;/p&gt;</content></entry></feed>

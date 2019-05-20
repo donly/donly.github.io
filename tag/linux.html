@@ -94,71 +94,154 @@ Client:
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2017-03-23T10:25:00+08:00" pubdate>
+                            Thu, 23 Mar 2017
                         </time>
-                        <a href="https://magicalboy.com/flash-openwrt-from-tftp.html" rel="bookmark"><h1>WHR-G300N V2 刷机</h1></a>
+                        <a href="https://magicalboy.com/reset-raspberry-root-password.html" rel="bookmark"><h1>重置树莓派 Root 密码</h1></a>
                     </header>
                     <section class="post-content">
-                        <div class="section" id="openwrt">
-<h2>OpenWrt 介绍</h2>
+                        <p>自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。</p>
+<p>如果还有模糊印象，可以通过 <code>passwd pi</code> 进行尝试。需要注意的是 <code>pi</code> 用户的初始密码是：</p>
+<div class="highlight"><pre><span></span>raspberry
+</pre></div>
+<div class="section" id="id1">
+<h2>找回密码</h2>
+<ol class="arabic simple">
+<li>关机取出内存卡，插到另一台电脑，Windows, Linux 或 macOS 都支持。</li>
+<li>编辑 <code>cmdline.txt</code> 文件
+在 <code>boot</code> 分区下找到此文件，修改之前的内容为：</li>
+</ol>
 <blockquote>
-<a class="reference external" href="https://zh.wikipedia.org/zh-cn/OpenWrt">OpenWrt</a>  是用于嵌入式设备的一个 Linux 发行版本。</blockquote>
-<p>所有最新的固件下载地址：<a class="reference external" href="https://downloads.openwrt.org/chaos_calmer/15.05/">https://downloads.openwrt.org/chaos_calmer/15.05/</a></p>
-<p>类似的还有 DD-WRT，比较偏向实用，Web 配置比较强大，但较难定制。</p>
+<div class="highlight"><pre><span></span>dwc_otg.lpm_enable<span class="o">=</span><span class="m">0</span> <span class="nv">console</span><span class="o">=</span>serial0,115200 <span class="nv">console</span><span class="o">=</span>tty1 <span class="nv">root</span><span class="o">=</span>/dev/mmcblk0p7 <span class="nv">rootfstype</span><span class="o">=</span>ext4 <span class="nv">elevator</span><span class="o">=</span>deadline fsck.repair<span class="o">=</span>yes rootwait …</pre></div></blockquote></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-31T14:22:00+08:00" pubdate>
+                            Tue, 31 May 2016
+                        </time>
+                        <a href="https://magicalboy.com/install-amp-on-raspberry-pi.html" rel="bookmark"><h1>在树莓派上安装 AMP</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>AMP 是 Linux 网站最常见的组合，即 Apache，MySQL 和 PHP。</p>
+<ul class="simple">
+<li>Apache 是一个非常流行的 Web 服务器软件</li>
+<li>MySQL 是一个关系型数据库管理系统</li>
+<li>PHP 是一种通用开源脚本语言，主要适用于 Web 开发领域</li>
+</ul>
+<div class="section" id="apache">
+<h2>安装 Apache</h2>
+<ul class="simple">
+<li>Apache 可以用下面的命令来安装：<em>sudo apt-get install apache2</em></li>
+<li>Raspbian Jessie 版本的默认站点路径是 <em>/var/www/html</em></li>
+<li>配置文件路径为 <em>/etc/apache2/</em></li>
+<li>修改监听端口号 <em>sudo vi /etc/apache2/ports.conf</em></li>
+<li>重启服务 <em>sudo service apache2 restart</em></li>
+<li>修改权限 …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-17T10:25:00+08:00" pubdate>
+                            Tue, 17 May 2016
+                        </time>
+                        <a href="https://magicalboy.com/bash-shell.html" rel="bookmark"><h1>bash shell 学习</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：</p>
+<ul class="simple">
+<li><a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell">什么是 shell？</a></li>
+<li><a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言">脚本语言</a></li>
+</ul>
+<p>简单来说， shell 是可以接受用户输入命令的程序，比如 Windows 下的命令行。</p>
+<p>而脚本语言可以理解为不需要编译，直接解释运行的语言。</p>
+<div class="section" id="id2">
+<h2>换行与注释</h2>
+<p>1. bash 在解析字符的时候，对待“;”跟看见回车是一样的
+1. 注释符号为 “#”</p>
+</div>
+<div class="section" id="id3">
+<h2>设计哲学</h2>
+<p>一切皆表达式。</p>
+<p>根据表达式的定义，任何表达式都必须有一个值。而 shell 在执行任何东西（不仅是命令）的时候都会有一个返回值。</p>
+<ul class="simple">
+<li>在 bash 编程中，返回值取值范围：<em>0-255</em></li>
+<li>跟 C 语言含义相反， bash 中 0 为真 …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-16T14:40:00+08:00" pubdate>
+                            Mon, 16 May 2016
+                        </time>
+                        <a href="https://magicalboy.com/raspbian-exfat-support.html" rel="bookmark"><h1>exFAT 文件格式支持</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。</p>
+<p>基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。</p>
+<div class="section" id="id1">
+<h2>为什么要使用 exFAT</h2>
+<ul class="simple">
+<li>支持拷贝文件大于 4 GB</li>
+<li>兼容性好，方便在不同设备上插拔拷贝数据</li>
+<li>部分大容量内存卡购买回来默认使用的就是这种格式</li>
+</ul>
+<p>如何让部分操作系统支持 exFAT？</p>
+</div>
+<div class="section" id="raspberry-pi-raspbian">
+<h2>Raspberry Pi (RASPBIAN)</h2>
+<div class="highlight"><pre><span></span>sudo apt-get install exfat-fuse
+</pre></div>
+<p>安装完成后，重新插拔内存卡即可自动加载出来。</p>
+</div>
+<div class="section" id="android">
+<h2>Android</h2>
+<p>暂无</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-12-01T00:00:00+08:00" pubdate>
+                            Tue, 01 Dec 2015
+                        </time>
+                        <a href="https://magicalboy.com/openwrt-cc-ss.html" rel="bookmark"><h1>OpenWrt CC SS 配置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>介绍</h2>
+<ul class="simple">
+<li>OpenWRT 版本：Chaos Calmer 15.05</li>
+<li>OpenWRT 内核：</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># opkg files kernel</span>
+Package kernel <span class="o">(</span><span class="m">3</span>.18.20-1-7bed08fa9c06eb8089e82c200340ec66<span class="o">)</span> is installed on root and has the following files:
+</pre></div>
 </div>
 <div class="section" id="id2">
-<h2>WHR-G300N V2</h2>
-<ul class="simple">
-<li>产品名称： BUFFALO 巴法络 WHR-G300N V2，硬件配置同 Buffalo WHR-G301N。</li>
-<li>购买链接：<a class="reference external" href="http://www.amazon.cn/BUFFALO">http://www.amazon.cn/BUFFALO</a>-巴法络-WHR-G300N-V2-WHR-G300N-CH-高速无线路由器/dp/B005PKUNUC</li>
-<li>官网地址：<a class="reference external" href="http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router">http://www.buffalotech.com/products/wireless/single-band-routers/airstation-n300-wireless-router</a></li>
-<li>OpenWrt Wiki …</li></ul></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/gentoo.html" rel="bookmark"><h1>Gentoo 2015</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="gentoo">
-<h2>为什么选择 Gentoo</h2>
-<p>完全免费的 Linux 发行版本，面向开发人员和 Web 职业人员。特别是有 Portage 包管理系统，用 Python 编写。无最新发行版本，每周滚动更新这点和 Arch Linux 相同。</p>
-<p>同时得到某叔的极力推荐，这些都是最终选择 Gentoo 的原因。</p>
-<p>另外附 Gentoo 排名情况：  <a class="reference external" href="http://distrowatch.com/table.php?distribution=gentoo">DistroWatch</a> 。</p>
-</div>
-<div class="section" id="id1">
-<h2>安装过程</h2>
-<p>整个安装过程主要参考 <a class="reference external" href="https://wiki.gentoo.org/wiki/Handbook:AMD64">Handbook 手册</a>，利用业余时间两个晚上搞定。</p>
-<div class="highlight"><pre><span></span><span class="c1"># uname -a</span>
-Linux don <span class="m">4</span>.0.5-gentoo <span class="c1">#1 SMP Fri Aug 28 21:54:34 2015 x86_64 Intel …</span></pre></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/gentoo-locale.html" rel="bookmark"><h1>Gentoo 本地化配置</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>未配置之前会有类似这样的提示：<em>man: can't set the locale; make sure $LC_</em> and $LANG are correct*。</p>
+<h2>安装</h2>
 <ol class="arabic simple">
-<li>查看当前本地化配置：</li>
+<li>使用 root 登录 ssh</li>
+<li>下载合适的预编译 <a class="reference external" href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.1-6f44d53/ar71xx/">安装包</a></li>
+<li>上传到 <tt class="docutils literal">/tmp</tt> 目录</li>
+<li>执行安装命令：</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="c1"># locale -a</span>
-locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
-locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
-locale: Cannot <span class="nb">set</span> LC_COLLATE to default locale: No such file …</pre></div>
+<div class="highlight"><pre><span></span>cks-libev-spec <span class="o">(</span><span class="m">2</span>.4.1-1<span class="o">)</span> to root...
+Installing ipset <span class="o">(</span><span class="m">6</span>.24-1<span class="o">)</span> to root...
+Downloading …</pre></div></div>
                     </section>
                 </article>
             </li>
@@ -166,27 +249,17 @@ locale: Cannot <span class="nb">set</span> LC_COLLATE to default locale: No such
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2015-11-15T17:37:54+08:00" pubdate>
+                            Sun, 15 Nov 2015
                         </time>
-                        <a href="https://magicalboy.com/gentoo-partition.html" rel="bookmark"><h1>Gentoo 分区</h1></a>
+                        <a href="https://magicalboy.com/gentoo-samba.html" rel="bookmark"><h1>Samba 配置</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。</p>
-<p>使用环境：</p>
-<ul class="simple">
-<li>系统：Gentoo 3.4.103</li>
-<li>存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10</li>
-</ul>
-<p>第一步：查看与新建分区</p>
-<ol class="arabic simple">
-<li>分区前系统盘分区：</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="c1"># df -h</span>
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/root       <span class="m">3</span>.4G  <span class="m">1</span>.7G  <span class="m">1</span>.6G  <span class="m">52</span>% /
-devtmpfs        438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev
-tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
+                        <p>Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。</p>
+<p>其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。</p>
+<p>Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。</p>
+<p>Samba 现在最新版本是 4.x，但在我的树莓派上面 <em>emerge --ask net-fs/samba</em> 出来的还是 3.6.2。</p>
+<p>官网上的 <a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba">net-fs/samba</a> package 4.x 以上的版本不支持 arm 或被 …</p>
                     </section>
                 </article>
             </li>
@@ -194,8 +267,29 @@ tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2015-11-15T17:20:13+08:00" pubdate>
+                            Sun, 15 Nov 2015
+                        </time>
+                        <a href="https://magicalboy.com/openwrt-luci.html" rel="bookmark"><h1>OpenWrt Luci</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <ol class="arabic simple">
+<li>路由 Luci Web 界面访问不了问题</li>
+</ol>
+<blockquote>
+解决方法：重启 Luci</blockquote>
+<div class="highlight"><pre><span></span>/etc/init.d/uhttpd restart
+</pre></div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-10-27T22:34:42+08:00" pubdate>
+                            Tue, 27 Oct 2015
                         </time>
                         <a href="https://magicalboy.com/gentoo-portage.html" rel="bookmark"><h1>Gentoo Portage</h1></a>
                     </header>
@@ -222,89 +316,20 @@ tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2015-10-27T10:17:08+08:00" pubdate>
+                            Tue, 27 Oct 2015
                         </time>
-                        <a href="https://magicalboy.com/gentoo-samba.html" rel="bookmark"><h1>Samba 配置</h1></a>
+                        <a href="https://magicalboy.com/gentoo-locale.html" rel="bookmark"><h1>Gentoo 本地化配置</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。</p>
-<p>其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。</p>
-<p>Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。</p>
-<p>Samba 现在最新版本是 4.x，但在我的树莓派上面 <em>emerge --ask net-fs/samba</em> 出来的还是 3.6.2。</p>
-<p>官网上的 <a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba">net-fs/samba</a> package 4.x 以上的版本不支持 arm 或被 …</p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/openwrt-bad-address.html" rel="bookmark"><h1>解决 OpenWrt Bad Address 问题</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>自升级 CC 后，一切都正常。</p>
-<p>突然有一天发现 DDNS 出了问题，LuCI 的服务界面都刷不完整。</p>
-<p>opkg update 失败。</p>
-<p>ping 所有网址都是 bad address，ping ip 地址正常。</p>
-<p>nslookup 只到 localhost 卡住。</p>
-<p>检查 DNS 配置 <em>vi /etc/config/dhcp</em> 正常，网络配置 <em>/etc/config/network</em> 正常。</p>
-<p>找了Ｎ久才发现 <em>/etc/resolv.conf</em> 文件被修改，解决方法：</p>
-<div class="highlight"><pre><span></span><span class="c1"># 删除 /etc/resolv.conf</span>
-vi /etc/resolv.conf …</pre></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/openwrt-ddns.html" rel="bookmark"><h1>OpenWrt DDNS 配置</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="id1">
-<h2>环境</h2>
-<ul class="simple">
-<li>OpenWrt CC (LuCI)</li>
-<li>电信光纤 100M</li>
-</ul>
-</div>
-<div class="section" id="luci-app-ddns">
-<h2>一、安装 luci-app-ddns</h2>
-<p>登录路由器，进入 System -&gt; Software，点击 Update lists 更新软件库。</p>
-<p>在 Filter 中输入关键字 ddns, 点击 Find package，然后在 Available packages 列表中找到 luci-i18n-ddns-en，OpenWrt 会自动分析依赖关系安装好 DDNS。</p>
-<p>安装完成后，在 System 和 Network 中间会多出一项 Services（假设之前没有安装过其他服务），里面有 Dynamic DNS 一项，点击进入配置界面。</p>
-</div>
-<div class="section" id="ddns">
-<h2>二、配置 DDNS</h2>
-<p>DDNS 服务提供商选择列表中没有花生壳服务 …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
-                        </time>
-                        <a href="https://magicalboy.com/openwrt-luci.html" rel="bookmark"><h1>OpenWrt Luci</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <ol class="arabic simple">
-<li>路由 Luci Web 界面访问不了问题</li>
+                        <p>未配置之前会有类似这样的提示：<em>man: can't set the locale; make sure $LC_</em> and $LANG are correct*。</p>
+<ol class="arabic simple">
+<li>查看当前本地化配置：</li>
 </ol>
-<blockquote>
-解决方法：重启 Luci</blockquote>
-<div class="highlight"><pre><span></span>/etc/init.d/uhttpd restart
-</pre></div>
-
+<div class="highlight"><pre><span></span><span class="c1"># locale -a</span>
+locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_COLLATE to default locale: No such file …</pre></div>
                     </section>
                 </article>
             </li>

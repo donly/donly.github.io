@@ -54,6 +54,74 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2011-10-21T05:59:00+08:00" pubdate>
+                            Fri, 21 Oct 2011
+                        </time>
+                        <a href="https://magicalboy.com/what-is-new-in-ios5.html" rel="bookmark"><h1>iOS 5 软件更新</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><strong>iOS 5 软件更新</strong></p>
+<p>本更新增加了 200 多个新功能，其中包括：</p>
+<blockquote>
+<ul class="simple">
+<li>通知</li>
+</ul>
+<p>◦ 从任意屏幕的顶部向下推送，即可在“通知中心”集中查看所有通知。</p>
+<p>◦ 新收到的通知会短时间显示在屏幕顶部</p>
+<p>◦ 可从锁定的屏幕查看通知</p>
+<p>◦ 将通知应用程序图标从锁定的屏幕的左侧滑到右侧，即可直接前往该应用程序</p>
+<ul class="simple">
+<li>iMessage</li>
+</ul>
+<p>◦ 可与其他 5 位 iOS 5 用户收发不限量的文本信息、照片信息和视频信息。</p>
+<p>◦ 可查阅送达回执和已读回执来跟踪信息的状态</p>
+<p>◦ 群发信息和安全加密</p>
+<p>◦ 可在蜂窝网络和 Wi-Fi 中使用*</p>
+<ul class="simple">
+<li>报刊杂志</li>
+</ul>
+<p>◦ 在“主屏幕”上自动整理订阅的报纸杂志</p>
+<p>◦ 显示最新一期报纸杂志的封面</p>
+<p>◦ 在后台下载新一期报纸杂志</p>
+<ul class="simple">
+<li>用“提醒事项”来管理待办事项</li>
+</ul>
+<p>◦ 与 iCloud、iCal 和 Outlook 同步</p>
+<p>◦ 在您离开或到达某一个位置时发送基于位置的提醒（适用于 iPhone 4S 和 iPhone …</p></blockquote>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-09-22T14:26:00+08:00" pubdate>
+                            Thu, 22 Sep 2011
+                        </time>
+                        <a href="https://magicalboy.com/git-getting-started.html" rel="bookmark"><h1>Git 使用入门</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line"><strong>一、Git简介</strong></div>
+<div class="line"><img alt="git logo" src="https://lh6.googleusercontent.com/-6bFWTOcHH4Y/TntG8fwhJWI/AAAAAAAAAJk/pu01j_uBeDo/s800/git.png" style="width: 214px; height: 81px;" /></div>
+</div>
+<p>Git（Via <a class="reference external" href="http://zh.wikipedia.org/wiki/Git">http://zh.wikipedia.org/wiki/Git</a>）。当初 Linus Trovalds 开发
+Git 是为了跟踪 Linux 内核的修改情况，Git 命名来自于</p>
+<blockquote>
+“I'm an egotistical bastard, and I name all my projects after
+myself. First Linux, now git.”</blockquote>
+<div class="line-block">
+<div class="line">**
+二、为什么使用Git**</div>
+<div class="line">相信大家使用过传统的版本控制系统（Version Control System，VCS），比如
+CVS，SVN（Subversion）等。这些都是老而笨重，采用集中式的 …</div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2011-09-13T13:09:00+08:00" pubdate>
                             Tue, 13 Sep 2011
                         </time>
@@ -278,58 +346,6 @@ Splash图像显示的时长跟你的程序大小有关，如果程序很快载�
 ...
 </pre>
 <p>根据具体情况修改延时秒数可达到以假乱真的效果，很不错哦。</p>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-02-23T02:48:00+08:00" pubdate>
-                            Wed, 23 Feb 2011
-                        </time>
-                        <a href="https://magicalboy.com/rgb2uicolor.html" rel="bookmark"><h1>网页颜色RGB转换UIColor</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>在iPhone开发中遇到要使用网页颜色代码时，发现UIColor的引用文档中没有将网页颜色转换为RGB码值的方法，且UIColor中的RGB分别用0到1之间的数值来表示的，要将16进制的网页颜色代码#ff3245转换为UIColor中RGB值时会觉得有点麻烦。</p>
-<p>UIColor Class Reference中的方法</p>
-<ul class="simple">
-<li><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIColor_Class/Reference/Reference.html">–
-initWithRed:green:blue:alpha:</a></li>
-<li><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIColor_Class/Reference/Reference.html">+
-colorWithRed:green:blue:alpha:</a></li>
-</ul>
-<p>两个方法都是使用指定的RGB值和alpha值来创建和返回一个颜色对象，不同的是第一个是实例方法，另一个是类方法。</p>
-<p>其实这只是进制之间的换算，在这里我在网上找了一个直接输入网页颜色RGB值转换UIColor代码的小JS应用：<a class="reference external" href="http://magicalboy.com/apps/RGB2UIColor.html">RGB2UIcolor</a>。</p>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-02-22T02:37:00+08:00" pubdate>
-                            Tue, 22 Feb 2011
-                        </time>
-                        <a href="https://magicalboy.com/read-plist-file-in-xcode.html" rel="bookmark"><h1>在Xcode项目中读取plist文件</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>.plist(Property list)
-文件即属性列表文件，类似于XML格式的一种配置文件，里面可保存序列化的对象。这种plist文件在Mac
-OS X及相关产品中常见到，下面是在Xcode中如果读取或写入plist文件的示例。</p>
-<div class="section" id="plist">
-<h2>读取一般的plist文件</h2>
-<div class="line-block">
-<div class="line"><tt class="docutils literal">// 取得文件路径 ... NSString *plistPath = [[NSBundle mainBundle] <span class="pre">pathForResource:&#64;&quot;Shopping-Info&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">ofType:&#64;&quot;plist&quot;];</span> // 读取到一个NSDictionary NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath]; // 读取到一个NSArray NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath]; ...</tt></div>
-</div>
-</div>
-<div class="section" id="xxx-info-plistinfo-plist">
-<h2>读取项目主配置文件xxx-Info.plist或Info.plist</h2>
-<p><tt class="docutils literal">... NSDictionary *dict = [[NSBundle mainBundle] infoDictionary]; NSString *URLString = [dict <span class="pre">objectForKey:&#64;&quot;Bundle</span> <span class="pre">version&quot;];</span> ...</tt></p>
-<p>-EOF-</p>
-</div>
 
                     </section>
                 </article>

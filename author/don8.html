@@ -54,23 +54,42 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-28T10:32:00+08:00" pubdate>
-                            Sat, 28 May 2016
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
                         </time>
-                        <a href="https://magicalboy.com/install-phpmyadmin.html" rel="bookmark"><h1>安装 phpMyAdmin</h1></a>
+                        <a href="https://magicalboy.com/ios-i18n.html" rel="bookmark"><h1>iOS 国际化/本地化</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>phpMyAdmin 是管理 MySQL 最方便的 Web 应用，如果经常使用 MySQL ，phpMyAdmin 是必备工具。</p>
-<p>本文主要参考资料：<a class="reference external" href="https://docs.phpmyadmin.net/en/latest/setup.html">Installation — phpMyAdmin 4.7.0-dev documentation</a>。</p>
-<div class="section" id="os-x">
-<h2>在 OS X 安装</h2>
+                        <div class="section" id="id1">
+<h2>获取首选语言</h2>
+<div class="highlight"><pre><span></span><span class="c1">// 获取首选语言</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;preferredLanguages:%@&quot;</span><span class="p">,</span> <span class="p">[</span><span class="bp">NSLocale</span> <span class="n">preferredLanguages</span><span class="p">]);</span>
+
+<span class="c1">// 另一种方式</span>
+<span class="bp">NSArray</span> <span class="o">*</span><span class="n">languages</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSUserDefaults</span> <span class="n">standardUserDefaults</span><span class="p">]</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;AppleLanguages&quot;</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;languages:%@&quot;</span><span class="p">,</span> <span class="n">languages</span><span class="p">);</span>
+</pre></div>
+<p>输出结果是一样的，都是数组：</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>
+<span class="s2">&quot;zh-Hans&quot;</span>,
+en,
+fr,
+de,
+ja,
+...
+<span class="o">)</span>
+</pre></div>
+<p>数组中第一个就是当前选择的语言，名称符合 ISO 639-1 代码表。同时需要注意区域和语言是独立不同的。</p>
 <ul class="simple">
-<li>去官网下载 <a class="reference external" href="https://www.phpmyadmin.net/downloads/">最新的版本</a></li>
-<li>解压到 <em>~/Sites/phpmyadmin</em></li>
-<li>在 <em>phpMyAdmin</em> 目录下创建一个可写的 <em>config</em> 目录</li>
-<li>打开 <em>http://localhost/~[username]/phpMyAdmin/setup</em>，加载配置，修改并保存</li>
-<li>将 <em>config</em> 下生成的 <em>config.inc.php</em> 移到 <em>phpmyadmin</em> 根目录下</li>
-<li>删除 <em>config …</em></li></ul></div>
+<li>两者有什么不同，请看这：<a class="reference external" href="http://stackoverflow.com/questions/7872356/what-is-the-difference-between-nslocale-preferredlanguages-and-nsuserdefault">Stack Overflow</a></li>
+<li>苹果开发者官网专题：<a class="reference external" href="http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPInternational/Articles/ChoosingLocalizations.html">Internationalization Programming Topics</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>获取当前地区</h2>
+<div class="highlight"><pre><span></span><span class="bp">NSLocale</span> <span class="o">*</span><span class="n">locale</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSLocale</span> <span class="n">currentLocale</span><span class="p">];</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">localeName</span> <span class="o">=</span> <span class="p">[</span><span class="n">locale</span> <span class="nl">displayNameForKey</span><span class="p">:</span><span class="n">NSLocaleIdentifier</span>
+                                         <span class="nl">value</span><span class="p">:[</span><span class="n">locale</span> <span class="n">localeIdentifier …</span></pre></div></div>
                     </section>
                 </article>
             </li>
@@ -78,28 +97,67 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-24T11:30:00+08:00" pubdate>
-                            Tue, 24 May 2016
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
                         </time>
-                        <a href="https://magicalboy.com/crack-asset-catalog.html" rel="bookmark"><h1>破解 Asset Catalog</h1></a>
+                        <a href="https://magicalboy.com/ios-support-matrix.html" rel="bookmark"><h1>iOS 支持矩阵</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Asset Catalog 是 Xcode 5 引入的一个新的图片管理方式，支持矢量图，这样设计师不需要再切 &#64;2x, &#64;3x 等多套图标，提高效率。</p>
-<p>使用了 Asset Catalog 的 App 在发布的时候，Xcode 会为这些图片资源打包成 <strong>Assets.car</strong> 这样的文件，而且无法直接打开。</p>
-<div class="section" id="assets-car">
-<h2>提取 Assets.car 图片</h2>
-<p>使用开源的 <a class="reference external" href="https://github.com/steventroughtonsmith/cartool">cartool</a> 工具提取 <em>.car</em> 文件中的资源。</p>
-<ol class="arabic simple">
-<li>clone 源码。</li>
-<li>编译，生成 <em>cartool</em> 工具。</li>
-<li>使用 <em>cartool</em> 破解 <em>.car</em> 文件中的资源</li>
-</ol>
+                        <img alt="iOS Support Matrix" src="images/ios_support_matrix.png" />
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
+                        </time>
+                        <a href="https://magicalboy.com/ios-thread.html" rel="bookmark"><h1>iOS 多线程学习</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id9">基础知识</a></li>
+<li><a class="reference internal" href="#nsthread" id="id10">NSThread</a><ul>
+<li><a class="reference internal" href="#id3" id="id11">创建和启动</a></li>
+<li><a class="reference internal" href="#id4" id="id12">线程同步</a></li>
+<li><a class="reference internal" href="#id5" id="id13">线程交互</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nsoperation" id="id14">NSOperation</a><ul>
+<li><a class="reference internal" href="#id6" id="id15">并发执行</a></li>
+<li><a class="reference internal" href="#id7" id="id16">非并发执行</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gcd" id="id17">GCD</a></li>
+<li><a class="reference internal" href="#id8" id="id18">线程概念</a><ul>
+<li><a class="reference internal" href="#run-loops" id="id19">Run Loops</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">基础知识</a></h2>
+<p>并发和并行。从技术角度来看，并发是程序的属性，而并行运作是机器的属性。并行和并发是两种分开的概念。作为程序员，你不能保证你的代码会在能并行执行你的代码的机器上运行。然而，你可以设计你的代码，让它使用并发操作。</p>
+<p>主要术语：</p>
+<ul class="simple">
+<li><strong>任务</strong>：一项需要完成的，简单，单一的任务。</li>
+<li><strong>线程</strong>：一种由操作系统提供的机制，允许多条指令在一个单独的程序中同时执行。</li>
+<li><strong>进程</strong>：一段可执行的代码，它可以由几个线程组成。</li>
+</ul>
+<p>进程，线程和任务之间的关系：</p>
+<img alt="进程，线程和任务" src="images/Process_Thread_Task.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>注意：</p>
 <blockquote>
-<pre class="code shell literal-block">
-$ ./cartool &lt;.car 文件的路径&gt; &lt;解压后的文件路径&gt;
-</pre>
-</blockquote>
-<p>这样就可以获取 <em>Assets …</em></p></div>
+<p>在iPhone和Mac中，线程功能是由POSIX Threads API（或者pthreads）提供的，它是操作系统的一部分。这是相当底层的东西，你会发现很容易犯错；也许线程最坏的地方就是那些极难被发现的错误吧！</p>
+<p>Foundation 框架包含了一个叫做NSThread的类 …</p></blockquote></div>
                     </section>
                 </article>
             </li>
@@ -107,94 +165,33 @@ $ ./cartool &lt;.car 文件的路径&gt; &lt;解压后的文件路径&gt;
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-24T10:05:00+08:00" pubdate>
-                            Tue, 24 May 2016
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
                         </time>
-                        <a href="https://magicalboy.com/raspberry-pi-gpio-sim.html" rel="bookmark"><h1>树莓派 GPIO 模拟器：GPIOSim</h1></a>
+                        <a href="https://magicalboy.com/pelican.html" rel="bookmark"><h1>Pelican</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>GPIOSim 是一个树莓派 GPIO 模拟器，目前支持 Linux 和 OS X。它能够在 PC 上进行开发调试使用 RPi.GPIO 模块编写的树莓派应用。</p>
-<p>这是一个开源项目：</p>
-<ul class="simple">
-<li>Github：<a class="reference external" href="https://github.com/bobvann/GPIOSim">bobvann/GPIOSim: Raspberry Pi GPIO simulator</a></li>
-<li>博客主页：<a class="reference external" href="http://bobvann.noip.me/gpiosim-raspberry-pi-gpio-simulator-for-linux-os-x/">GPIOSim: Raspberry Pi GPIO Simulator for Linux / OS X - Bob Vann</a></li>
-</ul>
-<div class="section" id="os-x">
-<h2>在 OS X 上安装使用</h2>
-<p>运行环境：<strong>OS X 10.11.5，Python 3.5</strong>
-运行效果：</p>
-<img alt="run on OS X" src="images/raspberry_pi_gpiosim_run_on_osx.png" />
-<div class="section" id="id1">
-<h3>安装 …</h3></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-23T18:05:00+08:00" pubdate>
-                            Mon, 23 May 2016
-                        </time>
-                        <a href="https://magicalboy.com/raspberry-pi-gpio.html" rel="bookmark"><h1>树莓派 GPIO 入门</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>GPIO，通用型之输入输出（General Purpose I/O）的简称。树莓派内核中已经编译自带了 GPIO 的驱动，可以直接使用第三方函数库来进行编程。</p>
-<p>比较常用的第三方函数库有：</p>
-<ol class="arabic simple">
-<li>Python GPIO</li>
-<li>wiringPi</li>
-<li>BCM2835 C Library</li>
-<li>Shell</li>
-</ol>
-<div class="section" id="model-b-40-pin-gpio">
-<h2>树莓派 3 Model B 的 40 Pin GPIO 编号</h2>
-<img alt="树莓派 3 Model B 的 40 Pin GPIO" src="https://www.element14.com/community/servlet/JiveServlet/previewBody/73950-102-10-339300/pi3_gpio.png" />
+                        <div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="gpio-led">
-<h2>使用 GPIO 接口控制 LED 闪烁</h2>
-<div class="section" id="id1">
-<h3>硬件清单</h3>
-<ol class="arabic simple">
-<li>树莓派 3 Model B x1。本人机子出自 Element14，GPIO 请参考上图。</li>
-<li>LED 发光二极管 x1。</li>
-<li>母头杜邦线 x2。这些材料在国内很容易买到的。</li>
-</ol>
+<img alt="pelican logo" src="http://docs.getpelican.com/en/3.2/_static/pelican.png" />
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="id2">
-<h3>原理说明 …</h3></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-17T10:25:00+08:00" pubdate>
-                            Tue, 17 May 2016
-                        </time>
-                        <a href="https://magicalboy.com/bash-shell.html" rel="bookmark"><h1>bash shell 学习</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>shell 是程序员经常需要用到的东西，特别是 bash 脚本。如果不知道什么是 shell 和 脚本语言，请参考：</p>
-<ul class="simple">
-<li><a class="reference external" href="https://zh.wikipedia.org/wiki/Unix_shell">什么是 shell？</a></li>
-<li><a class="reference external" href="https://zh.wikipedia.org/wiki/脚本语言">脚本语言</a></li>
-</ul>
-<p>简单来说， shell 是可以接受用户输入命令的程序，比如 Windows 下的命令行。</p>
-<p>而脚本语言可以理解为不需要编译，直接解释运行的语言。</p>
-<div class="section" id="id2">
-<h2>换行与注释</h2>
-<p>1. bash 在解析字符的时候，对待“;”跟看见回车是一样的
-1. 注释符号为 “#”</p>
-</div>
+<p><a class="reference external" href="http://docs.getpelican.com/en/3.2/">Pelican</a> is a static site generator, written in <a class="reference external" href="http://www.python.org/">Python</a>.</p>
+<p>目前最新版本为 <a class="reference external" href="http://docs.getpelican.com/en/3.2/changelog.html#id1">3.2 (2013-04-24)</a></p>
 <div class="section" id="id3">
-<h2>设计哲学</h2>
-<p>一切皆表达式。</p>
-<p>根据表达式的定义，任何表达式都必须有一个值。而 shell 在执行任何东西（不仅是命令）的时候都会有一个返回值。</p>
-<ul class="simple">
-<li>在 bash 编程中，返回值取值范围：<em>0-255</em></li>
-<li>跟 C 语言含义相反， bash 中 0 为真 …</li></ul></div>
+<h2>写作流程</h2>
+<ol class="arabic simple">
+<li>开启 virtualenv</li>
+<li>进入工作目录</li>
+<li>$ make devserver</li>
+<li>./develop_server.sh stop</li>
+<li>发布直接使用配置好的 <tt class="docutils literal">git comit &amp; push</tt>.</li>
+</ol>
+<p>更多详细流程见 <a class="reference external" href="http://docs.getpelican.com/en/3.2/getting_started.html">Getting started — Pelican 3 documentation</a></p>
+</div>
+
                     </section>
                 </article>
             </li>
@@ -202,83 +199,43 @@ $ ./cartool &lt;.car 文件的路径&gt; &lt;解压后的文件路径&gt;
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-16T14:40:00+08:00" pubdate>
-                            Mon, 16 May 2016
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
                         </time>
-                        <a href="https://magicalboy.com/raspbian-exfat-support.html" rel="bookmark"><h1>exFAT 文件格式支持</h1></a>
+                        <a href="https://magicalboy.com/photoshop.html" rel="bookmark"><h1>Photoshop 学习笔记</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。</p>
-<p>基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。</p>
+                        <p>Photoshop 是设计作图的必备工具，如果码农也会使用Photoshop来设计UI的话。。。唉，无论结果怎么样，求人不如求己。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="section" id="id1">
-<h2>为什么要使用 exFAT</h2>
-<ul class="simple">
-<li>支持拷贝文件大于 4 GB</li>
-<li>兼容性好，方便在不同设备上插拔拷贝数据</li>
-<li>部分大容量内存卡购买回来默认使用的就是这种格式</li>
-</ul>
-<p>如何让部分操作系统支持 exFAT？</p>
+<h2>Photoshop 简介</h2>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="raspberry-pi-raspbian">
-<h2>Raspberry Pi (RASPBIAN)</h2>
-<div class="highlight"><pre><span></span>sudo apt-get install exfat-fuse
-</pre></div>
-<p>安装完成后，重新插拔内存卡即可自动加载出来。</p>
+<img alt="photoshop icon" src="static/images/Adobe_Photoshop_CS6_icon.svg.png" />
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="android">
-<h2>Android</h2>
-<p>暂无</p>
+<img alt="Photoshop CS 5.1" class="align-left" src="static/images/photoshop.jpg" style="width: 800px;" />
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-04-22T14:40:00+08:00" pubdate>
-                            Fri, 22 Apr 2016
-                        </time>
-                        <a href="https://magicalboy.com/pelican-no-module-named-html_parser.html" rel="bookmark"><h1>Pelican No module named html_parser</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p class="first last">在 OS X 上解决 No module named html_parser 问题。</p>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2015-12-01T00:00:00+08:00" pubdate>
-                            Tue, 01 Dec 2015
-                        </time>
-                        <a href="https://magicalboy.com/openwrt-cc-ss.html" rel="bookmark"><h1>OpenWrt CC SS 配置</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="id1">
-<h2>介绍</h2>
-<ul class="simple">
-<li>OpenWRT 版本：Chaos Calmer 15.05</li>
-<li>OpenWRT 内核：</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="c1"># opkg files kernel</span>
-Package kernel <span class="o">(</span><span class="m">3</span>.18.20-1-7bed08fa9c06eb8089e82c200340ec66<span class="o">)</span> is installed on root and has the following files:
-</pre></div>
+<p>Adobe Photoshop，简称“PS”（其程序图标便是“PS”）是一个由Adobe Systems开发和发行的图像处理软件。
+目前稳定版本 为 <a class="reference external" href="http://www.adobe.com/support/downloads/product.jsp?product=39&amp;platform=Windows%7Caccessdate=2012-04-23}">CS6 (13.0)</a> 2012年4月23日。</p>
 </div>
 <div class="section" id="id2">
-<h2>安装</h2>
-<ol class="arabic simple">
-<li>使用 root 登录 ssh</li>
-<li>下载合适的预编译 <a class="reference external" href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.1-6f44d53/ar71xx/">安装包</a></li>
-<li>上传到 <tt class="docutils literal">/tmp</tt> 目录</li>
-<li>执行安装命令：</li>
-</ol>
-<div class="highlight"><pre><span></span>cks-libev-spec <span class="o">(</span><span class="m">2</span>.4.1-1<span class="o">)</span> to root...
-Installing ipset <span class="o">(</span><span class="m">6</span>.24-1<span class="o">)</span> to root...
-Downloading …</pre></div></div>
+<h2>Photoshop 基础</h2>
+<div class="section" id="id3">
+<h3>图层、蒙板、模式和样式</h3>
+<p>经常看到美工MM设计好的PS文件都是由很多 <strong>图层（Layer）</strong> 组成的，就像一个平铺好的三文治。图层面板实际上就是一幅动态的堆栈图表。屏幕中显示的图像就是它们的俯视图。</p>
+<p>堆栈由几种不同类型的图层组成：</p>
+<ul class="simple">
+<li>背景（Background）图层，在堆栈的最下方，完全由像素填充而成。</li>
+<li>一般图层，也由像素组成。不同的是可以包含完全透明或半透明的区域，可以透过透明区域看到下层图层。</li>
+<li>调整图层（Adjustment Layer），不包含任何像素，它所包含的指令可以调整其下方图层的颜色与色调。</li>
+<li>文本图层 …</li></ul></div></div>
                     </section>
                 </article>
             </li>
@@ -286,25 +243,101 @@ Downloading …</pre></div></div>
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2015-05-30T10:02:00+08:00" pubdate>
-                            Sat, 30 May 2015
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
                         </time>
-                        <a href="https://magicalboy.com/cocoapods-usage.html" rel="bookmark"><h1>CocoaPods 使用</h1></a>
+                        <a href="https://magicalboy.com/programming-history.html" rel="bookmark"><h1>程序语言历史</h1></a>
                     </header>
                     <section class="post-content">
-                        <div class="section" id="id1">
-<h2>介绍</h2>
-<p><a class="reference external" href="https://cocoapods.org/">CocoaPods</a> 是 Objective-C 和 Swift 项目的依赖管理平台，而且已经拥有庞大的库，帮助我们优雅地扩大项目规模。</p>
-<p>后来又出了一个 <a class="reference external" href="https://github.com/Carthage/Carthage">Carthage</a>，使用 Swift 实现的一个更简单的 Cocoa 依赖管理工具。由于 Carthage 仅支持动态 framework，所以必须要求 iOS 8 以及以上才能够使用，所以，这个以后再了解。</p>
+                        <a class="reference external image-reference" href="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/history.html"><img alt="programming history" src="http://staff.pausd.org/~cbly/1web_design/12b_final/daniel/images/programminghistory.jpg" style="width: 1024px;" /></a>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
+                        </time>
+                        <a href="https://magicalboy.com/skill-framework.html" rel="bookmark"><h1>码农必备</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="os-x-yosemite">
-<h2>OS X Yosemite 上安装</h2>
-<p>使用 gem 安装：<em>$ sudo gem install cocoapods</em>
-前提是你已经安装好了 Gem — 一个 <strong>复杂</strong> 的 Ruby 语言包管理器。</p>
+<img alt="码农的求生技能" src="images/skills.png" />
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="xcode">
-<h2>在 Xcode 项目中使用</h2>
-<p>很简单，在项目根目录新建一个 <em>Podfile …</em></p></div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
+                        </time>
+                        <a href="https://magicalboy.com/uiimage.html" rel="bookmark"><h1>UIImage 使用</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIImage_Class/Reference/Reference.html">UIImage Class Reference</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Inherits from</td>
+<td>NSObject</td>
+</tr>
+<tr><td>Framework</td>
+<td>/System/Library/Frameworks/UIKit.framework</td>
+</tr>
+<tr><td>Availability</td>
+<td>Available in iOS 2.0 and later.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="stretch">
+<h2>Stretch</h2>
+<p>将</p>
+<img alt="" src="http://i.stack.imgur.com/IPNUm.png" />
+<p>拉伸为</p>
+<img alt="" src="http://i.stack.imgur.com/1skMj.png" />
+<p>代码：</p>
+<div class="highlight"><pre><span></span><span class="bp">UIImage</span> <span class="o">*</span><span class="n">originalImage</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIImage</span> <span class="nl">imageNamed</span><span class="p">:</span><span class="s">@&quot;myImage.png&quot;</span><span class="p">];</span>
+<span class="bp">UIImage</span> <span class="o">*</span><span class="n">newImage</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">([</span><span class="n">originalImage</span> <span class="nl">respondsToSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">resizableImageWithCapInsets</span><span class="p">:)])</span> <span class="p">{</span>
+    <span class="c1">// iOS 5 and obove.</span>
+    <span class="n">newImage</span> <span class="o">=</span> <span class="p">[</span><span class="n">originalImage</span> <span class="nl">resizableImageWithCapInsets</span><span class="p">:(</span><span class="bp">UIEdgeInsets</span><span class="p">){</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5 …</span></pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
+                        </time>
+                        <a href="https://magicalboy.com/unit_testing.html" rel="bookmark"><h1>单元测试</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id2">
+<h2>单元测试是什么</h2>
+<p>即分模块测试，针对程序模块进行正确性检验的测试工作。单元测试可以在软件开发过程的早期及时发现问题，同时也利于未来对代码的重构。</p>
+</div>
+<div class="section" id="ios">
+<h2>iOS 中的单元测试</h2>
+<p>OCUnit，被官方集成进XCode 4.x版本中；GHUnit，被推荐最多的测试框架，带GUI界面。</p>
+</div>
+
                     </section>
                 </article>
             </li>

@@ -54,6 +54,64 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-03T08:45:00+08:00" pubdate>
+                            Tue, 03 Aug 2010
+                        </time>
+                        <a href="https://magicalboy.com/django-file-upload.html" rel="bookmark"><h1>Django 文件上传</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>本文介绍的 Django 文件上传不是 Django 1.0
+以上的上传方法，而是一般通用的文件上传。主要使用
+<a class="reference external" href="http://www.djangoproject.com/documentation/0.96/request_response/">HttpRequest</a>对象的
+FILES 属性，一个类似字典的属性。</p>
+<div class="section" id="files">
+<h2>FILES</h2>
+<p>是一个包含所有上传文件的类似于字典的对象，它里面的每个 key
+的名称来自于表单输入控件 &lt;input type=&quot;file&quot; name=&quot;&quot; /&gt; 中的 name
+属性。每个 key 的值为标准的 Python 字典，其里面又包含以下三个 Key-Value
+键值对：</p>
+<ul class="simple">
+<li>filename: 上传的文件的名字。</li>
+<li>content-type: 上传文件的类型。</li>
+<li>content: 上传文件的原始内容</li>
+</ul>
+<p><strong>注意</strong>：只要在表单中指定提交方式为 POST，而且有
+enctype=&quot;multipart/form-data&quot; 这个属性，FILES 对象不为空 …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-08-02T09:27:00+08:00" pubdate>
+                            Mon, 02 Aug 2010
+                        </time>
+                        <a href="https://magicalboy.com/install-django-admin-app.html" rel="bookmark"><h1>增加 Django 自带的 admin 管理界面</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>admin 是
+<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Django">Django</a>提供的一个核心
+app，它可以根据项目中的 model
+来自动生成管理界面。它功能强大，而且界面美观。可以管理用户权限，对于管理集中，正如它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站一样，主要以发布为主。</p>
+<p>下面我们来开始安装 admin app 。</p>
+<ol class="arabic">
+<li><p class="first"><strong>创建一个新项目：demo</strong>
+<tt class="docutils literal"><span class="pre">django-admin.py</span> startproject demo</tt></p>
+</li>
+<li><p class="first"><strong>修改 settings.py</strong></p>
+<div class="line-block">
+<div class="line">配置数据库（MySQL）：</div>
+<div class="line"><tt class="docutils literal">DATABASE_ENGINE = 'mysql' DATABASE_NAME = 'django' DATABASE_USER = 'root' DATABASE_PASSWORD = 'password'&nbsp; # 数据库密码 DATABASE_HOST = ''&nbsp; # 数据库服务器主机（默认本地） DATABASE_PORT = ''&nbsp; # 数据库服务器端口（默认3306）</tt></div>
+<div class="line">增添 admin app：</div>
+<div class="line"><tt class="docutils literal">INSTALLED_APPS = (&nbsp;&nbsp;&nbsp;&nbsp; 'django.contrib.auth' …</tt></div></div></li></ol>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-07-27T15:28:00+08:00" pubdate>
                             Tue, 27 Jul 2010
                         </time>
@@ -274,55 +332,6 @@ robots.txt 时发现，解析结果有错误：“第 1 行：?User-agent: *
 <div class="section" id="id2">
 <h2>robots.txt 内容如下</h2>
 <p><tt class="docutils literal"><span class="pre">User-agent:</span> * Disallow: <span class="pre">/wp-admin</span> Disallow: <span class="pre">/wp-content/plugins</span> Disallow: <span class="pre">/wp-content/themes</span> Disallow: <span class="pre">/wp-includes</span> Sitemap: <span class="pre">http://magicalboy.com/sitemap.xml …</span></tt></p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-07-08T15:21:00+08:00" pubdate>
-                            Thu, 08 Jul 2010
-                        </time>
-                        <a href="https://magicalboy.com/google-reader-none-favicon.html" rel="bookmark"><h1>解决 Google Reader 没有显示网站图标的问题</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p><a class="reference external" href="http://reader.google.com/">Google 阅读器</a> 是一款简易实用且强大的在线阅读工具。最近在使用“<strong>显示订阅的网页图标</strong>”功能时发现有部分订阅的网站图标未能显示，包括我自己的网站，只显示一个默认的图标。经过一番仔细观察，终于发现问题所在。</p>
-<div class="section" id="id1">
-<h2>首先，设置“显示订阅的网页图标”</h2>
-<div class="line-block">
-<div class="line">从阅读器页面右上角账户名显示旁边的“设置”－“阅读器
-设置”中进入设置页面，勾选“偏好设置”标签项中的“其他“下面中的“显示订阅的网页图标“选项，或者在订阅模块标题中的下拉菜单中设置，如图：</div>
-<div class="line">返回 Google 阅读器即可看到效果。</div>
-</div>
-</div>
-<div class="section" id="id2">
-<h2>解决 Google Reader 没有显示网站图标的问题</h2>
-<p>开始时认为，一时看不到图标可能是因为网络问题，但是一段时间后还是没有显示图标。于是到那些可以显示图标的网站看为什么别人的可以显示。发现 favicon 的显示代码如： 或者  即其网站图标位置都是放在网站根目录下。于是乎马上将 favicon.ico 文件移动到网站根目录，修改相应的链接，回到 Google …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-07-04T07:47:00+08:00" pubdate>
-                            Sun, 04 Jul 2010
-                        </time>
-                        <a href="https://magicalboy.com/quick-install-django.html" rel="bookmark"><h1>Django 快速安装指南</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Django 是一个高层次的 Python Web
-框架，鼓励快速全面的开发和实用的设计。是一个使用 python 语言写的开源 web
-开发框架(open source web framework)。</p>
-<p>这是一个简单的快速安装入门教程，如果您需要一个完整的安装指南，涵盖所有安装过程中出现问题的可能性，请参见官方网站：<a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#topics-install">完整安装指南</a></p>
-<!-- install-python: -->
-<div class="section" id="python">
-<h2>安装 Python <a class="reference external" href="#install-python">¶</a></h2>
-<p>作为一个 Python Web 框架，Django 需要 Python。它适用于任何版本的 Python
-2.4 至 2.6，但是它不适用于 3.0。建议您使用 Python 2.5
-或更高版本，因为它们包括一个称为轻量级数据库 SQLite。如果您现在使用的是
-Linux 或 Mac …</p></div>
                     </section>
                 </article>
             </li>

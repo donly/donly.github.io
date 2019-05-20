@@ -54,6 +54,58 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2011-02-23T02:48:00+08:00" pubdate>
+                            Wed, 23 Feb 2011
+                        </time>
+                        <a href="https://magicalboy.com/rgb2uicolor.html" rel="bookmark"><h1>网页颜色RGB转换UIColor</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在iPhone开发中遇到要使用网页颜色代码时，发现UIColor的引用文档中没有将网页颜色转换为RGB码值的方法，且UIColor中的RGB分别用0到1之间的数值来表示的，要将16进制的网页颜色代码#ff3245转换为UIColor中RGB值时会觉得有点麻烦。</p>
+<p>UIColor Class Reference中的方法</p>
+<ul class="simple">
+<li><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIColor_Class/Reference/Reference.html">–
+initWithRed:green:blue:alpha:</a></li>
+<li><a class="reference external" href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIColor_Class/Reference/Reference.html">+
+colorWithRed:green:blue:alpha:</a></li>
+</ul>
+<p>两个方法都是使用指定的RGB值和alpha值来创建和返回一个颜色对象，不同的是第一个是实例方法，另一个是类方法。</p>
+<p>其实这只是进制之间的换算，在这里我在网上找了一个直接输入网页颜色RGB值转换UIColor代码的小JS应用：<a class="reference external" href="http://magicalboy.com/apps/RGB2UIColor.html">RGB2UIcolor</a>。</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-02-22T02:37:00+08:00" pubdate>
+                            Tue, 22 Feb 2011
+                        </time>
+                        <a href="https://magicalboy.com/read-plist-file-in-xcode.html" rel="bookmark"><h1>在Xcode项目中读取plist文件</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>.plist(Property list)
+文件即属性列表文件，类似于XML格式的一种配置文件，里面可保存序列化的对象。这种plist文件在Mac
+OS X及相关产品中常见到，下面是在Xcode中如果读取或写入plist文件的示例。</p>
+<div class="section" id="plist">
+<h2>读取一般的plist文件</h2>
+<div class="line-block">
+<div class="line"><tt class="docutils literal">// 取得文件路径 ... NSString *plistPath = [[NSBundle mainBundle] <span class="pre">pathForResource:&#64;&quot;Shopping-Info&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">ofType:&#64;&quot;plist&quot;];</span> // 读取到一个NSDictionary NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath]; // 读取到一个NSArray NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath]; ...</tt></div>
+</div>
+</div>
+<div class="section" id="xxx-info-plistinfo-plist">
+<h2>读取项目主配置文件xxx-Info.plist或Info.plist</h2>
+<p><tt class="docutils literal">... NSDictionary *dict = [[NSBundle mainBundle] infoDictionary]; NSString *URLString = [dict <span class="pre">objectForKey:&#64;&quot;Bundle</span> <span class="pre">version&quot;];</span> ...</tt></p>
+<p>-EOF-</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2011-02-16T03:55:00+08:00" pubdate>
                             Wed, 16 Feb 2011
                         </time>
@@ -271,68 +323,6 @@ Builder中看到提示：“View …</div></div></div>
 <div class="line"><img alt="http://goo.gl/TxyAR.qr" src="http://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;choe=UTF-8&amp;chld=H&amp;chl=http://goo.gl/TXyAR" /></div>
 </div>
 
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-01-15T06:13:00+08:00" pubdate>
-                            Sat, 15 Jan 2011
-                        </time>
-                        <a href="https://magicalboy.com/mac-os-screenshots.html" rel="bookmark"><h1>万能的Mac OS截图</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Mac OS X 的截图很方便，下面是常用的截图快捷键。</p>
-<p><strong>**cmd为Command键*</strong></p>
-<ul class="simple">
-<li>截取全屏保存到桌面：cmd+shift+3</li>
-<li>截取区域保存到桌面：cmd+shift+4</li>
-<li>截取全屏保存到剪贴板：cmd+ctrl+shift+3</li>
-<li>截取区域保存到剪贴板：cmd+ctrl+shift+4</li>
-<li>带阴影效果的区域截图：cmd+shift+4+space</li>
-</ul>
-<p>如果截到的图为黑色或无内容，请确认是否已安装显卡驱动。如果驱动无解，可借助像<a class="reference external" href="http://www.evernote.com/">EverNote</a>带有截图功能的软件来实现，虽然EverNote是一款专业的记事软件。</p>
-<p>另外有一款专门用于iPhone、iTunes截图的工具——iPhone-Simulator Cropper
-v2.4，在iPhone真机上也可按Home+Power键进行截屏。</p>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-01-14T18:30:00+08:00" pubdate>
-                            Fri, 14 Jan 2011
-                        </time>
-                        <a href="https://magicalboy.com/android-dev-guid-for-windows.html" rel="bookmark"><h1>Android开发环境搭建（Windows篇）</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Android的开发环境配置起来有几个步骤，没有iPhone有Xcode集成的SDK方便。但它有明显的优势，支持多平台开发。下面就简单记录一下，在Windows下配置Android开发环境的一些步骤。</p>
-<div class="section" id="id1">
-<h2>运行环境及開發環境</h2>
-<ul class="simple">
-<li>Windows 7</li>
-<li>Java SDK &amp;Java Runtime</li>
-<li>eclipse-java-helios-SR1-win32</li>
-<li>android-sdk_r08-windows</li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2>安装配置基本步骤</h2>
-<ol class="arabic simple">
-<li>首先，下载安装Java，将Java运行环境安装配置好，即配置环境变量。</li>
-<li>然后，下载Android
-SDK，在哪下载与如何下载，请<a class="reference external" href="http://www.google.com/search?q=android+dev&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t">Google之</a>。</li>
-<li>下载解压并运行解压目录里面的<em>SDK
-Manager.exe</em>，在线安装SDK。如果安装过程出现问题，请Google之。</li>
-<li>配置android
-sdk系统环境变量，将你sdk下的tool目录路径（比如x:android-sdk-windowstool）增加到path。</li>
-<li>增加虚拟设备，版本自己选择（如下图）：<a class="reference external" href="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg"><img alt="image0" class="alignnone size-full wp-image-989" src="http://magicalboy.com/wp-content/uploads/2011/01/android_sdk_virtual_device.jpg" style="width: 604px; height: 330px;" /></a></li>
-<li>到Eclipse官网下载最新版本，运行并打开帮助菜单中的安装新软件子菜单，增加android
-- <a class="reference external" href="http://dl-ssl.google.com/android/eclipse">http://dl-ssl.google.com/android …</a></li></ol></div>
                     </section>
                 </article>
             </li>

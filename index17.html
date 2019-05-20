@@ -54,6 +54,97 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-09-09T08:59:00+08:00" pubdate>
+                            Thu, 09 Sep 2010
+                        </time>
+                        <a href="https://magicalboy.com/python-scope-legb.html" rel="bookmark"><h1>Python 的变量作用域和 LEGB 原则</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在 Python
+程序中创建、改变或查找变量名时，都是在一个保存变量名的地方进行中，那个地方我们称之为命名空间。作用域这个术语也称之为命名空间。</p>
+<p>具体地说，在代码中变量名被赋值（Python 中变量声明即赋值，global
+声明的只是变量的使用域）的位置决定了该变量能被访问的范围。函数定义了本地作用域，而模块定义的是全局作用域。这两个作用域之前有如下关系：</p>
+<ul class="simple">
+<li><strong>每一个模块都是全局作用域。</strong>也就是说，创建于模块文件顶层的变量具有全局作用域，对于外部访问就成了一个模块对象的属性。</li>
+<li><strong>全局作用域的作用范围仅限于单个文件。</strong>“全局”指的是在一个文件的顶层变量名对于这个文件而言是全局的。</li>
+<li><strong>每次对函数的调用都创建了一个新的本地作用域。</strong>Python
+中也有递归，即可以调用自身，每次调用都会创建五个新的本地命名空间。</li>
+<li><strong>赋值的变量名除非声明为全局变量，否则均为本地变量。</strong>如果需要在函数内部对模块文件顶层的变量名赋值，需要在函数内部通过
+global 语句声明该变量。</li>
+<li><strong>所有的变量可归纳为本地、全局或者内置三种。</strong>范围分别为 def
+内部，在一个模块的命名空间内部和预定义的 __builtin__
+模块提供的变量。</li>
+</ul>
+<div class="section" id="legb">
+<h2>变量名解析：LEGB 原则</h2>
+<p>如果对以上内容有所迷惑的话，请看以下总结出的几条原则。在函数命名空间中：</p>
+<ul class="simple">
+<li>变量名引用分为三个作用域进行查找 …</li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-09-08T15:18:00+08:00" pubdate>
+                            Wed, 08 Sep 2010
+                        </time>
+                        <a href="https://magicalboy.com/c-storage-type.html" rel="bookmark"><h1>C 存储类型简介</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在 C 语言中，存储模型，也即存储类，使用存储时期(storage
+duration)或者作用域(scope)以及它的链接(linkage)来定义了 5
+种存储类：自动、寄存器、具有代码块作用域的静态、具有外部链接的静态和具有内部链接的静态。下表列出了这些组合的简要说明：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="8%" />
+<col width="11%" />
+<col width="8%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">存储类</th>
+<th class="head">时期</th>
+<th class="head">作用域</th>
+<th class="head">链接</th>
+<th class="head">声明方式</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>自动</td>
+<td>自动</td>
+<td>代码块</td>
+<td>空</td>
+<td>代码块内</td>
+</tr>
+<tr><td>寄存器</td>
+<td>自动</td>
+<td>代码块</td>
+<td>空</td>
+<td>代码块内，使用关键字 register</td>
+</tr>
+<tr><td>具有外部链接的静态</td>
+<td>静态</td>
+<td>文件</td>
+<td>外部</td>
+<td>所有函数之外</td>
+</tr>
+<tr><td>具有内部链接的静态</td>
+<td>静态</td>
+<td>文件</td>
+<td>内部</td>
+<td>所有函数之外，使用关键字 static</td>
+</tr>
+<tr><td>空链接静态 …</td></tr></tbody></table>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-09-07T14:31:00+08:00" pubdate>
                             Tue, 07 Sep 2010
                         </time>
@@ -314,64 +405,6 @@ FTP 工具批量上传到 FTP
 <div class="line"><a class="reference external" href="http://magicalboy.com/wp-content/uploads/2010/08/funs.png"><img alt="image1" class="alignnone size-full wp-image-705" src="http://magicalboy.com/wp-content/uploads/2010/08/funs.png" style="width: 313px; height: 378px;" /></a></div>
 </div>
 <p>可以看到 net2ftp 支持多种上传方式 …</p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-08-03T08:45:00+08:00" pubdate>
-                            Tue, 03 Aug 2010
-                        </time>
-                        <a href="https://magicalboy.com/django-file-upload.html" rel="bookmark"><h1>Django 文件上传</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>本文介绍的 Django 文件上传不是 Django 1.0
-以上的上传方法，而是一般通用的文件上传。主要使用
-<a class="reference external" href="http://www.djangoproject.com/documentation/0.96/request_response/">HttpRequest</a>对象的
-FILES 属性，一个类似字典的属性。</p>
-<div class="section" id="files">
-<h2>FILES</h2>
-<p>是一个包含所有上传文件的类似于字典的对象，它里面的每个 key
-的名称来自于表单输入控件 &lt;input type=&quot;file&quot; name=&quot;&quot; /&gt; 中的 name
-属性。每个 key 的值为标准的 Python 字典，其里面又包含以下三个 Key-Value
-键值对：</p>
-<ul class="simple">
-<li>filename: 上传的文件的名字。</li>
-<li>content-type: 上传文件的类型。</li>
-<li>content: 上传文件的原始内容</li>
-</ul>
-<p><strong>注意</strong>：只要在表单中指定提交方式为 POST，而且有
-enctype=&quot;multipart/form-data&quot; 这个属性，FILES 对象不为空 …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-08-02T09:27:00+08:00" pubdate>
-                            Mon, 02 Aug 2010
-                        </time>
-                        <a href="https://magicalboy.com/install-django-admin-app.html" rel="bookmark"><h1>增加 Django 自带的 admin 管理界面</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>admin 是
-<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Django">Django</a>提供的一个核心
-app，它可以根据项目中的 model
-来自动生成管理界面。它功能强大，而且界面美观。可以管理用户权限，对于管理集中，正如它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站一样，主要以发布为主。</p>
-<p>下面我们来开始安装 admin app 。</p>
-<ol class="arabic">
-<li><p class="first"><strong>创建一个新项目：demo</strong>
-<tt class="docutils literal"><span class="pre">django-admin.py</span> startproject demo</tt></p>
-</li>
-<li><p class="first"><strong>修改 settings.py</strong></p>
-<div class="line-block">
-<div class="line">配置数据库（MySQL）：</div>
-<div class="line"><tt class="docutils literal">DATABASE_ENGINE = 'mysql' DATABASE_NAME = 'django' DATABASE_USER = 'root' DATABASE_PASSWORD = 'password'&nbsp; # 数据库密码 DATABASE_HOST = ''&nbsp; # 数据库服务器主机（默认本地） DATABASE_PORT = ''&nbsp; # 数据库服务器端口（默认3306）</tt></div>
-<div class="line">增添 admin app：</div>
-<div class="line"><tt class="docutils literal">INSTALLED_APPS = (&nbsp;&nbsp;&nbsp;&nbsp; 'django.contrib.auth' …</tt></div></div></li></ol>
                     </section>
                 </article>
             </li>

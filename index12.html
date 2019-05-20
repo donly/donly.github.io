@@ -54,6 +54,76 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2012-05-25T11:42:00+08:00" pubdate>
+                            Fri, 25 May 2012
+                        </time>
+                        <a href="https://magicalboy.com/ios_gps_location.html" rel="bookmark"><h1>iOS 获取 GPS 位置信息</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>在 iOS 平台上使用
+<a class="reference external" href="https://developer.apple.com/library/ios/#DOCUMENTATION/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html">CLLocationManager</a>
+获取 GPS 位置信息，比如经度，纬度，海拔高度等是很简单的事情。</p>
+<div class="section" id="id1">
+<h2>步骤</h2>
+<ol class="arabic">
+<li><p class="first">加入 CoreLocation.framework , 导入头文件。</p>
+<pre class="code shell literal-block">
+<span class="c1">#import &lt;CoreLocation/CoreLocation.h&gt;</span>
+</pre>
+</li>
+<li><p class="first">在 AppDelegate.m 中加入检测是否启用位置服务功能。</p>
+</li>
+<li><p class="first">打开位置管理器。</p>
+</li>
+<li><p class="first">在 CLLocationManagerDelegate 中获取 GPS 位置信息。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="demo">
+<h2>完整 Demo</h2>
+<p><a class="reference external" href="https://github.com/donly/GPS_iOS">GPS_iOS</a></p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-05-24T11:36:00+08:00" pubdate>
+                            Thu, 24 May 2012
+                        </time>
+                        <a href="https://magicalboy.com/objective_c_nstimer_usage.html" rel="bookmark"><h1>Objective C NSTimer 使用</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html">NSTimer</a> 的使用并不复杂，简单介绍在iOS开发中经常会用到的几种方式。</p>
+<div class="section" id="nstimer">
+<h2>创建 NSTimer</h2>
+<ol class="arabic simple">
+<li>Scheduled Timers &amp; Using Selector</li>
+<li>Unscheduled Timers &amp; Using Invocation</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>参考链接</h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://stackoverflow.com/questions/1449035/how-do-i-use-nstimer">objective c - How do I use NSTimer - Stack
+Overflow</a></li>
+<li><a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Timers/Timers.html">Timer Programming Topics: Introduction to
+Timers</a></li>
+<li><a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html">Threading Programming
+Guide</a></li>
+</ol>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2012-04-27T22:04:00+08:00" pubdate>
                             Fri, 27 Apr 2012
                         </time>
@@ -285,74 +355,6 @@ Apps，好的话一天可赚100美刀，哥我有点凌乱啊，创意很重要�
 <li>帮助与参数资料</li>
 </ol>
 
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-10-21T05:59:00+08:00" pubdate>
-                            Fri, 21 Oct 2011
-                        </time>
-                        <a href="https://magicalboy.com/what-is-new-in-ios5.html" rel="bookmark"><h1>iOS 5 软件更新</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p><strong>iOS 5 软件更新</strong></p>
-<p>本更新增加了 200 多个新功能，其中包括：</p>
-<blockquote>
-<ul class="simple">
-<li>通知</li>
-</ul>
-<p>◦ 从任意屏幕的顶部向下推送，即可在“通知中心”集中查看所有通知。</p>
-<p>◦ 新收到的通知会短时间显示在屏幕顶部</p>
-<p>◦ 可从锁定的屏幕查看通知</p>
-<p>◦ 将通知应用程序图标从锁定的屏幕的左侧滑到右侧，即可直接前往该应用程序</p>
-<ul class="simple">
-<li>iMessage</li>
-</ul>
-<p>◦ 可与其他 5 位 iOS 5 用户收发不限量的文本信息、照片信息和视频信息。</p>
-<p>◦ 可查阅送达回执和已读回执来跟踪信息的状态</p>
-<p>◦ 群发信息和安全加密</p>
-<p>◦ 可在蜂窝网络和 Wi-Fi 中使用*</p>
-<ul class="simple">
-<li>报刊杂志</li>
-</ul>
-<p>◦ 在“主屏幕”上自动整理订阅的报纸杂志</p>
-<p>◦ 显示最新一期报纸杂志的封面</p>
-<p>◦ 在后台下载新一期报纸杂志</p>
-<ul class="simple">
-<li>用“提醒事项”来管理待办事项</li>
-</ul>
-<p>◦ 与 iCloud、iCal 和 Outlook 同步</p>
-<p>◦ 在您离开或到达某一个位置时发送基于位置的提醒（适用于 iPhone 4S 和 iPhone …</p></blockquote>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-09-22T14:26:00+08:00" pubdate>
-                            Thu, 22 Sep 2011
-                        </time>
-                        <a href="https://magicalboy.com/git-getting-started.html" rel="bookmark"><h1>Git 使用入门</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="line-block">
-<div class="line"><strong>一、Git简介</strong></div>
-<div class="line"><img alt="git logo" src="https://lh6.googleusercontent.com/-6bFWTOcHH4Y/TntG8fwhJWI/AAAAAAAAAJk/pu01j_uBeDo/s800/git.png" style="width: 214px; height: 81px;" /></div>
-</div>
-<p>Git（Via <a class="reference external" href="http://zh.wikipedia.org/wiki/Git">http://zh.wikipedia.org/wiki/Git</a>）。当初 Linus Trovalds 开发
-Git 是为了跟踪 Linux 内核的修改情况，Git 命名来自于</p>
-<blockquote>
-“I'm an egotistical bastard, and I name all my projects after
-myself. First Linux, now git.”</blockquote>
-<div class="line-block">
-<div class="line">**
-二、为什么使用Git**</div>
-<div class="line">相信大家使用过传统的版本控制系统（Version Control System，VCS），比如
-CVS，SVN（Subversion）等。这些都是老而笨重，采用集中式的 …</div></div>
                     </section>
                 </article>
             </li>

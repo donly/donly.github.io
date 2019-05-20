@@ -54,6 +54,55 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-08T15:21:00+08:00" pubdate>
+                            Thu, 08 Jul 2010
+                        </time>
+                        <a href="https://magicalboy.com/google-reader-none-favicon.html" rel="bookmark"><h1>解决 Google Reader 没有显示网站图标的问题</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p><a class="reference external" href="http://reader.google.com/">Google 阅读器</a> 是一款简易实用且强大的在线阅读工具。最近在使用“<strong>显示订阅的网页图标</strong>”功能时发现有部分订阅的网站图标未能显示，包括我自己的网站，只显示一个默认的图标。经过一番仔细观察，终于发现问题所在。</p>
+<div class="section" id="id1">
+<h2>首先，设置“显示订阅的网页图标”</h2>
+<div class="line-block">
+<div class="line">从阅读器页面右上角账户名显示旁边的“设置”－“阅读器
+设置”中进入设置页面，勾选“偏好设置”标签项中的“其他“下面中的“显示订阅的网页图标“选项，或者在订阅模块标题中的下拉菜单中设置，如图：</div>
+<div class="line">返回 Google 阅读器即可看到效果。</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>解决 Google Reader 没有显示网站图标的问题</h2>
+<p>开始时认为，一时看不到图标可能是因为网络问题，但是一段时间后还是没有显示图标。于是到那些可以显示图标的网站看为什么别人的可以显示。发现 favicon 的显示代码如： 或者  即其网站图标位置都是放在网站根目录下。于是乎马上将 favicon.ico 文件移动到网站根目录，修改相应的链接，回到 Google …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2010-07-04T07:47:00+08:00" pubdate>
+                            Sun, 04 Jul 2010
+                        </time>
+                        <a href="https://magicalboy.com/quick-install-django.html" rel="bookmark"><h1>Django 快速安装指南</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Django 是一个高层次的 Python Web
+框架，鼓励快速全面的开发和实用的设计。是一个使用 python 语言写的开源 web
+开发框架(open source web framework)。</p>
+<p>这是一个简单的快速安装入门教程，如果您需要一个完整的安装指南，涵盖所有安装过程中出现问题的可能性，请参见官方网站：<a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/install/#topics-install">完整安装指南</a></p>
+<!-- install-python: -->
+<div class="section" id="python">
+<h2>安装 Python <a class="reference external" href="#install-python">¶</a></h2>
+<p>作为一个 Python Web 框架，Django 需要 Python。它适用于任何版本的 Python
+2.4 至 2.6，但是它不适用于 3.0。建议您使用 Python 2.5
+或更高版本，因为它们包括一个称为轻量级数据库 SQLite。如果您现在使用的是
+Linux 或 Mac …</p></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-07-03T09:23:00+08:00" pubdate>
                             Sat, 03 Jul 2010
                         </time>
@@ -258,63 +307,6 @@ Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且�
 <div class="line">{</div>
 <div class="line">printf(&quot;第%d级递归: n 内存地址 %pn&quot;, n, &amp;n);</div>
 <div class="line">if (n &lt; 4 …</div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-06-10T11:23:00+08:00" pubdate>
-                            Thu, 10 Jun 2010
-                        </time>
-                        <a href="https://magicalboy.com/css-overflow-usages.html" rel="bookmark"><h1>老生常谈：CSS overflow 那些事儿</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>css 的 overflow 属性的用法很广泛也很重要，最近在修改 WordPress 和 CMS
-的模板的时候就发现有很多地方是因为不正确地使用 overflow
-属性而导致跨浏览器使用会出现诡异的渲染结果。</p>
-<div class="section" id="overflow">
-<h2>overflow 属性定义和说明</h2>
-<p>overflow 中文即溢出的意思，在 CSS
-中则是指当前元素的内容溢出后应该怎么处理。</p>
-<p>overflow 属性值有：</p>
-<ul class="simple">
-<li><strong>visible</strong>：默认值，表示当前元素显示的内容不可截断，这表示它可能会从当前容器元素中溢出，跑到盒模型外面。</li>
-<li><strong>hidden</strong>：此值表示的内容是剪辑，也没有滚动用户界面应提供查看剪辑区域以外的内容。</li>
-<li><strong>scroll</strong>：使用滚动条来显示溢出的内容，使用这一值时，它却不管用户是否需要都使用滚动条机制。</li>
-<li><strong>auto</strong>：自动模式，根据需要使用滚动条。</li>
-<li><strong>inherit</strong>：从父元素继承。</li>
-</ul>
-<p>如果你参考 W3school 的 <a class="reference external" href="http://www.w3school.com.cn/css/pr_pos_overflow.asp">CSS
-overflow</a>
-属性，你会发现它的 overflow 定义说明中表格中的默认值为
-auto，这是错误的。请参考 W3C …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-06-09T13:52:00+08:00" pubdate>
-                            Wed, 09 Jun 2010
-                        </time>
-                        <a href="https://magicalboy.com/adobe-dreamweaver-cs5-html5pack.html" rel="bookmark"><h1>翻译：Adobe Dreamweaver CS5 HTML 5 扩展包</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>跟着主研究员 Jorge Taylor 演示一个 Dreamweaver 扩展的 CS5 HTML5 的包，为
-Adobe Creative Suite 5 用户提供更多创新的选择。</p>
-<p>通过该扩展包，DW CS5 将获得以下新特性：</p>
-<ul class="simple">
-<li>多屏幕预览面板，适用于同时为不同设备开发 HTML 应用</li>
-<li>支持对 HTML 5 新增的标签库的代码提示</li>
-<li>支持对 CSS 3 代码提示</li>
-<li>增加 Video 和 Audio 标签的实时预览</li>
-<li>改进 CSS 3 实时预览效果</li>
-<li>改进设计视图下对 HTML 5 新增标签的渲染效果</li>
-</ul>
-<p>[caption id=&quot;attachment_313&quot; align=&quot;alignnone&quot; caption …</p>
                     </section>
                 </article>
             </li>

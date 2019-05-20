@@ -54,22 +54,14 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2016-04-22T14:40:00+08:00" pubdate>
+                            Fri, 22 Apr 2016
                         </time>
-                        <a href="https://magicalboy.com/xcode.html" rel="bookmark"><h1>Xcode</h1></a>
+                        <a href="https://magicalboy.com/pelican-no-module-named-html_parser.html" rel="bookmark"><h1>Pelican No module named html_parser</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>Xcode 目前最新版本 <a class="reference external" href="http://magicalboy.com/xcode-5-0/">Xcode 5.0</a> ，支持 iPhone 5s, iOS 7 开发。</p>
-<div class="section" id="what-s-new">
-<h2>What's New</h2>
-<p>各个版本的 Xcode 新增功能说明。</p>
-<div class="section" id="xcode-5-0-x">
-<h3>Xcode 5.0.x</h3>
-<p>Help you design an app that looks gorgeous on iOS 7 or OS X Mavericks.</p>
-<p>WWDC地址：<a class="reference external" href="https://developer.apple.com/wwdc/videos/?id=400">What’s New in Xcode 5</a></p>
-<ul class="simple">
-<li>素材管理（Asset Management）：素材目录(Asset Catalogs)，后缀名为.xcassets …</li></ul></div></div>
+                        <p class="first last">在 OS X 上解决 No module named html_parser 问题。</p>
+
                     </section>
                 </article>
             </li>
@@ -77,8 +69,158 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-11-23T15:54:43+08:00" pubdate>
-                            Thu, 23 Nov 2017
+                        <time class="post-time" datetime="2015-12-01T00:00:00+08:00" pubdate>
+                            Tue, 01 Dec 2015
+                        </time>
+                        <a href="https://magicalboy.com/openwrt-cc-ss.html" rel="bookmark"><h1>OpenWrt CC SS 配置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>介绍</h2>
+<ul class="simple">
+<li>OpenWRT 版本：Chaos Calmer 15.05</li>
+<li>OpenWRT 内核：</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># opkg files kernel</span>
+Package kernel <span class="o">(</span><span class="m">3</span>.18.20-1-7bed08fa9c06eb8089e82c200340ec66<span class="o">)</span> is installed on root and has the following files:
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>安装</h2>
+<ol class="arabic simple">
+<li>使用 root 登录 ssh</li>
+<li>下载合适的预编译 <a class="reference external" href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.1-6f44d53/ar71xx/">安装包</a></li>
+<li>上传到 <tt class="docutils literal">/tmp</tt> 目录</li>
+<li>执行安装命令：</li>
+</ol>
+<div class="highlight"><pre><span></span>cks-libev-spec <span class="o">(</span><span class="m">2</span>.4.1-1<span class="o">)</span> to root...
+Installing ipset <span class="o">(</span><span class="m">6</span>.24-1<span class="o">)</span> to root...
+Downloading …</pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-11-15T17:37:54+08:00" pubdate>
+                            Sun, 15 Nov 2015
+                        </time>
+                        <a href="https://magicalboy.com/gentoo-samba.html" rel="bookmark"><h1>Samba 配置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>Samba 是 1992 年，一个叫 Andrew Tridgell 用 C/C++ 和 Python 写的跨平台软件。</p>
+<p>其名字来于 Server Message Block，其中 SMB/CIFS 是由微软开发的一种应用层网络传输协议。</p>
+<p>Samba 就是许多服务和协议的实现，是 Windows 和类 Unix 系统之间的桥梁。</p>
+<p>Samba 现在最新版本是 4.x，但在我的树莓派上面 <em>emerge --ask net-fs/samba</em> 出来的还是 3.6.2。</p>
+<p>官网上的 <a class="reference external" href="https://packages.gentoo.org/packages/net-fs/samba">net-fs/samba</a> package 4.x 以上的版本不支持 arm 或被 …</p>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-11-15T17:20:13+08:00" pubdate>
+                            Sun, 15 Nov 2015
+                        </time>
+                        <a href="https://magicalboy.com/openwrt-luci.html" rel="bookmark"><h1>OpenWrt Luci</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <ol class="arabic simple">
+<li>路由 Luci Web 界面访问不了问题</li>
+</ol>
+<blockquote>
+解决方法：重启 Luci</blockquote>
+<div class="highlight"><pre><span></span>/etc/init.d/uhttpd restart
+</pre></div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-10-27T22:34:42+08:00" pubdate>
+                            Tue, 27 Oct 2015
+                        </time>
+                        <a href="https://magicalboy.com/gentoo-portage.html" rel="bookmark"><h1>Gentoo Portage</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id1">
+<h2>修改更新源地址</h2>
+<ol class="arabic simple">
+<li><em>2.2.16</em> 版本之前的配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="nv">SYNC</span><span class="o">=</span><span class="s2">&quot;rsync://rsync.cn.gentoo.org/gentoo-portage/&quot;</span>
+</pre></div>
+<ol class="arabic simple" start="2">
+<li>新版本若没有配置会提示：</li>
+</ol>
+<div class="highlight"><pre><span></span>!!! SYNC setting found in make.conf.
+    This setting is Deprecated and no longer used.  Please ensure your <span class="s1">&#39;sync-type&#39;</span> and <span class="s1">&#39;sync-uri&#39;</span> are <span class="nb">set</span> correctly in /etc/portage/repos.conf/gentoo.conf
+</pre></div>
+<ol class="arabic simple" start="3">
+<li>新版本配置，编辑 <em>/etc/portage/make.conf</em> 删除原来的 …</li></ol></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-10-27T10:17:08+08:00" pubdate>
+                            Tue, 27 Oct 2015
+                        </time>
+                        <a href="https://magicalboy.com/gentoo-locale.html" rel="bookmark"><h1>Gentoo 本地化配置</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>未配置之前会有类似这样的提示：<em>man: can't set the locale; make sure $LC_</em> and $LANG are correct*。</p>
+<ol class="arabic simple">
+<li>查看当前本地化配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># locale -a</span>
+locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_COLLATE to default locale: No such file …</pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-10-27T09:54:19+08:00" pubdate>
+                            Tue, 27 Oct 2015
+                        </time>
+                        <a href="https://magicalboy.com/gentoo-partition.html" rel="bookmark"><h1>Gentoo 分区</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>由于系统是现成的，即直接 flash 安装，里面的分区表已经分好。为了充分利用卡上的剩余空间，于是新建一个分区来挂载使用。</p>
+<p>使用环境：</p>
+<ul class="simple">
+<li>系统：Gentoo 3.4.103</li>
+<li>存储盘：高速 MicroSDXC-TF 存储卡 64G-Class10</li>
+</ul>
+<p>第一步：查看与新建分区</p>
+<ol class="arabic simple">
+<li>分区前系统盘分区：</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1"># df -h</span>
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       <span class="m">3</span>.4G  <span class="m">1</span>.7G  <span class="m">1</span>.6G  <span class="m">52</span>% /
+devtmpfs        438M     <span class="m">0</span>  438M   <span class="m">0</span>% /dev
+tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-10-26T16:05:59+08:00" pubdate>
+                            Mon, 26 Oct 2015
                         </time>
                         <a href="https://magicalboy.com/xcode-remove-working-copies.html" rel="bookmark"><h1>Xcode 7 清除多余的 Woking copies</h1></a>
                     </header>
@@ -97,37 +239,21 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-10-26T22:30:00+08:00" pubdate>
-                            Thu, 26 Oct 2017
+                        <time class="post-time" datetime="2015-10-24T02:14:51+08:00" pubdate>
+                            Sat, 24 Oct 2015
                         </time>
-                        <a href="https://magicalboy.com/wepy.html" rel="bookmark"><h1>wepy 框架</h1></a>
+                        <a href="https://magicalboy.com/openwrt-bad-address.html" rel="bookmark"><h1>解决 OpenWrt Bad Address 问题</h1></a>
                     </header>
                     <section class="post-content">
-                        <p><a class="reference external" href="https://wepyjs.github.io/wepy">小程序组件化开发框架</a></p>
-<div class="section" id="id2">
-<h2>WePY项目的创建与使用</h2>
-<ol class="arabic simple">
-<li>环境介绍：macOS Sierra 10.12.6 (16G29)</li>
-</ol>
-<blockquote>
-<pre class="code shell literal-block">
-$ npm --version
-<span class="m">5</span>.4.2
-
-$ node -v
-v8.8.1
-</pre>
-</blockquote>
-<ol class="arabic simple" start="2">
-<li>全局安装或更新WePY命令行工具</li>
-</ol>
-<blockquote>
-<pre class="code shell literal-block">
-$ npm install wepy-cli -g
-/usr/local/bin/wepy -&gt; /usr/local/lib/node_modules/wepy-cli/bin/wepy.js
-
-&gt; fsevents&#64;1.1.2 install /usr/local/lib/node_modules/wepy-cli/node_modules/fsevents
-&gt; node install …</pre></blockquote></div>
+                        <p>自升级 CC 后，一切都正常。</p>
+<p>突然有一天发现 DDNS 出了问题，LuCI 的服务界面都刷不完整。</p>
+<p>opkg update 失败。</p>
+<p>ping 所有网址都是 bad address，ping ip 地址正常。</p>
+<p>nslookup 只到 localhost 卡住。</p>
+<p>检查 DNS 配置 <em>vi /etc/config/dhcp</em> 正常，网络配置 <em>/etc/config/network</em> 正常。</p>
+<p>找了Ｎ久才发现 <em>/etc/resolv.conf</em> 文件被修改，解决方法：</p>
+<div class="highlight"><pre><span></span><span class="c1"># 删除 /etc/resolv.conf</span>
+vi /etc/resolv.conf …</pre></div>
                     </section>
                 </article>
             </li>
@@ -135,184 +261,28 @@ $ npm install wepy-cli -g
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2017-06-30T19:39:00+08:00" pubdate>
-                            Fri, 30 Jun 2017
+                        <time class="post-time" datetime="2015-10-24T02:02:54+08:00" pubdate>
+                            Sat, 24 Oct 2015
                         </time>
-                        <a href="https://magicalboy.com/java_anonymous_class.html" rel="bookmark"><h1>Java 匿名类</h1></a>
+                        <a href="https://magicalboy.com/openwrt-ddns.html" rel="bookmark"><h1>OpenWrt DDNS 配置</h1></a>
                     </header>
                     <section class="post-content">
-                        <p>最近在复习 Java，利用 Learn Java App 有一定基础复习一遍还是很快的。</p>
-<img alt="java" src="https://lh3.googleusercontent.com/GG1ijmZNLKV6wfyLBqgr0Y7Lnx2sPD3pInbzRt9HY5RJIFpxYPPfUDAT2JmnqztmfdjaSPMNsp41fA=w1440-h900-no" />
-<p>在复习过程中，觉得比较容易忘记的几点还是有必要做一下笔记的。比如匿名内部类。</p>
-<div class="section" id="id1">
-<h2>匿名类</h2>
-<p>没有名字，创建方式：</p>
-<div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">父类构造器</span><span class="err">（</span><span class="n">参数列表</span><span class="err">）</span><span class="o">|</span><span class="n">实现接口</span><span class="err">（）</span>
-<span class="o">{</span>
- <span class="c1">//匿名内部类的类体部分</span>
-<span class="o">}</span>
-</pre></div>
-<p>举个例子：</p>
-<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Bird</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">int</span> <span class="nf">fly</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="n">Bird …</span></pre></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-06-22T10:30:00+08:00" pubdate>
-                            Thu, 22 Jun 2017
-                        </time>
-                        <a href="https://magicalboy.com/ios-11-beta-2-update.html" rel="bookmark"><h1>iOS 11 Developer beta 2</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>iOS 11 更新至 beta 2。</p>
-<p>更新后版本号为：<code>11 (15A5304i)</code>，详细的更新日志见官网：<a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Jun_21_2017/iOS_11_beta_2_Release_Notes.pdf">iOS 11 beta 2 Release Notes</a>。</p>
-<p>iOS 11 第一个 beta 版本问题还是很多的，而且部分 bug 还严重影响设备的正常使用。</p>
-<p>关于 iOS 11 的新特性请见 <a class="reference external" href="https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS_11_0.html#//apple_ref/doc/uid/TP40017637-SW1">What's New in iOS</a></p>
-<p>本次更新主要亮点：</p>
-<ol class="arabic simple">
-<li>32 位应用程序将不会运行在 iOS 11 的未来版本上。（26402174）</li>
-<li>iOS 11 不再支持 armv7 或 armv7s（32位）。 如果 iOS 目标的 iOS 部署目标为 …</li></ol>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-06-20T00:00:00+08:00" pubdate>
-                            Tue, 20 Jun 2017
-                        </time>
-                        <a href="https://magicalboy.com/vultr_host.html" rel="bookmark"><h1>Vultr 云主机</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <img alt="" src="https://www.vultr.com/media/banner_3.png" />
-<p><a class="reference external" href="https://www.vultr.com/?ref=7161763">DigitalOcean</a> 云主机，价格最价 <code>2.5 USD</code> 一个月。</p>
-<p>购买请点上面连接。</p>
-<p><a class="reference external" href="https://www.vultr.com/faq/#downloadspeedtests">速度测试</a>，日本 Tokyo ping 在 160 ms 左右。</p>
-<p>主要特点有：</p>
+                        <div class="section" id="id1">
+<h2>环境</h2>
 <ul class="simple">
-<li>访问速度快（日本，新加坡），ping 平均 160 ms 左右；</li>
-<li>价格不算贵，最便宜 2.5 USD，可惜已经限量购买了；</li>
-<li>国外主机不需备案；</li>
-<li>操作系统可选比较多，而且比较新，比如有 Ubuntu 17.04, Windows 2012R2 等；</li>
-<li>官方指导文档资料比较丰富，Support tickets 回复迅速，方便解决问题节省时间。</li>
+<li>OpenWrt CC (LuCI)</li>
+<li>电信光纤 100M</li>
 </ul>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-03-28T10:30:00+08:00" pubdate>
-                            Tue, 28 Mar 2017
-                        </time>
-                        <a href="https://magicalboy.com/ios-10-3-release.html" rel="bookmark"><h1>iOS 10.3 正式版发布</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>今天苹果 iOS 10.3 正式版已经发布。版本号为：<code>10.3 (14E277)</code>，对应的开发工具 Xcode 8.3 版本号为 8E162。</p>
-<p>详细的更新日志见官网：<a class="reference external" href="https://support.apple.com/zh-cn/HT201222">https://support.apple.com/zh-cn/HT201222</a>。</p>
-<blockquote>
-<p>iOS 10.3 推出了包括使用“查找我的 iPhone”定位 AirPods 在内的全新功能，并提供了使用 Siri 进行支付、叫车以及与车载设备配合使用的更多途径。</p>
-<p>查找我的 iPhone</p>
-<ul class="simple">
-<li>查看您 AirPods 的当前位置或最后已知位置</li>
-<li>在一侧或左右 AirPods 上同时播放声音，帮助您找到它们</li>
-</ul>
-<p>Siri</p>
-<ul class="simple">
-<li>支持配合支付应用进行支付和检查账单状态</li>
-<li>支持配合叫车应用预约车辆</li>
-<li>支持配合车载应用检查油量及车锁状态，并可开灯和鸣喇叭</li>
-<li>支持印度超级板球联赛和国际板球理事会的板球运动比分和统计数据 …</li></ul></blockquote>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-03-23T10:25:00+08:00" pubdate>
-                            Thu, 23 Mar 2017
-                        </time>
-                        <a href="https://magicalboy.com/reset-raspberry-root-password.html" rel="bookmark"><h1>重置树莓派 Root 密码</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>自买了 Raspberry 3 之后一直以吃灰为主，比较少用难免会将用户密码忘记，于是有了此篇章。</p>
-<p>如果还有模糊印象，可以通过 <code>passwd pi</code> 进行尝试。需要注意的是 <code>pi</code> 用户的初始密码是：</p>
-<div class="highlight"><pre><span></span>raspberry
-</pre></div>
-<div class="section" id="id1">
-<h2>找回密码</h2>
-<ol class="arabic simple">
-<li>关机取出内存卡，插到另一台电脑，Windows, Linux 或 macOS 都支持。</li>
-<li>编辑 <code>cmdline.txt</code> 文件
-在 <code>boot</code> 分区下找到此文件，修改之前的内容为：</li>
-</ol>
-<blockquote>
-<div class="highlight"><pre><span></span>dwc_otg.lpm_enable<span class="o">=</span><span class="m">0</span> <span class="nv">console</span><span class="o">=</span>serial0,115200 <span class="nv">console</span><span class="o">=</span>tty1 <span class="nv">root</span><span class="o">=</span>/dev/mmcblk0p7 <span class="nv">rootfstype</span><span class="o">=</span>ext4 <span class="nv">elevator</span><span class="o">=</span>deadline fsck.repair<span class="o">=</span>yes rootwait …</pre></div></blockquote></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-03-20T10:30:00+08:00" pubdate>
-                            Mon, 20 Mar 2017
-                        </time>
-                        <a href="https://magicalboy.com/ios-10-3-beta-7-update.html" rel="bookmark"><h1>iOS 10.3 Beta 7</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>今天苹果前几天又发布了 iOS 10.3 Beta 7 更新，距离上个 Beta 版本才 3 天左右。</p>
-<p>更新后版本号为：<code>10.3 (14E5277a)</code>，详细的更新日志见官网：<a class="reference external" href="http://adcdownload.apple.com/Documentation/Beta_Release_Notes_Mar_16_2017/iOS_10.3_beta_7_Release_Notes.pdf">iOS Release Notes for iOS 10.3 beta 7</a>。</p>
-<img alt="install on iPhone 6s" class="align-left" src="https://github.com/donly/note/blob/master/images/ios-10-3-beta-7.PNG?raw=true" style="width: 320px; height: 568px;" />
-<p>iPhone 6s 更新后没有发现有什么明显不同。</p>
-<p>关于 10.3 Beta 补充几点：</p>
-<ol class="arabic simple">
-<li>10.3 Beta 版开机时按住 Home 和 音量加，可进入诊断模式。</li>
-<li>关机时少了中间的加载动画，即菊花。</li>
-<li>增加了对 32 位应用的警告提示：此应用在未来的 iOS 版本下将无法使用 …</li></ol>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-03-17T10:30:00+08:00" pubdate>
-                            Fri, 17 Mar 2017
-                        </time>
-                        <a href="https://magicalboy.com/android-march-2017-upgrade.html" rel="bookmark"><h1>2017年3月 Android 安全补丁推送</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Nexus 6 终于有推送更新了，结果不是 7.1，而是安全补丁。</p>
-<p>对此我有两个疑问：</p>
-<ol class="arabic">
-<li><p class="first">为什么我的 Nexus 6 一直等不到 7.1 的 OTA 更新推送呢？</p>
-<p>根据 <a class="reference external" href="https://android-developers.googleblog.com/2016/12/welcoming-android-711-nougat.html">Welcoming Android 7.1.1 Nougat | Android Developers Blog</a>，Android 7.1.1 is an incremental release that builds on the features already available on Pixel and Pixel XL devices.</p>
-</li>
-<li><p class="first">为什么更新完补丁后，点击系统更新会出现 …</p></li></ol>
+</div>
+<div class="section" id="luci-app-ddns">
+<h2>一、安装 luci-app-ddns</h2>
+<p>登录路由器，进入 System -&gt; Software，点击 Update lists 更新软件库。</p>
+<p>在 Filter 中输入关键字 ddns, 点击 Find package，然后在 Available packages 列表中找到 luci-i18n-ddns-en，OpenWrt 会自动分析依赖关系安装好 DDNS。</p>
+<p>安装完成后，在 System 和 Network 中间会多出一项 Services（假设之前没有安装过其他服务），里面有 Dynamic DNS 一项，点击进入配置界面。</p>
+</div>
+<div class="section" id="ddns">
+<h2>二、配置 DDNS</h2>
+<p>DDNS 服务提供商选择列表中没有花生壳服务 …</p></div>
                     </section>
                 </article>
             </li>

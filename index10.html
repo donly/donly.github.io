@@ -54,6 +54,42 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2013-07-29T11:35:00+08:00" pubdate>
+                            Mon, 29 Jul 2013
+                        </time>
+                        <a href="https://magicalboy.com/coredata-auto-light-migration.html" rel="bookmark"><h1>CoreData 轻量更新</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>项目中使用了CoreData框架，肯定会有更新Model结构后发生应用崩溃的情况：</p>
+<blockquote>
+*** Terminating app due to uncaught exception
+'NSInternalInconsistencyException', reason: 'This
+NSPersistentStoreCoordinator has no persistent stores. It cannot
+perform a save operation.'</blockquote>
+<p>Apple
+提供有关的专题文档来说明如何处理这一情况（详见后面的参考连接），这里简单提供快速解决方法。</p>
+<div class="section" id="id1">
+<h2>解决方法</h2>
+<ol class="arabic simple">
+<li>设置数据库的自动迁移选项。（具体见注释说明）</li>
+<li>增加Model版本，修改Model。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>参考连接</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CoreDataVersioning/Articles/Introduction.html">Core Data Model Versioning and Data Migration Programming
+Guide</a></li>
+<li><a class="reference external" href="https://brainwashinc.wordpress.com/2010/01/18/iphone-coredata-automatic-light-migration/">iPhone CoreData Automatic Light
+Migration</a></li>
+<li><a class="reference external" href="http://stackoverflow.com/questions/1018155/what-do-i-have-to-do-to-get-core-data-to-automatically-migrate-models">What do I have …</a></li></ul></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2013-06-25T10:49:00+08:00" pubdate>
                             Tue, 25 Jun 2013
                         </time>
@@ -330,37 +366,6 @@ Intent <span class="nv">intent</span> <span class="o">=</span> new Intent<span c
 intent.addCategory<span class="o">(</span>Intent.CATEGORY_HOME<span class="o">)</span><span class="p">;</span>
 intent.setFlags<span class="o">(</span>Intent.FLAG_ACTIVITY_NEW_TASK<span class="o">)</span><span class="p">;</span>
 startActivity<span class="o">(</span>intent …</pre>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2013-03-29T10:28:00+08:00" pubdate>
-                            Fri, 29 Mar 2013
-                        </time>
-                        <a href="https://magicalboy.com/embeduiwebview-setting.html" rel="bookmark"><h1>内嵌 UIWebView 设置</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>在实际项目中会使用内嵌的 Web app，比如 HTML5 什么的现在很火啊。嵌入的
-web app 还是需要一番调整才有更好的显示和体验效果。</p>
-<div class="line-block">
-<div class="line">直接上代码，详见注释：</div>
-</div>
-<pre class="code shell literal-block">
-// 将页面缩放到 webView 大小
-webView.scalesPageToFit <span class="o">=</span> YES<span class="p">;</span>
-// 禁止多点触控事件
-webView.multipleTouchEnabled <span class="o">=</span> NO<span class="p">;</span>
-
-// UIWebView 的 scrollView 属性仅 iOS <span class="m">5</span>.0+ 支持
-<span class="k">if</span> <span class="o">([</span>webView respondsToSelector:&#64;selector<span class="o">(</span>scrollView<span class="o">)])</span> <span class="o">{</span>
-    webView.scrollView.bounces <span class="o">=</span> NO<span class="p">;</span>    // 禁止拖动
-    webView.scrollView.delegate <span class="o">=</span> self<span class="p">;</span> // 设置代理
-<span class="o">}</span>
-<span class="k">else</span> <span class="o">{</span>
-    <span class="k">for</span> <span class="o">(</span>id subview in …</pre>
                     </section>
                 </article>
             </li>
