@@ -54,6 +54,35 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2010-06-10T16:10:00+08:00" pubdate>
+                            Thu, 10 Jun 2010
+                        </time>
+                        <a href="https://magicalboy.com/a-simple-recursive-function.html" rel="bookmark"><h1>递归算法：一个简单的递归函数</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天看了某 C 语言 Primer
+教材中一递归（recursion）示例运行结果，一开始让我迷惑不解，后来才发觉原来我一直不懂递归。枉我之前还写过递归读取树结构的文件目录的
+Python 脚本（还好是尾随递归，所以不会出问题，惭愧）！且看代码清单如下：</p>
+<p><tt class="docutils literal">/* recursion.c <span class="pre">--</span> 递归演示 */ /* 程序显示递归的级数 n 及存储 n 的内存地址 */ #include&nbsp; void recursion(int);</tt></p>
+<div class="line-block">
+<div class="line">int main(void)</div>
+<div class="line">{</div>
+<div class="line">recursion(1);</div>
+<div class="line">return 0;</div>
+<div class="line">}</div>
+</div>
+<div class="line-block">
+<div class="line">void recursion(int n)</div>
+<div class="line">{</div>
+<div class="line">printf(&quot;第%d级递归: n 内存地址 %pn&quot;, n, &amp;n);</div>
+<div class="line">if (n &lt; 4 …</div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2010-06-10T11:23:00+08:00" pubdate>
                             Thu, 10 Jun 2010
                         </time>
@@ -296,36 +325,6 @@ caption=&quot;后台添加图像&quot;]<a class="reference external" href="http:
 <p>再看[caption]中的属性align=&quot;alignleft&quot;的CSS代码</p>
 <p><tt class="docutils literal">.alignleft {&nbsp;&nbsp;&nbsp;&nbsp; float:left;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">margin-right:10px;</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">text-align:left;</span> }</tt></p>
 <p>其中的float:left使图片向左浮动，这是出现问题的原因之处了吧。所以我们在插入图片时要注意修改一下 …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2010-05-30T07:12:00+08:00" pubdate>
-                            Sun, 30 May 2010
-                        </time>
-                        <a href="https://magicalboy.com/dev-c-automatically-indent-settings.html" rel="bookmark"><h1>dev-c++自动缩进设置</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="id1">
-<h2>Dev-C++</h2>
-<blockquote>
-<strong>Dev-C++</strong>是一套用于开发C/C++的<a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6">自由的</a><a class="reference external" href="http://zh.wikipedia.org/zh-cn/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">整合性开发环境</a>（IDE），并以<a class="reference external" href="http://zh.wikipedia.org/zh-cn/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81">GPL</a>作为散布许可。使用
-<a class="reference external" href="http://zh.wikipedia.org/zh-cn/MinGW">MinGW</a> 及
-<a class="reference external" href="http://zh.wikipedia.org/zh-cn/GDB">GDB</a>
-作为编译系统与除错系统。Dev-C++的IDE是利用<a class="reference external" href="http://zh.wikipedia.org/zh-cn/Delphi">Delphi</a>开发
-的。</blockquote>
-<p>它使用包管理器，集成GCC，MinGW等包，支持C99标准，基于GPL让它得到很好的改进，但似乎有段时间没有更新了。当前IDE最新版本为4.9.9.2</p>
-<p>下载最新版本的dev-c++：<a class="reference external" href="http://sourceforge.net/projects/dev-cpp/files/">http://sourceforge.net/projects/dev-cpp/files/</a>，Windows平台下载并运行devcpp-4.9.9.2_setup.exe直接安装</p>
-</div>
-<div class="section" id="id2">
-<h2>解决自动缩进问题</h2>
-<p>默认的缩进代码如下：</p>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><tt class="docutils literal">/* divisible.c <span class="pre">--</span> 求约数 */ #include&nbsp; #include …</tt></div></div></div>
                     </section>
                 </article>
             </li>

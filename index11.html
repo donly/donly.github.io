@@ -54,6 +54,32 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2013-04-10T17:42:00+08:00" pubdate>
+                            Wed, 10 Apr 2013
+                        </time>
+                        <a href="https://magicalboy.com/how-to-exit-android-app.html" rel="bookmark"><h1>理解 Android 应用退出</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>今天我又学了一下 Android 开发，了解如何退出一个 Android 程序。</p>
+<p>Android
+没有退出应用程序的API，所谓退出是指关闭此应用的进程。要彻底关闭一个
+App，应该到设置-&gt;应用程序管理中强制关闭。类似于 iOS 设备双击 Home
+按钮，持续按住应用至出现关闭提示来关闭。内存控们的至爱 ：）</p>
+<p>所以退出一个 Android app，只需要清理 Activity
+，令它生命周期结束，并返回手机主界面，其余的让 OS
+来处理吧。下面是一段用于普通 Android OS 退出代码：</p>
+<pre class="code shell literal-block">
+Intent <span class="nv">intent</span> <span class="o">=</span> new Intent<span class="o">(</span>Intent.ACTION_MAIN<span class="o">)</span><span class="p">;</span>
+intent.addCategory<span class="o">(</span>Intent.CATEGORY_HOME<span class="o">)</span><span class="p">;</span>
+intent.setFlags<span class="o">(</span>Intent.FLAG_ACTIVITY_NEW_TASK<span class="o">)</span><span class="p">;</span>
+startActivity<span class="o">(</span>intent …</pre>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2013-03-29T10:28:00+08:00" pubdate>
                             Fri, 29 Mar 2013
                         </time>
@@ -259,33 +285,6 @@ Protocol，提供一种机制来间接访问对象的属性。KVO 就是基于 K
 的 key。 key
 只是一个字符串，它对应的值可以是任意类型的对象。从最基础的层次上看，KVC
 有两个方法：一个是设置 …</p></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2012-05-25T14:18:00+08:00" pubdate>
-                            Fri, 25 May 2012
-                        </time>
-                        <a href="https://magicalboy.com/using_iphone_proximity_sensor.html" rel="bookmark"><h1>iPhone 近距离传感器的使用</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>在 iOS 中，并非所有 iOS 设备都拥有近距离传感器。这里介绍如何调用 iPhone
-的距离传感器。</p>
-<div class="section" id="id1">
-<h2>使用近距离传感器</h2>
-<p>`
-UIDevice &lt;<a class="reference external" href="https://developer.apple.com/library/ios/#documentation/uikit/reference/UIDevice_Class/Reference/UIDevice.html">https://developer.apple.com/library/ios/#documentation/uikit/reference/UIDevice_Class/Reference/UIDevice.html</a>&gt;`__
-中有两个近距离传感器的属性：proximityMonitoringEnabled 和
-proximityState。这两个属性都是 iOS 3.0 及以上才支持的。</p>
-</div>
-<div class="section" id="proximitymonitoringenabled">
-<h2>proximityMonitoringEnabled 属性</h2>
-<blockquote>
-To determine if proximity monitoring is available, attempt to enable
-it. If the value …</blockquote></div>
                     </section>
                 </article>
             </li>

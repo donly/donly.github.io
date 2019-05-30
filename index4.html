@@ -54,6 +54,27 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2016-07-06T10:30:00+08:00" pubdate>
+                            Wed, 06 Jul 2016
+                        </time>
+                        <a href="https://magicalboy.com/xctool-usage.html" rel="bookmark"><h1>xctool 使用</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>xctool 可以理解为 xcodebuild 的增强版，特别有利于可持续集成。xctool 由 Facebook 开发维护，项目地址 <a class="reference external" href="https://github.com/facebook/xctool">https://github.com/facebook/xctool</a>。</p>
+<div class="section" id="id1">
+<h2>安装 xctool</h2>
+<div class="highlight"><pre><span></span>$ brew install <span class="nv">xctool</span>
+<span class="o">==</span>&gt; Downloading https://homebrew.bintray.com/bottles/xctool-0.2.7.el_capitan.bottle.tar.gz
+<span class="c1">######################################################################## 100.0%</span>
+<span class="o">==</span>&gt; Pouring xctool-0.2.7.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/xctool/0.2.7 …</pre></div></div>
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2016-06-01T14:12:00+08:00" pubdate>
                             Wed, 01 Jun 2016
                         </time>
@@ -312,41 +333,6 @@ $ ./cartool &lt;.car 文件的路径&gt; &lt;解压后的文件路径&gt;
 <ul class="simple">
 <li>在 bash 编程中，返回值取值范围：<em>0-255</em></li>
 <li>跟 C 语言含义相反， bash 中 0 为真 …</li></ul></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2016-05-16T14:40:00+08:00" pubdate>
-                            Mon, 16 May 2016
-                        </time>
-                        <a href="https://magicalboy.com/raspbian-exfat-support.html" rel="bookmark"><h1>exFAT 文件格式支持</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。</p>
-<p>基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。</p>
-<div class="section" id="id1">
-<h2>为什么要使用 exFAT</h2>
-<ul class="simple">
-<li>支持拷贝文件大于 4 GB</li>
-<li>兼容性好，方便在不同设备上插拔拷贝数据</li>
-<li>部分大容量内存卡购买回来默认使用的就是这种格式</li>
-</ul>
-<p>如何让部分操作系统支持 exFAT？</p>
-</div>
-<div class="section" id="raspberry-pi-raspbian">
-<h2>Raspberry Pi (RASPBIAN)</h2>
-<div class="highlight"><pre><span></span>sudo apt-get install exfat-fuse
-</pre></div>
-<p>安装完成后，重新插拔内存卡即可自动加载出来。</p>
-</div>
-<div class="section" id="android">
-<h2>Android</h2>
-<p>暂无</p>
-</div>
-
                     </section>
                 </article>
             </li>

@@ -54,6 +54,28 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2015-05-17T09:43:52+08:00" pubdate>
+                            Sun, 17 May 2015
+                        </time>
+                        <a href="https://magicalboy.com/unit_testing.html" rel="bookmark"><h1>单元测试</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <div class="section" id="id2">
+<h2>单元测试是什么</h2>
+<p>即分模块测试，针对程序模块进行正确性检验的测试工作。单元测试可以在软件开发过程的早期及时发现问题，同时也利于未来对代码的重构。</p>
+</div>
+<div class="section" id="ios">
+<h2>iOS 中的单元测试</h2>
+<p>OCUnit，被官方集成进XCode 4.x版本中；GHUnit，被推荐最多的测试框架，带GUI界面。</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2014-12-13T19:20:00+08:00" pubdate>
                             Sat, 13 Dec 2014
                         </time>
@@ -295,43 +317,6 @@ Store上下载安装，免费。前提条件上是 …</div></div></div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference external" href="https://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=%E4%B8%AD%E5%9B%BD%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%B2%A4%E6%B5%B7%E9%97%A8%E6%9D%91&amp;daddr=22.53132913890972,114.00854341685772+to:22.534603704503745,114.0135433897376+to:22.53820272608151,114.02827039361+to:%E5%92%8C%E5%B9%B3%E5%8C%BB%E9%99%A2,+%E4%B8%AD%E5%9B%BD%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E7%A6%8F%E7%94%B0%E5%8C%BA%E6%96%B0%E9%97%BB%E8%B7%AF74%E5%8F%B7%E5%92%8C%E5%B9%B3%E5%8C%BB%E9%99%A2+%E9%82%AE%E6%94%BF%E7%BC%96%E7%A0%81:+518034&amp;geocode=FYfOVwEdxZrKBinxAw6eGu4DNDH6fvKFfoWzzQ%3BFQHNVwEd36HLBilnj8I_fPEDNDFg48OE4Vh--g%3BFcvZVwEdZ7XLBikXnvxv2PMDNDH8qOBLFv_FCA%3BFdrnVwEd7u7LBinxVIzV5vMDNDGh7IjsMXQJGQ%3BFSL1VwEdPSXMBim97E6v8PMDNDGmCuRJKHgX2Q&amp;aq=0&amp;oq=%E5%92%8C%E5%B9%B3%E5%8C%BB%E9%99%A2&amp;sll=22.536936,114.026703&amp;sspn=0.006778,0.011362&amp;hl=zh&amp;dirflg=w&amp;mra=dpe&amp;mrsp=3&amp;sz=17&amp;via=1,2,3&amp;ie=UTF8&amp;ll=22.536609,114.022304&amp;spn=0.006778,0.011362&amp;t=m">查看大图</a></div>
 </div>
-
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2013-08-05T14:38:00+08:00" pubdate>
-                            Mon, 05 Aug 2013
-                        </time>
-                        <a href="https://magicalboy.com/ios-pattern-image.html" rel="bookmark"><h1>iOS 平铺图像</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>iOS SDK 里面有没有类似于 HTML 中的 background-repeat
-属性，使图像重复平铺呢？</p>
-<p>我大苹果当然有啦，那就是：</p>
-<blockquote>
-<ul class="simple">
-<li>(UIColor *)colorWithPatternImage:(UIImage *)image</li>
-</ul>
-</blockquote>
-<p>使用也很简单：</p>
-<pre class="code shell literal-block">
-- <span class="o">(</span>void<span class="o">)</span>viewDidLoad <span class="o">{</span>
-  <span class="o">[</span>super viewDidLoad<span class="o">]</span><span class="p">;</span>
-  UIImage *patternImage <span class="o">=</span> <span class="o">[</span>UIImage imageNamed:&#64;<span class="s2">&quot;pattern.png&quot;</span><span class="o">]</span><span class="p">;</span>
-  self.view.backgroundColor <span class="o">=</span> <span class="o">[</span>UIColor colorWithPatternImage:patternImage<span class="o">]</span><span class="p">;</span>
-<span class="o">}</span>
-</pre>
-<div class="line-block">
-<div class="line">平铺效果：</div>
-<div class="line"><img alt="image0" src="http://www.bobmccune.com/wp-content/uploads/2011/03/pattern_to_view.png" /></div>
-</div>
-<p>平铺可以减少图片资源所占用的app空间，重复利用资源。</p>
-<p>原文：<a class="reference external" href="http://www.bobmccune.com/2011/03/08/ios-101-pattern-images/">《iOS 101: Pattern
-Images》</a></p>
 
                     </section>
                 </article>

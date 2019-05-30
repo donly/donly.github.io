@@ -54,6 +54,43 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2013-08-05T14:38:00+08:00" pubdate>
+                            Mon, 05 Aug 2013
+                        </time>
+                        <a href="https://magicalboy.com/ios-pattern-image.html" rel="bookmark"><h1>iOS 平铺图像</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>iOS SDK 里面有没有类似于 HTML 中的 background-repeat
+属性，使图像重复平铺呢？</p>
+<p>我大苹果当然有啦，那就是：</p>
+<blockquote>
+<ul class="simple">
+<li>(UIColor *)colorWithPatternImage:(UIImage *)image</li>
+</ul>
+</blockquote>
+<p>使用也很简单：</p>
+<pre class="code shell literal-block">
+- <span class="o">(</span>void<span class="o">)</span>viewDidLoad <span class="o">{</span>
+  <span class="o">[</span>super viewDidLoad<span class="o">]</span><span class="p">;</span>
+  UIImage *patternImage <span class="o">=</span> <span class="o">[</span>UIImage imageNamed:&#64;<span class="s2">&quot;pattern.png&quot;</span><span class="o">]</span><span class="p">;</span>
+  self.view.backgroundColor <span class="o">=</span> <span class="o">[</span>UIColor colorWithPatternImage:patternImage<span class="o">]</span><span class="p">;</span>
+<span class="o">}</span>
+</pre>
+<div class="line-block">
+<div class="line">平铺效果：</div>
+<div class="line"><img alt="image0" src="http://www.bobmccune.com/wp-content/uploads/2011/03/pattern_to_view.png" /></div>
+</div>
+<p>平铺可以减少图片资源所占用的app空间，重复利用资源。</p>
+<p>原文：<a class="reference external" href="http://www.bobmccune.com/2011/03/08/ios-101-pattern-images/">《iOS 101: Pattern
+Images》</a></p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2013-07-29T11:35:00+08:00" pubdate>
                             Mon, 29 Jul 2013
                         </time>
@@ -340,32 +377,6 @@ id <span class="nv">someObject</span> <span class="o">=</span> nil<span class="p
 #endif
 </span>
 // __DARWIN_NULL …</pre></li></ul></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2013-04-10T17:42:00+08:00" pubdate>
-                            Wed, 10 Apr 2013
-                        </time>
-                        <a href="https://magicalboy.com/how-to-exit-android-app.html" rel="bookmark"><h1>理解 Android 应用退出</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>今天我又学了一下 Android 开发，了解如何退出一个 Android 程序。</p>
-<p>Android
-没有退出应用程序的API，所谓退出是指关闭此应用的进程。要彻底关闭一个
-App，应该到设置-&gt;应用程序管理中强制关闭。类似于 iOS 设备双击 Home
-按钮，持续按住应用至出现关闭提示来关闭。内存控们的至爱 ：）</p>
-<p>所以退出一个 Android app，只需要清理 Activity
-，令它生命周期结束，并返回手机主界面，其余的让 OS
-来处理吧。下面是一段用于普通 Android OS 退出代码：</p>
-<pre class="code shell literal-block">
-Intent <span class="nv">intent</span> <span class="o">=</span> new Intent<span class="o">(</span>Intent.ACTION_MAIN<span class="o">)</span><span class="p">;</span>
-intent.addCategory<span class="o">(</span>Intent.CATEGORY_HOME<span class="o">)</span><span class="p">;</span>
-intent.setFlags<span class="o">(</span>Intent.FLAG_ACTIVITY_NEW_TASK<span class="o">)</span><span class="p">;</span>
-startActivity<span class="o">(</span>intent …</pre>
                     </section>
                 </article>
             </li>

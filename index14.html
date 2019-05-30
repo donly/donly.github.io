@@ -54,6 +54,38 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2011-02-26T04:03:00+08:00" pubdate>
+                            Sat, 26 Feb 2011
+                        </time>
+                        <a href="https://magicalboy.com/add-splash-screen-for-your-iphone-apps.html" rel="bookmark"><h1>为iPhone Apps添加Splash屏显</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>我们打开iPhone
+Apps时经常可看到一个欢迎页面，其实它就是一张全屏大小的图片，主要用来表示当前应用的名称，版权和正在加载这些信息。
+为你自己的iPhone Apps添加Splash
+Screen，有多种方法，在这就介绍最简单的吧。
+准备好一张splash图片，全屏大小，命名为Default.png并保存到项目的Resources目录下。运行查看效果，这个图像在程序完全加载之前显示在屏幕上了。
+Splash图像显示的时长跟你的程序大小有关，如果程序很快载入了，此图片就马上消失了，这有可能导致还没看清楚图像的内容。还有一种情况，有些程序需要加载的内容在服务器上，也不能准确地说图像消失就能显示或使用这个应用。
+在这里还有一个简单的延长Splash屏显的时间。打开XXXAppDelegate.m，加入：</p>
+<pre class="code shell literal-block">
+...
+- <span class="o">(</span>void<span class="o">)</span>applicationDidFinishLaunching:<span class="o">(</span>UIApplication *<span class="o">)</span>application <span class="o">{</span>
+     //使splash screen 延长3秒消失
+     <span class="o">[</span>NSThread sleepForTimeInterval:3.0<span class="o">]</span><span class="p">;</span>
+     <span class="o">[</span>window addSubview:navController.view<span class="o">]</span><span class="p">;</span>
+     <span class="o">[</span>window makeKeyAndVisible<span class="o">]</span><span class="p">;</span>
+<span class="o">}</span>
+...
+</pre>
+<p>根据具体情况修改延时秒数可达到以假乱真的效果，很不错哦。</p>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2011-02-23T02:48:00+08:00" pubdate>
                             Wed, 23 Feb 2011
                         </time>
@@ -299,30 +331,6 @@ coding-compliant for the key datePicker.'</blockquote>
 <div class="line-block">
 <div class="line">出现这个问题通常是因为我们先指定了NIB名称，这时可以在Interface
 Builder中看到提示：“View …</div></div></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2011-01-17T01:35:00+08:00" pubdate>
-                            Mon, 17 Jan 2011
-                        </time>
-                        <a href="https://magicalboy.com/google-urlshortener-api.html" rel="bookmark"><h1>Google短网址服务</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Google已公开其短网址goo.gl
-<a class="reference external" href="http://code.google.com/apis/urlshortener/">API</a>，有兴趣的赶紧研究吧。以下是本站的Google短址：</p>
-<ol class="arabic simple">
-<li><a class="reference external" href="http://goo.gl/UnnoC">http://goo.gl/UnnoC</a></li>
-<li><a class="reference external" href="http://goo.gl/TXyAR">http://goo.gl/TXyAR</a></li>
-</ol>
-<div class="line-block">
-<div class="line">在短地址后面加上.qr可生成二维码，比如http://goo.gl/TXyAR.qr的二维码为：</div>
-<div class="line"><img alt="http://goo.gl/TxyAR.qr" src="http://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;choe=UTF-8&amp;chld=H&amp;chl=http://goo.gl/TXyAR" /></div>
-</div>
-
                     </section>
                 </article>
             </li>

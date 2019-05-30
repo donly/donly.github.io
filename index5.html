@@ -54,6 +54,41 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <time class="post-time" datetime="2016-05-16T14:40:00+08:00" pubdate>
+                            Mon, 16 May 2016
+                        </time>
+                        <a href="https://magicalboy.com/raspbian-exfat-support.html" rel="bookmark"><h1>exFAT 文件格式支持</h1></a>
+                    </header>
+                    <section class="post-content">
+                        <p>exFAT (Extended File Allocation Table) 是一种较适合于闪存的文件系统，微软公司开发。</p>
+<p>基本上所有 Windows 系统，以及 OS X 和部分 Linux、Android 操作系统都支持这种文件系统格式。</p>
+<div class="section" id="id1">
+<h2>为什么要使用 exFAT</h2>
+<ul class="simple">
+<li>支持拷贝文件大于 4 GB</li>
+<li>兼容性好，方便在不同设备上插拔拷贝数据</li>
+<li>部分大容量内存卡购买回来默认使用的就是这种格式</li>
+</ul>
+<p>如何让部分操作系统支持 exFAT？</p>
+</div>
+<div class="section" id="raspberry-pi-raspbian">
+<h2>Raspberry Pi (RASPBIAN)</h2>
+<div class="highlight"><pre><span></span>sudo apt-get install exfat-fuse
+</pre></div>
+<p>安装完成后，重新插拔内存卡即可自动加载出来。</p>
+</div>
+<div class="section" id="android">
+<h2>Android</h2>
+<p>暂无</p>
+</div>
+
+                    </section>
+                </article>
+            </li>
+            <hr/>
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
                         <time class="post-time" datetime="2016-04-22T14:40:00+08:00" pubdate>
                             Fri, 22 Apr 2016
                         </time>
@@ -254,35 +289,6 @@ tmpfs            88M  244K   88M   <span class="m">1 …</span></pre></div>
 <p>找了Ｎ久才发现 <em>/etc/resolv.conf</em> 文件被修改，解决方法：</p>
 <div class="highlight"><pre><span></span><span class="c1"># 删除 /etc/resolv.conf</span>
 vi /etc/resolv.conf …</pre></div>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2015-10-24T02:02:54+08:00" pubdate>
-                            Sat, 24 Oct 2015
-                        </time>
-                        <a href="https://magicalboy.com/openwrt-ddns.html" rel="bookmark"><h1>OpenWrt DDNS 配置</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="id1">
-<h2>环境</h2>
-<ul class="simple">
-<li>OpenWrt CC (LuCI)</li>
-<li>电信光纤 100M</li>
-</ul>
-</div>
-<div class="section" id="luci-app-ddns">
-<h2>一、安装 luci-app-ddns</h2>
-<p>登录路由器，进入 System -&gt; Software，点击 Update lists 更新软件库。</p>
-<p>在 Filter 中输入关键字 ddns, 点击 Find package，然后在 Available packages 列表中找到 luci-i18n-ddns-en，OpenWrt 会自动分析依赖关系安装好 DDNS。</p>
-<p>安装完成后，在 System 和 Network 中间会多出一项 Services（假设之前没有安装过其他服务），里面有 Dynamic DNS 一项，点击进入配置界面。</p>
-</div>
-<div class="section" id="ddns">
-<h2>二、配置 DDNS</h2>
-<p>DDNS 服务提供商选择列表中没有花生壳服务 …</p></div>
                     </section>
                 </article>
             </li>
