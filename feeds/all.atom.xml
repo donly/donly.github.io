@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com/feeds/all.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2019-05-29T00:00:00+08:00</updated><subtitle>关注移动应用开发</subtitle><entry><title>D1 Arduino 8266EX 兼容板的使用</title><link href="https://magicalboy.com/d1_arduino_8266_compatible_board.html" rel="alternate"></link><published>2019-05-29T00:00:00+08:00</published><updated>2019-05-29T00:00:00+08:00</updated><author><name>Donnie</name></author><id>tag:magicalboy.com,2019-05-29:/d1_arduino_8266_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
-&lt;p&gt;D1，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wiki.wemos.cc/products:d1:d1#technical_specs"&gt;D1&lt;/a&gt;，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：&lt;/p&gt;
 &lt;p&gt;&lt;img alt="D1" src="images/arduino/d1.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;安装&lt;/h2&gt;
 &lt;p&gt;这是一款 Arduino 兼容的开发板，可以使用 Arduino IDE 进行开发，参考 &lt;a href="https://github.com/esp8266/Arduino#installing-with-boards-manager"&gt;installing-with-boards-manager&lt;/a&gt;&lt;/p&gt;
@@ -12,7 +12,7 @@
 &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;31.952&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;scan&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;
 &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;31.952&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="n"&gt;networks&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;
 &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;31.952&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;long&lt;/span&gt; &lt;span class="o"&gt;(-&lt;/span&gt;&lt;span class="mi"&gt;74 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;介绍&lt;/h2&gt;
-&lt;p&gt;D1，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wiki.wemos.cc/products:d1:d1#technical_specs"&gt;D1&lt;/a&gt;，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：&lt;/p&gt;
 &lt;p&gt;&lt;img alt="D1" src="images/arduino/d1.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;安装&lt;/h2&gt;
 &lt;p&gt;这是一款 Arduino 兼容的开发板，可以使用 Arduino IDE 进行开发，参考 &lt;a href="https://github.com/esp8266/Arduino#installing-with-boards-manager"&gt;installing-with-boards-manager&lt;/a&gt;&lt;/p&gt;

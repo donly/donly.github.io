@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>MAG's Note - Dong</title><link>https://magicalboy.com/</link><description>关注移动应用开发</description><lastBuildDate>Fri, 14 Jun 2019 16:23:01 +0800</lastBuildDate><item><title>关于</title><link>https://magicalboy.com/about.html</link><description>&lt;p&gt;这是一个个人笔记站点，使用Pelican静态网站自动生成，基于git工作流写作，目的在于积累知识，共享知识。&lt;/p&gt;
+&lt;p&gt;之前的基于MediaWiki的个人笔记由于服务器搬迁，且用于备份的Seagate 1T Harddisk不幸损坏，造成巨大损失，伤痛至今未愈 :(&lt;/p&gt;
+&lt;p&gt;汲取教训，所以决定使用分布式的Git来管理此站点内容。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dong</dc:creator><pubDate>Fri, 14 Jun 2019 16:23:01 +0800</pubDate><guid isPermaLink="false">tag:magicalboy.com,2019-06-14:/about.html</guid><category>about</category></item></channel></rss>
