@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>MAG's Note - Donly</title><link>/</link><description>iOS/macOS/IoT/游戏</description><lastBuildDate>Wed, 16 Feb 2022 17:40:00 +0800</lastBuildDate><item><title>D1 Arduino 8266EX 兼容板的使用</title><link>/d1_arduino_8266_compatible_board.html</link><description>&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://wiki.wemos.cc/products:d1:d1#technical_specs"&gt;D1&lt;/a&gt;，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="D1" src="images/arduino/d1.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;这是一款 Arduino 兼容的开发板，可以使用 Arduino IDE 进 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Donly</dc:creator><pubDate>Wed, 29 May 2019 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2019-05-29:/d1_arduino_8266_compatible_board.html</guid><category>misc</category></item><item><title>LGT8F328P Arduino Nano3 兼容板的使用</title><link>/lgt8f328p_nano3_compatible_board.html</link><description>&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;p&gt;LGT8F328P LQFP32，是一款替代 NANO V3.0 的廉价解决方案，在淘宝上买到的一般长这样：
+&lt;img alt="LGT8F328P" src="images/arduino/LGT8F328P.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.ocrobot.com/doku.php?id=ocrobot:alpha:8f328p-u:main"&gt;ALPHA 8F328P-U&lt;/a&gt; 所使用的 MCU 为LGT8F328P，是一款 Atmel MEGA328P 兼容芯片。USB …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Donly</dc:creator><pubDate>Sun, 19 May 2019 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2019-05-19:/lgt8f328p_nano3_compatible_board.html</guid><category>misc</category></item></channel></rss>
