@@ -1,0 +1,34 @@
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="{{ SITEURL }}"><h1><i class="icon-mobile-phone"></i> {{ AUTHOR }}</h1></a>
+        <p id="site-desc">{% if SITESUBTITLE %} {{ SITESUBTITLE }} {% endif %}</p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+            {% if USE_CUSTOM_MENU %}
+            {% for name, url in CUSTOM_MENUITEMS %}
+                <li><a href="{{ SITEURL }}/{{ url }}">{{ name }}</a></li>
+            {% endfor %}
+            {% else %}
+            {% for page in PAGES %}
+                <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </nav>
+	<nav>
+      <!-- <ul>
+          {% for name, link in LINKS %}
+          <li><a target="_blank" href="{{ link }}">{{ name }}</a></li>
+          {% endfor %}
+          {% for name, link in SOCIAL %}
+          <li><a href="{{ link }}">{{ name }}</a></li>
+          {% endfor %}
+      </ul> -->
+      <ul id="nav-services" class="centered-nav">
+          {% for title, url in SOCIAL %}
+              <li><a href="{{ url }}" target="_brank"><i class="{{ title }} svc-badge"></i></a></li>
+          {% endfor %}
+      </ul>
+	</nav>
+</header>

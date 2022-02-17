@@ -1,0 +1,11 @@
+*.pid
+*.pyc
+output
+.DS_Store
+add_date.py
+
+.vscode
+NOTE_ENV
+cache
+bootstrap
+__pycache__

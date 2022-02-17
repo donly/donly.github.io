@@ -17,6 +17,7 @@ pelican content -r -l -s pelicanconf_dev.py
 
 ## 发布
 ```
+make publish
 make github
 ```
 
