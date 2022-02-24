@@ -17,10 +17,15 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="{{ article.date.isoformat() }}" pubdate>
-                            {{ article.locale_date }}
-                        </time>
                         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"><h1>{{ article.title }}</h1></a>
+                        <time class="post-time" datetime="{{ article.date.isoformat() }}" pubdate>
+                            Published: {{ article.locale_date }}
+                        </time>
+                        {% if article.modified %}
+                        <time class="modified" datetime="{{ article.modified.isoformat() }}">
+                            Updated: {{ article.locale_modified }}
+                        </time>
+                        {% endif %}
                     </header>
 
                     <section class="post-content">

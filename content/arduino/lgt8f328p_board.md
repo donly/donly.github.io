@@ -1,5 +1,6 @@
 Title: LGT8F328P Arduino Nano3 兼容板的使用
 Slug: lgt8f328p_nano3_compatible_board
+Tags: arduino, nano
 Date: 2019-05-19
 Modified: 2022-02-16 17:40
 

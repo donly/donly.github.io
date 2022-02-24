@@ -3,9 +3,9 @@
 
 AUTHOR = u'Donly'
 SITENAME = u"MAG's Note"
-SITESUBTITLE = u'iOS/macOS/IoT/游戏'
+SITESUBTITLE = u'iOS/macOS/IoT/Web/Game'
 
-SITEURL = u'https://magicalboy.com/'
+SITEURL = u'https://magicalboy.com'
 FEED_DOMAIN = SITEURL
 FEED_ATOM = u'atom.xml'
 

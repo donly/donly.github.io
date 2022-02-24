@@ -3,9 +3,9 @@
 
 AUTHOR = u'Donly'
 SITENAME = u"MAG's Note"
-SITESUBTITLE = u'iOS/macOS/IoT/游戏'
+SITESUBTITLE = u'iOS/macOS/IoT/Web/Game'
 
-SITEURL = u'http://127.0.0.1:8000/'
+SITEURL = u'http://127.0.0.1:8000'
 FEED_DOMAIN = SITEURL
 FEED_ATOM = u'atom.xml'
 
@@ -44,3 +44,8 @@ DISQUS_SITENAME = 'magsnote'
 # By default, Pelican will copy the “images” folder to the output folder.
 # 静态目录
 STATIC_PATHS = (['images'])
+
+USE_CUSTOM_MENU = False
+CUSTOM_MENUITEMS = (('Blog', 'blog'),
+                 ('Contact', 'contact'),
+                 ('Projects', 'pages/projects'))
