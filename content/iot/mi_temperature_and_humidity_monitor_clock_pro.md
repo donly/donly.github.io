@@ -12,7 +12,10 @@ Status: draft
 * 型号： LYWSD02MMC
 * 电池规格：CR2032 x2，于 2022 年 3 月换了电池，可见原机电池可以使用 2 年；
 * 无线连接：蓝牙 BLE 4.0/5.0，不占用无线路由器资源，需米家蓝牙网关配网；
-* 屏幕：电子墨水大屏
+* 屏幕：电子墨水大屏，全部显示内容如下：
+
+![小米温湿度计PRO屏幕，图片来源见水印](images/iot/1098-mi-pro-01.png)
+
 
 ## 方案
 * 温湿度传感器：SHTC3（精度：±2 %RH and ±0.2 °C），[数据手册下载](https://www.mouser.com/datasheet/2/682/Sensirion_Humidity_Sensors_SHTC3_Datasheet-1386761.pdf)
