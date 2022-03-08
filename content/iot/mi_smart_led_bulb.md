@@ -1,6 +1,6 @@
-Title: 米家LED灯泡蓝牙MESH版使用体验
+Title: 米家 LED 灯泡蓝牙 MESH 版使用
 Slug: mi_smart_led_bulb
-Tags: iot, mi
+Tags: iot, mi, 小米, 米家, 蓝牙, ble, mesh
 Date: 2022-03-08 15:00
 Status: draft
 
