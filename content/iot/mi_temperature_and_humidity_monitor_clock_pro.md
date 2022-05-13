@@ -2,7 +2,6 @@ Title: 小米温湿度计 PRO 使用
 Slug: mi_temperature_and_humidity_monitor_clock_pro
 Tags: iot, mi, 小米, 米家, 蓝牙, ble
 Date: 2022-03-08 15:00
-Status: draft
 
 这个产品购于 2020 年底，价格 68 元仅供参考。
 

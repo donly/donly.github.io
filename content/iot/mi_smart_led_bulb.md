@@ -2,9 +2,8 @@ Title: 米家 LED 灯泡蓝牙 MESH 版使用
 Slug: mi_smart_led_bulb
 Tags: iot, mi, 小米, 米家, 蓝牙, ble, mesh
 Date: 2022-03-08 15:00
-Status: draft
 
-这个智能灯泡购于2022年03月，PDD 18元。
+这个智能灯泡购于2022年03月，PDD卖18元。
 
 ![米家LED灯泡蓝牙mesh版，图片来源www.xdea.xyz](images/iot/mi_smart_led_pcb.jpg)
 
@@ -24,7 +23,7 @@ Status: draft
   - 有一路火线用于灵动模式的相位检测；
  
 ## 使用
-待补充
+下载米家App，先将蓝牙打开再添加设备。这种方式只能近距离遥控，如果需要远程遥控需要搭配米家的蓝牙网关使用。
 
 ## 参考资料
 1. [Mi Smart LED Bulb (Warm White)](https://www.mi.com/global/mi-smart-led-bulb-warm-white/)
