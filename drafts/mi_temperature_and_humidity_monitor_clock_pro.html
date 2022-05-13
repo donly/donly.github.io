@@ -6,7 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>MAG's Note</title>
+        <title>    小米温湿度计 PRO 使用
+</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
             <link rel="stylesheet" href="https://magicalboy.com/theme/css/normalize.css">
@@ -56,61 +57,61 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2022-05-13T00:00:00+08:00" pubdate>
-                            2022-05-13
+                        <a href="https://magicalboy.com/drafts/mi_temperature_and_humidity_monitor_clock_pro.html" rel="bookmark"><h1>小米温湿度计 PRO 使用</h1></a>
+                        <time class="post-time" datetime="2022-03-08T15:00:00+08:00" pubdate>
+                            Published: 2022-03-08
                         </time>
-                        <a href="https://magicalboy.com/arduino_uno_compatible_board.html" rel="bookmark"><h1>Arduino UNO 兼容板的使用</h1></a>
                     </header>
-                    <section class="post-content">
-                        <h2>介绍</h2>
-<p>这是一款替代 Arduino UNO 的廉价解决方案，采用 Atmel Atmega328 微处理控制器：</p>
-<p><img alt="D1" src="images/arduino/arduino_uno_compatible_board.jpg"></p>
-<h2>安装和使用</h2>
-<p>使用 Arduino IDE 进行开发，Board 直接选择官方的 <code>Arduino AVR …</code></p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2019-05-29T00:00:00+08:00" pubdate>
-                            2019-05-29
-                        </time>
-                        <a href="https://magicalboy.com/d1_arduino_8266_compatible_board.html" rel="bookmark"><h1>D1 Arduino 8266EX 兼容板的使用</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <h2>介绍</h2>
-<p><a href="https://wiki.wemos.cc/products:d1:d1#technical_specs">D1</a>，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：</p>
-<p><img alt="D1" src="images/arduino/d1.jpg"></p>
-<h2>安装</h2>
-<p>这是一款 Arduino 兼容的开发板，可以使用 Arduino IDE 进 …</p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2019-05-19T00:00:00+08:00" pubdate>
-                            2019-05-19
-                        </time>
-                        <a href="https://magicalboy.com/lgt8f328p_nano3_compatible_board.html" rel="bookmark"><h1>LGT8F328P Arduino Nano3 兼容板的使用</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <h2>介绍</h2>
-<p>LGT8F328P LQFP32，是一款替代 NANO V3.0 的廉价解决方案，在淘宝上买到的一般长这样：
-<img alt="LGT8F328P" src="images/arduino/LGT8F328P.png"></p>
-<p><a href="http://www.ocrobot.com/doku.php?id=ocrobot:alpha:8f328p-u:main">ALPHA 8F328P-U</a> 所使用的 MCU 为LGT8F328P，是一款 Atmel MEGA328P 兼容芯片。USB …</p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-        </ol>
-        <div class="paginator">
-            Page 1 / 1
-        </div>
 
+                    <section class="post-content">
+                        <p>这个产品购于 2020 年底，价格 68 元仅供参考。</p>
+<p><img alt="小米温湿度计PRO版" src="images/iot/mi_temperature_and_humidity_monitor_clock_pro.jpg"></p>
+<h2>主要特点</h2>
+<ul>
+<li>型号： LYWSD02MMC</li>
+<li>电池规格：CR2032 x2，于 2022 年 3 月换了电池，可见原机电池可以使用 2 年；</li>
+<li>无线连接：蓝牙 BLE 4.0/5.0，不占用无线路由器资源，需米家蓝牙网关配网；</li>
+<li>屏幕：电子墨水大屏，全部显示内容如下：</li>
+</ul>
+<p><img alt="小米温湿度计PRO屏幕，图片来源见水印" src="images/iot/1098-mi-pro-01.png"></p>
+<h2>方案</h2>
+<ul>
+<li>温湿度传感器：SHTC3（精度：±2 %RH and ±0.2 °C），<a href="https://www.mouser.com/datasheet/2/682/Sensirion_Humidity_Sensors_SHTC3_Datasheet-1386761.pdf">数据手册下载</a></li>
+<li>无线模块：低功耗蓝牙5.0/MCU DA14585</li>
+<li>RTC时钟芯片：BM8563，广告说高精度时钟芯片，经使用发现半年左右有3分钟左右误差</li>
+</ul>
+<h2>使用</h2>
+<p>TBD</p>
+<h2>参考资料</h2>
+<ol>
+<li><a href="https://www.mi.com/buy/detail?product_id=9542">电子温湿度计Pro立即购买-小米商城</a></li>
+<li><a href="https://www.arduino.cn/thread-91956-1-1.html">"高精度"米家电子温湿度计Pro拆解-Arduino中文社区</a></li>
+<li><a href="https://cyhour.com/1098/">米家电子温湿度计 Pro 拆机 | 垃圾站</a></li>
+</ol>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/category/misc.html">misc</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/tag/iot.html">iot</a>, <a href="https://magicalboy.com/tag/mi.html">mi</a>, <a href="https://magicalboy.com/tag/xiao-mi.html">小米</a>, <a href="https://magicalboy.com/tag/mi-jia.html">米家</a>, <a href="https://magicalboy.com/tag/lan-ya.html">蓝牙</a>, <a href="https://magicalboy.com/tag/ble.html">ble</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
     </div>
         </div>
 <footer id="site-info">

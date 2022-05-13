@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com/atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2022-02-16T17:40:00+08:00</updated><subtitle>iOS/macOS/IoT/Web/Game</subtitle><entry><title>D1 Arduino 8266EX 兼容板的使用</title><link href="https://magicalboy.com/d1_arduino_8266_compatible_board.html" rel="alternate"></link><published>2019-05-29T00:00:00+08:00</published><updated>2019-05-29T00:00:00+08:00</updated><author><name>Donly</name></author><id>tag:magicalboy.com,2019-05-29:/d1_arduino_8266_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com/atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2022-05-13T00:00:00+08:00</updated><subtitle>iOS/macOS/IoT/Web/Game</subtitle><entry><title>Arduino UNO 兼容板的使用</title><link href="https://magicalboy.com/arduino_uno_compatible_board.html" rel="alternate"></link><published>2022-05-13T00:00:00+08:00</published><updated>2022-05-13T00:00:00+08:00</updated><author><name>Donly</name></author><id>tag:magicalboy.com,2022-05-13:/arduino_uno_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;p&gt;这是一款替代 Arduino UNO 的廉价解决方案，采用 Atmel Atmega328 微处理控制器：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="D1" src="images/arduino/arduino_uno_compatible_board.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;安装和使用&lt;/h2&gt;
+&lt;p&gt;使用 Arduino IDE 进行开发，Board 直接选择官方的 &lt;code&gt;Arduino AVR …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;p&gt;这是一款替代 Arduino UNO 的廉价解决方案，采用 Atmel Atmega328 微处理控制器：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="D1" src="images/arduino/arduino_uno_compatible_board.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;安装和使用&lt;/h2&gt;
+&lt;p&gt;使用 Arduino IDE 进行开发，Board 直接选择官方的 &lt;code&gt;Arduino AVR Boards -&amp;gt; Arduino Uno&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;测试&lt;/h2&gt;
+&lt;p&gt;使用官方的 Example &lt;code&gt;Blink&lt;/code&gt; 例程测试。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cm"&gt;/*&lt;/span&gt;
+&lt;span class="cm"&gt;  Blink&lt;/span&gt;
+
+&lt;span class="cm"&gt;  Turns an LED on for one second, then off for one second, repeatedly.&lt;/span&gt;
+
+&lt;span class="cm"&gt;  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO&lt;/span&gt;
+&lt;span class="cm"&gt;  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to&lt;/span&gt;
+&lt;span class="cm"&gt;  the correct LED pin independent of which board is used.&lt;/span&gt;
+&lt;span class="cm"&gt;  If you want to know what pin the on-board LED is connected to on your Arduino&lt;/span&gt;
+&lt;span class="cm"&gt;  model, check the Technical Specs of your board at:&lt;/span&gt;
+&lt;span class="cm"&gt;  https://www.arduino.cc/en/Main/Products&lt;/span&gt;
+
+&lt;span class="cm"&gt;  modified 8 May 2014&lt;/span&gt;
+&lt;span class="cm"&gt;  by Scott Fitzgerald&lt;/span&gt;
+&lt;span class="cm"&gt;  modified 2 Sep 2016&lt;/span&gt;
+&lt;span class="cm"&gt;  by Arturo Guadalupi&lt;/span&gt;
+&lt;span class="cm"&gt;  modified 8 Sep 2016&lt;/span&gt;
+&lt;span class="cm"&gt;  by Colby Newman&lt;/span&gt;
+
+&lt;span class="cm"&gt;  This example code is in the public domain.&lt;/span&gt;
+
+&lt;span class="cm"&gt;  https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink&lt;/span&gt;
+&lt;span class="cm"&gt;*/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="c1"&gt;// the setup function runs once when you press reset or power the board&lt;/span&gt;
+&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// initialize digital pin LED_BUILTIN as an output.&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LED_BUILTIN&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="c1"&gt;// the loop function runs over and over again forever&lt;/span&gt;
+&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LED_BUILTIN&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="c1"&gt;// turn the LED on (HIGH is the voltage level)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="c1"&gt;// wait for a second&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LED_BUILTIN&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;// turn the LED off by making the voltage LOW&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="c1"&gt;// wait for a second&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category></entry><entry><title>D1 Arduino 8266EX 兼容板的使用</title><link href="https://magicalboy.com/d1_arduino_8266_compatible_board.html" rel="alternate"></link><published>2019-05-29T00:00:00+08:00</published><updated>2019-05-29T00:00:00+08:00</updated><author><name>Donly</name></author><id>tag:magicalboy.com,2019-05-29:/d1_arduino_8266_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://wiki.wemos.cc/products:d1:d1#technical_specs"&gt;D1&lt;/a&gt;，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：&lt;/p&gt;
 &lt;p&gt;&lt;img alt="D1" src="images/arduino/d1.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;安装&lt;/h2&gt;
