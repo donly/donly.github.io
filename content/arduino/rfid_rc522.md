@@ -95,8 +95,13 @@ constexpr uint8_t newUid[] = {0x8C, 0x1A, 0xB9, 0x1F};
 编译上传到 Arduino Uno。
 
 ## 复制到新卡贴
-直接将新卡贴放到感应区上完成 UID 的修改。注意：必须购买可以修改 0 扇区的 UID 卡贴，否则会修改失败，相当于什么也没发生。
+直接将新卡贴放到感应区上完成 UID 的修改。
+注意：**必须购买可以修改 0 扇区的 UID 卡贴**，否则会修改失败，相当于什么也没发生。
 
+贴到手机壳后背上的效果：
+![手机卡贴](../images/arduino/ic_card_on_phone_case.png)
+
+建议贴到手机底部，因为上面是手机的NFC感应区，在刷卡时会发生冲突（😢）。
 
 ## 其它参考
 * https://lastminuteengineers.com/how-rfid-works-rc522-arduino-tutorial/
