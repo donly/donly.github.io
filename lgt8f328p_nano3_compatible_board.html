@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>网站日志
+        <title>    LGT8F328P Arduino Nano3 兼容板的使用
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
@@ -52,44 +52,57 @@
       </ul>
 	</nav>
 </header>
-<div id="post-container">
-    <ol id="post-list">
-        <li>
-            <article class="post-entry">
-                <header class="entry-header">
-                    <a href="https://magicalboy.com/pages/site-log.html" rel="bookmark"><h1>网站日志</h1></a>
-                </header>
-                <section class="post-content">
-                    <div class="section" id="section-2">
-<h2>更新日志</h2>
-<ul class="simple">
-<li>2012-12-28: 搭建&amp;配置 Pelican.</li>
-<li>2012-12-29: 实现使用 Git-Workflow 来写文章.</li>
-<li>2012-12-30: 增加 TOC(Table Of Contents).</li>
-<li>2012-01-02: 修改 Bootstrap 主题.</li>
-<li>2013-01-03: 增加 DISQUS 评论.</li>
-<li>2013-01-04: 开始使用 <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reST</a> 来写作，并不是说 markdown 不好，前者更适合 Python :)</li>
-<li>2013-09-09: 更新 Pelican 到版本 3.2.2.</li>
-<li>2013-11-27: 更新 Pelican 到版本 3.3.0.</li>
-<li>2015-05-17: 更新 Pelican 到版本 3.5.0.</li>
-<li>2015-05-19: 更换主题 pelican-cait, 并作一些修改.</li>
-<li>2016-04-22: 更新 Pelican 到当前最新版本3.6.3.</li>
-<li>2017-11-24: 搬至 Github; 导入 Wordpress 旧文章; Pelican 更新至 3.7.1。</li>
-<li>2019-03-21: upgrade pelican --version from 3.7.1 to 4.0.1.</li>
-<li>2022-02-17: 更新 Pelican 到版本 4.7.2.</li>
-<li>2022-02-24: 文章增加修改日期，侧栏增加页面.</li>
-<li>2022-07-12: theme updated, upgrade pelican --version from 4.7.2 to 4.8.0.</li>
-</ul>
-<p>好记性不如烂笔头！</p>
-<p>TO BE CONTINUTE..</p>
-</div>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <a href="https://magicalboy.com/lgt8f328p_nano3_compatible_board.html" rel="bookmark"><h1>LGT8F328P Arduino Nano3 兼容板的使用</h1></a>
+                        <time class="post-time" datetime="2019-05-19T00:00:00+08:00" pubdate>
+                            Published: 2019-05-19
+                        </time>
+                        <time class="modified" datetime="2022-02-16T17:40:00+08:00">
+                            Updated: 2022-02-16
+                        </time>
+                    </header>
 
-                </section>
-                <hr/>
-            </article>
-        </li>
-    </ol>
+                    <section class="post-content">
+                        <h2>介绍</h2>
+<p>LGT8F328P LQFP32，是一款替代 NANO V3.0 的廉价解决方案，在淘宝上买到的一般长这样：
+<img alt="LGT8F328P" src="images/arduino/LGT8F328P.png"></p>
+<p><a href="http://www.ocrobot.com/doku.php?id=ocrobot:alpha:8f328p-u:main">ALPHA 8F328P-U</a> 所使用的 MCU 为LGT8F328P，是一款 Atmel MEGA328P 兼容芯片。USB 芯片使用的是合泰 HT42B534-1，WIN10和MAC OS X免驱。由 <a href="http://www.ocrobot.com/doku.php?id=start">OCROBOT</a> 设计，板载USB 至 UART。</p>
+<h2>安装</h2>
+<p><del>ALPHA 8F328P-U是一款Arduino兼容的开发板。可以使用Arduino IDE进行开发（需要自己安装支持），参考 https://github.com/donly/Larduino_HSP#installation. </del></p>
+<p>目前版本 Arduino IDE 是 <code>1.8.19</code> 已经自带支持。</p>
+<h2>使用</h2>
+<p><img alt="Arduino Nano" src="images/arduino/nano_8f328p_setup.png"></p>
+<h2>测试</h2>
+<p>使用 <code>Blink</code> 例程</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="https://magicalboy.com/category/misc.html">misc</a></p>
+                        <p>Tags: <a href="https://magicalboy.com/tag/arduino.html">arduino</a>, <a href="https://magicalboy.com/tag/nano.html">nano</a>, </p>
+                        <p>Copyright: <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh/">自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'magsnote';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
+                </article>
+            </li>
+        </ol>
+    </div>
         </div>
 <footer id="site-info">
     <p>

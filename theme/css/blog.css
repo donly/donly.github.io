@@ -32,7 +32,7 @@ body {
     color: #38c5c5; }
 
 #site-desc {
-  font-size: 1.3em;
+  /* font-size: 1.3em; */
   padding: 0 6px; }
 
 #post-container {
@@ -44,8 +44,8 @@ body {
 #nav-links {
   list-style: none;
   padding: 0;
-  font-family: "Oswald", sans-serif;
-  font-size: 1em;
+  /* font-family: "Oswald", sans-serif; */
+  font-size: 0.8em;
   font-variant: bold;
   display:inline-block; }
   #nav-links li {
@@ -53,7 +53,7 @@ body {
 	display: inline-block; }
   #nav-links a {
     padding: 0 24px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     display: inline-block;
     border: 1px solid #eeeeee;
     line-height: 1.8em;
@@ -68,7 +68,11 @@ body {
 
 	.centered-nav {
 	  text-align: center;
-	  padding: 2em 0; }
+	  padding: 2em 0; 
+    position: fixed;
+    bottom: 0;
+    width: 25%;
+  }
 	  .centered-nav li {
 	    display: inline; }
 	  .centered-nav a {
@@ -84,7 +88,7 @@ body {
 	    color: #38c5c5;
 	    text-shadow: 0 0 12px #8e927e; }
 		.svc-badge {
-		  font-size: 36px;
+		  font-size: 24px;
 		  width: 50px;
 		  display: inline-block; }
 
