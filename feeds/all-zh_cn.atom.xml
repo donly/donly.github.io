@@ -26,7 +26,9 @@
 &lt;p&gt;调整之后，这台小电视的画面终于修复正常。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="小电视的正常画面" src="images/old/small_crt_tv_wb_ok.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;如果显像管还能正常，能够显示完整的画面，说明未完全老化，画面扫描不正常可以通过相应的电位器调整。&lt;/p&gt;</content><category term="misc"></category><category term="crt"></category><category term="tv"></category></entry><entry><title>RC522 射频 IC 感应模块</title><link href="https://magicalboy.com/rfid_mifare.html" rel="alternate"></link><published>2022-05-13T15:30:00+08:00</published><updated>2022-05-13T15:30:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2022-05-13:/rfid_mifare.html</id><summary type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手机壳上方便使用，避免了经常忘带卡的尴尬。&lt;/p&gt;
+&lt;p&gt;如果显像管还能正常，能够显示完整的画面，说明未完全老化，画面扫描不正常可以通过相应的电位器调整。&lt;/p&gt;
+&lt;p&gt;附带一张电路原理图，虽然这次没用到。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="小电视电路原理图" src="images/old/small_crt_tv_wb_circuit_diagram.jpg"&gt;&lt;/p&gt;</content><category term="misc"></category><category term="crt"></category><category term="tv"></category></entry><entry><title>RC522 射频 IC 感应模块</title><link href="https://magicalboy.com/rfid_mifare.html" rel="alternate"></link><published>2022-05-13T15:30:00+08:00</published><updated>2022-05-13T15:30:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2022-05-13:/rfid_mifare.html</id><summary type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手机壳上方便使用，避免了经常忘带卡的尴尬。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="RC522" src="images/arduino/RC522.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;注意这个模块的版本号，中国版的模块可能有功能缺失或使用不正常的问题，详见：https://github.com/miguelbalboa/rfid/wiki/Chinese_RFID-RC522。我购买的这块固件版本号是 v2.0，使用 MFRC522 库可以检测：&lt;code&gt;Firmware Version: 0x92 = v2.0&lt;/code&gt; 。&lt;/p&gt;
 &lt;h2&gt;相关术语介绍&lt;/h2&gt;
