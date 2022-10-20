@@ -52,10 +52,10 @@ body {
     margin: 12px 12px 0 0;
 	display: inline-block; }
   #nav-links a {
-    padding: 0 24px;
+    /* padding: 0 24px; */
     /* border-radius: 20px; */
     display: inline-block;
-    border: 1px solid #eeeeee;
+    border-bottom: 1px dotted #eeeeee;
     line-height: 1.8em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;

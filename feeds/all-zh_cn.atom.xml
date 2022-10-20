@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com/feeds/all-zh_cn.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2022-05-13T15:30:00+08:00</updated><subtitle>iOS/macOS/IoT/Web/Game</subtitle><entry><title>RC522 射频 IC 感应模块</title><link href="https://magicalboy.com/rfid_mifare.html" rel="alternate"></link><published>2022-05-13T15:30:00+08:00</published><updated>2022-05-13T15:30:00+08:00</updated><author><name>Mag</name></author><id>tag:magicalboy.com,2022-05-13:/rfid_mifare.html</id><summary type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手机壳上方便使用，避免了经常忘带卡的尴尬。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>MAG's Note</title><link href="https://magicalboy.com/" rel="alternate"></link><link href="https://magicalboy.com/feeds/all-zh_cn.atom.xml" rel="self"></link><id>https://magicalboy.com/</id><updated>2022-10-20T12:00:00+08:00</updated><subtitle>iOS/macOS/IoT/Web/Game</subtitle><entry><title>CRT黑白小电视维修记</title><link href="https://magicalboy.com/crt_black_and_white_tv_fixed_log.html" rel="alternate"></link><published>2022-10-20T12:00:00+08:00</published><updated>2022-10-20T12:00:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2022-10-20:/crt_black_and_white_tv_fixed_log.html</id><summary type="html">&lt;p&gt;闲逛闲鱼的时候发现这台黑白小电视，想起以前上学时也玩过一台一样大小的黑白小电视，加上价格不贵35包邮，于是收回来 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;闲逛闲鱼的时候发现这台黑白小电视，想起以前上学时也玩过一台一样大小的黑白小电视，加上价格不贵35包邮，于是收回来怀旧一下。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="宝贝描述" src="images/old/small_crt_tv_wb_origin.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;如宝贝描述所说，能点亮不能播放，是一台有小故障的小电视：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;模拟信号雪花画面正常；&lt;/li&gt;
+&lt;li&gt;AV频道无信号时画面也正常；&lt;/li&gt;
+&lt;li&gt;AV频道有信号时场扫描不正常，行场不同步。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="场扫描不正常" src="images/old/small_crt_tv_wb_field_scan_issue.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;另外无意发现一个现象，在有信号时重新开机画面可恢复正常。&lt;/p&gt;
+&lt;h2&gt;原理&lt;/h2&gt;
+&lt;p&gt;简单说行和场是扫描的两个方向，行是水平偏转扫描，场是垂直偏转扫描，帧扫描是指一幅画面的扫描。帧扫描就是在行场扫描信号作用下，完成正程的扫描。一个扫描周期的正程部分，利用人眼的视觉暂留效应，我们就看到一幅完整的电视画面。&lt;/p&gt;
+&lt;h2&gt;解决思路&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;首先用可调电源测试整机的开机电流为0.7A，推断出没有短路的地方；&lt;/li&gt;
+&lt;li&gt;然后观察电容有没有鼓包现象；&lt;/li&gt;
+&lt;li&gt;既然是场扫描的问题，有可能是行场电位器接触不良。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以在高压包附近找到这个电位器，如下图红色圆圈1的橙色电位器，用螺丝刀调整一下即可解决。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="场定位器" src="images/old/small_crt_tv_wb_field_potentiometer.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;调整后行场扫描已同步，但出现画面跳动的情况，这时需要调整机身背后的 &lt;code&gt;V.Hold&lt;/code&gt; 电位器，碰巧这台机器少了这个电位器，被使用了一颗17k的电阻替代了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="vh替代电位器的电阻" src="images/old/small_crt_tv_wb_vh_resistor.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;现在已经很难购买到规格一样的老式电位器，脚间距是3.0mm，尝试了两次购买到下面这种20K的电位器安装上，只能勉强接上2个脚，第三个脚折起来不用。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="vh电位器" src="images/old/small_crt_tv_wb_vh_potentiometer.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;调整之后，这台小电视的画面终于修复正常。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="小电视的正常画面" src="images/old/small_crt_tv_wb_ok.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;如果显像管还能正常，能够显示完整的画面，说明未完全老化，画面扫描不正常可以通过相应的电位器调整。&lt;/p&gt;</content><category term="misc"></category><category term="crt"></category><category term="tv"></category></entry><entry><title>RC522 射频 IC 感应模块</title><link href="https://magicalboy.com/rfid_mifare.html" rel="alternate"></link><published>2022-05-13T15:30:00+08:00</published><updated>2022-05-13T15:30:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2022-05-13:/rfid_mifare.html</id><summary type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;RC522 RFID 读写模块是一个普遍的、适合入门的选择。这里会简单地介绍模块的特点，和 Arduino Uno 连接使用，复制公司的门禁卡贴到手机壳上方便使用，避免了经常忘带卡的尴尬。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="RC522" src="images/arduino/RC522.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;注意这个模块的版本号，中国版的模块可能有功能缺失或使用不正常的问题，详见：https://github.com/miguelbalboa/rfid/wiki/Chinese_RFID-RC522。我购买的这块固件版本号是 v2.0，使用 MFRC522 库可以检测：&lt;code&gt;Firmware Version: 0x92 = v2.0&lt;/code&gt; 。&lt;/p&gt;
 &lt;h2&gt;相关术语介绍&lt;/h2&gt;
@@ -151,7 +178,7 @@ PICC type: MIFARE 1KB
 &lt;li&gt;https://zh.wikipedia.org/wiki/MIFARE&lt;/li&gt;
 &lt;li&gt;https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf&lt;/li&gt;
 &lt;li&gt;https://fanzheng.org/archives/30&lt;/li&gt;
-&lt;/ul&gt;</content><category term="misc"></category><category term="arduino"></category><category term="rfid"></category><category term="mifare"></category></entry><entry><title>Arduino UNO 兼容板的使用</title><link href="https://magicalboy.com/arduino_uno_compatible_board.html" rel="alternate"></link><published>2022-05-13T00:00:00+08:00</published><updated>2022-05-13T00:00:00+08:00</updated><author><name>Mag</name></author><id>tag:magicalboy.com,2022-05-13:/arduino_uno_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;/ul&gt;</content><category term="misc"></category><category term="arduino"></category><category term="rfid"></category><category term="mifare"></category></entry><entry><title>Arduino UNO 兼容板的使用</title><link href="https://magicalboy.com/arduino_uno_compatible_board.html" rel="alternate"></link><published>2022-05-13T00:00:00+08:00</published><updated>2022-05-13T00:00:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2022-05-13:/arduino_uno_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
 &lt;p&gt;这是一款替代 Arduino UNO 的廉价解决方案，采用 Atmel Atmega328 微处理控制器：&lt;/p&gt;
 &lt;p&gt;&lt;img alt="D1" src="images/arduino/arduino_uno_compatible_board.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;安装和使用&lt;/h2&gt;
@@ -199,7 +226,7 @@ PICC type: MIFARE 1KB
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LED_BUILTIN&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;// turn the LED off by making the voltage LOW&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="c1"&gt;// wait for a second&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category></entry><entry><title>米家 LED 灯泡蓝牙 MESH 版使用</title><link href="https://magicalboy.com/mi_smart_led_bulb.html" rel="alternate"></link><published>2022-03-08T15:00:00+08:00</published><updated>2022-03-08T15:00:00+08:00</updated><author><name>Mag</name></author><id>tag:magicalboy.com,2022-03-08:/mi_smart_led_bulb.html</id><summary type="html">&lt;p&gt;这个智能灯泡购于2022年03月，PDD卖18元。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category></entry><entry><title>米家 LED 灯泡蓝牙 MESH 版使用</title><link href="https://magicalboy.com/mi_smart_led_bulb.html" rel="alternate"></link><published>2022-03-08T15:00:00+08:00</published><updated>2022-03-08T15:00:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2022-03-08:/mi_smart_led_bulb.html</id><summary type="html">&lt;p&gt;这个智能灯泡购于2022年03月，PDD卖18元。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="米家LED灯泡蓝牙mesh版，图片来源www.xdea.xyz" src="images/iot/mi_smart_led_pcb.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;主要特点&lt;/h2&gt;
 &lt;ul&gt;
@@ -232,7 +259,7 @@ PICC type: MIFARE 1KB
 &lt;li&gt;&lt;a href="https://www.mi.com/global/mi-smart-led-bulb-warm-white/"&gt;Mi Smart LED Bulb (Warm White)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.xdea.xyz/2021/06/%E7%B1%B3%E5%AE%B6led%E7%81%AF%E6%B3%A1%E8%93%9D%E7%89%99mesh%E7%89%88%E6%8B%86%E8%A7%A3/"&gt;米家LED灯泡蓝牙MESH版拆解 – Xdea&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.mydigit.cn/thread-219664-1-1.html"&gt;米家LED灯泡蓝牙mesh版拆解 - 拆机乐园 数码之家&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="misc"></category><category term="iot"></category><category term="mi"></category><category term="小米"></category><category term="米家"></category><category term="蓝牙"></category><category term="ble"></category><category term="mesh"></category></entry><entry><title>小米温湿度计 PRO 使用</title><link href="https://magicalboy.com/mi_temperature_and_humidity_monitor_clock_pro.html" rel="alternate"></link><published>2022-03-08T15:00:00+08:00</published><updated>2022-03-08T15:00:00+08:00</updated><author><name>Mag</name></author><id>tag:magicalboy.com,2022-03-08:/mi_temperature_and_humidity_monitor_clock_pro.html</id><summary type="html">&lt;p&gt;这个产品购于 2020 年底，价格 68 元仅供参考。&lt;/p&gt;
+&lt;/ol&gt;</content><category term="misc"></category><category term="iot"></category><category term="mi"></category><category term="小米"></category><category term="米家"></category><category term="蓝牙"></category><category term="ble"></category><category term="mesh"></category></entry><entry><title>小米温湿度计 PRO 使用</title><link href="https://magicalboy.com/mi_temperature_and_humidity_monitor_clock_pro.html" rel="alternate"></link><published>2022-03-08T15:00:00+08:00</published><updated>2022-03-08T15:00:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2022-03-08:/mi_temperature_and_humidity_monitor_clock_pro.html</id><summary type="html">&lt;p&gt;这个产品购于 2020 年底，价格 68 元仅供参考。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="小米温湿度计PRO版" src="images/iot/mi_temperature_and_humidity_monitor_clock_pro.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;主要特点&lt;/h2&gt;
 &lt;ul&gt;
@@ -260,7 +287,7 @@ PICC type: MIFARE 1KB
 &lt;li&gt;&lt;a href="https://www.mi.com/buy/detail?product_id=9542"&gt;电子温湿度计Pro立即购买-小米商城&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.arduino.cn/thread-91956-1-1.html"&gt;"高精度"米家电子温湿度计Pro拆解-Arduino中文社区&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://cyhour.com/1098/"&gt;米家电子温湿度计 Pro 拆机 | 垃圾站&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="misc"></category><category term="iot"></category><category term="mi"></category><category term="小米"></category><category term="米家"></category><category term="蓝牙"></category><category term="ble"></category></entry><entry><title>D1 Arduino 8266EX 兼容板的使用</title><link href="https://magicalboy.com/d1_arduino_8266_compatible_board.html" rel="alternate"></link><published>2019-05-29T00:00:00+08:00</published><updated>2019-05-29T00:00:00+08:00</updated><author><name>Mag</name></author><id>tag:magicalboy.com,2019-05-29:/d1_arduino_8266_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="misc"></category><category term="iot"></category><category term="mi"></category><category term="小米"></category><category term="米家"></category><category term="蓝牙"></category><category term="ble"></category></entry><entry><title>D1 Arduino 8266EX 兼容板的使用</title><link href="https://magicalboy.com/d1_arduino_8266_compatible_board.html" rel="alternate"></link><published>2019-05-29T00:00:00+08:00</published><updated>2019-05-29T00:00:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2019-05-29:/d1_arduino_8266_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://wiki.wemos.cc/products:d1:d1#technical_specs"&gt;D1&lt;/a&gt;，是一款替代 Arduino UNO 8266 的廉价解决方案，在淘宝上买到的一般长这样：&lt;/p&gt;
 &lt;p&gt;&lt;img alt="D1" src="images/arduino/d1.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;安装&lt;/h2&gt;
@@ -284,7 +311,7 @@ PICC type: MIFARE 1KB
 &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;32.018&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2503&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(-&lt;/span&gt;&lt;span class="mi"&gt;92&lt;/span&gt;&lt;span class="o"&gt;)*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;32.018&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;OpenWrt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(-&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="o"&gt;)*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;32.018&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ChinaNet&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;qwtx&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(-&lt;/span&gt;&lt;span class="mi"&gt;83&lt;/span&gt;&lt;span class="o"&gt;)*&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category></entry><entry><title>LGT8F328P Arduino Nano3 兼容板的使用</title><link href="https://magicalboy.com/lgt8f328p_nano3_compatible_board.html" rel="alternate"></link><published>2019-05-19T00:00:00+08:00</published><updated>2022-02-16T17:40:00+08:00</updated><author><name>Mag</name></author><id>tag:magicalboy.com,2019-05-19:/lgt8f328p_nano3_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category></entry><entry><title>LGT8F328P Arduino Nano3 兼容板的使用</title><link href="https://magicalboy.com/lgt8f328p_nano3_compatible_board.html" rel="alternate"></link><published>2019-05-19T00:00:00+08:00</published><updated>2022-02-16T17:40:00+08:00</updated><author><name>Tung</name></author><id>tag:magicalboy.com,2019-05-19:/lgt8f328p_nano3_compatible_board.html</id><summary type="html">&lt;h2&gt;介绍&lt;/h2&gt;
 &lt;p&gt;LGT8F328P LQFP32，是一款替代 NANO V3.0 的廉价解决方案，在淘宝上买到的一般长这样：
 &lt;img alt="LGT8F328P" src="images/arduino/LGT8F328P.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.ocrobot.com/doku.php?id=ocrobot:alpha:8f328p-u:main"&gt;ALPHA 8F328P-U&lt;/a&gt; 所使用的 MCU 为LGT8F328P，是一款 Atmel MEGA328P 兼容芯片。USB …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;介绍&lt;/h2&gt;
